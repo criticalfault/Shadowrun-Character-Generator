@@ -2,10 +2,10 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import PriorityPanel from './PriorityPanel';
 import IdentityPanel from './IdentityPanel';
+import AttributesPanel from './AttributesPanel';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -20,7 +20,7 @@ function CustomTabPanel(props) {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+          <div>{children}</div>
         </Box>
       )}
     </div>
@@ -41,11 +41,68 @@ function a11yProps(index) {
 }
 
 export default function BasicTabs() {
-  const [value, setValue] = React.useState(0);
+    const baseCharacter = {
+        step:'chargen',
+        priorities:[],
+        totalSkillPoints: 0,
+        maxAttributePoints: 0,
+        name:'',
+        availableRaces:[],
+        race:'',
+        attributes:{'Body':1,'Quickness':1,'Strength':1,'Charisma':1,'Willpower':1,'Intelligence':1},
+        skills:{},
+        gear:[],
+        magical: false,
+        magical_tradition: false,
+        spells:[],
+        maxCash: 5000,
+        cash:0
+    }
+    const [Edition, setEdition]= React.useState('SR3');
+    const [value, setValue] = React.useState(0);
+    const [Character, setCharacter] = React.useState(baseCharacter);
+    const SkillMax = React.useState(6);
+    const AttributesMax = React.useState({'Body':6,'Quickness':6,'Strength':6,'Charisma':6,'Willpower':6,'Intelligence':6});
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+    React.useEffect(() => {
+        console.log(Character);
+    },[Character])
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
+    const handleChangePriority = (priority, newValue) => {
+        setCharacter((prevCharacter) =>{
+            return prevCharacter.priorities[priority] = value;
+        })
+    }
+
+    const handleChangeMaxAttributes = (maxAttributes) =>{
+        setCharacter((prevCharacter) =>{
+            return prevCharacter.maxAttributePoints = maxAttributes;
+        })
+    }
+
+    const handleChangeAvailabileRaces = (races) => {
+        setCharacter((prevCharacter) =>{
+            return prevCharacter.races = races;
+        })
+    }
+
+    const handleSkillsChange = (skill, newValue) => {
+        setCharacter((prevCharacter) =>{
+
+            return prevCharacter.skills[skill] = parseInt(value);
+        })
+    }
+
+    const handleAttributesChange = (attribute,value) => {
+        setCharacter((prevCharacter) =>{
+            prevCharacter.attributes[attribute] = parseInt(value);
+            return prevCharacter;
+        })
+    }
 
   return (
     <div className='dashboard'>
@@ -62,13 +119,23 @@ export default function BasicTabs() {
                 </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
-                <IdentityPanel />
+                <IdentityPanel  currentCharacter={Character} 
+                                Edition={Edition}/>
             </CustomTabPanel>
+            
             <CustomTabPanel value={value} index={1}>
-                <PriorityPanel />
+                <PriorityPanel  ChangePriority={handleChangePriority} 
+                                ChangeAvailabileRaces={handleChangeAvailabileRaces} 
+                                ChangeMaxAttributes={handleChangeMaxAttributes}
+                                currentCharacter={Character}
+                                Edition={Edition}
+                                />
             </CustomTabPanel>
+            
             <CustomTabPanel value={value} index={2}>
-                Item Three
+                <AttributesPanel    ChangeAttributes={handleAttributesChange} 
+                                    currentCharacter={Character}
+                                    Edition={Edition}/>
             </CustomTabPanel>
         </Box>
     </div>
