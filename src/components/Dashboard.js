@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import PriorityPanel from './PriorityPanel';
 import IdentityPanel from './IdentityPanel';
 import AttributesPanel from './AttributesPanel';
+import { render } from '@testing-library/react';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -44,11 +45,15 @@ export default function BasicTabs() {
     const baseCharacter = {
         step:'chargen',
         priorities:[],
-        totalSkillPoints: 0,
+        maxSkillPoints: 0,
         maxAttributePoints: 0,
         name:'',
-        availableRaces:[],
+        street_name:'',
+        availableRaces:['Human'],
+        availableMagics:[],
         race:'',
+        cyberAttributeBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
+        raceBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
         attributes:{'Body':1,'Quickness':1,'Strength':1,'Charisma':1,'Willpower':1,'Intelligence':1},
         skills:{},
         gear:[],
@@ -61,38 +66,54 @@ export default function BasicTabs() {
     const [Edition, setEdition]= React.useState('SR3');
     const [value, setValue] = React.useState(0);
     const [Character, setCharacter] = React.useState(baseCharacter);
-    const SkillMax = React.useState(6);
-    const AttributesMax = React.useState({'Body':6,'Quickness':6,'Strength':6,'Charisma':6,'Willpower':6,'Intelligence':6});
 
     React.useEffect(() => {
         console.log(Character);
     },[Character])
 
+    const handleChangeEdition =(edition) => {
+        setEdition(edition);
+    }
+
     const handleChange = (event, newValue) => {
         setValue(newValue);
-    };
+    }
 
-    const handleChangePriority = (priority, newValue) => {
-        setCharacter((prevCharacter) =>{
-            return prevCharacter.priorities[priority] = value;
-        })
+    const handleChangePriority = (priority) => {
+        setCharacter({...Character,priorities:priority})
+    }
+
+    const handleChangeMaxCash = (Cash) =>{
+        setCharacter({...Character,maxCash:Cash})
+    }
+
+    const handleChangeMaxSkills = (maxSkills) =>{
+        setCharacter({...Character,maxSkillPoints:maxSkills})
     }
 
     const handleChangeMaxAttributes = (maxAttributes) =>{
-        setCharacter((prevCharacter) =>{
-            return prevCharacter.maxAttributePoints = maxAttributes;
-        })
+        setCharacter({...Character,maxAttributePoints:maxAttributes})
     }
 
-    const handleChangeAvailabileRaces = (races) => {
-        setCharacter((prevCharacter) =>{
-            return prevCharacter.races = races;
-        })
+    const handleChangeMagicChoices = (magicChoices) =>{
+        setCharacter({...Character,availableMagics:magicChoices})
     }
 
-    const handleSkillsChange = (skill, newValue) => {
-        setCharacter((prevCharacter) =>{
+    const handleChangeAvailabileRaces =(raceChoices) =>{
+        console.log(raceChoices);
+        setCharacter({...Character,availableRaces:raceChoices})
+    }
 
+    const handleRaceChange = (race) =>{
+        setCharacter({...Character,race:race})
+    }
+
+    const handleChangeRaceBonuses = (bonuses) =>{
+        setCharacter({...Character,raceBonuses:bonuses})
+    }
+
+    const handleSkillsChange = (skill) => {
+        setCharacter((prevCharacter) =>{
             return prevCharacter.skills[skill] = parseInt(value);
         })
     }
@@ -119,14 +140,22 @@ export default function BasicTabs() {
                 </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
-                <IdentityPanel  currentCharacter={Character} 
-                                Edition={Edition}/>
+                <IdentityPanel  
+                    currentCharacter={Character}
+                    ChangeEdition={handleChangeEdition} 
+                    Edition={Edition}
+                />
             </CustomTabPanel>
             
             <CustomTabPanel value={value} index={1}>
                 <PriorityPanel  ChangePriority={handleChangePriority} 
-                                ChangeAvailabileRaces={handleChangeAvailabileRaces} 
+                                ChangeRaceChoices={handleChangeAvailabileRaces} 
                                 ChangeMaxAttributes={handleChangeMaxAttributes}
+                                ChangeMaxSkills={handleChangeMaxSkills}
+                                ChangeMaxCash={handleChangeMaxCash}
+                                ChangeMagicChoices={handleChangeMagicChoices}
+                                ChangeRace={handleRaceChange}
+                                ChangeRaceBonuses={handleChangeRaceBonuses}
                                 currentCharacter={Character}
                                 Edition={Edition}
                                 />
@@ -135,7 +164,8 @@ export default function BasicTabs() {
             <CustomTabPanel value={value} index={2}>
                 <AttributesPanel    ChangeAttributes={handleAttributesChange} 
                                     currentCharacter={Character}
-                                    Edition={Edition}/>
+                                    Edition={Edition}
+                />
             </CustomTabPanel>
         </Box>
     </div>
