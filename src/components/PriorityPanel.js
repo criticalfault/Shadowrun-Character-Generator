@@ -1,14 +1,12 @@
 import * as React from 'react';
-import Grid from '@mui/material/Grid';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import Radio from '@mui/material/Radio';
 import { Select } from '@mui/material';
 
 export default function PriorityPanel(props) {
-
+    const Priorities = ['A', 'B', 'C', 'D', 'E'];
     const prorityChart = {
         'SR3':{
             "raceBonuses":{
@@ -19,10 +17,10 @@ export default function PriorityPanel(props) {
                 "Troll":{'Body':5,'Quickness':-1,'Strength':4,'Charisma':0,'Willpower':0,'Intelligence':-2,"Notes":"Thermographic Vision, +1 Reach for Armed/Unarmed Combat, Dermal Armor (+1 Body)"}
             },
             "race": {
-                    "A":['Troll','Ork','Dwarf','Elf','Human'], 
-                    "B":['Troll','Ork','Dwarf','Elf','Human'], 
-                    "C":['Troll','Elf', 'Human'], 
-                    "D":['Dwarf','Ork','Human'],
+                    "A":[], 
+                    "B":[], 
+                    "C":['Troll','Elf'], 
+                    "D":['Dwarf','Ork'],
                     "E":['Human'],
                 },
             "magic": {
@@ -34,7 +32,14 @@ export default function PriorityPanel(props) {
             },
             "attributes":   {"A":30,     "B":27,    "C":24,   "D":21,   "E":18},
             "skills":       {"A":50,     "B":40,    "C":34,   "D":30,   "E":27},
-            "nuyen":    {"A":1000000,"B":400000,"C":90000,"D":20000,"E":5000}
+            "resources":    {
+                                "A":{"nuyen":1000000, "spell_points":50},
+                                "B":{"nuyen":400000, "spell_points":35},
+                                "C":{"nuyen":90000, "spell_points":25},
+                                "D":{"nuyen":20000, "spell_points":15},
+                                "E":{"nuyen":5000, "spell_points":5} 
+                            }
+                            
         },
         'SR2':{
             "raceBonuses":{
@@ -70,174 +75,118 @@ export default function PriorityPanel(props) {
         }
     }
     const [Race, setRace] = React.useState(['Human']);
-    const [PriorityA, setPriorityA] = React.useState('');
-    const [PriorityB, setPriorityB] = React.useState('');
-    const [PriorityC, setPriorityC] = React.useState('');
-    const [PriorityD, setPriorityD] = React.useState('');
-    const [PriorityE, setPriorityE] = React.useState('');
+    const [AvailableRaces, setAvailableRaces] = React.useState(['Human']);
+    const [PriorityRace, setPriorityRace] = React.useState('E');
+    const [PriorityAttributes, setPriorityAttributes] = React.useState('D');
+    const [PriorityMagic, setPriorityMagic] = React.useState('C');
+    const [PrioritySkills, setPrioritySkills] = React.useState('B');
+    const [PriorityResources, setPriorityResources] = React.useState('A');
     
     const handleRaceChange = (race) => {
         setRace(race.target.value);
         props.ChangeRace(race.target.value);
         props.ChangeRaceBonuses(prorityChart[props.Edition].raceBonuses[race.target.value]);
     }
-    const handleChangePriority = (event, newPriority) => {
-        let letter = event.target.dataset.code;
-        if(newPriority ===  'race'){
-            props.ChangeRaceChoices(prorityChart[props.Edition][newPriority][letter]);
-        }else if(newPriority === 'magic'){
-            props.ChangeMagicChoices(prorityChart[props.Edition][newPriority][letter]);
-        }else if(newPriority === 'attributes'){
-            props.ChangeMaxAttributes(prorityChart[props.Edition][newPriority][letter]);
-        }else if(newPriority === 'skills'){
-            props.ChangeMaxSkills(prorityChart[props.Edition][newPriority][letter]);
-        }else if(newPriority === 'nuyen'){
-            props.ChangeMaxCash(prorityChart[props.Edition][newPriority][letter]);
-        }
-        console.log(newPriority);
-        switch(letter) {
 
-            case "A":
-                setPriorityA(newPriority);
-            break;
-
-            case "B":
-                setPriorityB(newPriority);
-            break
-
-            case "C":
-                setPriorityC(newPriority);
-            break;
-
-            case "D":
-                setPriorityD(newPriority);
-            break;
-
-            case "E":
-                setPriorityE(newPriority);
-            break;
-
-            default:
-            break;
-        }
-        //props.ChangePriority({"A":PriorityA,"B":PriorityB,"C":PriorityC,"D":PriorityD,"E":PriorityE});
-    };
+    const handleChangePriorityRace = (event) => {
+        const newPriorityRace = event.target.value;
+        setPriorityRace(newPriorityRace);
+        setAvailableRaces(prorityChart[props.Edition].race[newPriorityRace]);
+        props.ChangeRaceChoices(prorityChart[props.Edition].race[newPriorityRace]);
+      };
     
+      const handleChangePriorityMagic = (event) => {
+        const newPriorityMagic = event.target.value;
+        setPriorityMagic(newPriorityMagic);
+        props.ChangeMagicChoices(prorityChart[props.Edition].magic[newPriorityMagic]);
+      };
+    
+      const handleChangePriorityAttributes = (event) => {
+        const newPriorityAttributes = event.target.value;
+        setPriorityAttributes(newPriorityAttributes);
+        props.ChangeMaxAttributes(prorityChart[props.Edition].attributes[newPriorityAttributes]);
+      };
+    
+      const handleChangePrioritySkills = (event) => {
+        const newPrioritySkills = event.target.value;
+        setPrioritySkills(newPrioritySkills);
+        props.ChangeMaxSkills(prorityChart[props.Edition].skills[newPrioritySkills]);
+      };
+    
+      const handleChangePriorityResources = (event) => {
+        const newPriorityResources = event.target.value;
+        setPriorityResources(newPriorityResources);
+        props.ChangeMaxCash(prorityChart[props.Edition].resources[newPriorityResources].nuyen);
+      };
 
+
+    const TableRender = function (edition){
+        return (
+            <table className="">
+                <thead>
+                    <tr>
+                        <th>Priority</th>
+                        <th>Race</th>
+                        <th>Magic</th>
+                        <th>Attributes</th>
+                        <th>Skills</th>
+                        <th>Resources</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        Priorities.map((letter)=>{
+                            return (
+                                <tr key={letter}>
+                                    <td>{letter}</td>
+                                    <td><label><Radio
+                                        checked={PriorityRace === letter}
+                                        onChange={handleChangePriorityRace}
+                                        value={letter}
+                                        name="race-buttons"
+                                        inputProps={{ 'aria-label': letter }}
+                                        />{prorityChart[props.Edition]['race'][letter]}</label>
+                                        </td>
+                                    <td><label><Radio
+                                        checked={PriorityMagic === letter}
+                                        onChange={handleChangePriorityMagic}
+                                        value={letter}
+                                        name="magic-buttons"
+                                        inputProps={{ 'aria-label': letter }}
+                                        />{prorityChart[props.Edition]['magic'][letter]}</label></td>
+                                    <td><label><Radio
+                                        checked={PriorityAttributes === letter}
+                                        onChange={handleChangePriorityAttributes}
+                                        value={letter}
+                                        name="attributes-buttons"
+                                        inputProps={{ 'aria-label': letter }}
+                                        />{prorityChart[props.Edition]['attributes'][letter]}</label></td>
+                                    <td><label><Radio
+                                        checked={PrioritySkills === letter}
+                                        onChange={handleChangePrioritySkills}
+                                        value={letter}
+                                        name="skills-buttons"
+                                        inputProps={{ 'aria-label': letter }}
+                                        />{prorityChart[props.Edition]['skills'][letter]}</label></td>
+                                    <td><label><Radio
+                                        checked={PriorityResources === letter}
+                                        onChange={handleChangePriorityResources}
+                                        value={letter}
+                                        name="resources-buttons"
+                                        inputProps={{ 'aria-label': letter }}
+                                        />{prorityChart[props.Edition]['resources'][letter]['nuyen']}</label></td>
+                                </tr>
+                            )
+                        })
+                    }
+                </tbody>
+            </table>
+        )
+    }
     return (
         <div>
             <h2>MASTER CHARACTER CREATION TABLE</h2>
-            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                <Grid item xs={2}>
-                    <div>Priority</div>
-                </Grid>
-                <Grid item xs={2}>
-                    <div>Race</div>
-                </Grid>
-                <Grid item xs={2}>
-                    <div>Magic</div>
-                </Grid>
-                <Grid item xs={2}>
-                    <div>Attributes</div>
-                </Grid>
-                <Grid item xs={2}>
-                    <div>Skills</div>
-                </Grid>
-                <Grid item xs={2}>
-                    <div>Resources</div>
-                </Grid>
-                <Grid item xs={2}>
-                    <div>A</div>
-                </Grid>
-                <Grid item xs={10}>
-                    <ToggleButtonGroup
-                        color="primary"
-                        value={PriorityA}
-                        exclusive
-                        onChange={handleChangePriority}
-                        aria-label="Platform"
-                        >
-                        <ToggleButton style={{'width':'140px'}} data-code='A' value='race'      >-</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='A' value="magic"     > Full Magician</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='A' value="attributes">30</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='A' value="skills"    >50</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='A' value="nuyen"     >1,000,000¥</ToggleButton>
-                    </ToggleButtonGroup>
-                </Grid>
-                {
-                    /*  Priority B Selections    */
-                }
-                
-               
-                <Grid item xs={2}>
-                    <div>B</div>
-                </Grid>
-                <Grid item xs={10}>
-                    <ToggleButtonGroup
-                            color="primary"
-                            value={PriorityB}
-                            exclusive
-                            onChange={handleChangePriority}
-                            >
-                        <ToggleButton style={{'width':'140px'}} data-code='B' value='race'>-</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='B' value="magic">Adept <br></br>Aspected</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='B' value="attributes">27</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='B' value="skills">40</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='B' value="nuyen">400,000¥</ToggleButton>
-                    </ToggleButtonGroup>
-                </Grid>
-                <Grid item xs={2}>
-                    <div>C</div>
-                </Grid>
-                <Grid item xs={10}>
-                    <ToggleButtonGroup
-                            color="primary"
-                            value={PriorityC}
-                            exclusive
-                            onChange={handleChangePriority}
-                            >
-                        <ToggleButton style={{'width':'140px'}} data-code='C' value="race">Troll / Elf</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='C' value='magic'>-</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='C' value="attributes">24</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='C' value="skills">34</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='C' value="nuyen">90,000¥</ToggleButton>
-                    </ToggleButtonGroup>
-                </Grid>
-                <Grid item xs={2}>
-                    <div>D</div>
-                </Grid>
-                <Grid item xs={10}>
-                    <ToggleButtonGroup
-                            color="primary"
-                            value={PriorityD}
-                            exclusive
-                            onChange={handleChangePriority}
-                            >
-                        <ToggleButton style={{'width':'140px'}} data-code='D' value="race">Dwarf / Ork</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='D' value='magic'>-</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='D' value="attributes">21</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='D' value="skills">30</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='D' value="nuyen">20,000¥</ToggleButton>
-                    </ToggleButtonGroup>
-                </Grid>
-                <Grid item xs={2}>
-                    <div>E</div>
-                </Grid>
-                <Grid item xs={10}>
-                    <ToggleButtonGroup
-                            color="primary"
-                            value={PriorityE}
-                            exclusive
-                            onChange={handleChangePriority}
-                            >
-                        <ToggleButton style={{'width':'140px'}} data-code='E' value="race">Human</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='E' value='magic'>-</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='E' value="attributes">18</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='E' value="skills">27</ToggleButton>
-                        <ToggleButton style={{'width':'140px'}} data-code='E' value="nuyen">5,000¥</ToggleButton>
-                    </ToggleButtonGroup>
-                </Grid>
-            </Grid>
+            { TableRender()}
             <hr></hr>
             <FormControl fullWidth>
                 <InputLabel id="race-select-label">Race</InputLabel>
@@ -248,7 +197,7 @@ export default function PriorityPanel(props) {
                     label="race"
                     onChange={handleRaceChange}
                 >{
-                    props.currentCharacter.availableRaces.map((race) => {
+                    AvailableRaces.map((race) => {
                         return (<MenuItem key={race} value={race}>{race}</MenuItem>)
                     })
                 }

@@ -6,8 +6,8 @@ import Box from '@mui/material/Box';
 import PriorityPanel from './PriorityPanel';
 import IdentityPanel from './IdentityPanel';
 import AttributesPanel from './AttributesPanel';
-import { render } from '@testing-library/react';
-
+import SkillsPanel from './SkillsPanel';
+import Stepper from './Stepper';
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -55,7 +55,7 @@ export default function BasicTabs() {
         cyberAttributeBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
         raceBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
         attributes:{'Body':1,'Quickness':1,'Strength':1,'Charisma':1,'Willpower':1,'Intelligence':1},
-        skills:{},
+        skills:[],
         gear:[],
         magical: false,
         magical_tradition: false,
@@ -66,6 +66,32 @@ export default function BasicTabs() {
     const [Edition, setEdition]= React.useState('SR3');
     const [value, setValue] = React.useState(0);
     const [Character, setCharacter] = React.useState(baseCharacter);
+    const [selectedRace, setSelectedRace] = React.useState('Human');
+    const [selectedPriority, setSelectedPriority] = React.useState({
+      race: 'E',
+      magic: 'C',
+      attributes: 'D',
+      skills: 'C',
+      resources: 'E',
+    });
+
+    const handleChangePriorityRace = (event) => {
+    const newRace = event.target.value;
+    setSelectedRace(newRace);
+    setCharacter((prevCharacter) => ({ ...prevCharacter, race: newRace }));
+    };
+
+    const handleChangePriority = (letter, newPriority) => {
+        setSelectedPriority((prevPriority) => ({
+            ...prevPriority,
+            [newPriority]: letter,
+        }));
+        // Update the Character state with the selected priorities
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+            priorities: { ...prevCharacter.priorities, [newPriority]: letter },
+        }));
+    };
 
     React.useEffect(() => {
         console.log(Character);
@@ -77,10 +103,6 @@ export default function BasicTabs() {
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
-    }
-
-    const handleChangePriority = (priority) => {
-        setCharacter({...Character,priorities:priority})
     }
 
     const handleChangeMaxCash = (Cash) =>{
@@ -100,7 +122,6 @@ export default function BasicTabs() {
     }
 
     const handleChangeAvailabileRaces =(raceChoices) =>{
-        console.log(raceChoices);
         setCharacter({...Character,availableRaces:raceChoices})
     }
 
@@ -127,16 +148,18 @@ export default function BasicTabs() {
 
   return (
     <div className='dashboard'>
+        <Stepper />
         <Box sx={{ width: '100%' }}>
-            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+            <Box sx={{ borderBottom: 1, borderColor: 'divider', width:'90%' }}>
+                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="scrollable">
                     <Tab label="Identity" {...a11yProps(0)} />
                     <Tab label="Priorities" {...a11yProps(1)} />
                     <Tab label="Attributes" {...a11yProps(2)} />
                     <Tab label="Skills" {...a11yProps(3)} />
                     <Tab label="Magic" {...a11yProps(4)} />
                     <Tab label="Gear" {...a11yProps(5)} />
-                    <Tab label="Karma" {...a11yProps(6)} />
+                    <Tab label="Decking" {...a11yProps(6)} />
+                    <Tab label="Karma" {...a11yProps(7)} />
                 </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
@@ -148,17 +171,24 @@ export default function BasicTabs() {
             </CustomTabPanel>
             
             <CustomTabPanel value={value} index={1}>
-                <PriorityPanel  ChangePriority={handleChangePriority} 
-                                ChangeRaceChoices={handleChangeAvailabileRaces} 
-                                ChangeMaxAttributes={handleChangeMaxAttributes}
-                                ChangeMaxSkills={handleChangeMaxSkills}
-                                ChangeMaxCash={handleChangeMaxCash}
-                                ChangeMagicChoices={handleChangeMagicChoices}
-                                ChangeRace={handleRaceChange}
-                                ChangeRaceBonuses={handleChangeRaceBonuses}
-                                currentCharacter={Character}
-                                Edition={Edition}
-                                />
+                <PriorityPanel  
+                            // ChangePriority={handleChangePriority} 
+                            ChangeRace={handleRaceChange}
+
+                            selectedRace={selectedRace}
+                            selectedPriority={selectedPriority}
+                            onChangePriorityRace={handleChangePriorityRace}
+                            onChangePriority={handleChangePriority}
+                            
+                            ChangeRaceChoices={handleChangeAvailabileRaces} 
+                            ChangeMaxAttributes={handleChangeMaxAttributes}
+                            ChangeMaxSkills={handleChangeMaxSkills}
+                            ChangeMaxCash={handleChangeMaxCash}
+                            ChangeMagicChoices={handleChangeMagicChoices}
+                            
+                            ChangeRaceBonuses={handleChangeRaceBonuses}
+                            Edition={Edition}
+                        />
             </CustomTabPanel>
             
             <CustomTabPanel value={value} index={2}>
@@ -167,6 +197,12 @@ export default function BasicTabs() {
                                     Edition={Edition}
                 />
             </CustomTabPanel>
+            <CustomTabPanel value={value} index={3}>
+                <SkillsPanel skills={Character.skills} onChangeSkills={(skills) => setCharacter({ ...Character, skills })} />
+            </CustomTabPanel>
+
+
+            
         </Box>
     </div>
   );

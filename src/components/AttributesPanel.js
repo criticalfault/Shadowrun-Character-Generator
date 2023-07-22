@@ -10,11 +10,13 @@ export default function PriorityPanel(props) {
     const [Intelligence, setIntelligence] = React.useState(props.currentCharacter.attributes.Intelligence);
     const [Willpower, setWillpower] = React.useState(props.currentCharacter.attributes.Willpower);
     const handleChangeAttribute = (event) => {
+        const attributesArray = [Body,Quickness,Strength,Charisma,Intelligence,Willpower];
         let attribute = event.target.name;
         let value = event.target.value;
         if(value > AttributeMax.current){
             value = AttributeMax.current;
         }
+        //No attribute can be negative
         if(value < 0){
             value = 0;
         }
