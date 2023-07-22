@@ -6,7 +6,9 @@ import Box from '@mui/material/Box';
 import PriorityPanel from './PriorityPanel';
 import IdentityPanel from './IdentityPanel';
 import AttributesPanel from './AttributesPanel';
-import SkillsPanel from './SkillsPanel';
+import SR2SkillsPanel from './SR2SkillsPanel';
+import SR3SkillsPanel from './SR3SkillsPanel';
+import MagicPanel from './MagicPanel';
 import Stepper from './Stepper';
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -146,6 +148,14 @@ export default function BasicTabs() {
         })
     }
 
+    const SkillsPanelRender = (ed) => {
+        if(ed === 'SR3'){
+            return ( <SR3SkillsPanel skills={Character.skills} onChangeSkills={(skills) => setCharacter({ ...Character, skills })} />)
+        }else{
+            return  (<SR2SkillsPanel skills={Character.skills} onChangeSkills={(skills) => setCharacter({ ...Character, skills })} />)
+        }
+    }
+
   return (
     <div className='dashboard'>
         <Stepper />
@@ -198,9 +208,13 @@ export default function BasicTabs() {
                 />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={3}>
-                <SkillsPanel skills={Character.skills} onChangeSkills={(skills) => setCharacter({ ...Character, skills })} />
+                {SkillsPanelRender(Edition)}
             </CustomTabPanel>
-
+            <CustomTabPanel value={value} index={4}>
+                <MagicPanel 
+                    spells={Character.spells} onChangeSpells={(spells) => setCharacter({ ...Character, spells })}
+                />
+            </CustomTabPanel>
 
             
         </Box>
