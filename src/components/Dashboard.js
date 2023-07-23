@@ -135,11 +135,9 @@ export default function BasicTabs() {
         setCharacter({...Character,raceBonuses:bonuses})
     }
 
-    const handleSkillsChange = (skill) => {
-        setCharacter((prevCharacter) =>{
-            return prevCharacter.skills[skill] = parseInt(value);
-        })
-    }
+    const handleSkillsUpdate = (updatedSkills) => {
+        setCharacter({ ...Character, skills: updatedSkills });
+    };
 
     const handleAttributesChange = (attribute,value) => {
         setCharacter((prevCharacter) =>{
@@ -150,9 +148,9 @@ export default function BasicTabs() {
 
     const SkillsPanelRender = (ed) => {
         if(ed === 'SR3'){
-            return ( <SR3SkillsPanel skills={Character.skills} onChangeSkills={(skills) => setCharacter({ ...Character, skills })} />)
+            return ( <SR3SkillsPanel characterSkills={Character.skills} onUpdateSkills={handleSkillsUpdate} />)
         }else{
-            return  (<SR2SkillsPanel skills={Character.skills} onChangeSkills={(skills) => setCharacter({ ...Character, skills })} />)
+            return  (<SR2SkillsPanel characterSkills={Character.skills} onUpdateSkills={handleSkillsUpdate} />)
         }
     }
 
@@ -162,14 +160,14 @@ export default function BasicTabs() {
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider', width:'90%' }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="scrollable">
-                    <Tab label="Identity" {...a11yProps(0)} />
+                    <Tab label="Identity"   {...a11yProps(0)} />
                     <Tab label="Priorities" {...a11yProps(1)} />
                     <Tab label="Attributes" {...a11yProps(2)} />
-                    <Tab label="Skills" {...a11yProps(3)} />
-                    <Tab label="Magic" {...a11yProps(4)} />
-                    <Tab label="Gear" {...a11yProps(5)} />
-                    <Tab label="Decking" {...a11yProps(6)} />
-                    <Tab label="Karma" {...a11yProps(7)} />
+                    <Tab label="Skills"     {...a11yProps(3)} />
+                    <Tab label="Magic"      {...a11yProps(4)} />
+                    <Tab label="Gear"       {...a11yProps(5)} />
+                    <Tab label="Decking"    {...a11yProps(6)} />
+                    <Tab label="Karma"      {...a11yProps(7)} />
                 </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
