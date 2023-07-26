@@ -70,10 +70,10 @@ export default function BasicTabs() {
     const [Character, setCharacter] = React.useState(baseCharacter);
     const [selectedRace, setSelectedRace] = React.useState('Human');
     const [selectedPriority, setSelectedPriority] = React.useState({
-      race: 'E',
+      race: 'B',
       magic: 'C',
       attributes: 'D',
-      skills: 'C',
+      skills: 'A',
       resources: 'E',
     });
 
@@ -148,9 +148,9 @@ export default function BasicTabs() {
 
     const SkillsPanelRender = (ed) => {
         if(ed === 'SR3'){
-            return ( <SR3SkillsPanel characterSkills={Character.skills} onUpdateSkills={handleSkillsUpdate} />)
+            return ( <SR3SkillsPanel characterSkills={Character.skills} onUpdateSkills={handleSkillsUpdate} activeSkillPoints={Character.maxSkillPoints} KnowledgeSkillsMax={(Character.attributes.Intelligence*5)} LangaugeSkillsMax={(Math.floor(Character.attributes.Intelligence*1.5))} />)
         }else{
-            return  (<SR2SkillsPanel characterSkills={Character.skills} onUpdateSkills={handleSkillsUpdate} />)
+            return  (<SR2SkillsPanel characterSkills={Character.skills} onUpdateSkills={handleSkillsUpdate} maxSkillPoints={Character.maxSkillPoints} KnowledgeSkillsMax={(Character.attributes.Intelligence*5)} LangaugeSkillsMax={(Math.floor(Character.attributes.Intelligence*1.5))} />)
         }
     }
 
@@ -210,7 +210,7 @@ export default function BasicTabs() {
             </CustomTabPanel>
             <CustomTabPanel value={value} index={4}>
                 <MagicPanel 
-                    spells={Character.spells} onChangeSpells={(spells) => setCharacter({ ...Character, spells })}
+                    spells={Character.spells} onChangeSpells={(spells) => setCharacter({ ...Character, spells })} magicalTraditions={Character.availableMagics}
                 />
             </CustomTabPanel>
 

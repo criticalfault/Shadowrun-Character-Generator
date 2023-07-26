@@ -25,7 +25,7 @@ export default function PriorityPanel(props) {
                 },
             "magic": {
                 "A":["Full Magician"],
-                "B":['Physical Adept',"Shamanist","Sorcerer"],
+                "B":['Physical Adept',"Aspected"],
                 "C":[],
                 "D":[],
                 "E":[]
@@ -58,7 +58,7 @@ export default function PriorityPanel(props) {
             },
         "magic": {
                 "A":["Human Full Magician"],
-                "B":['Metahuman Full Magician','Human Physical Adept',"Human Shamanist"," Human Sorcerer"],
+                "B":['Metahuman Full Magician','Human Physical Adept',"Human Shamanist","Human Sorcerer"],
                 "C":['Metahuman Physical Adept',"Metahuman Shamanist"," Metahuman Sorcerer"],
                 "D":[],
                 "E":[]
