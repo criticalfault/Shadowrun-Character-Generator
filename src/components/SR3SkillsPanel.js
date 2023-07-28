@@ -77,19 +77,12 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
     setSelectedSpecialization(event.target.value);
   };
 
-  const handleKnowledgeSpecializationChange = (event) => {
-    setKnowledgeSelectedSpecialization(event.target.value);
-  };
-
 
   const handleLanguageSkillChange = (event) => {
     setLanguageNewSkill(event.target.value);
     setLanguageSelectedSpecialization(''); // Reset selected specialization when a new skill is selected
   };
 
-  const handleLanguageSpecializationChange = (event) => {
-    setLanguageSelectedSpecialization(event.target.value);
-  };
   
   const handleRatingChange = (event) => {
     const rating = parseInt(event.target.value);
@@ -263,7 +256,6 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
       <FormControl style={{'width':'200px'}}>
         <InputLabel  id="skill-label">Skills Categories</InputLabel>
         <NativeSelect
-          labelId="skill-label"
           id="skill-dropdown"
           value={selectedKnowledgeCategory}
           onChange={handleKnowledgeCategoryChange}
@@ -279,7 +271,6 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
       <FormControl style={{'width':'200px'}}>
         <InputLabel  id="skill-label">{selectedKnowledgeCategory}</InputLabel>
         <NativeSelect
-          labelId="skill-label"
           id="skill-dropdown"
           value={newKnowledgeSkill}
           onChange={handleKnowledgeSkillChange}

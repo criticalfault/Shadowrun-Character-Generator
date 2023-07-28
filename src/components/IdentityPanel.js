@@ -14,6 +14,8 @@ export default function IdentityPanel(props) {
     return ( <>
         Character Edition:
         SR2 <Switch checked={LocalEdition} onChange={handleSwitchEd} {...label} /> SR3
+        <br></br><br></br>
+        
         
     </>)
 

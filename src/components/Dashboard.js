@@ -63,6 +63,7 @@ export default function BasicTabs() {
         magical: false,
         magical_tradition: false,
         spells:[],
+        powers:[],
         maxCash: 5000,
         cash:0
     }
@@ -162,7 +163,7 @@ export default function BasicTabs() {
   return (
     <div className='dashboard'>
         <Box sx={{ width: '100%' }}>
-            <Box sx={{ borderBottom: 1, borderColor: 'divider', width:'90%' }}>
+            <Box sx={{ borderBottom: 1, borderColor: 'divider', }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="scrollable">
                     <Tab label="Identity"   {...a11yProps(0)} />
                     <Tab label="Priorities" {...a11yProps(1)} />
@@ -171,7 +172,8 @@ export default function BasicTabs() {
                     <Tab label="Magic"      {...a11yProps(4)} />
                     <Tab label="Gear"       {...a11yProps(5)} />
                     <Tab label="Decking"    {...a11yProps(6)} />
-                    <Tab label="Karma"      {...a11yProps(7)} />
+                    <Tab label="Vehicles"   {...a11yProps(7)} />
+                    <Tab label="Karma"      {...a11yProps(8)} />
                 </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
@@ -184,14 +186,13 @@ export default function BasicTabs() {
             
             <CustomTabPanel value={value} index={1}>
                 <PriorityPanel  
-                            // ChangePriority={handleChangePriority} 
-                            ChangeRace={handleRaceChange}
+                            ChangePriority={handleChangePriority} 
 
+                            ChangeRace={handleRaceChange}
                             selectedRace={selectedRace}
                             selectedPriority={selectedPriority}
                             onChangePriorityRace={handleChangePriorityRace}
                             onChangePriority={handleChangePriority}
-                            
                             ChangeRaceChoices={handleChangeAvailabileRaces} 
                             ChangeMaxAttributes={handleChangeMaxAttributes}
                             ChangeMaxSkills={handleChangeMaxSkills}
@@ -214,9 +215,12 @@ export default function BasicTabs() {
             </CustomTabPanel>
             <CustomTabPanel value={value} index={4}>
                 <MagicPanel 
-                    spells={Character.spells} 
+                    spells={Character.spells}
+                    powers={Character.powers}
+                    onChangePowers={(powers) => setCharacter({ ...Character, powers})}
                     onChangeSpells={(spells) => setCharacter({ ...Character, spells })} 
                     magicalTraditions={Character.availableMagics}
+                    magicalChoice={Character.magicChoice}
                 />
             </CustomTabPanel>
 

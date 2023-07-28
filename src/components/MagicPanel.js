@@ -26,12 +26,26 @@ function MagicPanel(props) {
   const [spellPointsMax, setSpellPointsMax] = useState(36);
   const [magicalTradition, setMagicalTradition] = useState('Full Magician')
   
-  const [adeptPointsSpent, setDadePointsSpent] = useState(0);
-  const [adeptPointsMax, setDadePointsMax] = useState(6);
+  const [AdeptPointsSpent, setAdeptPointsSpent] = useState(0);
+  const [AdeptPointsMax, setAdeptPointsMax] = useState(6);
+  const [newPower, setNewPower] = useState('');
+  const [newPowerCost, setNewPowerCost] = useState(0);
+  const [newPowerDesc, setNewPowerDesc] = useState('');
+  const [newPowerHasRating, setNewPowerHasRating] = useState(false);
+  const [newPowerRating, setNewPowerRating] = useState(1);
+  const [powerCost, setPowerCost] = useState(0);
+  const [selectedPowers, setSelectedPowers] = useState([]);
 
   const handleSpellChange = (event) => {
     setNewSpell(event.target.value);
   };
+
+  const handlePowerChange = (event) => {
+    const [name,cost,desc] = event.target.value.split('|');
+    setNewPower(name);
+    setNewPowerCost(cost);
+    setNewPowerDesc(desc)
+  }
 
   const handleRatingChange = (event) => {
     const rating = parseInt(event.target.value);
@@ -39,6 +53,14 @@ function MagicPanel(props) {
       setSpellRating(rating);
     }
   };
+
+  const handleCostChange = (event) => {
+    const cost = parseFloat(event.target.value);
+    if (!isNaN(cost)){
+      setPowerCost(cost);
+    }
+  };
+  
 
   const handleAddSpell = () => {
     if (newSpell) {
@@ -48,6 +70,15 @@ function MagicPanel(props) {
       setNewSpell('');
     }
   };
+
+  const handleAddPower = () => {
+    if (newPower) {
+      const powerToAdd = { name: newPower, rating:powerCost, };
+      setSelectedPowers(prevPowers => [...prevPowers, powerToAdd]);
+      setSpellPointsSpent(prevPowers => (prevPowers + powerCost));
+      setNewPower('');
+    }
+  }
 
   const handleEditSpell = (index) => {
     const editedSpells = [...selectedSpells];
@@ -80,7 +111,6 @@ function MagicPanel(props) {
               onChange={handleSpellChange}
             >
               {spellsData.map(spell => (
-                //"Name":"Cold Ball","BookPage":"tss.4","Type":"P","Target":"B(R)","Duration":"I","Range":"LOS","Drain":"+2(S)","Class":"C","Notes":""
                 <MenuItem key={spell.Name} value={spell.Name}>{spell.Name}</MenuItem>
               ))}
             </Select>
@@ -125,8 +155,60 @@ function MagicPanel(props) {
     )
   }
 
+  //{"Name":"Quick Draw","BookPage":"mits.151","Cost":"0.50","Mods":"","Notes":" The quick draw power allows an adept to use the quick drawing rules (P. 107, SR3) to quickdraw weapons other than pistols."}
   const RenderPhysicalAdepts = () =>{
+    return (<><h3>Adept Powers</h3>
+    <Box sx={{ width: '100%' }}>Power Points {AdeptPointsSpent}/{AdeptPointsMax}
+            <LinearProgress variant="determinate" value={spellPointsSpent} />
+          </Box>
+          <br></br> 
+          <FormControl style={{'width':'400px'}}>
+            <InputLabel  id="spell-label">{selectedCategory}</InputLabel>
+            <Select
+              labelId="spell-label"
+              id="spell-dropdown"
+              value={newPower+'|'+newPowerCost+'|'+newPowerDesc}
+              onChange={handlePowerChange}
+            >
+              {AdeptPowers.map(power => (
+                <MenuItem key={power.Name} value={power.Name+'|'+power.Cost+'|'+power.Notes}>{power.Name} - PP: {power.Cost}</MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          {newPower && (
+            <>
+              <TextField style={{'width':'100px', 'marginRight':'20px'}}
+                id="power-cost-input"
+                disabled={true}
+                label="Cost"
+                type="number"
+                value={newPowerCost}
+              />
+               <Button variant="contained" color="primary" onClick={handleAddPower}>
+                Add Power
+              </Button>
+              <div>Notes:{newPowerDesc}</div>
+            </>
+          )}
 
+    <hr></hr>
+    <h3>Powers</h3>
+          <List style={{maxWidth:'500px'}}>
+            {selectedPowers.map((spell, index) => (
+              <ListItem key={index}>
+                <ListItemText
+                  primary={`${spell.name} (${spell.rating})`}
+                />
+                <Button color="primary" onClick={() => handleEditSpell(index)}>
+                  Edit
+                </Button>
+                <Button color="secondary" onClick={() => handleRemoveSpell(index)}>
+                  Remove
+                </Button>
+              </ListItem>
+            ))}
+          </List>
+    </>)
   }
 
   const handleTraditionChange = (event) => {
@@ -134,21 +216,26 @@ function MagicPanel(props) {
   }
 
 
+  const RenderWindow = () =>{
+    switch(props.magicalChoice){
+      case 'Full Magician':
+        return RenderMagicianWithSpells();
+      case 'Physical Adept':
+        return RenderPhysicalAdepts();
+      case 'Aspected':
+        return RenderMagicianWithSpells();
+      break;
+
+      default:
+        return (<div>Not Magical</div>);
+    }
+
+  }
 
   return (
     <div>
-      <FormControl style={{'width':'200px'}}>
-        <InputLabel id="magical-tradition-label">{selectedCategory}</InputLabel>
-        <Select
-          labelId="magical-tradition-label"
-          id="magical-tradition-label-dropdown"
-          value={magicalTradition}
-          onChange={handleTraditionChange}>
-          {props.magicalTraditions.map(tradition => (
-            <MenuItem key={tradition} value={tradition}>{tradition}</MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+      <h3>Magical Talents ( {props.magicalChoice} )</h3>
+      {RenderWindow()}
        
     </div>
   );

@@ -80,8 +80,8 @@ export default function PriorityPanel(props) {
     const [AvailableMagics, setAvailableMagics] = React.useState(['None']);
     const [PriorityRace, setPriorityRace] = React.useState('E');
     const [PriorityAttributes, setPriorityAttributes] = React.useState('D');
-    const [PriorityMagic, setPriorityMagic] = React.useState('C');
-    const [PrioritySkills, setPrioritySkills] = React.useState('B');
+    const [PriorityMagic, setPriorityMagic] = React.useState('B');
+    const [PrioritySkills, setPrioritySkills] = React.useState('C');
     const [PriorityResources, setPriorityResources] = React.useState('A');
     
     const CheckForDuplicates = () => {
@@ -119,6 +119,7 @@ export default function PriorityPanel(props) {
         setAvailableMagics(prorityChart[props.Edition].magic[newPriorityMagic]);
         setMagic(prorityChart[props.Edition].magic[newPriorityMagic][0])
         props.ChangeMagicChoices(prorityChart[props.Edition].magic[newPriorityMagic]);
+        props.ChangeMagic(prorityChart[props.Edition].magic[newPriorityMagic][0])
       };
     
       const handleChangePriorityAttributes = (event) => {
@@ -194,7 +195,7 @@ export default function PriorityPanel(props) {
                                         value={letter}
                                         name="resources-buttons"
                                         inputProps={{ 'aria-label': letter }}
-                                        />{prorityChart[props.Edition]['resources'][letter]['nuyen']}</label></td>
+                                        />{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(prorityChart[props.Edition]['resources'][letter]['nuyen'])}</label></td>
                                 </tr>
                             )
                         })
