@@ -21,7 +21,7 @@ export default function PriorityPanel(props) {
             value = 0;
         }
         //Need a better check to make sure the attributes max points arent negative.
-        if(parseInt(props.currentCharacter.maxAttributePoints)-Body-Quickness-Strength-Charisma-Intelligence-Willpower <= -1){
+        if(parseInt(props.currentCharacter.maxAttributePoints)-Body-Quickness-Strength-Charisma-Intelligence-Willpower <= 0){
             return;
         }
         switch (attribute) {
