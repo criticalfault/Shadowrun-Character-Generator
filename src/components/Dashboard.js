@@ -53,6 +53,7 @@ export default function BasicTabs() {
         street_name:'',
         availableRaces:['Human'],
         availableMagics:[],
+        magicChoice:false,
         race:'',
         cyberAttributeBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
         raceBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
@@ -131,6 +132,10 @@ export default function BasicTabs() {
         setCharacter({...Character,race:race})
     }
 
+    const handleChangeMagic = (magicChoice) =>{
+        setCharacter({...Character,magicChoice:magicChoice})
+    }
+
     const handleChangeRaceBonuses = (bonuses) =>{
         setCharacter({...Character,raceBonuses:bonuses})
     }
@@ -156,7 +161,6 @@ export default function BasicTabs() {
 
   return (
     <div className='dashboard'>
-        <Stepper />
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider', width:'90%' }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="scrollable">
@@ -193,8 +197,8 @@ export default function BasicTabs() {
                             ChangeMaxSkills={handleChangeMaxSkills}
                             ChangeMaxCash={handleChangeMaxCash}
                             ChangeMagicChoices={handleChangeMagicChoices}
-                            
                             ChangeRaceBonuses={handleChangeRaceBonuses}
+                            ChangeMagic={handleChangeMagic}
                             Edition={Edition}
                         />
             </CustomTabPanel>
@@ -210,7 +214,9 @@ export default function BasicTabs() {
             </CustomTabPanel>
             <CustomTabPanel value={value} index={4}>
                 <MagicPanel 
-                    spells={Character.spells} onChangeSpells={(spells) => setCharacter({ ...Character, spells })} magicalTraditions={Character.availableMagics}
+                    spells={Character.spells} 
+                    onChangeSpells={(spells) => setCharacter({ ...Character, spells })} 
+                    magicalTraditions={Character.availableMagics}
                 />
             </CustomTabPanel>
 

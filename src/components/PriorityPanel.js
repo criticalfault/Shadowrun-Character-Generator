@@ -17,8 +17,8 @@ export default function PriorityPanel(props) {
                 "Troll":{'Body':5,'Quickness':-1,'Strength':4,'Charisma':0,'Willpower':0,'Intelligence':-2,"Notes":"Thermographic Vision, +1 Reach for Armed/Unarmed Combat, Dermal Armor (+1 Body)"}
             },
             "race": {
-                    "A":[], 
-                    "B":[], 
+                    "A":['N/A'], 
+                    "B":['N/A'], 
                     "C":['Troll','Elf'], 
                     "D":['Dwarf','Ork'],
                     "E":['Human'],
@@ -26,9 +26,9 @@ export default function PriorityPanel(props) {
             "magic": {
                 "A":["Full Magician"],
                 "B":['Physical Adept',"Aspected"],
-                "C":[],
-                "D":[],
-                "E":[]
+                "C":['None'],
+                "D":['None'],
+                "E":['None']
             },
             "attributes":   {"A":30,     "B":27,    "C":24,   "D":21,   "E":18},
             "skills":       {"A":50,     "B":40,    "C":34,   "D":30,   "E":27},
@@ -60,8 +60,8 @@ export default function PriorityPanel(props) {
                 "A":["Human Full Magician"],
                 "B":['Metahuman Full Magician','Human Physical Adept',"Human Shamanist","Human Sorcerer"],
                 "C":['Metahuman Physical Adept',"Metahuman Shamanist"," Metahuman Sorcerer"],
-                "D":[],
-                "E":[]
+                "D":['None'],
+                "E":['None']
             },
             "attributes":   { "A":30, "B":24, "C":20, "D":17, "E":15},
             "skills":       { "A":40, "B":30, "C":24, "D":20, "E":17},
@@ -75,13 +75,30 @@ export default function PriorityPanel(props) {
         }
     }
     const [Race, setRace] = React.useState(['Human']);
+    const [Magic, setMagic] = React.useState(['None']);
     const [AvailableRaces, setAvailableRaces] = React.useState(['Human']);
+    const [AvailableMagics, setAvailableMagics] = React.useState(['None']);
     const [PriorityRace, setPriorityRace] = React.useState('E');
     const [PriorityAttributes, setPriorityAttributes] = React.useState('D');
     const [PriorityMagic, setPriorityMagic] = React.useState('C');
     const [PrioritySkills, setPrioritySkills] = React.useState('B');
     const [PriorityResources, setPriorityResources] = React.useState('A');
     
+    const CheckForDuplicates = () => {
+        let arr = [PriorityRace,PriorityAttributes,PriorityMagic,PrioritySkills,PriorityResources];
+        const duplicateElements = arr.filter((item, index) => arr.indexOf(item) !== index)
+        if(duplicateElements.length > 0) {
+            return (
+                <div>Duplicates On Priorities: {duplicateElements}</div>
+            )
+        }
+    }
+
+    const handleMagicChange = (magic) => {
+        setMagic(magic.target.value);
+        props.ChangeMagic(magic.target.value);
+    }
+
     const handleRaceChange = (race) => {
         setRace(race.target.value);
         props.ChangeRace(race.target.value);
@@ -92,12 +109,15 @@ export default function PriorityPanel(props) {
         const newPriorityRace = event.target.value;
         setPriorityRace(newPriorityRace);
         setAvailableRaces(prorityChart[props.Edition].race[newPriorityRace]);
+        setRace(prorityChart[props.Edition].race[newPriorityRace][0])
         props.ChangeRaceChoices(prorityChart[props.Edition].race[newPriorityRace]);
       };
     
       const handleChangePriorityMagic = (event) => {
         const newPriorityMagic = event.target.value;
         setPriorityMagic(newPriorityMagic);
+        setAvailableMagics(prorityChart[props.Edition].magic[newPriorityMagic]);
+        setMagic(prorityChart[props.Edition].magic[newPriorityMagic][0])
         props.ChangeMagicChoices(prorityChart[props.Edition].magic[newPriorityMagic]);
       };
     
@@ -125,9 +145,9 @@ export default function PriorityPanel(props) {
             <table className="">
                 <thead>
                     <tr>
-                        <th>Priority</th>
+                        <th style={{width:'100px'}}>Priority</th>
                         <th>Race</th>
-                        <th>Magic</th>
+                        <th style={{width:"310px"}}>Magic</th>
                         <th>Attributes</th>
                         <th>Skills</th>
                         <th>Resources</th>
@@ -145,7 +165,7 @@ export default function PriorityPanel(props) {
                                         value={letter}
                                         name="race-buttons"
                                         inputProps={{ 'aria-label': letter }}
-                                        />{prorityChart[props.Edition]['race'][letter]}</label>
+                                        />{prorityChart[props.Edition]['race'][letter].join(', ')}</label>
                                         </td>
                                     <td><label><Radio
                                         checked={PriorityMagic === letter}
@@ -153,7 +173,7 @@ export default function PriorityPanel(props) {
                                         value={letter}
                                         name="magic-buttons"
                                         inputProps={{ 'aria-label': letter }}
-                                        />{prorityChart[props.Edition]['magic'][letter]}</label></td>
+                                        />{prorityChart[props.Edition]['magic'][letter].join(', ')}</label></td>
                                     <td><label><Radio
                                         checked={PriorityAttributes === letter}
                                         onChange={handleChangePriorityAttributes}
@@ -185,9 +205,11 @@ export default function PriorityPanel(props) {
     }
     return (
         <div>
-            <h2>MASTER CHARACTER CREATION TABLE</h2>
-            { TableRender()}
+            <h2>MASTER CHARACTER CREATION TABLE</h2> 
+            <>{CheckForDuplicates()}</>
+            { TableRender() }
             <hr></hr>
+            <h4>Character Sub Choices</h4>
             <FormControl fullWidth>
                 <InputLabel id="race-select-label">Race</InputLabel>
                 <Select
@@ -199,6 +221,22 @@ export default function PriorityPanel(props) {
                 >{
                     AvailableRaces.map((race) => {
                         return (<MenuItem key={race} value={race}>{race}</MenuItem>)
+                    })
+                }
+                </Select>
+            </FormControl>
+            <br></br><br></br>
+            <FormControl fullWidth>
+                <InputLabel id="race-select-label">Magic</InputLabel>
+                <Select
+                    labelId="magic-select-label"
+                    id="magic-select"
+                    value={Magic}
+                    label="magic"
+                    onChange={handleMagicChange}
+                >{
+                    AvailableMagics.map((magic) => {
+                        return (<MenuItem key={magic} value={magic}>{magic}</MenuItem>)
                     })
                 }
                 </Select>
