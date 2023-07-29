@@ -10,6 +10,7 @@ import SR2SkillsPanel from './SR2SkillsPanel';
 import SR3SkillsPanel from './SR3SkillsPanel';
 import MagicPanel from './MagicPanel';
 import Stepper from './Stepper';
+import CyberwarePanel from './CyberwarePanel';
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -46,18 +47,19 @@ function a11yProps(index) {
 export default function BasicTabs() {
     const baseCharacter = {
         step:'chargen',
-        priorities:[],
+        priorities:{'Race':'E','Magic':'A','Attributes':'B','Skills':'C','Resources':'D'},
         maxSkillPoints: 0,
         maxAttributePoints: 0,
         name:'',
         street_name:'',
         availableRaces:['Human'],
         availableMagics:[],
-        magicChoice:false,
+        magicChoice:'None',
         race:'',
         cyberAttributeBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
         raceBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
         attributes:{'Body':1,'Quickness':1,'Strength':1,'Charisma':1,'Willpower':1,'Intelligence':1},
+        characterTabs:{'Magic':false,'Decking':false,'Otaku':false,'Rigger':false},
         skills:[],
         gear:[],
         magical: false,
@@ -80,17 +82,18 @@ export default function BasicTabs() {
     });
 
     const handleChangePriorityRace = (event) => {
-    const newRace = event.target.value;
-    setSelectedRace(newRace);
-    setCharacter((prevCharacter) => ({ ...prevCharacter, race: newRace }));
+        const newRace = event.target.value;
+        setSelectedRace(newRace);
+        setCharacter((prevCharacter) => ({ ...prevCharacter, race: newRace }));
     };
 
     const handleChangePriority = (letter, newPriority) => {
-        setSelectedPriority((prevPriority) => ({
-            ...prevPriority,
-            [newPriority]: letter,
-        }));
+        // setSelectedPriority((prevPriority) => ({
+        //     ...prevPriority,
+        //     [newPriority]: letter,
+        // }));
         // Update the Character state with the selected priorities
+        console.log(`${newPriority} -> ${letter}`);
         setCharacter((prevCharacter) => ({
             ...prevCharacter,
             priorities: { ...prevCharacter.priorities, [newPriority]: letter },
@@ -103,6 +106,10 @@ export default function BasicTabs() {
 
     const handleChangeEdition =(edition) => {
         setEdition(edition);
+    }
+
+    const handleChangeCharacterTabs = (tab,value) => {
+        setCharacter({...Character,characterTabs:{tab:value}});
     }
 
     const handleChange = (event, newValue) => {
@@ -170,15 +177,18 @@ export default function BasicTabs() {
                     <Tab label="Attributes" {...a11yProps(2)} />
                     <Tab label="Skills"     {...a11yProps(3)} />
                     <Tab label="Magic"      {...a11yProps(4)} />
-                    <Tab label="Gear"       {...a11yProps(5)} />
-                    <Tab label="Decking"    {...a11yProps(6)} />
-                    <Tab label="Vehicles"   {...a11yProps(7)} />
-                    <Tab label="Karma"      {...a11yProps(8)} />
+                    <Tab label="Cyberware"  {...a11yProps(5)} />
+                    <Tab label="Gear"       {...a11yProps(6)} />
+                    <Tab label="Decking"    {...a11yProps(7)} />
+                    <Tab label="Vehicles"   {...a11yProps(8)} />
+                    <Tab label="Karma"      {...a11yProps(9)} />
                 </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
                 <IdentityPanel  
                     currentCharacter={Character}
+                    characterTabs={Character.characterTabs}
+                    ChangeCharacterTabs={handleChangeCharacterTabs}
                     ChangeEdition={handleChangeEdition} 
                     Edition={Edition}
                 />
@@ -186,8 +196,9 @@ export default function BasicTabs() {
             
             <CustomTabPanel value={value} index={1}>
                 <PriorityPanel  
-                            ChangePriority={handleChangePriority} 
-
+                            ChangePriority={handleChangePriority}
+                            CharacterPriorities={Character.priorities} 
+                            magicalChoice={Character.magicalChoice}
                             ChangeRace={handleRaceChange}
                             selectedRace={selectedRace}
                             selectedPriority={selectedPriority}
@@ -222,6 +233,9 @@ export default function BasicTabs() {
                     magicalTraditions={Character.availableMagics}
                     magicalChoice={Character.magicChoice}
                 />
+            </CustomTabPanel>
+            <CustomTabPanel value={value} index={5}>
+                    <CyberwarePanel />
             </CustomTabPanel>
 
             

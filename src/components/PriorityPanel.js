@@ -74,15 +74,19 @@ export default function PriorityPanel(props) {
             }
         }
     }
+   
+   
+    const [PriorityRace, setPriorityRace] = React.useState(props.CharacterPriorities.Race);
+    const [PriorityAttributes, setPriorityAttributes] = React.useState(props.CharacterPriorities.Attributes);
+    const [PriorityMagic, setPriorityMagic] = React.useState(props.CharacterPriorities.Magic);
+    const [PrioritySkills, setPrioritySkills] = React.useState(props.CharacterPriorities.Skills);
+    const [PriorityResources, setPriorityResources] = React.useState(props.CharacterPriorities.Resources);
+
+    const [AvailableRaces, setAvailableRaces] = React.useState([...prorityChart[props.Edition].race[PriorityRace]]);
+    const [AvailableMagics, setAvailableMagics] = React.useState([...prorityChart[props.Edition].magic[PriorityRace]]);
+
     const [Race, setRace] = React.useState(['Human']);
-    const [Magic, setMagic] = React.useState(['None']);
-    const [AvailableRaces, setAvailableRaces] = React.useState(['Human']);
-    const [AvailableMagics, setAvailableMagics] = React.useState(['None']);
-    const [PriorityRace, setPriorityRace] = React.useState('E');
-    const [PriorityAttributes, setPriorityAttributes] = React.useState('D');
-    const [PriorityMagic, setPriorityMagic] = React.useState('B');
-    const [PrioritySkills, setPrioritySkills] = React.useState('C');
-    const [PriorityResources, setPriorityResources] = React.useState('A');
+    const [Magic, setMagic] = React.useState([props.magicalChoice]);
     
     const CheckForDuplicates = () => {
         let arr = [PriorityRace,PriorityAttributes,PriorityMagic,PrioritySkills,PriorityResources];
@@ -111,6 +115,7 @@ export default function PriorityPanel(props) {
         setAvailableRaces(prorityChart[props.Edition].race[newPriorityRace]);
         setRace(prorityChart[props.Edition].race[newPriorityRace][0])
         props.ChangeRaceChoices(prorityChart[props.Edition].race[newPriorityRace]);
+        
       };
     
       const handleChangePriorityMagic = (event) => {
@@ -214,7 +219,6 @@ export default function PriorityPanel(props) {
             <FormControl fullWidth>
                 <InputLabel id="race-select-label">Race</InputLabel>
                 <Select
-                    labelId="race-select-label"
                     id="race-select"
                     value={Race}
                     label="race"
@@ -230,7 +234,6 @@ export default function PriorityPanel(props) {
             <FormControl fullWidth>
                 <InputLabel id="race-select-label">Magic</InputLabel>
                 <Select
-                    labelId="magic-select-label"
                     id="magic-select"
                     value={Magic}
                     label="magic"

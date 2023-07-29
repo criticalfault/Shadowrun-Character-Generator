@@ -10,9 +10,10 @@ export default function PriorityPanel(props) {
     const [Intelligence, setIntelligence] = React.useState(props.currentCharacter.attributes.Intelligence);
     const [Willpower, setWillpower] = React.useState(props.currentCharacter.attributes.Willpower);
     const handleChangeAttribute = (event) => {
-        const attributesArray = [Body,Quickness,Strength,Charisma,Intelligence,Willpower];
+        const attributesArray = {'Body':Body,'Quickness':Quickness,'Strength':Strength,'Charisma':Charisma,'Intelligence':Intelligence,'Willpower':Willpower};
         let attribute = event.target.name;
         let value = event.target.value;
+        let AttributeSum = (parseInt(Body)+parseInt(Quickness)+parseInt(Strength)+parseInt(Charisma)+parseInt(Intelligence)+parseInt(Willpower));
         if(value > AttributeMax.current){
             value = AttributeMax.current;
         }
@@ -20,12 +21,14 @@ export default function PriorityPanel(props) {
         if(value < 0){
             value = 0;
         }
+
         //Need a better check to make sure the attributes max points arent negative.
-        if(parseInt(props.currentCharacter.maxAttributePoints)-Body-Quickness-Strength-Charisma-Intelligence-Willpower <= 0){
-            return;
+        if(parseInt(AttributeSum)-parseInt(props.currentCharacter.maxAttributePoints) >= 0){
+            if(attributesArray[attribute] < value){
+                return;
+            } 
         }
         switch (attribute) {
-            
             case 'Body':
                 setBody(value);
             break;

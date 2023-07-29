@@ -77,7 +77,6 @@ function SR2SkillsPanel() {
       <FormControl style={{'width':'200px'}}>
         <InputLabel  id="skill-label">Skills Categories</InputLabel>
         <Select
-          labelId="skill-label"
           id="skill-dropdown"
           value={selectedCategory}
           onChange={handleCategoryChange}
@@ -93,7 +92,6 @@ function SR2SkillsPanel() {
       <FormControl style={{'width':'200px'}}>
         <InputLabel  id="skill-label">{selectedCategory}</InputLabel>
         <Select
-          labelId="skill-label"
           id="skill-dropdown"
           value={newSkill}
           onChange={handleSkillChange}
@@ -109,7 +107,6 @@ function SR2SkillsPanel() {
           <FormControl style={{'width':'200px'}}>
             <InputLabel id="specialization-label">Specialization</InputLabel>
             <Select
-              labelId="specialization-label"
               id="specialization-dropdown"
               value={selectedSpecialization}
               onChange={handleSpecializationChange}
