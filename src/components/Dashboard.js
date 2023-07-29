@@ -58,8 +58,11 @@ export default function BasicTabs() {
         race:'',
         cyberAttributeBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
         raceBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
-        attributes:{'Body':1,'Quickness':1,'Strength':1,'Charisma':1,'Willpower':1,'Intelligence':1},
+        attributes:{'Body':1,'Quickness':1,'Strength':1,'Charisma':1,'Willpower':1,'Intelligence':1, 'Essence':6},
         characterTabs:{'Magic':false,'Decking':false,'Otaku':false,'Rigger':false},
+        mods:[],
+        cyberware:[],
+        bioware:[],
         skills:[],
         gear:[],
         magical: false,
@@ -159,6 +162,13 @@ export default function BasicTabs() {
         })
     }
 
+    const handleEssenceChange = (value) => {
+        setCharacter((prevCharacter) =>{
+            prevCharacter.attributes.Essence = parseInt(value);
+            return prevCharacter;
+        })
+    }
+
     const SkillsPanelRender = (ed) => {
         if(ed === 'SR3'){
             return ( <SR3SkillsPanel characterSkills={Character.skills} onUpdateSkills={handleSkillsUpdate} activeSkillPoints={Character.maxSkillPoints} KnowledgeSkillsMax={(Character.attributes.Intelligence*5)} LangaugeSkillsMax={(Math.floor(Character.attributes.Intelligence*1.5))} />)
@@ -235,7 +245,15 @@ export default function BasicTabs() {
                 />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={5}>
-                    <CyberwarePanel />
+                    <CyberwarePanel
+                        Cyberware={Character.cyberware}
+                        Bioware={Character.bioware}
+                        Essence={Character.attributes.Essence}
+                        onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
+                        onChangeCyberware={(cyberware) => setCharacter({ ...Character, cyberware:cyberware})}
+                        onChangeBioware={(bioware) => setCharacter({ ...Character, bioware: bioware})}
+                        onChangeEssence={handleAttributesChange}
+                    />
             </CustomTabPanel>
 
             

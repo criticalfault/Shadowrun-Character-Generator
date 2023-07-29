@@ -11,8 +11,8 @@ import ListItemText from '@mui/material/ListItemText';
 import TextField from '@mui/material/TextField';
 import LinearProgress from '@mui/material/LinearProgress';
 import Box from '@mui/material/Box';
-const skillsData = require('../data/SR3-ActiveSkills.json');
-const LanguageSkillsData = require('../data/SR3-LanguageSkills.json');
+const skillsData = require('../data/SR3/ActiveSkills.json');
+const LanguageSkillsData = require('../data/SR3/LanguageSkills.json');
 function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, KnowledgeSkillsMax, LanguageSkillsMax }) {
   const ActiveSkills = ['Build/Repair skills','Physical skills','Magical skills','Social skills','Survival skills','Technical skills','Vehicle skills','Otaku (MATRIX) skills','Martial Arts(MA)']
   const KnowledgeSkills = ['6th World (SW)','Academic Skills (AC)','Area Knowledge (AK)','Background (BK)','Interests (IN)','Program Design (PD)','Street (ST)','Survival (SV)', 'System Familiarity (SF)']
@@ -164,8 +164,6 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
     skillPointsSpent(prevSkills => (prevSkills - RemovedSkill[0].rating));
     setSelectedSkills(editedSkills);
   };
-
-  console.log(selectedSkills)
 
   return (
     <div>
