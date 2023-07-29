@@ -1,0 +1,202 @@
+{
+    "awk":{
+        "name":"Awakenings",
+        "loadByDefault":false
+    },
+    "cs":{
+        "name":"Corporate Security",
+        "loadByDefault":false
+    },
+    "cc":{
+        "name":"Cannon Companion",
+        "loadByDefault":true
+    },
+    "cd":{
+        "name":"Corporate Download",
+        "loadByDefault":false
+    },
+    "cus":{
+        "name":"Custom Gear",
+        "loadByDefault":false
+    },
+    "ct":{
+        "name":"CyberTechnology",
+        "loadByDefault":false
+    },
+    "dosw":{
+        "name":"Dragons of the Sixth World",
+        "loadByDefault":false
+    },
+    "fof":{
+        "name":"Field of Fire",
+        "loadByDefault":false
+    },
+    "mits":{
+        "name":"Magic in the Shadows",
+        "loadByDefault":true
+    },
+    "mm":{
+        "name":"Man and Machine",
+        "loadByDefault":false
+    },
+    "mat":{
+        "name":"Matrix",
+        "loadByDefault":false
+    },
+    "pna":{
+        "name":"Paranormal Animals of North America",
+        "loadByDefault":false
+    },
+    "r3":{
+        "name":"Rigger 3",
+        "loadByDefault":false
+    },
+    "sr1":{
+        "name":"Shadowrun 1st",
+        "loadByDefault":false
+    },
+    "sr2":{
+        "name":"Shadowrun 3nd",
+        "loadByDefault":false
+    },
+    "sr3":{
+        "name":"Shadowrun 3rd",
+        "loadByDefault":true
+    },
+    "src":{
+        "name":"Shadowrun Companion",
+        "loadByDefault":false
+    },
+    "st":{
+        "name":"Shadowtech",
+        "loadByDefault":false
+    },
+    "r3":{
+        "name":"Rigger 3",
+        "loadByDefault":false
+    },
+    "sb":{
+        "name":"Shadowbeat",
+        "loadByDefault":false
+    },
+    "ssg":{
+        "name":"Sprawl Survival Guide",
+        "loadByDefault":false
+    },
+    "sota":{
+        "name":"State of the Art 2063",
+        "loadByDefault":true
+    },
+    "sota2":{
+        "name":"State of the Art 2065",
+        "loadByDefault":true
+    },
+    "ssc":{
+        "name":"Street Samurai Catalog 2nd ed",
+        "loadByDefault":false
+    },
+    "tss":{
+        "name":"The Shadowrun Supplemental",
+        "loadByDefault":false
+    },
+    "rbb":{
+        "name":"Rigger Black Box",
+        "loadByDefault":false
+    },
+    "tal":{
+        "name":"Target: Awakened Lands",
+        "loadByDefault":true
+    },
+    "twl":{
+        "name":"Target: Wastelands",
+        "loadByDefault":true
+    },
+    "gm2":{
+        "name":"The Grimoire 2nd ed",
+        "loadByDefault":false
+    },
+    "yotc":{
+        "name":"Year Of The Comet",
+        "loadByDefault":true
+    },
+    "azt":{
+        "name":"Aztlan Sourcebook",
+        "loadByDefault":false
+    },
+    "fra":{
+        "name":"France Sourcebook",
+        "loadByDefault":false
+    },
+    "ger":{
+        "name":"Germany Sourcebook",
+        "loadByDefault":false
+    },
+    "lon":{
+        "name":"London Sourcebook",
+        "loadByDefault":false
+    },
+    "sea":{
+        "name":"Seattle Sourcebook",
+        "loadByDefault":true
+    },
+    "pl":{
+        "name":"Paradise Lost",
+        "loadByDefault":true
+    },
+    "cb1":{
+        "name":"Chrome Book 1 (conversion)",
+        "loadByDefault":false
+    },
+    "cb2":{
+        "name":"Chrome Book 2 (conversion)",
+        "loadByDefault":false
+    },
+    "cb3":{
+        "name":"Chrome Book 3 (conversion)",
+        "loadByDefault":false
+    },
+    "cb4":{
+        "name":"Chrome Book 4 (conversion)",
+        "loadByDefault":false
+    },
+    "cp":{
+        "name":"Cyberpunk 2020 (conversion)",
+        "loadByDefault":false
+    },
+    "nagee":{
+        "name":"Neo-Anarchist Guide to Everything Else (Collected)",
+        "loadByDefault":true
+    },
+    "nagee7":{
+        "name":"Neo-Anarchist Guide to Everything Else (Issue 7)",
+        "loadByDefault":true
+    },
+    "nagee8":{
+        "name":"Neo-Anarchist Guide to Everything Else (Issue 8)",
+        "loadByDefault":true
+    },
+    "nagee9":{
+        "name":"Neo-Anarchist Guide to Everything Else (Issue 9)",
+        "loadByDefault":true
+    },
+    "pw":{
+        "name":"Plastic Warriors",
+        "loadByDefault":false
+    },
+    "n/sl":{
+        "name":"NERPS: ShadowLore",
+        "loadByDefault":false
+    },
+    "adh":{
+        "name":"Adept's Handybook",
+        "loadByDefault":false
+    },
+    "bjf":{
+        "name":"Blackjack's Firearms",
+        "loadByDefault":false
+    },
+    "ray":{
+        "name":"Raygun's Firearms",
+        "loadByDefault":false
+    }
+}
