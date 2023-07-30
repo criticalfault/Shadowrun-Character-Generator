@@ -71,10 +71,6 @@
         "name":"Shadowtech",
         "loadByDefault":false
     },
-    "r3":{
-        "name":"Rigger 3",
-        "loadByDefault":false
-    },
     "sb":{
         "name":"Shadowbeat",
         "loadByDefault":false
