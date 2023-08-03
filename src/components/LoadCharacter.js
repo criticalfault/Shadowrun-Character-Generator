@@ -41,6 +41,7 @@ export default function LoadCharacter(props) {
         reader.onload = (e) => {
           const fileData = e.target.result;
           props.loadCharacter(JSON.parse(fileData));
+          setOpen(false);
         }    
         reader.readAsText(file); 
     }
