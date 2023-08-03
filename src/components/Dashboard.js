@@ -48,12 +48,12 @@ export default function BasicTabs() {
     const baseCharacter = {
         step:'chargen',
         priorities:{'Race':'E','Magic':'A','Attributes':'B','Skills':'C','Resources':'D'},
-        maxSkillPoints: 0,
-        maxAttributePoints: 0,
+        maxSkillPoints: 34,
+        maxAttributePoints: 27,
         name:'',
         street_name:'',
         availableRaces:['Human'],
-        availableMagics:[],
+        availableMagics:['Full Magician'],
         magicChoice:'None',
         race:'',
         cyberAttributeBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
@@ -111,8 +111,8 @@ export default function BasicTabs() {
         setEdition(edition);
     }
 
-    const handleChangeCharacterTabs = (tab,value) => {
-        setCharacter({...Character,characterTabs:{tab:value}});
+    const handleChangeCharacterTabs = (tabs) => {
+        setCharacter({...Character,characterTabs:tabs});
     }
 
     const handleChange = (event, newValue) => {
@@ -171,9 +171,9 @@ export default function BasicTabs() {
 
     const SkillsPanelRender = (ed) => {
         if(ed === 'SR3'){
-            return ( <SR3SkillsPanel characterSkills={Character.skills} onUpdateSkills={handleSkillsUpdate} activeSkillPoints={Character.maxSkillPoints} KnowledgeSkillsMax={(Character.attributes.Intelligence*5)} LangaugeSkillsMax={(Math.floor(Character.attributes.Intelligence*1.5))} />)
+            return ( <SR3SkillsPanel characterSkills={Character.skills} onUpdateSkills={handleSkillsUpdate} activeSkillPoints={Character.maxSkillPoints} KnowledgeSkillsMax={(Character.attributes.Intelligence*5)} LanguageSkillsMax={(Math.floor(Character.attributes.Intelligence*1.5))} />)
         }else{
-            return  (<SR2SkillsPanel characterSkills={Character.skills} onUpdateSkills={handleSkillsUpdate} maxSkillPoints={Character.maxSkillPoints} KnowledgeSkillsMax={(Character.attributes.Intelligence*5)} LangaugeSkillsMax={(Math.floor(Character.attributes.Intelligence*1.5))} />)
+            return  (<SR2SkillsPanel characterSkills={Character.skills} onUpdateSkills={handleSkillsUpdate} maxSkillPoints={Character.maxSkillPoints} KnowledgeSkillsMax={(Character.attributes.Intelligence*5)} LanguageSkillsMax={(Math.floor(Character.attributes.Intelligence*1.5))} />)
         }
     }
 
@@ -181,16 +181,16 @@ export default function BasicTabs() {
     <div className='dashboard'>
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider', }}>
-                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="scrollable">
+                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="scrollable" scrollButtons={true} allowScrollButtonsMobile>
                     <Tab label="Identity"   {...a11yProps(0)} />
                     <Tab label="Priorities" {...a11yProps(1)} />
                     <Tab label="Attributes" {...a11yProps(2)} />
                     <Tab label="Skills"     {...a11yProps(3)} />
-                    <Tab label="Magic"      {...a11yProps(4)} />
+                    <Tab label="Magic"      {...a11yProps(4)} disabled={!Character.characterTabs.Magic}  />
                     <Tab label="Cyberware"  {...a11yProps(5)} />
                     <Tab label="Gear"       {...a11yProps(6)} />
-                    <Tab label="Decking"    {...a11yProps(7)} />
-                    <Tab label="Vehicles"   {...a11yProps(8)} />
+                    <Tab label="Decking"    {...a11yProps(7)} disabled={!Character.characterTabs.Decking} />
+                    <Tab label="Vehicles"   {...a11yProps(8)} disabled={!Character.characterTabs.Rigger} />
                     <Tab label="Karma"      {...a11yProps(9)} />
                 </Tabs>
             </Box>

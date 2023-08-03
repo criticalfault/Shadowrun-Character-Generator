@@ -18,27 +18,27 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
   const KnowledgeSkills = ['6th World (SW)','Academic Skills (AC)','Area Knowledge (AK)','Background (BK)','Interests (IN)','Program Design (PD)','Street (ST)','Survival (SV)', 'System Familiarity (SF)']
 
   //Active Skills
-  const [selectedSpecialization, setSelectedSpecialization] = useState('');
+  const [selectedSpecialization, setSelectedSpecialization] = useState('None');
   const [selectedSkills, setSelectedSkills] = useState(characterSkills);
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('Martial Arts(MA)');
   const [skillRating, setSkillRating] = useState(1);
   const [skillPointsSpent, setSkillPointsSpent] = useState(0);
   const [skillCategory, setSkillCategory] = useState(Object.keys(skillsData));
-  const [newSkill, setNewSkill] = useState('');
+  const [newSkill, setNewSkill] = useState('MA:Aikido');
 
   //Knowledge Skills
   const [selectedKnowledgeSpecialization, setKnowledgeSelectedSpecialization] = useState('');
   const [selectedKnowledgeSkills, setKnowledgeSelectedSkills] = useState([]);
-  const [selectedKnowledgeCategory, setKnowledgeSelectedCategory] = useState('');
+  const [selectedKnowledgeCategory, setKnowledgeSelectedCategory] = useState('Street (ST)');
   const [skillKnowledgeRating, setKnowledgeSkillRating] = useState(1);
   const [skillKnowledgePointsSpent, setKnowledgeSkillPointsSpent] = useState(0);
   const [skillKnowledgeCategory, setKnowledgeSkillCategory] = useState(Object.keys(skillsData));
-  const [newKnowledgeSkill, setKnowledgeNewSkill] = useState('');
+  const [newKnowledgeSkill, setKnowledgeNewSkill] = useState('ST:Arms Dealers');
 
   //Language Skills
   const [selectedLanguageSpecialization, setLanguageSelectedSpecialization] = useState('');
   const [selectedLanguageSkills, setLanguageSelectedSkills] = useState([]);
-  const [selectedLanguageCategory, setLanguageSelectedCategory] = useState('');
+  const [selectedLanguageCategory, setLanguageSelectedCategory] = useState(0);
   const [skillLanguageRating, setLanguageSkillRating] = useState(1);
   const [skillLanguagePointsSpent, setLanguageSkillPointsSpent] = useState(0);
   const [skillLanguageCategory, setLanguageSkillCategory] = useState(Object.keys(skillsData));
@@ -292,7 +292,7 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
       <h3>Language Skills</h3>
 
       <FormControl style={{'width':'200px'}}>
-        <InputLabel  id="skill-label">{selectedLanguageCategory}</InputLabel>
+        <InputLabel  id="skill-label"></InputLabel>
         <NativeSelect
           id="skill-dropdown"
           value={newLanguageSkill}

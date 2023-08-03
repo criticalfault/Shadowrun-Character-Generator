@@ -16,35 +16,46 @@ export default function IdentityPanel(props) {
             props.ChangeEdition('SR2')
         }
     }
+    const [Tabs, setTabs] = React.useState(props.characterTabs);
+
+
+    const handleChangeCharacterTabs = (event) => {
+        let characterTabsPayload = { ...Tabs };
+        characterTabsPayload[event.target.name] = event.target.checked;
+        setTabs(characterTabsPayload);
+        props.ChangeCharacterTabs(characterTabsPayload);
+    }
+
     return ( <>
         Character Edition:
         SR2 <Switch checked={LocalEdition} onChange={handleSwitchEd} {...label} /> SR3
         <br></br>
         <div>
+            { /* characterTabs:{'Magic':false,'Decking':false,'Otaku':false,'Rigger':false} */}
         <FormControl component="fieldset">
             <FormLabel component="legend">Tabs for this character</FormLabel>
             <FormGroup aria-label="position" row>
                 <FormControlLabel
                     value="top"
-                    control={<Checkbox {...label} defaultChecked />}
+                    control={<Checkbox {...label} name="Magic" onChange={handleChangeCharacterTabs} checked={Tabs.Magic} />}
                     label="Magic Tab"
                     labelPlacement="end"
                 />
                 <FormControlLabel
                     value="top"
-                    control={<Checkbox {...label} defaultChecked color="secondary" />}
+                    control={<Checkbox {...label} name="Decking" color="secondary" onChange={handleChangeCharacterTabs} checked={Tabs.Decking} />}
                     label="Decking Tab"
                     labelPlacement="end"
                 />
                 <FormControlLabel
                     value="top"
-                    control={<Checkbox {...label} defaultChecked color="success" />}
+                    control={<Checkbox {...label} name="Otaku" color="success" onChange={handleChangeCharacterTabs} checked={Tabs.Otaku} />}
                     label="Otaku Tab"
                     labelPlacement="end"
                 />
                 <FormControlLabel
                     value="top"
-                    control={<Checkbox {...label} defaultChecked color="default" />}
+                    control={<Checkbox {...label} name="Rigger" color="default" onChange={handleChangeCharacterTabs} checked={Tabs.Rigger} />}
                     label="Rigger / Vehicles Tab"
                     labelPlacement="end"
                 />
