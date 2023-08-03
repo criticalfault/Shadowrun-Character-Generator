@@ -9,7 +9,10 @@ import AttributesPanel from './AttributesPanel';
 import SR2SkillsPanel from './SR2SkillsPanel';
 import SR3SkillsPanel from './SR3SkillsPanel';
 import MagicPanel from './MagicPanel';
-import Stepper from './Stepper';
+import { Button } from '@mui/material';
+import LoadCharacter from './LoadCharacter';
+import Modal from '@mui/material/Modal';
+//import Stepper from './Stepper';
 import CyberwarePanel from './CyberwarePanel';
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -177,8 +180,16 @@ export default function BasicTabs() {
         }
     }
 
+    
+
+    const handleLoadCharacter = (characterData) => {
+        setCharacter(characterData);
+    }
+
+
   return (
     <div className='dashboard'>
+        <LoadCharacter Character={Character} loadCharacter={handleLoadCharacter}/>
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider', }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="scrollable" scrollButtons={true} allowScrollButtonsMobile>
@@ -186,7 +197,7 @@ export default function BasicTabs() {
                     <Tab label="Priorities" {...a11yProps(1)} />
                     <Tab label="Attributes" {...a11yProps(2)} />
                     <Tab label="Skills"     {...a11yProps(3)} />
-                    <Tab label="Magic"      {...a11yProps(4)} disabled={!Character.characterTabs.Magic}  />
+                    <Tab label="Magic"      {...a11yProps(4)} disabled={!Character.characterTabs.Magic} />
                     <Tab label="Cyberware"  {...a11yProps(5)} />
                     <Tab label="Gear"       {...a11yProps(6)} />
                     <Tab label="Decking"    {...a11yProps(7)} disabled={!Character.characterTabs.Decking} />
