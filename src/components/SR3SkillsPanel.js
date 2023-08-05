@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { MenuItem } from '@mui/material';
+// import { MenuItem } from '@mui/material';
+// import Select from '@mui/material/Select';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
+
 import NativeSelect from '@mui/material/NativeSelect';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
@@ -16,33 +17,71 @@ const LanguageSkillsData = require('../data/SR3/LanguageSkills.json');
 function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, KnowledgeSkillsMax, LanguageSkillsMax }) {
   const ActiveSkills = ['Build/Repair skills','Physical skills','Magical skills','Social skills','Survival skills','Technical skills','Vehicle skills','Otaku (MATRIX) skills','Martial Arts(MA)']
   const KnowledgeSkills = ['6th World (SW)','Academic Skills (AC)','Area Knowledge (AK)','Background (BK)','Interests (IN)','Program Design (PD)','Street (ST)','Survival (SV)', 'System Familiarity (SF)']
+  const CalcTotalSkillsRatings = (skillsList) =>{
+    let totalRatings = 0;
+    skillsList.forEach(function(skill){
+      totalRatings += skill.rating;
+    })
+    return totalRatings;
+  }
+
+
+  // const CalcTotalSkillsRatings = (skillsList, type) =>{
+  //   let totalActiveRatings = 0;
+  //   let totalKnowledgeRatings = 0;
+  //   let totalLanguageRatings = 0;
+  //   skillsList.forEach(function(skill){
+  //     switch(skill.type){
+  //       case 'Language':
+  //         totalLanguageRatings += skill.rating;
+  //         break;
+  //       case 'Knowledge':
+  //         totalKnowledgeRatings += skill.rating;
+  //         break;
+  //       case 'Active':
+  //         totalActiveRatings += skill.rating;
+  //         break;
+  //     }
+  //   })
+  //   switch(type){
+  //     case 'Language':
+  //       return totalLanguageRatings;
+  //     case 'Knowledge':
+  //       return totalKnowledgeRatings;
+  //     case 'Active':
+  //       return totalActiveRatings;
+  //   }
+  // }
 
   //Active Skills
   const [selectedSpecialization, setSelectedSpecialization] = useState('None');
-  const [selectedSkills, setSelectedSkills] = useState(characterSkills);
+  const [selectedSkills, setSelectedSkills] = useState(characterSkills.filter(skill => skill.type == 'Active'));
   const [selectedCategory, setSelectedCategory] = useState('Martial Arts(MA)');
   const [skillRating, setSkillRating] = useState(1);
-  const [skillPointsSpent, setSkillPointsSpent] = useState(0);
+  const [skillPointsSpent, setSkillPointsSpent] = useState(CalcTotalSkillsRatings(characterSkills.filter(skill => skill.type == 'Active')));
   const [skillCategory, setSkillCategory] = useState(Object.keys(skillsData));
   const [newSkill, setNewSkill] = useState('MA:Aikido');
 
   //Knowledge Skills
   const [selectedKnowledgeSpecialization, setKnowledgeSelectedSpecialization] = useState('');
-  const [selectedKnowledgeSkills, setKnowledgeSelectedSkills] = useState([]);
+  const [selectedKnowledgeSkills, setKnowledgeSelectedSkills] = useState(characterSkills.filter(skill => skill.type == 'Knowledge'));
   const [selectedKnowledgeCategory, setKnowledgeSelectedCategory] = useState('Street (ST)');
   const [skillKnowledgeRating, setKnowledgeSkillRating] = useState(1);
-  const [skillKnowledgePointsSpent, setKnowledgeSkillPointsSpent] = useState(0);
+  const [skillKnowledgePointsSpent, setKnowledgeSkillPointsSpent] = useState(CalcTotalSkillsRatings(characterSkills.filter(skill => skill.type == 'Knowledge')));
   const [skillKnowledgeCategory, setKnowledgeSkillCategory] = useState(Object.keys(skillsData));
   const [newKnowledgeSkill, setKnowledgeNewSkill] = useState('ST:Arms Dealers');
 
   //Language Skills
   const [selectedLanguageSpecialization, setLanguageSelectedSpecialization] = useState('');
-  const [selectedLanguageSkills, setLanguageSelectedSkills] = useState([]);
-  const [selectedLanguageCategory, setLanguageSelectedCategory] = useState(0);
+  const [selectedLanguageSkills, setLanguageSelectedSkills] = useState(characterSkills.filter(skill => skill.type == 'Language'));
+  const [selectedLanguageCategory, setLanguageSelectedCategory] = useState(CalcTotalSkillsRatings(characterSkills.filter(skill => skill.type == 'Language')));
   const [skillLanguageRating, setLanguageSkillRating] = useState(1);
   const [skillLanguagePointsSpent, setLanguageSkillPointsSpent] = useState(0);
   const [skillLanguageCategory, setLanguageSkillCategory] = useState(Object.keys(skillsData));
   const [newLanguageSkill, setLanguageNewSkill] = useState('English');
+
+
+
 
  // Handle CategoryChange events
   const handleCategoryChange = (event) => {
@@ -107,7 +146,7 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
 
   const handleAddSkill = () => {
     if (newSkill) {
-      const skillToAdd = { name: newSkill, rating:skillRating, specialization: selectedSpecialization };
+      const skillToAdd = { name: newSkill, rating:skillRating, specialization: selectedSpecialization, type:'Active' };
       setSelectedSkills(prevSkills => [...prevSkills, skillToAdd]);
       setSkillPointsSpent(prevSkills => (prevSkills + skillRating));
       setNewSkill('');
@@ -122,7 +161,7 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
 
   const handleKnowledgeAddSkill = () => {
     if (newKnowledgeSkill) {
-      const skillToAdd = { name: newKnowledgeSkill, rating:skillKnowledgeRating, specialization: selectedKnowledgeSpecialization };
+      const skillToAdd = { name: newKnowledgeSkill, rating:skillKnowledgeRating, specialization: selectedKnowledgeSpecialization, type:'Knowledge' };
       setKnowledgeSelectedSkills(prevSkills => [...prevSkills, skillToAdd]);
       setKnowledgeSkillPointsSpent(prevSkills => (prevSkills + skillRating));
       setKnowledgeNewSkill('');
@@ -136,7 +175,7 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
 
   const handleLanguageAddSkill = () => {
     if (newLanguageSkill) {
-      const skillToAdd = { name: newLanguageSkill, rating:skillLanguageRating, specialization: selectedLanguageSpecialization };
+      const skillToAdd = { name: newLanguageSkill, rating:skillLanguageRating, specialization: selectedLanguageSpecialization, type:'Language' };
       setLanguageSelectedSkills(prevSkills => [...prevSkills, skillToAdd]);
       setLanguageSkillPointsSpent(prevSkills => (prevSkills + skillRating));
       setLanguageNewSkill('');

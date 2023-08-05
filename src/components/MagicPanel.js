@@ -21,6 +21,22 @@ const spellsData = require('../data/SR3/Spells.json');
 const AdeptPowers = require('../data/SR3/AdeptPowers.json');
 function MagicPanel(props) {
 
+  const CalcTotalSpellRatings = (spellList) =>{
+    let totalRatings = 0;
+    spellList.forEach(function(spell){
+      totalRatings += spell.Rating;
+    })
+    return totalRatings;
+  }
+
+  const CalcTotalPowerRatings = (powerList) =>{
+    let totalCost = 0;
+    powerList.forEach(function(spell){
+      totalCost += spell.Cost;
+    })
+    return totalCost;
+  }
+
   const FullMageTraditions = ['Full Mage','Psionicist','Wujen','Aboriginal Magic','Aztec Magic','Black Magic','Chaos Magic','Christian Magic','Druid Magic','Egyptian Magic','Gypsy Magic',"Hawai'ian Magic",'Hindu Magic','Islamic Magic','Norse Magic','Qabbalistic Magic','Rastafarian Magic','Shinto Magic','Witchcraft','Elemental Mage (Fire)','Elemental Mage (Water)','Elemental Mage (Air)','Elemental Mage (Earth)'];
   const AspectedMageTraditions = ['Shaman','Conjurer','Elementalist','Shamanist','Sorcerer','WuFa'];
   const AdeptPaths = ["Athelete's Way","Artist's Way","Warriors's Way","Invisible Way","Spirit Way","Totem Way", "Magician's Way"]
@@ -31,11 +47,11 @@ function MagicPanel(props) {
   const [selectedSpells, setSelectedSpells] = useState(props.spells);
   const [selectedCategory, setSelectedCategory] = useState('');
   const [spellRating, setSpellRating] = useState(1);
-  const [spellPointsSpent, setSpellPointsSpent] = useState(0);
+  const [spellPointsSpent, setSpellPointsSpent] = useState(CalcTotalSpellRatings(props.spells));
   const [spellPointsMax, setSpellPointsMax] = useState(36);
   const [magicalTradition, setMagicalTradition] = useState('Full Magician')
   
-  const [AdeptPointsSpent, setAdeptPointsSpent] = useState(0.0);
+  const [AdeptPointsSpent, setAdeptPointsSpent] = useState(CalcTotalPowerRatings(props.powers));
   const [AdeptPointsMax, setAdeptPointsMax] = useState(6);
   const [newPower, setNewPower] = useState('');
   const [newPowerCost, setNewPowerCost] = useState(0.0);
@@ -45,6 +61,8 @@ function MagicPanel(props) {
   const [newPowerRating, setNewPowerRating] = useState(0);
   const [powerCost, setPowerCost] = useState(0);
   const [selectedPowers, setSelectedPowers] = useState(props.powers);
+
+  
 
   const handleSpellChange = (event) => {
     const TempSpell = spellsData[event.target.value];
@@ -118,7 +136,7 @@ function MagicPanel(props) {
   const handleRemoveSpell = (index) => {
     const editedSpells = [...selectedSpells];
     let SpellRemoved = editedSpells.splice(index, 1);
-    setSpellPointsSpent(prevSpells => (prevSpells - SpellRemoved[0].rating));
+    setSpellPointsSpent(prevSpells => (prevSpells - SpellRemoved[0].Rating));
     setSelectedSpells(editedSpells);
     props.onChangeSpells(editedSpells);
   };
@@ -134,7 +152,7 @@ function MagicPanel(props) {
   const RenderMagicianWithSpells = () =>{
     return (<>
     <Box sx={{ width: '100%' }}>Spells {spellPointsSpent}/{spellPointsMax}
-            <LinearProgress variant="determinate" value={spellPointsSpent} />
+            <LinearProgress variant="determinate" value={spellPointsSpent/spellPointsMax*100} />
           </Box>
           <br></br> 
           <FormControl style={{'width':'200px'}}>
@@ -180,6 +198,7 @@ function MagicPanel(props) {
               <TableCell align="right">Target</TableCell>
               <TableCell align="right">Duration</TableCell>
               <TableCell align="right">Drain Code</TableCell>
+              <TableCell align="right">Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -195,6 +214,7 @@ function MagicPanel(props) {
                 <TableCell align="right">{spell.Target}</TableCell>
                 <TableCell align="right">{spell.Duration}</TableCell>
                 <TableCell align="right">{spell.Drain}</TableCell>
+                <TableCell align="right"><Button onClick={() => handleRemoveSpell(index)}>Remove</Button></TableCell>
               </TableRow>
             ))}
           </TableBody>

@@ -2,9 +2,9 @@ import * as React from 'react';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import Radio from '@mui/material/Radio';
 import { Select } from '@mui/material';
-
+import DraggableList from './DraggableList';
+import './PriorityPanel.css';
 export default function PriorityPanel(props) {
     const Priorities = ['A', 'B', 'C', 'D', 'E'];
     const prorityChart = {
@@ -74,34 +74,42 @@ export default function PriorityPanel(props) {
             }
         }
     }
-   
-   
-    const [PriorityRace, setPriorityRace] = React.useState(props.CharacterPriorities.Race);
-    const [PriorityAttributes, setPriorityAttributes] = React.useState(props.CharacterPriorities.Attributes);
-    const [PriorityMagic, setPriorityMagic] = React.useState(props.CharacterPriorities.Magic);
-    const [PrioritySkills, setPrioritySkills] = React.useState(props.CharacterPriorities.Skills);
-    const [PriorityResources, setPriorityResources] = React.useState(props.CharacterPriorities.Resources);
+    const propertiesToOrderedList = (priorities) => {
+        let templist = [];
+        let finalArrayOfObjects = [];
+        for (var pri in priorities) {
+            templist.push([pri, priorities[pri]]);
+        }
+        templist.forEach(function(key) {
+            finalArrayOfObjects.push({'name':key[0],'id':key[0]});
+        });
+        return finalArrayOfObjects;
+    }
 
+    const [priorities, setPriorities] = React.useState(propertiesToOrderedList(props.CharacterPriorities));
+    const [PriorityRace, setPriorityRace] = React.useState(props.CharacterPriorities.Race);
     const [AvailableRaces, setAvailableRaces] = React.useState([...prorityChart[props.Edition].race[PriorityRace]]);
     const [AvailableMagics, setAvailableMagics] = React.useState([...prorityChart[props.Edition].magic[PriorityRace]]);
-
     const [Race, setRace] = React.useState(['Human']);
-    const [Magic, setMagic] = React.useState([props.magicalChoice]);
-    
-    const CheckForDuplicates = () => {
-        let arr = [PriorityRace,PriorityAttributes,PriorityMagic,PrioritySkills,PriorityResources];
-        const duplicateElements = arr.filter((item, index) => arr.indexOf(item) !== index)
-        if(duplicateElements.length > 0) {
-            return (
-                <div>Duplicates On Priorities: {duplicateElements}</div>
-            )
-        }
-    }
+    const [Magic, setMagic] = React.useState(props.magicalChoice??'None');
 
     const handleMagicChange = (magic) => {
         setMagic(magic.target.value);
         props.ChangeMagic(magic.target.value);
     }
+
+    const handleChangePriorityMagic = (newPriority) => {
+        const newPriorityMagic = newPriority;
+        setAvailableMagics(prorityChart[props.Edition].magic[newPriorityMagic]);
+        if(prorityChart[props.Edition].magic[newPriorityMagic][0] !== 'Full Magician' || prorityChart[props.Edition].magic[newPriorityMagic][0] !== 'Physical Adept, Aspected'){
+            setMagic('None') 
+        }else{
+            setMagic(prorityChart[props.Edition].magic[newPriorityMagic][0])
+        }
+        
+        props.ChangeMagicChoices(prorityChart[props.Edition].magic[newPriorityMagic]);
+        props.ChangeMagic(prorityChart[props.Edition].magic[newPriorityMagic][0])
+    };
 
     const handleRaceChange = (race) => {
         setRace(race.target.value);
@@ -109,41 +117,28 @@ export default function PriorityPanel(props) {
         props.ChangeRaceBonuses(prorityChart[props.Edition].raceBonuses[race.target.value]);
     }
 
-    const handleChangePriorityRace = (event) => {
-        const newPriorityRace = event.target.value;
+    const handleChangePriorityRace = (newPriority) => {
+        const newPriorityRace = newPriority;
         setPriorityRace(newPriorityRace);
         setAvailableRaces(prorityChart[props.Edition].race[newPriorityRace]);
         setRace(prorityChart[props.Edition].race[newPriorityRace][0])
         props.ChangeRaceChoices(prorityChart[props.Edition].race[newPriorityRace]);
-        
-      };
+    };
     
-      const handleChangePriorityMagic = (event) => {
-        const newPriorityMagic = event.target.value;
-        setPriorityMagic(newPriorityMagic);
-        setAvailableMagics(prorityChart[props.Edition].magic[newPriorityMagic]);
-        setMagic(prorityChart[props.Edition].magic[newPriorityMagic][0])
-        props.ChangeMagicChoices(prorityChart[props.Edition].magic[newPriorityMagic]);
-        props.ChangeMagic(prorityChart[props.Edition].magic[newPriorityMagic][0])
-      };
-    
-      const handleChangePriorityAttributes = (event) => {
-        const newPriorityAttributes = event.target.value;
-        setPriorityAttributes(newPriorityAttributes);
+    const handleChangePriorityAttributes = (newPriority) => {
+        const newPriorityAttributes = newPriority;
         props.ChangeMaxAttributes(prorityChart[props.Edition].attributes[newPriorityAttributes]);
-      };
+    };
     
-      const handleChangePrioritySkills = (event) => {
-        const newPrioritySkills = event.target.value;
-        setPrioritySkills(newPrioritySkills);
+    const handleChangePrioritySkills = (newPriority) => {
+        const newPrioritySkills = newPriority;
         props.ChangeMaxSkills(prorityChart[props.Edition].skills[newPrioritySkills]);
-      };
+    };
     
-      const handleChangePriorityResources = (event) => {
-        const newPriorityResources = event.target.value;
-        setPriorityResources(newPriorityResources);
+    const handleChangePriorityResources = (newPriority) => {
+        const newPriorityResources = newPriority;
         props.ChangeMaxCash(prorityChart[props.Edition].resources[newPriorityResources].nuyen);
-      };
+    };
 
 
     const TableRender = function (edition){
@@ -165,42 +160,11 @@ export default function PriorityPanel(props) {
                             return (
                                 <tr key={letter}>
                                     <td>{letter}</td>
-                                    <td><label><Radio
-                                        checked={PriorityRace === letter}
-                                        onChange={handleChangePriorityRace}
-                                        value={letter}
-                                        name="race-buttons"
-                                        inputProps={{ 'aria-label': letter }}
-                                        />{prorityChart[props.Edition]['race'][letter].join(', ')}</label>
-                                        </td>
-                                    <td><label><Radio
-                                        checked={PriorityMagic === letter}
-                                        onChange={handleChangePriorityMagic}
-                                        value={letter}
-                                        name="magic-buttons"
-                                        inputProps={{ 'aria-label': letter }}
-                                        />{prorityChart[props.Edition]['magic'][letter].join(', ')}</label></td>
-                                    <td><label><Radio
-                                        checked={PriorityAttributes === letter}
-                                        onChange={handleChangePriorityAttributes}
-                                        value={letter}
-                                        name="attributes-buttons"
-                                        inputProps={{ 'aria-label': letter }}
-                                        />{prorityChart[props.Edition]['attributes'][letter]}</label></td>
-                                    <td><label><Radio
-                                        checked={PrioritySkills === letter}
-                                        onChange={handleChangePrioritySkills}
-                                        value={letter}
-                                        name="skills-buttons"
-                                        inputProps={{ 'aria-label': letter }}
-                                        />{prorityChart[props.Edition]['skills'][letter]}</label></td>
-                                    <td><label><Radio
-                                        checked={PriorityResources === letter}
-                                        onChange={handleChangePriorityResources}
-                                        value={letter}
-                                        name="resources-buttons"
-                                        inputProps={{ 'aria-label': letter }}
-                                        />{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(prorityChart[props.Edition]['resources'][letter]['nuyen'])}</label></td>
+                                    <td className={props.CharacterPriorities.Race === letter ? 'highlighted':''}><label>{prorityChart[props.Edition]['race'][letter].join(', ')}</label></td>
+                                    <td className={props.CharacterPriorities.Magic === letter ? 'highlighted':''}><label>{prorityChart[props.Edition]['magic'][letter].join(', ')}</label></td>
+                                    <td className={props.CharacterPriorities.Attributes === letter ? 'highlighted':''}><label>{prorityChart[props.Edition]['attributes'][letter]}</label></td>
+                                    <td className={props.CharacterPriorities.Skills === letter ? 'highlighted':''}><label>{prorityChart[props.Edition]['skills'][letter]}</label></td>
+                                    <td className={props.CharacterPriorities.Resources === letter ? 'highlighted':''}><label>{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(prorityChart[props.Edition]['resources'][letter]['nuyen'])}</label></td>
                                 </tr>
                             )
                         })
@@ -209,11 +173,57 @@ export default function PriorityPanel(props) {
             </table>
         )
     }
+
+    const reorder = (list, startIndex, endIndex) => {
+        const result = Array.from(list);
+        const [removed] = result.splice(startIndex, 1);
+        result.splice(endIndex, 0, removed);
+        return result;
+    };
+
+    const onDragEnd = ({ destination, source }) => {
+        // dropped outside the list
+        if (!destination) return;
+        const newItems = reorder(priorities, source.index, destination.index);
+        setPriorities(newItems);
+        let propertiesOrder = {0:'A',1:'B',2:'C',3:'D',4:'E'};
+        let tempPriorities = {};
+        for (let i = 0; i < newItems.length; i++) {
+            switch(newItems[i].name) {
+                case 'Race':
+                    handleChangePriorityRace(propertiesOrder[i]);
+                    tempPriorities.Race = propertiesOrder[i];
+                break;
+                case 'Magic':
+                    handleChangePriorityMagic(propertiesOrder[i]);
+                    tempPriorities.Magic = propertiesOrder[i];
+                break
+                case 'Skills':
+                    handleChangePrioritySkills(propertiesOrder[i]);
+                    tempPriorities.Skills = propertiesOrder[i];
+                break;
+                case 'Attributes':
+                    handleChangePriorityAttributes(propertiesOrder[i]);
+                    tempPriorities.Attributes = propertiesOrder[i];
+                break;
+                case 'Resources':
+                    handleChangePriorityResources(propertiesOrder[i]);
+                    tempPriorities.Resources = propertiesOrder[i];
+                break;
+
+                default:
+                    console.log("Something bad  ! " + newItems[i].name);
+                break;
+            }
+        }
+        props.ChangePriorities(tempPriorities);
+    };
+
     return (
         <div>
-            <h2>MASTER CHARACTER CREATION TABLE</h2> 
-            <>{CheckForDuplicates()}</>
+            <h2>MASTER CHARACTER CREATION TABLE</h2>             
             { TableRender() }
+            <DraggableList items={priorities} onDragEnd={onDragEnd} />
             <hr></hr>
             <h4>Character Sub Choices</h4>
             <FormControl fullWidth>

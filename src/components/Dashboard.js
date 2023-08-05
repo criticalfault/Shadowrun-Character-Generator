@@ -9,9 +9,7 @@ import AttributesPanel from './AttributesPanel';
 import SR2SkillsPanel from './SR2SkillsPanel';
 import SR3SkillsPanel from './SR3SkillsPanel';
 import MagicPanel from './MagicPanel';
-import { Button } from '@mui/material';
 import LoadCharacter from './LoadCharacter';
-import Modal from '@mui/material/Modal';
 //import Stepper from './Stepper';
 import CyberwarePanel from './CyberwarePanel';
 function CustomTabPanel(props) {
@@ -50,7 +48,7 @@ function a11yProps(index) {
 export default function BasicTabs() {
     const baseCharacter = {
         step:'chargen',
-        priorities:{'Race':'E','Magic':'A','Attributes':'B','Skills':'C','Resources':'D'},
+        priorities:{'Magic':'A','Attributes':'B','Skills':'C','Resources':'D','Race':'E'},
         maxSkillPoints: 34,
         maxAttributePoints: 27,
         name:'',
@@ -63,6 +61,9 @@ export default function BasicTabs() {
         raceBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
         attributes:{'Body':1,'Quickness':1,'Strength':1,'Charisma':1,'Willpower':1,'Intelligence':1, 'Essence':6},
         characterTabs:{'Magic':false,'Decking':false,'Otaku':false,'Rigger':false},
+        inventory:[],
+        weapons:[],
+        contacts:[],
         mods:[],
         cyberware:[],
         bioware:[],
@@ -79,13 +80,6 @@ export default function BasicTabs() {
     const [value, setValue] = React.useState(0);
     const [Character, setCharacter] = React.useState(baseCharacter);
     const [selectedRace, setSelectedRace] = React.useState('Human');
-    const [selectedPriority, setSelectedPriority] = React.useState({
-      race: 'B',
-      magic: 'C',
-      attributes: 'D',
-      skills: 'A',
-      resources: 'E',
-    });
 
     const handleChangePriorityRace = (event) => {
         const newRace = event.target.value;
@@ -93,16 +87,11 @@ export default function BasicTabs() {
         setCharacter((prevCharacter) => ({ ...prevCharacter, race: newRace }));
     };
 
-    const handleChangePriority = (letter, newPriority) => {
-        // setSelectedPriority((prevPriority) => ({
-        //     ...prevPriority,
-        //     [newPriority]: letter,
-        // }));
+    const handleChangePriorities = (newPriorities) => {
         // Update the Character state with the selected priorities
-        console.log(`${newPriority} -> ${letter}`);
         setCharacter((prevCharacter) => ({
             ...prevCharacter,
-            priorities: { ...prevCharacter.priorities, [newPriority]: letter },
+            priorities: { ...newPriorities},
         }));
     };
 
@@ -180,8 +169,6 @@ export default function BasicTabs() {
         }
     }
 
-    
-
     const handleLoadCharacter = (characterData) => {
         setCharacter(characterData);
     }
@@ -202,7 +189,8 @@ export default function BasicTabs() {
                     <Tab label="Gear"       {...a11yProps(6)} />
                     <Tab label="Decking"    {...a11yProps(7)} disabled={!Character.characterTabs.Decking} />
                     <Tab label="Vehicles"   {...a11yProps(8)} disabled={!Character.characterTabs.Rigger} />
-                    <Tab label="Karma"      {...a11yProps(9)} />
+                    <Tab label="Contacts"   {...a11yProps(9)} />
+                    <Tab label="Karma"      {...a11yProps(10)}/>
                 </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
@@ -217,14 +205,12 @@ export default function BasicTabs() {
             
             <CustomTabPanel value={value} index={1}>
                 <PriorityPanel  
-                            ChangePriority={handleChangePriority}
+                            ChangePriorities={handleChangePriorities}
                             CharacterPriorities={Character.priorities} 
                             magicalChoice={Character.magicalChoice}
                             ChangeRace={handleRaceChange}
                             selectedRace={selectedRace}
-                            selectedPriority={selectedPriority}
                             onChangePriorityRace={handleChangePriorityRace}
-                            onChangePriority={handleChangePriority}
                             ChangeRaceChoices={handleChangeAvailabileRaces} 
                             ChangeMaxAttributes={handleChangeMaxAttributes}
                             ChangeMaxSkills={handleChangeMaxSkills}
@@ -263,11 +249,9 @@ export default function BasicTabs() {
                         onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
                         onChangeCyberware={(cyberware) => setCharacter({ ...Character, cyberware:cyberware})}
                         onChangeBioware={(bioware) => setCharacter({ ...Character, bioware: bioware})}
-                        onChangeEssence={handleAttributesChange}
+                        onChangeEssence={handleEssenceChange}
                     />
             </CustomTabPanel>
-
-            
         </Box>
     </div>
   );
