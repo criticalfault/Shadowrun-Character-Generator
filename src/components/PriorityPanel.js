@@ -118,26 +118,22 @@ export default function PriorityPanel(props) {
     }
 
     const handleChangePriorityRace = (newPriority) => {
-        const newPriorityRace = newPriority;
-        setPriorityRace(newPriorityRace);
-        setAvailableRaces(prorityChart[props.Edition].race[newPriorityRace]);
-        setRace(prorityChart[props.Edition].race[newPriorityRace][0])
-        props.ChangeRaceChoices(prorityChart[props.Edition].race[newPriorityRace]);
+        setPriorityRace(newPriority);
+        setAvailableRaces(prorityChart[props.Edition].race[newPriority]);
+        setRace(prorityChart[props.Edition].race[newPriority][0])
+        props.ChangeRaceChoices(prorityChart[props.Edition].race[newPriority]);
     };
     
     const handleChangePriorityAttributes = (newPriority) => {
-        const newPriorityAttributes = newPriority;
-        props.ChangeMaxAttributes(prorityChart[props.Edition].attributes[newPriorityAttributes]);
+        props.ChangeMaxAttributes(prorityChart[props.Edition].attributes[newPriority]);
     };
     
     const handleChangePrioritySkills = (newPriority) => {
-        const newPrioritySkills = newPriority;
-        props.ChangeMaxSkills(prorityChart[props.Edition].skills[newPrioritySkills]);
+        props.ChangeMaxSkills(prorityChart[props.Edition].skills[newPriority]);
     };
     
     const handleChangePriorityResources = (newPriority) => {
-        const newPriorityResources = newPriority;
-        props.ChangeMaxCash(prorityChart[props.Edition].resources[newPriorityResources].nuyen);
+        props.ChangeMaxCash(prorityChart[props.Edition].resources[newPriority].nuyen);
     };
 
 

@@ -54,7 +54,7 @@ export default function BasicTabs() {
         maxSkillPoints: 34,
         maxAttributePoints: 27,
         name:'',
-        street_name:'',
+        street_name:'New Runner',
         availableRaces:['Human'],
         availableMagics:['Full Magician'],
         magicChoice:'None',
@@ -76,7 +76,9 @@ export default function BasicTabs() {
         spells:[],
         powers:[],
         chargenCash: 20000,
-        cash:0
+        cashSpent:0,
+        cash:0,
+        log:[]
     }
     const [Edition, setEdition]= React.useState('SR3');
     const [value, setValue] = React.useState(0);
@@ -120,7 +122,10 @@ export default function BasicTabs() {
     }
 
     const handleChangeCharacterTabs = (tabs) => {
-        setCharacter({...Character,characterTabs:tabs});
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+            characterTabs:tabs})
+        );
     }
 
     const handleChange = (event, newValue) => {
@@ -128,40 +133,66 @@ export default function BasicTabs() {
     }
 
     const handleChangeMaxCash = (Cash) =>{
-        console.log(Cash);
-        setCharacter({...Character,chargenCash:Cash})
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+            chargenCash:Cash})
+        )
     }
 
     const handleChangeMaxSkills = (maxSkills) =>{
-        setCharacter({...Character,maxSkillPoints:maxSkills})
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+            maxSkillPoints:maxSkills
+        }))
     }
 
     const handleChangeMaxAttributes = (maxAttributes) =>{
-        setCharacter({...Character,maxAttributePoints:maxAttributes})
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+            maxAttributePoints: maxAttributes,
+        }));
     }
 
     const handleChangeMagicChoices = (magicChoices) =>{
-        setCharacter({...Character,availableMagics:magicChoices})
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+            availableMagics:magicChoices})
+        )
     }
 
     const handleChangeAvailabileRaces =(raceChoices) =>{
-        setCharacter({...Character,availableRaces:raceChoices})
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+             availableRaces:raceChoices})
+        )
     }
 
     const handleRaceChange = (race) =>{
-        setCharacter({...Character,race:race})
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+            race:race})
+        )
     }
 
-    const handleChangeMagic = (magicChoice) =>{
-        setCharacter({...Character,magicChoice:magicChoice})
+    const handleChangeMagic = (newMagicChoice) =>{
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+             magicChoice:newMagicChoice})
+        )
     }
 
     const handleChangeRaceBonuses = (bonuses) =>{
-        setCharacter({...Character,raceBonuses:bonuses})
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+            raceBonuses:bonuses})
+        )
     }
 
     const handleSkillsUpdate = (updatedSkills) => {
-        setCharacter({ ...Character, skills: updatedSkills });
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+             skills: updatedSkills })
+        )
     };
 
     const handleAttributesChange = (attribute,value) => {
