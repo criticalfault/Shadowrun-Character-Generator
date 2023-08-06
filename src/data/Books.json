@@ -1,19 +1,23 @@
 {
     "awk":{
         "name":"Awakenings",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR2"
     },
     "cs":{
         "name":"Corporate Security",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR2"
     },
     "cc":{
         "name":"Cannon Companion",
-        "loadByDefault":true
+        "loadByDefault":true,
+        "edition":"SR3"
     },
     "cd":{
         "name":"Corporate Download",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR3"
     },
     "cus":{
         "name":"Custom Gear",
@@ -21,75 +25,92 @@
     },
     "ct":{
         "name":"CyberTechnology",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR2"
     },
     "dosw":{
         "name":"Dragons of the Sixth World",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR3"
     },
     "fof":{
         "name":"Field of Fire",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR2"
     },
     "mits":{
         "name":"Magic in the Shadows",
-        "loadByDefault":true
+        "loadByDefault":true,
+        "edition":"SR3"
     },
     "mm":{
         "name":"Man and Machine",
-        "loadByDefault":false
+        "loadByDefault":true,
+        "edition":"SR3"
     },
     "mat":{
         "name":"Matrix",
-        "loadByDefault":false
+        "loadByDefault":true,
+        "edition":"SR3"
     },
     "pna":{
         "name":"Paranormal Animals of North America",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR2"
     },
     "r3":{
         "name":"Rigger 3",
-        "loadByDefault":false
+        "loadByDefault":true,
+        "edition":"SR3"
     },
     "sr1":{
         "name":"Shadowrun 1st",
         "loadByDefault":false
     },
     "sr2":{
-        "name":"Shadowrun 3nd",
-        "loadByDefault":false
+        "name":"Shadowrun 2nd",
+        "loadByDefault":false,
+        "edition":"SR2"
     },
     "sr3":{
         "name":"Shadowrun 3rd",
-        "loadByDefault":true
+        "loadByDefault":true,
+        "edition":"SR3"
     },
     "src":{
         "name":"Shadowrun Companion",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR2"
     },
     "st":{
         "name":"Shadowtech",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR2"
     },
     "sb":{
         "name":"Shadowbeat",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR2"
     },
     "ssg":{
         "name":"Sprawl Survival Guide",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR3"
     },
     "sota":{
         "name":"State of the Art 2063",
-        "loadByDefault":true
+        "loadByDefault":true,
+        "edition":"SR3"
     },
     "sota2":{
         "name":"State of the Art 2065",
-        "loadByDefault":true
+        "loadByDefault":true,
+        "edition":"SR3"
     },
     "ssc":{
         "name":"Street Samurai Catalog 2nd ed",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR2"
     },
     "tss":{
         "name":"The Shadowrun Supplemental",
@@ -97,47 +118,59 @@
     },
     "rbb":{
         "name":"Rigger Black Box",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR2"
     },
     "tal":{
         "name":"Target: Awakened Lands",
-        "loadByDefault":true
+        "loadByDefault":true,
+        "edition":"SR3"
+        
     },
     "twl":{
         "name":"Target: Wastelands",
-        "loadByDefault":true
+        "loadByDefault":true,
+        "edition":"SR3"
     },
     "gm2":{
         "name":"The Grimoire 2nd ed",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR2"
     },
     "yotc":{
         "name":"Year Of The Comet",
-        "loadByDefault":true
+        "loadByDefault":true,
+        "edition":"SR3"
     },
     "azt":{
         "name":"Aztlan Sourcebook",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR3"
     },
     "fra":{
         "name":"France Sourcebook",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR3"
     },
     "ger":{
         "name":"Germany Sourcebook",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR3"
     },
     "lon":{
         "name":"London Sourcebook",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR3"
     },
     "sea":{
         "name":"Seattle Sourcebook",
-        "loadByDefault":true
+        "loadByDefault":true,
+        "edition":"SR3"
     },
     "pl":{
         "name":"Paradise Lost",
-        "loadByDefault":true
+        "loadByDefault":true,
+        "edition":"SR2"
     },
     "cb1":{
         "name":"Chrome Book 1 (conversion)",
@@ -181,7 +214,8 @@
     },
     "n/sl":{
         "name":"NERPS: ShadowLore",
-        "loadByDefault":false
+        "loadByDefault":false,
+        "edition":"SR2"
     },
     "adh":{
         "name":"Adept's Handybook",

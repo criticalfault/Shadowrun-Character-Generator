@@ -14,14 +14,11 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-const FirearmsData = require('../data/SR3/Firearms.json');
-const ArmorData = require('../data/SR3/Armor.json');
-const CyberdeckData = require('../data/SR3/Cyberdeck.json');
-const CyberdeckPartsData = require('../data/SR3/CyberdeckParts.json');
+
+const GearData = require('../data/SR3/Gear.json');
 export default function GearPanel(props) {
-    const GearCategories = ['Armor','Firearms','Cyberdeck','Cyberdeck Parts'];
+    const GearCategories = Object.keys(GearData).sort((a, b) => a - b);
     const GearCollection = ['Cyberdeck','Cyberdeck Parts'];
-    const GearData = {'Armor':[...ArmorData],'Firearms':[...FirearmsData],'Cyberdeck':[...CyberdeckData],'Cyberdeck Parts':[...CyberdeckPartsData]};
     const CalcTotalNuyenSpent = () =>{
         let TotalNuyen = 0;
         props.Gear.forEach(function(gear){
@@ -34,17 +31,19 @@ export default function GearPanel(props) {
     const [NewGearIndex, setNewGearIndex] = useState(0);
     const [NewGearDesc, setNewGearDesc]   = useState('');
     const [SelectedGear, setSelectedGear] = useState(props.Gear);
-    const [SelectedGearCategory, setSelectedGearCategory] = useState('Armor');    
+    const [SelectedGearCategory, setSelectedGearCategory] = useState(GearCategories[0]);
 
     const handleGearCategoryChange = (event) => {
         setSelectedGearCategory(event.target.value);
     }
     const handleGearChange = (event) => {
-        const TempGear = GearData[SelectedGearCategory][event.target.value];
+        const TempGear = GearData[SelectedGearCategory].entries[event.target.value];
         setNewGear(TempGear);
         setNewGearIndex(event.target.value)
         setNewGearCost(TempGear.Cost);
-        setNewGearDesc(TempGear.Notes)
+        if(TempGear.hasOwnProperty('Notes')){
+          setNewGearDesc(TempGear.Notes)
+        }
     }
   
     const handleAddGear = () => {
@@ -91,9 +90,10 @@ export default function GearPanel(props) {
             id="power-dropdown"
             value={NewGearIndex}
             onChange={handleGearChange}>
-            {GearData[SelectedGearCategory].map( (gear, index) => (
-            <MenuItem selected={NewGearIndex == index} key={index} value={index}>{gear.Name}</MenuItem>
-            ))}
+            
+          { GearData[SelectedGearCategory].entries.sort((a, b) => a - b).map( (gear, index) => (
+            <MenuItem selected={NewGearIndex == index} key={index} value={index}>{gear.name}</MenuItem>
+          ))}
         </Select>
         </FormControl>
     )}
@@ -129,9 +129,9 @@ export default function GearPanel(props) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {props.Gear.filter(item => item.Type == 'Armor').map((gear, index) => (
+            {props.Gear.filter(item => item.hasOwnProperty('Ballistic')).map((gear, index) => (
               <TableRow key={gear.Name+index}>
-                <TableCell component="th" scope="row">{gear.Name}</TableCell>
+                <TableCell component="th" scope="row">{gear.name}</TableCell>
                 <TableCell align="right">{gear.Ballistic}</TableCell>
                 <TableCell align="right">{gear.Impact}</TableCell>
                 <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}</TableCell>
@@ -161,9 +161,9 @@ export default function GearPanel(props) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {props.Gear.filter(item => item.Type == 'Firearms').map((gear, index) => (
+            {props.Gear.filter(item => item.hasOwnProperty('Damage')).map((gear, index) => (
               <TableRow key={gear.Name+index}>
-                <TableCell component="th" scope="row">{gear.Name}</TableCell>
+                <TableCell component="th" scope="row">{gear.name}</TableCell>
                 <TableCell align="right">{gear.Damage}</TableCell>
                 <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}</TableCell>
                 <TableCell align="right">{gear.BookPage}</TableCell>
@@ -192,9 +192,9 @@ export default function GearPanel(props) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {props.Gear.filter(item => GearCollection.includes(item.Type)).map((gear, index) => (
+            {props.Gear.filter(item => !item.hasOwnProperty('Damage') || item.hasOwnProperty('Ballistic')).map((gear, index) => (
               <TableRow key={gear.Name+index}>
-                <TableCell component="th" scope="row">{gear.Name}</TableCell>
+                <TableCell component="th" scope="row">{gear.name}</TableCell>
                 <TableCell align="right">{gear.Rating??'N/A'}</TableCell>
                 <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}</TableCell>
                 <TableCell align="right">{gear.BookPage}</TableCell>

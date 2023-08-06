@@ -49,6 +49,7 @@ function a11yProps(index) {
 
 export default function BasicTabs() {
     const baseCharacter = {
+        allowedBooks:[],
         step:'chargen',
         priorities:{'Magic':'A','Attributes':'B','Skills':'C','Resources':'D','Race':'E'},
         maxSkillPoints: 34,
@@ -125,6 +126,13 @@ export default function BasicTabs() {
         setCharacter((prevCharacter) => ({
             ...prevCharacter,
             characterTabs:tabs})
+        );
+    }
+
+    const handleChangeAllowedBooks = (books) => {
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+            allowedBooks:books})
         );
     }
 
@@ -247,9 +255,12 @@ export default function BasicTabs() {
                 <IdentityPanel  
                     currentCharacter={Character}
                     characterTabs={Character.characterTabs}
+                    characterBooks={Character.allowedBooks}
                     ChangeCharacterTabs={handleChangeCharacterTabs}
+                    ChangeAllowedBooks={handleChangeAllowedBooks}
                     ChangeEdition={handleChangeEdition} 
                     Edition={Edition}
+                    
                 />
             </CustomTabPanel>
             

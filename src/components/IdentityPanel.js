@@ -5,6 +5,7 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+const AllBooks = require('../data/Books.json');
 export default function IdentityPanel(props) {
     const label = { inputProps: { 'aria-label': 'Edition Switch' } };
     const [LocalEdition, setLocalEdition] = React.useState((props.Edition === 'SR3'?true:false));
@@ -17,8 +18,17 @@ export default function IdentityPanel(props) {
         }
     }
     const [Tabs, setTabs] = React.useState(props.characterTabs);
+    const [Books, setBooks] = React.useState({});
 
-
+    const [bookStates, setBookStates] = React.useState(AllBooks);
+    const handleBookCheckboxChange = (event) => {
+            const { name, checked } = event.target;
+            setBookStates(prevBookStates => ({
+            ...prevBookStates,
+            [name]: checked,
+        }));
+        console.log(bookStates)
+    }
     const handleChangeCharacterTabs = (event) => {
         let characterTabsPayload = { ...Tabs };
         characterTabsPayload[event.target.name] = event.target.checked;
@@ -26,43 +36,67 @@ export default function IdentityPanel(props) {
         props.ChangeCharacterTabs(characterTabsPayload);
     }
 
-    return ( <>
+    return (<>
         Character Edition:
         SR2 <Switch checked={LocalEdition} onChange={handleSwitchEd} {...label} /> SR3
         <br></br>
         <div>
-            { /* characterTabs:{'Magic':false,'Decking':false,'Otaku':false,'Rigger':false} */}
-        <FormControl component="fieldset">
-            <FormLabel component="legend">Tabs for this character</FormLabel>
-            <FormGroup aria-label="position" row>
-                <FormControlLabel
-                    value="top"
-                    control={<Checkbox {...label} name="Magic" onChange={handleChangeCharacterTabs} checked={Tabs.Magic} />}
-                    label="Magic Tab"
-                    labelPlacement="end"
-                />
-                <FormControlLabel
-                    value="top"
-                    control={<Checkbox {...label} name="Decking" color="secondary" onChange={handleChangeCharacterTabs} checked={Tabs.Decking} />}
-                    label="Decking Tab"
-                    labelPlacement="end"
-                />
-                <FormControlLabel
-                    value="top"
-                    control={<Checkbox {...label} name="Otaku" color="success" onChange={handleChangeCharacterTabs} checked={Tabs.Otaku} />}
-                    label="Otaku Tab"
-                    labelPlacement="end"
-                />
-                <FormControlLabel
-                    value="top"
-                    control={<Checkbox {...label} name="Rigger" color="default" onChange={handleChangeCharacterTabs} checked={Tabs.Rigger} />}
-                    label="Rigger / Vehicles Tab"
-                    labelPlacement="end"
-                />
-            </FormGroup>
-        </FormControl>
+            <FormControl component="fieldset">
+                <FormLabel component="legend">Tabs for this character</FormLabel>
+                <FormGroup aria-label="position" row>
+                    <FormControlLabel
+                        value="top"
+                        control={<Checkbox {...label} name="Magic" onChange={handleChangeCharacterTabs} checked={Tabs.Magic} />}
+                        label="Magic Tab"
+                        labelPlacement="end"
+                    />
+                    <FormControlLabel
+                        value="top"
+                        control={<Checkbox {...label} name="Decking" color="secondary" onChange={handleChangeCharacterTabs} checked={Tabs.Decking} />}
+                        label="Decking Tab"
+                        labelPlacement="end"
+                    />
+                    <FormControlLabel
+                        value="top"
+                        control={<Checkbox {...label} name="Otaku" color="success" onChange={handleChangeCharacterTabs} checked={Tabs.Otaku} />}
+                        label="Otaku Tab"
+                        labelPlacement="end"
+                    />
+                    <FormControlLabel
+                        value="top"
+                        control={<Checkbox {...label} name="Rigger" color="default" onChange={handleChangeCharacterTabs} checked={Tabs.Rigger} />}
+                        label="Rigger / Vehicles Tab"
+                        labelPlacement="end"
+                    />
+                </FormGroup>
+            </FormControl>
         </div>
-        
-    </>)
-
+        <br></br>
+        <FormControl component="fieldset">
+                <FormLabel component="legend">Allowed Books for Character</FormLabel>
+                <FormGroup aria-label="position" row>
+                    {Object.keys(AllBooks)
+                        .filter((book) => AllBooks[book].edition === props.Edition)
+                        .sort((a, b) => a.loadByDefault - b.loadByDefault)
+                        .map((book) => (
+                            <div key={book}>
+                            <FormControlLabel
+                                value="top"
+                                control={
+                                <Checkbox
+                                    name={AllBooks[book].name}
+                                    onChange={handleBookCheckboxChange}
+                                    checked={bookStates[AllBooks[book].name] || false}
+                                />
+                                }
+                                label={AllBooks[book].name}
+                                labelPlacement="end"
+                            />
+                            </div>
+                        ))
+                    }
+                </FormGroup>
+            </FormControl>
+        </>
+    )
 }
