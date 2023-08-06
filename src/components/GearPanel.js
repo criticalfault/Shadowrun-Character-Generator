@@ -15,23 +15,24 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 
-const GearData = require('../data/SR3/Gear.json');
+
 export default function GearPanel(props) {
-    const GearCategories = Object.keys(GearData).sort((a, b) => a - b);
-    const GearCollection = ['Cyberdeck','Cyberdeck Parts'];
-    const CalcTotalNuyenSpent = () =>{
-        let TotalNuyen = 0;
-        props.Gear.forEach(function(gear){
-            TotalNuyen += parseInt(gear.Cost);
-        });
-        return TotalNuyen;
-    }
-    const [NewGear, setNewGear]           = useState();
-    const [NewGearCost, setNewGearCost]   = useState();
-    const [NewGearIndex, setNewGearIndex] = useState(0);
-    const [NewGearDesc, setNewGearDesc]   = useState('');
-    const [SelectedGear, setSelectedGear] = useState(props.Gear);
-    const [SelectedGearCategory, setSelectedGearCategory] = useState(GearCategories[0]);
+  const GearData = require('../data/'+props.Edition+'/Gear.json');
+  const GearCategories = Object.keys(GearData).sort((a, b) => a - b);
+  const GearCollection = ['Cyberdeck','Cyberdeck Parts'];
+  const CalcTotalNuyenSpent = () =>{
+      let TotalNuyen = 0;
+      props.Gear.forEach(function(gear){
+          TotalNuyen += parseInt(gear.Cost);
+      });
+      return TotalNuyen;
+  }
+  const [NewGear, setNewGear]           = useState();
+  const [NewGearCost, setNewGearCost]   = useState();
+  const [NewGearIndex, setNewGearIndex] = useState(0);
+  const [NewGearDesc, setNewGearDesc]   = useState('');
+  const [SelectedGear, setSelectedGear] = useState(props.Gear);
+  const [SelectedGearCategory, setSelectedGearCategory] = useState(GearCategories[0]);
 
     const handleGearCategoryChange = (event) => {
         setSelectedGearCategory(event.target.value);

@@ -50,6 +50,10 @@ function a11yProps(index) {
 export default function BasicTabs() {
     const baseCharacter = {
         allowedBooks:[],
+        bookToggles:{
+                "SR3":{'cc':true, 'mits':true, 'sr3':true,'mm':true,'mat':true,'r3':true},
+                "SR2":{'sr2':true}
+        },
         step:'chargen',
         priorities:{'Magic':'A','Attributes':'B','Skills':'C','Resources':'D','Race':'E'},
         maxSkillPoints: 34,
@@ -132,7 +136,7 @@ export default function BasicTabs() {
     const handleChangeAllowedBooks = (books) => {
         setCharacter((prevCharacter) => ({
             ...prevCharacter,
-            allowedBooks:books})
+            allowedBooks:Object.keys(books)})
         );
     }
 
@@ -219,9 +223,15 @@ export default function BasicTabs() {
 
     const SkillsPanelRender = (ed) => {
         if(ed === 'SR3'){
-            return ( <SR3SkillsPanel characterSkills={Character.skills} onUpdateSkills={handleSkillsUpdate} activeSkillPoints={Character.maxSkillPoints} KnowledgeSkillsMax={(Character.attributes.Intelligence*5)} LanguageSkillsMax={(Math.floor(Character.attributes.Intelligence*1.5))} />)
+            return ( <SR3SkillsPanel    characterSkills={Character.skills} 
+                                        onUpdateSkills={handleSkillsUpdate} 
+                                        activeSkillPoints={Character.maxSkillPoints} 
+                                        KnowledgeSkillsMax={(Character.attributes.Intelligence*5)} 
+                                        LanguageSkillsMax={(Math.floor(Character.attributes.Intelligence*1.5))} />)
         }else{
-            return  (<SR2SkillsPanel characterSkills={Character.skills} onUpdateSkills={handleSkillsUpdate} maxSkillPoints={Character.maxSkillPoints} KnowledgeSkillsMax={(Character.attributes.Intelligence*5)} LanguageSkillsMax={(Math.floor(Character.attributes.Intelligence*1.5))} />)
+            return  (<SR2SkillsPanel characterSkills={Character.skills} 
+                                    onUpdateSkills={handleSkillsUpdate} 
+                                    maxSkillPoints={Character.maxSkillPoints} />)
         }
     }
 
@@ -233,6 +243,7 @@ export default function BasicTabs() {
     <div className='dashboard'>
         <ChargenBox
             currentCharacter={Character}
+            Edition={Edition}
         />
         <LoadCharacter Character={Character} loadCharacter={handleLoadCharacter}/>
         <Box sx={{ width: '100%' }}>
@@ -255,7 +266,7 @@ export default function BasicTabs() {
                 <IdentityPanel  
                     currentCharacter={Character}
                     characterTabs={Character.characterTabs}
-                    characterBooks={Character.allowedBooks}
+                    characterBooks={Character.bookToggles}
                     ChangeCharacterTabs={handleChangeCharacterTabs}
                     ChangeAllowedBooks={handleChangeAllowedBooks}
                     ChangeEdition={handleChangeEdition} 
@@ -316,6 +327,7 @@ export default function BasicTabs() {
             <CustomTabPanel value={value} index={6}>
                 <GearPanel
                     Gear={Character.gear}
+                    Edition={Edition}
                     onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
                     onChangeGear={(gear) => setCharacter({ ...Character, gear:gear})}
                 />

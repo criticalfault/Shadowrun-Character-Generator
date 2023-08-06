@@ -21,6 +21,7 @@ export default function ChargenBox(props) {
   }
   return (
     <div style={style}>
+        Edition: {props.Edition}<br></br>
         Attributes: {parseInt(props.currentCharacter.attributes.Body)+parseInt(props.currentCharacter.attributes.Quickness)+parseInt(props.currentCharacter.attributes.Strength)+
                     parseInt(props.currentCharacter.attributes.Charisma)+parseInt(props.currentCharacter.attributes.Willpower)+parseInt(props.currentCharacter.attributes.Intelligence)}
                     /

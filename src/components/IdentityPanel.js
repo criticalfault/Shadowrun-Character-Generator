@@ -18,16 +18,13 @@ export default function IdentityPanel(props) {
         }
     }
     const [Tabs, setTabs] = React.useState(props.characterTabs);
-    const [Books, setBooks] = React.useState({});
-
-    const [bookStates, setBookStates] = React.useState(AllBooks);
+    const [bookStates, setBookStates] = React.useState({});
     const handleBookCheckboxChange = (event) => {
             const { name, checked } = event.target;
             setBookStates(prevBookStates => ({
             ...prevBookStates,
             [name]: checked,
         }));
-        console.log(bookStates)
     }
     const handleChangeCharacterTabs = (event) => {
         let characterTabsPayload = { ...Tabs };
@@ -35,6 +32,10 @@ export default function IdentityPanel(props) {
         setTabs(characterTabsPayload);
         props.ChangeCharacterTabs(characterTabsPayload);
     }
+
+    React.useEffect(function(){
+       console.log(bookStates)
+    },[bookStates])
 
     return (<>
         Character Edition:
@@ -83,13 +84,13 @@ export default function IdentityPanel(props) {
                             <FormControlLabel
                                 value="top"
                                 control={
-                                <Checkbox
-                                    name={AllBooks[book].name}
-                                    onChange={handleBookCheckboxChange}
-                                    checked={bookStates[AllBooks[book].name] || false}
-                                />
+                                    <Checkbox
+                                        name={book}
+                                        onChange={handleBookCheckboxChange}
+                                        checked={bookStates[book] || false}
+                                    />
                                 }
-                                label={AllBooks[book].name}
+                                label={AllBooks[book].name+" ("+book+")"}
                                 labelPlacement="end"
                             />
                             </div>
