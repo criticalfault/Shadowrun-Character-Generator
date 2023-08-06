@@ -9,7 +9,9 @@ import AttributesPanel from './AttributesPanel';
 import SR2SkillsPanel from './SR2SkillsPanel';
 import SR3SkillsPanel from './SR3SkillsPanel';
 import MagicPanel from './MagicPanel';
+import GearPanel from './GearPanel';
 import LoadCharacter from './LoadCharacter';
+import ChargenBox from './ChargenBox';
 //import Stepper from './Stepper';
 import CyberwarePanel from './CyberwarePanel';
 function CustomTabPanel(props) {
@@ -57,7 +59,7 @@ export default function BasicTabs() {
         availableMagics:['Full Magician'],
         magicChoice:'None',
         race:'',
-        cyberAttributeBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
+        cyberAttributeBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0,'Reaction':0,'Initative':0},
         raceBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
         attributes:{'Body':1,'Quickness':1,'Strength':1,'Charisma':1,'Willpower':1,'Intelligence':1, 'Essence':6},
         characterTabs:{'Magic':false,'Decking':false,'Otaku':false,'Rigger':false},
@@ -73,7 +75,7 @@ export default function BasicTabs() {
         magical_tradition: false,
         spells:[],
         powers:[],
-        maxCash: 5000,
+        chargenCash: 20000,
         cash:0
     }
     const [Edition, setEdition]= React.useState('SR3');
@@ -96,6 +98,20 @@ export default function BasicTabs() {
     };
 
     React.useEffect(() => {
+        let tempCashSpent = 0;
+        Character.cyberware.forEach(function(cyber){
+            tempCashSpent+=cyber.Cost;
+        });
+        
+        Character.bioware.forEach(function(bio){
+            tempCashSpent+=bio.Cost;
+        });
+
+        Character.gear.forEach(function(gear){
+            tempCashSpent+=gear.Cost;
+        });
+
+        //Do the Vehicle Cost Calc
         console.log(Character);
     },[Character])
 
@@ -112,7 +128,8 @@ export default function BasicTabs() {
     }
 
     const handleChangeMaxCash = (Cash) =>{
-        setCharacter({...Character,maxCash:Cash})
+        console.log(Cash);
+        setCharacter({...Character,chargenCash:Cash})
     }
 
     const handleChangeMaxSkills = (maxSkills) =>{
@@ -156,7 +173,7 @@ export default function BasicTabs() {
 
     const handleEssenceChange = (value) => {
         setCharacter((prevCharacter) =>{
-            prevCharacter.attributes.Essence = parseInt(value);
+            prevCharacter.attributes['Essence'] = parseFloat(value);
             return prevCharacter;
         })
     }
@@ -173,20 +190,11 @@ export default function BasicTabs() {
         setCharacter(characterData);
     }
 
-    const CalculateCashOnHand = () =>{
-        let tempCashSpent = 0;
-        Character.cyberware.forEach(function(cyber){
-            tempCashSpent+=cyber.Cost;
-        })
-        Character.bioware.forEach(function(bio){
-            tempCashSpent+=bio.Cost;
-        })
-        return Character.maxCash-tempCashSpent;
-    }
-
-
   return (
     <div className='dashboard'>
+        <ChargenBox
+            currentCharacter={Character}
+        />
         <LoadCharacter Character={Character} loadCharacter={handleLoadCharacter}/>
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider', }}>
@@ -254,14 +262,20 @@ export default function BasicTabs() {
             </CustomTabPanel>
             <CustomTabPanel value={value} index={5}>
                 <CyberwarePanel
-                    CashOnHand={CalculateCashOnHand}
+                    CashOnHand={Character.chargenCash}
                     Cyberware={Character.cyberware}
                     Bioware={Character.bioware}
                     Essence={Character.attributes.Essence}
                     onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
                     onChangeCyberware={(cyberware) => setCharacter({ ...Character, cyberware:cyberware})}
                     onChangeBioware={(bioware) => setCharacter({ ...Character, bioware: bioware})}
-                    onChangeEssence={handleEssenceChange}
+                    onChangeEssence={handleEssenceChange}/>
+            </CustomTabPanel>
+            <CustomTabPanel value={value} index={6}>
+                <GearPanel
+                    Gear={Character.gear}
+                    onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
+                    onChangeGear={(gear) => setCharacter({ ...Character, gear:gear})}
                 />
             </CustomTabPanel>
         </Box>

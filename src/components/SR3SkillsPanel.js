@@ -25,11 +25,11 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
   //Active Skills
   const [selectedSpecialization, setSelectedSpecialization] = useState('None');
   const [selectedSkills, setSelectedSkills] = useState(characterSkills.filter(skill => skill.type == 'Active'));
-  const [selectedCategory, setSelectedCategory] = useState('Martial Arts(MA)');
+  const [selectedCategory, setSelectedCategory] = useState('Combat skills');
   const [skillRating, setSkillRating] = useState(1);
   const [skillPointsSpent, setSkillPointsSpent] = useState(CalcTotalSkillsRatings(characterSkills.filter(skill => skill.type == 'Active')));
   const [skillCategory, setSkillCategory] = useState(Object.keys(skillsData));
-  const [newSkill, setNewSkill] = useState('MA:Aikido');
+  const [newSkill, setNewSkill] = useState('Assault Rifles');
 
   //Knowledge Skills
   const [selectedKnowledgeSpecialization, setKnowledgeSelectedSpecialization] = useState('');

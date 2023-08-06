@@ -1,5 +1,5 @@
 import { MenuItem } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
@@ -15,100 +15,131 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-const CyberwareData = require('../data/SR3/Cyberware.json');
-const BiowareData = require('../data/SR3/Bioware.json');
+
 export default function CyberwarePanel(props) {
-    const [Essence, setEssence] = React.useState(props.Essence);
-    const [EssencePointsSpent, setEssencePointsSpent] = React.useState(0.0)
-    const [SelectedCyberwareCategory, setSelectedCyberwareCategory] = React.useState('BODYWARE');
     
-    const [NewCyberware, setNewCyberware] = React.useState();
-    const [NewCyberwareCost, setNewCyberwareCost] = React.useState();
-    const [NewCyberwareIndex, setNewCyberwareIndex] = React.useState(0);
-    const [NewCyberwareDesc, setNewCyberwareDesc] = React.useState('');
-    const [selectedCyberware, setSelectedCyberware] = React.useState([]);
-    const CyberwareCategories = ['BODYWARE','COMMUNICATIONS','CYBERWEAPONS','EARS','EYES','HEADWEAR','CYBERLIMBS','CYBERLIMB MODS','FEET','HANDS','MATRIXWARE','RIGGER','SENSEWARE','NANOWARE','VARIOUS'];
-    const handleCyberwareCategoryChange = (event) => {
-        setSelectedCyberwareCategory(event.target.value);
-    }
-    //
-    const handleCyberwareChange = (event) => {
-        const TempCyber = CyberwareData[SelectedCyberwareCategory][event.target.value];
-        setNewCyberware(TempCyber);
-        setNewCyberwareIndex(event.target.value)
-        setNewCyberwareCost(TempCyber.Cost);
-        setNewCyberwareDesc(TempCyber.Notes)
-    }
+  const CyberwareData = require('../data/SR3/Cyberware.json');
+  const BiowareData = require('../data/SR3/Bioware.json');
 
-    const handleAddCyberware = () => {
-        if (NewCyberware) {
-          const powerToAdd = {...NewCyberware};
-          setSelectedCyberware(prevCyberware => [...prevCyberware, powerToAdd]);
-          setNewCyberware('');
-          setNewCyberwareIndex('');
-          props.onChangeCyberware([...selectedCyberware, powerToAdd]);
-          setEssence(prevEssence => prevEssence - NewCyberware.EssCost);
-          props.onChangeEssence('Essence',Essence);
-        }
-    }
+  const CalcEssenceSpent = () =>{
+    let EssenceSpent = 0;
+    props.Cyberware.forEach(function(cyber){
+      EssenceSpent += parseFloat(cyber.EssCost);
+    });
+    return EssenceSpent.toFixed(2);
+  }
 
-    const handleRemoveCyberware = (index) => {
-      
-      const editedCyberware = [...selectedCyberware];
-      console.log(selectedCyberware);
-      let RemovedCyberware = editedCyberware.splice(index, 1);
-      console.log(RemovedCyberware);
-      setEssence(prevEssence => prevEssence + RemovedCyberware.EssCost);
-      props.onChangeEssence('Essence',Essence);
-      setSelectedCyberware(editedCyberware);
-    };
-   
-    const [NewBioware, setNewBioware] = React.useState();
-    const [NewBiowareCost, setNewBiowareCost] = React.useState();
-    const [NewBiowareIndex, setNewBiowareIndex] = React.useState(0);
-    const [NewBiowareDesc, setNewBiowareDesc] = React.useState('');
-    const [selectedBioware, setSelectedBioware] = React.useState([]);
-    const [BiowareSelectedCategory, setBiowareSelectedCategory] = React.useState();
-    const BiowareCategories = ['STANDARD','CULTURED','COSMETIC','NANOWARE','GENETECH']
-    const handleBiowareCategoryChange = (event) => {
-        setBiowareSelectedCategory(event.target.value);
-    }
-    const handleBiowareChange = (event) => {
-        const TempCyber = BiowareData[BiowareSelectedCategory][event.target.value];
-        setNewBioware(TempCyber);
-        setNewBiowareIndex(event.target.value)
-        setNewBiowareCost(TempCyber.Cost);
-        setNewBiowareDesc(TempCyber.Notes)
-    }
+  const CalcTotalNuyenSpent = () =>{
+    let TotalNuyen = 0;
+    props.Cyberware.forEach(function(cyber){
+      TotalNuyen += parseInt(cyber.Cost);
+    });
+    return TotalNuyen;
+  }
 
-    const handleAddBioware = () => {
-        if (NewBioware) {
-          const powerToAdd = {...NewBioware};
-          setSelectedBioware(prevBioware => [...prevBioware, powerToAdd]);
-        //   SetAdeptPointsSpent(prevCyberwarePointsSpent => (prevCyberwarePointsSpent + powerToAdd.Cost));
-          setNewBioware('');
-          setNewBiowareIndex('');
-          props.onChangeBioware([...selectedBioware, powerToAdd]);
-          setEssence(prevEssence => prevEssence - NewBioware.EssCost);
-          props.onChangeEssence('Essence',Essence);
-        }
-    }
+  const CalcBioIndexSpent = () =>{
+    let BioIndex = 0;
+    props.Bioware.forEach(function(bio){
+      BioIndex += parseFloat(bio.BioIndex);
+    });
+    return BioIndex.toFixed(2);
+  }
 
-    const handleRemoveBioware = (index) => {
-        const editedBioware = [...selectedBioware];
-        let RemovedBioware = editedBioware.splice(index, 1);
-        setEssence(prevEssence => prevEssence + RemovedBioware.EssCost);
-        props.onChangeEssence('Essence',Essence);
-        setSelectedCyberware(editedBioware);
-    };
+  
+  const [Essence, setEssence]                                     = useState(props.Essence);
+  const [EssencePointsSpent, setEssencePointsSpent]               = useState(CalcEssenceSpent());
+  const [BodyIndex, setBodyIndex]                                 = useState(CalcBioIndexSpent());
+  const [SelectedCyberwareCategory, setSelectedCyberwareCategory] = useState('BODYWARE');
+  
+  const [NewCyberware, setNewCyberware]           = useState();
+  const [NewCyberwareCost, setNewCyberwareCost]   = useState();
+  const [NewCyberwareIndex, setNewCyberwareIndex] = useState(0);
+  const [NewCyberwareDesc, setNewCyberwareDesc]   = useState('');
+  const [selectedCyberware, setSelectedCyberware] = useState(props.Cyberware);
+  const [TotalCyberwareCost, setTotalCyberwareCost] = useState(CalcTotalNuyenSpent());
+  const CyberwareCategories = ['BODYWARE','COMMUNICATIONS','CYBERWEAPONS','EARS','EYES','HEADWEAR','CYBERLIMBS','CYBERLIMB MODS','FEET','HANDS','MATRIXWARE','RIGGER','SENSEWARE','NANOWARE','VARIOUS'];
+  const handleCyberwareCategoryChange = (event) => {
+      setSelectedCyberwareCategory(event.target.value);
+  }
+  const handleCyberwareChange = (event) => {
+      const TempCyber = CyberwareData[SelectedCyberwareCategory][event.target.value];
+      setNewCyberware(TempCyber);
+      setNewCyberwareIndex(event.target.value)
+      setNewCyberwareCost(TempCyber.Cost);
+      setNewCyberwareDesc(TempCyber.Notes)
+  }
+
+  const handleAddCyberware = () => {
+      if (NewCyberware) {
+        const cyberToAdd = {...NewCyberware};
+        setSelectedCyberware(prevCyberware => [...prevCyberware, cyberToAdd]);
+        setNewCyberware('');
+        setNewCyberwareIndex('');
+        props.onChangeCyberware([...selectedCyberware, cyberToAdd]);
+      }
+  }
+
+  const handleRemoveCyberware = (index) => {
+    const editedCyberware = [...selectedCyberware];
+    let RemovedCyberware = editedCyberware.splice(index, 1);
+    setSelectedCyberware(editedCyberware);
+    props.onChangeCyberware([...editedCyberware]);
+  };
+  
+  const [NewBioware, setNewBioware]                           = useState();
+  const [NewBiowareCost, setNewBiowareCost]                   = useState();
+  const [NewBiowareIndex, setNewBiowareIndex]                 = useState(0);
+  const [NewBiowareDesc, setNewBiowareDesc]                   = useState('');
+  const [SelectedBioware, setSelectedBioware]                 = useState(props.Bioware);
+  const [BiowareSelectedCategory, setBiowareSelectedCategory] = useState();
+  const BiowareCategories = ['STANDARD','CULTURED','COSMETIC','NANOWARE','GENETECH']
+  const handleBiowareCategoryChange = (event) => {
+      setBiowareSelectedCategory(event.target.value);
+  }
+  const handleBiowareChange = (event) => {
+      const TempCyber = BiowareData[BiowareSelectedCategory][event.target.value];
+      setNewBioware(TempCyber);
+      setNewBiowareIndex(event.target.value)
+      setNewBiowareCost(TempCyber.Cost);
+      setNewBiowareDesc(TempCyber.Notes)
+  }
+
+  const handleAddBioware = () => {
+      if (NewBioware) {
+        const powerToAdd = {...NewBioware};
+        setSelectedBioware(prevBioware => [...prevBioware, powerToAdd]);
+      //   SetAdeptPointsSpent(prevCyberwarePointsSpent => (prevCyberwarePointsSpent + powerToAdd.Cost));
+        setNewBioware('');
+        setNewBiowareIndex('');
+        props.onChangeBioware([...SelectedBioware, powerToAdd]);
+        setEssence(prevEssence => prevEssence - NewBioware.EssCost);
+        props.onChangeEssence(Essence);
+      }
+  }
+
+  const handleRemoveBioware = (index) => {
+      const editedBioware = [...SelectedBioware];
+      let RemovedBioware = editedBioware.splice(index, 1);
+      setEssence(prevEssence => prevEssence + RemovedBioware.EssCost);
+      props.onChangeEssence(Essence);
+      setSelectedCyberware(editedBioware);
+  };
+
+
+  useEffect(function(){
+    setEssencePointsSpent(CalcEssenceSpent());
+    setBodyIndex(CalcBioIndexSpent());
+    setTotalCyberwareCost(CalcTotalNuyenSpent());
+  },[selectedCyberware,SelectedBioware]);
+
     
     return (<>
         <h3>Cyberware</h3>
-        <Box sx={{ width: '250px' }}>Essence Points {parseInt(props.Essence)}/6
-            <LinearProgress variant="determinate" value={props.Essence/6*100} />
+        <Box sx={{ width: '250px' }}>Essence Points {parseFloat(props.Essence-EssencePointsSpent).toFixed(2)}/6
+            <LinearProgress variant="determinate" value={(parseFloat(props.Essence-EssencePointsSpent))/6*100} />
         </Box>
         <Box sx={{ width: '250px' }}>
-          Cash: {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(props.CashOnHand)}
+        Cyberware Cost: {TotalCyberwareCost}
         </Box>
         <br></br>
         <FormControl style={{'width':'200px'}}>
@@ -126,7 +157,7 @@ export default function CyberwarePanel(props) {
       <br></br>
     {SelectedCyberwareCategory && (
         <FormControl style={{ minWidth: 650 }}>
-        <InputLabel  id="power-label">{SelectedCyberwareCategory}</InputLabel>
+        <InputLabel id="power-label">{SelectedCyberwareCategory}</InputLabel>
         <Select
             id="power-dropdown"
             value={NewCyberwareIndex}
@@ -186,9 +217,9 @@ export default function CyberwarePanel(props) {
     <br></br>
     <hr></hr>
     <h3>Bioware</h3>
-    <Box sx={{ width: '100%' }}>Body Index {EssencePointsSpent}/6
+    {/* <Box sx={{ width: '100%' }}>Body Index {BodyIndex}/6
         <LinearProgress variant="determinate" value={EssencePointsSpent} />
-    </Box>
+    </Box> */}
     <br></br>
     <FormControl style={{'width':'200px'}}>
     <InputLabel  id="skill-label">Bioware Categories</InputLabel>
