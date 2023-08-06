@@ -126,6 +126,20 @@ export default function PriorityPanel(props) {
                         <td></td>
                         <td></td>
                     </tr>
+                    <tr>
+                        <td>Reaction:</td>
+                        <td>{Math.floor((parseInt(Quickness)+parseInt(Intelligence))/2)}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Initative:</td>
+                        <td>1d6</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
