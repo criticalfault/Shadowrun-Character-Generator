@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-// import { MenuItem } from '@mui/material';
-// import Select from '@mui/material/Select';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
-
 import NativeSelect from '@mui/material/NativeSelect';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
@@ -15,7 +12,7 @@ import Box from '@mui/material/Box';
 const skillsData = require('../data/SR3/ActiveSkills.json');
 const LanguageSkillsData = require('../data/SR3/LanguageSkills.json');
 function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, KnowledgeSkillsMax, LanguageSkillsMax }) {
-  const ActiveSkills = ['Build/Repair skills','Physical skills','Magical skills','Social skills','Survival skills','Technical skills','Vehicle skills','Otaku (MATRIX) skills','Martial Arts(MA)']
+  const ActiveSkills = ['Combat skills','Build/Repair skills','Physical skills','Magical skills','Social skills','Survival skills','Technical skills','Vehicle skills','Otaku (MATRIX) skills','Martial Arts(MA)']
   const KnowledgeSkills = ['6th World (SW)','Academic Skills (AC)','Area Knowledge (AK)','Background (BK)','Interests (IN)','Program Design (PD)','Street (ST)','Survival (SV)', 'System Familiarity (SF)']
   const CalcTotalSkillsRatings = (skillsList) =>{
     let totalRatings = 0;
@@ -24,34 +21,6 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
     })
     return totalRatings;
   }
-
-
-  // const CalcTotalSkillsRatings = (skillsList, type) =>{
-  //   let totalActiveRatings = 0;
-  //   let totalKnowledgeRatings = 0;
-  //   let totalLanguageRatings = 0;
-  //   skillsList.forEach(function(skill){
-  //     switch(skill.type){
-  //       case 'Language':
-  //         totalLanguageRatings += skill.rating;
-  //         break;
-  //       case 'Knowledge':
-  //         totalKnowledgeRatings += skill.rating;
-  //         break;
-  //       case 'Active':
-  //         totalActiveRatings += skill.rating;
-  //         break;
-  //     }
-  //   })
-  //   switch(type){
-  //     case 'Language':
-  //       return totalLanguageRatings;
-  //     case 'Knowledge':
-  //       return totalKnowledgeRatings;
-  //     case 'Active':
-  //       return totalActiveRatings;
-  //   }
-  // }
 
   //Active Skills
   const [selectedSpecialization, setSelectedSpecialization] = useState('None');
@@ -199,23 +168,25 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
 
   const handleRemoveSkill = (index) => {
     const editedSkills = [...selectedSkills];
+    console.log(editedSkills);
     let RemovedSkill = editedSkills.splice(index, 1);
-    skillPointsSpent(prevSkills => (prevSkills - RemovedSkill[0].rating));
-    setSelectedSkills(editedSkills);
+    console.log(RemovedSkill);
+    // setSkillPointsSpent(prevSkills => (prevSkills - RemovedSkill[0].Rating));
+    // setSelectedSkills(editedSkills);
   };
 
   return (
     <div>
-      <Box sx={{ width: '100%' }}>Active Skills {skillPointsSpent}/{activeSkillPoints}
-        <LinearProgress variant="determinate" value={skillPointsSpent} />
+      <Box sx={{ width: '250px' }}>Active Skills {skillPointsSpent}/{activeSkillPoints}
+        <LinearProgress variant="determinate" value={skillPointsSpent/activeSkillPoints*100} />
       </Box>
       
-      <Box sx={{ width: '100%' }}>Knowledge Skills {skillKnowledgePointsSpent}/{KnowledgeSkillsMax}
-        <LinearProgress variant="determinate" value={skillKnowledgePointsSpent} />
+      <Box sx={{ width: '250px' }}>Knowledge Skills {skillKnowledgePointsSpent}/{KnowledgeSkillsMax}
+        <LinearProgress variant="determinate" value={skillKnowledgePointsSpent/KnowledgeSkillsMax*100} />
       </Box>
       
-      <Box sx={{ width: '100%' }}>Language Skills {skillLanguagePointsSpent}/{LanguageSkillsMax}
-        <LinearProgress variant="determinate" value={skillLanguagePointsSpent} />
+      <Box sx={{ width: '250px' }}>Language Skills {skillLanguagePointsSpent}/{LanguageSkillsMax}
+        <LinearProgress variant="determinate" value={skillLanguagePointsSpent/LanguageSkillsMax*100} />
       </Box>
 
       <br></br>

@@ -53,11 +53,14 @@ export default function CyberwarePanel(props) {
     }
 
     const handleRemoveCyberware = (index) => {
-        const editedCyberware = [...selectedCyberware];
-        let RemovedCyberware = editedCyberware.splice(index, 1);
-        setEssence(prevEssence => prevEssence + RemovedCyberware.EssCost);
-        props.onChangeEssence('Essence',Essence);
-        setSelectedCyberware(editedCyberware);
+      
+      const editedCyberware = [...selectedCyberware];
+      console.log(selectedCyberware);
+      let RemovedCyberware = editedCyberware.splice(index, 1);
+      console.log(RemovedCyberware);
+      setEssence(prevEssence => prevEssence + RemovedCyberware.EssCost);
+      props.onChangeEssence('Essence',Essence);
+      setSelectedCyberware(editedCyberware);
     };
    
     const [NewBioware, setNewBioware] = React.useState();
@@ -101,8 +104,11 @@ export default function CyberwarePanel(props) {
     
     return (<>
         <h3>Cyberware</h3>
-        <Box sx={{ width: '100%' }}>Essence Points {parseInt(props.Essence)}/6
-            <LinearProgress variant="determinate" value={props.Essence} />
+        <Box sx={{ width: '250px' }}>Essence Points {parseInt(props.Essence)}/6
+            <LinearProgress variant="determinate" value={props.Essence/6*100} />
+        </Box>
+        <Box sx={{ width: '250px' }}>
+          Cash: {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(props.CashOnHand)}
         </Box>
         <br></br>
         <FormControl style={{'width':'200px'}}>

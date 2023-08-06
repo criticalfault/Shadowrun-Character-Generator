@@ -173,6 +173,17 @@ export default function BasicTabs() {
         setCharacter(characterData);
     }
 
+    const CalculateCashOnHand = () =>{
+        let tempCashSpent = 0;
+        Character.cyberware.forEach(function(cyber){
+            tempCashSpent+=cyber.Cost;
+        })
+        Character.bioware.forEach(function(bio){
+            tempCashSpent+=bio.Cost;
+        })
+        return Character.maxCash-tempCashSpent;
+    }
+
 
   return (
     <div className='dashboard'>
@@ -242,15 +253,16 @@ export default function BasicTabs() {
                 />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={5}>
-                    <CyberwarePanel
-                        Cyberware={Character.cyberware}
-                        Bioware={Character.bioware}
-                        Essence={Character.attributes.Essence}
-                        onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
-                        onChangeCyberware={(cyberware) => setCharacter({ ...Character, cyberware:cyberware})}
-                        onChangeBioware={(bioware) => setCharacter({ ...Character, bioware: bioware})}
-                        onChangeEssence={handleEssenceChange}
-                    />
+                <CyberwarePanel
+                    CashOnHand={CalculateCashOnHand}
+                    Cyberware={Character.cyberware}
+                    Bioware={Character.bioware}
+                    Essence={Character.attributes.Essence}
+                    onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
+                    onChangeCyberware={(cyberware) => setCharacter({ ...Character, cyberware:cyberware})}
+                    onChangeBioware={(bioware) => setCharacter({ ...Character, bioware: bioware})}
+                    onChangeEssence={handleEssenceChange}
+                />
             </CustomTabPanel>
         </Box>
     </div>
