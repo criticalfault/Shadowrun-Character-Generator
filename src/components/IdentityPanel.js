@@ -18,7 +18,7 @@ export default function IdentityPanel(props) {
         }
     }
     const [Tabs, setTabs] = React.useState(props.characterTabs);
-    const [bookStates, setBookStates] = React.useState({});
+    const [bookStates, setBookStates] = React.useState((props.Edition === 'SR3'?props.characterBooks3:props.characterBooks2));
     const handleBookCheckboxChange = (event) => {
             const { name, checked } = event.target;
             setBookStates(prevBookStates => ({
@@ -35,6 +35,7 @@ export default function IdentityPanel(props) {
 
     React.useEffect(function(){
        console.log(bookStates)
+       props.ChangeAllowedBooks(bookStates);
     },[bookStates])
 
     return (<>

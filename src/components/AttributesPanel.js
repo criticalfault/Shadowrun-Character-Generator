@@ -9,6 +9,7 @@ export default function PriorityPanel(props) {
     const [Charisma, setCharisma] = React.useState(props.currentCharacter.attributes.Charisma);
     const [Intelligence, setIntelligence] = React.useState(props.currentCharacter.attributes.Intelligence);
     const [Willpower, setWillpower] = React.useState(props.currentCharacter.attributes.Willpower);
+    const [Initative, setInitative] = React.useState(props.currentCharacter.attributes.Initative);
     const handleChangeAttribute = (event) => {
         const attributesArray = {'Body':Body,'Quickness':Quickness,'Strength':Strength,'Charisma':Charisma,'Intelligence':Intelligence,'Willpower':Willpower};
         let attribute = event.target.name;
@@ -135,7 +136,7 @@ export default function PriorityPanel(props) {
                     </tr>
                     <tr>
                         <td>Initative:</td>
-                        <td>1d6</td>
+                        <td>{Initative}d6</td>
                         <td></td>
                         <td></td>
                         <td></td>

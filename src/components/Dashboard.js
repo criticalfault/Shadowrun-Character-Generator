@@ -49,11 +49,9 @@ function a11yProps(index) {
 
 export default function BasicTabs() {
     const baseCharacter = {
-        allowedBooks:[],
-        bookToggles:{
-                "SR3":{'cc':true, 'mits':true, 'sr3':true,'mm':true,'mat':true,'r3':true},
-                "SR2":{'sr2':true}
-        },
+        allowedBooks:['cc', 'mits','sr2','sr3','mm','mat','r3'],
+        bookTogglesSR3:{'cc':true, 'mits':true, 'sr3':true,'mm':true,'mat':true,'r3':true},
+        bookTogglesSR2:{'sr2':true},
         step:'chargen',
         priorities:{'Magic':'A','Attributes':'B','Skills':'C','Resources':'D','Race':'E'},
         maxSkillPoints: 34,
@@ -64,9 +62,9 @@ export default function BasicTabs() {
         availableMagics:['Full Magician'],
         magicChoice:'None',
         race:'',
-        cyberAttributeBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0,'Reaction':0,'Initative':0},
+        cyberAttributeBonuses:{'Body':0, 'Quickness':0, 'Strength':0, 'Charisma':0, 'Willpower':0, 'Intelligence':0, 'Reaction':0, 'Initative':0, 'Impact':0, 'Ballastic':0},
         raceBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
-        attributes:{'Body':1,'Quickness':1,'Strength':1,'Charisma':1,'Willpower':1,'Intelligence':1, 'Essence':6},
+        attributes:{'Body':1,'Quickness':1,'Strength':1,'Charisma':1,'Willpower':1,'Intelligence':1, 'Essence':6,'Initative':1},
         characterTabs:{'Magic':false,'Decking':false,'Otaku':false,'Rigger':false},
         inventory:[],
         weapons:[],
@@ -104,10 +102,45 @@ export default function BasicTabs() {
         }));
     };
 
+    const convertModsToAttributes = (mods) => {
+        const ModToAttributes ={ 
+            'BOD':'Body',
+            'STR':'Strength',
+            'QCK':'Quickness', 
+            'INT':'Intelligence', 
+            'CHA':'Charisma',
+            'WIL':'Willpower',
+            'RCT':'Reaction',
+            'INI':"Initative",
+            'IMP':'Impact',
+            'BAL':'Ballastic',
+            'TASK':'Task Pool',
+            'HAC':'Hacking Pool',
+            'VNI':'Vehicle Initative',
+            'VCT':'Vehicle Control Reaction',
+            'VCR':'Vehicle Control Rig Level'
+        }
+
+        return mods.map(mod => {
+            const matches = mod.match(/([\+\-]\d)([A-Z]\w+)/);
+            if (matches) {
+                const [, sign, modPart] = matches;
+                const attribute = ModToAttributes[modPart] || modPart;
+                const value = sign === '-' ? -1 : 1;
+                return { [attribute]: value };
+            }
+            return null;
+        }).filter(mod => mod !== null);
+    }
+
     React.useEffect(() => {
         let tempCashSpent = 0;
+        let cyberModsTotals = [];
         Character.cyberware.forEach(function(cyber){
             tempCashSpent+=cyber.Cost;
+            if(cyber.Mods !== ''){
+                cyberModsTotals.push(cyber.Mods)
+            }
         });
         
         Character.bioware.forEach(function(bio){
@@ -118,6 +151,19 @@ export default function BasicTabs() {
             tempCashSpent+=gear.Cost;
         });
 
+        let cyberAttributeBonuses = {'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0,'Reaction':0,'Initative':0};
+
+        cyberModsTotals.forEach(function(mod){
+            let AttributesToMod = convertModsToAttributes(mod.split(','));
+            console.log(AttributesToMod);
+            for(let i=0; i<AttributesToMod.length; i++){
+                if(!cyberAttributeBonuses.hasOwnProperty(AttributesToMod[i])){
+                    cyberAttributeBonuses[Object.keys(AttributesToMod[i])[0]] = 0;
+                }
+                cyberAttributeBonuses[Object.keys(AttributesToMod[i])[0]] += parseInt(AttributesToMod[i]);
+            }
+        });
+        console.log(cyberAttributeBonuses);
         //Do the Vehicle Cost Calc
         console.log(Character);
     },[Character])
@@ -134,10 +180,21 @@ export default function BasicTabs() {
     }
 
     const handleChangeAllowedBooks = (books) => {
-        setCharacter((prevCharacter) => ({
-            ...prevCharacter,
-            allowedBooks:Object.keys(books)})
-        );
+        if(Edition === 'SR3'){
+            setCharacter((prevCharacter) => ({
+                ...prevCharacter,
+                allowedBooks:Object.keys(books),
+                bookTogglesSR3:books
+                })
+            );
+        }else if(Edition === 'SR2'){
+            setCharacter((prevCharacter) => ({
+                ...prevCharacter,
+                allowedBooks:Object.keys(books),
+                bookTogglesSR2:books
+                })
+            );
+        }
     }
 
     const handleChange = (event, newValue) => {
@@ -229,9 +286,9 @@ export default function BasicTabs() {
                                         KnowledgeSkillsMax={(Character.attributes.Intelligence*5)} 
                                         LanguageSkillsMax={(Math.floor(Character.attributes.Intelligence*1.5))} />)
         }else{
-            return  (<SR2SkillsPanel characterSkills={Character.skills} 
-                                    onUpdateSkills={handleSkillsUpdate} 
-                                    maxSkillPoints={Character.maxSkillPoints} />)
+            return  (<SR2SkillsPanel    characterSkills={Character.skills} 
+                                        onUpdateSkills={handleSkillsUpdate} 
+                                        maxSkillPoints={Character.maxSkillPoints} />)
         }
     }
 
@@ -266,12 +323,12 @@ export default function BasicTabs() {
                 <IdentityPanel  
                     currentCharacter={Character}
                     characterTabs={Character.characterTabs}
-                    characterBooks={Character.bookToggles}
+                    characterBooks3={Character.bookTogglesSR3}
+                    characterBooks2={Character.bookTogglesSR2}
                     ChangeCharacterTabs={handleChangeCharacterTabs}
                     ChangeAllowedBooks={handleChangeAllowedBooks}
                     ChangeEdition={handleChangeEdition} 
                     Edition={Edition}
-                    
                 />
             </CustomTabPanel>
             
