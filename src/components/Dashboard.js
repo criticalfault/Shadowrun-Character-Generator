@@ -62,6 +62,7 @@ export default function BasicTabs() {
         availableMagics:['Full Magician'],
         magicChoice:'None',
         race:'',
+        bodyIndex:2,
         cyberAttributeBonuses:{'Body':0, 'Quickness':0, 'Strength':0, 'Charisma':0, 'Willpower':0, 'Intelligence':0, 'Reaction':0, 'Initative':0, 'Impact':0, 'Ballastic':0},
         raceBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
         attributes:{'Body':1,'Quickness':1,'Strength':1,'Charisma':1,'Willpower':1,'Intelligence':1, 'Essence':6,'Initative':1},
@@ -230,6 +231,15 @@ export default function BasicTabs() {
         })
     }
 
+    const handleBodyIndexChange = (value) => {
+        setCharacter((prevCharacter) =>{
+            prevCharacter.bodyIndex = parseFloat(value);
+            return prevCharacter;
+        })
+    }
+
+    
+
     const handleCyberAttributeUpdates = (cyberAttributeBonuses) => {
         setCharacter((prevCharacter) => ({
             ...prevCharacter,
@@ -339,6 +349,7 @@ export default function BasicTabs() {
                     onChangeCyberware={(cyberware) => setCharacter({ ...Character, cyberware:cyberware})}
                     onChangeBioware={(bioware) => setCharacter({ ...Character, bioware: bioware})}
                     onChangeEssence={handleEssenceChange}
+                    onChangeBodyIndex={handleBodyIndexChange}
                     onChangeCyberAttributes={handleCyberAttributeUpdates}
                     />
             </CustomTabPanel>

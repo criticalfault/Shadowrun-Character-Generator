@@ -157,13 +157,12 @@ const handleCyberOrBioChange = (event) => {
 
   const handleAddBioware = () => {
       if (NewBioware) {
-        const powerToAdd = {...NewBioware};
-        setSelectedBioware(prevBioware => [...prevBioware, powerToAdd]);
-      //   SetAdeptPointsSpent(prevCyberwarePointsSpent => (prevCyberwarePointsSpent + powerToAdd.Cost));
+        const bioToAdd = {...NewBioware};
+        setSelectedBioware(prevBioware => [...prevBioware, bioToAdd]);
         setNewBioware('');
         setNewBiowareIndex('');
-        props.onChangeBioware([...SelectedBioware, powerToAdd]);
-        setEssence(prevEssence => prevEssence - NewBioware.EssCost);
+        props.onChangeBioware([...SelectedBioware, bioToAdd]);
+        setBodyIndex(prevEssence => prevEssence - NewBioware.BodyIndex);
         props.onChangeEssence(Essence);
       }
   }
