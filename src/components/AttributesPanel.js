@@ -116,30 +116,30 @@ export default function PriorityPanel(props) {
                     <tr>
                         <td>Essence</td>
                         <td>{Essence}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>{Essence}</td>
                     </tr>
                     <tr>
                         <td>Magic</td>
                         <td>{Magic}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>{Magic}</td>
                     </tr>
                     <tr>
                         <td>Reaction:</td>
                         <td>{Math.floor((parseInt(Quickness)+parseInt(Intelligence))/2)}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{props.currentCharacter.raceBonuses['Reaction']}</td>
+                        <td>{parseInt(props.currentCharacter.cyberAttributeBonuses['Reaction'])}</td>
+                        <td>{Math.floor((parseInt(Quickness)+parseInt(Intelligence))/2)+parseInt(props.currentCharacter.cyberAttributeBonuses['Reaction'])}</td>
                     </tr>
                     <tr>
                         <td>Initative:</td>
                         <td>{Initative}d6</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{props.currentCharacter.raceBonuses['Initative']}</td>
+                        <td>{parseInt(props.currentCharacter.cyberAttributeBonuses['Initative'])}</td>
+                        <td>{parseInt(Initative)+parseInt(props.currentCharacter.cyberAttributeBonuses['Initative'])}d6</td>
                     </tr>
                 </tbody>
             </table>

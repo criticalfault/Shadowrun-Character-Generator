@@ -96,6 +96,57 @@ export default function CyberwarePanel(props) {
   const handleBiowareCategoryChange = (event) => {
       setBiowareSelectedCategory(event.target.value);
   }
+  const convertModsToAttributes = (mods) => {
+    const ModToAttributes ={ 
+        'BOD':'Body',
+        'STR':'Strength',
+        'QCK':'Quickness', 
+        'INT':'Intelligence', 
+        'CHA':'Charisma',
+        'WIL':'Willpower',
+        'RCT':'Reaction',
+        'INI':"Initative",
+        'IMP':'Impact',
+        'BAL':'Ballastic',
+        'TASK':'Task Pool',
+        'HAC':'Hacking Pool',
+        'VNI':'Vehicle Initative',
+        'VCT':'Vehicle Control Reaction',
+        'VCR':'Vehicle Control Rig Level'
+    }
+
+    return mods.map(mod => {
+        const matches = mod.match(/([+-])(\d)([A-Z]\w+)/);
+        if (matches) {
+            const [, sign, amount, modPart] = matches;
+            const attribute = ModToAttributes[modPart] || modPart;
+            const value = sign === '-' ? parseInt(amount)*-1 : parseInt(amount);
+            return { [attribute]: value };
+        }
+        return null;
+    }).filter(mod => mod !== null);
+}
+
+const handleCyberOrBioChange = (event) => {
+  let cyberAttributeBonuses = {'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0,'Reaction':0,'Initative':0};
+  let cyberModsTotals = [];
+  selectedCyberware.forEach(function(cyber){
+    if(cyber.Mods !== ''){
+      cyberModsTotals.push(cyber.Mods)
+    }
+  });
+  cyberModsTotals.forEach(function(mod){
+    let AttributesToMod = convertModsToAttributes(mod.split(','));
+    for(let i=0; i<AttributesToMod.length; i++){
+        if(!cyberAttributeBonuses.hasOwnProperty(Object.keys(AttributesToMod[i])[0])){
+            cyberAttributeBonuses[Object.keys(AttributesToMod[i])[0]] = 0;
+        }
+        cyberAttributeBonuses[Object.keys(AttributesToMod[i])[0]] += parseInt(Object.values(AttributesToMod[i])[0]);
+      }
+  });
+  props.onChangeCyberAttributes(cyberAttributeBonuses);
+}
+
   const handleBiowareChange = (event) => {
       const TempCyber = BiowareData[BiowareSelectedCategory][event.target.value];
       setNewBioware(TempCyber);
@@ -130,6 +181,7 @@ export default function CyberwarePanel(props) {
     setEssencePointsSpent(CalcEssenceSpent());
     setBodyIndex(CalcBioIndexSpent());
     setTotalCyberwareCost(CalcTotalNuyenSpent());
+    handleCyberOrBioChange();
   },[selectedCyberware,SelectedBioware]);
 
     
@@ -163,7 +215,7 @@ export default function CyberwarePanel(props) {
             value={NewCyberwareIndex}
             onChange={handleCyberwareChange}>
             {CyberwareData[SelectedCyberwareCategory].map( (cyber, index) => (
-            <MenuItem selected={NewCyberwareIndex == index} key={index} value={index}>{cyber.Name} - Essence Cost: {cyber.EssCost}</MenuItem>
+            <MenuItem selected={NewCyberwareIndex === index} key={index} value={index}>{cyber.Name} - Essence Cost: {cyber.EssCost}</MenuItem>
             ))}
         </Select>
         </FormControl>
@@ -242,7 +294,7 @@ export default function CyberwarePanel(props) {
         value={NewBiowareIndex}
         onChange={handleBiowareChange}>
         {BiowareData[BiowareSelectedCategory].map( (cyber, index) => (
-        <MenuItem selected={NewBiowareIndex == index} key={index} value={index}>{cyber.Name} - BioIndex Cost: {cyber.BioIndex}</MenuItem>
+        <MenuItem selected={NewBiowareIndex === index} key={index} value={index}>{cyber.Name} - BioIndex Cost: {cyber.BioIndex}</MenuItem>
         ))}
     </Select>
     </FormControl>

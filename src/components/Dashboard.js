@@ -102,45 +102,11 @@ export default function BasicTabs() {
         }));
     };
 
-    const convertModsToAttributes = (mods) => {
-        const ModToAttributes ={ 
-            'BOD':'Body',
-            'STR':'Strength',
-            'QCK':'Quickness', 
-            'INT':'Intelligence', 
-            'CHA':'Charisma',
-            'WIL':'Willpower',
-            'RCT':'Reaction',
-            'INI':"Initative",
-            'IMP':'Impact',
-            'BAL':'Ballastic',
-            'TASK':'Task Pool',
-            'HAC':'Hacking Pool',
-            'VNI':'Vehicle Initative',
-            'VCT':'Vehicle Control Reaction',
-            'VCR':'Vehicle Control Rig Level'
-        }
-
-        return mods.map(mod => {
-            const matches = mod.match(/([\+\-]\d)([A-Z]\w+)/);
-            if (matches) {
-                const [, sign, modPart] = matches;
-                const attribute = ModToAttributes[modPart] || modPart;
-                const value = sign === '-' ? -1 : 1;
-                return { [attribute]: value };
-            }
-            return null;
-        }).filter(mod => mod !== null);
-    }
-
     React.useEffect(() => {
         let tempCashSpent = 0;
-        let cyberModsTotals = [];
+
         Character.cyberware.forEach(function(cyber){
             tempCashSpent+=cyber.Cost;
-            if(cyber.Mods !== ''){
-                cyberModsTotals.push(cyber.Mods)
-            }
         });
         
         Character.bioware.forEach(function(bio){
@@ -149,21 +115,7 @@ export default function BasicTabs() {
 
         Character.gear.forEach(function(gear){
             tempCashSpent+=gear.Cost;
-        });
-
-        let cyberAttributeBonuses = {'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0,'Reaction':0,'Initative':0};
-
-        cyberModsTotals.forEach(function(mod){
-            let AttributesToMod = convertModsToAttributes(mod.split(','));
-            console.log(AttributesToMod);
-            for(let i=0; i<AttributesToMod.length; i++){
-                if(!cyberAttributeBonuses.hasOwnProperty(AttributesToMod[i])){
-                    cyberAttributeBonuses[Object.keys(AttributesToMod[i])[0]] = 0;
-                }
-                cyberAttributeBonuses[Object.keys(AttributesToMod[i])[0]] += parseInt(AttributesToMod[i]);
-            }
-        });
-        console.log(cyberAttributeBonuses);
+        });        
         //Do the Vehicle Cost Calc
         console.log(Character);
     },[Character])
@@ -278,6 +230,13 @@ export default function BasicTabs() {
         })
     }
 
+    const handleCyberAttributeUpdates = (cyberAttributeBonuses) => {
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+            cyberAttributeBonuses:cyberAttributeBonuses
+        }));
+    }
+
     const SkillsPanelRender = (ed) => {
         if(ed === 'SR3'){
             return ( <SR3SkillsPanel    characterSkills={Character.skills} 
@@ -379,7 +338,9 @@ export default function BasicTabs() {
                     onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
                     onChangeCyberware={(cyberware) => setCharacter({ ...Character, cyberware:cyberware})}
                     onChangeBioware={(bioware) => setCharacter({ ...Character, bioware: bioware})}
-                    onChangeEssence={handleEssenceChange}/>
+                    onChangeEssence={handleEssenceChange}
+                    onChangeCyberAttributes={handleCyberAttributeUpdates}
+                    />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={6}>
                 <GearPanel
