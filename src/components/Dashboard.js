@@ -12,7 +12,6 @@ import MagicPanel from './MagicPanel';
 import GearPanel from './GearPanel';
 import LoadCharacter from './LoadCharacter';
 import ChargenBox from './ChargenBox';
-//import Stepper from './Stepper';
 import CyberwarePanel from './CyberwarePanel';
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -88,6 +87,7 @@ export default function BasicTabs() {
     const [value, setValue] = React.useState(0);
     const [Character, setCharacter] = React.useState(baseCharacter);
     const [selectedRace, setSelectedRace] = React.useState('Human');
+    const [NuyenSpent, setNuyenSpent] = React.useState(0.00);
 
     const handleChangePriorityRace = (event) => {
         const newRace = event.target.value;
@@ -107,18 +107,20 @@ export default function BasicTabs() {
         let tempCashSpent = 0;
 
         Character.cyberware.forEach(function(cyber){
-            tempCashSpent+=cyber.Cost;
+            tempCashSpent+=parseFloat(cyber.Cost);
         });
         
         Character.bioware.forEach(function(bio){
-            tempCashSpent+=bio.Cost;
+            tempCashSpent+= parseFloat(bio.Cost);
         });
 
         Character.gear.forEach(function(gear){
-            tempCashSpent+=gear.Cost;
-        });        
+            tempCashSpent+=parseFloat(gear.Cost);
+        });
+        console.log("CashSpent: " + tempCashSpent)        ;
         //Do the Vehicle Cost Calc
         console.log(Character);
+        setNuyenSpent(tempCashSpent);
     },[Character])
 
     const handleChangeEdition =(edition) => {
@@ -270,6 +272,7 @@ export default function BasicTabs() {
         <ChargenBox
             currentCharacter={Character}
             Edition={Edition}
+            NuyenSpent={NuyenSpent}
         />
         <LoadCharacter Character={Character} loadCharacter={handleLoadCharacter}/>
         <Box sx={{ width: '100%' }}>
@@ -302,28 +305,30 @@ export default function BasicTabs() {
             </CustomTabPanel>
             
             <CustomTabPanel value={value} index={1}>
-                <PriorityPanel  
-                            ChangePriorities={handleChangePriorities}
-                            CharacterPriorities={Character.priorities} 
-                            magicalChoice={Character.magicalChoice}
-                            ChangeRace={handleRaceChange}
-                            selectedRace={selectedRace}
-                            onChangePriorityRace={handleChangePriorityRace}
-                            ChangeRaceChoices={handleChangeAvailabileRaces} 
-                            ChangeMaxAttributes={handleChangeMaxAttributes}
-                            ChangeMaxSkills={handleChangeMaxSkills}
-                            ChangeMaxCash={handleChangeMaxCash}
-                            ChangeMagicChoices={handleChangeMagicChoices}
-                            ChangeRaceBonuses={handleChangeRaceBonuses}
-                            ChangeMagic={handleChangeMagic}
-                            Edition={Edition}
-                        />
+                <PriorityPanel
+                    BooksFilter={Character.allowedBooks}
+                    ChangePriorities={handleChangePriorities}
+                    CharacterPriorities={Character.priorities} 
+                    magicalChoice={Character.magicalChoice}
+                    ChangeRace={handleRaceChange}
+                    selectedRace={selectedRace}
+                    onChangePriorityRace={handleChangePriorityRace}
+                    ChangeRaceChoices={handleChangeAvailabileRaces} 
+                    ChangeMaxAttributes={handleChangeMaxAttributes}
+                    ChangeMaxSkills={handleChangeMaxSkills}
+                    ChangeMaxCash={handleChangeMaxCash}
+                    ChangeMagicChoices={handleChangeMagicChoices}
+                    ChangeRaceBonuses={handleChangeRaceBonuses}
+                    ChangeMagic={handleChangeMagic}
+                    Edition={Edition}
+                />
             </CustomTabPanel>
             
             <CustomTabPanel value={value} index={2}>
-                <AttributesPanel    ChangeAttributes={handleAttributesChange} 
-                                    currentCharacter={Character}
-                                    Edition={Edition}
+                <AttributesPanel    
+                    ChangeAttributes={handleAttributesChange} 
+                    currentCharacter={Character}
+                    Edition={Edition}
                 />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={3}>
@@ -336,7 +341,8 @@ export default function BasicTabs() {
                     onChangePowers={(powers) => setCharacter({ ...Character, powers})}
                     onChangeSpells={(spells) => setCharacter({ ...Character, spells })} 
                     magicalTraditions={Character.availableMagics}
-                    magicalChoice={Character.magicChoice}
+                    magicalChoice={Character.magicChoice} 
+                    BooksFilter={Character.allowedBooks}
                 />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={5}>
@@ -344,14 +350,16 @@ export default function BasicTabs() {
                     CashOnHand={Character.chargenCash}
                     Cyberware={Character.cyberware}
                     Bioware={Character.bioware}
+                    Edition={Edition}
                     Essence={Character.attributes.Essence}
                     onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
                     onChangeCyberware={(cyberware) => setCharacter({ ...Character, cyberware:cyberware})}
                     onChangeBioware={(bioware) => setCharacter({ ...Character, bioware: bioware})}
                     onChangeEssence={handleEssenceChange}
                     onChangeBodyIndex={handleBodyIndexChange}
-                    onChangeCyberAttributes={handleCyberAttributeUpdates}
-                    />
+                    onChangeCyberAttributes={handleCyberAttributeUpdates}  
+                    BooksFilter={Character.allowedBooks}
+                />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={6}>
                 <GearPanel
@@ -359,7 +367,28 @@ export default function BasicTabs() {
                     Edition={Edition}
                     onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
                     onChangeGear={(gear) => setCharacter({ ...Character, gear:gear})}
+                    BooksFilter={Character.allowedBooks}
                 />
+            </CustomTabPanel>
+            <CustomTabPanel value={value} index={7}>
+               {/*
+                Decking
+               */}
+            </CustomTabPanel>
+            <CustomTabPanel value={value} index={8}>
+                 {/*
+                Vehicles
+               */}
+            </CustomTabPanel>
+            <CustomTabPanel value={value} index={9}>
+                 {/*
+                Contacts
+               */}
+            </CustomTabPanel>
+            <CustomTabPanel value={value} index={10}>
+                 {/*
+                Karma
+               */}
             </CustomTabPanel>
         </Box>
     </div>

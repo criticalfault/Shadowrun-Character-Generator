@@ -1,5 +1,5 @@
 import { MenuItem } from '@mui/material';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
@@ -15,11 +15,11 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 
-
 export default function GearPanel(props) {
   const GearData = require('../data/'+props.Edition+'/Gear.json');
-  const GearCategories = Object.keys(GearData).sort((a, b) => a - b);
-  const GearCollection = ['Cyberdeck','Cyberdeck Parts'];
+  const tempCategories = Object.keys(GearData);
+  const GearCategories = [...tempCategories].sort();
+  //const GearCollection = ['Cyberdeck','Cyberdeck Parts'];
   const CalcTotalNuyenSpent = () =>{
       let TotalNuyen = 0;
       props.Gear.forEach(function(gear){
@@ -38,7 +38,7 @@ export default function GearPanel(props) {
         setSelectedGearCategory(event.target.value);
     }
     const handleGearChange = (event) => {
-        const TempGear = GearData[SelectedGearCategory].entries[event.target.value];
+        const TempGear = GearData[SelectedGearCategory].entries.filter(item => props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
         setNewGear(TempGear);
         setNewGearIndex(event.target.value)
         setNewGearCost(TempGear.Cost);
@@ -61,6 +61,8 @@ export default function GearPanel(props) {
     const handleRemoveGear = (index) => {
       const editedGear = [...SelectedGear];
       let RemovedGear = editedGear.splice(index, 1);
+      console.log("Removed Gear");
+      console.log(RemovedGear);
       setSelectedGear(editedGear);
       props.onChangeGear([...editedGear]);
     };
@@ -92,8 +94,8 @@ export default function GearPanel(props) {
             value={NewGearIndex}
             onChange={handleGearChange}>
             
-          { GearData[SelectedGearCategory].entries.sort((a, b) => a - b).map( (gear, index) => (
-            <MenuItem selected={NewGearIndex == index} key={index} value={index}>{gear.name}</MenuItem>
+          { GearData[SelectedGearCategory].entries.filter(item => props.BooksFilter.includes(item.BookPage.split('.')[0])).sort((a, b) => a - b).map( (gear, index) => (
+            <MenuItem selected={NewGearIndex === index} key={index} value={index}>{gear.name}</MenuItem>
           ))}
         </Select>
         </FormControl>

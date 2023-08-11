@@ -18,8 +18,8 @@ import Box from '@mui/material/Box';
 
 export default function CyberwarePanel(props) {
     
-  const CyberwareData = require('../data/SR3/Cyberware.json');
-  const BiowareData = require('../data/SR3/Bioware.json');
+  const CyberwareData = require('../data/'+props.Edition+'/Cyberware.json');
+  const BiowareData = require('../data/'+props.Edition+'/Bioware.json');
 
   const CalcEssenceSpent = () =>{
     let EssenceSpent = 0;
@@ -46,9 +46,8 @@ export default function CyberwarePanel(props) {
   }
 
   
-  const [Essence, setEssence]                                     = useState(props.Essence);
-  const [EssencePointsSpent, setEssencePointsSpent]               = useState(CalcEssenceSpent());
-  const [BodyIndex, setBodyIndex]                                 = useState(CalcBioIndexSpent());
+  const [EssencePointsSpent, setEssencePointsSpent]     = useState(CalcEssenceSpent());
+  const [BodyIndexPointsSpent, setBodyIndexPointsSpent] = useState(CalcBioIndexSpent());
   const [SelectedCyberwareCategory, setSelectedCyberwareCategory] = useState('BODYWARE');
   
   const [NewCyberware, setNewCyberware]           = useState();
@@ -62,7 +61,7 @@ export default function CyberwarePanel(props) {
       setSelectedCyberwareCategory(event.target.value);
   }
   const handleCyberwareChange = (event) => {
-      const TempCyber = CyberwareData[SelectedCyberwareCategory][event.target.value];
+      const TempCyber = CyberwareData[SelectedCyberwareCategory].filter(item => props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
       setNewCyberware(TempCyber);
       setNewCyberwareIndex(event.target.value)
       setNewCyberwareCost(TempCyber.Cost);
@@ -82,6 +81,8 @@ export default function CyberwarePanel(props) {
   const handleRemoveCyberware = (index) => {
     const editedCyberware = [...selectedCyberware];
     let RemovedCyberware = editedCyberware.splice(index, 1);
+    console.log("Removed Cyberware:");
+    console.log(RemovedCyberware);
     setSelectedCyberware(editedCyberware);
     props.onChangeCyberware([...editedCyberware]);
   };
@@ -148,7 +149,7 @@ const handleCyberOrBioChange = (event) => {
 }
 
   const handleBiowareChange = (event) => {
-      const TempCyber = BiowareData[BiowareSelectedCategory][event.target.value];
+      const TempCyber = BiowareData[BiowareSelectedCategory].filter(item => props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
       setNewBioware(TempCyber);
       setNewBiowareIndex(event.target.value)
       setNewBiowareCost(TempCyber.Cost);
@@ -162,23 +163,27 @@ const handleCyberOrBioChange = (event) => {
         setNewBioware('');
         setNewBiowareIndex('');
         props.onChangeBioware([...SelectedBioware, bioToAdd]);
-        setBodyIndex(prevEssence => prevEssence - NewBioware.BodyIndex);
-        props.onChangeEssence(Essence);
       }
   }
 
   const handleRemoveBioware = (index) => {
       const editedBioware = [...SelectedBioware];
       let RemovedBioware = editedBioware.splice(index, 1);
-      setEssence(prevEssence => prevEssence + RemovedBioware.EssCost);
-      props.onChangeEssence(Essence);
-      setSelectedCyberware(editedBioware);
+      setSelectedBioware(editedBioware);
+      props.onChangeBioware([...editedBioware]);
   };
 
+  const CheckIfSystemIsStressed = () =>{
+    if(parseFloat(props.Essence-EssencePointsSpent+3).toFixed(2) < BodyIndexPointsSpent){
+      return (<Box sx={{ width: '100%' }}>
+        System is over Stressed!<br></br>
+      </Box>)
+    }
+  }
 
   useEffect(function(){
     setEssencePointsSpent(CalcEssenceSpent());
-    setBodyIndex(CalcBioIndexSpent());
+    setBodyIndexPointsSpent(CalcBioIndexSpent());
     setTotalCyberwareCost(CalcTotalNuyenSpent());
     handleCyberOrBioChange();
   },[selectedCyberware,SelectedBioware]);
@@ -213,7 +218,7 @@ const handleCyberOrBioChange = (event) => {
             id="power-dropdown"
             value={NewCyberwareIndex}
             onChange={handleCyberwareChange}>
-            {CyberwareData[SelectedCyberwareCategory].map( (cyber, index) => (
+            {CyberwareData[SelectedCyberwareCategory].filter(item => props.BooksFilter.includes(item.BookPage.split('.')[0])).map( (cyber, index) => (
             <MenuItem selected={NewCyberwareIndex === index} key={index} value={index}>{cyber.Name} - Essence Cost: {cyber.EssCost}</MenuItem>
             ))}
         </Select>
@@ -237,40 +242,40 @@ const handleCyberOrBioChange = (event) => {
         <br></br><br></br>
         <h4>Cyberware</h4>
         <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
-          <TableHead>
-            <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell align="right">Essence Cost</TableCell>
-              <TableCell align="right">Cost</TableCell>
-              <TableCell align="right">Book.Page</TableCell>
-              <TableCell align="right">Notes</TableCell>
-              <TableCell align="right">Actions</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {props.Cyberware.map((cyberware, index) => (
-              <TableRow key={cyberware.Name+index}>
-                <TableCell component="th" scope="row">{cyberware.Name}</TableCell>
-                <TableCell align="right">{cyberware.EssCost}</TableCell>
-                <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(cyberware.Cost)}</TableCell>
-                <TableCell align="right">{cyberware.BookPage}</TableCell>
-                <TableCell align="right">{cyberware.Notes}</TableCell>
-                <TableCell align="right">
-                    <Button color="secondary" onClick={() => handleRemoveCyberware(index)}>Remove</Button>
-                </TableCell>
+          <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+            <TableHead>
+              <TableRow>
+                <TableCell>Name</TableCell>
+                <TableCell align="right">Essence Cost</TableCell>
+                <TableCell align="right">Cost</TableCell>
+                <TableCell align="right">Book.Page</TableCell>
+                <TableCell align="right">Notes</TableCell>
+                <TableCell align="right">Actions</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-
+            </TableHead>
+            <TableBody>
+              {props.Cyberware.map((cyberware, index) => (
+                <TableRow key={cyberware.Name+index}>
+                  <TableCell component="th" scope="row">{cyberware.Name}</TableCell>
+                  <TableCell align="right">{cyberware.EssCost}</TableCell>
+                  <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(cyberware.Cost)}</TableCell>
+                  <TableCell align="right">{cyberware.BookPage}</TableCell>
+                  <TableCell align="right">{cyberware.Notes}</TableCell>
+                  <TableCell align="right">
+                      <Button color="secondary" onClick={() => handleRemoveCyberware(index)}>Remove</Button>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
     <br></br>
     <hr></hr>
     <h3>Bioware</h3>
-    {/* <Box sx={{ width: '100%' }}>Body Index {BodyIndex}/6
-        <LinearProgress variant="determinate" value={EssencePointsSpent} />
-    </Box> */}
+    <Box sx={{ width: '100%' }}>Body Index / Essence Index: {BodyIndexPointsSpent}/{parseFloat(props.Essence-EssencePointsSpent+3).toFixed(2)}</Box>
+    {
+      CheckIfSystemIsStressed()
+    }
     <br></br>
     <FormControl style={{'width':'200px'}}>
     <InputLabel  id="skill-label">Bioware Categories</InputLabel>
@@ -292,7 +297,7 @@ const handleCyberOrBioChange = (event) => {
         id="power-dropdown"
         value={NewBiowareIndex}
         onChange={handleBiowareChange}>
-        {BiowareData[BiowareSelectedCategory].map( (cyber, index) => (
+        {BiowareData[BiowareSelectedCategory].filter(item => props.BooksFilter.includes(item.BookPage.split('.')[0])).map( (cyber, index) => (
         <MenuItem selected={NewBiowareIndex === index} key={index} value={index}>{cyber.Name} - BioIndex Cost: {cyber.BioIndex}</MenuItem>
         ))}
     </Select>
