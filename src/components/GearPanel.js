@@ -27,6 +27,15 @@ export default function GearPanel(props) {
       });
       return TotalNuyen;
   }
+GearData['Firearms'].entries.forEach(function(item) {
+  if(!item.hasOwnProperty('BookPage')){
+    console.log(item);
+    return;
+  }
+  if(!item.BookPage.includes('.')){
+    console.log(item);
+  }
+});
   const [NewGear, setNewGear]           = useState();
   const [NewGearCost, setNewGearCost]   = useState();
   const [NewGearIndex, setNewGearIndex] = useState(0);

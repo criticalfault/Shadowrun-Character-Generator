@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Sentinel Pod I",
+        "Availability": "5/1week",
+        "$Cost": "3000",
+        "Street Index": "2",
+        "Book.Page": "cs.92"
+      },
+      {
+        "name": "Sentinel Pod II",
+        "Availability": "6/1week",
+        "$Cost": "3500",
+        "Street Index": "2",
+        "Book.Page": "cs.92"
+      },
+      {
+        "name": "Sentinel Pod III",
+        "Availability": "6/2weeks",
+        "$Cost": "5000",
+        "Street Index": "2",
+        "Book.Page": "cs.92"
+      },
+      {
+        "name": "Sentinel Pod IV",
+        "Availability": "8/2weeks",
+        "$Cost": "7500",
+        "Street Index": "2",
+        "Book.Page": "cs.92"
+      },
+      {
+        "name": "Charges for Smokegen. small(6)",
+        "Availability": "4/72hrs",
+        "$Cost": "700",
+        "Street Index": "2",
+        "Book.Page": "fof.71"
+      },
+      {
+        "name": "Abl. Vehicle Armor Level [1]",
+        "Availability": "8/14days",
+        "$Cost": "700",
+        "Street Index": "2",
+        "Book.Page": "fof.72"
+      },
+      {
+        "name": "Abl. Vehicle Armor Level [2]",
+        "Availability": "12/14days",
+        "$Cost": "1600",
+        "Street Index": "2",
+        "Book.Page": "fof.72"
+      },
+      {
+        "name": "Abl. Vehicle Armor Level [3]",
+        "Availability": "14/21days",
+        "$Cost": "2500",
+        "Street Index": "2",
+        "Book.Page": "fof.72"
+      }
+]

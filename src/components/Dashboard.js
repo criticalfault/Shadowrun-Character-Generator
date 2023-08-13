@@ -13,6 +13,7 @@ import GearPanel from './GearPanel';
 import LoadCharacter from './LoadCharacter';
 import ChargenBox from './ChargenBox';
 import CyberwarePanel from './CyberwarePanel';
+import VehiclesPanel from './VehiclesPanel';
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -68,6 +69,7 @@ export default function BasicTabs() {
         characterTabs:{'Magic':false,'Decking':false,'Otaku':false,'Rigger':false},
         inventory:[],
         weapons:[],
+        vehicles:[],
         contacts:[],
         mods:[],
         cyberware:[],
@@ -88,6 +90,7 @@ export default function BasicTabs() {
     const [Character, setCharacter] = React.useState(baseCharacter);
     const [selectedRace, setSelectedRace] = React.useState('Human');
     const [NuyenSpent, setNuyenSpent] = React.useState(0.00);
+    const [Legal, SetLegal] = React.useState(true);
 
     const handleChangePriorityRace = (event) => {
         const newRace = event.target.value;
@@ -117,7 +120,12 @@ export default function BasicTabs() {
         Character.gear.forEach(function(gear){
             tempCashSpent+=parseFloat(gear.Cost);
         });
-        console.log("CashSpent: " + tempCashSpent)        ;
+
+        Character.vehicles.forEach(function(vehicle){
+            tempCashSpent+=parseFloat(vehicle['$Cost']);
+        });
+        
+        console.log("CashSpent: " + tempCashSpent);
         //Do the Vehicle Cost Calc
         console.log(Character);
         setNuyenSpent(tempCashSpent);
@@ -286,7 +294,7 @@ export default function BasicTabs() {
                     <Tab label="Cyberware"  {...a11yProps(5)} />
                     <Tab label="Gear"       {...a11yProps(6)} />
                     <Tab label="Decking"    {...a11yProps(7)} disabled={!Character.characterTabs.Decking} />
-                    <Tab label="Vehicles"   {...a11yProps(8)} disabled={!Character.characterTabs.Rigger} />
+                    <Tab label="Vehicles"   {...a11yProps(8)} />
                     <Tab label="Contacts"   {...a11yProps(9)} />
                     <Tab label="Karma"      {...a11yProps(10)}/>
                 </Tabs>
@@ -376,9 +384,14 @@ export default function BasicTabs() {
                */}
             </CustomTabPanel>
             <CustomTabPanel value={value} index={8}>
-                 {/*
-                Vehicles
-               */}
+                <VehiclesPanel
+                    Vehicles={Character.vehicles}
+                    Edition={Edition}
+                    CashOnHand={Character.chargenCash}
+                    onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
+                    onChangeVehicle={(vehicles) => setCharacter({ ...Character, vehicles:vehicles})}
+                    BooksFilter={Character.allowedBooks}
+                />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={9}>
                  {/*
