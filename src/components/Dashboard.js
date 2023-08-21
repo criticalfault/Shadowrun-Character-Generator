@@ -90,7 +90,6 @@ export default function BasicTabs() {
     const [Character, setCharacter] = React.useState(baseCharacter);
     const [selectedRace, setSelectedRace] = React.useState('Human');
     const [NuyenSpent, setNuyenSpent] = React.useState(0.00);
-    const [Legal, SetLegal] = React.useState(true);
 
     const handleChangePriorityRace = (event) => {
         const newRace = event.target.value;
@@ -124,7 +123,7 @@ export default function BasicTabs() {
         Character.vehicles.forEach(function(vehicle){
             tempCashSpent+=parseFloat(vehicle['$Cost']);
         });
-        
+
         console.log("CashSpent: " + tempCashSpent);
         //Do the Vehicle Cost Calc
         console.log(Character);

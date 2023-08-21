@@ -18,8 +18,8 @@ import AccordionCard from './AccordianCard'
 
 export default function VehiclesPanel(props) {
   const VehicleData = require('../data/'+props.Edition+'/Vehicles.json');
-  const VehicleGear = require('../data/'+props.Edition+'/VehicleGear.json');
-  const VehicleWeapons = require('../data/'+props.Edition+'/VehicleWeapons.json');
+  //const VehicleGear = require('../data/'+props.Edition+'/VehicleGear.json');
+  //const VehicleWeapons = require('../data/'+props.Edition+'/VehicleWeapons.json');
   const CalcTotalNuyenSpent = () =>{
       let TotalNuyen = 0;
       props.Vehicles.forEach(function(vehicle){

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MenuItem } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
@@ -8,143 +8,140 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import TextField from '@mui/material/TextField';
+
+const skillsDataFromFile = require('../data/SR2/Skills.json');
+const LanguageSkillsData = require('../data/SR2/LanguageSkills.json');
+
 function SR2SkillsPanel() {
-  const [skillsData, setSkillsData] = useState();
-
-  const [newSkill, setNewSkill] = useState('');
-  const [selectedSpecialization, setSelectedSpecialization] = useState('');
+  const [skillsData, setSkillsData] = useState(skillsDataFromFile);
   const [selectedSkills, setSelectedSkills] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState('');
-  const [skillRating, setSkillRating] = useState(1);
-  const [skillPointsSpent, setSkillPointsSpent] = useState(0);
-  const [skillCategory, setSkillCategory] = useState(Object.keys(skillsData));
+  const [selectedSkill, setSelectedSkill] = useState('');
 
-  const handleCategoryChange = (event) => {
-    setSelectedCategory(event.target.value);
-  }
-
-  const handleSkillChange = (event) => {
-    setNewSkill(event.target.value);
-    setSelectedSpecialization(''); // Reset selected specialization when a new skill is selected
-  };
-
-  const handleSpecializationChange = (event) => {
-    setSelectedSpecialization(event.target.value);
-  };
-
-  const handleRatingChange = (event) => {
-    const rating = parseInt(event.target.value);
-    if (!isNaN(rating) && rating >= 1 && rating <= 6) {
-      setSkillRating(rating);
-    }
-  };
-
-  const getSpecializationsForSkill = (skillName) => {
-    const skill = skillsData[selectedCategory].find((skill) => skill.name === skillName);
-    return skill ? skill.specializations.map((spec) => spec.name) : [];
-  };
+  useEffect(() => {
+    console.log(selectedSkills);
+  }, [selectedSkills]);
 
   const handleAddSkill = () => {
-    if (newSkill) {
-      const skillToAdd = { name: newSkill, rating:skillRating, specialization: selectedSpecialization };
-      setSelectedSkills(prevSkills => [...prevSkills, skillToAdd]);
-      setSkillPointsSpent(prevSkills => (prevSkills + skillRating));
-      setNewSkill('');
-      setSelectedSpecialization('');
+    const selectedSkillData = { ...skillsData[selectedSkill] };
+    selectedSkillData.rating = 1;
+    selectedSkillData.totalCost = 1;
+    selectedSkillData.selectedConcentrations = [];
+    setSelectedSkills(prevSkills => [...prevSkills, selectedSkillData]);
+  };
+
+  const handleRemoveSkill = index => {
+    const editedSkills = [...selectedSkills];
+    editedSkills.splice(index, 1);
+    setSelectedSkills(editedSkills);
+  };
+
+  const handleSkillChange = event => {
+    setSelectedSkill(skillsData[event.target.value].name);
+  };
+
+  const handleRatingChange = (event, index) => {
+    const rating = parseInt(event.target.value);
+    if (!isNaN(rating) && rating >= 1 && rating <= 6) {
+      const editedSkills = [...selectedSkills];
+      editedSkills[index].rating = rating;
+      editedSkills[index].totalCost = rating;
+      setSelectedSkills(editedSkills);
     }
   };
 
-  const handleEditSkill = (index) => {
+  const handleAddConcentration = skillIndex => {
     const editedSkills = [...selectedSkills];
-    const skillToEdit = editedSkills[index];
-    setSelectedSpecialization(skillToEdit.specialization);
-    setNewSkill(skillToEdit.name);
-    setSkillRating(skillToEdit.rating);
-    editedSkills.splice(index, 1);
+    const skill = editedSkills[skillIndex];
+    if (skill.rating > 1) {
+      const newConcentration = {
+        name: '',
+        rating: skill.rating - 1,
+        specializations: []
+      };
+      skill.selectedConcentrations.push(newConcentration);
+      setSelectedSkills(editedSkills);
+    }
+  };
+
+  const handleAddSpecialization = (skillIndex, concentrationIndex) => {
+    const editedSkills = [...selectedSkills];
+    const skill = editedSkills[skillIndex];
+    const concentration = skill.selectedConcentrations[concentrationIndex];
+    concentration.specializations.push('');
     setSelectedSkills(editedSkills);
   };
 
-  const handleRemoveSkill = (index) => {
+  const handleSpecializationChange = (event, skillIndex, concentrationIndex, specializationIndex) => {
     const editedSkills = [...selectedSkills];
-    editedSkills.splice(index, 1);
+    const skill = editedSkills[skillIndex];
+    const concentration = skill.selectedConcentrations[concentrationIndex];
+    concentration.specializations[specializationIndex] = event.target.value;
     setSelectedSkills(editedSkills);
   };
-
-  console.log(selectedSkills)
 
   return (
     <div>
-      <FormControl style={{'width':'200px'}}>
-        <InputLabel  id="skill-label">Skills Categories</InputLabel>
-        <Select
-          id="skill-dropdown"
-          value={selectedCategory}
-          onChange={handleCategoryChange}
-        >
-          {skillCategory.map(catName => (
-            <MenuItem key={catName} value={catName}>{catName}</MenuItem>
+      <FormControl style={{ width: '200px' }}>
+        <InputLabel id="skill-label">Skills</InputLabel>
+        <Select id="skill-dropdown" value={selectedSkill} onChange={handleSkillChange}>
+          {Object.values(skillsData).map(skill => (
+            <MenuItem key={skill.name} value={skill.name}>
+              {skill.name}
+            </MenuItem>
           ))}
         </Select>
+        <br />
+        <Button variant="contained" color="primary" style={{ display: 'inline-block' }} onClick={handleAddSkill}>
+          Add Skill
+        </Button>
       </FormControl>
-      <br></br>
-      <br></br>
-    {selectedCategory && (  
-      <FormControl style={{'width':'200px'}}>
-        <InputLabel  id="skill-label">{selectedCategory}</InputLabel>
-        <Select
-          id="skill-dropdown"
-          value={newSkill}
-          onChange={handleSkillChange}
-        >
-          {skillsData[selectedCategory].map(skill => (
-            <MenuItem key={skill.name} value={skill.name}>{skill.name}</MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-    )}
-      {newSkill && (
-        <>
-          <FormControl style={{'width':'200px'}}>
-            <InputLabel id="specialization-label">Specialization</InputLabel>
-            <Select
-              id="specialization-dropdown"
-              value={selectedSpecialization}
-              onChange={handleSpecializationChange}
-            >
-              <MenuItem value="">None</MenuItem>
-              {getSpecializationsForSkill(newSkill).map(spec => (
-                <MenuItem key={spec} value={spec}>{spec}</MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-
-          <TextField style={{'width':'100px', 'marginRight':'20px'}}
-            id="rating-input"
-            label="Rating (1-6)"
-            type="number"
-            value={skillRating}
-            onChange={handleRatingChange}
-            InputProps={{
-              inputProps: { min: 1, max: 6 },
-            }}
-          />
-        </>
-      )}
-      <Button variant="contained" color="primary" onClick={handleAddSkill}>
-        Add Skill
-      </Button>
-
-      <List style={{maxWidth:'500px'}}>
-        {selectedSkills.map((skill, index) => (
-          <ListItem key={index}>
-            <ListItemText
-              primary={skill.specialization ? `${skill.name} (${skill.rating-1})`:`${skill.name} (${skill.rating})`}
-              secondary={skill.specialization ? `${skill.specialization} (${skill.rating + 1})` : 'None'}
+      <hr />
+      <List style={{ maxWidth: '500px' }}>
+        {selectedSkills.map((skill, skillIndex) => (
+          <ListItem key={skillIndex}>
+            <ListItemText primary={skill.name} secondary={`Rating: ${skill.rating}`} />
+            <TextField
+              style={{ width: '50px', marginRight: '10px', display: 'inline-block' }}
+              id="rating-input"
+              label="Rating (1-6)"
+              type="number"
+              value={skill.rating}
+              onChange={event => handleRatingChange(event, skillIndex)}
+              inputProps={{
+                min: 1,
+                max: 6
+              }}
             />
-            <Button color="primary" onClick={() => handleEditSkill(index)}>
-              Edit
+            <Button color="primary" onClick={() => handleAddConcentration(skillIndex)}>
+              Add Concentration
             </Button>
-            <Button color="secondary" onClick={() => handleRemoveSkill(index)}>
+            {skill.selectedConcentrations.map((concentration, concentrationIndex) => (
+              <div key={concentrationIndex}>
+                <ListItemText primary={`- ${concentration.name || 'No Concentration'} (${concentration.rating})`} />
+                <Button
+                  color="primary"
+                  onClick={() => handleAddSpecialization(skillIndex, concentrationIndex)}
+                >
+                  Add Specialization
+                </Button>
+                {concentration.specializations.map((specialization, specializationIndex) => (
+                  <TextField
+                    key={specializationIndex}
+                    label="Specialization"
+                    value={specialization}
+                    onChange={event =>
+                      handleSpecializationChange(
+                        event,
+                        skillIndex,
+                        concentrationIndex,
+                        specializationIndex
+                      )
+                    }
+                  />
+                ))}
+              </div>
+            ))}
+            <Button color="secondary" onClick={() => handleRemoveSkill(skillIndex)}>
               Remove
             </Button>
           </ListItem>
