@@ -3,15 +3,15 @@
     "Concentrations":[
         {"name":"Clubs","Specializations":["*weapon"]},
         {"name":"Edged weapons","Specializations":["*weapon"]},
-        {"name":"Pole arms / Staff","Specializations":["*weapon"]},
+        {"name":"Pole Arms / Staff","Specializations":["*weapon"]},
         {"name":"Whips/Flails","Specializations":["*weapon"]}
     ]
 },
 "Demolitions":{
     "name":"Demolitions", 
     "Concentrations":[
-        {"name":"Conventional explosives","Specializations":[]},
-        {"name":"Plastic explosives","Specializations":[]}
+        {"name":"Conventional Explosives","Specializations":[]},
+        {"name":"Plastic Explosives","Specializations":[]}
     ]
 },
 "Firearms":{
@@ -28,10 +28,10 @@
 "Gunnery":{
     "name":"Gunnery", 
     "Concentrations":[
-        {"name":"Assault cannon","Specializations":["*weapon"]},
-        {"name":"Machine guns","Specializations":["*weapon"]},
-        {"name":"Missile launchers","Specializations":["*weapon"]},
-        {"name":"Vehicle cannons","Specializations":["*weapon"]}
+        {"name":"Assault Cannon","Specializations":["*weapon"]},
+        {"name":"Machine Guns","Specializations":["*weapon"]},
+        {"name":"Missile Launchers","Specializations":["*weapon"]},
+        {"name":"Vehicle Cannons","Specializations":["*weapon"]}
     ]
 },
 "Projectile weapons":{
@@ -52,9 +52,9 @@
 "Unarmed combat":{
     "name":"Unarmed combat", 
     "Concentrations":[
-        {"name":"Cyber implant weaponry","Specializations":["*weapon"]},
-        {"name":"Martial arts style","Specializations":["*style"]},
-        {"name":"Subduing combat","Specializations":[]}
+        {"name":"Cyber Implant Weaponry","Specializations":["*weapon"]},
+        {"name":"Martial Arts Style","Specializations":["*style"]},
+        {"name":"Subduing Combat","Specializations":[]}
     ]
 },
 "Atlethics":{
@@ -94,13 +94,13 @@
 "Sorcery":{
     "name":"Sorcery", 
     "Concentrations":[
-        {"name":"Astral sorcery","Specializations":["*aspect"]},
-        {"name":"Combat spells","Specializations":["*technique"]},
-        {"name":"Detection spells","Specializations":["*technique"]},
-        {"name":"Forensic magic","Specializations":[]},
-        {"name":"Health spells","Specializations":["*technique"]},
-        {"name":"Illusion spells","Specializations":["*technique"]},
-        {"name":"Manipulation spells","Specializations":["*technique"]},
+        {"name":"Astral Sorcery","Specializations":["*aspect"]},
+        {"name":"Combat Spells","Specializations":["*technique"]},
+        {"name":"Detection Spells","Specializations":["*technique"]},
+        {"name":"Forensic Magic","Specializations":[]},
+        {"name":"Health Spells","Specializations":["*technique"]},
+        {"name":"Illusion Spells","Specializations":["*technique"]},
+        {"name":"Manipulation Spells","Specializations":["*technique"]},
         {"name":"Ritual Sorcery","Specializations":["category"]},
         {"name":"Spellcasting","Specializations":["*spell category"]},
         {"name":"Spell Defense","Specializations":["*spell category"]}

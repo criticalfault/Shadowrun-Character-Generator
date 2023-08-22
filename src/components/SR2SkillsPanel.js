@@ -8,17 +8,45 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
 
 const skillsDataFromFile = require('../data/SR2/Skills.json');
-const LanguageSkillsData = require('../data/SR2/LanguageSkills.json');
+//const LanguageSkillsData = require('../data/SR2/LanguageSkills.json');
 
-function SR2SkillsPanel() {
+function SR2SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints}) {
   const [skillsData, setSkillsData] = useState(skillsDataFromFile);
-  const [selectedSkills, setSelectedSkills] = useState([]);
+  const [selectedSkills, setSelectedSkills] = useState(characterSkills);
   const [selectedSkill, setSelectedSkill] = useState('');
+  const [selectedSkillIndex, setSelectedSkillIndex] = useState(0);
+  const [selectedConcentration, setSelectedConcentration] = useState('');
+  const [open, setOpen] = React.useState(false);
+  
+  const handleOpen = (skillIndex) => {
+    setSelectedSkillIndex(skillIndex);
+    setOpen(true);
+  }
+  const handleClose = () => setOpen(false);
 
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
+  
   useEffect(() => {
-    console.log(selectedSkills);
+    console.log(selectedSkill);
   }, [selectedSkills]);
 
   const handleAddSkill = () => {
@@ -26,14 +54,25 @@ function SR2SkillsPanel() {
     selectedSkillData.rating = 1;
     selectedSkillData.totalCost = 1;
     selectedSkillData.selectedConcentrations = [];
+    selectedSkillData.type = 'Active';
     setSelectedSkills(prevSkills => [...prevSkills, selectedSkillData]);
+    onUpdateSkills(selectedSkills);
   };
 
   const handleRemoveSkill = index => {
     const editedSkills = [...selectedSkills];
     editedSkills.splice(index, 1);
     setSelectedSkills(editedSkills);
+    onUpdateSkills(editedSkills);
   };
+
+  const handleRemoveConcentration = (skillIndex,conIndex) => {
+    const editedSkills = [...selectedSkills];
+    const skill = editedSkills[skillIndex];
+    skill.selectedConcentrations.splice(conIndex, 1);
+    setSelectedSkills(editedSkills);
+    onUpdateSkills(editedSkills);
+  }
 
   const handleSkillChange = event => {
     setSelectedSkill(skillsData[event.target.value].name);
@@ -43,25 +82,42 @@ function SR2SkillsPanel() {
     const rating = parseInt(event.target.value);
     if (!isNaN(rating) && rating >= 1 && rating <= 6) {
       const editedSkills = [...selectedSkills];
+      let hasConcentrations = 0;
+      if(editedSkills[index].selectedConcentrations.length > 0) {
+        hasConcentrations = 1;
+        editedSkills[index].selectedConcentrations.forEach(element => {
+          element.rating = rating + 2;
+        });
+      }
+      if(rating === 6 && hasConcentrations === 1){
+        return;
+      }
       editedSkills[index].rating = rating;
-      editedSkills[index].totalCost = rating;
+      editedSkills[index].totalCost = rating + hasConcentrations;
       setSelectedSkills(editedSkills);
+      onUpdateSkills(editedSkills);
     }
   };
 
-  const handleAddConcentration = skillIndex => {
+  const handleAddConcentration = (skillIndex,name) => {
     const editedSkills = [...selectedSkills];
     const skill = editedSkills[skillIndex];
     if (skill.rating > 1) {
       const newConcentration = {
-        name: '',
-        rating: skill.rating - 1,
+        name: name,
+        rating: skill.rating + 1,
         specializations: []
       };
+      skill.rating = skill.rating - 1;
       skill.selectedConcentrations.push(newConcentration);
       setSelectedSkills(editedSkills);
+      onUpdateSkills(editedSkills);
     }
   };
+
+  const handleSelectedConcentrationChange = (event) => {
+    setSelectedConcentration(event.target.value);
+  }
 
   const handleAddSpecialization = (skillIndex, concentrationIndex) => {
     const editedSkills = [...selectedSkills];
@@ -69,6 +125,7 @@ function SR2SkillsPanel() {
     const concentration = skill.selectedConcentrations[concentrationIndex];
     concentration.specializations.push('');
     setSelectedSkills(editedSkills);
+    onUpdateSkills(editedSkills);
   };
 
   const handleSpecializationChange = (event, skillIndex, concentrationIndex, specializationIndex) => {
@@ -77,7 +134,32 @@ function SR2SkillsPanel() {
     const concentration = skill.selectedConcentrations[concentrationIndex];
     concentration.specializations[specializationIndex] = event.target.value;
     setSelectedSkills(editedSkills);
+    onUpdateSkills(editedSkills);
   };
+
+  const showConcentrations = () => {
+    
+    if(selectedSkills.length > 0){
+      return (<>
+          <Select id="concentration-dropdown" 
+            onChange={handleSelectedConcentrationChange}
+            value={selectedConcentration} 
+            
+            >
+            {selectedSkills[selectedSkillIndex].Concentrations.map((con, conIndex) => {
+            return (<MenuItem key={con.name} value={con.name}>
+                      {con.name}
+                    </MenuItem>)
+            })}
+          </Select>
+          <br></br>
+          <Button onClick={() => handleAddConcentration(selectedSkillIndex, selectedConcentration)}>Add Concentration</Button>
+        </>
+      )
+    }else{
+      return (<span>No Concentrations for this skill</span>)
+    }
+  }
 
   return (
     <div>
@@ -95,55 +177,82 @@ function SR2SkillsPanel() {
           Add Skill
         </Button>
       </FormControl>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+           Add Concentration
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            {showConcentrations()}
+          </Typography>
+        </Box>
+      </Modal>
       <hr />
-      <List style={{ maxWidth: '500px' }}>
+      <List>
         {selectedSkills.map((skill, skillIndex) => (
           <ListItem key={skillIndex}>
-            <ListItemText primary={skill.name} secondary={`Rating: ${skill.rating}`} />
-            <TextField
-              style={{ width: '50px', marginRight: '10px', display: 'inline-block' }}
-              id="rating-input"
-              label="Rating (1-6)"
-              type="number"
-              value={skill.rating}
-              onChange={event => handleRatingChange(event, skillIndex)}
-              inputProps={{
-                min: 1,
-                max: 6
-              }}
-            />
-            <Button color="primary" onClick={() => handleAddConcentration(skillIndex)}>
-              Add Concentration
-            </Button>
-            {skill.selectedConcentrations.map((concentration, concentrationIndex) => (
-              <div key={concentrationIndex}>
-                <ListItemText primary={`- ${concentration.name || 'No Concentration'} (${concentration.rating})`} />
-                <Button
-                  color="primary"
-                  onClick={() => handleAddSpecialization(skillIndex, concentrationIndex)}
+             <Card sx={{ minWidth: 475 }}>
+                <CardHeader  title={skill.name}>
+                
+                </CardHeader>
+                <CardContent>
+                  <TextField
+                    style={{ width: '90px', marginRight: '10px', display: 'inline-block' }}
+                    id="rating-input"
+                    label="Rating (1-6)"
+                    type="number"
+                    value={skill.rating}
+                    onChange={event => handleRatingChange(event, skillIndex)}
+                    inputProps={{
+                      min: 1,
+                      max: 6
+                    }}
+                  />
+                  <h5>Concentrations</h5>
+                  <List>
+                    { skill.selectedConcentrations.map((concentration, concentrationIndex) => (
+                      <ListItem key={concentrationIndex}>
+                        <ListItemText primary={`${concentration.name || 'No Concentration'} (${concentration.rating})`} />
+                        <Button color="secondary" onClick={() => handleRemoveConcentration(skillIndex,concentrationIndex)}>
+                          Remove
+                        </Button>  
+                          {concentration.specializations.map((specialization, specializationIndex) => (
+                            <TextField
+                              key={specializationIndex}
+                              label="Specialization"
+                              value={specialization}
+                              onChange={event =>
+                                handleSpecializationChange(
+                                  event,
+                                  skillIndex,
+                                  concentrationIndex,
+                                  specializationIndex
+                                )
+                              }
+                            />
+                          ))}
+                      </ListItem>
+                    ))}
+                  </List>
+                </CardContent>
+                <CardActions>
+                <Button color="primary" onClick={() => handleOpen(skillIndex)}>
+                  Add Concentration
+                </Button>
+                {/* <Button color="primary" onClick={() => handleAddSpecialization(skillIndex)}
                 >
                   Add Specialization
-                </Button>
-                {concentration.specializations.map((specialization, specializationIndex) => (
-                  <TextField
-                    key={specializationIndex}
-                    label="Specialization"
-                    value={specialization}
-                    onChange={event =>
-                      handleSpecializationChange(
-                        event,
-                        skillIndex,
-                        concentrationIndex,
-                        specializationIndex
-                      )
-                    }
-                  />
-                ))}
-              </div>
-            ))}
-            <Button color="secondary" onClick={() => handleRemoveSkill(skillIndex)}>
-              Remove
-            </Button>
+                </Button> */}
+                <Button color="secondary" onClick={() => handleRemoveSkill(skillIndex)}>
+                  Remove
+                </Button> 
+                </CardActions>
+              </Card>
           </ListItem>
         ))}
       </List>
