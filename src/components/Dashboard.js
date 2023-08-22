@@ -14,6 +14,7 @@ import LoadCharacter from './LoadCharacter';
 import ChargenBox from './ChargenBox';
 import CyberwarePanel from './CyberwarePanel';
 import VehiclesPanel from './VehiclesPanel';
+import ContactsPanel from './ContactsPanel';
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -70,7 +71,8 @@ export default function BasicTabs() {
         inventory:[],
         weapons:[],
         vehicles:[],
-        contacts:[],
+        contacts:[ { Name: 'Contact 1', Type:"free", Archtype: 'Fixer', Level: 1, GeneralInfo: 'Helps with gear' },
+        { Name: 'Contact 2', Type:"free", Archtype: 'Street Shaman', Level: 2, GeneralInfo: 'Provides magical advice' }],
         mods:[],
         cyberware:[],
         bioware:[],
@@ -226,7 +228,15 @@ export default function BasicTabs() {
         )
     };
 
+    const handleContactsUpdate = (updatedContacts) => {
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+             contacts: updatedContacts })
+        )
+    };
+
     const handleAttributesChange = (attribute,value) => {
+        console.log("Hit attributeHandler")
         setCharacter((prevCharacter) =>{
             prevCharacter.attributes[attribute] = parseInt(value);
             return prevCharacter;
@@ -393,14 +403,13 @@ export default function BasicTabs() {
                 />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={9}>
-                 {/*
-                Contacts
-               */}
+                <ContactsPanel 
+                    updateContacts={handleContactsUpdate}
+                    Contacts={Character.contacts}
+                />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={10}>
-                 {/*
-                Karma
-               */}
+                 <span>Coming Soon!</span>
             </CustomTabPanel>
         </Box>
     </div>
