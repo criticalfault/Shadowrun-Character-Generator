@@ -1,0 +1,118 @@
+! Listing of incompatible items 
+! Works one way Name1 -> Name2
+!20030326 - "PMP Bone Lacing" only compatable with "Bone Lace, Plastic".  
+!  Please append any other forms of Bone Lace that are added later to this list
+! Format: Name|SecAbrev|Name2|SecAbrev2|Cite
+! SecAbrev:  R - Race desc, E - Edge / Flaws, S -Skills, B - Bioware
+! SecAbrev:  C - Cyberware, G - Gear, V - Vehicles, D - Decks
+!---------Racial--------------------
+Human|R|Human Looking|E|src.27
+Troll|R|Human Looking|E|src.27
+Elf|R|Elf Poser|E|src.26
+Dwarf|R|Elf Poser|E|src.26
+Ork|R|Elf Poser|E|src.26
+Troll|R|Elf Poser|E|src.26
+Otaku|R|Cracker|E|src.28
+!---------Edges/Flaws---------------
+Cyberware Rejection|E|*|C|src.36
+Biorejection |E|*|C|src.36
+Biorejection |E|*|B|src.36
+Spike Resistance 1(Rig/Deck)|E|Spike Resistance 2(Rig/Deck)|E|src.36
+Connected Lev 1|E|Connected Lev 2|E|src.36
+Good Reputation Lev 1|E|Good Reputation Lev 2|E|src.36
+Good Reputation Lev 2|E|Good Reputation Lev 1|E|src.36
+Biorejection |E|Biorejection(Magic Active)|E|src.19
+Biorejection(Magic Active)|E|Biorejection |E|src.19
+Biorejection |E|Sensitive System(N)|E|src.19
+Biorejection(Magic Active)|E|Sensitive System(N)|E|src.19
+Biorejection |E|Sensitive System(Magic Active)|E|src.19
+Biorejection(Magic Active)|E|Sensitive System(Magic Active)|E|src.19
+! Blind|E|Blind (Magic Active)|E|src.19
+Blind (Magic Active)|E|Blind [B]|E|src.19
+! Blind [B]|E|Color-Blind|E|src.19
+Blind (Magic Active)|E|Color-Blind|E|src.19
+Color-Blind|E|Blind [B]|E|src.19
+Color-Blind|E|Blind (Magic Active)|E|src.19
+Night Blindness(N)|E|Night Blindness(Rig/Deckers)|E|src.20
+Night Blindness(Rig/Deckers)|E|Night Blindness(N)|E|src.20
+R:Alb:Night Blindness|E|Night Blindness(N)|E|src.20
+R:Alb:Night Blindness|E|Night Blindness(Rig/Deckers)|E|src.20
+! Blind [B]|E|Night Blindness|E|src.20
+! Blind [B]|E|Night Blindness (Rig/Deckers)|E|src.20
+Blind (Magic Active)|E|Night Blindness(N)|E|src.20
+Blind (Magic Active)|E|Night Blindness(Rig/Deckers)|E|src.20
+Night Blindness(N)|E|Blind [B]|E|src.20
+Night Blindness(Rig/Deckers)|E|Blind (Magic Active)|E|src.20
+Paraplegic|E|Quadriplegic|E|src.21
+Quadriplegic|E|Paraplegic|E|src.21
+Combat Monster|E|Combat Paralysis|E|src.22
+Combat Paralysis|E|Combat Monster|E|src.22
+! Pacifist[1]|E|Total Pacifist[2]|E|src.23
+Total Pacifist[2]|E|Pacifist[1]|E|src.23
+Sensitive Neural Struct.[1]|E|Sensitive Neural Struct.[2]|E|src.??
+Sensitive Neural Struct.[1]|E|Sensitive Neural Struct.[1]|E|src.??
+! Illiterate|E|College Education|E|src.23
+! Illiterate|E|Technical School Education|E|src.23
+! Illiterate|E|Uneducated|E|src.??
+Uneducated|E|College Education|E|src.25
+Uneducated|E|Technical School Education|E|src.25
+Bad Reputation|E|Good Reputation|E|src.25
+Good Reputation|E|Bad Reputation|E|src.27
+Astral Chameleon|E|Astral Impressions|E|src.28
+Astral Impressions|E|Astral Chameleon|E|src.28
+Spirit Affinity|E|Spirit Bane|E|src.28
+Spirit Bane|E|Spirit Affinity|E|src.28
+Codeslinger|E|Codeblock|E|src.28
+Codeblock|E|Codeslinger|E|src.28
+Codeslinger|E|Cracker|E|src.28
+Cracker|E|Choker|E|src.28
+Choker|E|Cracker|E|src.28
+Cracker|E|Codeslinger|E|src.28
+!---------Skills--------------------
+!---------Bioware-------------------
+Adrenal Pump|B|Move-by-Wire|C|mm.79
+Cat's Eyes|B|Eye|C|mm.79
+Chloroplast Skin|B|Dermal Plating|C|mm.79
+Chloroplast Skin|B|Dermal Sheath|C|mm.79
+Chloroplast Skin|B|D. Sheath|C|mm.79
+Chloroplast Skin|B|DS Coloration|C|mm.79
+Dermal Plating|C|Dermal Sheath|C|mm.28
+Sensitive Skin|B|Dermal Plating|C|mm.79
+Sensitive Skin|B|Dermal Sheath|C|mm.79
+Sensitive Skin|B|D. Sheath|C|mm.79
+Sensitive Skin|B|DS Coloration|C|mm.79
+Skin Pigmentation|B|Dermal Sheath|C|mm.79
+Skin Pigmentation|B|D. Sheath|C|mm.79
+Skin Pigmentation|B|DS Coloration||C|mm.79
+Digestive Expansion|B|Ingested Toxin|C|mm.79
+Enhanced Articulation|B|Quickness|C|mm.79
+Extended Volume|B|Internal Air Tank|C|mm.79
+Muscle Augmentation|B|Muscle Replac.|C|mm.79
+Muscle Augmentation|B|PMP Musculature Lacing|C|tss.5
+Muscle Toner|B|Muscle Replac.|C|mm.79
+Muscle Toner|B|PMP Musculature Lacing|C|tss.5
+Nictitating Membranes|B|Eye|C|mm.79
+Nictitating Membranes|B|Flare Comp|C|mm.79
+Orthoskin|B|Dermal Plating|C|mm.79
+Orthoskin|B|Dermal Sheath|C|mm.79
+Orthoskin|B|D. Sheath|C|mm.79
+Orthoskin|B|DS Coloration|C|mm.79
+Suprathyroid Gland|B|Move-by-Wire|C|mm.79
+Suprathyroid Gland|B|Suprathyroid Gland|B|mm.79
+Synaptic Accel|B|Move-by-Wire|C|mm.79
+Synaptic Accel|B|Wired Reflexes|C|mm.30
+Tracheal Filter|B|Filter: Air|C|mm.79
+Tracheal Filter|B|OXSYS|C|mm.79
+!---------Cyberware-----------------
+Move-by-Wire|C|Wired Reflexes|C|mm.30
+Move-by-Wire|C|Reaction Enhance|C|mm.30
+Muscle Replac.|C|Cyb Arms|C|SR?
+Boosted Reflexes|C|Wired Reflexes|C|sr3.300
+Boosted Reflexes|C|Vehicle Ctrl Rig|C|sr3.300
+PMP Bone Lacing|C|Bone Lace, Titanium|C|tss.5
+PMP Bone Lacing|C|Bone Lace, Aluminum|C|tss.5
+PMP Bone Lacing|C|Bone Lace, Ceramic|C|tss.5
+PMP Bone Lacing|C|Bone Lace, Kevlar|C|tss.5
+!---------Gear----------------------
+!---------Vehicles------------------
+!---------Deck----------------------

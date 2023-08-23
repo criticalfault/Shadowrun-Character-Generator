@@ -15,6 +15,7 @@ import ChargenBox from './ChargenBox';
 import CyberwarePanel from './CyberwarePanel';
 import VehiclesPanel from './VehiclesPanel';
 import ContactsPanel from './ContactsPanel';
+import SheetDisplay from './SheetDisplay';
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -71,8 +72,8 @@ export default function BasicTabs() {
         inventory:[],
         weapons:[],
         vehicles:[],
-        contacts:[ { Name: 'Contact 1', Type:"free", Archtype: 'Fixer', Level: 1, GeneralInfo: 'Helps with gear' },
-        { Name: 'Contact 2', Type:"free", Archtype: 'Street Shaman', Level: 2, GeneralInfo: 'Provides magical advice' }],
+        contacts:[  { Name: 'Contact 1', Type:"free", Archtype: 'Fixer', Level: 1, GeneralInfo: 'Helps with gear' },
+                    { Name: 'Contact 2', Type:"free", Archtype: 'Street Shaman', Level: 1, GeneralInfo: 'Provides magical advice' }],
         mods:[],
         cyberware:[],
         bioware:[],
@@ -126,8 +127,38 @@ export default function BasicTabs() {
             tempCashSpent+=parseFloat(vehicle['$Cost']);
         });
 
-        console.log("CashSpent: " + tempCashSpent);
-        //Do the Vehicle Cost Calc
+        Character.contacts.forEach(function(contact){
+            if(Edition === 'SR3'){
+                if(contact.Type !== 'free'){
+                    switch(contact.Level) {
+                        case 1:
+                            tempCashSpent += 5000;
+                            break;
+                        case 2:
+                            tempCashSpent += 10000;
+                            break;
+                        case 3:
+                            tempCashSpent += 200000;
+                            break;
+                    }
+                }
+            }else  if(Edition === 'SR2'){
+                if(contact.Type !== 'free'){
+                    switch(contact.Level) {
+                        case 1:
+                            tempCashSpent += 5000;
+                            break;
+                        case 2:
+                            tempCashSpent += 10000;
+                            break;
+                        case 3:
+                            tempCashSpent += 200000;
+                            break;
+                    }
+                }
+            }
+        });
+
         console.log(Character);
         setNuyenSpent(tempCashSpent);
     },[Character])
@@ -295,17 +326,18 @@ export default function BasicTabs() {
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider', }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="scrollable" scrollButtons={true} allowScrollButtonsMobile>
-                    <Tab label="Identity"   {...a11yProps(0)} />
-                    <Tab label="Priorities" {...a11yProps(1)} />
-                    <Tab label="Attributes" {...a11yProps(2)} />
-                    <Tab label="Skills"     {...a11yProps(3)} />
-                    <Tab label="Magic"      {...a11yProps(4)} disabled={!Character.characterTabs.Magic} />
-                    <Tab label="Cyberware"  {...a11yProps(5)} />
-                    <Tab label="Gear"       {...a11yProps(6)} />
-                    <Tab label="Decking"    {...a11yProps(7)} disabled={!Character.characterTabs.Decking} />
-                    <Tab label="Vehicles"   {...a11yProps(8)} />
-                    <Tab label="Contacts"   {...a11yProps(9)} />
-                    <Tab label="Karma"      {...a11yProps(10)}/>
+                    <Tab label="Identity"      {...a11yProps(0)} />
+                    <Tab label="Priorities"    {...a11yProps(1)} />
+                    <Tab label="Attributes"    {...a11yProps(2)} />
+                    <Tab label="Skills"        {...a11yProps(3)} />
+                    <Tab label="Magic"         {...a11yProps(4)} disabled={!Character.characterTabs.Magic} />
+                    <Tab label="Cyberware"     {...a11yProps(5)} />
+                    <Tab label="Gear"          {...a11yProps(6)} />
+                    <Tab label="Decking"       {...a11yProps(7)} disabled={!Character.characterTabs.Decking} />
+                    <Tab label="Vehicles"      {...a11yProps(8)} />
+                    <Tab label="Contacts"      {...a11yProps(9)} />
+                    <Tab label="Karma"         {...a11yProps(10)}/>
+                    <Tab label="Sheet Display" {...a11yProps(11)}/>
                 </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
@@ -410,6 +442,9 @@ export default function BasicTabs() {
             </CustomTabPanel>
             <CustomTabPanel value={value} index={10}>
                  <span>Coming Soon!</span>
+            </CustomTabPanel>
+            <CustomTabPanel value={value} index={11}>
+                <SheetDisplay currentCharacter={Character} />
             </CustomTabPanel>
         </Box>
     </div>

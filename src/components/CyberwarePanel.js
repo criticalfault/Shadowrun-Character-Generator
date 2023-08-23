@@ -109,11 +109,11 @@ export default function CyberwarePanel(props) {
         'INI':"Initative",
         'IMP':'Impact',
         'BAL':'Ballastic',
-        'TASK':'Task Pool',
-        'HAC':'Hacking Pool',
-        'VNI':'Vehicle Initative',
-        'VCT':'Vehicle Control Reaction',
-        'VCR':'Vehicle Control Rig Level'
+        'TAS':'Task_Pool',
+        'HAC':'Hacking_Pool',
+        'VNI':'Vehicle_Initative',
+        'VCT':'Vehicle_Control_Reaction',
+        'VCR':'Vehicle_Control_Rig_Level'
     }
 
     return mods.map(mod => {

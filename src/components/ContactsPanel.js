@@ -66,7 +66,6 @@ function ContactsPanel(props) {
       <List>
         {contacts.map((contact, index) => (
           <ListItem key={index}>
-
             <TextField
                 label="Contact Name"
                 type="text"

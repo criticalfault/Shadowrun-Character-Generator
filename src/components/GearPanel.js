@@ -204,7 +204,7 @@ GearData['Firearms'].entries.forEach(function(item) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {props.Gear.filter(item => !item.hasOwnProperty('Damage') || item.hasOwnProperty('Ballistic')).map((gear, index) => (
+            {props.Gear.filter(item => !item.hasOwnProperty('Damage') && !item.hasOwnProperty('Ballistic')).map((gear, index) => (
               <TableRow key={gear.Name+index}>
                 <TableCell component="th" scope="row">{gear.name}</TableCell>
                 <TableCell align="right">{gear.Rating??'N/A'}</TableCell>
