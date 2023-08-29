@@ -39,6 +39,24 @@ export default function IdentityPanel(props) {
     },[bookStates])
 
     return (<>
+        <div>
+            <h3>Welcome To the SR2/3 Character Creator</h3>
+            <p>I have been working on this for a good month and have finally decided to show it off in its partially working glory. It is in <strong>Alpha</strong> at the moment.
+            So be prepared if it decideds to randomly die. There is a bunch of fixes still pending as well as a lot of known missing parts which will be added once this thing is partially stable.
+            I'll list the known issues below, but feel free to poke and prod. See what you can get it to do. I'm going to continue to work on this as i get reports of breaks and the likes.</p>
+            <p>Thanks for your consideration and time in testing! -D (dean 'at' nullsheen.com)</p>
+            <h5>Known Issues</h5>
+            <ul>
+                <li>Race on priorities page doesn't want to "stick"</li>
+                <li>Skills page still buggy with edits/removes</li>
+                <li>Cyberware speciality rules (Grades, Incompatiable parts, Eyes having .5 free essence, limbs etc)</li>
+                <li>2nd Edition Spell Points</li>
+                <li>All nesting of improvements (Weapon/Deck/Vehicle accessories and building). These will be handled in a completely different way, but I promise it will feel awesome to do!</li>
+            </ul>
+        </div>
+        <hr/>
+
+
         Character Edition:
         SR2 <Switch checked={LocalEdition} onChange={handleSwitchEd} {...label} /> SR3
         <br></br>
@@ -57,18 +75,21 @@ export default function IdentityPanel(props) {
                         control={<Checkbox {...label} name="Decking" color="secondary" onChange={handleChangeCharacterTabs} checked={Tabs.Decking} />}
                         label="Decking Tab"
                         labelPlacement="end"
+                        disabled={true}
                     />
                     <FormControlLabel
                         value="top"
                         control={<Checkbox {...label} name="Otaku" color="success" onChange={handleChangeCharacterTabs} checked={Tabs.Otaku} />}
                         label="Otaku Tab"
                         labelPlacement="end"
+                        disabled={true}
                     />
                     <FormControlLabel
                         value="top"
                         control={<Checkbox {...label} name="Rigger" color="default" onChange={handleChangeCharacterTabs} checked={Tabs.Rigger} />}
                         label="Rigger / Vehicles Tab"
                         labelPlacement="end"
+                        disabled={true}
                     />
                 </FormGroup>
             </FormControl>
