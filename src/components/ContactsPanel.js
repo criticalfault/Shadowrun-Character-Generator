@@ -30,7 +30,7 @@ function ContactsPanel(props) {
   const [contacts, setContacts] = useState([...props.Contacts]);
 
   const handleAddContact = () => {
-    const newContact = { Name: '', Type:"purchased", Archtype: '', Level: 1, GeneralInfo: '' };
+    const newContact = { Name: '', Type:"purchased", Archtype: '', Level: 1, GeneralInfo: ''};
     setContacts(prevContacts => [...prevContacts, newContact]);
     props.updateContacts(contacts)
   };
@@ -48,15 +48,7 @@ function ContactsPanel(props) {
     setContacts(updatedContacts);
     props.updateContacts(updatedContacts)
   };
-
-
-  const handleNameChange = (event, contactId) => {
-    const updatedContacts = contacts.map(contact =>
-      contact.id === contactId ? { ...contact, name: event.target.value } : contact
-    );
-    setContacts(updatedContacts);
-    props.updateContacts(updatedContacts)
-  };
+  
   return (
     <div>
       <h2>Contacts</h2>
@@ -70,7 +62,7 @@ function ContactsPanel(props) {
                 label="Contact Name"
                 type="text"
                 value={contact.Name}
-                onChange={event => handleNameChange(event, contact.id)}
+                onChange={event => handleContactChange(event, index, 'Name')}
             />
             <FormControl>
               <InputLabel>Level</InputLabel>
