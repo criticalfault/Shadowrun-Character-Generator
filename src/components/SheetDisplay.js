@@ -57,9 +57,15 @@ function SheetDisplay(props) {
                         id="rating-input"
                         label="Astral Combat"
                         type="text"
-                        value={(parseInt(props.currentCharacter.attributes.Magic)+parseInt(props.currentCharacter.attributes.Intelligence) +
+                        value={(Math.floor(parseInt(props.currentCharacter.attributes.Charisma) +
+                            parseInt(props.currentCharacter.raceBonuses.Charisma??0) +
+                            parseInt(props.currentCharacter.cyberAttributeBonuses.Charisma??0)+
+                            parseInt(props.currentCharacter.attributes.Intelligence) +
                             parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
-                            parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)/3)}
+                            parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+
+                            parseInt(props.currentCharacter.attributes.Willpower) +
+                            parseInt(props.currentCharacter.raceBonuses.Willpower??0) +
+                            parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower??0))/2)}
                     />
                 </>
             )
@@ -249,6 +255,7 @@ function SheetDisplay(props) {
                 
                 {renderHackingPool()}
                 {renderControlPool()}
+                {renderAstralCombatPool()}
                 {renderSpellPool()}
                 {renderTaskPool()}
                 
