@@ -14,6 +14,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
+import FirearmModifyModal from './FirearmModifyModal';
 
 export default function GearPanel(props) {
   const GearData = require('../data/'+props.Edition+'/Gear.json');
@@ -68,12 +69,14 @@ GearData['Firearms'].entries.forEach(function(item) {
     }
   
     const handleRemoveGear = (index) => {
-      const editedGear = [...SelectedGear];
-      let RemovedGear = editedGear.splice(index, 1);
-      console.log("Removed Gear");
-      console.log(RemovedGear);
-      setSelectedGear(editedGear);
-      props.onChangeGear([...editedGear]);
+      if(window.confirm('Are you sure you want to remove this gear?')){
+        const editedGear = [...SelectedGear];
+        let RemovedGear = editedGear.splice(index, 1);
+        console.log("Removed Gear");
+        console.log(RemovedGear);
+        setSelectedGear(editedGear);
+        props.onChangeGear([...editedGear]);
+      }
     };
 
     return ( <>
@@ -182,7 +185,8 @@ GearData['Firearms'].entries.forEach(function(item) {
                 <TableCell align="right">{gear.Availability}</TableCell>
                 <TableCell align="right">{gear.Notes}</TableCell>
                 <TableCell align="right">
-                    <Button color="secondary" onClick={() => handleRemoveGear(index)}>Remove</Button>
+                  <FirearmModifyModal Gear={gear}  />
+                  <Button color="secondary" onClick={() => handleRemoveGear(index)}>Remove</Button>
                 </TableCell>
               </TableRow>
             ))}
