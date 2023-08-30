@@ -48,9 +48,8 @@ function MagicPanel(props) {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [spellRating, setSpellRating] = useState(1);
   const [spellPointsSpent, setSpellPointsSpent] = useState(CalcTotalSpellRatings(props.spells));
-  const [spellPointsMax, setSpellPointsMax] = useState(36);
+  const [spellPointsMax, setSpellPointsMax] = useState(props.maxSpellPoints);
   const [magicalTradition, setMagicalTradition] = useState('Full Magician')
-  
   const [AdeptPointsSpent, setAdeptPointsSpent] = useState(CalcTotalPowerRatings(props.powers));
   const [AdeptPointsMax, setAdeptPointsMax] = useState(6);
   const [newPower, setNewPower] = useState('');
@@ -287,10 +286,18 @@ function MagicPanel(props) {
   const RenderWindow = () =>{
     switch(props.magicalChoice){
       case 'Full Magician':
+      case 'Human Full Magician':
+      case 'Metahuman Full Magician':
         return RenderMagicianWithSpells();
       case 'Physical Adept':
+      case 'Human Physical Adept':
+      case 'Metahuman Physical Adept':
         return RenderPhysicalAdepts();
       case 'Aspected':
+      case 'Human Shamanist':
+      case 'Human Sorcerer':
+      case 'Metahuman Sorcerer':
+      case 'Metahuman Shamanist':
         return RenderMagicianWithSpells();
       break;
 

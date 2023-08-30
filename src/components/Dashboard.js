@@ -140,6 +140,8 @@ export default function BasicTabs() {
                         case 3:
                             tempCashSpent += 200000;
                             break;
+                        default:
+                            break;
                     }
                 }
             }else  if(Edition === 'SR2'){
@@ -153,6 +155,8 @@ export default function BasicTabs() {
                             break;
                         case 3:
                             tempCashSpent += 200000;
+                            break;
+                        default:
                             break;
                     }
                 }
@@ -200,6 +204,13 @@ export default function BasicTabs() {
         setCharacter((prevCharacter) => ({
             ...prevCharacter,
             chargenCash:Cash})
+        )
+    }
+
+    const handleChangeMaxSpellPoints = (Points) =>{
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+            maxSpellPoints:Points})
         )
     }
 
@@ -267,7 +278,6 @@ export default function BasicTabs() {
     };
 
     const handleAttributesChange = (attribute,value) => {
-        console.log("Hit attributeHandler")
         setCharacter((prevCharacter) =>{
             prevCharacter.attributes[attribute] = parseInt(value);
             return prevCharacter;
@@ -287,8 +297,6 @@ export default function BasicTabs() {
             return prevCharacter;
         })
     }
-
-    
 
     const handleCyberAttributeUpdates = (cyberAttributeBonuses) => {
         setCharacter((prevCharacter) => ({
@@ -330,7 +338,7 @@ export default function BasicTabs() {
                     <Tab label="Priorities"    {...a11yProps(1)} />
                     <Tab label="Attributes"    {...a11yProps(2)} />
                     <Tab label="Skills"        {...a11yProps(3)} />
-                    <Tab label="Magic"         {...a11yProps(4)} disabled={!Character.characterTabs.Magic} />
+                    <Tab label="Magic"         {...a11yProps(4)} />
                     <Tab label="Cyberware"     {...a11yProps(5)} />
                     <Tab label="Gear"          {...a11yProps(6)} />
                     <Tab label="Decking"       {...a11yProps(7)} disabled={!Character.characterTabs.Decking} />
@@ -367,6 +375,7 @@ export default function BasicTabs() {
                     ChangeMaxAttributes={handleChangeMaxAttributes}
                     ChangeMaxSkills={handleChangeMaxSkills}
                     ChangeMaxCash={handleChangeMaxCash}
+                    ChangeMaxSpellPoints={handleChangeMaxSpellPoints}
                     ChangeMagicChoices={handleChangeMagicChoices}
                     ChangeRaceBonuses={handleChangeRaceBonuses}
                     ChangeMagic={handleChangeMagic}
@@ -393,6 +402,8 @@ export default function BasicTabs() {
                     magicalTraditions={Character.availableMagics}
                     magicalChoice={Character.magicChoice} 
                     BooksFilter={Character.allowedBooks}
+                    Edition={Edition}
+                    maxSpellPoints={Character.maxSpellPoints}
                 />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={5}>

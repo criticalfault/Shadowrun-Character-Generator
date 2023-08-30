@@ -64,12 +64,12 @@ export default function IdentityPanel(props) {
             <FormControl component="fieldset">
                 <FormLabel component="legend">Tabs for this character</FormLabel>
                 <FormGroup aria-label="position" row>
-                    <FormControlLabel
+                    {/* <FormControlLabel
                         value="top"
                         control={<Checkbox {...label} name="Magic" onChange={handleChangeCharacterTabs} checked={Tabs.Magic} />}
                         label="Magic Tab"
                         labelPlacement="end"
-                    />
+                    /> */}
                     <FormControlLabel
                         value="top"
                         control={<Checkbox {...label} name="Decking" color="secondary" onChange={handleChangeCharacterTabs} checked={Tabs.Decking} />}

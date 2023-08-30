@@ -33,11 +33,11 @@ export default function PriorityPanel(props) {
             "attributes":   {"A":30,     "B":27,    "C":24,   "D":21,   "E":18},
             "skills":       {"A":50,     "B":40,    "C":34,   "D":30,   "E":27},
             "resources":    {
-                                "A":{"nuyen":1000000, "spell_points":50},
-                                "B":{"nuyen":400000, "spell_points":35},
-                                "C":{"nuyen":90000, "spell_points":25},
-                                "D":{"nuyen":20000, "spell_points":15},
-                                "E":{"nuyen":5000, "spell_points":5} 
+                                "A":{"nuyen":1000000, "spell_points":36},
+                                "B":{"nuyen":400000, "spell_points":36},
+                                "C":{"nuyen":90000, "spell_points":36},
+                                "D":{"nuyen":20000, "spell_points":36},
+                                "E":{"nuyen":5000, "spell_points":36} 
                             }
                             
         },
@@ -134,6 +134,7 @@ export default function PriorityPanel(props) {
     
     const handleChangePriorityResources = (newPriority) => {
         props.ChangeMaxCash(prorityChart[props.Edition].resources[newPriority].nuyen);
+        props.ChangeMaxSpellPoints(prorityChart[props.Edition].resources[newPriority].spell_points)
     };
 
 
@@ -160,7 +161,7 @@ export default function PriorityPanel(props) {
                                     <td className={props.CharacterPriorities.Magic === letter ? 'highlighted':''}><label>{prorityChart[props.Edition]['magic'][letter].join(', ')}</label></td>
                                     <td className={props.CharacterPriorities.Attributes === letter ? 'highlighted':''}><label>{prorityChart[props.Edition]['attributes'][letter]}</label></td>
                                     <td className={props.CharacterPriorities.Skills === letter ? 'highlighted':''}><label>{prorityChart[props.Edition]['skills'][letter]}</label></td>
-                                    <td className={props.CharacterPriorities.Resources === letter ? 'highlighted':''}><label>{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(prorityChart[props.Edition]['resources'][letter]['nuyen'])}</label></td>
+                                    <td className={props.CharacterPriorities.Resources === letter ? 'highlighted':''}><label>{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(prorityChart[props.Edition]['resources'][letter]['nuyen'])} {props.Edition === 'SR2' ? ' / '+prorityChart[props.Edition]['resources'][letter]['spell_points'] :''}</label></td>
                                 </tr>
                             )
                         })
