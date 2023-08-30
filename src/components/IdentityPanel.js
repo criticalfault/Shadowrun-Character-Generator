@@ -47,10 +47,10 @@ export default function IdentityPanel(props) {
             <p>Thanks for your consideration and time in testing! -D (dean 'at' nullsheen.com)</p>
             <h5>Known Issues</h5>
             <ul>
-                <li>Race on priorities page doesn't want to "stick"</li>
-                <li>Skills page still buggy with edits/removes</li>
-                <li>Cyberware speciality rules (Grades, Incompatiable parts, Eyes having .5 free essence, limbs etc)</li>
-                <li>2nd Edition Spell Points</li>
+                <li>Magic on priorities page doesn't want to "stick"</li>
+                <li>Skills page still buggy with edits/removes (Though maybe i fixed it?)</li>
+                <li>SR2' Specializations</li>
+                <li>Cyberware speciality rules (Incompatiable parts, Eyes having .5 free essence, limbs etc)</li>
                 <li>All nesting of improvements (Weapon / Deck / Vehicle accessories and building). These will be handled in a completely different way, but I promise it will feel awesome to do!</li>
             </ul>
         </div>

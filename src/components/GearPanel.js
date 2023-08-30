@@ -47,7 +47,7 @@ GearData['Firearms'].entries.forEach(function(item) {
         setSelectedGearCategory(event.target.value);
     }
     const handleGearChange = (event) => {
-        const TempGear = GearData[SelectedGearCategory].entries.filter(item => props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
+        const TempGear = GearData[SelectedGearCategory].entries.filter(item => item.hasOwnProperty('BookPage') && props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
         setNewGear(TempGear);
         setNewGearIndex(event.target.value)
         setNewGearCost(TempGear.Cost);

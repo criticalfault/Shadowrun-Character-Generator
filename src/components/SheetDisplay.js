@@ -243,15 +243,19 @@ function SheetDisplay(props) {
                     id="rating-input"
                     label="Combat"
                     type="text"
-                    value={(Math.floor(parseInt(props.currentCharacter.attributes.Quickness) +
-                        parseInt(props.currentCharacter.raceBonuses.Quickness??0) +
-                        parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+
-                        parseInt(props.currentCharacter.attributes.Intelligence) +
-                        parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
-                        parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+
-                        parseInt(props.currentCharacter.attributes.Willpower) +
-                        parseInt(props.currentCharacter.raceBonuses.Willpower??0) +
-                        parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower??0))/2)}
+                    value={(
+                        Math.floor(
+                                   (parseInt(props.currentCharacter.attributes.Quickness) +
+                                    parseInt(props.currentCharacter.raceBonuses.Quickness??0) +
+                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+
+                                    parseInt(props.currentCharacter.attributes.Intelligence) +
+                                    parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
+                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+
+                                    parseInt(props.currentCharacter.attributes.Willpower) +
+                                    parseInt(props.currentCharacter.raceBonuses.Willpower??0) +
+                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower??0))/2
+                                    )
+                                )}
                 />
                 
                 {renderHackingPool()}
