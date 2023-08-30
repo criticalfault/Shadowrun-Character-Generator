@@ -90,7 +90,7 @@ export default function PriorityPanel(props) {
     const [PriorityRace, setPriorityRace] = React.useState(props.CharacterPriorities.Race);
     const [AvailableRaces, setAvailableRaces] = React.useState([...prorityChart[props.Edition].race[PriorityRace]]);
     const [AvailableMagics, setAvailableMagics] = React.useState([...prorityChart[props.Edition].magic[PriorityRace]]);
-    const [Race, setRace] = React.useState(['Human']);
+    const [Race, setRace] = React.useState(props.Race??'Human');
     const [Magic, setMagic] = React.useState(props.magicalChoice??'None');
 
     const handleMagicChange = (magic) => {

@@ -40,7 +40,7 @@ export default function IdentityPanel(props) {
 
     return (<>
         <div>
-            <h3>Welcome To the SR2/3 Character Creator</h3>
+            <h3>Welcome To the SR 2/3 Character Creator</h3>
             <p>I have been working on this for a good month and have finally decided to show it off in its partially working glory. It is in <strong>Alpha</strong> at the moment.
             So be prepared if it decideds to randomly die. There is a bunch of fixes still pending as well as a lot of known missing parts which will be added once this thing is partially stable.
             I'll list the known issues below, but feel free to poke and prod. See what you can get it to do. I'm going to continue to work on this as i get reports of breaks and the likes.</p>
@@ -51,7 +51,7 @@ export default function IdentityPanel(props) {
                 <li>Skills page still buggy with edits/removes</li>
                 <li>Cyberware speciality rules (Grades, Incompatiable parts, Eyes having .5 free essence, limbs etc)</li>
                 <li>2nd Edition Spell Points</li>
-                <li>All nesting of improvements (Weapon/Deck/Vehicle accessories and building). These will be handled in a completely different way, but I promise it will feel awesome to do!</li>
+                <li>All nesting of improvements (Weapon / Deck / Vehicle accessories and building). These will be handled in a completely different way, but I promise it will feel awesome to do!</li>
             </ul>
         </div>
         <hr/>

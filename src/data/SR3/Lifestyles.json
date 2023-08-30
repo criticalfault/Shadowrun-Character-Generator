@@ -1,0 +1,607 @@
+{
+    "basics":[
+        {
+            "title":"Street Lifestyle",
+            "type":"street",
+            "point":0,
+            "cost":0
+        },
+        {
+            "title":"Squatter Lifestyle",
+            "type":"squatter",
+            "point":6,
+            "cost":100
+        },
+        {
+            "title":"Low Lifestyle",
+            "type":"low",
+            "point":12,
+            "cost":100
+        },
+        {
+            "title":"Middle Lifestyle",
+            "type":"middle",
+            "point":18,
+            "cost":5000
+        },
+        {
+            "title":"High Lifestyle",
+            "type":"high",
+            "point":24,
+            "cost":10000
+        },
+        {
+            "title":"Luxury Lifestyle",
+            "type":"luxury",
+            "point":30,
+            "cost":100000
+        }
+    ],
+    "levels":[
+        {
+            "title":"Street Lifestyle (0 pts)",
+            "type":"street",
+            "point":0,
+            "cost":15
+        },
+        {
+            "title":"Street Lifestyle (1 pts)",
+            "type":"street",
+            "point":1,
+            "cost":30
+        },
+        {
+            "title":"Street Lifestyle (2 pts)",
+            "type":"street",
+            "point":2,
+            "cost":45
+        },
+        {
+            "title":"Street Lifestyle (3 pts)",
+            "type":"street",
+            "point":3,
+            "cost":60
+        },
+        {
+            "title":"Street Lifestyle (4 pts)",
+            "type":"street",
+            "point":4,
+            "cost":70
+        },
+        {
+            "title":"Street Lifestyle (5 pts)",
+            "type":"street",
+            "point":5,
+            "cost":85
+        },
+        {
+            "title":"Squatter Lifestyle (7 pts)",
+            "type":"squatter",
+            "point":7,
+            "cost":250
+        },
+        {
+            "title":"Squatter Lifestyle (8 pts)",
+            "type":"squatter",
+            "point":8,
+            "cost":400
+        },
+        {
+            "title":"Squatter Lifestyle (9 pts)",
+            "type":"squatter",
+            "point":9,
+            "cost":550
+        },
+        {
+            "title":"Squatter Lifestyle (10pts)",
+            "type":"squatter",
+            "point":10,
+            "cost":700
+        },
+        {
+            "title":"Squatter Lifestyle (11pts)",
+            "type":"squatter",
+            "point":11,
+            "cost":850
+        },
+        {
+            "title":"Lower Lifestyle (13pts)",
+            "type":"low",
+            "point":13,
+            "cost":1650
+        },
+        {
+            "title":"Lower Lifestyle (14pts)",
+            "type":"low",
+            "point":14,
+            "cost":2350
+        },
+        {
+            "title":"Lower Lifestyle (15pts)",
+            "type":"low",
+            "point":15,
+            "cost":3000
+        },
+        {
+            "title":"Lower Lifestyle (16pts)",
+            "type":"low",
+            "point":16,
+            "cost":3650
+        },
+        {
+            "title":"Lower Lifestyle (17pts)",
+            "type":"low",
+            "point":17,
+            "cost":4350
+        },
+        {
+            "title":" Middle Lifestyle (19pts)",
+            "type":"middle",
+            "point":19,
+            "cost":5850
+        },
+        {
+            "title":"Middle Lifestyle (20pts)",
+            "type":"middle",
+            "point":20,
+            "cost":6650
+        },    
+        {
+            "title":"Middle Lifestyle (21pts)",
+            "type":"middle",
+            "point":21,
+            "cost":7500
+        },    
+        {
+            "title":"Middle Lifestyle (22pts)",
+            "type":"middle",
+            "point":22,
+            "cost":8350
+        },
+        {
+            "title":"Middle Lifestyle (23pts)",
+            "type":"middle",
+            "point":23,
+            "cost":9150
+        },
+        {
+            "title":"High Lifestyle (25pts)",
+            "type":"high",
+            "point":25,
+            "cost":25000
+        },
+        {
+            "title":"High Lifestyle (26pts)",
+            "type":"high",
+            "point":26,
+            "cost":40000
+        },
+        {
+            "title":"High Lifestyle (27pts)",
+            "type":"high",
+            "point":27,
+            "cost":55000
+        },
+        {
+            "title":"High Lifestyle (28pts)",
+            "type":"high",
+            "point":28,
+            "cost":70000
+        },
+        {
+            "title":"High Lifestyle (29pts)",
+            "type":"high",
+            "point":29,
+            "cost":85000
+        },
+        {
+            "title":"Luxury Lifestyle (31pts)",
+            "type":"luxury",
+            "point":29,
+            "cost":125000
+        },
+        {
+            "title":"Luxury Lifestyle (32pts)",
+            "type":"luxury",
+            "point":29,
+            "cost":150000
+        }
+    ],
+    "Edges":[
+        {
+            "title":"Astral Repellent",
+            "cost":0.2,
+            "incompatable":["Astral Magnet"]
+        },
+        {
+            "title":"Bribed Security",
+            "cost":0.15,
+            "incompatable":["Underpaid Security"]
+        },
+        {
+            "title":"Concerned Neighbors",
+            "cost":0.05,
+            "incompatable":[]
+        },
+        {
+            "title":"Defensive Setup",
+            "cost":0.1,
+            "incompatable":["Ambush Friendly"]
+        },
+        {
+            "title":"Easygoing Landlord",
+            "cost":0.05,
+            "incompatable":["Trigger-Happy Landlord"]
+        },
+        {
+            "title":"Escape Tunner",
+            "cost":0.1,
+            "incompatable":[]
+        },
+        {
+            "title":"Good Insulation",
+            "cost":0.05,
+            "incompatable":["Bad Insulation"]
+        },
+        {
+            "title":"Good Reputation",
+            "cost":0.05,
+            "incompatable":["Bad Reputation"]
+        },
+        {
+            "title":"Hasty Access",
+            "cost":0.05,
+            "incompatable":["Difficult Access"]
+        },
+        {
+            "title":"Helpful Neighbors",
+            "cost":0.05,
+            "incompatable":[]
+        },
+        {
+            "title":"Inconspicuous Housing",
+            "cost":0.1,
+            "incompatable":[]
+        },
+        {
+            "title":"Insurance",
+            "cost":0.1,
+            "incompatable":[]
+        },
+        {
+            "title":"Manaline",
+            "cost":0.2,
+            "incompatable":[]
+        },
+        {
+            "title":"Manaline (Awakened)",
+            "cost":0.3,
+            "incompatable":[]
+        },
+        {
+            "title":"Power Site In The Basement",
+            "cost":0.2,
+            "incompatable":[]
+        },
+        {
+            "title":"Power Site In The Basement (Awakened)",
+            "cost":0.3,
+            "incompatable":[]
+        },
+        {
+            "title":"Masterful Engineering*",
+            "cost":0.05,
+            "incompatable":["Patchwork Engineering"]
+        },
+        {
+            "title":"Motivated Service",
+            "cost":0.1,
+            "incompatable":["Disgruntled Service"]
+        },
+        {
+            "title":"No More Neighbors",
+            "cost":0.15,
+            "incompatable":["Helpful Neighbors","Concerned Neighbors"]
+        },
+        {
+            "title":"One Step Away From Everything",
+            "cost":0.05,
+            "incompatable":["Middle Of Nowhere"]
+        },
+        {
+            "title":"Pest Repellent",
+            "cost":0.05,
+            "incompatable":["Infestation"]
+        },
+
+        {
+            "title":"Privacy Screen (1)",
+            "cost":0.1,
+            "incompatable":["No Privacy"]
+        },
+        {
+            "title":"Privacy Screen (2)",
+            "cost":0.2,
+            "incompatable":["No Privacy"]
+        },
+        {
+            "title":"Privacy Screen (3)",
+            "cost":0.3,
+            "incompatable":["No Privacy"]
+        },
+        {
+            "title":"Quiet Neighborhood",
+            "cost":0.15,
+            "incompatable":["Rough Neighborhood"]
+        },
+        {
+            "title":"Reliable Utilities",
+            "cost":0.1,
+            "incompatable":[]
+        },
+        {
+            "title":"Roommate From Heaven",
+            "cost":0.1,
+            "incompatable":[]
+        },
+        {
+            "title":"Terrific View",
+            "cost":0.05,
+            "incompatable":[]
+        },
+        {
+            "title":"Vigilant Security*",
+            "cost":0.15,
+            "incompatable":["Inattentive Security*"]
+        },
+        {
+            "title":"Vigilant Security*",
+            "cost":0.15,
+            "incompatable":["Inattentive Security*"]
+        },
+        {
+            "title":"Watertight",
+            "cost":0.05,
+            "incompatable":["Waterlogged"]
+        }
+
+    ],
+    "Flaws":[
+        {
+            "title":"Ambush Friendly",
+            "cost":-0.1,
+            "incompatable":["Defensive Setup"]
+        },
+        {
+            "title":"Annoying Neighbors",
+            "cost":-0.05,
+            "incompatable":[]
+        },
+        {
+            "title":"Astral Magnet",
+            "cost":-0.2,
+            "incompatable":["Astral Repellent"]
+        },
+        {
+            "title":"Background Count",
+            "cost":-0.2,
+            "incompatable":[]
+        },
+        {
+            "title":"Background Count (Awakened)",
+            "cost":-0.3,
+            "incompatable":[]
+        },
+        {
+            "title":"Bad Insulation",
+            "cost":-0.05,
+            "incompatable":["Good Insulation"]
+        },
+        {
+            "title":"Bad Reputation",
+            "cost":-0.05,
+            "incompatable":["Good Reputation"]
+        },
+        {
+            "title":"Cacophonous Neighborhood",
+            "cost":-0.05,
+            "incompatable":[]
+        },
+        {
+            "title":"Crashpad",
+            "cost":-0.10,
+            "incompatable":[]
+        },
+        {
+            "title":"Cursed Amenities",
+            "cost":-0.10,
+            "incompatable":[]
+        },
+        {
+            "title":"Difficult Access",
+            "cost":-0.05,
+            "incompatable":["Hasty Access"]
+        },
+        {
+            "title":"Disgruntled Service",
+            "cost":-0.1,
+            "incompatable":["Motivated Service"]
+        },
+        {
+            "title":"Disgusting Neighborhood",
+            "cost":-0.05,
+            "incompatable":[]
+        },
+        {
+            "title":"Gnomes Under The Floorboard (1)",
+            "cost":-0.1,
+            "incompatable":[]
+        },
+        {
+            "title":"Gnomes Under The Floorboard (2)",
+            "cost":-0.2,
+            "incompatable":[]
+        },
+        {
+            "title":"Haunted (1)",
+            "cost":-0.2,
+            "incompatable":[]
+        },
+        {
+            "title":"Haunted (2)",
+            "cost":-0.2,
+            "incompatable":[]
+        },
+        {
+            "title":"Horrible View",
+            "cost":-0.05,
+            "incompatable":[]
+        },
+        {
+            "title":"Inattentive Security*",
+            "cost":-0.15,
+            "incompatable":["Vigilant Security*"]
+        },
+        {
+            "title":"Infestation",
+            "cost":-0.05,
+            "incompatable":["Pest Repellent"]
+        },
+        {
+            "title":"Intolerant Neighbors",
+            "cost":-0.05,
+            "incompatable":[]
+        },
+        {
+            "title":"Living by Committee",
+            "cost":-0.1,
+            "incompatable":[]
+        },
+        {
+            "title":"Living With Parents",
+            "cost":-0.25,
+            "incompatable":[]
+        },
+        {
+            "title":"Mall Leftovers",
+            "cost":-0.05,
+            "incompatable":[]
+        },
+        {
+            "title":"Middle Of Nowhere",
+            "cost":-0.05,
+            "incompatable":["One Step Away From Everything"]
+        },
+        {
+            "title":"No Hazard Alarm",
+            "cost":-0.05,
+            "incompatable":[]
+        },
+        {
+            "title":"No Hazard Alarm",
+            "cost":-0.05,
+            "incompatable":[]
+        },
+        {
+            "title":"No Privacy (1)",
+            "cost":-0.05,
+            "incompatable":[]
+        },
+        {
+            "title":"No Privacy (2)",
+            "cost":-0.10,
+            "incompatable":[]
+        },
+        {
+            "title":"No Privacy (3)",
+            "cost":-0.15,
+            "incompatable":[]
+        },
+        {
+            "title":"Patchwork Engineering*",
+            "cost":-0.05,
+            "incompatable":["Masterful Engineering*"]
+        },
+        {
+            "title":"Portal In The Closet (1)",
+            "cost":-0.05,
+            "incompatable":[]
+        },
+        {
+            "title":"Portal In The Closet (2)",
+            "cost":-0.10,
+            "incompatable":[]
+        },
+        {
+            "title":"Portal In The Closet (3)",
+            "cost":-0.15,
+            "incompatable":[]
+        },
+        {
+            "title":"Portal In The Closet (4)",
+            "cost":-0.20,
+            "incompatable":[]
+        },
+        {
+            "title":"Roommate From Hell",
+            "cost":-0.05,
+            "incompatable":[]
+        },
+        {
+            "title":"Rough Neighborhood",
+            "cost":-0.15,
+            "incompatable":["Quiet Neighborhood"]
+        },
+        {
+            "title":"This Isn't Sam's Pizza",
+            "cost":-0.05,
+            "incompatable":[]
+        },
+        {
+            "title":"Trigger-Happy Landlord",
+            "cost":-0.05,
+            "incompatable":["Easygoing Landlord"]
+        },
+        {
+            "title":"Underpaid Security",
+            "cost":-0.15,
+            "incompatable":["Bribed Security"]
+        },
+        {
+            "title":"Unreliable Security (1)",
+            "cost":-0.05,
+            "incompatable":[]
+        },
+        {
+            "title":"Unreliable Security (2)",
+            "cost":-0.10,
+            "incompatable":[]
+        },
+        {
+            "title":"Unreliable Security (3)",
+            "cost":-0.15,
+            "incompatable":[]
+        },
+        {
+            "title":"Unreliable Security (4)",
+            "cost":-0.20,
+            "incompatable":[]
+        },
+        {
+            "title":"Unreliable Security (5)",
+            "cost":-0.25,
+            "incompatable":[]
+        },
+        {
+            "title":"Victory Gardens",
+            "cost":-0.20,
+            "incompatable":[]
+        },
+        {
+            "title":"Waterlogged",
+            "cost":-0.05,
+            "incompatable":["Watertight"]
+        }
+    ]
+
+}

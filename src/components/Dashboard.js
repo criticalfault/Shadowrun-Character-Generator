@@ -361,6 +361,7 @@ export default function BasicTabs() {
                     magicalChoice={Character.magicalChoice}
                     ChangeRace={handleRaceChange}
                     selectedRace={selectedRace}
+                    Race={Character.race}
                     onChangePriorityRace={handleChangePriorityRace}
                     ChangeRaceChoices={handleChangeAvailabileRaces} 
                     ChangeMaxAttributes={handleChangeMaxAttributes}

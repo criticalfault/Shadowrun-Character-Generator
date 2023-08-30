@@ -164,7 +164,6 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
   };
 
   const handleEditSkill = (index, type) => {
-    console.log(index,type);
     let editedSkills = null;
     let skillToEdit = null;
     switch(type) {
@@ -204,7 +203,6 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
   };
 
   const handleRemoveSkill = (index, type) => {
-    console.log(index, type,selectedSkills,selectedKnowledgeSkills,selectedLanguageSkills);
     let editedSkills = null;
     let RemovedSkill = null;
 
