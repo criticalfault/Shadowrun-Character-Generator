@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import NativeSelect from '@mui/material/NativeSelect';
@@ -50,7 +50,14 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
   const [newLanguageSkill, setLanguageNewSkill] = useState('English');
 
 
-
+  useEffect(() => {
+    //Actually remove the skills when they are deleted.
+    onUpdateSkills([...selectedSkills,...selectedKnowledgeSkills,...selectedLanguageSkills]);
+    //Update bar graphs for each category
+    setSkillPointsSpent(CalcTotalSkillsRatings([...selectedSkills]));
+    setKnowledgeSkillPointsSpent(CalcTotalSkillsRatings([...selectedKnowledgeSkills]))
+    setLanguageSkillPointsSpent(CalcTotalSkillsRatings([...selectedLanguageSkills]));
+  }, [selectedSkills,selectedKnowledgeSkills,selectedLanguageSkills])
 
  // Handle CategoryChange events
   const handleCategoryChange = (event) => {
@@ -156,23 +163,71 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
     }
   };
 
-  const handleEditSkill = (index) => {
-    const editedSkills = [...selectedSkills];
-    const skillToEdit = editedSkills[index];
-    setSelectedSpecialization(skillToEdit.specialization);
-    setNewSkill(skillToEdit.name);
-    setSkillRating(skillToEdit.rating);
-    editedSkills.splice(index, 1);
-    setSelectedSkills(editedSkills);
+  const handleEditSkill = (index, type) => {
+    console.log(index,type);
+    let editedSkills = null;
+    let skillToEdit = null;
+    switch(type) {
+      case "Active":
+        editedSkills = [...selectedSkills];
+        skillToEdit = editedSkills[index];
+        setSelectedSpecialization(skillToEdit.specialization);
+        setNewSkill(skillToEdit.name);
+        setSkillRating(skillToEdit.rating);
+        editedSkills.splice(index, 1);
+        setSelectedSkills(editedSkills);
+        break;
+
+      case "Knowledge":
+        editedSkills = [...selectedKnowledgeSkills];
+        skillToEdit = editedSkills[index];
+        console.log(editedSkills);
+        console.log(skillToEdit);
+        setKnowledgeSelectedSpecialization(skillToEdit.specialization??'None');
+        setKnowledgeNewSkill(skillToEdit.name);
+        setKnowledgeSkillRating(skillToEdit.rating);
+        editedSkills.splice(index, 1);
+        setKnowledgeSelectedSkills(editedSkills);
+        break;
+
+      case "Language":
+        editedSkills = [...selectedKnowledgeSkills];
+        skillToEdit = editedSkills[index];
+        setLanguageSelectedSpecialization(skillToEdit.specialization??'None');
+        setLanguageNewSkill(skillToEdit.name);
+        setLanguageSkillRating(skillToEdit.rating);
+        editedSkills.splice(index, 1);
+        setLanguageSelectedSkills(editedSkills);
+        break;
+    }
+    
   };
 
-  const handleRemoveSkill = (index) => {
-    const editedSkills = [...selectedSkills];
-    console.log(editedSkills);
-    let RemovedSkill = editedSkills.splice(index, 1);
-    console.log(RemovedSkill);
-    // setSkillPointsSpent(prevSkills => (prevSkills - RemovedSkill[0].Rating));
-    // setSelectedSkills(editedSkills);
+  const handleRemoveSkill = (index, type) => {
+    console.log(index, type,selectedSkills,selectedKnowledgeSkills,selectedLanguageSkills);
+    let editedSkills = null;
+    let RemovedSkill = null;
+
+    switch(type) {
+      case "Active":
+        editedSkills = [...selectedSkills];
+        RemovedSkill = editedSkills.splice(index, 1);
+        setSelectedSkills(editedSkills);
+        onUpdateSkills([...selectedSkills,...selectedKnowledgeSkills,...selectedLanguageSkills]);
+        break;
+      case "Knowledge":
+        editedSkills = [...selectedKnowledgeSkills];
+        RemovedSkill = editedSkills.splice(index, 1);
+        setKnowledgeSelectedSkills(editedSkills);
+        onUpdateSkills([...selectedSkills,...selectedKnowledgeSkills,...selectedLanguageSkills]);
+        break;
+      case "Language":
+        editedSkills = [...selectedLanguageSkills];
+        RemovedSkill = editedSkills.splice(index, 1);
+        setLanguageSelectedSkills(editedSkills);
+        onUpdateSkills([...selectedSkills,...selectedKnowledgeSkills,...selectedLanguageSkills]);
+        break;
+    }
   };
 
   return (
@@ -336,10 +391,10 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
             <ListItemText
               primary={skill.specialization ? `${skill.name} (${skill.rating-1}) ->  ${skill.specialization} (${skill.rating + 1})`:`${skill.name} (${skill.rating})`}
             />
-            <Button color="primary" onClick={() => handleEditSkill(index)}>
+            <Button color="primary" onClick={() => handleEditSkill(index, skill.type)}>
               Edit
             </Button>
-            <Button color="secondary" onClick={() => handleRemoveSkill(index)}>
+            <Button color="secondary" onClick={() => handleRemoveSkill(index, skill.type)}>
               Remove
             </Button>
           </ListItem>
