@@ -206,7 +206,8 @@ function SheetDisplay(props) {
                             id="rating-input"
                             label="Initative"
                             type="text"
-                            value={props.currentCharacter.attributes.Initative+'d6'}
+                            value={(parseInt(props.currentCharacter.attributes.Initative)+parseInt(props.currentCharacter.cyberAttributeBonuses.Initative))+'d6'}
+                            
                         />
                         {renderControlPoolBoxes()}
                     </Grid>
