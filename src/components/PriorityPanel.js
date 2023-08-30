@@ -47,7 +47,7 @@ export default function PriorityPanel(props) {
                 "Dwarf":{'Body':1,'Quickness':-1,'Strength':2,'Charisma':0,'Willpower':1,'Intelligence':0,"Notes":"Thermographic Vision, Resistance (+2 Body) to any disease or toxin"},
                 "Elf":{'Body':0,'Quickness':1,'Strength':0,'Charisma':2,'Willpower':0,'Intelligence':0,"Notes":"Low-light Vision"},
                 "Ork":{'Body':3,'Quickness':-1,'Strength':2,'Charisma':-1,'Willpower':-1,'Intelligence':-1,"Notes":"Low-light Vision"},
-                "troll":{'Body':5,'Quickness':-1,'Strength':4,'Charisma':-2,'Willpower':-1,'Intelligence':-2,"Notes":"Thermographic Vision, +1 Reach for Armed/Unarmed Combat, Dermal Armor (+1 Body)"}
+                "Troll":{'Body':5,'Quickness':-1,'Strength':4,'Charisma':-2,'Willpower':-1,'Intelligence':-2,"Notes":"Thermographic Vision, +1 Reach for Armed/Unarmed Combat, Dermal Armor (+1 Body)"}
             },
             "race": {
                 "A":['Troll','Ork','Dwarf','Elf','Human'], 
@@ -88,11 +88,13 @@ export default function PriorityPanel(props) {
 
     const [priorities, setPriorities] = React.useState(propertiesToOrderedList(props.CharacterPriorities));
     const [PriorityRace, setPriorityRace] = React.useState(props.CharacterPriorities.Race);
+    const [PriorityMagic, setPriorityMagic] = React.useState(props.CharacterPriorities.Magic);
     const [AvailableRaces, setAvailableRaces] = React.useState([...prorityChart[props.Edition].race[PriorityRace]]);
-    const [AvailableMagics, setAvailableMagics] = React.useState([...prorityChart[props.Edition].magic[PriorityRace]]);
-    const [Race, setRace] = React.useState(props.Race??'Human');
-    const [Magic, setMagic] = React.useState(props.magicalChoice??'None');
+    const [AvailableMagics, setAvailableMagics] = React.useState([...prorityChart[props.Edition].magic[PriorityMagic]]);
+    const [Race, setRace] = React.useState(props.Race);
+    const [Magic, setMagic] = React.useState(props.magicalChoice);
 
+    console.log(props.magicalChoice,AvailableMagics)
     const handleMagicChange = (magic) => {
         setMagic(magic.target.value);
         props.ChangeMagic(magic.target.value);
@@ -100,13 +102,9 @@ export default function PriorityPanel(props) {
 
     const handleChangePriorityMagic = (newPriority) => {
         const newPriorityMagic = newPriority;
+        setPriorityMagic(newPriority);
         setAvailableMagics(prorityChart[props.Edition].magic[newPriorityMagic]);
-        if(prorityChart[props.Edition].magic[newPriorityMagic][0] !== 'Full Magician' || prorityChart[props.Edition].magic[newPriorityMagic][0] !== 'Physical Adept, Aspected'){
-            setMagic('None') 
-        }else{
-            setMagic(prorityChart[props.Edition].magic[newPriorityMagic][0])
-        }
-        
+        setMagic(prorityChart[props.Edition].magic[newPriorityMagic][0])
         props.ChangeMagicChoices(prorityChart[props.Edition].magic[newPriorityMagic]);
         props.ChangeMagic(prorityChart[props.Edition].magic[newPriorityMagic][0])
     };

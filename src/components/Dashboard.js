@@ -62,8 +62,8 @@ export default function BasicTabs() {
         street_name:'New Runner',
         availableRaces:['Human'],
         availableMagics:['Full Magician'],
-        magicChoice:'None',
-        race:'',
+        magicalChoice:'Full Magician',
+        race:'Human',
         bodyIndex:2,
         cyberAttributeBonuses:{'Body':0, 'Quickness':0, 'Strength':0, 'Charisma':0, 'Willpower':0, 'Intelligence':0, 'Reaction':0, 'Initative':0, 'Impact':0, 'Ballastic':0},
         raceBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
@@ -252,7 +252,7 @@ export default function BasicTabs() {
     const handleChangeMagic = (newMagicChoice) =>{
         setCharacter((prevCharacter) => ({
             ...prevCharacter,
-             magicChoice:newMagicChoice})
+            magicalChoice:newMagicChoice})
         )
     }
 
@@ -368,6 +368,7 @@ export default function BasicTabs() {
                     CharacterPriorities={Character.priorities} 
                     magicalChoice={Character.magicalChoice}
                     ChangeRace={handleRaceChange}
+                    ChangeMagic={handleChangeMagic}
                     selectedRace={selectedRace}
                     Race={Character.race}
                     onChangePriorityRace={handleChangePriorityRace}
@@ -378,7 +379,6 @@ export default function BasicTabs() {
                     ChangeMaxSpellPoints={handleChangeMaxSpellPoints}
                     ChangeMagicChoices={handleChangeMagicChoices}
                     ChangeRaceBonuses={handleChangeRaceBonuses}
-                    ChangeMagic={handleChangeMagic}
                     Edition={Edition}
                 />
             </CustomTabPanel>

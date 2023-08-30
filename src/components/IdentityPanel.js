@@ -47,7 +47,6 @@ export default function IdentityPanel(props) {
             <p>Thanks for your consideration and time in testing! -D (dean 'at' nullsheen.com)</p>
             <h5>Known Issues (As of 8-29-23 - 10:30pm CST)</h5>
             <ul>
-                <li>Magic on priorities page doesn't want to "stick"</li>
                 <li>Skills page still buggy with edits/removes (Though maybe i fixed it?)</li>
                 <li>SR2's Specializations still missing</li>
                 <li>Cyberware speciality rules (Incompatiable parts, Eyes having .5 free essence, limbs etc)</li>
