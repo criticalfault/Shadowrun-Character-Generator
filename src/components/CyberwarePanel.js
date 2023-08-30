@@ -5,6 +5,10 @@ import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormLabel from '@mui/material/FormLabel';
 import LinearProgress from '@mui/material/LinearProgress';
 import NativeSelect from '@mui/material/NativeSelect';
 import Table from '@mui/material/Table';
@@ -46,12 +50,13 @@ export default function CyberwarePanel(props) {
   }
 
   
-  const [EssencePointsSpent, setEssencePointsSpent]     = useState(CalcEssenceSpent());
-  const [BodyIndexPointsSpent, setBodyIndexPointsSpent] = useState(CalcBioIndexSpent());
+  const [EssencePointsSpent, setEssencePointsSpent]               = useState(CalcEssenceSpent());
+  const [BodyIndexPointsSpent, setBodyIndexPointsSpent]           = useState(CalcBioIndexSpent());
   const [SelectedCyberwareCategory, setSelectedCyberwareCategory] = useState('BODYWARE');
   
   const [NewCyberware, setNewCyberware]           = useState();
   const [NewCyberwareCost, setNewCyberwareCost]   = useState();
+  const [NewCyberwareGrade, setNewCyberwareGrade]   = useState('standard');
   const [NewCyberwareIndex, setNewCyberwareIndex] = useState(0);
   const [NewCyberwareDesc, setNewCyberwareDesc]   = useState('');
   const [selectedCyberware, setSelectedCyberware] = useState(props.Cyberware);
@@ -64,6 +69,7 @@ export default function CyberwarePanel(props) {
       const TempCyber = CyberwareData[SelectedCyberwareCategory].filter(item => props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
       setNewCyberware(TempCyber);
       setNewCyberwareIndex(event.target.value)
+      TempCyber.Cost *= CyberwareGrades[NewCyberwareGrade].CostMod;
       setNewCyberwareCost(TempCyber.Cost);
       setNewCyberwareDesc(TempCyber.Notes)
   }
@@ -71,6 +77,9 @@ export default function CyberwarePanel(props) {
   const handleAddCyberware = () => {
       if (NewCyberware) {
         const cyberToAdd = {...NewCyberware};
+        cyberToAdd.Cost *= CyberwareGrades[NewCyberwareGrade].CostMod;
+        cyberToAdd.EssCost *= CyberwareGrades[NewCyberwareGrade].EssenceReduction;
+        cyberToAdd.Grade = NewCyberwareGrade;
         setSelectedCyberware(prevCyberware => [...prevCyberware, cyberToAdd]);
         setNewCyberware('');
         setNewCyberwareIndex('');
@@ -181,6 +190,17 @@ const handleCyberOrBioChange = (event) => {
     }
   }
 
+  const CyberwareGrades   = { 'used':     {'EssenceReduction': 1, 'CostMod':.5, 'AvailabilityMod':1, 'AvailabilityTimeMod':1},
+                              'standard': {'EssenceReduction': 1, 'CostMod':1, 'AvailabilityMod':1, 'AvailabilityTimeMod':1},
+                              'alpha':    {'EssenceReduction':.8, 'CostMod':2 , 'AvailabilityMod':1, 'AvailabilityTimeMod':1},
+                              'beta':     {'EssenceReduction':.6, 'CostMod':4 , 'AvailabilityMod':3, 'AvailabilityTimeMod':1.5},
+                              'delta':    {'EssenceReduction':.5, 'CostMod':8 , 'AvailabilityMod':9, 'AvailabilityTimeMod':3}
+                            };
+
+  const handleChangeGrade = (event) => {
+    setNewCyberwareGrade(event.target.value);
+  };
+
   useEffect(function(){
     setEssencePointsSpent(CalcEssenceSpent());
     setBodyIndexPointsSpent(CalcBioIndexSpent());
@@ -198,20 +218,21 @@ const handleCyberOrBioChange = (event) => {
         Cyberware Cost: {TotalCyberwareCost}
         </Box>
         <br></br>
-        <FormControl style={{'width':'200px'}}>
-        <InputLabel  id="skill-label">Cyberware Categories</InputLabel>
-        <NativeSelect
-          id="skill-dropdown"
-          value={SelectedCyberwareCategory}
-          onChange={handleCyberwareCategoryChange}>
-          {CyberwareCategories.map(catName => (
-            <option key={catName} value={catName}>{catName}</option>
-          ))}
-        </NativeSelect>
-      </FormControl>
+        <FormControl style={{'width':'200px', "display":"inline-block"}}>
+          <InputLabel  id="cyberware-label">Cyberware Categories</InputLabel>
+          <NativeSelect
+            id="cyberware-dropdown"
+            value={SelectedCyberwareCategory}
+            onChange={handleCyberwareCategoryChange}>
+            {CyberwareCategories.map(catName => (
+              <option key={catName} value={catName}>{catName}</option>
+            ))}
+          </NativeSelect>
+        </FormControl>
       <br></br>
       <br></br>
     {SelectedCyberwareCategory && (
+      <>
         <FormControl style={{ minWidth: 650 }}>
         <InputLabel id="power-label">{SelectedCyberwareCategory}</InputLabel>
         <Select
@@ -223,15 +244,31 @@ const handleCyberOrBioChange = (event) => {
             ))}
         </Select>
         </FormControl>
+        <br/><br/>
+        <FormControl>
+          <FormLabel id="grade-radio-buttons-group-label">Grade</FormLabel>
+          <RadioGroup
+            aria-labelledby="grade-radio-buttons-group-label"
+            defaultValue="standard"
+            name="cyberware-grade-radio-buttons" row
+          >
+            <FormControlLabel value="used" control={<Radio onChange={handleChangeGrade} checked={ NewCyberwareGrade === 'used' } />} label="Used" />
+            <FormControlLabel value="standard" control={<Radio onChange={handleChangeGrade} checked={ NewCyberwareGrade === 'standard' } />} label="Standard" />
+            <FormControlLabel value="alpha" control={<Radio onChange={handleChangeGrade} checked={ NewCyberwareGrade === 'alpha' } />} label="Alpha" />
+            <FormControlLabel value="beta" control={<Radio onChange={handleChangeGrade} checked={ NewCyberwareGrade === 'beta' } />} label="Beta" />
+            <FormControlLabel value="delta" control={<Radio onChange={handleChangeGrade} checked={ NewCyberwareGrade === 'delta' } />} label="Delta" />
+          </RadioGroup>
+        </FormControl>
+        </>
         )}
         {NewCyberware && (
         <>
-            <TextField style={{'width':'100px', 'marginRight':'20px'}}
+            <TextField style={{'width':'120px', 'marginRight':'20px'}}
             id="power-cost-input"
             disabled={true}
             label="Cost"
             type="number"
-            value={NewCyberwareCost}
+            value={NewCyberwareCost * CyberwareGrades[NewCyberwareGrade].CostMod}
             />
             <Button variant="contained" color="primary" onClick={handleAddCyberware}>
             Add Cyberware
@@ -246,6 +283,7 @@ const handleCyberOrBioChange = (event) => {
             <TableHead>
               <TableRow>
                 <TableCell>Name</TableCell>
+                <TableCell align="right">Grade</TableCell>
                 <TableCell align="right">Essence Cost</TableCell>
                 <TableCell align="right">Cost</TableCell>
                 <TableCell align="right">Book.Page</TableCell>
@@ -257,6 +295,7 @@ const handleCyberOrBioChange = (event) => {
               {props.Cyberware.map((cyberware, index) => (
                 <TableRow key={cyberware.Name+index}>
                   <TableCell component="th" scope="row">{cyberware.Name}</TableCell>
+                  <TableCell align="right">{cyberware.Grade}</TableCell>
                   <TableCell align="right">{cyberware.EssCost}</TableCell>
                   <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(cyberware.Cost)}</TableCell>
                   <TableCell align="right">{cyberware.BookPage}</TableCell>
