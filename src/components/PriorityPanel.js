@@ -218,6 +218,7 @@ export default function PriorityPanel(props) {
         <div>
             <h2>MASTER CHARACTER CREATION TABLE</h2>             
             { TableRender() }
+            <h4>Drag Priorities as desired</h4>
             <DraggableList items={priorities} onDragEnd={onDragEnd} />
             <hr></hr>
             <h4>Character Sub Choices</h4>
