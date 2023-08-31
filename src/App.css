@@ -1,3 +1,17 @@
 .dashboard{
   padding-left: 50px;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .mainHeader{
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  .dashboard{
+    padding-left: 10px;
+  }
+
+}

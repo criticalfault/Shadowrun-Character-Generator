@@ -4,7 +4,7 @@ import Dashboard from './components/Dashboard';
 function App() {
   return (
     <div className="App">
-      <h1 style={{"paddingLeft":"10px"}}>Shadowrun Character Generator</h1>
+      <h1 className='mainHeader' style={{"paddingLeft":"10px"}}>Shadowrun Character Generator</h1>
       <Dashboard className='dashboard'/>
     </div>
   );
