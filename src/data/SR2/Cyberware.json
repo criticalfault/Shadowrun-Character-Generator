@@ -1,4 +1,5 @@
-{"HEADWEAR":[
+{
+"HEADWEAR":[
     {"BookPage":"sr2.x",  "Name":"Chipjack", "EssCost":0.20, "Cost":1000   ,"StreetIndex":0.90, "Mods":""},
     {"BookPage":"sr2.x", "Name":"Data Filter", "EssCost":0.30, "Cost":5000   ,"StreetIndex":1.50, "Mods":""},
     {"BookPage":"sr2.x", "Name":"Data Lock", "EssCost":0.20, "Cost":1000   ,"StreetIndex":1.50, "Mods":""},
@@ -94,6 +95,7 @@
 "HANDS":[],
 "MATRIXWARE":[],
 "CYBERWEAPONS":[],
+"CYBERLIMBS":[],
 "CYBERLIMB MODS":[],
 "RIGGER":[
     {  "BookPage":"sr2.x", "Name":"Vehicle Ctrl Rig 1 ", "EssCost":2.00, "Cost":12000  ,"StreetIndex":1.00,"Mods":"+2RCT,+1INI"},

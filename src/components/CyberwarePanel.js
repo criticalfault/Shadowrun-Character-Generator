@@ -66,12 +66,18 @@ export default function CyberwarePanel(props) {
       setSelectedCyberwareCategory(event.target.value);
   }
   const handleCyberwareChange = (event) => {
+    console.log("Reached?");
+    if(CyberwareData[SelectedCyberwareCategory] !== undefined){
+      
       const TempCyber = CyberwareData[SelectedCyberwareCategory].filter(item => props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
       setNewCyberware(TempCyber);
       setNewCyberwareIndex(event.target.value)
       TempCyber.Cost *= CyberwareGrades[NewCyberwareGrade].CostMod;
       setNewCyberwareCost(TempCyber.Cost);
       setNewCyberwareDesc(TempCyber.Notes)
+    }else{
+      // Hmm, its missing? what should we do?
+    }
   }
 
   const handleAddCyberware = () => {
