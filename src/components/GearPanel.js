@@ -47,7 +47,12 @@ GearData['Firearms'].entries.forEach(function(item) {
         setSelectedGearCategory(event.target.value);
     }
     const handleGearChange = (event) => {
-        const TempGear = GearData[SelectedGearCategory].entries.filter(item => item.hasOwnProperty('BookPage') && props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
+      if(props.Edition === 'SR3'){
+        var TempGear = GearData[SelectedGearCategory].entries.filter(item => item.hasOwnProperty('BookPage') && props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
+      }else{
+        var TempGear = GearData[SelectedGearCategory].entries[event.target.value];
+      }
+       
         setNewGear(TempGear);
         setNewGearIndex(event.target.value)
         setNewGearCost(TempGear.Cost);
@@ -70,13 +75,12 @@ GearData['Firearms'].entries.forEach(function(item) {
     const handleRemoveGear = (index) => {
       const editedGear = [...SelectedGear];
       let RemovedGear = editedGear.splice(index, 1);
-      console.log("Removed Gear");
-      console.log(RemovedGear);
       setSelectedGear(editedGear);
       props.onChangeGear([...editedGear]);
     };
 
     return ( <>
+    <h3>Notice: SR2 Gear is currently missing data needing for filtering by book. So filtering is ignored.</h3>
     <Box sx={{ width: '250px' }}>
         Nuyen Spent: {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(CalcTotalNuyenSpent())} 
     </Box>
@@ -103,7 +107,7 @@ GearData['Firearms'].entries.forEach(function(item) {
             value={NewGearIndex}
             onChange={handleGearChange}>
             
-          { GearData[SelectedGearCategory].entries.filter(item => props.BooksFilter.includes(item.BookPage.split('.')[0])).sort((a, b) => a - b).map( (gear, index) => (
+          { GearData[SelectedGearCategory].entries.filter(item => !item.hasOwnProperty('BookPage') || props.BooksFilter.includes(item.BookPage.split('.')[0])).sort((a, b) => a - b).map( (gear, index) => (
             <MenuItem selected={NewGearIndex === index} key={index} value={index}>{gear.name}</MenuItem>
           ))}
         </Select>
