@@ -59,5 +59,9 @@
         {"BookPage":"ST-???","name":"Toxin Extractor 1", "BodyIndex":"0.2 ", "Cost":"24000","StreetIndex":"1.00", "Mods":""},
         {"BookPage":"ST-???","name":"Tracheal Filter 1", "BodyIndex":"0.2 ", "Cost":"30000","StreetIndex":"1.00", "Mods":""},
         {"BookPage":"ST-???","name":"Trauma Damper","BodyIndex":"0.4 ", "Cost":"40000","StreetIndex":"2.00", "Mods":""}
-    ]
+    ],
+    "COSMETIC":[],
+    "CULTURED":[],
+    "NANOWARE":[],
+    "GENETECH":[]
 }
