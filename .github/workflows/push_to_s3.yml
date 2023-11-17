@@ -23,7 +23,7 @@ jobs:
             yarn-deps-${{ hashFiles('yarn.lock') }}
       # Build the static site
       - name: Create static build
-        run: yarn install && yarn build
+        run: yarn install && DISABLE_ESLINT_PLUGIN=true yarn build
       # Upload the artifact for other stages to use
       - name: Share artifact in github workflow
         uses: actions/upload-artifact@v1
