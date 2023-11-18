@@ -35,7 +35,7 @@
     {  "BookPage":"sr2.x", "Name":"Zeiss Cybereyes 4", "EssCost":0.60, "Cost":98000  ,"StreetIndex":1.00,"Mods":""},
     {  "BookPage":"sr2.x", "Name":"Zeiss Cybereyes 5", "EssCost":1.00, "Cost":169000 ,"StreetIndex":1.00,"Mods":""},
     {"BookPage":"SSC2-???","Name":"Video Link","EssCost":0.50,"Cost":22000,"StreetIndex":1.00,"Mods":""},
-    {"BookPage":"SSC2-???","Name":"Video Link (Trans)","EssCost": 0.40,"Cost":4500,"StreetIndex":1.00,"Mods":""},
+    {"BookPage":"SSC2-???","Name":"Video Link (Trans)","EssCost": 0.40,"Cost":4500,"StreetIndex":1.00,"Mods":""}
 ],
 "BODYWARE":[
     {"BookPage":"SSC2-???","Name":"Boosted Reflexes 1","EssCost":0.50,"Cost":15000,"StreetIndex":1.00,"Mods":"+1INI"},
@@ -119,7 +119,7 @@
     {"BookPage":"SSC2-???","Name":"Eye Electric Mag 3","EssCost": 0.10,"Cost": 11000     ,"StreetIndex":1.00,"Mods":""},
     {"BookPage":"SSC2-???","Name":"Eye Rangefinder","EssCost":0.10,"Cost": 2000      ,"StreetIndex":1.50,"Mods":""},
     {"BookPage":"SSC2-???","Name":"  Sense Link","EssCost":2.00,"Cost": 300000 ,"StreetIndex":1.00,"Mods":""},
-    {"BookPage":"SSC2-???","Name":"  Sense Link (Trans)","EssCost": 0.60,"Cost": 80000,"StreetIndex":1.50,"Mods":""},
+    {"BookPage":"SSC2-???","Name":"  Sense Link (Trans)","EssCost": 0.60,"Cost": 80000,"StreetIndex":1.50,"Mods":""}
 ],
 "NANOWARE":[],
 "VARIOUS":[],
@@ -137,7 +137,7 @@
     {"BookPage":"SSC2-???","Name":"Crypto Circuit  9","EssCost":  0.10,"Cost": 270000,"StreetIndex":1.50,"Mods":""},
     {"BookPage":"SSC2-???","Name":"Crypto Circuit 10","EssCost":  0.10,"Cost": 500000,"StreetIndex":2.00,"Mods":""},
     {"BookPage":"SSC2-???","Name":"Scramble Breaker 1","EssCost":0.20,"Cost": 20000,"StreetIndex":1.50,"Mods":""},
-    {"BookPage":"SSC2-???","Name":"Scramble Breaker 2","EssCost":0.20,"Cost": 40000,"StreetIndex":1.50,"Mods":""}
+    {"BookPage":"SSC2-???","Name":"Scramble Breaker 2","EssCost":0.20,"Cost": 40000,"StreetIndex":1.50,"Mods":""},
     {"BookPage":"SSC2-???","Name":"Scramble Breaker 3","EssCost": 0.20,"Cost": 60000,"StreetIndex":1.50,"Mods":""},
     {"BookPage":"SSC2-???","Name":"Scramble Breaker 4","EssCost": 0.20,"Cost": 80000,"StreetIndex":1.50,"Mods":""},
     {"BookPage":"SSC2-???","Name":"Scramble Breaker 5","EssCost": 0.20,"Cost": 200000,"StreetIndex":1.75,"Mods":""},
