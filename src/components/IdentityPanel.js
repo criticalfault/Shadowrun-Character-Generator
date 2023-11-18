@@ -45,12 +45,13 @@ export default function IdentityPanel(props) {
             So be prepared if it decideds to randomly die. There is a bunch of fixes still pending as well as a lot of known missing parts which will be added once this thing is partially stable.
             I'll list the known issues below, but feel free to poke and prod. See what you can get it to do. I'm going to continue to work on this as i get reports of breaks and the likes.</p>
             <p>Thanks for your consideration and time in testing! -D (dean 'at' nullsheen.com)</p>
-            <h5>Known Issues (As of 8-29-23 - 10:30pm CST)</h5>
+            <h5>Known Issues (As of 11-18-23 - 10:30pm CST)</h5>
             <ul>
                 <li>Skills page still buggy with edits/removes (Though maybe i fixed it?)</li>
                 <li>SR2's Specializations still missing</li>
                 <li>Cyberware speciality rules (Incompatiable parts, Eyes having .5 free essence, limbs etc)</li>
                 <li>All nesting of improvements (Weapon / Deck / Vehicle accessories and building). These will be handled in a completely different way, but I promise it will feel awesome to do!</li>
+                <li>Bioware in 2nd Edition only has 1 grade. So some strangeness with having to change the dropdown to load it correctly. Will work on that!</li>
             </ul>
         </div>
         <hr/>
