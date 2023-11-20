@@ -1,0 +1,828 @@
+[
+    {
+        "Name": "Astral Perception",
+        "BookPage": "sr2.xx",
+        "Cost": "2.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Combat Sense +1",
+        "BookPage": "sr2.xx",
+        "Cost": "2.00",
+        "Mods": "+1CPL",
+        "Notes": ""
+    },
+    {
+        "Name":"Combat Sense +2",
+        "BookPage":"sr2.xx",
+        "Cost": "3.00",
+        "Mods": "+2CPL",
+        "Notes": ""
+    },
+    {
+        "Name": "Combat Sense +3",
+        "BookPage": "sr2.xx",
+        "Cost": "4.00",
+        "Mods": "+3CPL",
+        "Notes": ""
+    },
+    {
+        "Name": "Improved Athletic Skills +1",
+        "BookPage": "sr2.xx",
+        "Cost":"0.25",
+        "Mods":"",
+        "Notes":""
+    },
+    {
+        "Name": "Improved Stealth +1",
+        "BookPage": "sr2.xx",
+        "Cost": "0.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name":"Improved Armed Combat +1",
+        "BookPage":"sr2.xx",
+        "Cost":"0.50",
+        "Mods":"",
+        "Notes":""
+    },
+    {
+        "Name":"Improved Unarmed Combat +1",
+        "BookPage":"sr2.xx",
+        "Cost":"0.50",
+        "Mods":"",
+        "Notes":""
+    },
+    {
+        "Name": "Improved Throwing +1",
+        "BookPage": "sr2.xx",
+        "Cost":"0.50",
+        "Mods":"",
+        "Notes":""
+    },
+    {
+        "Name": "Improved Project. weapons +1",
+        "BookPage": "sr2.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": " "
+    },
+    {
+        "Name": "Improved Firearms +1",
+        "BookPage": "sr2.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": " "
+    },
+    {
+        "Name": "Improved Gunnery +1",
+        "BookPage": "sr2.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": " "
+    },
+    {
+        "Name": "Improved Body +1",
+        "BookPage": "sr2.xx",
+        "Cost": "1.00",
+        "Mods": "+1BOD",
+        "Notes": ""
+    },
+    {
+        "Name": "Improved Strength +1",
+        "BookPage": "sr2.xx",
+        "Cost": "1.00",
+        "Mods": "+1STR",
+        "Notes": ""
+    },
+    {
+        "Name": "Improved Quickness +1",
+        "BookPage": "sr2.xx",
+        "Cost": "1.00",
+        "Mods": "+1QCK",
+        "Notes": ""
+    },
+    {
+        "Name": "Low-Light Vision",
+        "BookPage": "sr2.xx",
+        "Cost": "0.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Thermographic Vision",
+        "BookPage": "sr2.xx",
+        "Cost": "0.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Magnification Vision 1",
+        "BookPage": "sr2.xx",
+        "Cost": "0.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Magnification Vision 2",
+        "BookPage": "sr2.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Magnification Vision 3",
+        "BookPage": "sr2.xx",
+        "Cost": "0.75",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "High Frequency Hearing",
+        "BookPage": "sr2.xx",
+        "Cost": "0.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Low Frequency Hearing",
+        "BookPage": "sr2.xx",
+        "Cost": "0.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Enhanced Smell",
+        "BookPage": "sr2.xx",
+        "Cost": "0.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Enhanced Taste",
+        "BookPage": "sr2.xx",
+        "Cost": "0.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Increased Reaction +1",
+        "BookPage": "sr2.xx",
+        "Cost": "1.00",
+        "Mods": "+1RCT",
+        "Notes": ""
+    },
+    {
+        "Name": "Increased Reflexes +1D6",
+        "BookPage": "sr2.xx",
+        "Cost": "1.00",
+        "Mods": "+1INI",
+        "Notes": ""
+    },
+    {
+        "Name": "Increased Reflexes +2D6",
+        "BookPage": "sr2.xx",
+        "Cost": "4.00",
+        "Mods": "+2INI",
+        "Notes": ""
+    },
+    {
+        "Name": "Increased Reflexes +3D6",
+        "BookPage": "sr2.xx",
+        "Cost": "6.00",
+        "Mods": "+3INI",
+        "Notes": ""
+    },
+    {
+        "Name": "Killing Hands (Str)L",
+        "BookPage": "sr2.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Killing Hands (Str)M",
+        "BookPage": "sr2.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Killing Hands (Str)S",
+        "BookPage": "sr2.xx",
+        "Cost": "2.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Killing Hands (Str)D",
+        "BookPage": "sr2.xx",
+        "Cost": "4.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Pain Resistance +1 Level",
+        "BookPage": "sr2.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Attribute Boost (BOD) +1",
+        "BookPage": "gr2.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Attribute Boost (STR) +1",
+        "BookPage": "gr2.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Attribute Boost (QCK) +1",
+        "BookPage": "gr2.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Body control +1 Level",
+        "BookPage": "gr2.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Enhanced Centering (x skill)",
+        "BookPage": "gr2.xx",
+        "Cost": "2.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Missile Parry",
+        "BookPage": "gr2.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Mystic Armor +1 Rating",
+        "BookPage": "gr2.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Suspended State",
+        "BookPage": "gr2.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Blind Fighting",
+        "BookPage": "aw2.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Counterstrike Lv1",
+        "BookPage": "aw2.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Counterstrike Lv2",
+        "BookPage": "aw2.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Counterstrike Lv3",
+        "BookPage": "aw2.xx",
+        "Cost": "1.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Counterstrike Lv4",
+        "BookPage": "aw2.xx",
+        "Cost": "2.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Counterstrike Lv5",
+        "BookPage": "aw2.xx",
+        "Cost": "2.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Counterstrike Lv6",
+        "BookPage": "aw2.xx",
+        "Cost": "3.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Delay Damage",
+        "BookPage": "aw2.xx",
+        "Cost": "2.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Distance Strike",
+        "BookPage": "aw2.xx",
+        "Cost": "2.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Empathic Sense",
+        "BookPage": "aw2.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Enhanced Coordination Lv1",
+        "BookPage": "aw2.xx",
+        "Cost": "0.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Enhanced Coordination Lv2",
+        "BookPage": "aw2.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Enhanced Coordination Lv3",
+        "BookPage": "aw2.xx",
+        "Cost": "0.75",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Enhanced Coordination Lv4",
+        "BookPage": "aw2.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Enhanced Coordination Lv5",
+        "BookPage": "aw2.xx",
+        "Cost": "1.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Enhanced Coordination Lv6",
+        "BookPage": "aw.xx",
+        "Cost": "1.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Flexibility Lv1",
+        "BookPage": "aw.xx",
+        "Cost": "0.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Flexibility Lv2",
+        "BookPage": "aw.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Flexibility Lv3",
+        "BookPage": "aw.xx",
+        "Cost": "0.75",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Flexibility Lv4",
+        "BookPage": "aw.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Flexibility Lv5",
+        "BookPage": "aw.xx",
+        "Cost": "1.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Flexibility Lv6",
+        "BookPage": "aw.xx",
+        "Cost": "1.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "FreeFall Lv1",
+        "BookPage": "aw.xx",
+        "Cost": "0.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "FreeFall Lv2",
+        "BookPage": "aw.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "FreeFall Lv3",
+        "BookPage": "aw.xx",
+        "Cost": "0.75",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "FreeFall Lv4",
+        "BookPage": "aw.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "FreeFall Lv5",
+        "BookPage": "aw.xx",
+        "Cost": "1.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "FreeFall Lv6",
+        "BookPage": "aw.xx",
+        "Cost": "1.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Iron Will Lv1",
+        "BookPage": "aw.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Iron Will Lv2",
+        "BookPage": "aw.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Iron Will Lv3",
+        "BookPage": "aw.xx",
+        "Cost": "1.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Iron Will Lv4",
+        "BookPage": "aw.xx",
+        "Cost": "2.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Iron Will Lv5",
+        "BookPage": "aw.xx",
+        "Cost": "2.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Iron Will Lv6",
+        "BookPage": "aw.xx",
+        "Cost": "3.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Magic Resistance Lv1",
+        "BookPage": "aw.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Magic Resistance Lv2",
+        "BookPage": "aw.xx",
+        "Cost": "2.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Magic Resistance Lv3",
+        "BookPage": "aw.xx",
+        "Cost": "3.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Magic Resistance Lv4",
+        "BookPage": "aw.xx",
+        "Cost": "4.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Magic Resistance Lv5",
+        "BookPage": "aw.xx",
+        "Cost": "5.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Magic Resistance Lv6",
+        "BookPage": "aw.xx",
+        "Cost": "6.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Magic Sense",
+        "BookPage": "aw.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Missile Mastery",
+        "BookPage": "aw.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Nerve Strike",
+        "BookPage": "aw.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Quick Draw",
+        "BookPage": "aw.xx",
+        "Cost": "3.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Quick Strike Lv1",
+        "BookPage": "aw.xx",
+        "Cost": "0.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Quick Strike Lv2",
+        "BookPage": "aw.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Quick Strike Lv3",
+        "BookPage": "aw.xx",
+        "Cost": "0.75",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Quick Strike Lv4",
+        "BookPage": "aw.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Quick Strike Lv5",
+        "BookPage": "aw.xx",
+        "Cost": "1.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Quick Strike Lv6",
+        "BookPage": "aw.xx",
+        "Cost": "1.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Rapid Healing Lv1",
+        "BookPage": "aw.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Rapid Healing Lv2",
+        "BookPage": "aw.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Rapid Healing Lv3",
+        "BookPage": "aw.xx",
+        "Cost": "1.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Rapid Healing Lv4",
+        "BookPage": "aw.xx",
+        "Cost": "2.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Rapid Healing Lv5",
+        "BookPage": "aw.xx",
+        "Cost": "2.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Rapid Healing Lv6",
+        "BookPage": "aw.xx",
+        "Cost": "3.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Rooting Lv1",
+        "BookPage": "aw.xx",
+        "Cost": "0.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Rooting Lv2",
+        "BookPage": "aw.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Rooting Lv3",
+        "BookPage": "aw.xx",
+        "Cost": "0.75",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Rooting Lv4",
+        "BookPage": "aw.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Rooting Lv5",
+        "BookPage": "aw.xx",
+        "Cost": "1.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Rooting Lv6",
+        "BookPage": "aw.xx",
+        "Cost": "1.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Sixth Sense",
+        "BookPage": "aw.xx",
+        "Cost": "3.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Smashing Blow",
+        "BookPage": "aw.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Spell Shroud Lv1",
+        "BookPage": "aw.xx",
+        "Cost": "0.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Spell Shroud Lv2",
+        "BookPage": "aw.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Spell Shroud Lv3",
+        "BookPage": "aw.xx",
+        "Cost": "0.75",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Spell Shroud Lv4",
+        "BookPage": "aw.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Spell Shroud Lv5",
+        "BookPage": "aw.xx",
+        "Cost": "1.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Spell Shroud Lv6",
+        "BookPage": "aw.xx",
+        "Cost": "1.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Temperature Tolerance Lv1",
+        "BookPage": "aw.xx",
+        "Cost": "0.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Temperature Tolerance Lv2",
+        "BookPage": "aw.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Temperature Tolerance Lv3",
+        "BookPage": "aw.xx",
+        "Cost": "0.75",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Temperature Tolerance Lv4",
+        "BookPage": "aw.xx",
+        "Cost": "1.00",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Temperature Tolerance Lv5",
+        "BookPage": "aw.xx",
+        "Cost": "1.25",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Temperature Tolerance Lv6",
+        "BookPage": "aw.xx",
+        "Cost": "1.50",
+        "Mods": "",
+        "Notes": ""
+    },
+    {
+        "Name": "Traceless Walk",
+        "BookPage": "aw.xx",
+        "Cost": "0.50",
+        "Mods": "",
+        "Notes": ""
+    }
+]
