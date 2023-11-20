@@ -17,10 +17,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-const spellsData = require('../data/SR3/Spells.json');
-const AdeptPowers = require('../data/SR3/AdeptPowers.json');
-function MagicPanel(props) {
 
+function MagicPanel(props) {
+  const spellsData = require('../data/'+props.Edition+'/Spells.json');
+  const AdeptPowers = require('../data/'+props.Edition+'/AdeptPowers.json');
   const CalcTotalSpellRatings = (spellList) =>{
     let totalRatings = 0;
     spellList.forEach(function(spell){
@@ -61,8 +61,6 @@ function MagicPanel(props) {
   const [powerCost, setPowerCost] = useState(0);
   const [selectedPowers, setSelectedPowers] = useState(props.powers);
 
-  
-
   const handleSpellChange = (event) => {
     const TempSpell = spellsData[event.target.value];
     setNewSpell(TempSpell);
@@ -90,7 +88,6 @@ function MagicPanel(props) {
       setPowerCost(cost);
     }
   };
-  
 
   const handleAddSpell = () => {
     if (newSpell) {
@@ -302,7 +299,7 @@ function MagicPanel(props) {
       break;
 
       default:
-        return (<div>Not Magical</div>);
+        return (<div>{props.magicalChoice} Not Magical</div>);
     }
 
   }
