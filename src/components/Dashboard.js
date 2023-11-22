@@ -400,7 +400,7 @@ export default function BasicTabs() {
                     onChangePowers={(powers) => setCharacter({ ...Character, powers})}
                     onChangeSpells={(spells) => setCharacter({ ...Character, spells })} 
                     magicalTraditions={Character.availableMagics}
-                    magicalChoice={Character.magicChoice} 
+                    magicalChoice={Character.magicalChoice} 
                     BooksFilter={Character.allowedBooks}
                     Edition={Edition}
                     maxSpellPoints={Character.maxSpellPoints}
