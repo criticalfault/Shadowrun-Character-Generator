@@ -18,7 +18,7 @@
   {
     "Name": "Aimed Shot*",
     "BookPage": "adh.3",
-    "HasLevels":false,
+    "HasLevels":true,
     "Cost": "0.50",
     "Mods": "",
     "Notes": "reduce called shot modifer by 1 per level"
@@ -26,7 +26,7 @@
   {
     "Name": "Aid Spell*",
     "BookPage": "sta2.64",
-    "HasLevels":false,
+    "HasLevels":true,
     "Cost": "0.50",
     "Mods": "",
     "Notes": "1 die per level to support magician casting a spell in same Initiative Phase"
@@ -34,7 +34,7 @@
   {
     "Name": "Animal Empathy*",
     "BookPage": "sta2.64",
-    "HasLevels":false,
+    "HasLevels":true,
     "Cost": "0.25",
     "Mods": "",
     "Notes": "1 die per level for attempts to threaten, calm or frighten an animal"
@@ -241,7 +241,7 @@
   {
     "Name": "Enhanced Perception*",
     "BookPage": "sr3.169",
-    "HasLevels":false,
+    "HasLevels":true,
     "Cost": "0.50",
     "Mods": "",
     "Notes": " Each level provides an additional die for all Perception Tests SR3-231, including astral perception, if you have that power."
@@ -404,7 +404,7 @@
     "HasLevels":false,
     "Cost": "2.00",
     "Mods": "+2RCT,+1INI",
-    "Notes": " This power increases the speed at which you react, just like wired reflexes SR3-301."
+    "Notes": "This power increases the speed at which you react, just like wired reflexes SR3-301."
   },
   {
     "Name": "Imp. Reflexes Level 2",
@@ -412,7 +412,7 @@
     "HasLevels":false,
     "Cost": "3.00",
     "Mods": "+4RCT,+2INI",
-    "Notes": " This power increases the speed at which you react, just like wired reflexes SR3-301."
+    "Notes": "This power increases the speed at which you react, just like wired reflexes SR3-301."
   },
   {
     "Name": "Imp. Reflexes Level 3",
@@ -420,7 +420,7 @@
     "HasLevels":false,
     "Cost": "5.00",
     "Mods": "+6RCT,+3INI",
-    "Notes": " This power increases the speed at which you react, just like wired reflexes SR3-301."
+    "Notes": "This power increases the speed at which you react, just like wired reflexes SR3-301."
   },
   {
     "Name": "Imp. Sense: Low-Light Vision",
@@ -631,7 +631,7 @@
     "Notes": "Adept can sustain a spell cast at him."
   },
   {
-    "Name": "Magical Power(Path:Magician)*  1",
+    "Name": "Magical Power(Path:Magician)*",
     "BookPage": "mits.022",
     "HasLevels":true,
     "Cost": "1.00",

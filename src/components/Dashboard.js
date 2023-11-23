@@ -307,6 +307,13 @@ export default function BasicTabs() {
         }));
     }
 
+    const handleMagicAttributeUpdates = (magicalAttributeBonuses) => {
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+            magicalAttributeBonuses:magicalAttributeBonuses
+        }));
+    }
+
     const SkillsPanelRender = (ed) => {
         if(ed === 'SR3'){
             return ( <SR3SkillsPanel    characterSkills={Character.skills} 
@@ -406,6 +413,7 @@ export default function BasicTabs() {
                     BooksFilter={Character.allowedBooks}
                     Edition={Edition}
                     maxSpellPoints={Character.maxSpellPoints}
+                    onChangeMagicalAttributes={handleMagicAttributeUpdates}
                 />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={5}>

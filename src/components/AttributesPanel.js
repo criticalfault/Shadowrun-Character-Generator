@@ -66,8 +66,8 @@ export default function PriorityPanel(props) {
                         <th>Attribute</th>
                         <th>Value</th>
                         <th>Racial Modifier</th>
-                        <th>Cybered Attribute</th>
-                        <th>Magical Attribute</th>
+                        <th>Cybered Bonus</th>
+                        <th>Magical Bonus</th>
                         <th>Total</th>
                     </tr>
                 </thead>
@@ -142,7 +142,7 @@ export default function PriorityPanel(props) {
                         <td>{props.currentCharacter.raceBonuses['Reaction']}</td>
                         <td>{parseInt(props.currentCharacter.cyberAttributeBonuses['Reaction'])}</td>
                         <td>{parseInt(props.currentCharacter.magicalAttributeBonuses['Reaction'])}</td>
-                        <td>{Math.floor((parseInt(Quickness)+parseInt(Intelligence))/2)+parseInt(props.currentCharacter.cyberAttributeBonuses['Reaction'])}</td>
+                        <td>{Math.floor((parseInt(Quickness)+parseInt(Intelligence))/2)+parseInt(props.currentCharacter.cyberAttributeBonuses['Reaction'])+parseInt(props.currentCharacter.magicalAttributeBonuses['Reaction'])}</td>
                     </tr>
                     <tr>
                         <td>Initative:</td>
@@ -150,7 +150,7 @@ export default function PriorityPanel(props) {
                         <td>{props.currentCharacter.raceBonuses['Initative']}</td>
                         <td>{parseInt(props.currentCharacter.cyberAttributeBonuses['Initative'])}</td>
                         <td>{parseInt(props.currentCharacter.magicalAttributeBonuses['Initative'])}</td>
-                        <td>{parseInt(Initative)+parseInt(props.currentCharacter.cyberAttributeBonuses['Initative'])}d6</td>
+                        <td>{parseInt(Initative)+parseInt(props.currentCharacter.cyberAttributeBonuses['Initative'])+parseInt(props.currentCharacter.magicalAttributeBonuses['Initative'])}d6</td>
                     </tr>
                 </tbody>
             </table>

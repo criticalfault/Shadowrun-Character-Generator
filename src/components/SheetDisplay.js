@@ -37,9 +37,11 @@ function SheetDisplay(props) {
                             type="text"
                             value={(Math.floor(parseInt(props.currentCharacter.attributes.Quickness) +
                                 parseInt(props.currentCharacter.raceBonuses.Quickness??0) +
-                                parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+parseInt(props.currentCharacter.attributes.Intelligence) +
+                                parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+
+                                parseInt(props.currentCharacter.attributes.Intelligence) +
                                 parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
-                                parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0))/2)+parseInt(props.currentCharacter.cyberAttributeBonuses.Vehicle_Control_Reaction??0)
+                                parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0))/2)+
+                                parseInt(props.currentCharacter.cyberAttributeBonuses.Vehicle_Control_Reaction??0)
                             }
 
                         />
@@ -182,7 +184,8 @@ function SheetDisplay(props) {
                                     <td style={{"width":"25px"}}>
                                         {parseInt(props.currentCharacter.attributes[attribute]) +
                                         parseInt(props.currentCharacter.raceBonuses[attribute]??0) +
-                                        parseInt(props.currentCharacter.cyberAttributeBonuses[attribute]??0)}
+                                        parseInt(props.currentCharacter.cyberAttributeBonuses[attribute]??0)+
+                                        parseInt(props.currentCharacter.magicalAttributeBonuses[attribute]??0)}
                                     </td>
                                 </tr>
                             ))}
@@ -197,7 +200,9 @@ function SheetDisplay(props) {
                             type="text"
                             value={(Math.floor(parseInt(props.currentCharacter.attributes.Quickness) +
                                 parseInt(props.currentCharacter.raceBonuses.Quickness??0) +
-                                parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+parseInt(props.currentCharacter.attributes.Intelligence) +
+                                parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+
+                                parseInt(props.currentCharacter.magicalAttributeBonuses.Quickness)+
+                                parseInt(props.currentCharacter.attributes.Intelligence) +
                                 parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
                                 parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0))/2)+parseInt(props.currentCharacter.cyberAttributeBonuses.Reaction)}
                         /><br></br><br></br>
@@ -248,13 +253,17 @@ function SheetDisplay(props) {
                                    (parseInt(props.currentCharacter.attributes.Quickness) +
                                     parseInt(props.currentCharacter.raceBonuses.Quickness??0) +
                                     parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+
+                                    parseInt(props.currentCharacter.magicalAttributeBonuses.Quickness)+
                                     parseInt(props.currentCharacter.attributes.Intelligence) +
                                     parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
                                     parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+
+                                    parseInt(props.currentCharacter.magicalAttributeBonuses.Intelligence)+
                                     parseInt(props.currentCharacter.attributes.Willpower) +
                                     parseInt(props.currentCharacter.raceBonuses.Willpower??0) +
-                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower??0))/2
-                                    )
+                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower??0))+
+                                    parseInt(props.currentCharacter.magicalAttributeBonuses.Willpower)
+                                    /2
+                                    )+parseInt(props.currentCharacter.magicalAttributeBonuses.Combat_Pool??0)
                                 )}
                 />
                 

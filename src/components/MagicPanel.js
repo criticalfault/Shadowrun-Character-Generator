@@ -35,8 +35,13 @@ function MagicPanel(props) {
 
   const CalcTotalPowerRatings = (powerList) =>{
     let totalCost = 0;
-    powerList.forEach(function(spell){
-      totalCost += spell.Cost;
+    powerList.forEach(function(power){
+      if(power.HasLevels){
+        totalCost += parseFloat(power.Cost)*power.Rating;
+      }else{
+        totalCost += parseFloat(power.Cost);
+      }
+      
     })
     return totalCost;
   }
@@ -59,11 +64,9 @@ function MagicPanel(props) {
   const [newPower, setNewPower] = useState('');
   const [newPowerCost, setNewPowerCost] = useState(0.0);
   const [newPowerDesc, setNewPowerDesc] = useState('');
-  const [newPowerLevel,setNewPowerLevel] = useState(0);
   const [newPowerHasRating, setNewPowerHasRating] = useState(false);
   const [NewPowerIndex, setNewPowerIndex] = useState('');
   const [newPowerRating, setNewPowerRating] = useState(1);
-  const [powerCost, setPowerCost] = useState(0);
   const [selectedPowers, setSelectedPowers] = useState(props.powers);
   const [spellFetish, setSpellFetish] = useState(false);
   const [spellExclusive, setSpellExclusive] = useState(false);
@@ -73,8 +76,11 @@ function MagicPanel(props) {
   const convertModsToAttributes = (mods) => {
     const ModToAttributes ={ 
         'BOD':'Body',
+        'RBOD':'Body',
         'STR':'Strength',
+        'RSTR':'Strength',
         'QCK':'Quickness', 
+        'RQCK':'Quickness',
         'INT':'Intelligence', 
         'CHA':'Charisma',
         'WIL':'Willpower',
@@ -107,26 +113,37 @@ function MagicPanel(props) {
     let magicModsTotals = [];
     selectedPowers.forEach(function(power){
       if(power.Mods !== ''){
-        magicModsTotals.push(power.Mods)
+        magicModsTotals.push(power)
       }
     });
-    magicModsTotals.forEach(function(mod){
+    magicModsTotals.forEach(function(power){
+      let mod = power.Mods;
       let AttributesToMod = convertModsToAttributes(mod.split(','));
       for(let i=0; i<AttributesToMod.length; i++){
           if(!magicalAttributeBonuses.hasOwnProperty(Object.keys(AttributesToMod[i])[0])){
             magicalAttributeBonuses[Object.keys(AttributesToMod[i])[0]] = 0;
           }
-          magicalAttributeBonuses[Object.keys(AttributesToMod[i])[0]] += parseInt(Object.values(AttributesToMod[i])[0]);
+          if(power.HasLevels){
+            magicalAttributeBonuses[Object.keys(AttributesToMod[i])[0]] += parseInt(Object.values(AttributesToMod[i])[0])*power.Rating;
+          }else{
+            magicalAttributeBonuses[Object.keys(AttributesToMod[i])[0]] += parseInt(Object.values(AttributesToMod[i])[0]);
+          }
         }
     });
-    console.log(magicalAttributeBonuses);
-    //props.onChangeCyberAttributes(magicalAttributeBonuses);
+    props.onChangeMagicalAttributes(magicalAttributeBonuses);
   }
 
   const handleAddPower = () => {
     if (newPower) {
-      console.log(newPower);
-      const powerToAdd = {...newPower, Rating:newPowerRating};
+      var powerToAdd = {...newPower};
+      if(newPowerHasRating){
+        powerToAdd.Cost = newPower.Cost * newPowerRating;
+        powerToAdd = {...newPower, Rating:newPowerRating};
+        setNewPowerRating(1);
+      }else{
+        powerToAdd = {...newPower};
+      }
+      
       setSelectedPowers(prevPowers => [...prevPowers, powerToAdd]);
       setAdeptPointsSpent(prevPowersPointsSpent => (parseFloat(prevPowersPointsSpent) + parseFloat(powerToAdd.Cost)));
       setNewPower('');
@@ -139,20 +156,16 @@ function MagicPanel(props) {
   const handleRemovePower = (index) => {
     const editedPowers = [...selectedPowers];
     let PowerRemoved = editedPowers.splice(index, 1);
-    setAdeptPointsSpent(prevPowers => (prevPowers - PowerRemoved[0].Cost));
+    if(PowerRemoved.HasLevels){
+      setAdeptPointsSpent(prevPowers => (prevPowers - PowerRemoved[0].Cost*PowerRemoved.Rating));
+    }else{
+      setAdeptPointsSpent(prevPowers => (prevPowers - PowerRemoved[0].Cost));
+    }
+    
     setSelectedPowers(editedPowers);
     props.onChangePowers(editedPowers);
     CalcPowerAttributeChanges();
   };
-
-  const handleEditPower = (index) => {
-    // const editedSpells = [...selectedSpells];
-    // const spellToEdit = editedSpells[index];
-    // setNewSpell(spellToEdit.name);
-    // setSpellRating(spellToEdit.rating);
-    // editedSpells.splice(index, 1);
-    // setSelectedSpells(editedSpells);
-  }
 
   const handlePowerChange = (event) => {
     const TempPower = AdeptPowers[event.target.value];
@@ -168,9 +181,16 @@ function MagicPanel(props) {
   }
 
   const handlePowerRatingChange = (event) => {
-    console.log(parseInt(event.target.value));
     const rating = parseInt(event.target.value);
     setNewPowerRating(rating);
+  }
+
+  const renderPowerListItem = (power) =>{
+    if(power.HasLevels){
+      return (<ListItemText primary={`${power.Name}`} secondary={'Cost: '+power.Cost+ " - Rating: "+power.Rating} />)
+    }else{
+      return (<ListItemText primary={`${power.Name}`} secondary={'Cost: '+power.Cost}/>)
+    }
   }
 
   const RenderPhysicalAdepts = () =>{
@@ -223,21 +243,16 @@ function MagicPanel(props) {
 
     <hr></hr>
     <h3>Powers</h3>
-          <List style={{maxWidth:'500px'}}>
-            {selectedPowers.map((power, index) => (
-              <ListItem key={index}>
-                <ListItemText
-                  primary={`${power.Name} (${power.Cost})`}
-                />
-                <Button color="primary" onClick={() => handleEditPower(index)}>
-                  Edit
-                </Button>
-                <Button color="secondary" onClick={() => handleRemovePower(index)}>
-                  Remove
-                </Button>
-              </ListItem>
-            ))}
-          </List>
+      <List style={{maxWidth:'500px'}}>
+        {selectedPowers.map((power, index) => (
+          <ListItem key={index}>
+            {renderPowerListItem(power)}
+            <Button color="secondary" onClick={() => handleRemovePower(index)}>
+              Remove
+            </Button>
+          </ListItem>
+        ))}
+      </List>
     </>)
   }
 
