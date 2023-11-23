@@ -321,6 +321,49 @@ function SheetDisplay(props) {
                 </TableContainer>
             </Item>
         </Grid>
+    
+{props.currentCharacter.spells && props.currentCharacter.spells.length? (
+    <Grid item xs={12}>
+        <h3>Spells</h3>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Spell Name</TableCell>
+              <TableCell align="right">Rating</TableCell>
+              <TableCell align="right">Type</TableCell>
+              <TableCell align="right">Target</TableCell>
+              <TableCell align="right">Duration</TableCell>
+              <TableCell align="right">Drain Code</TableCell>
+              <TableCell align="right">Options</TableCell>
+              <TableCell align="right">Actions</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {props.currentCharacter.spells.map((spell, index) => (
+              <TableRow
+                key={spell.Name}
+              >
+                <TableCell component="th" scope="row">
+                  {spell.Name}
+                </TableCell>
+                <TableCell align="right">{spell.Rating} {CalcSpellRating(spell)}</TableCell>
+                <TableCell align="right">{spell.Type}</TableCell>
+                <TableCell align="right">{spell.Target}</TableCell>
+                <TableCell align="right">{spell.Duration}</TableCell>
+                <TableCell align="right">{spell.Drain}</TableCell>
+                <TableCell align="right">
+                 {isFetishSpell(spell.Fetish)} {isExclusiveSpell(spell.Exclusive)}
+                </TableCell>
+                <TableCell align="right"><Button onClick={() => handleRemoveSpell(index)}>Remove</Button></TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Grid>   
+    ):''}
+{props.currentCharacter.vehicles && props.currentCharacter.vehicles.length? ( 
     <Grid item xs={12}>
         <h2 className={"boxHeader"}>Vehicle</h2>
         <TableContainer component={Paper}>
@@ -355,10 +398,9 @@ function SheetDisplay(props) {
             </TableBody>
             </Table>
         </TableContainer>
-    </Grid>            
-
-
-    </Grid>
+    </Grid>   
+    ):''}
+</Grid>
   );
 }
 

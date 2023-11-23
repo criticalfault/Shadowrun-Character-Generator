@@ -67,6 +67,7 @@ export default function PriorityPanel(props) {
                         <th>Value</th>
                         <th>Racial Modifier</th>
                         <th>Cybered Attribute</th>
+                        <th>Magical Attribute</th>
                         <th>Total</th>
                     </tr>
                 </thead>
@@ -76,46 +77,53 @@ export default function PriorityPanel(props) {
                         <td><input type='number' name="Body" value={Body} onChange={handleChangeAttribute}/></td>
                         <td>{props.currentCharacter.raceBonuses['Body']}</td>
                         <td>{parseInt(props.currentCharacter.cyberAttributeBonuses['Body'])}</td>
-                        <td>{parseInt(Body)+parseInt(props.currentCharacter.raceBonuses['Body'])+parseInt(props.currentCharacter.cyberAttributeBonuses['Body'])}</td>
+                        <td>{parseInt(props.currentCharacter.magicalAttributeBonuses['Body'])}</td>
+                        <td>{parseInt(Body)+parseInt(props.currentCharacter.raceBonuses['Body'])+parseInt(props.currentCharacter.cyberAttributeBonuses['Body'])+parseInt(props.currentCharacter.magicalAttributeBonuses['Body'])}</td>
                     </tr>
                     <tr>
                         <td>Quickness</td>
                         <td><input type='number' name="Quickness" value={Quickness} onChange={handleChangeAttribute}/></td>
                         <td>{props.currentCharacter.raceBonuses['Quickness']}</td>
                         <td>{parseInt(props.currentCharacter.cyberAttributeBonuses['Quickness'])}</td>
-                        <td>{parseInt(Quickness)+parseInt(props.currentCharacter.raceBonuses['Quickness'])+parseInt(props.currentCharacter.cyberAttributeBonuses['Quickness'])}</td>
+                        <td>{parseInt(props.currentCharacter.magicalAttributeBonuses['Quickness'])}</td>
+                        <td>{parseInt(Quickness)+parseInt(props.currentCharacter.raceBonuses['Quickness'])+parseInt(props.currentCharacter.cyberAttributeBonuses['Quickness'])+parseInt(props.currentCharacter.magicalAttributeBonuses['Quickness'])}</td>
                     </tr>
                     <tr>
                         <td>Strength</td>
                         <td><input type='number' name="Strength" value={Strength} onChange={handleChangeAttribute}/></td>
                         <td>{props.currentCharacter.raceBonuses['Strength']}</td>
                         <td>{parseInt(props.currentCharacter.cyberAttributeBonuses['Strength'])}</td>
-                        <td>{parseInt(Strength)+parseInt(props.currentCharacter.raceBonuses['Strength'])+parseInt(props.currentCharacter.cyberAttributeBonuses['Strength'])}</td>
+                        <td>{parseInt(props.currentCharacter.magicalAttributeBonuses['Strength'])}</td>
+                        <td>{parseInt(Strength)+parseInt(props.currentCharacter.raceBonuses['Strength'])+parseInt(props.currentCharacter.cyberAttributeBonuses['Strength'])+parseInt(props.currentCharacter.magicalAttributeBonuses['Strength'])}</td>
                     </tr>
                     <tr>
                         <td>Charisma</td>
                         <td><input type='number' name="Charisma" value={Charisma} onChange={handleChangeAttribute}/></td>
                         <td>{props.currentCharacter.raceBonuses['Charisma']}</td>
                         <td>{parseInt(props.currentCharacter.cyberAttributeBonuses['Charisma'])}</td>
-                        <td>{parseInt(Charisma)+parseInt(props.currentCharacter.raceBonuses['Charisma'])+parseInt(props.currentCharacter.cyberAttributeBonuses['Charisma'])}</td>
+                        <td>{parseInt(props.currentCharacter.magicalAttributeBonuses['Charisma'])}</td>
+                        <td>{parseInt(Charisma)+parseInt(props.currentCharacter.raceBonuses['Charisma'])+parseInt(props.currentCharacter.cyberAttributeBonuses['Charisma'])+parseInt(props.currentCharacter.magicalAttributeBonuses['Charisma'])}</td>
                     </tr>
                     <tr>
                         <td>Intelligence</td>
                         <td><input type='number' name="Intelligence" value={Intelligence} onChange={handleChangeAttribute}/></td>
                         <td>{props.currentCharacter.raceBonuses['Intelligence']}</td>
                         <td>{parseInt(props.currentCharacter.cyberAttributeBonuses['Intelligence'])}</td>
-                        <td>{parseInt(Intelligence)+parseInt(props.currentCharacter.raceBonuses['Intelligence'])+parseInt(props.currentCharacter.cyberAttributeBonuses['Intelligence'])}</td>
+                        <td>{parseInt(props.currentCharacter.magicalAttributeBonuses['Intelligence'])}</td>
+                        <td>{parseInt(Intelligence)+parseInt(props.currentCharacter.raceBonuses['Intelligence'])+parseInt(props.currentCharacter.cyberAttributeBonuses['Intelligence'])+parseInt(props.currentCharacter.magicalAttributeBonuses['Intelligence'])}</td>
                     </tr>
                     <tr>
                         <td>Willpower</td>
                         <td><input type='number' name="Willpower" value={Willpower} onChange={handleChangeAttribute}/></td>
                         <td>{props.currentCharacter.raceBonuses['Willpower']}</td>
                         <td>{parseInt(props.currentCharacter.cyberAttributeBonuses['Willpower'])}</td>
-                        <td>{parseInt(Willpower)+parseInt(props.currentCharacter.raceBonuses['Willpower'])+parseInt(props.currentCharacter.cyberAttributeBonuses['Willpower'])}</td>
+                        <td>{parseInt(props.currentCharacter.magicalAttributeBonuses['Willpower'])}</td>
+                        <td>{parseInt(Willpower)+parseInt(props.currentCharacter.raceBonuses['Willpower'])+parseInt(props.currentCharacter.cyberAttributeBonuses['Willpower'])+parseInt(props.currentCharacter.magicalAttributeBonuses['Willpower'])}</td>
                     </tr>
                     <tr>
                         <td>Essence</td>
                         <td>{Essence}</td>
+                        <td>N/A</td>
                         <td>N/A</td>
                         <td>N/A</td>
                         <td>{Essence}</td>
@@ -125,6 +133,7 @@ export default function PriorityPanel(props) {
                         <td>{Magic}</td>
                         <td>N/A</td>
                         <td>N/A</td>
+                        <td>N/A</td>
                         <td>{Magic}</td>
                     </tr>
                     <tr>
@@ -132,6 +141,7 @@ export default function PriorityPanel(props) {
                         <td>{Math.floor((parseInt(Quickness)+parseInt(Intelligence))/2)}</td>
                         <td>{props.currentCharacter.raceBonuses['Reaction']}</td>
                         <td>{parseInt(props.currentCharacter.cyberAttributeBonuses['Reaction'])}</td>
+                        <td>{parseInt(props.currentCharacter.magicalAttributeBonuses['Reaction'])}</td>
                         <td>{Math.floor((parseInt(Quickness)+parseInt(Intelligence))/2)+parseInt(props.currentCharacter.cyberAttributeBonuses['Reaction'])}</td>
                     </tr>
                     <tr>
@@ -139,6 +149,7 @@ export default function PriorityPanel(props) {
                         <td>{Initative}d6</td>
                         <td>{props.currentCharacter.raceBonuses['Initative']}</td>
                         <td>{parseInt(props.currentCharacter.cyberAttributeBonuses['Initative'])}</td>
+                        <td>{parseInt(props.currentCharacter.magicalAttributeBonuses['Initative'])}</td>
                         <td>{parseInt(Initative)+parseInt(props.currentCharacter.cyberAttributeBonuses['Initative'])}d6</td>
                     </tr>
                 </tbody>
