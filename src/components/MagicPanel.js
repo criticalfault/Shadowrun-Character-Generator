@@ -21,9 +21,11 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { CheckBox } from '@material-ui/icons';
-const spellsData = require('../data/SR3/Spells.json');
-const AdeptPowers = require('../data/SR3/AdeptPowers.json');
+
 function MagicPanel(props) {
+  const spellsData = require('../data/SR3/Spells.json');
+  const AdeptPowers = require('../data/SR3/AdeptPowers.json');
+
 
   const CalcTotalSpellRatings = (spellList) =>{
     let totalRatings = 0;
@@ -50,7 +52,134 @@ function MagicPanel(props) {
   const AspectedMageTraditions = ['Shaman','Conjurer','Elementalist','Shamanist','Sorcerer','WuFa'];
   const AdeptPaths = ["Athelete's Way","Artist's Way","Warriors's Way","Invisible Way","Spirit Way","Totem Way", "Magician's Way"]
   const Totems = [{name:'Ant Eater',environment:'ENV'},{name:'Badger'}]
+  const MetaMagic = { "SR2": [
+      {"Name":"Centering"},
+      {"Name":"Dispelling"},
+      {"Name":"Shielding"},
+      {"Name":"Masking"},
+      {"Name":"Quickening"},
+      {"Name":"Anchoring"}
+    ],
+    "SR3": [
+      {"Name":"Anchoring"},
+      {"Name":"Centering"},
+      {"Name":"Cleansing"},
+      {"Name":"Divining"},
+      {"Name":"Invoking"},
+      {"Name":"Masking"},
+      {"Name":"Possessing"},
+      {"Name":"Quickening"},
+      {"Name":"Reflecting"},
+      {"Name":"Shielding"},
+    ]
+  }
+
+
+  /*
+    SR3
+    Foci                            Availability  Cost                Street Index  Bonding Cost
+    --------------------------------------------------------------------------------------------
+    Anchoring Focus, Expendable*    4/48 hrs      Force x 3,000¥            2         1 x Force X
+    Anchoring Focus, Reusable*      5/48 hrs      Force x 30,000¥           2         3 x Force X
+    Centering Focus                 5/48 hrs      Force x 75,000¥           2         3 x Force X
+    Expendable Spell Focus          3/26 hrs      Force x 1,500¥            1         0         X
+    Power Focus                     6/72 hrs      Force x 105,000¥          2         5 x Force X
+    Shielding Focus                 6/72 hrs      Force x 95,000¥           2         4 x Force X
+    Specific Spell Focus            4/48 hrs      Force x 45,000¥           2         1 x Force X
+    Spell Category Focus            5/48 hrs      Force x 75,000¥           2         3 x Force 
+    Spell Defense Focus             5/48 hrs      Force x 75,000¥           2         3 x Force
+    Spirit Focus                    4/48 hrs      Force x 60,000¥           2         2 x Force
+    Sustaining Focus                2/48 hrs      Force x 15,000¥           2         1 x Force X
+    Weapon Focus                    8/72 hrs      [(Reach +1) x 100,000¥] +Force x 90,000¥ 2 (3 + Reach) x Force
+   */
+
+    /*
+    SR2
+
+    Fetish                None
+    Fetish Focus          None
+    Specific Spell Focus  1 x Rating
+    Spell Category Focus  3 x Rating
+    Spirit Focus          2 x Rating
+    Power Focus           5 x Rating
+    Weapon Focus          6 x Rating
+    Spell Lock            1
+
+    */
   
+  const MagicalItems = { "SR3": [
+    { "Name": "Anchoring Focus, Expendable lvl 1","Cost": 3000,"Force":1,"KarmaCost":1},
+    { "Name": "Anchoring Focus, Expendable lvl 2","Cost": 6000,"Force":2,"KarmaCost":2},
+    { "Name": "Anchoring Focus, Expendable lvl 3","Cost": 9000,"Force":3,"KarmaCost":3},
+    { "Name": "Anchoring Focus, Expendable lvl 4","Cost": 12000,"Force":4,"KarmaCost":4},
+    { "Name": "Anchoring Focus, Expendable lvl 5","Cost": 15000,"Force":5,"KarmaCost":5},
+    { "Name": "Anchoring Focus, Expendable lvl 6","Cost": 18000,"Force":6,"KarmaCost":6},
+    { "Name": "Anchoring Focus, Reusable lvl 1","Cost": 30000, "Force":1,"KarmaCost":3},
+    { "Name": "Anchoring Focus, Reusable lvl 2","Cost": 60000, "Force":2,"KarmaCost":6},
+    { "Name": "Anchoring Focus, Reusable lvl 3","Cost": 90000, "Force":3,"KarmaCost":9},
+    { "Name": "Anchoring Focus, Reusable lvl 4","Cost": 120000,"Force":4,"KarmaCost":12},
+    { "Name": "Anchoring Focus, Reusable lvl 5","Cost": 150000,"Force":5,"KarmaCost":15},
+    { "Name": "Anchoring Focus, Reusable lvl 6","Cost": 180000,"Force":6,"KarmaCost":18},
+    { "Name": "Centering Focus lvl 1","Cost": 75000, "Force":1,"KarmaCost":3},
+    { "Name": "Centering Focus lvl 2","Cost": 150000,"Force":2,"KarmaCost":6},
+    { "Name": "Centering Focus lvl 3","Cost": 225000,"Force":3,"KarmaCost":9},
+    { "Name": "Centering Focus lvl 4","Cost": 300000,"Force":4,"KarmaCost":12},
+    { "Name": "Centering Focus lvl 5","Cost": 375000,"Force":5,"KarmaCost":15},
+    { "Name": "Centering Focus lvl 6","Cost": 450000,"Force":6,"KarmaCost":18},
+    { "Name": "Expendable Spell Focus lvl 1","Cost": 1500,"Force":1,"KarmaCost":0},
+    { "Name": "Expendable Spell Focus lvl 2","Cost": 3000,"Force":2,"KarmaCost":0},
+    { "Name": "Expendable Spell Focus lvl 3","Cost": 4500,"Force":3,"KarmaCost":0},
+    { "Name": "Expendable Spell Focus lvl 4","Cost": 6000,"Force":4,"KarmaCost":0},
+    { "Name": "Expendable Spell Focus lvl 5","Cost": 7500,"Force":5,"KarmaCost":0},
+    { "Name": "Expendable Spell Focus lvl 6","Cost": 9000,"Force":6,"KarmaCost":0},
+    { "Name": "Power Focus lvl 1","Cost": 105000,"Force":1,"KarmaCost":5 },
+    { "Name": "Power Focus lvl 2","Cost": 210000,"Force":2,"KarmaCost":10},
+    { "Name": "Power Focus lvl 3","Cost": 315000,"Force":3,"KarmaCost":15},
+    { "Name": "Power Focus lvl 4","Cost": 420000,"Force":4,"KarmaCost":20},
+    { "Name": "Power Focus lvl 5","Cost": 525000,"Force":5,"KarmaCost":25},
+    { "Name": "Power Focus lvl 6","Cost": 630000,"Force":6,"KarmaCost":30},
+    { "Name": "Shielding Focus lvl 1","Cost": 95000, "Force":1,"KarmaCost":4 },
+    { "Name": "Shielding Focus lvl 2","Cost": 190000,"Force":2,"KarmaCost":8 },
+    { "Name": "Shielding Focus lvl 3","Cost": 285000,"Force":3,"KarmaCost":12},
+    { "Name": "Shielding Focus lvl 4","Cost": 380000,"Force":4,"KarmaCost":16},
+    { "Name": "Shielding Focus lvl 5","Cost": 475000,"Force":5,"KarmaCost":20},
+    { "Name": "Shielding Focus lvl 6","Cost": 570000,"Force":6,"KarmaCost":24},
+    { "Name": "Specific Spell Focus lvl 1","Cost": 45000, "Force":1,"KarmaCost":1},
+    { "Name": "Specific Spell Focus lvl 2","Cost": 90000, "Force":2,"KarmaCost":2},
+    { "Name": "Specific Spell Focus lvl 3","Cost": 4500,  "Force":3,"KarmaCost":3},
+    { "Name": "Specific Spell Focus lvl 4","Cost": 6000,  "Force":4,"KarmaCost":4},
+    { "Name": "Specific Spell Focus lvl 5","Cost": 7500,  "Force":5,"KarmaCost":5},
+    { "Name": "Specific Spell Focus lvl 6","Cost": 9000,  "Force":6,"KarmaCost":6},
+    { "Name": "Spell Category Focus lvl 1","Cost": 75000, "Force":1,"KarmaCost":3},
+    { "Name": "Spell Category Focus lvl 2","Cost": 150000,"Force":2,"KarmaCost":6},
+    { "Name": "Spell Category Focus lvl 3","Cost": 225000,"Force":3,"KarmaCost":9},
+    { "Name": "Spell Category Focus lvl 4","Cost": 300000,"Force":4,"KarmaCost":12},
+    { "Name": "Spell Category Focus lvl 5","Cost": 375000,"Force":5,"KarmaCost":15},
+    { "Name": "Spell Category Focus lvl 6","Cost": 450000,"Force":6,"KarmaCost":18},
+    { "Name": "Spell Defense Focus lvl 1","Cost": 75000, "Force":1,"KarmaCost":3},
+    { "Name": "Spell Defense Focus lvl 2","Cost": 150000,"Force":2,"KarmaCost":6},
+    { "Name": "Spell Defense Focus lvl 3","Cost": 225000,"Force":3,"KarmaCost":9},
+    { "Name": "Spell Defense Focus lvl 4","Cost": 300000,"Force":4,"KarmaCost":12},
+    { "Name": "Spell Defense Focus lvl 5","Cost": 375000,"Force":5,"KarmaCost":15},
+    { "Name": "Spell Defense Focus lvl 6","Cost": 450000,"Force":6,"KarmaCost":18},
+    { "Name": "Spirit Focus lvl 1","Cost": 60000, "Force":1,"KarmaCost":2 },
+    { "Name": "Spirit Focus lvl 2","Cost": 120000,"Force":2,"KarmaCost":4 },
+    { "Name": "Spirit Focus lvl 3","Cost": 180000,"Force":3,"KarmaCost":6 },
+    { "Name": "Spirit Focus lvl 4","Cost": 240000,"Force":4,"KarmaCost":8 },
+    { "Name": "Spirit Focus lvl 5","Cost": 300000,"Force":5,"KarmaCost":10},
+    { "Name": "Spirit Focus lvl 6","Cost": 360000,"Force":6,"KarmaCost":12},
+    { "Name": "Sustaining Spell Focus lvl 1","Cost": 15000, "Force":1, "KarmaCost":1},
+    { "Name": "Sustaining Spell Focus lvl 2","Cost": 30000, "Force":2, "KarmaCost":2},
+    { "Name": "Sustaining Spell Focus lvl 3","Cost": 45000, "Force":3, "KarmaCost":3},
+    { "Name": "Sustaining Spell Focus lvl 4","Cost": 60000, "Force":4, "KarmaCost":4},
+    { "Name": "Sustaining Spell Focus lvl 5","Cost": 75000, "Force":5, "KarmaCost":5},
+    { "Name": "Sustaining Spell Focus lvl 6","Cost": 90000, "Force":6, "KarmaCost":6},
+  ],
+  "SR2":[
+
+  ]
+}
+
   const [newSpell, setNewSpell] = useState('');
   const [newSpellIndex, setNewSpellIndex] = useState('');
   const [selectedSpells, setSelectedSpells] = useState(props.spells);
