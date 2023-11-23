@@ -59,7 +59,7 @@ export default function PriorityPanel(props) {
         "magic": {
                 "A":["Human Full Magician"],
                 "B":['Metahuman Full Magician','Human Physical Adept',"Human Shamanist","Human Sorcerer"],
-                "C":['Metahuman Physical Adept',"Metahuman Shamanist"," Metahuman Sorcerer"],
+                "C":['Metahuman Physical Adept',"Metahuman Shamanist","Metahuman Sorcerer"],
                 "D":['None'],
                 "E":['None']
             },

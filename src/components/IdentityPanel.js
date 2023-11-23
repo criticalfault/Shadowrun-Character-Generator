@@ -61,15 +61,10 @@ export default function IdentityPanel(props) {
         SR2 <Switch checked={LocalEdition} onChange={handleSwitchEd} {...label} /> SR3
         <br></br>
         <div>
+            
             <FormControl component="fieldset">
                 <FormLabel component="legend">Tabs for this character</FormLabel>
                 <FormGroup aria-label="position" row>
-                    {/* <FormControlLabel
-                        value="top"
-                        control={<Checkbox {...label} name="Magic" onChange={handleChangeCharacterTabs} checked={Tabs.Magic} />}
-                        label="Magic Tab"
-                        labelPlacement="end"
-                    /> */}
                     <FormControlLabel
                         value="top"
                         control={<Checkbox {...label} name="Decking" color="secondary" onChange={handleChangeCharacterTabs} checked={Tabs.Decking} />}

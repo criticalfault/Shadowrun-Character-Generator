@@ -37,9 +37,11 @@ function SheetDisplay(props) {
                             type="text"
                             value={(Math.floor(parseInt(props.currentCharacter.attributes.Quickness) +
                                 parseInt(props.currentCharacter.raceBonuses.Quickness??0) +
-                                parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+parseInt(props.currentCharacter.attributes.Intelligence) +
+                                parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+
+                                parseInt(props.currentCharacter.attributes.Intelligence) +
                                 parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
-                                parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0))/2)+parseInt(props.currentCharacter.cyberAttributeBonuses.Vehicle_Control_Reaction??0)
+                                parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0))/2)+
+                                parseInt(props.currentCharacter.cyberAttributeBonuses.Vehicle_Control_Reaction??0)
                             }
 
                         />
@@ -182,7 +184,8 @@ function SheetDisplay(props) {
                                     <td style={{"width":"25px"}}>
                                         {parseInt(props.currentCharacter.attributes[attribute]) +
                                         parseInt(props.currentCharacter.raceBonuses[attribute]??0) +
-                                        parseInt(props.currentCharacter.cyberAttributeBonuses[attribute]??0)}
+                                        parseInt(props.currentCharacter.cyberAttributeBonuses[attribute]??0)+
+                                        parseInt(props.currentCharacter.magicalAttributeBonuses[attribute]??0)}
                                     </td>
                                 </tr>
                             ))}
@@ -197,7 +200,9 @@ function SheetDisplay(props) {
                             type="text"
                             value={(Math.floor(parseInt(props.currentCharacter.attributes.Quickness) +
                                 parseInt(props.currentCharacter.raceBonuses.Quickness??0) +
-                                parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+parseInt(props.currentCharacter.attributes.Intelligence) +
+                                parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+
+                                parseInt(props.currentCharacter.magicalAttributeBonuses.Quickness)+
+                                parseInt(props.currentCharacter.attributes.Intelligence) +
                                 parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
                                 parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0))/2)+parseInt(props.currentCharacter.cyberAttributeBonuses.Reaction)}
                         /><br></br><br></br>
@@ -248,13 +253,17 @@ function SheetDisplay(props) {
                                    (parseInt(props.currentCharacter.attributes.Quickness) +
                                     parseInt(props.currentCharacter.raceBonuses.Quickness??0) +
                                     parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+
+                                    parseInt(props.currentCharacter.magicalAttributeBonuses.Quickness)+
                                     parseInt(props.currentCharacter.attributes.Intelligence) +
                                     parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
                                     parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+
+                                    parseInt(props.currentCharacter.magicalAttributeBonuses.Intelligence)+
                                     parseInt(props.currentCharacter.attributes.Willpower) +
                                     parseInt(props.currentCharacter.raceBonuses.Willpower??0) +
-                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower??0))/2
-                                    )
+                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower??0))+
+                                    parseInt(props.currentCharacter.magicalAttributeBonuses.Willpower)
+                                    /2
+                                    )+parseInt(props.currentCharacter.magicalAttributeBonuses.Combat_Pool??0)
                                 )}
                 />
                 
@@ -321,6 +330,49 @@ function SheetDisplay(props) {
                 </TableContainer>
             </Item>
         </Grid>
+    
+{props.currentCharacter.spells && props.currentCharacter.spells.length? (
+    <Grid item xs={12}>
+        <h3>Spells</h3>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Spell Name</TableCell>
+              <TableCell align="right">Rating</TableCell>
+              <TableCell align="right">Type</TableCell>
+              <TableCell align="right">Target</TableCell>
+              <TableCell align="right">Duration</TableCell>
+              <TableCell align="right">Drain Code</TableCell>
+              <TableCell align="right">Options</TableCell>
+              <TableCell align="right">Actions</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {props.currentCharacter.spells.map((spell, index) => (
+              <TableRow
+                key={spell.Name}
+              >
+                <TableCell component="th" scope="row">
+                  {spell.Name}
+                </TableCell>
+                <TableCell align="right">{spell.Rating} {CalcSpellRating(spell)}</TableCell>
+                <TableCell align="right">{spell.Type}</TableCell>
+                <TableCell align="right">{spell.Target}</TableCell>
+                <TableCell align="right">{spell.Duration}</TableCell>
+                <TableCell align="right">{spell.Drain}</TableCell>
+                <TableCell align="right">
+                 {isFetishSpell(spell.Fetish)} {isExclusiveSpell(spell.Exclusive)}
+                </TableCell>
+                <TableCell align="right"><Button onClick={() => handleRemoveSpell(index)}>Remove</Button></TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Grid>   
+    ):''}
+{props.currentCharacter.vehicles && props.currentCharacter.vehicles.length? ( 
     <Grid item xs={12}>
         <h2 className={"boxHeader"}>Vehicle</h2>
         <TableContainer component={Paper}>
@@ -355,10 +407,9 @@ function SheetDisplay(props) {
             </TableBody>
             </Table>
         </TableContainer>
-    </Grid>            
-
-
-    </Grid>
+    </Grid>   
+    ):''}
+</Grid>
   );
 }
 
