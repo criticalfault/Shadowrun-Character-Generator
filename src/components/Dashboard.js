@@ -82,7 +82,7 @@ export default function BasicTabs() {
         skills:[],
         gear:[],
         magical: false,
-        magical_tradition: false,
+        magicalTradition: false,
         spells:[],
         powers:[],
         chargenCash: 20000,
@@ -314,6 +314,13 @@ export default function BasicTabs() {
         }));
     }
 
+    const handleMagicalTraditionChange = (tradition) => {
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+            magicalTradition:tradition
+        }));
+    }
+
     const SkillsPanelRender = (ed) => {
         if(ed === 'SR3'){
             return ( <SR3SkillsPanel    characterSkills={Character.skills} 
@@ -409,6 +416,7 @@ export default function BasicTabs() {
                     onChangePowers={(powers) => setCharacter({ ...Character, powers})}
                     onChangeSpells={(spells) => setCharacter({ ...Character, spells })} 
                     magicalTraditions={Character.availableMagics}
+                    onChangeMagicalTradition={handleMagicalTraditionChange}
                     magicalChoice={Character.magicalChoice} 
                     BooksFilter={Character.allowedBooks}
                     Edition={Edition}
