@@ -23,10 +23,8 @@ import Checkbox from '@mui/material/Checkbox';
 import { CheckBox } from '@material-ui/icons';
 
 function MagicPanel(props) {
-  const spellsData = require('../data/SR3/Spells.json');
-  const AdeptPowers = require('../data/SR3/AdeptPowers.json');
-
-
+  const spellsData = require('../data/'+props.Edition+'/Spells.json');
+  const AdeptPowers = require('../data/'+props.Edition+'/AdeptPowers.json');
   const CalcTotalSpellRatings = (spellList) =>{
     let totalRatings = 0;
     spellList.forEach(function(spell){
@@ -48,8 +46,8 @@ function MagicPanel(props) {
     return totalCost;
   }
 
-  const FullMageTraditions = ['Full Mage','Psionicist','Wujen','Aboriginal Magic','Aztec Magic','Black Magic','Chaos Magic','Christian Magic','Druid Magic','Egyptian Magic','Gypsy Magic',"Hawai'ian Magic",'Hindu Magic','Islamic Magic','Norse Magic','Qabbalistic Magic','Rastafarian Magic','Shinto Magic','Witchcraft','Elemental Mage (Fire)','Elemental Mage (Water)','Elemental Mage (Air)','Elemental Mage (Earth)'];
-  const AspectedMageTraditions = ['Shaman','Conjurer','Elementalist','Shamanist','Sorcerer','WuFa'];
+  const FullMageTraditions = ['Mage','Shaman','Psionicist','Wujen','Aboriginal Magic','Aztec Magic','Black Magic','Chaos Magic','Christian Magic','Druid Magic','Egyptian Magic','Gypsy Magic',"Hawai'ian Magic",'Hindu Magic','Islamic Magic','Norse Magic','Qabbalistic Magic','Rastafarian Magic','Shinto Magic','Witchcraft','Elemental Mage (Fire)','Elemental Mage (Water)','Elemental Mage (Air)','Elemental Mage (Earth)'];
+  const AspectedMageTraditions = ['Shamanist','Conjurer','Elementalist','Shamanist','Sorcerer','WuFa'];
   const AdeptPaths = ["Athelete's Way","Artist's Way","Warriors's Way","Invisible Way","Spirit Way","Totem Way", "Magician's Way"]
   const Totems = [{name:'Ant Eater',environment:'ENV'},{name:'Badger'}]
   const MetaMagic = { "SR2": [
@@ -199,7 +197,7 @@ function MagicPanel(props) {
   const [selectedPowers, setSelectedPowers] = useState(props.powers);
   const [spellFetish, setSpellFetish] = useState(false);
   const [spellExclusive, setSpellExclusive] = useState(false);
-
+  //const [newTraditionIndex, setNewTraditionIndex] = useState('');
   const label = { inputProps: { 'aria-label': 'Edition Switch' } };
 
   const convertModsToAttributes = (mods) => {
@@ -385,8 +383,6 @@ function MagicPanel(props) {
     </>)
   }
 
-
-
   const handleRatingChange = (event) => {
     const rating = parseInt(event.target.value);
     if (!isNaN(rating) && rating >= 1 && rating <= 6) {
@@ -475,6 +471,7 @@ function MagicPanel(props) {
     }
    
   }
+
   const RenderMagicianWithSpells = () =>{
     return (<>
     <Box sx={{ width: '100%' }}>Spells {spellPointsSpent}/{spellPointsMax}
@@ -570,6 +567,49 @@ function MagicPanel(props) {
 
   const handleTraditionChange = (event) => {
     setMagicalTradition(event.target.value);
+    props.onChangeMagicalTradition(event.target);
+  }
+
+  const renderTraditionList = () => {
+    console.log(props);
+    var list = [];
+    switch(props.magicalChoice){
+      case 'Full Magician':
+      case 'Human Full Magician':
+      case 'Metahuman Full Magician':
+        list = FullMageTraditions;
+      break;
+
+      case 'Physical Adept':
+      case 'Human Physical Adept':
+      case 'Metahuman Physical Adept': 
+        list = AdeptPaths;
+      break;
+
+      case 'Metahuman Shamanist':
+      case 'Human Shamanist':
+      case 'Metahuman Sorcerer':
+      case 'Human Sorcerer':
+      case 'Aspected':
+        list = AspectedMageTraditions;
+      break;
+    }
+    
+    return (
+      <>
+       <FormControl style={{'width':'200px'}}>
+            <Select
+              id="TraditionList-dropdown"
+              value={magicalTradition}
+              onChange={handleTraditionChange}
+            >
+              {list.map( (path, index) => (
+                <MenuItem key={index} value={index}>{path}</MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+      </>
+    )
   }
 
 
@@ -600,7 +640,10 @@ function MagicPanel(props) {
   return (
     <div>
       <h3>Magical Talents ( {props.magicalChoice} )</h3>
+      {renderTraditionList()}
+      <hr></hr>
       {RenderWindow()}
+
     </div>
   );
 }
