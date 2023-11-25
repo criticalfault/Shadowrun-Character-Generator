@@ -13,6 +13,7 @@ import GearPanel from './GearPanel';
 import LoadCharacter from './LoadCharacter';
 import ChargenBox from './ChargenBox';
 import CyberwarePanel from './CyberwarePanel';
+import DeckingPanel from './DeckingPanel';
 import VehiclesPanel from './VehiclesPanel';
 import ContactsPanel from './ContactsPanel';
 import SheetDisplay from './SheetDisplay';
@@ -77,6 +78,8 @@ export default function BasicTabs() {
         contacts:[  { Name: 'Contact 1', Type:"free", Archtype: 'Fixer', Level: 1, GeneralInfo: 'Helps with gear' },
                     { Name: 'Contact 2', Type:"free", Archtype: 'Street Shaman', Level: 1, GeneralInfo: 'Provides magical advice' }],
         mods:[],
+        decks:[],
+        selectedDeckIndex:false,
         cyberware:[],
         bioware:[],
         skills:[],
@@ -123,6 +126,10 @@ export default function BasicTabs() {
 
         Character.gear.forEach(function(gear){
             tempCashSpent+=parseFloat(gear.Cost);
+        });
+
+        Character.decks.forEach(function(deck){
+            tempCashSpent+=parseFloat(deck.Cost);
         });
 
         Character.vehicles.forEach(function(vehicle){
@@ -357,7 +364,7 @@ export default function BasicTabs() {
                     <Tab label="Magic"         {...a11yProps(4)} />
                     <Tab label="Cyberware"     {...a11yProps(5)} />
                     <Tab label="Gear"          {...a11yProps(6)} />
-                    <Tab label="Decking"       {...a11yProps(7)} disabled={!Character.characterTabs.Decking} />
+                    <Tab label="Decking"       {...a11yProps(7)} />
                     <Tab label="Vehicles"      {...a11yProps(8)} />
                     <Tab label="Contacts"      {...a11yProps(9)} />
                     <Tab label="Karma"         {...a11yProps(10)}/>
@@ -450,9 +457,13 @@ export default function BasicTabs() {
                 />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={7}>
-               {/*
-                Decking
-               */}
+               <DeckingPanel
+                    Decks={Character.decks}
+                    onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
+                    onChangeDeck={(decks) => setCharacter({ ...Character, decks:decks})}
+                    Edition={Edition}
+                    BooksFilter={Character.allowedBooks}
+               />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={8}>
                 <VehiclesPanel
@@ -466,6 +477,7 @@ export default function BasicTabs() {
             </CustomTabPanel>
             <CustomTabPanel value={value} index={9}>
                 <ContactsPanel 
+                    onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
                     updateContacts={handleContactsUpdate}
                     Contacts={Character.contacts}
                 />
