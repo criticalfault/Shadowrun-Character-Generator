@@ -75,6 +75,7 @@ export default function BasicTabs() {
         inventory:[],
         weapons:[],
         vehicles:[],
+        drones:[],
         contacts:[  { Name: 'Contact 1', Type:"free", Archtype: 'Fixer', Level: 1, GeneralInfo: 'Helps with gear' },
                     { Name: 'Contact 2', Type:"free", Archtype: 'Street Shaman', Level: 1, GeneralInfo: 'Provides magical advice' }],
         mods:[],
@@ -134,6 +135,10 @@ export default function BasicTabs() {
 
         Character.vehicles.forEach(function(vehicle){
             tempCashSpent+=parseFloat(vehicle['$Cost']);
+        });
+
+        Character.drones.forEach(function(drone){
+            tempCashSpent+=parseFloat(drone['$Cost']);
         });
 
         Character.contacts.forEach(function(contact){
@@ -468,10 +473,12 @@ export default function BasicTabs() {
             <CustomTabPanel value={value} index={8}>
                 <VehiclesPanel
                     Vehicles={Character.vehicles}
+                    Drones={Character.drones} 
                     Edition={Edition}
                     CashOnHand={Character.chargenCash}
                     onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
                     onChangeVehicle={(vehicles) => setCharacter({ ...Character, vehicles:vehicles})}
+                    onChangeDrones={(drones) => setCharacter({ ...Character, drones:drones})}
                     BooksFilter={Character.allowedBooks}
                 />
             </CustomTabPanel>

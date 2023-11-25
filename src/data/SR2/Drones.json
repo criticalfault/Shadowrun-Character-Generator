@@ -26,7 +26,7 @@
         "$Cost": "1500 ",
         "Availability": "2/24hrs",
         "Street Index": ".5",
-        "Notes": " Remote-Control Interface, Rigger Adaptation, Special Machinery (vacuum/wetvac/brushes/sprayer), Special Storage Area (liquid tanks-2l total)",
+        "Notes": "Remote-Control Interface, Rigger Adaptation, Special Machinery (vacuum/wetvac/brushes/sprayer), Special Storage Area (liquid tanks-2l total)",
         "Book.Page": "ssg.122"
       },
       {
@@ -282,7 +282,7 @@
         "Availability": "2/24hrs",
         "Street Index": "1",
         "Notes": "Remote-Control Interface, Rigger Adaptation",
-        "Book.Page": "sr3.312,r3.172"
+        "Book.Page": "sr2.312,r3.172"
       },
       {
         "name": "GM-Nissan Doberman",
@@ -297,7 +297,7 @@
         "Availability": "8/8 days",
         "Street Index": "2",
         "Notes": "Remote-Control Interface, Rigger Adaptation, External Fixed Firmpoint(0.4 CF Ammo Bin), Remote Micro-turret(1 CF Ammo Bin)",
-        "Book.Page": "sr3.311,r3.173"
+        "Book.Page": "sr2.311,r3.173"
       },
       {
         "name": "IWS DLK MK 6",
@@ -327,6 +327,21 @@
         "Availability": "8/8 days",
         "Street Index": "2",
         "Notes": "Remote-Control Interface, Rigger Adaptation, Mechanical Arm(STR 6), External Fixed Firmpoint(1 CF Ammo Bin)",
+        "Book.Page": "r3.173"
+      },
+      {
+        "name": "MCT Hachiman",
+        "Handling": "3/4",
+        "Speed/Accel": "10/2",
+        "Body/Armor": "2/5(7)",
+        "Sig/Autonav": "7/0",
+        "Pilot/Sensor": "3/5",
+        "Cargo/Load": "4/125",
+        "Seating": "-",
+        "$Cost": "70000",
+        "Availability": "NA",
+        "Street Index": "2",
+        "Notes": "Ablative Armor 1, Robot-Pilot Advanced Programming, Adaptation Pool 3, Robotic Reflexes 3, Remote-Control Gear, Remote Mini-turret w/Ultimax MMG, Rigger Interface, Spotlight",
         "Book.Page": "r3.173"
       },
       {
@@ -567,7 +582,7 @@
         "Availability": "2/24hrs",
         "Street Index": ".75",
         "Notes": "Remote-Control Interface, Rigger Adaptation",
-        "Book.Page": "sr3.312"
+        "Book.Page": "sr2.312"
       },
       {
         "name": "Eireann-Tir Prospero",
@@ -612,7 +627,7 @@
         "Availability": "2/24hrs",
         "Street Index": "1",
         "Notes": "Remote-Control Interface, Rigger Adaptation",
-        "Book.Page": "sr3.312,r3.176"
+        "Book.Page": "sr2.312,r3.176"
       },
       {
         "name": "Aeroquip",
@@ -657,7 +672,7 @@
         "Availability": "2/24hrs",
         "Street Index": "1",
         "Notes": "Remote-Control Interface, Rigger Adaptation",
-        "Book.Page": "sr3.312,r3.177"
+        "Book.Page": "sr2.312,r3.177"
       },
       {
         "name": "Cyberspace Designs Wolfhound",
@@ -686,38 +701,8 @@
         "$Cost": "6250",
         "Availability": "2/24hrs",
         "Street Index": ".75",
-        "Notes": "Remote Control Interface,Rigger Adaptation,Lowlight & Thermographic Cam.",
-        "Book.Page": "sr3.312"
-      },
-      {
-        "name": "Moonlight Aerospace Gossamer",
-        "Handling": "5",
-        "Speed/Accel": "*/*",
-        "Body/Armor": "1/0",
-        "Sig/Autonav": "16/-",
-        "Pilot/Sensor": "3/3",
-        "Cargo/Load": "2/5",
-        "Seating": "-",
-        "$Cost": "120000",
-        "Availability": "3/72hrs",
-        "Street Index": "1",
-        "Notes": "Speed and Accel depend on windspeed, Remote Control Interface, Rigger Adaptation, Electroncs Bay, Optional Monofilament reels and Multicore fibre controls",
-        "Book.Page": "tss.6"
-      },
-      {
-        "name": "Renraku Scorpion",
-        "Handling": "4",
-        "Speed/Accel": "180/18",
-        "Body/Armor": "3/9",
-        "Sig/Autonav": "2/3",
-        "Pilot/Sensor": "2/4",
-        "Cargo/Load": "10/75",
-        "Seating": "-",
-        "$Cost": "25000",
-        "Availability": "4/24hrs",
-        "Street Index": "3.0",
-        "Notes": "Alternate stats while in ground mode, micro-turret (weapon n/i), 6CF reserved for more electronics and 4CF for ammo",
-        "Book.Page": "tss.6"
+        "Notes": "Remote Control Interface, Rigger Adaptation,Lowlight & Thermographic Cam.",
+        "Book.Page": "sr2.312"
       },
       {
         "name": "Renraku Arachnoid Mini-drone",
@@ -778,20 +763,5 @@
         "Street Index": "2",
         "Notes": "Remote-Control Interface, Rigger Adaptation, Micro-Recorder 6, micro-camcorder, universal receiver 4",
         "Book.Page": "sta2.98"
-      },
-      {
-        "name": "MCT Hachiman",
-        "Handling": "3/4",
-        "Speed/Accel": "10/2",
-        "Body/Armor": "2/5(7)",
-        "Sig/Autonav": "7/0",
-        "Pilot/Sensor": "3/5",
-        "Cargo/Load": "4/125",
-        "Seating": "-",
-        "$Cost": "70000",
-        "Availability": "NA",
-        "Street Index": "2",
-        "Notes": "Ablative Armor 1, Robot-Pilot Advanced Programming, Adaptation Pool 3, Robotic Reflexes 3, Remote-Control Gear, Remote Mini-turret w/Ultimax MMG, Rigger Interface, Spotlight",
-        "Book.Page": "r3.173"
       }
 ]
