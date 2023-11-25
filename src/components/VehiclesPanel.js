@@ -50,7 +50,7 @@ export default function VehiclesPanel(props) {
     setNewDroneIndex(event.target.value)
     setNewDroneCost(TempDrone['$Cost']);
     if(TempDrone.hasOwnProperty('Notes')){
-      setNewVehicleDesc(TempDrone.Notes)
+      setNewDroneDesc(TempDrone.Notes)
     }
   }
 
@@ -72,42 +72,42 @@ export default function VehiclesPanel(props) {
   };
 
 
-    const handleVehicleChange = (event) => {
-        
-        const TempVehicle = VehicleData.filter(item => props.BooksFilter.includes(item['Book.Page'].split('.')[0]))[event.target.value];
-        setNewVehicle(TempVehicle);
-        setNewVehicleIndex(event.target.value)
-        setNewVehicleCost(TempVehicle['$Cost']);
-        if(TempVehicle.hasOwnProperty('Notes')){
-          setNewVehicleDesc(TempVehicle.Notes)
-        }
-    }
-  
-    const handleAddVehicle = () => {
-        if (NewVehicle) {
-          const VehicleToAdd = {...NewVehicle};
-          setSelectedVehicle(prevVehicle => [...prevVehicle, VehicleToAdd]);
-          setNewVehicle('');
-          setNewVehicleIndex('');
-          props.onChangeVehicle([...SelectedVehicle, VehicleToAdd]);
-        }
-    }
-  
-    const handleRemoveVehicle = (index) => {
-      const editedVehicle = [...SelectedVehicle];
-      let RemovedVehicle = editedVehicle.splice(index, 1);
-      console.log("Removed Vehicle");
-      console.log(RemovedVehicle);
-      setSelectedVehicle(editedVehicle);
-      props.onChangeVehicle([...editedVehicle]);
-    };
+  const handleVehicleChange = (event) => {
+      
+      const TempVehicle = VehicleData.filter(item => props.BooksFilter.includes(item['Book.Page'].split('.')[0]))[event.target.value];
+      setNewVehicle(TempVehicle);
+      setNewVehicleIndex(event.target.value)
+      setNewVehicleCost(TempVehicle['$Cost']);
+      if(TempVehicle.hasOwnProperty('Notes')){
+        setNewVehicleDesc(TempVehicle.Notes)
+      }
+  }
+
+  const handleAddVehicle = () => {
+      if (NewVehicle) {
+        const VehicleToAdd = {...NewVehicle};
+        setSelectedVehicle(prevVehicle => [...prevVehicle, VehicleToAdd]);
+        setNewVehicle('');
+        setNewVehicleIndex('');
+        props.onChangeVehicle([...SelectedVehicle, VehicleToAdd]);
+      }
+  }
+
+  const handleRemoveVehicle = (index) => {
+    const editedVehicle = [...SelectedVehicle];
+    let RemovedVehicle = editedVehicle.splice(index, 1);
+    console.log("Removed Vehicle");
+    console.log(RemovedVehicle);
+    setSelectedVehicle(editedVehicle);
+    props.onChangeVehicle([...editedVehicle]);
+  };
 
     return ( <>
     <Box sx={{ width: '250px' }}>
         Nuyen Spent: {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(CalcTotalNuyenSpent())} 
     </Box>
-    <br></br>
-    <FormControl style={{ minWidth: 650 }}>
+    <h3>Vehicles</h3>
+    <FormControl style={{ minWidth: 650, marginTop:20 }}>
         <InputLabel id="power-label">Vehicles</InputLabel>
         <Select
             id="power-dropdown"
@@ -122,7 +122,7 @@ export default function VehiclesPanel(props) {
     </FormControl>
 
     {NewVehicle && (
-        <>
+        <div style={{marginTop:20 }}>
             <TextField style={{'width':'100px', 'marginRight':'20px'}}
             id="power-cost-input"
             disabled={true}
@@ -134,11 +134,11 @@ export default function VehiclesPanel(props) {
             Add Vehicle
             </Button>
             <div>Notes:{NewVehicleDesc}</div>
-        </>
+        </div>
     )}
     <br></br><br></br>
    
-    <h3>Vehicles</h3>
+   
     <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
           <TableHead>
@@ -182,8 +182,10 @@ export default function VehiclesPanel(props) {
         </Table>
       </TableContainer>
 
-      <hr></hr>
-      <FormControl style={{ minWidth: 650, marginTop:20 }}>
+      <hr style={{marginTop:30, marginBottom:30}}></hr>
+
+      <h3>Drones</h3>
+      <FormControl style={{ minWidth: 650 }}>
         <InputLabel id="power-label">Drones</InputLabel>
         <Select
             id="power-dropdown"
@@ -198,7 +200,7 @@ export default function VehiclesPanel(props) {
     </FormControl>
 
     {NewDrone && (
-        <>
+        <div style={{marginTop:20 }}>
             <TextField style={{'width':'100px', 'marginRight':'20px'}}
             id="power-cost-input"
             disabled={true}
@@ -210,13 +212,9 @@ export default function VehiclesPanel(props) {
             Add Drone
             </Button>
             <div>Notes:{NewDroneDesc}</div>
-        </>
+        </div>
     )}
     <br></br><br></br>
-
-
-
-      <h3>Drones</h3>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
           <TableHead>
