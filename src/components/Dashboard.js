@@ -99,7 +99,21 @@ export default function BasicTabs() {
     const [Character, setCharacter] = React.useState(baseCharacter);
     const [selectedRace, setSelectedRace] = React.useState('Human');
     const [NuyenSpent, setNuyenSpent] = React.useState(0.00);
-
+    const ProgramCosts = { 
+        1:100,
+        2:100,
+        3:100,
+        4:200,
+        5:200,
+        6:200,
+        7:500,
+        8:500,
+        9:500,
+        10:1000,
+        11:1000,
+        12:1000
+    }    
+    
     const handleChangePriorityRace = (event) => {
         const newRace = event.target.value;
         setSelectedRace(newRace);
@@ -131,6 +145,9 @@ export default function BasicTabs() {
 
         Character.decks.forEach(function(deck){
             tempCashSpent+=parseFloat(deck.Cost);
+            deck.ProgramsInStorage.forEach(function(program){
+                tempCashSpent += (program.Rating*program.Rating)*program.Multiplyer*ProgramCosts[program.Rating];
+            });
         });
 
         Character.vehicles.forEach(function(vehicle){
