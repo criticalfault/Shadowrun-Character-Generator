@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import { Grid } from '@mui/material';
 import { MenuItem } from '@mui/material';
@@ -8,21 +7,15 @@ import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
 import DeleteIcon from '@material-ui/icons/Delete';
-import IconButton from '@material-ui/core/IconButton';
-import Switch from '@material-ui/core/Switch';
 import Modal from '@mui/material/Modal';
 import './DeckingPanel.css';
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'left',
-    color: theme.palette.text.primary,
-}));
 const modalStyle = {
     position: 'absolute',
     top: '50%',
@@ -39,10 +32,9 @@ export default function DeckingPanel(props) {
     const rawPrograms = require('../data/'+props.Edition+'/Programs.json');
     const [NewCyberdeck, setNewCyberdeck] = useState();
     const [SelectedCyberdecks, setSelectedCyberdecks] = useState(props.Decks);
-    const [NewCyberdeckIndex, setNewCyberdeckIndex] = useState();
-    const [NewCyberdeckProgram, setNewCyberdeckProgram] = useState();
-    const [NewCyberdeckProgramIndex, setNewCyberdeckProgramIndex] = useState();
-    const [loaded, setLoaded] = React.useState([]);
+    const [NewCyberdeckIndex, setNewCyberdeckIndex] = useState(0);
+    const [NewCyberdeckProgram, setNewCyberdeckProgram] = useState(0);
+    const [NewCyberdeckProgramIndex, setNewCyberdeckProgramIndex] = useState(0);
     const [openModal, setOpenModal] = React.useState(false);
     const [modalCurrentTarget, setModalCurrentTarget] = useState(0);
     const handleOpenModal = (index) =>{
@@ -63,7 +55,8 @@ export default function DeckingPanel(props) {
         10:1000,
         11:1000,
         12:1000
-    }    
+    }
+
     const handleCyberdeckChange = (event) => {
         const TempCyberdeck = rawCyberdecks[event.target.value];
         setNewCyberdeck(TempCyberdeck);
@@ -143,18 +136,6 @@ export default function DeckingPanel(props) {
         props.onChangeDeck(editedcyberdecks);
     }
 
-    const handleToggle = (value) => () => {
-        const currentIndex = loaded.indexOf(value);
-        const newChecked = [...loaded];
-    
-        if (currentIndex === -1) {
-            newChecked.push(value);
-        }else{
-            newChecked.splice(currentIndex, 1);
-        }
-        setLoaded(newChecked);
-    };
-
     const addProgram = () => {
         const editedcyberdecks = [...SelectedCyberdecks];
         let Program = {
@@ -166,16 +147,14 @@ export default function DeckingPanel(props) {
                     };
         editedcyberdecks[modalCurrentTarget].ProgramsInStorage.push(Program);
         props.onChangeDeck(editedcyberdecks);
-        setNewCyberdeckProgram(false);
-        setNewCyberdeckIndex(0);
         setOpenModal(false);
     }
 
-    const removeProgram = (index,index2) => {
+    const removeProgram = (event,index,index2) => {
         let cyberdeckIndex = index;
         let programIndex = index2;
         const editedcyberdecks = [...SelectedCyberdecks];
-        let programSliced = editedcyberdecks[cyberdeckIndex].ProgramsInStorage.splice(programIndex,1);
+        editedcyberdecks[cyberdeckIndex].ProgramsInStorage.splice(programIndex,1);
         setSelectedCyberdecks(editedcyberdecks);
         props.onChangeDeck(editedcyberdecks);
     }
@@ -191,7 +170,7 @@ export default function DeckingPanel(props) {
         props.onChangeDeck(editedcyberdecks);
     }
 
-    const handleProgramToggle = (index,index2) => {
+    const handleProgramToggle = (event,index,index2) => {
         let cyberdeckIndex = index;
         let programIndex = index2;
         const editedcyberdecks = [...SelectedCyberdecks];
@@ -225,7 +204,7 @@ export default function DeckingPanel(props) {
              <div>
                 { 
                     SelectedCyberdecks.map((cyberdeck, index) => (
-                    <Box className='cyberdeckCard'>
+                    <Box className='cyberdeckCard' key={index}>
                         <h3>{cyberdeck.Name}</h3>
                         <Grid container spacing={2}>
                             <Grid item xs={5} className='cyberDeckTable'>
@@ -299,57 +278,56 @@ export default function DeckingPanel(props) {
                             <div>
                                 <Button style={{marginBottom:10}} variant="contained" color="primary" data-index={index} onClick={() => handleOpenModal(index)}>Add Program</Button>
                             </div>
-                            <table className="">
-                                <thead>
-                                    <tr>
-                                        <th>Loaded</th>
-                                        <th>Name</th>
-                                        <th>Rating</th>
-                                        <th>Multiplyer</th>
-                                        <th>Size</th>
-                                        <th>Cost</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                            { 
-                                cyberdeck.ProgramsInStorage.map((program, index2) => 
-                                (
-                                    <tr key={index2}>
-                                        <td>
-                                            <Switch
-                                                edge="end"
-                                                onChange={() => handleProgramToggle(index,index2)}
-                                                checked={ program.Loaded === true }
-                                                inputProps={{ 'aria-labelledby': 'switch-list-label-'+program.Name }}
-                                            />
-                                        </td>
-                                        <td>
-                                            {program.Name}
-                                        </td>
-                                        <td>
-                                            <input type='number' name="Sensors" data-index={index} value={program.Rating} min={1} max={cyberdeck.Persona} onChange={(event) => handleProgramRatingChange(event,index,index2)}/>   
-                                           
-                                        </td>
-                                        <td>
-                                            {program.Multiplyer}
-                                        </td>
-                                        <td>
-                                            {program.Size}
-                                        </td>
-                                        <td>
-                                            {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format((program.Rating*program.Rating)*program.Multiplyer*ProgramCosts[program.Rating])}
-                                        </td>
-                                        <td>
-                                            <IconButton edge="end" aria-label="delete" onClick={() => removeProgram(index,index2)}>
-                                                <DeleteIcon />
-                                            </IconButton>
-                                        </td>
-                                    </tr> 
-                                ))
-                            }
-                            </tbody>
-                            </table> 
+                            
+                            <TableContainer component={Paper}>
+                                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                                    <TableHead>
+                                        <TableRow>
+                                            <TableCell>Loaded</TableCell>
+                                            <TableCell>Name</TableCell>
+                                            <TableCell>Rating</TableCell>
+                                            <TableCell>Multiplyer</TableCell>
+                                            <TableCell>Size</TableCell>
+                                            <TableCell>Cost</TableCell>
+                                            <TableCell>Actions</TableCell>
+                                        </TableRow>
+                                    </TableHead>
+                                    <TableBody>
+                                    { 
+                                    cyberdeck.ProgramsInStorage.map((program, index2) => 
+                                    (
+                                        <TableRow key={index2+program.Name}>
+                                            <TableCell>
+                                                <input type='checkbox' data-index={index} checked={program.Loaded === true} onChange={(event) => handleProgramToggle(event,index,index2)}/> 
+                                            </TableCell>
+                                            <TableCell>
+                                                {program.Name}
+                                            </TableCell>
+                                            <TableCell>
+                                                <input type='number' data-index={index} value={program.Rating} min={1} max={12} onChange={(event) => handleProgramRatingChange(event,index,index2)}/>   
+                                            </TableCell>
+                                            <TableCell>
+                                                {program.Multiplyer}
+                                            </TableCell>
+                                            <TableCell>
+                                                {program.Size}
+                                            </TableCell>
+                                            <TableCell>
+                                                {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format((program.Rating*program.Rating)*program.Multiplyer*ProgramCosts[program.Rating])}
+                                            </TableCell>
+                                            <TableCell>
+                                                <button edge="end" aria-label="delete" onClick={(event) => removeProgram(event,index,index2)}>
+                                                    <DeleteIcon />
+                                                </button>
+                                            </TableCell>
+                                        </TableRow> 
+                                    ))
+                                    }
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
+                            
+                           
                         </Grid>
                        
                         <Button style={{'marginLeft':15, marginTop:10}} variant="contained" color="primary" onClick={() => removeCyberdeck(index)}>Remove Cyberdeck</Button>
@@ -375,7 +353,7 @@ export default function DeckingPanel(props) {
                         id="cyberdeck-dropdown"
                         value={NewCyberdeckIndex}
                         onChange={handleCyberdeckChange}>
-                        { rawCyberdecks.map( (deck, index) => (
+                        {rawCyberdecks.map((deck, index) => (
                             <MenuItem key={index} value={index}>{deck.Name}</MenuItem>
                         ))}
                     </Select>
@@ -402,9 +380,11 @@ export default function DeckingPanel(props) {
                             id="program-dropdown"
                             value={NewCyberdeckProgramIndex}
                             onChange={handleCyberdeckProgramChange}>
-                            { rawPrograms.map( (prog, index) => (
-                                <MenuItem key={index} value={index}>{prog.Name}</MenuItem>
-                            ))}
+                            { 
+                                rawPrograms.map( 
+                                    (prog, index) => ( <MenuItem key={index} value={index}>{prog.Name}</MenuItem> )
+                                )
+                            }
                         </Select>
                     </FormControl>
                     <Button variant="contained" color="primary" onClick={addProgram}>Add Program</Button>
