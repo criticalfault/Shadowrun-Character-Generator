@@ -29,10 +29,12 @@ export default function GearPanel(props) {
   }
   GearData['Firearms'].entries.forEach(function(item) {
     if(!item.hasOwnProperty('BookPage')){
+      console.log("No BookPage");
       console.log(item);
       return;
     }
     if(!item.BookPage.includes('.')){
+      console.log("BookPage lacks .");
       console.log(item);
     }
   });
@@ -48,11 +50,11 @@ export default function GearPanel(props) {
     }
     const handleGearChange = (event) => {
       console.log("SelectedGearCategory:"+SelectedGearCategory);
-
+      var TempGear = {}
       if(props.Edition === 'SR3'){
-        var TempGear = GearData[SelectedGearCategory].entries.filter(item => item.hasOwnProperty('BookPage') && props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
+        TempGear = GearData[SelectedGearCategory].entries.filter(item => item.hasOwnProperty('BookPage') && props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
       }else{
-        var TempGear = GearData[SelectedGearCategory].entries[event.target.value];
+        TempGear = GearData[SelectedGearCategory].entries[event.target.value];
       }
       console.log(TempGear);
       setNewGear(TempGear);
@@ -76,7 +78,7 @@ export default function GearPanel(props) {
   
     const handleRemoveGear = (index) => {
       const editedGear = [...SelectedGear];
-      let RemovedGear = editedGear.splice(index, 1);
+      editedGear.splice(index, 1);
       setSelectedGear(editedGear);
       props.onChangeGear([...editedGear]);
     };
