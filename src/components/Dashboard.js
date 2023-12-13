@@ -193,7 +193,7 @@ export default function BasicTabs() {
                 }
             }
         });
-
+        console.log("Edition: "+Edition)
         console.log(Character);
         setNuyenSpent(tempCashSpent);
     },[Character])

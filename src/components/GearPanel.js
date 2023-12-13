@@ -27,15 +27,15 @@ export default function GearPanel(props) {
       });
       return TotalNuyen;
   }
-GearData['Firearms'].entries.forEach(function(item) {
-  if(!item.hasOwnProperty('BookPage')){
-    console.log(item);
-    return;
-  }
-  if(!item.BookPage.includes('.')){
-    console.log(item);
-  }
-});
+  GearData['Firearms'].entries.forEach(function(item) {
+    if(!item.hasOwnProperty('BookPage')){
+      console.log(item);
+      return;
+    }
+    if(!item.BookPage.includes('.')){
+      console.log(item);
+    }
+  });
   const [NewGear, setNewGear]           = useState();
   const [NewGearCost, setNewGearCost]   = useState();
   const [NewGearIndex, setNewGearIndex] = useState(0);
@@ -47,29 +47,31 @@ GearData['Firearms'].entries.forEach(function(item) {
         setSelectedGearCategory(event.target.value);
     }
     const handleGearChange = (event) => {
+      console.log("SelectedGearCategory:"+SelectedGearCategory);
+
       if(props.Edition === 'SR3'){
         var TempGear = GearData[SelectedGearCategory].entries.filter(item => item.hasOwnProperty('BookPage') && props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
       }else{
         var TempGear = GearData[SelectedGearCategory].entries[event.target.value];
       }
-       
-        setNewGear(TempGear);
-        setNewGearIndex(event.target.value)
-        setNewGearCost(TempGear.Cost);
-        if(TempGear.hasOwnProperty('Notes')){
-          setNewGearDesc(TempGear.Notes)
-        }
+      console.log(TempGear);
+      setNewGear(TempGear);
+      setNewGearIndex(event.target.value)
+      setNewGearCost(TempGear.Cost);
+      if(TempGear.hasOwnProperty('Notes')){
+        setNewGearDesc(TempGear.Notes)
+      }
     }
   
     const handleAddGear = () => {
-        if (NewGear) {
-          const gearToAdd = {...NewGear};
-          gearToAdd.Type = SelectedGearCategory;
-          setSelectedGear(prevGear => [...prevGear, gearToAdd]);
-          setNewGear('');
-          setNewGearIndex('');
-          props.onChangeGear([...SelectedGear, gearToAdd]);
-        }
+      if (NewGear) {
+        const gearToAdd = {...NewGear};
+        gearToAdd.Type = SelectedGearCategory;
+        setSelectedGear(prevGear => [...prevGear, gearToAdd]);
+        setNewGear('');
+        setNewGearIndex('');
+        props.onChangeGear([...SelectedGear, gearToAdd]);
+      }
     }
   
     const handleRemoveGear = (index) => {
