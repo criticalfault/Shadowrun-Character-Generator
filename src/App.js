@@ -7,6 +7,10 @@ function App() {
   Sentry.init({
   dsn: "https://34ee2aaefd40613b56d1255ffad6a382@o4506377711452160.ingest.sentry.io/4506377714335744",
   integrations: [
+    new Sentry.Feedback({
+      // Additional SDK configuration goes in here, for example:
+      colorScheme: "light",
+    }),
     new Sentry.BrowserTracing({
       // Set 'tracePropagationTargets' to control for which URLs distributed tracing should be enabled
       tracePropagationTargets: ["localhost",/^https:\/\/character-generator\.nullsheen\.com/],
