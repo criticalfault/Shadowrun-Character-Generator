@@ -21,6 +21,19 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 function SheetDisplay(props) {
 
+
+    const isFetishSpell = (spell) => {
+        if(spell){
+            return (<span>F&nbsp;</span>)
+        }   
+    }
+
+    const isExclusiveSpell = (spell) => {
+        if(spell){
+            return (<span>E&nbsp;</span>)
+        }  
+    }
+
     const handleConditionSelect = () => {
     
     }
@@ -154,7 +167,7 @@ function SheetDisplay(props) {
 
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} className='sheetBody'>
         <Grid item xs={12} md={6}>
             <Item>Name: {props.currentCharacter.street_name}</Item>
         </Grid>
@@ -345,7 +358,6 @@ function SheetDisplay(props) {
               <TableCell align="right">Duration</TableCell>
               <TableCell align="right">Drain Code</TableCell>
               <TableCell align="right">Options</TableCell>
-              <TableCell align="right">Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -356,7 +368,7 @@ function SheetDisplay(props) {
                 <TableCell component="th" scope="row">
                   {spell.Name}
                 </TableCell>
-                <TableCell align="right">{spell.Rating} {CalcSpellRating(spell)}</TableCell>
+                <TableCell align="right">{spell.Rating}</TableCell>
                 <TableCell align="right">{spell.Type}</TableCell>
                 <TableCell align="right">{spell.Target}</TableCell>
                 <TableCell align="right">{spell.Duration}</TableCell>
@@ -364,7 +376,6 @@ function SheetDisplay(props) {
                 <TableCell align="right">
                  {isFetishSpell(spell.Fetish)} {isExclusiveSpell(spell.Exclusive)}
                 </TableCell>
-                <TableCell align="right"><Button onClick={() => handleRemoveSpell(index)}>Remove</Button></TableCell>
               </TableRow>
             ))}
           </TableBody>
