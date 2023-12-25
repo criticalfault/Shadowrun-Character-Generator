@@ -24,26 +24,26 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
 
   //Active Skills
   const [selectedSpecialization, setSelectedSpecialization] = useState('None');
-  const [selectedSkills, setSelectedSkills] = useState(characterSkills.filter(skill => skill.type == 'Active'));
+  const [selectedSkills, setSelectedSkills] = useState(characterSkills.filter(skill => skill.type === 'Active'));
   const [selectedCategory, setSelectedCategory] = useState('Combat skills');
   const [skillRating, setSkillRating] = useState(1);
-  const [skillPointsSpent, setSkillPointsSpent] = useState(CalcTotalSkillsRatings(characterSkills.filter(skill => skill.type == 'Active')));
+  const [skillPointsSpent, setSkillPointsSpent] = useState(CalcTotalSkillsRatings(characterSkills.filter(skill => skill.type === 'Active')));
   const [skillCategory, setSkillCategory] = useState(Object.keys(skillsData));
   const [newSkill, setNewSkill] = useState('Assault Rifles');
 
   //Knowledge Skills
   const [selectedKnowledgeSpecialization, setKnowledgeSelectedSpecialization] = useState('');
-  const [selectedKnowledgeSkills, setKnowledgeSelectedSkills] = useState(characterSkills.filter(skill => skill.type == 'Knowledge'));
+  const [selectedKnowledgeSkills, setKnowledgeSelectedSkills] = useState(characterSkills.filter(skill => skill.type === 'Knowledge'));
   const [selectedKnowledgeCategory, setKnowledgeSelectedCategory] = useState('Street (ST)');
   const [skillKnowledgeRating, setKnowledgeSkillRating] = useState(1);
-  const [skillKnowledgePointsSpent, setKnowledgeSkillPointsSpent] = useState(CalcTotalSkillsRatings(characterSkills.filter(skill => skill.type == 'Knowledge')));
+  const [skillKnowledgePointsSpent, setKnowledgeSkillPointsSpent] = useState(CalcTotalSkillsRatings(characterSkills.filter(skill => skill.type === 'Knowledge')));
   const [skillKnowledgeCategory, setKnowledgeSkillCategory] = useState(Object.keys(skillsData));
   const [newKnowledgeSkill, setKnowledgeNewSkill] = useState('ST:Arms Dealers');
 
   //Language Skills
   const [selectedLanguageSpecialization, setLanguageSelectedSpecialization] = useState('');
-  const [selectedLanguageSkills, setLanguageSelectedSkills] = useState(characterSkills.filter(skill => skill.type == 'Language'));
-  const [selectedLanguageCategory, setLanguageSelectedCategory] = useState(CalcTotalSkillsRatings(characterSkills.filter(skill => skill.type == 'Language')));
+  const [selectedLanguageSkills, setLanguageSelectedSkills] = useState(characterSkills.filter(skill => skill.type === 'Language'));
+  const [selectedLanguageCategory, setLanguageSelectedCategory] = useState(CalcTotalSkillsRatings(characterSkills.filter(skill => skill.type === 'Language')));
   const [skillLanguageRating, setLanguageSkillRating] = useState(1);
   const [skillLanguagePointsSpent, setLanguageSkillPointsSpent] = useState(0);
   const [skillLanguageCategory, setLanguageSkillCategory] = useState(Object.keys(skillsData));
@@ -93,7 +93,20 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
     setLanguageSelectedSpecialization(''); // Reset selected specialization when a new skill is selected
   };
 
-  
+  const AddSkillRating = (event) => {
+    const rating = skillRating + 1;
+    if (!isNaN(rating) && rating >= 1 && rating <= 6) {
+      setSkillRating(rating);
+    }
+  }
+
+  const RemoveSkillRating = (event) => {
+    const rating = skillRating - 1;
+    if (!isNaN(rating) && rating >= 1 && rating <= 6) {
+      setSkillRating(rating);
+    }
+  }
+
   const handleRatingChange = (event) => {
     const rating = parseInt(event.target.value);
     if (!isNaN(rating) && rating >= 1 && rating <= 6) {
@@ -108,12 +121,40 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
     }
   };
 
+  const AddKnowledgeRating = (event) => {
+    const rating = skillKnowledgeRating + 1;
+    if (!isNaN(rating) && rating >= 1 && rating <= 6) {
+      setKnowledgeSkillRating(rating);
+    }
+  }
+
+  const RemoveKnowledgeRating = (event) => {
+    const rating = skillKnowledgeRating - 1;
+    if (!isNaN(rating) && rating >= 1 && rating <= 6) {
+      setKnowledgeSkillRating(rating);
+    }
+  }
+
   const handleLanguageRatingChange = (event) => {
     const rating = parseInt(event.target.value);
     if (!isNaN(rating) && rating >= 1 && rating <= 6) {
       setLanguageSkillRating(rating);
     }
   };
+
+  const AddLanguageRating = (event) => {
+    const rating = skillLanguageRating + 1;
+    if (!isNaN(rating) && rating >= 1 && rating <= 6) {
+      setLanguageSkillRating(rating);
+    }
+  }
+
+  const RemoveLanguageRating = (event) => {
+    const rating = skillLanguageRating - 1;
+    if (!isNaN(rating) && rating >= 1 && rating <= 6) {
+      setLanguageSkillRating(rating);
+    }
+  }
 
   const getSpecializationsForSkill = (skillName) => {
     const skill = skillsData[selectedCategory].find((skill) => skill.name === skillName);
@@ -198,6 +239,9 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
         editedSkills.splice(index, 1);
         setLanguageSelectedSkills(editedSkills);
         break;
+
+        default:
+          break;
     }
     
   };
@@ -224,6 +268,8 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
         RemovedSkill = editedSkills.splice(index, 1);
         setLanguageSelectedSkills(editedSkills);
         onUpdateSkills([...selectedSkills,...selectedKnowledgeSkills,...selectedLanguageSkills]);
+        break;
+      default:
         break;
     }
   };
@@ -299,6 +345,8 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
               inputProps: { min: 1, max: 6 },
             }}
           />
+          <Button onClick={ AddSkillRating} variant="contained" color="primary" className='btn'>+</Button> &nbsp;&nbsp;
+          <Button onClick={ RemoveSkillRating} variant="contained" color="primary" className='btn'>-</Button>
         </>
       )}
       <Button variant="contained" color="primary" style={{'marginLeft':'20px'}} onClick={handleAddSkill}>
@@ -321,7 +369,7 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
       <br></br>
       <br></br>
     {selectedKnowledgeCategory && (  
-      <FormControl style={{'width':'200px'}}>
+      <FormControl style={{'width':'200px', 'marginBottom':'20px'}}>
         <InputLabel  id="skill-label">{selectedKnowledgeCategory}</InputLabel>
         <NativeSelect
           id="skill-dropdown"
@@ -346,6 +394,8 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
               inputProps: { min: 1, max: 6 },
             }}
           />
+          <Button onClick={ AddKnowledgeRating } variant="contained" color="primary" className='btn'>+</Button> &nbsp;&nbsp;
+          <Button onClick={ RemoveKnowledgeRating} variant="contained" color="primary" className='btn'>-</Button>
         </>
       )}
       <Button variant="contained" color="primary" style={{'marginLeft':'20px'}} onClick={handleKnowledgeAddSkill}>
@@ -377,6 +427,8 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
               inputProps: { min: 1, max: 6 },
             }}
           />
+          <Button onClick={AddLanguageRating}  variant="contained" color="primary" className='btn'>+</Button> &nbsp;&nbsp;
+          <Button onClick={RemoveLanguageRating} variant="contained" color="primary" className='btn'>-</Button>
         </>
       <Button variant="contained" color="primary" style={{'marginLeft':'20px'}} onClick={handleLanguageAddSkill}>
         Add Skill
