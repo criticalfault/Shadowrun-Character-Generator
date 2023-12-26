@@ -27,9 +27,21 @@ export default function CyberwarePanel(props) {
 
   const CalcEssenceSpent = () =>{
     let EssenceSpent = 0;
+    let EyeEssenceSpent = 0;
     props.Cyberware.forEach(function(cyber){
-      EssenceSpent += parseFloat(cyber.EssCost);
+      console.log(cyber.Type);
+      if(cyber.Type === 'EYES'){
+        EyeEssenceSpent += parseFloat(cyber.EssCost);
+      }else{
+        EssenceSpent += parseFloat(cyber.EssCost);
+      }
+      
     });
+    if(EyeEssenceSpent > .5){
+      EssenceSpent += .5;
+    }else{
+      EssenceSpent += EyeEssenceSpent;
+    }
     return EssenceSpent.toFixed(2);
   }
 
@@ -66,9 +78,7 @@ export default function CyberwarePanel(props) {
       setSelectedCyberwareCategory(event.target.value);
   }
   const handleCyberwareChange = (event) => {
-    console.log("Reached?");
     if(CyberwareData[SelectedCyberwareCategory] !== undefined){
-      
       const TempCyber = CyberwareData[SelectedCyberwareCategory].filter(item => props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
       setNewCyberware(TempCyber);
       setNewCyberwareIndex(event.target.value)
@@ -86,6 +96,7 @@ export default function CyberwarePanel(props) {
         cyberToAdd.Cost *= CyberwareGrades[NewCyberwareGrade].CostMod;
         cyberToAdd.EssCost *= CyberwareGrades[NewCyberwareGrade].EssenceReduction;
         cyberToAdd.Grade = NewCyberwareGrade;
+        cyberToAdd.Type = SelectedCyberwareCategory;
         setSelectedCyberware(prevCyberware => [...prevCyberware, cyberToAdd]);
         setNewCyberware('');
         setNewCyberwareIndex('');
@@ -183,7 +194,7 @@ const handleCyberOrBioChange = (event) => {
 
   const handleRemoveBioware = (index) => {
       const editedBioware = [...SelectedBioware];
-      let RemovedBioware = editedBioware.splice(index, 1);
+      editedBioware.splice(index, 1);
       setSelectedBioware(editedBioware);
       props.onChangeBioware([...editedBioware]);
   };
