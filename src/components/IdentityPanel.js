@@ -45,20 +45,19 @@ export default function IdentityPanel(props) {
             So be prepared if it decideds to randomly die. There is a bunch of fixes still pending as well as a lot of known missing parts which will be added once this thing is partially stable.
             I'll list the known issues below, but feel free to poke and prod. See what you can get it to do. I'm going to continue to work on this as i get reports of breaks and the likes.</p>
             <p>Thanks for your consideration and time in testing! -D (dean 'at' nullsheen.com)</p>
-            <h5>Known Issues (As of 12-17-23 - 12:40pm CST)</h5>
+            <h5>Known Issues (As of 12-26-23 - 8:30am CST)</h5>
             <ul>
                 <li>Skills page still buggy with edits/removes (Though maybe i fixed it?)</li>
                 <li>SR2's Specializations still missing and we are having some errors from concentrations</li>
-                <li>Cyberware speciality rules (Incompatiable parts, Eyes having .5 free essence, limbs etc)</li>
                 <li>All nesting of improvements (Weapon / Deck / Vehicle accessories and building). These will be handled in a completely different way, but I promise it will feel awesome to do!</li>
             </ul>
         </div>
         <hr/>
         <h5>Resolved Issues</h5>
         <ul>
-            <li>Fixed Sheet erroring out when spells were loaded</li>
             <li>Added Sentry.io to get error reports so I can fix these problems faster</li>
             <li>Added feedback report widget to hopefully get better feedback on problems people run into</li>
+            <li>Added Cyberware Eye rule where Eyeware cannot eat more than .5 essence.</li>
         </ul>
         <hr/>
 
