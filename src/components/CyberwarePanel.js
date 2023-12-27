@@ -24,27 +24,32 @@ export default function CyberwarePanel(props) {
     
   const CyberwareData = require('../data/'+props.Edition+'/Cyberware.json');
   const BiowareData = require('../data/'+props.Edition+'/Bioware.json');
-
   const CalcEssenceSpent = () =>{
     let EssenceSpent = 0;
     let EyeEssenceSpent = 0;
+    let ReplacedCyberEyes = false;
     props.Cyberware.forEach(function(cyber){
-      console.log(cyber.Type);
-      if(cyber.Type === 'EYES'){
+
+      if(cyber.hasOwnProperty('Replacement') && cyber.Replacement === true){
+        ReplacedCyberEyes =true;
+      }
+      if(cyber.Type === 'EYES' && !cyber.hasOwnProperty('Replacement')){
         EyeEssenceSpent += parseFloat(cyber.EssCost);
       }else{
         EssenceSpent += parseFloat(cyber.EssCost);
       }
       
     });
-    if(EyeEssenceSpent > .5){
-      EssenceSpent += .5;
+    if(ReplacedCyberEyes){
+      if(EyeEssenceSpent-.5 > 0){
+        EssenceSpent += (EyeEssenceSpent-.5);
+      }
     }else{
       EssenceSpent += EyeEssenceSpent;
     }
+    
     return EssenceSpent.toFixed(2);
   }
-
   const CalcTotalNuyenSpent = () =>{
     let TotalNuyen = 0;
     props.Cyberware.forEach(function(cyber){
