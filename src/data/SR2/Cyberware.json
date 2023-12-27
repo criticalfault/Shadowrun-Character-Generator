@@ -51,7 +51,7 @@
         {"BookPage":"sr2.x", "Name":"Ear Recorder", "EssCost":0.30, "Cost":7000   ,"StreetIndex":2.00, "Mods":""}
     ],
     "EYES":[
-        {"BookPage":"sr2.x", "Name":"Eye Cyber replac.", "EssCost":0.20, "Cost":5000   ,"StreetIndex":0.75, "Mods":""},
+        {"BookPage":"sr2.x", "Name":"Eye Cyber Replacement", "EssCost":0.20, "Cost":5000, "StreetIndex":0.75, "Mods":"", "Replacement":true},
         {"BookPage":"sr2.x", "Name":"Eye Camera", "EssCost":0.40, "Cost":5000   ,"StreetIndex":2.00, "Mods":""},
         {"BookPage":"sr2.x", "Name":"Eye Cosmetic mod.", "EssCost":0.00, "Cost":1000,"StreetIndex":0.80, "Mods":""},
         {"BookPage":"sr2.x", "Name":"Eye Flare comp.", "EssCost":0.10, "Cost":2000,"StreetIndex":1.25, "Mods":""},
@@ -71,9 +71,9 @@
         {"BookPage":"ct.???","Name":"Eye Dataport","EssCost":0.25,"Cost":2200,"StreetIndex":2.00,"Mods":""},
         {"BookPage":"ct.???","Name":"Optical Scan DJ","EssCost":0.30,"Cost":5500,"StreetIndex":3.00,"Mods":""},
         {"BookPage":"ct.???","Name":"Eye Light Systems","EssCost":0.20,"Cost":1200,"StreetIndex":1.50,"Mods":""},
-        {"BookPage":"ct.???","Name":"Eye L BrightLight","EssCost":0.40,"Cost":1200,"StreetIndex":3.00,"Mods":""},
-        {"BookPage":"ct.???","Name":"Eye L /w Flash-pak","EssCost":0.00,"Cost":1000,"StreetIndex":3.00,"Mods":""},
-        {"BookPage":"ct.???","Name":"Eye L one shot FP ","EssCost":0.00,"Cost":500,"StreetIndex":3.00,"Mods":""}
+        {"BookPage":"ct.???","Name":"Eye Light Systems - BrightLight","EssCost":0.40,"Cost":1200,"StreetIndex":3.00,"Mods":""},
+        {"BookPage":"ct.???","Name":"Eye Light Systems - Flash-pak","EssCost":0.00,"Cost":1000,"StreetIndex":3.00,"Mods":""},
+        {"BookPage":"ct.???","Name":"Eye Light Systems - one shot FP ","EssCost":0.00,"Cost":500,"StreetIndex":3.00,"Mods":""}
     ],
     "BODYWARE":[
         {"BookPage":"ssc.???","Name":"Boosted Reflexes 1","EssCost":0.50,"Cost":15000,"StreetIndex":1.00,"Mods":"+1INI"},
