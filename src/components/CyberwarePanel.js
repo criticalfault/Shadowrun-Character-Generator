@@ -162,6 +162,7 @@ export default function CyberwarePanel(props) {
 const handleCyberOrBioChange = (event) => {
   let cyberAttributeBonuses = {'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0,'Reaction':0,'Initative':0};
   let cyberModsTotals = [];
+  let cyberPairedMods = {};
   selectedCyberware.forEach(function(cyber){
     if(cyber.Mods !== ''){
       cyberModsTotals.push(cyber.Mods)

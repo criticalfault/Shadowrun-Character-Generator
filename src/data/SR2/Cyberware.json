@@ -307,7 +307,7 @@
         {"BookPage":"ct.???","Name":"Oral Whip","EssCost":0.25,"Cost":10500,"StreetIndex":2.50,"Mods":""}
     ],
     "CYBERLIMBS":[
-        {"BookPage":"ct.???","Name":"Cyberarm/Leg","EssCost":1.00,"Cost":100000,"StreetIndex":1.00,"Mods":""},
+        {"BookPage":"ct.???","Name":"Cyberarm/Leg","EssCost":1.00,"Cost":100000,"StreetIndex":1.00,"Mods":"", "PairedMods":"+1BOD"},
         {"BookPage":"ct.???","Name":"Cyberhand/Foot","EssCost":0.35,"Cost":45000,"StreetIndex":1.00,"Mods":""},
         {"BookPage":"ct.???","Name":"Cyber Forearm/Leg","EssCost":0.65,"Cost":70000,"StreetIndex":1.00,"Mods":""},
         {"BookPage":"ct.???","Name":"Cyberarm Gyromount","EssCost":1.50,"Cost":260000,"StreetIndex":2.00,"Mods":""},
