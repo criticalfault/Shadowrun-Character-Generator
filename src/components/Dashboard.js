@@ -76,8 +76,10 @@ export default function BasicTabs() {
         weapons:[],
         vehicles:[],
         drones:[],
-        contacts:[  { Name: 'Contact 1', Type:"free", Archtype: 'Fixer', Level: 1, GeneralInfo: 'Helps with gear' },
-                    { Name: 'Contact 2', Type:"free", Archtype: 'Street Shaman', Level: 1, GeneralInfo: 'Provides magical advice' }],
+        contacts:[  
+            { Name: 'Contact 1', Type:"free", Archtype: 'Fixer', Level: 1, GeneralInfo: 'Helps with gear' },
+            { Name: 'Contact 2', Type:"free", Archtype: 'Street Shaman', Level: 1, GeneralInfo: 'Provides magical advice' }
+        ],
         mods:[],
         decks:[],
         selectedDeckIndex:false,
@@ -87,6 +89,7 @@ export default function BasicTabs() {
         gear:[],
         magical: false,
         magicalTradition: false,
+        magicalTotem:false,
         spells:[],
         powers:[],
         chargenCash: 20000,
@@ -350,6 +353,15 @@ export default function BasicTabs() {
         }));
     }
 
+    const handleMagicalTotemChange = (totem) => {
+        setCharacter((prevCharacter) => ({
+            ...prevCharacter,
+            magicalTotem:totem
+        }));
+    }
+
+    
+
     const SkillsPanelRender = (ed) => {
         if(ed === 'SR3'){
             return ( <SR3SkillsPanel    characterSkills={Character.skills} 
@@ -445,7 +457,10 @@ export default function BasicTabs() {
                     onChangePowers={(powers) => setCharacter({ ...Character, powers})}
                     onChangeSpells={(spells) => setCharacter({ ...Character, spells })} 
                     magicalTraditions={Character.availableMagics}
+                    chosenTradition={Character.magicalTradition}
+                    magicalTotem={Character.magicalTotem}
                     onChangeMagicalTradition={handleMagicalTraditionChange}
+                    onChangeMagicalTotem={handleMagicalTotemChange}
                     magicalChoice={Character.magicalChoice} 
                     BooksFilter={Character.allowedBooks}
                     Edition={Edition}

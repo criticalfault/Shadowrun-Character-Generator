@@ -18,14 +18,16 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
 import Checkbox from '@mui/material/Checkbox';
-import { CheckBox } from '@material-ui/icons';
 
 function MagicPanel(props) {
   const spellsData = require('../data/'+props.Edition+'/Spells.json');
   const AdeptPowers = require('../data/'+props.Edition+'/AdeptPowers.json');
-  const Totems = require('../data/'+props.Edition+'Totems.json');
+  const Totems = require('../data/'+props.Edition+'/Totems.json');
+  const AspectedMageTraditions = ['Shamanist','Conjurer','Elementalist','Sorcerer','WuFa'];
+  const AdeptPaths = ["Athelete's Way","Artist's Way","Warriors's Way","Invisible Way","Spirit Way","Totem Way", "Magician's Way"]
+
+
   const CalcTotalSpellRatings = (spellList) =>{
     let totalRatings = 0;
     spellList.forEach(function(spell){
@@ -46,35 +48,169 @@ function MagicPanel(props) {
     })
     return totalCost;
   }
-
-  const FullMageTraditions = ['Mage','Shaman','Psionicist','Wujen','Aboriginal Magic','Aztec Magic','Black Magic','Chaos Magic','Christian Magic','Druid Magic','Egyptian Magic','Gypsy Magic',"Hawai'ian Magic",'Hindu Magic','Islamic Magic','Norse Magic','Qabbalistic Magic','Rastafarian Magic','Shinto Magic','Witchcraft','Elemental Mage (Fire)','Elemental Mage (Water)','Elemental Mage (Air)','Elemental Mage (Earth)'];
-  const AspectedMageTraditions = ['Shamanist','Conjurer','Elementalist','Shamanist','Sorcerer','WuFa'];
-  const AdeptPaths = ["Athelete's Way","Artist's Way","Warriors's Way","Invisible Way","Spirit Way","Totem Way", "Magician's Way"]
-  const FullMageTraditionsDescriptions = {
-    'Mage':"",
-    'Shaman':"",
-    'Psionicist':"",
-    'Wujen':"",
-    'Aboriginal Magic':"",
-    'Aztec Magic':"",
-    'Black Magic':"",
-    'Chaos Magic':"",
-    'Christian Magic':"",
-    'Druid Magic':"",
-    'Egyptian Magic':"",
-    'Gypsy Magic':"",
-    "Hawai'ian Magic":"",
-    'Hindu Magic':"",
-    'Islamic Magic':"",
-    'Norse Magic':"",
-    'Qabbalistic Magic':"",
-    'Rastafarian Magic':"",
-    'Shinto Magic':"",
-    'Witchcraft':"",
-    'Elemental Mage (Fire)':"",
-    'Elemental Mage (Water)':"",
-    'Elemental Mage (Air)':"",
-    'Elemental Mage (Earth)':""
+ 
+  const AspectedTraditions = {
+    'Shamanist':{
+      "description":"Must be a shaman. Can only cast spells and summon spirits for which they receive a totem advantage.",
+      "conjures":"",
+      "totemList":"ANIMAL TOTEMS"
+    },
+    'Conjurer':{
+      "description":"Cannot use Sorcery only Conjuring skills.",
+      "conjures":"Spirits or Elementals",
+      "totemList":"none"
+    },
+    'Elementalist':{
+      "description":"Must be a mage. Can only cast spells and summon spirits related in one hemetic element (fire, water, air, or earth).  Must subtract one die from thier skill for spells or spirits of their opposing element.",
+      "conjures":"Elementals",
+      "totemList":"none"
+    },
+    'Sorcerer':{
+      "description":"Can only use the Sorcery skill but cannot use Conjuring.",
+      "conjures":"none",
+      "totemList":"none"
+    },
+    'WuFa':{
+      "description":"These aspected magicians must follow the path of Wuxing. Can only cast spells and summon spirits related to one wuxing element (wood, fire, earth, metal, or water). Conjurers can only summon spirits and sorcerers may only cast spells.",
+      "conjures":"Elementals",
+      "totemList":"none"
+    }
+  }
+  //Cannot use Sorcery only Conjuring skills.
+  const FullMageTraditions = {
+    "Mage":{
+      "name":"Mage",
+      "description":"Can use Sorcery and Conjuring skills, access the astral plane, and use foci.",
+      "conjures":"Elementals",
+      "totemList":"none"
+    },
+    'Shaman':{
+      "name":"Shaman",
+      "description":"Can use Sorcery and Conjuring skills, access the astral plane, and use foci.  Plus the benefits and disadvantages of their totem/tradition. ",
+      "conjures":"Spirits",
+      "totemList":"ANIMAL TOTEMS"
+    },
+    'Psionicist':{
+      "name":"Psionicist",
+      "description":"Form of full magician.  Can only cast spells that fit into the psionic belief \"power of the mind.\"  They cannot learn spell from \"magical\" characters. Cannot use any foci.  Cannot accept any geas of a \"mystical\" or \"magical\" bent.  Cannot summon spirits or elementals, only thought forms.",
+      "conjures":"Thought Forms",
+      "totemList":"none"
+    },
+    'Aboriginal Magic':{
+      "name":"Aboriginal Magic",
+      "book.page":"mits.24",
+      "description":"",
+      "conjures":"",
+      "totemList":"ANIMAL TOTEMS"
+    },
+    'Aztec Magic':{
+      "name":"Aztec Magic",
+      "description":"",
+      "conjures":"",
+      "totemList":"ANIMAL TOTEMS"
+    },
+    'Black Magic':{
+      "name":"Black Magic",
+      "description":"",
+      "conjures":"",
+      "totemList":"none"
+    },
+    'Chaos Magic':{
+      "name":"Chaos Magic",
+      "description":"",
+      "conjures":"",
+      "totemList":"none"
+    },
+    'Christian Magic':{
+      "name":"Christian Magic",
+      "description":"",
+      "conjures":"",
+      "totemList":"none"
+    },
+    'Druid Magic':{
+      "name":"Druid Magic",
+      "description":"",
+      "conjures":"",
+      "totemList":"none"
+    },
+    'Egyptian Magic':{
+      "name":"Egyptian Magic",
+      "description":"",
+      "conjures":"",
+      "totemList":"none"
+    },
+    'Gypsy Magic':{
+      "name":"Gypsy Magic",
+      "description":"",
+      "conjures":"",
+      "totemList":"none"
+    },
+    "Hawai'ian Magic":{
+      "name":"Hawai'ian Magic",
+      "description":"",
+      "conjures":"",
+      "totemList":"none"
+    },
+    'Hindu Magic':{
+      "name":"Hindu Magic",
+      "description":"",
+      "conjures":"",
+      "totemList":"none"
+    },
+    'Islamic Magic':{
+      "name":"Islamic Magic",
+      "description":"",
+      "conjures":"",
+      "totemList":"none"
+    },
+    'Norse Magic':{
+      "name":"Norse Magic",
+      "description":"",
+      "conjures":"",
+      "totemList":"none"
+    },
+    'Qabbalistic Magic':{
+      "name":"Qabbalistic Magic",
+      "description":"",
+      "conjures":"",
+      "totemList":"none"
+    },
+    'Rastafarian Magic':{
+      "name":"Rastafarian Magic",
+      "description":"",
+      "conjures":"",
+      "totemList":"none"
+    },
+    'Shinto Magic':{
+      "name":"Shinto Magic",
+      "description":"",
+      "conjures":"",
+      "totemList":"none"
+    },
+    'Witchcraft':{
+      "name":"Witchcraft",
+      "description":"",
+      "conjures":"",
+      "totemList":"none"
+    },
+    'Voodoo':{
+      "name":"Voodoo",
+      "description":"",
+      "conjures":"none",
+      "totemList":"LOA"
+    },
+    'Elemental Mage':{
+      "name":"Elemental Mage",
+      "description":"Mages specializing in a specific Element",
+      "conjures":"Elementals",
+      "totemList":"ELEMENTS"
+    },
+    'Wujen':{
+      "name":"Wujen",
+      "description":"",
+      "conjures":"",
+      "totemList":"none"
+    }
   }
   
   const MetaMagic = { "SR2": [
@@ -211,8 +347,9 @@ function MagicPanel(props) {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [spellRating, setSpellRating] = useState(1);
   const [spellPointsSpent, setSpellPointsSpent] = useState(CalcTotalSpellRatings(props.spells));
-  const [spellPointsMax, setSpellPointsMax] = useState(props.maxSpellPoints);
-  const [magicalTradition, setMagicalTradition] = useState('Full Magician')
+  const spellPointsMax = props.maxSpellPoints;
+  const [magicalTradition, setMagicalTradition] = useState(props.chosenTradition.name)
+  const [magicalTotem, setMagicalTotem] = useState(props.magicalTotem.name)
   const [AdeptPointsSpent, setAdeptPointsSpent] = useState(CalcTotalPowerRatings(props.powers));
   const [AdeptPointsMax, setAdeptPointsMax] = useState(6);
   const [newPower, setNewPower] = useState('');
@@ -224,8 +361,19 @@ function MagicPanel(props) {
   const [selectedPowers, setSelectedPowers] = useState(props.powers);
   const [spellFetish, setSpellFetish] = useState(false);
   const [spellExclusive, setSpellExclusive] = useState(false);
-  //const [newTraditionIndex, setNewTraditionIndex] = useState('');
+
   const label = { inputProps: { 'aria-label': 'Edition Switch' } };
+
+  const findTotemID = (totem) =>{
+    if(totem.hasOwnProperty('id')){
+      return totem.id;
+    }
+    return 0;
+  }
+  const [NewTotemIndex, setNewTotemIndex] = useState(findTotemID(props.magicalTotem));
+
+  var TraditionList = {};
+
 
   const convertModsToAttributes = (mods) => {
     const ModToAttributes ={ 
@@ -347,12 +495,79 @@ function MagicPanel(props) {
     }
   }
 
+  const handleTotemChange = (event) => {
+    setNewTotemIndex(event.target.value);
+    let totem = Totems[props.chosenTradition.totemList][event.target.value];
+    setMagicalTotem(totem);
+    totem.id = event.target.value;
+    props.onChangeMagicalTotem(totem);
+  }
+
   const renderTotems = (type) => {
+    if(type !== 'none'){
+      return (
+        <Select
+                id="totem-dropdown"
+                value={NewTotemIndex}
+                onChange={handleTotemChange}
+              >
+          <MenuItem key={-1} >Choose A Totem</MenuItem>
+        {
+        Totems[type].sort(function(a, b) { return a[1] - b[1]; }).map( (totem, index) => (
+          <MenuItem key={index} data-type={type} value={index}>{totem.name}</MenuItem>
+        ))}
+        </Select>
+      )
+    }
+  }
+
+  const renderTraditionBonuses = (tradition) => {
+    let list = {};
+    switch(props.magicalChoice){
+      case 'Full Magician':
+      case 'Human Full Magician':
+      case 'Metahuman Full Magician':
+        list = FullMageTraditions;
+      break;
+
+      case 'Physical Adept':
+      case 'Human Physical Adept':
+      case 'Metahuman Physical Adept': 
+        list = AdeptPaths;
+      break;
+      case 'Metahuman Shamanist':
+      case 'Human Shamanist':
+      case 'Metahuman Sorcerer':
+      case 'Human Sorcerer':
+      case 'Aspected':
+        list = AspectedMageTraditions;
+      break;
+
+      default:
+        break;
+    }
     return (
-      Totems.map( (totemCategory, index) => (
-        <MenuItem key={index} value={index}>{power.Name} - PP: {power.Cost}</MenuItem>
-      ))
+      <>
+        <h4>Tradition</h4>
+        <div><strong>Name:</strong> {list[tradition].name}</div>
+        <div><strong>Description:</strong> {list[tradition].description}</div>
+        <div><strong>Conjures:</strong> {list[tradition].conjures}</div>
+      </>
     )
+  }
+
+  const renderTotemBonuses = (totem) =>{
+    if(props.chosenTradition.totemList !== 'none'){
+      return (
+        <>
+          <h4>Path of {totem.name}</h4>
+          <div><strong>Name:</strong> {totem.name}</div>
+          <div><strong>Environment:</strong> {totem.environment}</div>
+          <div><strong>Advantages:</strong> {totem.advantages}</div>
+          <div><strong>Disadvantages:</strong> {totem.disadvantages}</div>
+        </>
+      )
+    }
   }
 
   const RenderPhysicalAdepts = () =>{
@@ -424,13 +639,6 @@ function MagicPanel(props) {
       setSpellRating(rating);
     }
   };
-
-  const handleCostChange = (event) => {
-    const cost = parseFloat(event.target.value);
-    if (!isNaN(cost)){
-      setPowerCost(cost);
-    }
-  };
   
   const handleSpellChange = (event) => {
     const TempSpell = spellsData[event.target.value];
@@ -451,14 +659,14 @@ function MagicPanel(props) {
     }
   };
 
-  const handleEditSpell = (index) => {
-    const editedSpells = [...selectedSpells];
-    const spellToEdit = editedSpells[index];
-    setNewSpell(spellToEdit.name);
-    setSpellRating(spellToEdit.rating);
-    editedSpells.splice(index, 1);
-    setSelectedSpells(editedSpells);
-  };
+  // const handleEditSpell = (index) => {
+  //   const editedSpells = [...selectedSpells];
+  //   const spellToEdit = editedSpells[index];
+  //   setNewSpell(spellToEdit.name);
+  //   setSpellRating(spellToEdit.rating);
+  //   editedSpells.splice(index, 1);
+  //   setSelectedSpells(editedSpells);
+  // };
 
   const handleRemoveSpell = (index) => {
     const editedSpells = [...selectedSpells];
@@ -601,12 +809,11 @@ function MagicPanel(props) {
   }
 
   const handleTraditionChange = (event) => {
-    setMagicalTradition(event.target.value);
-    props.onChangeMagicalTradition(event.target);
+    setMagicalTradition(TraditionList[event.target.value].name);
+    props.onChangeMagicalTradition(TraditionList[event.target.value]);
   }
 
   const renderTraditionList = () => {
-    console.log(props);
     var list = [];
     switch(props.magicalChoice){
       case 'Full Magician':
@@ -620,7 +827,6 @@ function MagicPanel(props) {
       case 'Metahuman Physical Adept': 
         list = AdeptPaths;
       break;
-
       case 'Metahuman Shamanist':
       case 'Human Shamanist':
       case 'Metahuman Sorcerer':
@@ -628,8 +834,11 @@ function MagicPanel(props) {
       case 'Aspected':
         list = AspectedMageTraditions;
       break;
+
+      default:
+        break;
     }
-    
+    TraditionList = list;
     return (
       <>
        <FormControl style={{'width':'200px'}}>
@@ -638,11 +847,14 @@ function MagicPanel(props) {
               value={magicalTradition}
               onChange={handleTraditionChange}
             >
-              {list.map( (path, index) => (
-                <MenuItem key={index} value={index}>{path}</MenuItem>
+              {Object.keys(list).map( (path, index) => (
+                <MenuItem key={index} value={path}>{path}</MenuItem>
               ))}
             </Select>
           </FormControl>
+          {props.chosenTradition.totemList && renderTotems(props.chosenTradition.totemList)}
+          {magicalTradition && renderTraditionBonuses(magicalTradition)}
+          {props.magicalTotem && renderTotemBonuses(props.magicalTotem)}
       </>
     )
   }
@@ -664,7 +876,6 @@ function MagicPanel(props) {
       case 'Metahuman Sorcerer':
       case 'Metahuman Shamanist':
         return RenderMagicianWithSpells();
-      break;
 
       default:
         return (<div>Not Magical</div>);
