@@ -25,6 +25,7 @@ import { CheckBox } from '@material-ui/icons';
 function MagicPanel(props) {
   const spellsData = require('../data/'+props.Edition+'/Spells.json');
   const AdeptPowers = require('../data/'+props.Edition+'/AdeptPowers.json');
+  const Totems = require('../data/'+props.Edition+'Totems.json');
   const CalcTotalSpellRatings = (spellList) =>{
     let totalRatings = 0;
     spellList.forEach(function(spell){
@@ -49,7 +50,33 @@ function MagicPanel(props) {
   const FullMageTraditions = ['Mage','Shaman','Psionicist','Wujen','Aboriginal Magic','Aztec Magic','Black Magic','Chaos Magic','Christian Magic','Druid Magic','Egyptian Magic','Gypsy Magic',"Hawai'ian Magic",'Hindu Magic','Islamic Magic','Norse Magic','Qabbalistic Magic','Rastafarian Magic','Shinto Magic','Witchcraft','Elemental Mage (Fire)','Elemental Mage (Water)','Elemental Mage (Air)','Elemental Mage (Earth)'];
   const AspectedMageTraditions = ['Shamanist','Conjurer','Elementalist','Shamanist','Sorcerer','WuFa'];
   const AdeptPaths = ["Athelete's Way","Artist's Way","Warriors's Way","Invisible Way","Spirit Way","Totem Way", "Magician's Way"]
-  const Totems = [{name:'Ant Eater',environment:'ENV'},{name:'Badger'}]
+  const FullMageTraditionsDescriptions = {
+    'Mage':"",
+    'Shaman':"",
+    'Psionicist':"",
+    'Wujen':"",
+    'Aboriginal Magic':"",
+    'Aztec Magic':"",
+    'Black Magic':"",
+    'Chaos Magic':"",
+    'Christian Magic':"",
+    'Druid Magic':"",
+    'Egyptian Magic':"",
+    'Gypsy Magic':"",
+    "Hawai'ian Magic":"",
+    'Hindu Magic':"",
+    'Islamic Magic':"",
+    'Norse Magic':"",
+    'Qabbalistic Magic':"",
+    'Rastafarian Magic':"",
+    'Shinto Magic':"",
+    'Witchcraft':"",
+    'Elemental Mage (Fire)':"",
+    'Elemental Mage (Water)':"",
+    'Elemental Mage (Air)':"",
+    'Elemental Mage (Earth)':""
+  }
+  
   const MetaMagic = { "SR2": [
       {"Name":"Centering"},
       {"Name":"Dispelling"},
@@ -318,6 +345,14 @@ function MagicPanel(props) {
     }else{
       return (<ListItemText primary={`${power.Name}`} secondary={'Cost: '+power.Cost}/>)
     }
+  }
+
+  const renderTotems = (type) => {
+    return (
+      Totems.map( (totemCategory, index) => (
+        <MenuItem key={index} value={index}>{power.Name} - PP: {power.Cost}</MenuItem>
+      ))
+    )
   }
 
   const RenderPhysicalAdepts = () =>{
