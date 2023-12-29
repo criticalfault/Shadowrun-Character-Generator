@@ -12,6 +12,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import './SheetDisplay.css';
+import DiceRoller from './DiceRoller';
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
@@ -20,7 +21,13 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.primary,
 }));
 function SheetDisplay(props) {
+   
 
+    const renderDiceRoller = () => {
+        return (
+           <div><DiceRoller></DiceRoller></div>
+        )
+    }  
 
     const isFetishSpell = (spell) => {
         if(spell){
@@ -168,6 +175,8 @@ function SheetDisplay(props) {
 
   return (
     <Grid container spacing={2} className='sheetBody'>
+        <Grid item xs={12}>{renderDiceRoller()}</Grid>
+        
         <Grid item xs={12} md={6}>
             <Item>Name: {props.currentCharacter.street_name}</Item>
         </Grid>
