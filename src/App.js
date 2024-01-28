@@ -15,7 +15,10 @@ function App() {
       // Set 'tracePropagationTargets' to control for which URLs distributed tracing should be enabled
       tracePropagationTargets: ["localhost",/^https:\/\/character-generator\.nullsheen\.com/],
     }),
-    new Sentry.Replay(),
+    new Sentry.Replay({
+      maskAllText: false,
+      blockAllMedia: false,
+    }),
   ],
   // Performance Monitoring
   tracesSampleRate: 1.0, //  Capture 100% of the transactions
