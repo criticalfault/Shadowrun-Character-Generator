@@ -32,7 +32,7 @@ export default function LoadCharacter(props) {
       
         // Clean up by revoking the object URL
         URL.revokeObjectURL(url);
-       fathom.trackEvent('Save Character');
+       fathom.trackEvent('Save Character'); // eslint-disable-line
     }
 
     const LoadCharacter = (event) => {
@@ -44,7 +44,7 @@ export default function LoadCharacter(props) {
           setOpen(false);
         }    
         reader.readAsText(file); 
-        fathom.trackEvent('Load Character');
+        fathom.trackEvent('Load Character'); // eslint-disable-line
     }
 
     return (
