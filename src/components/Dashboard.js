@@ -163,26 +163,32 @@ export default function BasicTabs() {
 
         Character.contacts.forEach(function(contact){
             if(Edition === 'SR3'){
-                if(contact.Type !== 'free'){
-                    switch(contact.Level) {
-                        case 1:
+                switch(contact.Level) {
+                    case 1:
+                        if(contact.Type !== 'free'){
                             tempCashSpent += 5000;
-                            break;
-                        case 2:
-                            tempCashSpent += 10000;
-                            break;
-                        case 3:
-                            tempCashSpent += 200000;
-                            break;
-                        default:
-                            break;
-                    }
+                        }else{
+                            tempCashSpent += 0;
+                        }
+                        break;
+                    case 2:
+                        tempCashSpent += 10000;
+                        break;
+                    case 3:
+                        tempCashSpent += 200000;
+                        break;
+                    default:
+                        break;
                 }
-            }else  if(Edition === 'SR2'){
+            }else if(Edition === 'SR2'){
                 if(contact.Type !== 'free'){
                     switch(contact.Level) {
                         case 1:
-                            tempCashSpent += 5000;
+                            if(contact.Type !== 'free'){
+                                tempCashSpent += 5000;
+                            }else{
+                                tempCashSpent += 0;
+                            }
                             break;
                         case 2:
                             tempCashSpent += 10000;
