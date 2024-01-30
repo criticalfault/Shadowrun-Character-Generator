@@ -142,7 +142,7 @@ export default function PriorityPanel(props) {
                         <td>{props.currentCharacter.raceBonuses['Reaction']}</td>
                         <td>{parseInt(props.currentCharacter.cyberAttributeBonuses['Reaction'])}</td>
                         <td>{parseInt(props.currentCharacter.magicalAttributeBonuses['Reaction'])}</td>
-                        <td>{Math.floor((parseInt(Quickness)+parseInt(Intelligence))/2)+parseInt(props.currentCharacter.cyberAttributeBonuses['Reaction'])+parseInt(props.currentCharacter.magicalAttributeBonuses['Reaction'])}</td>
+                        <td>{Math.floor(parseInt(Quickness)+parseInt(props.currentCharacter.raceBonuses['Quickness'])+parseInt(props.currentCharacter.cyberAttributeBonuses['Quickness'])+parseInt(props.currentCharacter.magicalAttributeBonuses['Quickness'])+parseInt(Intelligence)+parseInt(props.currentCharacter.raceBonuses['Intelligence'])+parseInt(props.currentCharacter.cyberAttributeBonuses['Intelligence'])+parseInt(props.currentCharacter.magicalAttributeBonuses['Intelligence'])/2)+parseInt(props.currentCharacter.cyberAttributeBonuses['Reaction'])+parseInt(props.currentCharacter.magicalAttributeBonuses['Reaction'])}</td>
                     </tr>
                     <tr>
                         <td>Initative:</td>
