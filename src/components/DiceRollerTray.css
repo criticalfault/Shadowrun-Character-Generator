@@ -2,7 +2,7 @@
     position: fixed;
     z-index: 57000;
     bottom: 1rem;
-    right: 1rem;
+    left: 1rem;
     top: auto;
     background-color: lightgrey;
     /* height: 46px; */
@@ -22,7 +22,7 @@
     position: fixed;
     z-index: 57000;
     bottom: 4rem;
-    right: 1rem;
+    left: 1rem;
     top: auto;
     background-color: lightgrey;
     width:50%;
