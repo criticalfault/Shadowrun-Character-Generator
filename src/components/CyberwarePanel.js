@@ -160,23 +160,30 @@ export default function CyberwarePanel(props) {
 }
 
 const handleCyberOrBioChange = (event) => {
-  let cyberAttributeBonuses = {'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0,'Reaction':0,'Initative':0};
-  let cyberModsTotals = [];
-  selectedCyberware.forEach(function(cyber){
-    if(cyber.Mods !== ''){
-      cyberModsTotals.push(cyber.Mods)
-    }
-  });
-  cyberModsTotals.forEach(function(mod){
-    let AttributesToMod = convertModsToAttributes(mod.split(','));
-    for(let i=0; i<AttributesToMod.length; i++){
-        if(!cyberAttributeBonuses.hasOwnProperty(Object.keys(AttributesToMod[i])[0])){
-            cyberAttributeBonuses[Object.keys(AttributesToMod[i])[0]] = 0;
-        }
-        cyberAttributeBonuses[Object.keys(AttributesToMod[i])[0]] += parseInt(Object.values(AttributesToMod[i])[0]);
+  try{
+    let cyberAttributeBonuses = {'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0,'Reaction':0,'Initative':0};
+    let cyberModsTotals = [];
+    selectedCyberware.forEach(function(cyber){
+      if(cyber.Mods !== ''){
+        cyberModsTotals.push(cyber.Mods)
       }
-  });
-  props.onChangeCyberAttributes(cyberAttributeBonuses);
+    });
+    cyberModsTotals.forEach(function(mod){
+      console.log(mod);
+      let AttributesToMod = convertModsToAttributes(mod.split(','));
+      for(let i=0; i<AttributesToMod.length; i++){
+          if(!cyberAttributeBonuses.hasOwnProperty(Object.keys(AttributesToMod[i])[0])){
+              cyberAttributeBonuses[Object.keys(AttributesToMod[i])[0]] = 0;
+          }
+          cyberAttributeBonuses[Object.keys(AttributesToMod[i])[0]] += parseInt(Object.values(AttributesToMod[i])[0]);
+        }
+    });
+    props.onChangeCyberAttributes(cyberAttributeBonuses);
+  }catch(err){
+    console.log(err);
+    alert("We have hit a fatal error. Please try again later. This has been reported to the developer.");
+  }
+
 }
 
   const handleBiowareChange = (event) => {
