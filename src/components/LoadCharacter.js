@@ -32,7 +32,12 @@ export default function LoadCharacter(props) {
       
         // Clean up by revoking the object URL
         URL.revokeObjectURL(url);
-       fathom.trackEvent('Save Character'); // eslint-disable-line
+        try{
+          fathom.trackEvent('Save Character'); // eslint-disable-line
+        }catch(err){
+            console.log(err);
+            console.log("Fathom wasn't found. Prolly a blocker");
+        }
     }
 
     const LoadCharacter = (event) => {
@@ -44,7 +49,13 @@ export default function LoadCharacter(props) {
           setOpen(false);
         }    
         reader.readAsText(file); 
-        fathom.trackEvent('Load Character'); // eslint-disable-line
+        try{
+          fathom.trackEvent('Load Character'); // eslint-disable-line
+        }catch(err){
+            console.log(err);
+            console.log("Fathom wasn't found. Prolly a blocker");
+        }
+       
     }
 
     return (

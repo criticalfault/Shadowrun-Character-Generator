@@ -17,6 +17,8 @@ import DeckingPanel from './DeckingPanel';
 import VehiclesPanel from './VehiclesPanel';
 import ContactsPanel from './ContactsPanel';
 import SheetDisplay from './SheetDisplay';
+import './SheetDisplay.css';
+import DiceRollerTray from './DiceRollerTray';
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -394,6 +396,7 @@ export default function BasicTabs() {
             NuyenSpent={NuyenSpent}
         />
         <LoadCharacter Character={Character} loadCharacter={handleLoadCharacter}/>
+        <DiceRollerTray showDice={value} />
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider', }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="scrollable" scrollButtons={true} allowScrollButtonsMobile>

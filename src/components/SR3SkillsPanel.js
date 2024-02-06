@@ -205,45 +205,51 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
   };
 
   const handleEditSkill = (index, type) => {
-    let editedSkills = null;
-    let skillToEdit = null;
-    switch(type) {
-      case "Active":
-        editedSkills = [...selectedSkills];
-        skillToEdit = editedSkills[index];
-        setSelectedSpecialization(skillToEdit.specialization);
-        setNewSkill(skillToEdit.name);
-        setSkillRating(skillToEdit.rating);
-        editedSkills.splice(index, 1);
-        setSelectedSkills(editedSkills);
-        break;
-
-      case "Knowledge":
-        editedSkills = [...selectedKnowledgeSkills];
-        skillToEdit = editedSkills[index];
-        console.log(editedSkills);
-        console.log(skillToEdit);
-        setKnowledgeSelectedSpecialization(skillToEdit.specialization??'None');
-        setKnowledgeNewSkill(skillToEdit.name);
-        setKnowledgeSkillRating(skillToEdit.rating);
-        editedSkills.splice(index, 1);
-        setKnowledgeSelectedSkills(editedSkills);
-        break;
-
-      case "Language":
-        editedSkills = [...selectedKnowledgeSkills];
-        skillToEdit = editedSkills[index];
-        setLanguageSelectedSpecialization(skillToEdit.specialization??'None');
-        setLanguageNewSkill(skillToEdit.name);
-        setLanguageSkillRating(skillToEdit.rating);
-        editedSkills.splice(index, 1);
-        setLanguageSelectedSkills(editedSkills);
-        break;
-
-        default:
+    try{
+      let editedSkills = null;
+      let skillToEdit = null;
+      switch(type) {
+        case "Active":
+          editedSkills = [...selectedSkills];
+          skillToEdit = editedSkills[index];
+          setSelectedSpecialization(skillToEdit.specialization);
+          setNewSkill(skillToEdit.name);
+          setSkillRating(skillToEdit.rating);
+          editedSkills.splice(index, 1);
+          setSelectedSkills(editedSkills);
           break;
+
+        case "Knowledge":
+          editedSkills = [...selectedKnowledgeSkills];
+          skillToEdit = editedSkills[index];
+          console.log(editedSkills);
+          console.log(skillToEdit);
+          if(skillToEdit !== undefined) {
+            setKnowledgeSelectedSpecialization(skillToEdit.specialization??'None');
+            setKnowledgeNewSkill(skillToEdit.name);
+            setKnowledgeSkillRating(skillToEdit.rating);
+            editedSkills.splice(index, 1);
+            setKnowledgeSelectedSkills(editedSkills);
+          }
+          break;
+
+        case "Language":
+          editedSkills = [...selectedKnowledgeSkills];
+          skillToEdit = editedSkills[index];
+          setLanguageSelectedSpecialization(skillToEdit.specialization??'None');
+          setLanguageNewSkill(skillToEdit.name);
+          setLanguageSkillRating(skillToEdit.rating);
+          editedSkills.splice(index, 1);
+          setLanguageSelectedSkills(editedSkills);
+          break;
+
+          default:
+            break;
+      }
+    }catch(err) {
+      console.log(err);
+      alert('There was an error editing the skill. This has been reported to the developer.');
     }
-    
   };
 
   const handleRemoveSkill = (index, type) => {

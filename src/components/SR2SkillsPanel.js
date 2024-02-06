@@ -164,7 +164,7 @@ function SR2SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints}) {
 
   const showConcentrations = () => {
     
-    if(selectedSkills.length > 0 && selectedSkills[selectedSkillIndex].hasOwnProperty('Concentrations')){
+    if(selectedSkills.length > 0 && selectedSkills[selectedSkillIndex] !== undefined && selectedSkills[selectedSkillIndex].hasOwnProperty('Concentrations')){
       return (<>
           <Select id="concentration-dropdown" 
             onChange={handleSelectedConcentrationChange}
