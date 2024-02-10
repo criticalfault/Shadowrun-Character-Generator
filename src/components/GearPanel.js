@@ -14,6 +14,19 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '50%',
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
 export default function GearPanel(props) {
   const GearData = require('../data/'+props.Edition+'/Gear.json');
@@ -69,6 +82,7 @@ export default function GearPanel(props) {
       if (NewGear) {
         const gearToAdd = {...NewGear};
         gearToAdd.Type = SelectedGearCategory;
+        gearToAdd.Extras = [];
         setSelectedGear(prevGear => [...prevGear, gearToAdd]);
         setNewGear('');
         setNewGearIndex('');
@@ -83,13 +97,84 @@ export default function GearPanel(props) {
       props.onChangeGear([...editedGear]);
     };
 
+    const [openAddons, setOpenAddons] = React.useState(false);
+    const [addonsIndex, setAddonsIndex] = useState(false);
+    const [addonsSubIndex, setSubAddonsIndex] = useState(0);
+    const handleOpenAddons = (index) => {
+      setOpenAddons(true);
+      setAddonsIndex(index);
+    }
+    const handleCloseAddons = () => {
+      setOpenAddons(false);
+      setAddonsIndex(false);
+    }
+
+    const handleSubIndexChange = (event) => {
+      setSubAddonsIndex(event.target.value);
+    }
+
+    const handleAddon = () => {
+      const editedGear = [...SelectedGear];
+      let gearToEdit = editedGear.splice(addonsIndex, 1);  
+      gearToEdit[0].Extras.push(GearData['Firearms Accessories'].entries.filter(item => item.hasOwnProperty('BookPage') && props.BooksFilter.includes(item.BookPage.split('.')[0]))[addonsSubIndex]);
+      console.log(gearToEdit);
+      // setSelectedGear(editedGear);
+      // props.onChangeGear([...editedGear]);
+    }
+
+    const renderAddOnGear = () => {
+      if(addonsIndex !== false){
+        const editedGear = [...SelectedGear];
+        let gearToEdit = editedGear.splice(addonsIndex, 1);  
+        return (
+         <div>
+            <h4>{gearToEdit[0].name}</h4>
+            <NativeSelect
+              value={addonsSubIndex}
+              onChange={handleSubIndexChange}
+            >
+              {
+                GearData['Firearms Accessories'].entries.filter(item => item.hasOwnProperty('BookPage') && props.BooksFilter.includes(item.BookPage.split('.')[0])).map((gear, index) =>{
+                  return (
+                    <option key={index} value={index}>{gear.name} - {gear.Cost}</option>
+                  )
+                })
+              }
+            </NativeSelect>
+            <Button color="secondary" onClick={handleAddon}>Add Accessory</Button>
+            <ul>
+              {gearToEdit[0].Extras.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+         </div>
+         
+        )
+      }else{
+        console.log(addonsIndex + " <- Addons Index: ");
+        return;
+      }
+     
+      // setSelectedGear(editedGear);
+      // props.onChangeGear([...editedGear]);
+      
+    }
+
     return ( <>
     <h3>Notice: SR2 Gear is currently missing data needing for filtering by book. So filtering is ignored.</h3>
     <Box sx={{ width: '250px' }}>
         Nuyen Spent: {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(CalcTotalNuyenSpent())} 
     </Box>
     <br></br>
-
+    <Modal
+        open={openAddons}
+        onClose={handleCloseAddons}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description">
+        <Box sx={style}>
+           {renderAddOnGear()}
+        </Box>
+    </Modal>  
     <Box sx={{ width: '250px' }}>
         <FormControl style={{'width':'200px'}}>
             <InputLabel  id="gear-label">Gear Categories</InputLabel>
@@ -150,7 +235,7 @@ export default function GearPanel(props) {
           </TableHead>
           <TableBody>
             {props.Gear.filter(item => item.hasOwnProperty('Ballistic')).map((gear, index) => (
-              <TableRow key={gear.Name+index}>
+              <TableRow key={gear.name+index}>
                 <TableCell component="th" scope="row">{gear.name}</TableCell>
                 <TableCell align="right">{gear.Ballistic}</TableCell>
                 <TableCell align="right">{gear.Impact}</TableCell>
@@ -182,7 +267,7 @@ export default function GearPanel(props) {
           </TableHead>
           <TableBody>
             {props.Gear.filter(item => item.hasOwnProperty('Damage')).map((gear, index) => (
-              <TableRow key={gear.Name+index}>
+              <TableRow key={gear.name+index}>
                 <TableCell component="th" scope="row">{gear.name}</TableCell>
                 <TableCell align="right">{gear.Damage}</TableCell>
                 <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}</TableCell>
@@ -190,6 +275,7 @@ export default function GearPanel(props) {
                 <TableCell align="right">{gear.Availability}</TableCell>
                 <TableCell align="right">{gear.Notes}</TableCell>
                 <TableCell align="right">
+                    <Button color="secondary" onClick={() => handleOpenAddons(index)}>Add Ons</Button>
                     <Button color="secondary" onClick={() => handleRemoveGear(index)}>Remove</Button>
                 </TableCell>
               </TableRow>
@@ -213,7 +299,7 @@ export default function GearPanel(props) {
           </TableHead>
           <TableBody>
             {props.Gear.filter(item => !item.hasOwnProperty('Damage') && !item.hasOwnProperty('Ballistic')).map((gear, index) => (
-              <TableRow key={gear.Name+index}>
+              <TableRow key={gear.name+index}>
                 <TableCell component="th" scope="row">{gear.name}</TableCell>
                 <TableCell align="right">{gear.Rating??'N/A'}</TableCell>
                 <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}</TableCell>
