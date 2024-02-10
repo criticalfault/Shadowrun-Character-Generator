@@ -28751,7 +28751,7 @@
         "BookPage": "sr3.282"
       },
       {
-        "name": "Imaging Scope",
+        "name": "Imaging Scope: Low-Light",
         "Mount": "Top",
         "Concealability": "(-2)",
         "Rating": "-",
@@ -28762,7 +28762,7 @@
         "BookPage": "sr3.282"
       },
       {
-        "name": "Imaging Scope",
+        "name": "Imaging Scope: Mag:1",
         "Mount": "Top",
         "Concealability": "(-1)",
         "Rating": "1",
@@ -28773,7 +28773,7 @@
         "BookPage": "sr3.282"
       },
       {
-        "name": "Imaging Scope",
+        "name": "Imaging Scope: Mag:2",
         "Mount": "Top",
         "Concealability": "(-1)",
         "Rating": "2",
@@ -28784,7 +28784,7 @@
         "BookPage": "sr3.282"
       },
       {
-        "name": "Imaging Scope",
+        "name": "Imaging Scope: Mag:3",
         "Mount": "Top",
         "Concealability": "(-1)",
         "Rating": "3",
@@ -28795,7 +28795,7 @@
         "BookPage": "sr3.282"
       },
       {
-        "name": "Imaging Scope",
+        "name": "Imaging Scope: Thermographic",
         "Mount": "Top",
         "Concealability": "(-2)",
         "Rating": "-",
@@ -29042,7 +29042,7 @@
         "BookPage": "cc.35"
       },
       {
-        "name": "Imaging Scope",
+        "name": "Imaging Scope: Low-Light",
         "Mount": "Top",
         "Concealability": "(-2)",
         "Rating": "-",
@@ -29053,7 +29053,7 @@
         "BookPage": "sr3.282"
       },
       {
-        "name": "Imaging Scope",
+        "name": "Imaging Scope: Mag:1",
         "Mount": "Top",
         "Concealability": "(-1)",
         "Rating": "1",
@@ -29064,7 +29064,7 @@
         "BookPage": "sr3.282"
       },
       {
-        "name": "Imaging Scope",
+        "name": "Imaging Scope: Mag:2",
         "Mount": "Top",
         "Concealability": "(-1)",
         "Rating": "2",
@@ -29075,7 +29075,7 @@
         "BookPage": "sr3.282"
       },
       {
-        "name": "Imaging Scope",
+        "name": "Imaging Scope: Mag:3",
         "Mount": "Top",
         "Concealability": "(-1)",
         "Rating": "3",
@@ -29086,7 +29086,7 @@
         "BookPage": "sr3.282"
       },
       {
-        "name": "Imaging Scope",
+        "name": "Imaging Scope: Thermographic",
         "Mount": "Top",
         "Concealability": "(-2)",
         "Rating": "-",

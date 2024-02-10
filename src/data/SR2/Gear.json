@@ -13037,7 +13037,7 @@
           "Street Index": "2.5"
         },
         {
-          "name": "Imaging Scope",
+          "name": "Imaging Scope: Low-Light",
           "Mount": "Top",
           "Concealability": "(-2)",
           "Rating": "-",
@@ -13047,7 +13047,7 @@
           "Street Index": ".8"
         },
         {
-          "name": "Imaging Scope",
+          "name": "Imaging Scope: Mag 1",
           "Mount": "Top",
           "Concealability": "(-1)",
           "Rating": "1",
@@ -13057,7 +13057,7 @@
           "Street Index": ".8"
         },
         {
-          "name": "Imaging Scope",
+          "name": "Imaging Scope: Mag 2",
           "Mount": "Top",
           "Concealability": "(-1)",
           "Rating": "2",
@@ -13067,7 +13067,7 @@
           "Street Index": ".9"
         },
         {
-          "name": "Imaging Scope",
+          "name": "Imaging Scope: Mag 3",
           "Mount": "Top",
           "Concealability": "(-1)",
           "Rating": "3",
@@ -13077,7 +13077,7 @@
           "Street Index": "1"
         },
         {
-          "name": "Imaging Scope",
+          "name": "Imaging Scope: Thermographic",
           "Mount": "Top",
           "Concealability": "(-2)",
           "Rating": "-",
