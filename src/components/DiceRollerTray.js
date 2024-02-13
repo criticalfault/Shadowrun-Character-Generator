@@ -78,7 +78,7 @@ export default function DiceRollerTray(props) {
         return (
             <div>
                  {showRollerDisplay()}
-                 <div class="dice-rolling-panel">
+                 <div className="dice-rolling-panel">
                     <Button onClick={ handleOpenDiceRoller }><CasinoOutlinedIcon className='MuiIcon-colorPrimary'/></Button>
                 </div>
             </div>
