@@ -11,7 +11,7 @@ export default function PriorityPanel(props) {
         'SR3':{
             "raceBonuses":{
                 "Human":{ 'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0,"Notes":""},
-                "Dwarf":{'Body':1,'Quickness':0,'Strength':2,'Charisma':0,'Willpower':0,'Intelligence':0,"Notes":"Thermographic Vision, Resistance (+2 Body) to any disease or toxin"},
+                "Dwarf":{'Body':1,'Quickness':0,'Strength':2,'Charisma':0,'Willpower':1,'Intelligence':0,"Notes":"Thermographic Vision, Resistance (+2 Body) to any disease or toxin"},
                 "Elf":{'Body':0,'Quickness':1,'Strength':0,'Charisma':2,'Willpower':0,'Intelligence':0,"Notes":"Low-light Vision"},
                 "Ork":{'Body':3,'Quickness':0,'Strength':2,'Charisma':-1,'Willpower':0,'Intelligence':-1,"Notes":"Low-light Vision"},
                 "Troll":{'Body':5,'Quickness':-1,'Strength':4,'Charisma':-2,'Willpower':0,'Intelligence':-2,"Notes":"Thermographic Vision, +1 Reach for Armed/Unarmed Combat, Dermal Armor (+1 Body)"}
