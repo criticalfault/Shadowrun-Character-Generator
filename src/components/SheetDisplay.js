@@ -11,6 +11,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import './SheetDisplay.css';
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
@@ -43,17 +44,20 @@ function SheetDisplay(props) {
             return (<>
                         <br/><br/>
                         <TextField
-                            style={{ width: '100px', marginRight: '10px' }}
+                            className='pool_display'
                             id="rating-input"
                             label="Control"
                             type="text"
-                            value={(Math.floor(parseInt(props.currentCharacter.attributes.Quickness) +
-                                parseInt(props.currentCharacter.raceBonuses.Quickness??0) +
-                                parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+
-                                parseInt(props.currentCharacter.attributes.Intelligence) +
-                                parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
-                                parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0))/2)+
-                                parseInt(props.currentCharacter.cyberAttributeBonuses.Vehicle_Control_Reaction??0)
+                            value={
+                                (Math.floor(
+                                        parseInt(props.currentCharacter.attributes.Quickness) +
+                                        parseInt(props.currentCharacter.raceBonuses.Quickness??0) +
+                                        parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+
+                                        parseInt(props.currentCharacter.attributes.Intelligence) +
+                                        parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
+                                        parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)
+                                    )/2)+
+                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Vehicle_Control_Reaction??0)
                             }
 
                         />
@@ -63,23 +67,28 @@ function SheetDisplay(props) {
     }
 
     const renderAstralCombatPool = () => {
-        if(props.currentCharacter.attributes.Magic > 0){
+        if(props.currentCharacter.magical === true){
             return(<>
                     <br/><br/>
                     <TextField
-                        style={{ width: '100px', marginRight: '10px' }}
+                         className='pool_display'
                         id="rating-input"
                         label="Astral Combat"
                         type="text"
-                        value={(Math.floor(parseInt(props.currentCharacter.attributes.Charisma) +
-                            parseInt(props.currentCharacter.raceBonuses.Charisma??0) +
-                            parseInt(props.currentCharacter.cyberAttributeBonuses.Charisma??0)+
-                            parseInt(props.currentCharacter.attributes.Intelligence) +
-                            parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
-                            parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+
-                            parseInt(props.currentCharacter.attributes.Willpower) +
-                            parseInt(props.currentCharacter.raceBonuses.Willpower??0) +
-                            parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower??0))/2)}
+                        value={
+                            Math.floor(
+                                (
+                                    parseInt(props.currentCharacter.attributes.Charisma) +
+                                    parseInt(props.currentCharacter.raceBonuses.Charisma??0) +
+                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Charisma??0)+
+                                    parseInt(props.currentCharacter.attributes.Intelligence) +
+                                    parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
+                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+
+                                    parseInt(props.currentCharacter.attributes.Willpower) +
+                                    parseInt(props.currentCharacter.raceBonuses.Willpower??0) +
+                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower??0)
+                                )
+                            /2)}
                     />
                 </>
             )
@@ -91,7 +100,7 @@ function SheetDisplay(props) {
             return(<>
                     <br/><br/>
                     <TextField
-                        style={{ width: '100px', marginRight: '10px' }}
+                        className='pool_display'
                         id="rating-input"
                         label="Hacking"
                         type="text"
@@ -102,17 +111,26 @@ function SheetDisplay(props) {
     }
 
     const renderSpellPool = () => {
-        if(props.currentCharacter.attributes.Magic > 0){
+        if(props.currentCharacter.magical === true){
             return(<>
                     <br/><br/>
                     <TextField
-                        style={{ width: '100px', marginRight: '10px' }}
+                        className='pool_display'
                         id="rating-input"
                         label="Spell"
                         type="text"
-                        value={(parseInt(props.currentCharacter.attributes.Magic)+parseInt(props.currentCharacter.attributes.Intelligence) +
-                            parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
-                            parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)/3)}
+                        value={(Math.floor(
+                                (
+                                parseInt(props.currentCharacter.attributes.Magic)+
+                                parseInt(props.currentCharacter.attributes.Intelligence) +
+                                parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
+                                parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+
+                                parseInt(props.currentCharacter.attributes.Willpower) +
+                                parseInt(props.currentCharacter.raceBonuses.Willpower??0) +
+                                parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower??0)
+                                )
+                                
+                                /3))}
                     />
                 </>
             )
@@ -124,7 +142,7 @@ function SheetDisplay(props) {
             return(<>
                     <br/><br/>
                     <TextField
-                        style={{ width: '100px', marginRight: '10px' }}
+                        className='pool_display'
                         id="rating-input"
                         label="Task"
                         type="text"
@@ -135,7 +153,7 @@ function SheetDisplay(props) {
         }
     }
 
-    const renderControlPoolBoxes = () => {
+    const renderControlBoxes = () => {
         if(props.currentCharacter.cyberAttributeBonuses.hasOwnProperty('Vehicle_Control_Rig_Level')){
             return(<>
                 <br/><br/>
@@ -226,7 +244,7 @@ function SheetDisplay(props) {
                             value={(parseInt(props.currentCharacter.attributes.Initative)+parseInt(props.currentCharacter.cyberAttributeBonuses.Initative))+'d6'}
                             
                         />
-                        {renderControlPoolBoxes()}
+                        {renderControlBoxes()}
                     </Grid>
                 </Grid>
             </Item>
@@ -256,26 +274,27 @@ function SheetDisplay(props) {
             <Item style={{"minHeight":"341px"}}>
                 <h2 className={"boxHeader"}>Dice Pools</h2>
                 <TextField
-                    style={{ width: '100px', marginRight: '10px' }}
+                    className='pool_display'
                     id="rating-input"
                     label="Combat"
                     type="text"
-                    value={(
+                    value={
                         Math.floor(
-                                   (parseInt(props.currentCharacter.attributes.Quickness) +
+                                   ((
+                                    parseInt(props.currentCharacter.attributes.Quickness) +
                                     parseInt(props.currentCharacter.raceBonuses.Quickness??0) +
                                     parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+
-                                    parseInt(props.currentCharacter.magicalAttributeBonuses.Quickness)+
+                                    parseInt(props.currentCharacter.magicalAttributeBonuses.Quickness??0)+
                                     parseInt(props.currentCharacter.attributes.Intelligence) +
                                     parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
                                     parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+
-                                    parseInt(props.currentCharacter.magicalAttributeBonuses.Intelligence)+
+                                    parseInt(props.currentCharacter.magicalAttributeBonuses.Intelligence??0)+
                                     parseInt(props.currentCharacter.attributes.Willpower) +
                                     parseInt(props.currentCharacter.raceBonuses.Willpower??0) +
-                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower??0))+
-                                    parseInt(props.currentCharacter.magicalAttributeBonuses.Willpower)
-                                    /2
-                                    )+parseInt(props.currentCharacter.magicalAttributeBonuses.Combat_Pool??0)
+                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower??0)+
+                                    parseInt(props.currentCharacter.magicalAttributeBonuses.Willpower??0)
+                                   )/2)
+                                    +parseInt(props.currentCharacter.magicalAttributeBonuses.Combat_Pool??0)
                                 )}
                 />
                 
@@ -284,7 +303,6 @@ function SheetDisplay(props) {
                 {renderAstralCombatPool()}
                 {renderSpellPool()}
                 {renderTaskPool()}
-                
             </Item>
         </Grid>
         <Grid item xs={6} md={3}>

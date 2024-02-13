@@ -72,7 +72,7 @@ export default function BasicTabs() {
         magicalAttributeBonuses:{'Body':0, 'Quickness':0, 'Strength':0, 'Charisma':0, 'Willpower':0, 'Intelligence':0, 'Reaction':0, 'Initative':0, 'Impact':0, 'Ballastic':0},
         cyberAttributeBonuses:{'Body':0, 'Quickness':0, 'Strength':0, 'Charisma':0, 'Willpower':0, 'Intelligence':0, 'Reaction':0, 'Initative':0, 'Impact':0, 'Ballastic':0},
         raceBonuses:{'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0},
-        attributes:{'Body':1,'Quickness':1,'Strength':1,'Charisma':1,'Willpower':1,'Intelligence':1, 'Essence':6,'Initative':1},
+        attributes:{'Body':1,'Quickness':1,'Strength':1,'Charisma':1,'Willpower':1,'Intelligence':1, 'Essence':6,'Initative':1, 'Magic':6},
         characterTabs:{'Magic':false,'Decking':false,'Otaku':false,'Rigger':false},
         inventory:[],
         weapons:[],
@@ -89,7 +89,7 @@ export default function BasicTabs() {
         bioware:[],
         skills:[],
         gear:[],
-        magical: false,
+        magical: true,
         magicalTradition: false,
         magicalTotem:false,
         spells:[],
@@ -127,10 +127,21 @@ export default function BasicTabs() {
 
     const handleChangePriorities = (newPriorities) => {
         // Update the Character state with the selected priorities
-        setCharacter((prevCharacter) => ({
-            ...prevCharacter,
-            priorities: { ...newPriorities},
-        }));
+        if(newPriorities.Magic === 'A' || newPriorities.Magic === 'B'){
+            setCharacter((prevCharacter) => ({
+                ...prevCharacter,
+                magical: true,
+                attributes:{ ...prevCharacter.attributes, 'Magic':6},
+                priorities: { ...newPriorities},
+            }));
+        }else{
+            setCharacter((prevCharacter) => ({
+                ...prevCharacter,
+                magical: false,
+                attributes:{ ...prevCharacter.attributes, 'Magic':0},
+                priorities: { ...newPriorities},
+            }));
+        }
     };
 
     React.useEffect(() => {
