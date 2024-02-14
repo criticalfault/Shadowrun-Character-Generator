@@ -2953,7 +2953,7 @@
           "Accessories": "Gas Vent (2), Smartlink"
         },
         {
-          "name": "H",
+          "name": "H&K MP7z Urban Combat",
           "Concealability": "6/18",
           "Ammunition": "36(c)",
           "Mode": "SA/BF/FA",
@@ -2965,7 +2965,7 @@
           "Accessories": "Gas Vent (3), Silencer"
         },
         {
-          "name": "H",
+          "name": "H&K MP7z Urban Combat Smart",
           "Concealability": "6/18",
           "Ammunition": "36(c)",
           "Mode": "SA/BF/FA",
@@ -2977,7 +2977,7 @@
           "Accessories": "Gas Vent (3), Silencer, Smartlink"
         },
         {
-          "name": "H",
+          "name": "H&K MP-9",
           "Concealability": "4",
           "Ammunition": "25(c)",
           "Mode": "SA/BF",
@@ -2989,7 +2989,7 @@
           "Accessories": "Gas Vent (3), Smartlink"
         },
         {
-          "name": "H",
+          "name": "H&K MP-2013",
           "Concealability": "3",
           "Ammunition": "35(c)",
           "Mode": "SA/BF/FA",
@@ -3001,7 +3001,7 @@
           "Accessories": "Sound Suppressor"
         },
         {
-          "name": "H",
+          "name": "H&K MPK9",
           "Concealability": "5",
           "Ammunition": "35(c)",
           "Mode": "SA/BF",
@@ -3013,7 +3013,7 @@
           "Accessories": "None"
         },
         {
-          "name": "H",
+          "name": "H&K MPK-11",
           "Concealability": "4",
           "Ammunition": "30(c)",
           "Mode": "SA/FA",
@@ -3025,7 +3025,7 @@
           "Accessories": "None"
         },
         {
-          "name": "Heckler",
+          "name": "Heckler & Koch HK227",
           "Concealability": "4",
           "Ammunition": "28(c)",
           "Mode": "SA/BF/FA",
@@ -3037,7 +3037,7 @@
           "Accessories": "Gas Vent (2), Laser Sight"
         },
         {
-          "name": "Heckler",
+          "name": "Heckler & Koch HK227-S",
           "Concealability": "5",
           "Ammunition": "28(c)",
           "Mode": "SA/BF",
@@ -3049,7 +3049,7 @@
           "Accessories": "Laser Sight, Silencer"
         },
         {
-          "name": "Heckler",
+          "name": "Heckler & Koch MP-5TX",
           "Concealability": "5",
           "Ammunition": "20(c)",
           "Mode": "SA/BF/FA",
@@ -3685,7 +3685,7 @@
           "Accessories": "Gas Vent (2), Laser Sight, Magnification(2), Shock Pads"
         },
         {
-          "name": "S",
+          "name": "S&W Model F 'Cyborg Assault'",
           "Concealability": "4",
           "Ammunition": "8(c)",
           "Mode": "SS",
@@ -3853,7 +3853,7 @@
           "Accessories": "Smartlink II"
         },
         {
-          "name": "Holland",
+          "name": "Holland & Holland .600 NE",
           "Concealability": "-",
           "Ammunition": "2(b)",
           "Mode": "SA",
@@ -3901,7 +3901,7 @@
           "Accessories": "None"
         },
         {
-          "name": "Luigi",
+          "name": "Luigi 'King Buck' Multi-Magnum",
           "Concealability": "1",
           "Ammunition": "4(m)",
           "Mode": "SA",
@@ -4070,7 +4070,7 @@
           "Accessories": "None"
         },
         {
-          "name": "Sandler",
+          "name": "Sandler 'Mad Max'",
           "Concealability": "5",
           "Ammunition": "2(b)",
           "Mode": "SA",
@@ -4106,7 +4106,7 @@
           "Accessories": "Recoil Compensation (2), Silencer, Smartlink"
         },
         {
-          "name": "H",
+          "name": "H&K PSG-65",
           "Concealability": "-",
           "Ammunition": "20(m)",
           "Mode": "SA",
@@ -4286,7 +4286,7 @@
           "Accessories": "None"
         },
         {
-          "name": "H",
+          "name": "H&K G-6 Advanced Squad Auto.",
           "Concealability": "-",
           "Ammunition": "100(c)",
           "Mode": "FA",
@@ -4298,7 +4298,7 @@
           "Accessories": "Caseless, Magnification (2), Smartlink II, Thermographic"
         },
         {
-          "name": "H",
+          "name": "H&K MG4/46",
           "Concealability": "-",
           "Ammunition": "belt/100(c)",
           "Mode": "BF/FA",
