@@ -1009,7 +1009,7 @@
           "Accessories": "None"
         },
         {
-          "name": "H",
+          "name": "Hammerli Model 520",
           "Concealability": "4",
           "Ammunition": "6(c)",
           "Mode": "SA",
@@ -1021,7 +1021,7 @@
           "Accessories": "Recoil Compensation (1)"
         },
         {
-          "name": "H",
+          "name": "H&K P48",
           "Concealability": "8",
           "Ammunition": "6(c)",
           "Mode": "SA/BF",
@@ -1285,7 +1285,7 @@
           "Accessories": "Smartlink II, Recoil Compensation (1)"
         },
         {
-          "name": "H",
+          "name": "H&K Cavaet",
           "Concealability": "5",
           "Ammunition": "9(c)",
           "Mode": "SA",
@@ -1297,7 +1297,7 @@
           "Accessories": "None"
         },
         {
-          "name": "H",
+          "name": "H&K P7S15",
           "Concealability": "6",
           "Ammunition": "15(c)",
           "Mode": "SA",
@@ -1309,7 +1309,7 @@
           "Accessories": "None"
         },
         {
-          "name": "H",
+          "name": "H&K P11M8",
           "Concealability": "8",
           "Ammunition": "8(c)",
           "Mode": "SA",
@@ -1321,7 +1321,7 @@
           "Accessories": "None"
         },
         {
-          "name": "H",
+          "name": "H&K P11M13",
           "Concealability": "8",
           "Ammunition": "13(c)",
           "Mode": "SA",
@@ -1405,7 +1405,7 @@
           "Accessories": "Laser Sight"
         },
         {
-          "name": "S",
+          "name": "S&W Model 6739",
           "Concealability": "8",
           "Ammunition": "5(cy)",
           "Mode": "SS",
@@ -1525,7 +1525,7 @@
           "Accessories": "None"
         },
         {
-          "name": "H",
+          "name": "H&K VP80Z",
           "Concealability": "6",
           "Ammunition": "21(c)",
           "Mode": "SA/BF",
@@ -1753,7 +1753,7 @@
           "Accessories": "Laser Sight"
         },
         {
-          "name": "Bond",
+          "name": "Bond & Carrington MP-11",
           "Concealability": "4",
           "Ammunition": "15(30)(c)",
           "Mode": "SA/BF",
@@ -1765,7 +1765,7 @@
           "Accessories": "Gas Vent (2), Laser Sight"
         },
         {
-          "name": "Bond",
+          "name": "Bond & Carrington MP-11 Smart",
           "Concealability": "4",
           "Ammunition": "15(30((c)",
           "Mode": "SA/BF",
@@ -2065,7 +2065,7 @@
           "Accessories": "None"
         },
         {
-          "name": "H",
+          "name": "H&K 'Blaster'",
           "Concealability": "4",
           "Ammunition": "6(m)",
           "Mode": "SS",
@@ -2077,7 +2077,7 @@
           "Accessories": "None"
         },
         {
-          "name": "H",
+          "name": "H&K OHWS",
           "Concealability": "5",
           "Ammunition": "12(c)",
           "Mode": "SA",
@@ -2221,6 +2221,42 @@
           "Accessories": "None"
         },
         {
+          "name": "Ruger Thunderbolt",
+          "Concealability": "4",
+          "Ammunition": "12(c)",
+          "Mode": "BF",
+          "Damage": "12S*",
+          "Weight": "2.75",
+          "Availability": "14/12days",
+          "Cost": "1000",
+          "Street Index": "3",
+          "Accessories": "None"
+        },
+        {
+          "name": "Ruger Thunderbolt - Laser Sight",
+          "Concealability": "4",
+          "Ammunition": "12(c)",
+          "Mode": "BF",
+          "Damage": "12S*",
+          "Weight": "2.75",
+          "Availability": "14/12days",
+          "Cost": "1250",
+          "Street Index": "3",
+          "Accessories": "Laser Sight"
+        },
+        {
+          "name": "Ruger Thunderbolt - Smartlinked",
+          "Concealability": "4",
+          "Ammunition": "12(c)",
+          "Mode": "BF",
+          "Damage": "12S*",
+          "Weight": "2.75",
+          "Availability": "14/12days",
+          "Cost": "1400",
+          "Street Index": "3",
+          "Accessories": "Smatlink"
+        },
+        {
           "name": "Riot Gun",
           "Concealability": "8",
           "Ammunition": "3(c)",
@@ -2269,7 +2305,7 @@
           "Accessories": "None"
         },
         {
-          "name": "S",
+          "name": "S&W 'Tri-Star'",
           "Concealability": "3",
           "Ammunition": "6(cy)",
           "Mode": "SS",
@@ -15709,7 +15745,7 @@
           "Street Index": "1.5"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Thumbprint Lv 1",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "1/72hrs",
@@ -15717,7 +15753,7 @@
           "Street Index": "1"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Thumbprint Lv 2",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "2/72hrs",
@@ -15725,7 +15761,7 @@
           "Street Index": "1"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Thumbprint Lv 3",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "3/72hrs",
@@ -15733,7 +15769,7 @@
           "Street Index": "1"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Thumbprint Lv 4",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "4/72hrs",
@@ -15741,7 +15777,7 @@
           "Street Index": "1"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Thumbprint Lv 5",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "5/72hrs",
@@ -15749,7 +15785,7 @@
           "Street Index": "1"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Thumbprint Lv 6",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "6/72hrs",
@@ -15757,7 +15793,7 @@
           "Street Index": "1"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Thumbprint Lv 7",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "7/72hrs",
@@ -15765,7 +15801,7 @@
           "Street Index": "1"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Thumbprint Lv 8",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "8/72hrs",
@@ -15773,7 +15809,7 @@
           "Street Index": "1"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Thumbprint Lv 9",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "9/72hrs",
@@ -15781,7 +15817,7 @@
           "Street Index": "1"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Thumbprint Lv 10",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "10/72hrs",
@@ -15789,7 +15825,7 @@
           "Street Index": "1"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Palmprint Lv 1",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "2/72hrs",
@@ -15797,7 +15833,7 @@
           "Street Index": "2"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Palmprint Lv 2",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "3/72hrs",
@@ -15805,7 +15841,7 @@
           "Street Index": "2"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Palmprint Lv 3",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "4/72hrs",
@@ -15813,7 +15849,7 @@
           "Street Index": "2"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Palmprint Lv 4",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "5/72hrs",
@@ -15821,7 +15857,7 @@
           "Street Index": "2"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Palmprint Lv 5",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "6/72hrs",
@@ -15829,7 +15865,7 @@
           "Street Index": "2"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Palmprint Lv 6",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "7/72hrs",
@@ -15837,7 +15873,7 @@
           "Street Index": "2"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Palmprint Lv 7",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "8/72hrs",
@@ -15845,7 +15881,7 @@
           "Street Index": "2"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Palmprint Lv 8",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "9/72hrs",
@@ -15853,7 +15889,7 @@
           "Street Index": "2"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Palmprint Lv 9",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "10/72hrs",
@@ -15861,7 +15897,7 @@
           "Street Index": "2"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Palmprint Lv 10",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "11/72hrs",
@@ -15869,7 +15905,7 @@
           "Street Index": "2"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Retinal Lv 1",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "3/72hrs",
@@ -15877,7 +15913,7 @@
           "Street Index": "3"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Retinal Lv 2",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "4/72hrs",
@@ -15885,7 +15921,7 @@
           "Street Index": "3"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Retinal Lv 3",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "5/72hrs",
@@ -15893,7 +15929,7 @@
           "Street Index": "3"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Retinal Lv 4",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "6/72hrs",
@@ -15901,7 +15937,7 @@
           "Street Index": "3"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Retinal Lv 5",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "7/72hrs",
@@ -15909,7 +15945,7 @@
           "Street Index": "3"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Retinal Lv 6",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "8/72hrs",
@@ -15917,7 +15953,7 @@
           "Street Index": "3"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Retinal Lv 7",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "9/72hrs",
@@ -15925,7 +15961,7 @@
           "Street Index": "3"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Retinal Lv 8",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "10/72hrs",
@@ -15933,7 +15969,7 @@
           "Street Index": "3"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Retinal Lv 9",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "11/72hrs",
@@ -15941,7 +15977,7 @@
           "Street Index": "3"
         },
         {
-          "name": "ID Scanner",
+          "name": "ID Scanner: Retinal Lv 10",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "12/72hrs",
