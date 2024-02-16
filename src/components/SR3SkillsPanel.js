@@ -348,7 +348,6 @@ function SR3SkillsPanel({currentCharacter, characterSkills, onUpdateSkills, acti
         </NativeSelect>
       </FormControl>
     )}
-      {newSkill && (
         <>
           <FormControl style={{'width':'200px','marginLeft':'20px'}}>
             <InputLabel id="specialization-label">Specialization</InputLabel>
@@ -377,7 +376,6 @@ function SR3SkillsPanel({currentCharacter, characterSkills, onUpdateSkills, acti
           <Button onClick={ AddSkillRating} variant="contained" color="primary" className='btn'>+</Button> &nbsp;&nbsp;
           <Button onClick={ RemoveSkillRating} variant="contained" color="primary" className='btn'>-</Button>
         </>
-      )}
       <Button variant="contained" color="primary" style={{'marginLeft':'20px'}} onClick={handleAddSkill}>
         Add Skill
       </Button>
@@ -411,7 +409,6 @@ function SR3SkillsPanel({currentCharacter, characterSkills, onUpdateSkills, acti
         </NativeSelect>
       </FormControl>
     )}
-      {newSkill && (
         <>
           <TextField style={{'width':'100px', 'marginRight':'20px', 'marginLeft':'20px'}}
             id="rating-input"
@@ -426,7 +423,6 @@ function SR3SkillsPanel({currentCharacter, characterSkills, onUpdateSkills, acti
           <Button onClick={ AddKnowledgeRating } variant="contained" color="primary" className='btn'>+</Button> &nbsp;&nbsp;
           <Button onClick={ RemoveKnowledgeRating} variant="contained" color="primary" className='btn'>-</Button>
         </>
-      )}
       <Button variant="contained" color="primary" style={{'marginLeft':'20px'}} onClick={handleKnowledgeAddSkill}>
         Add Skill
       </Button>

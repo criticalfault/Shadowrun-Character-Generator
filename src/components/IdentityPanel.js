@@ -45,7 +45,7 @@ export default function IdentityPanel(props) {
             So be prepared if it decideds to randomly die. There is a bunch of fixes still pending as well as a lot of known missing parts which will be added once this thing is partially stable.
             I'll list the known issues below, but feel free to poke and prod. See what you can get it to do. I'm going to continue to work on this as i get reports of breaks and the likes.</p>
             <p>Thanks for your consideration and time in testing! -D (dean 'at' nullsheen.com)</p>
-            <h5>Known Issues (As of 02-05-24 - 8:00pm CST)</h5>
+            <h5>Known Issues (As of 02-15-24 - 8:10pm CST)</h5>
             <ul>
                 <li>Skills page still buggy with edits/removes (Though maybe i fixed it?)</li>
                 <li>SR2's Specializations still missing and we are having some errors from concentrations</li>
@@ -55,11 +55,9 @@ export default function IdentityPanel(props) {
         <hr/>
         <h5>Resolved Issues</h5>
         <ul>
+            <li>Fixed a bunch of dice pools. Hopefully those are looking much better!</li>
+            <li>Fixed Skill ordering, removals and edits. So many skill errors.</li>
             <li>Added a Dice Roller on the Sheet Display</li>
-            <li>Added a bunch of catch blocks for common errors. Hoping to keep this more stable for everyone. Please report your errors!</li>
-            <li>Added Sentry.io to get error reports so I can fix these problems faster</li>
-            <li>Added feedback report widget to hopefully get better feedback on problems people run into</li>
-            <li>Added Cyberware Eye rule where Eyeware cannot eat more than .5 essence.</li>
         </ul>
         <hr/>
 
