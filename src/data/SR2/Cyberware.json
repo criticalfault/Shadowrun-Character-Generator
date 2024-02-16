@@ -42,13 +42,13 @@
         {"BookPage":"ct.???","Name":"Direct NeuralInter","EssCost":0.10,"Cost":4500,"StreetIndex":1.00,"Mods":""}
     ],
     "EARS":[
-        {"BookPage":"sr2.x", "Name":"Ear Cyber replac.", "EssCost":0.30, "Cost":4000 ,"StreetIndex":0.75, "Mods":""},
-        {"BookPage":"sr2.x", "Name":"Ear Modification", "EssCost":0.10, "Cost":2000 ,"StreetIndex":1.00, "Mods":""},
-        {"BookPage":"sr2.x", "Name":"Ear Cosmetic mod.", "EssCost":0.00, "Cost":1000 ,"StreetIndex":0.80, "Mods":""},
-        {"BookPage":"sr2.x", "Name":"Ear Damper", "EssCost":0.10, "Cost":3500   ,"StreetIndex":1.25, "Mods":""},
-        {"BookPage":"sr2.x", "Name":"Ear High freq.", "EssCost":0.20, "Cost":3000   ,"StreetIndex":1.25, "Mods":""},
-        {"BookPage":"sr2.x", "Name":"Ear Low freq.", "EssCost":0.20, "Cost":3000   ,"StreetIndex":1.25, "Mods":""},
-        {"BookPage":"sr2.x", "Name":"Ear Recorder", "EssCost":0.30, "Cost":7000   ,"StreetIndex":2.00, "Mods":""}
+        {"BookPage":"sr2.x", "Name":"Ear Cyber replac.", "EssCost":0.30, "Cost":4000,"StreetIndex":0.75, "Mods":""},
+        {"BookPage":"sr2.x", "Name":"Ear Modification", "EssCost":0.10, "Cost":2000,"StreetIndex":1.00, "Mods":""},
+        {"BookPage":"sr2.x", "Name":"Ear Cosmetic mod.", "EssCost":0.00, "Cost":1000,"StreetIndex":0.80, "Mods":""},
+        {"BookPage":"sr2.x", "Name":"Ear Damper", "EssCost":0.10, "Cost":3500,"StreetIndex":1.25, "Mods":""},
+        {"BookPage":"sr2.x", "Name":"Ear High freq.", "EssCost":0.20, "Cost":3000,"StreetIndex":1.25, "Mods":""},
+        {"BookPage":"sr2.x", "Name":"Ear Low freq.", "EssCost":0.20, "Cost":3000,"StreetIndex":1.25, "Mods":""},
+        {"BookPage":"sr2.x", "Name":"Ear Recorder", "EssCost":0.30, "Cost":7000,"StreetIndex":2.00, "Mods":""}
     ],
     "EYES":[
         {"BookPage":"sr2.x", "Name":"Eye Cyber Replacement", "EssCost":0.20, "Cost":5000, "StreetIndex":0.75, "Mods":"", "Replacement":true},
@@ -73,7 +73,7 @@
         {"BookPage":"ct.???","Name":"Eye Light Systems","EssCost":0.20,"Cost":1200,"StreetIndex":1.50,"Mods":""},
         {"BookPage":"ct.???","Name":"Eye Light Systems - BrightLight","EssCost":0.40,"Cost":1200,"StreetIndex":3.00,"Mods":""},
         {"BookPage":"ct.???","Name":"Eye Light Systems - Flash-pak","EssCost":0.00,"Cost":1000,"StreetIndex":3.00,"Mods":""},
-        {"BookPage":"ct.???","Name":"Eye Light Systems - one shot FP ","EssCost":0.00,"Cost":500,"StreetIndex":3.00,"Mods":""}
+        {"BookPage":"ct.???","Name":"Eye Light Systems - one shot FP","EssCost":0.00,"Cost":500,"StreetIndex":3.00,"Mods":""}
     ],
     "BODYWARE":[
         {"BookPage":"ssc.???","Name":"Boosted Reflexes 1","EssCost":0.50,"Cost":15000,"StreetIndex":1.00,"Mods":"+1INI"},
@@ -250,7 +250,7 @@
     "HANDS":[
         {"BookPage":"ct.???","Name":"Fingertip Picks","EssCost":0.00,"Cost":18000,"StreetIndex":3.00,"Mods":""},
         {"BookPage":"ct.???","Name":"Fingertip Needle","EssCost":0.00,"Cost":800,"StreetIndex":1.50,"Mods":""},
-        {"BookPage":"ct.???","Name":"Replacement Hand ","EssCost":0.00,"Cost":28000,"StreetIndex":2.00,"Mods":""},
+        {"BookPage":"ct.???","Name":"Replacement Hand","EssCost":0.00,"Cost":28000,"StreetIndex":2.00,"Mods":""},
         {"BookPage":"ct.???","Name":"Hand Blade","EssCost":0.10,"Cost":7500,"StreetIndex":1.50,"Mods":""},
         {"BookPage":"ct.???","Name":"Hand Blade Retractable","EssCost":0.25,"Cost":10000,"StreetIndex":1.50,"Mods":""},
         {"BookPage":"ct.???","Name":"Shock Hand","EssCost":0.00,"Cost":1300,"StreetIndex":2.00,"Mods":""}
@@ -316,20 +316,20 @@
         {"BookPage":"ct.???","Name":"Articulate Arm","EssCost":0.25,"Cost":110000,"StreetIndex":2.00,"Mods":""}
     ],
     "CYBERLIMB MODS":[
-        {"BookPage":"st.???","Name":"Hydraulic Jack 1  ","EssCost":0.25,"Cost":5000,"StreetIndex":1.00,"mods":""},
-        {"BookPage":"st.???","Name":"Hydraulic Jack 2  ","EssCost":0.25,"Cost":10000,"StreetIndex":1.00,"mods":""},
-        {"BookPage":"st.???","Name":"Hydraulic Jack 3  ","EssCost":0.25,"Cost":15000,"StreetIndex":1.00,"mods":""},
-        {"BookPage":"st.???","Name":"Hydraulic Jack 4  ","EssCost":0.25,"Cost":20000,"StreetIndex":1.00,"mods":""},
-        {"BookPage":"st.???","Name":"Hydraulic Jack 5  ","EssCost":0.25,"Cost":25000,"StreetIndex":1.00,"mods":""},
-        {"BookPage":"st.???","Name":"Hydraulic Jack 6  ","EssCost":0.25,"Cost":30000,"StreetIndex":1.00,"mods":""},
+        {"BookPage":"st.???","Name":"Hydraulic Jack 1","EssCost":0.25,"Cost":5000,"StreetIndex":1.00,"mods":""},
+        {"BookPage":"st.???","Name":"Hydraulic Jack 2","EssCost":0.25,"Cost":10000,"StreetIndex":1.00,"mods":""},
+        {"BookPage":"st.???","Name":"Hydraulic Jack 3","EssCost":0.25,"Cost":15000,"StreetIndex":1.00,"mods":""},
+        {"BookPage":"st.???","Name":"Hydraulic Jack 4","EssCost":0.25,"Cost":20000,"StreetIndex":1.00,"mods":""},
+        {"BookPage":"st.???","Name":"Hydraulic Jack 5","EssCost":0.25,"Cost":25000,"StreetIndex":1.00,"mods":""},
+        {"BookPage":"st.???","Name":"Hydraulic Jack 6","EssCost":0.25,"Cost":30000,"StreetIndex":1.00,"mods":""},
         {"BookPage":"ct.???","Name":"Magnetic Cyberlimb","EssCost":0.00,"Cost":2800,"StreetIndex":2.00 ,"Mods":""},
         {"BookPage":"ct.???","Name":"Cyberarm Taser","EssCost":0.00,"Cost":2000,"StreetIndex":1.50,"Mods":""},
         {"BookPage":"ct.???","Name":"Tool Laser","EssCost":0.25,"Cost":5200,"StreetIndex":2.00,"Mods":""}
     ],
     "RIGGER":[
-        {"BookPage":"sr2.x", "Name":"Vehicle Ctrl Rig 1 ", "EssCost":2.00, "Cost":12000  ,"StreetIndex":1.00,"Mods":"+2RCT,+1INI"},
-        {"BookPage":"sr2.x", "Name":"Vehicle Ctrl Rig 2 ", "EssCost":3.00, "Cost":60000  ,"StreetIndex":1.25,"Mods":"+4RCT,+2INI"},
-        {"BookPage":"sr2.x", "Name":"Vehicle Ctrl Rig 3 ", "EssCost":5.00, "Cost":300000 ,"StreetIndex":1.50,"Mods":"+6RCT,+3INI"}
+        {"BookPage":"sr2.x", "Name":"Vehicle Ctrl Rig 1", "EssCost":2.00, "Cost":12000  ,"StreetIndex":1.00,"Mods":"+2RCT,+1INI"},
+        {"BookPage":"sr2.x", "Name":"Vehicle Ctrl Rig 2", "EssCost":3.00, "Cost":60000  ,"StreetIndex":1.25,"Mods":"+4RCT,+2INI"},
+        {"BookPage":"sr2.x", "Name":"Vehicle Ctrl Rig 3", "EssCost":5.00, "Cost":300000 ,"StreetIndex":1.50,"Mods":"+6RCT,+3INI"}
     ],
     "COMMUNICATIONS":[
         {"BookPage":"sr2.x", "Name":"Radio", "EssCost":0.75, "Cost":4000 ,"StreetIndex":0.80, "Mods":""},

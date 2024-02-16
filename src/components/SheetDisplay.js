@@ -96,22 +96,88 @@ function SheetDisplay(props) {
     }
 
     const renderHackingPool = () => {
-        if(props.currentCharacter.cyberAttributeBonuses.hasOwnProperty('Hacking_Pool')){
-            return(<>
-                    <br/><br/>
-                    <TextField
-                        className='pool_display'
-                        id="rating-input"
-                        label="Hacking"
-                        type="text"
-                        value={ parseInt(props.currentCharacter.cyberAttributeBonuses.Hacking_Pool??0) }
+        let poolValue = 0;
+        if(props.Edition === 'SR3'){
+            let MPCP = 0;
+            if(props.currentCharacter.decks.length !== 0){
+                MPCP = props.currentCharacter.decks[0].Persona;
+            }
+            poolValue = ((parseInt(props.currentCharacter.attributes.Intelligence) +
+            parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
+            parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+parseInt(MPCP))/3)+ parseInt(props.currentCharacter.cyberAttributeBonuses.Hacking_Pool??0);
+        }else{
+            props.currentCharacter.skills.forEach(function(skill){
+                if(skill.name === "Computers"){
+                    if(skill.hasOwnProperty('selectedConcentrations') && skill.selectedConcentrations.length > 0){
+                        let subRating = 0;
+                        skill.selectedConcentrations.forEach(function(subSkill){
+                            console.log(subSkill.rating);
+                            if(subRating < subSkill.rating){
+                                subRating = subSkill.rating;
+                            }
+                        });
+                        
+                        poolValue = parseInt(subRating) +
+                        (
+                            (
+                                parseInt(props.currentCharacter.attributes.Intelligence) +
+                                parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
+                                parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)
+                            )
+                        )+ parseInt(props.currentCharacter.cyberAttributeBonuses.Hacking_Pool??0);
+                    }else{
+                        poolValue = parseInt(skill.rating) +
+                        (
+                            (
+                                parseInt(props.currentCharacter.attributes.Intelligence) +
+                                parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
+                                parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+
+                                parseInt(props.currentCharacter.attributes.Quickness) +
+                                parseInt(props.currentCharacter.raceBonuses.Quickness??0) +
+                                parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)
+                            )
+                            /2
+                        )+ parseInt(props.currentCharacter.cyberAttributeBonuses.Hacking_Pool??0);
+                    }
+                    
+                }
+            })
+        }
+        return(<>
+                <br/><br/>
+                   <TextField
+                       className='pool_display'
+                       id="rating-input"
+                       label="Hacking"
+                       type="text"
+                       value={ poolValue }
                     />
                 </>)
-        }
     }
 
     const renderSpellPool = () => {
-        if(props.currentCharacter.magical === true){
+        let poolValue = '';
+        if(props.Edition === 'SR3'){
+            poolValue = (Math.floor(
+                (
+                parseInt(props.currentCharacter.attributes.Magic)+
+                parseInt(props.currentCharacter.attributes.Intelligence) +
+                parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
+                parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+
+                parseInt(props.currentCharacter.attributes.Willpower) +
+                parseInt(props.currentCharacter.raceBonuses.Willpower??0) +
+                parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower??0)
+                )
+                
+                /3))
+        }else{
+            props.currentCharacter.skills.forEach(function(skill){
+                if(skill.name === 'Sorcery'){
+                    poolValue = skill.value;
+                }
+            })
+        }
+        if(props.currentCharacter.magical === true && props.magicalChoice !== "Physical Adept"){
             return(<>
                     <br/><br/>
                     <TextField
@@ -119,18 +185,7 @@ function SheetDisplay(props) {
                         id="rating-input"
                         label="Spell"
                         type="text"
-                        value={(Math.floor(
-                                (
-                                parseInt(props.currentCharacter.attributes.Magic)+
-                                parseInt(props.currentCharacter.attributes.Intelligence) +
-                                parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
-                                parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+
-                                parseInt(props.currentCharacter.attributes.Willpower) +
-                                parseInt(props.currentCharacter.raceBonuses.Willpower??0) +
-                                parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower??0)
-                                )
-                                
-                                /3))}
+                        value={poolValue}
                     />
                 </>
             )
@@ -162,7 +217,9 @@ function SheetDisplay(props) {
                     id="rating-input"
                     label="Rigged React"
                     type="text"
-                    value={(Math.floor(parseInt(props.currentCharacter.attributes.Quickness) +
+                    value={
+                        (
+                        Math.floor(parseInt(props.currentCharacter.attributes.Quickness) +
                         parseInt(props.currentCharacter.raceBonuses.Quickness??0) +
                         parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+parseInt(props.currentCharacter.attributes.Intelligence) +
                         parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +

@@ -513,7 +513,7 @@ function MagicPanel(props) {
               >
           <MenuItem key={-1} >Choose A Totem</MenuItem>
         {
-        Totems[type].sort(function(a, b) { return a[1] - b[1]; }).map( (totem, index) => (
+        Totems[type].sort(function(a, b) { return a.name.localeCompare(b.name) }).map( (totem, index) => (
           <MenuItem key={index} data-type={type} value={index}>{totem.name}</MenuItem>
         ))}
         </Select>
@@ -583,7 +583,7 @@ function MagicPanel(props) {
               value={NewPowerIndex}
               onChange={handlePowerChange}
             >
-              {AdeptPowers.map( (power, index) => (
+              {AdeptPowers.sort((a, b) => a.Name.localeCompare(b.Name)).map( (power, index) => (
                 <MenuItem key={index} value={index}>{power.Name} - PP: {power.Cost}</MenuItem>
               ))}
             </Select>
@@ -728,7 +728,7 @@ function MagicPanel(props) {
               value={newSpellIndex}
               onChange={handleSpellChange}
             >
-              {spellsData.map( (spell, index) => (
+              {spellsData.sort((a, b) => a.Name.localeCompare(b.Name)).map( (spell, index) => (
                 <MenuItem key={index} value={index}>{spell.Name}</MenuItem>
               ))}
             </Select>

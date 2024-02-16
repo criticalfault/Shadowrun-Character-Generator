@@ -545,7 +545,9 @@ export default function BasicTabs() {
                  <span>Coming Soon!</span>
             </CustomTabPanel>
             <CustomTabPanel value={value} index={11}>
-                <SheetDisplay currentCharacter={Character} />
+                <SheetDisplay 
+                            Edition={Edition}
+                            currentCharacter={Character} />
             </CustomTabPanel>
         </Box>
     </div>
