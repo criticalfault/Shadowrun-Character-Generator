@@ -208,6 +208,35 @@ function SheetDisplay(props) {
         }
     }
 
+    const renderSkillsPanel = () => {
+        if(props.Edition === 'SR3'){
+            return props.currentCharacter.skills.map((skill, index) => (
+                <ListItem key={index}>
+                    <ListItemText
+                        primary={skill.specialization ? `${skill.name} (${skill.rating-1}) ->  ${skill.specialization} (${skill.rating + 1})`:`${skill.name} (${skill.rating})`}
+                    />
+                </ListItem>
+            ))
+        }else{
+            return props.currentCharacter.skills.map((skill, index) => (
+                <ListItem key={index}>
+                    <ListItemText
+                        primary={skill.selectedConcentrations.length === 0 ? `${skill.name} (${skill.rating})` : `${skill.name} (${skill.rating}) -> ` + skill.selectedConcentrations.map((concen,index) => {
+                            
+                            if(concen.hasOwnProperty('specializations') && concen.specializations.length > 0){
+                                return `${concen.name} (${concen.rating}) -> ${concen.specializations[0].name} (${parseInt(concen.rating)+2})`
+                            }else{
+                                return `${concen.name} (${concen.rating})`
+                            }
+                            
+                        })}
+                        
+                    />
+                </ListItem>
+            ))
+        }
+    }
+
     const renderControlBoxes = () => {
         if(props.currentCharacter.cyberAttributeBonuses.hasOwnProperty('Vehicle_Control_Rig_Level')){
             return(<>
@@ -317,14 +346,8 @@ function SheetDisplay(props) {
             <Item style={{"minHeight":"341px"}}>
                 <h2 className={"boxHeader"}>Skills</h2>
                 {
-                    props.currentCharacter.skills.map((skill, index) => (
-                        <ListItem key={index}>
-                          <ListItemText
-                            primary={skill.specialization ? `${skill.name} (${skill.rating-1}) ->  ${skill.specialization} (${skill.rating + 1})`:`${skill.name} (${skill.rating})`}
-                          />
-                          </ListItem>
-                    ))}
-
+                    renderSkillsPanel()
+                }
             </Item>
         </Grid>
         <Grid item xs={6} md={3}>
