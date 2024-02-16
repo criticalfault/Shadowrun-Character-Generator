@@ -31200,7 +31200,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Riot Shield",
+        "name": "Riot Shield Small",
         "Concealability": "-",
         "Ballistic": "1",
         "Impact": "2",
@@ -31211,7 +31211,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Riot Shield",
+        "name": "Riot Shield Large",
         "Concealability": "-",
         "Ballistic": "2",
         "Impact": "3",
@@ -31222,7 +31222,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Riot Shield",
+        "name": "Riot Shield Ballistic",
         "Concealability": "-",
         "Ballistic": "3",
         "Impact": "1",
@@ -31233,7 +31233,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Riot Shield",
+        "name": "Riot Shield Electro (large)",
         "Concealability": "2",
         "Ballistic": "2",
         "Impact": "3",
@@ -31519,7 +31519,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Armant",
+        "name": "Armante \"Ancien\" Shawl",
         "Concealability": "14",
         "Ballistic": "1",
         "Impact": "0",
@@ -31530,7 +31530,7 @@
         "BookPage": "cc.46"
       },
       {
-        "name": "Armant",
+        "name": "Armante \"Dallas\" Shirt",
         "Concealability": "14",
         "Ballistic": ".75",
         "Impact": "0",
@@ -31541,7 +31541,7 @@
         "BookPage": "cc.46"
       },
       {
-        "name": "Armant",
+        "name": "Armante \"Dallas\" Jacket",
         "Concealability": "14",
         "Ballistic": "2",
         "Impact": "2",
@@ -31552,7 +31552,7 @@
         "BookPage": "cc.46"
       },
       {
-        "name": "Armant",
+        "name": "Armante \"Dallas\" Short Jacket",
         "Concealability": "14",
         "Ballistic": "1",
         "Impact": ".5",
@@ -31563,7 +31563,7 @@
         "BookPage": "cc.46"
       },
       {
-        "name": "Armant",
+        "name": "Armante \"Dallas\" Slacks",
         "Concealability": "14",
         "Ballistic": ".5",
         "Impact": ".25",
@@ -31574,7 +31574,7 @@
         "BookPage": "cc.46"
       },
       {
-        "name": "Armant",
+        "name": "Armante \"Dallas\" Vest",
         "Concealability": "14",
         "Ballistic": "3",
         "Impact": "1",
@@ -31585,7 +31585,7 @@
         "BookPage": "cc.46"
       },
       {
-        "name": "Armant",
+        "name": "Armante \"Executive Suite\" Tux",
         "Concealability": "12",
         "Ballistic": "3",
         "Impact": "1",
@@ -31596,7 +31596,7 @@
         "BookPage": "cc.46"
       },
       {
-        "name": "Armant",
+        "name": "Armante \"London Fog\" Count",
         "Concealability": "12",
         "Ballistic": "2",
         "Impact": "2",
@@ -31607,7 +31607,7 @@
         "BookPage": "cc.46"
       },
       {
-        "name": "Armant",
+        "name": "Armante \"London Fog\" Chairman",
         "Concealability": "12",
         "Ballistic": "2",
         "Impact": "2",
@@ -31618,7 +31618,7 @@
         "BookPage": "cc.46"
       },
       {
-        "name": "Armant",
+        "name": "Armante \"London Fog\" Majesty",
         "Concealability": "11",
         "Ballistic": "2",
         "Impact": "2",
@@ -31629,7 +31629,7 @@
         "BookPage": "cc.46"
       },
       {
-        "name": "Armant",
+        "name": "Armante \"London Fog\" Profsnl",
         "Concealability": "11",
         "Ballistic": "2",
         "Impact": "2",
@@ -31640,7 +31640,7 @@
         "BookPage": "cc.46"
       },
       {
-        "name": "Armant",
+        "name": "Armante \"London Fog\" Merlin",
         "Concealability": "13",
         "Ballistic": "2",
         "Impact": "2",
@@ -31651,7 +31651,7 @@
         "BookPage": "cc.46"
       },
       {
-        "name": "Armant",
+        "name": "Armante \"Starlight\" Dress",
         "Concealability": "13",
         "Ballistic": "1",
         "Impact": "1",
@@ -31662,7 +31662,7 @@
         "BookPage": "cc.46"
       },
       {
-        "name": "Armant",
+        "name": "Armante \"Tokyo\" Business Suit",
         "Concealability": "13",
         "Ballistic": "2",
         "Impact": "1",
@@ -31673,7 +31673,7 @@
         "BookPage": "cp.32"
       },
       {
-        "name": "Armant",
+        "name": "Armante \"Venetian\" Dress",
         "Concealability": "14",
         "Ballistic": "1",
         "Impact": "0",
@@ -31915,7 +31915,7 @@
         "BookPage": "cb1.37"
       },
       {
-        "name": "Masetto",
+        "name": "Masetto 'Alessio' Coveralls",
         "Concealability": "-",
         "Ballistic": "-",
         "Impact": "-",
@@ -31926,7 +31926,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "name": "Masetto",
+        "name": "Masetto 'Ciampolo' Gloves",
         "Concealability": "-",
         "Ballistic": "-",
         "Impact": "-",
@@ -31937,7 +31937,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "name": "Masetto",
+        "name": "Masetto 'Gianni' Helmet",
         "Concealability": "-",
         "Ballistic": "-",
         "Impact": "+1",
@@ -31948,7 +31948,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "name": "Masetto",
+        "name": "Masetto 'Guercio' Helmet",
         "Concealability": "-",
         "Ballistic": "-",
         "Impact": "+1",
@@ -31959,7 +31959,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "name": "Masetto",
+        "name": "Masetto 'Lano' Coveralls",
         "Concealability": "6",
         "Ballistic": "3",
         "Impact": "2",
@@ -31970,7 +31970,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "name": "Masetto",
+        "name": "Masetto 'Pinamonte' Boots",
         "Concealability": "-",
         "Ballistic": "-",
         "Impact": "-",
@@ -31981,7 +31981,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "name": "Mortimer",
+        "name": "Mortimer \"Greatcoat\" Coat",
         "Concealability": "11",
         "Ballistic": "4",
         "Impact": "2",
@@ -31992,7 +31992,7 @@
         "BookPage": "cc.48"
       },
       {
-        "name": "Mortimer",
+        "name": "Mortimer \"Ulysses\" Coat",
         "Concealability": "10",
         "Ballistic": "4",
         "Impact": "2",
@@ -32003,7 +32003,7 @@
         "BookPage": "cc.48"
       },
       {
-        "name": "Mortimer",
+        "name": "Mortimer \"Crimson Sky\" Jacket",
         "Concealability": "12",
         "Ballistic": "2",
         "Impact": "2",
@@ -32014,7 +32014,7 @@
         "BookPage": "cc.48"
       },
       {
-        "name": "Mortimer",
+        "name": "Mortimer \"Summit\" Coat",
         "Concealability": "12",
         "Ballistic": "3",
         "Impact": "2",
@@ -32333,7 +32333,7 @@
         "BookPage": "cb1.37"
       },
       {
-        "name": "V-Island",
+        "name": "V-Island \"Actioneer\" Jacket",
         "Concealability": "13",
         "Ballistic": "1.5",
         "Impact": "1",
@@ -32344,7 +32344,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "V-Island",
+        "name": "V-Island \"Actioneer\" Slacks",
         "Concealability": "14",
         "Ballistic": "1",
         "Impact": ".5",
@@ -32355,7 +32355,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "V-Island",
+        "name": "V-Island \"Actioneer\" Shirt",
         "Concealability": "14",
         "Ballistic": "1.5",
         "Impact": ".5",
@@ -32366,7 +32366,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "V-Island",
+        "name": "V-Island \"Actioneer\" Long Coat",
         "Concealability": "13",
         "Ballistic": "2",
         "Impact": "2",
@@ -32399,7 +32399,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "name": "V-Island",
+        "name": "V-Island \"Sleeping Tiger\" Jack",
         "Concealability": "10",
         "Ballistic": ".5",
         "Impact": "1",
@@ -32410,7 +32410,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "V-Island",
+        "name": "V-Island \"Sleeping Tiger\" Slac",
         "Concealability": "15",
         "Ballistic": "1",
         "Impact": "1",
@@ -32421,7 +32421,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Victory",
+        "name": "Victory \"Industrious\" Jumpsuit",
         "Concealability": "11",
         "Ballistic": "2",
         "Impact": "0",
@@ -32432,7 +32432,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Victory",
+        "name": "Victory \"Industrious\" Coverall",
         "Concealability": "9",
         "Ballistic": "4",
         "Impact": "2",
@@ -32443,7 +32443,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Victory",
+        "name": "Victory \"Industrious\" Hardhat",
         "Concealability": "-",
         "Ballistic": "-",
         "Impact": "+1",
@@ -32454,7 +32454,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Victory",
+        "name": "Victory \"Industrious\" Winter.",
         "Concealability": "10",
         "Ballistic": "4",
         "Impact": "4",
@@ -32465,7 +32465,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Victory",
+        "name": "Victory \"Wild Hunt\" C.Jacket",
         "Concealability": "6",
         "Ballistic": "4",
         "Impact": "2",
@@ -32476,7 +32476,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Victory",
+        "name": "Victory \"Wild Hunt\" C.Jumpsuit",
         "Concealability": "9",
         "Ballistic": "3",
         "Impact": "2",
@@ -32487,7 +32487,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Victory",
+        "name": "Victory \"Wild Hunt\" C.Vest",
         "Concealability": "8",
         "Ballistic": "2",
         "Impact": "2",
@@ -32498,7 +32498,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Victory",
+        "name": "Victory \"Wild Hunt\" Lgt Armor",
         "Concealability": "12",
         "Ballistic": "1",
         "Impact": "0",
@@ -32509,7 +32509,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Victory",
+        "name": "Victory \"Wild Hunt\" Hvy Armor",
         "Concealability": "10",
         "Ballistic": "4",
         "Impact": "0",
@@ -32520,7 +32520,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Victory",
+        "name": "Victory \"Wild Hunt\" Fatigues",
         "Concealability": "10",
         "Ballistic": "2",
         "Impact": "0",
@@ -32531,7 +32531,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Victory",
+        "name": "Victory \"Rapid Transit\" Lgt J.",
         "Concealability": "8",
         "Ballistic": "1",
         "Impact": "2",
@@ -32542,7 +32542,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Victory",
+        "name": "Victory \"Rapid Transit\" Hvy J. ",
         "Concealability": "6",
         "Ballistic": "2",
         "Impact": "4",
@@ -32553,7 +32553,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Victory",
+        "name": "Victory \"Rapid Transit\" Helmet",
         "Concealability": "-",
         "Ballistic": "-",
         "Impact": "+2",
@@ -32586,7 +32586,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Zo",
+        "name": "Zoe \"Country Club\" Blazer",
         "Concealability": "13",
         "Ballistic": "3",
         "Impact": "1",
@@ -32597,7 +32597,7 @@
         "BookPage": "r2.???"
       },
       {
-        "name": "Zo",
+        "name": "Zoe \"Futura\" Blazer",
         "Concealability": "13",
         "Ballistic": "2",
         "Impact": "1",
@@ -32608,7 +32608,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Zo",
+        "name": "Zoe \"Futura\" Slacks",
         "Concealability": "13",
         "Ballistic": "1",
         "Impact": "1",
@@ -32619,7 +32619,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Zo",
+        "name": "Zoe \"Futura\" Sweater",
         "Concealability": "13",
         "Ballistic": "2",
         "Impact": "1",
@@ -32630,7 +32630,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Zo",
+        "name": "Zoe \"Heritage\" Cultural",
         "Concealability": "12",
         "Ballistic": "4",
         "Impact": "2",
@@ -32641,7 +32641,7 @@
         "BookPage": "cc.49"
       },
       {
-        "name": "Zo",
+        "name": "Zoe \"Highland Laird\" Kilt",
         "Concealability": "14",
         "Ballistic": "4",
         "Impact": "2",
@@ -32652,7 +32652,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "name": "Zo",
+        "name": "Zoe \"Retrovision\" Skirt Suit",
         "Concealability": "13",
         "Ballistic": "3",
         "Impact": "1",
@@ -32663,7 +32663,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "name": "Zo",
+        "name": "Zoe \"Second Skin\" Bodysuit",
         "Concealability": "15",
         "Ballistic": "2",
         "Impact": "2",
@@ -32971,7 +32971,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "name": "Combat Bikr Helmet",
+        "name": "Combat Biker Helmet",
         "Concealability": "-",
         "Ballistic": "+1",
         "Impact": "+1",
@@ -33026,7 +33026,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Vis. Mag 38",
+        "name": "+Electric Vision Mag 3",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33037,7 +33037,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Vis. Mag 38",
+        "name": "+Optical Vision Mag 3",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33048,7 +33048,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Up Disp",
+        "name": "+Heads Up Display - 100 MPs",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33059,7 +33059,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Vision8",
+        "name": "+Low-light Vision",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33070,7 +33070,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Vision 8",
+        "name": "+Therm Vision",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33081,7 +33081,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Vision 8",
+        "name": "+Ultrasound Vision",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33092,7 +33092,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "8",
+        "name": "+Respirator",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33103,7 +33103,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Goggles 1 8",
+        "name": "+Smart Goggles 1",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33114,7 +33114,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Goggles 2 8",
+        "name": "+Smart Goggles 2",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33125,7 +33125,7 @@
         "BookPage": "mm.32"
       },
       {
-        "name": "Locator 18",
+        "name": "+Signal Locator 1",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33136,7 +33136,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Locator 28",
+        "name": "+Signal Locator 2",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33147,7 +33147,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Locator 38",
+        "name": "+Signal Locator 3",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33158,7 +33158,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Locator 48",
+        "name": "+Signal Locator 4",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33169,7 +33169,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Locator 58",
+        "name": "+Signal Locator 5",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33180,7 +33180,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Locator 68",
+        "name": "+Signal Locator 6",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33191,7 +33191,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Locator 78",
+        "name": "+Signal Locator 7",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33202,7 +33202,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Locator 88",
+        "name": "+Signal Locator 8",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33213,7 +33213,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Locator 98",
+        "name": "+Signal Locator 9",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33224,7 +33224,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Locator 10 8",
+        "name": "+Signal Locator 10",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33235,7 +33235,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 1 8",
+        "name": "+Tracking Signal 1",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33246,7 +33246,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 2 8",
+        "name": "+Tracking Signal 2",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33257,7 +33257,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 3 8",
+        "name": "+Tracking Signal 3",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33268,7 +33268,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 4 8",
+        "name": "+Tracking Signal 4",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33279,7 +33279,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 5 8",
+        "name": "+Tracking Signal 5",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33290,7 +33290,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 6 8",
+        "name": "+Tracking Signal 6",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33301,7 +33301,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 7 8",
+        "name": "+Tracking Signal 7",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33312,7 +33312,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 8 8",
+        "name": "+Tracking Signal 8",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33323,7 +33323,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 9 8",
+        "name": "+Tracking Signal 9",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33334,7 +33334,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 108",
+        "name": "+Tracking Signal 10",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33345,7 +33345,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Rtg. 18",
+        "name": "+Transceiver Rtg. 1",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33356,7 +33356,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Rtg. 28",
+        "name": "+Transceiver Rtg. 2",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33367,7 +33367,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Rtg. 38",
+        "name": "+Transceiver Rtg. 3",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33378,7 +33378,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Rtg. 48",
+        "name": "+Transceiver Rtg. 4",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33389,7 +33389,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Rtg. 58",
+        "name": "+Transceiver Rtg. 5",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33400,7 +33400,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Rtg. 68",
+        "name": "+Transceiver Rtg. 6",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33411,7 +33411,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Rtg. 78",
+        "name": "+Transceiver Rtg. 7",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33422,7 +33422,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Rtg. 88",
+        "name": "+Transceiver Rtg. 8",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33433,7 +33433,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Rtg. 98",
+        "name": "+Transceiver Rtg. 9",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33444,7 +33444,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Rtg. 10   8",
+        "name": "+Transceiver Rtg. 10",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33455,7 +33455,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "8",
+        "name": "+Chemseal",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33466,7 +33466,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 1 8",
+        "name": "+Tracking Signal 1",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33477,7 +33477,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 2 8",
+        "name": "+Tracking Signal 2",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33488,7 +33488,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 3 8",
+        "name": "+Tracking Signal 3",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33499,7 +33499,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 4 8",
+        "name": "+Tracking Signal 4",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33510,7 +33510,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 5 8",
+        "name": "+Tracking Signal 5",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33521,7 +33521,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 6 8",
+        "name": "+Tracking Signal 6",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33532,7 +33532,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 7 8",
+        "name": "+Tracking Signal 7",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33543,7 +33543,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 8 8",
+        "name": "+Tracking Signal 8",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33554,7 +33554,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 9 8",
+        "name": "+Tracking Signal 9",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33565,7 +33565,7 @@
         "BookPage": "cc.51"
       },
       {
-        "name": "Signal 108",
+        "name": "+Tracking Signal 10",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33631,7 +33631,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "name": "Doorgunner",
+        "name": "Doorgunner's Vest ",
         "Concealability": "-",
         "Ballistic": "6",
         "Impact": "4",
@@ -33675,7 +33675,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "name": "Helmet",
+        "name": "Helmet - Nylon",
         "Concealability": "-",
         "Ballistic": "+1",
         "Impact": "+1",
@@ -33686,7 +33686,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "name": "Helmet",
+        "name": "Helmet - Steel",
         "Concealability": "-",
         "Ballistic": "+1",
         "Impact": "+2",
@@ -33796,7 +33796,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Vis. Mag 38",
+        "name": "+Elec. Vis. Mag 38",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33807,7 +33807,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Vis. Mag 38",
+        "name": "+Optical Vis. Mag 38",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33818,7 +33818,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Up Disp",
+        "name": "+Heads Up Disp/100MP",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33829,7 +33829,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Vision8",
+        "name": "+Low-light Vision",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33840,7 +33840,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Vision 8",
+        "name": "+Thermo Vision",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33851,7 +33851,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Vision 8",
+        "name": "+Ultrasound Vision",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33862,7 +33862,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "8",
+        "name": "+Respirator",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33873,7 +33873,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Goggles 1 8",
+        "name": "+Smart Goggles 1",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33884,7 +33884,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Goggles 2 8",
+        "name": "+Smart Goggles 2",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33895,7 +33895,7 @@
         "BookPage": "mm.32"
       },
       {
-        "name": "Locator 18",
+        "name": "+Signal Locator 1",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33906,7 +33906,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Locator 28",
+        "name": "+Signal Locator 2",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33917,7 +33917,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Locator 38",
+        "name": "+Signal Locator 3",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33928,7 +33928,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Locator 48",
+        "name": "+Signal Locator 4",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33939,7 +33939,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Locator 58",
+        "name": "+Signal Locator 5",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33950,7 +33950,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Locator 68",
+        "name": "+Signal Locator 6",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33961,7 +33961,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Locator 78",
+        "name": "+Signal Locator 7",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33972,7 +33972,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Locator 88",
+        "name": "+Signal Locator 8",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33983,7 +33983,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Locator 98",
+        "name": "+Signal Locator 9",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -33994,7 +33994,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Locator 10 8",
+        "name": "+Signal Locator 10",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34005,7 +34005,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 1 8",
+        "name": "+Tracking Signal 1",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34016,7 +34016,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 2 8",
+        "name": "+Tracking Signal 2",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34027,7 +34027,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 3 8",
+        "name": "+Tracking Signal 3",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34038,7 +34038,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 4 8",
+        "name": "+Tracking Signal 4",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34049,7 +34049,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 5 8",
+        "name": "+Tracking Signal 5",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34060,7 +34060,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 6 8",
+        "name": "+Tracking Signal 6",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34071,7 +34071,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 7 8",
+        "name": "+Tracking Signal 7",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34082,7 +34082,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 8 8",
+        "name": "+Tracking Signal 8",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34093,7 +34093,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 9 8",
+        "name": "+Tracking Signal 9",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34104,7 +34104,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 108",
+        "name": "+Tracking Signal 10",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34115,7 +34115,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Rtg. 18",
+        "name": "+Transceiver Rtg. 1",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34126,7 +34126,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Rtg. 28",
+        "name": "+Transceiver Rtg. 2",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34137,7 +34137,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Rtg. 38",
+        "name": "+Transceiver Rtg. 3",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34148,7 +34148,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Rtg. 48",
+        "name": "+Transceiver Rtg. 4",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34159,7 +34159,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Rtg. 58",
+        "name": "+Transceiver Rtg. 5",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34170,7 +34170,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Rtg. 68",
+        "name": "+Transceiver Rtg. 6",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34181,7 +34181,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Rtg. 78",
+        "name": "+Transceiver Rtg. 7",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34192,7 +34192,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Rtg. 88",
+        "name": "+Transceiver Rtg. 8",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34203,7 +34203,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Rtg. 98",
+        "name": "+Transceiver Rtg. 9",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34214,7 +34214,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Rtg. 10   8",
+        "name": "+Transceiver Rtg. 10",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34225,7 +34225,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "8",
+        "name": "+Chemseal",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34236,7 +34236,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 1 8",
+        "name": "+Tracking Signal 1",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34247,7 +34247,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 2 8",
+        "name": "+Tracking Signal 2",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34258,7 +34258,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 3 8",
+        "name": "+Tracking Signal 3",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34269,7 +34269,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 4 8",
+        "name": "+Tracking Signal 4",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34280,7 +34280,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 5 8",
+        "name": "+Tracking Signal 5",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34291,7 +34291,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 6 8",
+        "name": "+Tracking Signal 6",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34302,7 +34302,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 7 8",
+        "name": "+Tracking Signal 7",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34313,7 +34313,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 8 8",
+        "name": "+Tracking Signal 8",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34324,7 +34324,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 9 8",
+        "name": "+Tracking Signal 9",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34335,7 +34335,7 @@
         "BookPage": "sr3.284"
       },
       {
-        "name": "Signal 108",
+        "name": "+Tracking Signal 10",
         "Concealability": "-",
         "Ballistic": "0",
         "Impact": "0",
@@ -34478,7 +34478,7 @@
         "BookPage": "sta2.36"
       },
       {
-        "name": "8",
+        "name": "Ghostsuit",
         "Concealability": "+4",
         "Ballistic": "2",
         "Impact": "1",
@@ -34489,7 +34489,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "name": "Helmet 8",
+        "name": "Ghostsuit Helmet",
         "Concealability": "-",
         "Ballistic": "+1",
         "Impact": "+0",
@@ -34555,7 +34555,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "name": "Gear",
+        "name": "Mirage Gear Combat Helmet",
         "Concealability": "-",
         "Ballistic": "+1",
         "Impact": "+0",
@@ -34566,7 +34566,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "name": "Gear",
+        "name": "Mirage Gear Flak Vest",
         "Concealability": "-",
         "Ballistic": "2",
         "Impact": "1",
@@ -34577,7 +34577,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "name": "Gear",
+        "name": "Mirage Gear",
         "Concealability": "+2",
         "Ballistic": "1",
         "Impact": "0",
@@ -37627,7 +37627,7 @@
         "BookPage": "mm.138"
       },
       {
-        "name": "DocWagon",
+        "name": "DocWagon Basic",
         "Rating": "-",
         "Availability": "On Payment",
         "Weight": "-",
@@ -37636,7 +37636,7 @@
         "BookPage": "sr3.304"
       },
       {
-        "name": "DocWagon",
+        "name": "DocWagon Gold",
         "Rating": "-",
         "Availability": "On Payment",
         "Weight": "-",
@@ -37645,7 +37645,7 @@
         "BookPage": "sr3.304"
       },
       {
-        "name": "DocWagon",
+        "name": "DocWagon Platinum",
         "Rating": "-",
         "Availability": "On Payment",
         "Weight": "-",
@@ -37654,7 +37654,7 @@
         "BookPage": "sr3.304"
       },
       {
-        "name": "DocWagon",
+        "name": "DocWagon Super Platinum",
         "Rating": "-",
         "Availability": "On Payment",
         "Weight": "-",
