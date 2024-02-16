@@ -97,7 +97,9 @@ export default function BasicTabs() {
         chargenCash: 20000,
         cashSpent:0,
         cash:0,
-        log:[]
+        log:[],
+        description:'',
+        notes:''
     }
     const [Edition, setEdition]= React.useState('SR3');
     const [value, setValue] = React.useState(0);
@@ -178,10 +180,10 @@ export default function BasicTabs() {
             if(Edition === 'SR3'){
                 switch(contact.Level) {
                     case 1:
-                        if(contact.Type !== 'free'){
-                            tempCashSpent += 5000;
-                        }else{
+                        if(contact.Type === 'free'){
                             tempCashSpent += 0;
+                        }else{
+                            tempCashSpent += 5000;
                         }
                         break;
                     case 2:
@@ -546,6 +548,7 @@ export default function BasicTabs() {
             </CustomTabPanel>
             <CustomTabPanel value={value} index={11}>
                 <SheetDisplay 
+                            onChangeStreetName={(name) => setCharacter({...Character, street_name: name})}
                             Edition={Edition}
                             currentCharacter={Character} />
             </CustomTabPanel>

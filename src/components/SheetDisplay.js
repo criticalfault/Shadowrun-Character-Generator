@@ -272,7 +272,12 @@ function SheetDisplay(props) {
   return (
     <Grid container spacing={2} className='sheetBody'>
         <Grid item xs={12} md={6}>
-            <Item>Name: {props.currentCharacter.street_name}</Item>
+            <TextField
+                label="Runner Name"
+                type="text"
+                value={props.currentCharacter.street_name}
+                onChange={event => props.onChangeStreetName(event.target.value)}
+            />
         </Grid>
         <Grid item xs={6} md={3}>
             <Item>Metatype: {props.currentCharacter.race}</Item>
