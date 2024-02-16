@@ -385,7 +385,9 @@ export default function BasicTabs() {
 
     const SkillsPanelRender = (ed) => {
         if(ed === 'SR3'){
-            return ( <SR3SkillsPanel    characterSkills={Character.skills} 
+            return ( <SR3SkillsPanel    
+                                        currentCharacter={Character}
+                                        characterSkills={Character.skills} 
                                         onUpdateSkills={handleSkillsUpdate} 
                                         activeSkillPoints={Character.maxSkillPoints} 
                                         KnowledgeSkillsMax={(Character.attributes.Intelligence*5)} 
