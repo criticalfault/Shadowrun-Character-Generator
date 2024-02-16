@@ -52,9 +52,9 @@ export default function GearPanel(props) {
       console.log("SelectedGearCategory:"+SelectedGearCategory);
       var TempGear = {}
       if(props.Edition === 'SR3'){
-        TempGear = GearData[SelectedGearCategory].entries.filter(item => item.hasOwnProperty('BookPage') && props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
+        TempGear = GearData[SelectedGearCategory].entries.sort((a, b) => a.name.localeCompare(b.name)).filter(item => item.hasOwnProperty('BookPage') && props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
       }else{
-        TempGear = GearData[SelectedGearCategory].entries[event.target.value];
+        TempGear = GearData[SelectedGearCategory].entries.sort((a, b) => a.name.localeCompare(b.name))[event.target.value];
       }
       console.log(TempGear);
       setNewGear(TempGear);
@@ -111,7 +111,7 @@ export default function GearPanel(props) {
             value={NewGearIndex}
             onChange={handleGearChange}>
             
-          { GearData[SelectedGearCategory].entries.filter(item => !item.hasOwnProperty('BookPage') || props.BooksFilter.includes(item.BookPage.split('.')[0])).sort((a, b) => a - b).map( (gear, index) => (
+          { GearData[SelectedGearCategory].entries.filter(item => !item.hasOwnProperty('BookPage') || props.BooksFilter.includes(item.BookPage.split('.')[0])).sort((a, b) => a.name.localeCompare(b.name)).map( (gear, index) => (
             <MenuItem selected={NewGearIndex === index} key={index} value={index}>{gear.name}</MenuItem>
           ))}
         </Select>
@@ -149,7 +149,11 @@ export default function GearPanel(props) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {props.Gear.filter(item => item.hasOwnProperty('Ballistic')).map((gear, index) => (
+            {props.Gear.map((gear, index) => {
+              if(!gear.hasOwnProperty('Ballistic')){
+                return;
+              }
+              return(
               <TableRow key={gear.Name+index}>
                 <TableCell component="th" scope="row">{gear.name}</TableCell>
                 <TableCell align="right">{gear.Ballistic}</TableCell>
@@ -162,7 +166,7 @@ export default function GearPanel(props) {
                     <Button color="secondary" onClick={() => handleRemoveGear(index)}>Remove</Button>
                 </TableCell>
               </TableRow>
-            ))}
+            )})}
           </TableBody>
         </Table>
       </TableContainer>
@@ -181,7 +185,11 @@ export default function GearPanel(props) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {props.Gear.filter(item => item.hasOwnProperty('Damage')).map((gear, index) => (
+            {props.Gear.map((gear, index) => {
+              if(!gear.hasOwnProperty('Damage')){
+                return;
+              }
+              return(
               <TableRow key={gear.Name+index}>
                 <TableCell component="th" scope="row">{gear.name}</TableCell>
                 <TableCell align="right">{gear.Damage}</TableCell>
@@ -193,7 +201,7 @@ export default function GearPanel(props) {
                     <Button color="secondary" onClick={() => handleRemoveGear(index)}>Remove</Button>
                 </TableCell>
               </TableRow>
-            ))}
+            )})}
           </TableBody>
         </Table>
       </TableContainer>
@@ -212,7 +220,11 @@ export default function GearPanel(props) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {props.Gear.filter(item => !item.hasOwnProperty('Damage') && !item.hasOwnProperty('Ballistic')).map((gear, index) => (
+            {props.Gear.map((gear, index) => {
+              if(gear.hasOwnProperty('Damage') || gear.hasOwnProperty('Ballistic')){
+                return;
+              }
+              return (
               <TableRow key={gear.Name+index}>
                 <TableCell component="th" scope="row">{gear.name}</TableCell>
                 <TableCell align="right">{gear.Rating??'N/A'}</TableCell>
@@ -224,7 +236,7 @@ export default function GearPanel(props) {
                     <Button color="secondary" onClick={() => handleRemoveGear(index)}>Remove</Button>
                 </TableCell>
               </TableRow>
-            ))}
+            )})}
           </TableBody>
         </Table>
       </TableContainer>

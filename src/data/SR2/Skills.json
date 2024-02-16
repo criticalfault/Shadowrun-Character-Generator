@@ -116,8 +116,8 @@
         {"name":"Transimplant surgery","Specializations":["Headware","Bodyware","Organic replacements"]}
     ]
 },
-"Computer":{
-    "name":"Computer", 
+"Computers":{
+    "name":"Computers", 
     "Concentrations":[
         {"name":"Hardware","Specializations":["Mainframes","Micros","Interface tech","Implant tech"]},
         {"name":"Software","Specializations":["Decking"," Matrix programming","Non-matrix programming","Interface programming","Implant programming"]},
