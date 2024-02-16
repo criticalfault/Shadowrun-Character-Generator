@@ -11,15 +11,26 @@ import LinearProgress from '@mui/material/LinearProgress';
 import Box from '@mui/material/Box';
 const skillsData = require('../data/SR3/ActiveSkills.json');
 const LanguageSkillsData = require('../data/SR3/LanguageSkills.json');
-function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, KnowledgeSkillsMax, LanguageSkillsMax }) {
+function SR3SkillsPanel({currentCharacter, characterSkills, onUpdateSkills, activeSkillPoints, KnowledgeSkillsMax, LanguageSkillsMax }) {
   const ActiveSkills = ['Combat skills','Build/Repair skills','Physical skills','Magical skills','Social skills','Survival skills','Technical skills','Vehicle skills','Otaku (MATRIX) skills','Martial Arts(MA)']
   const KnowledgeSkills = ['6th World (SW)','Academic Skills (AC)','Area Knowledge (AK)','Background (BK)','Interests (IN)','Program Design (PD)','Street (ST)','Survival (SV)', 'System Familiarity (SF)']
+  const skillCategory = Object.keys(skillsData);
   const CalcTotalSkillsRatings = (skillsList) =>{
     let totalRatings = 0;
     skillsList.forEach(function(skill){
-      totalRatings += skill.rating;
+      totalRatings += skill.cost;
     })
     return totalRatings;
+  }
+
+  const AcronymToAttribute = {
+    'QCK':"Quickness",
+    'STR':"Strength",
+    'BOD':"Body",
+    'WIL':"Willpower",
+    'INT':"Intelligence",
+    'CHA':"Charisma",
+    'RCT':"Reaction",
   }
 
   //Active Skills
@@ -28,8 +39,8 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
   const [selectedCategory, setSelectedCategory] = useState('Combat skills');
   const [skillRating, setSkillRating] = useState(1);
   const [skillPointsSpent, setSkillPointsSpent] = useState(CalcTotalSkillsRatings(characterSkills.filter(skill => skill.type === 'Active')));
-  const [skillCategory, setSkillCategory] = useState(Object.keys(skillsData));
   const [newSkill, setNewSkill] = useState('Assault Rifles');
+  const [newSkillAttribute, setNewSkillAttribute] = useState('INT');
 
   //Knowledge Skills
   const [selectedKnowledgeSpecialization, setKnowledgeSelectedSpecialization] = useState('');
@@ -37,16 +48,13 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
   const [selectedKnowledgeCategory, setKnowledgeSelectedCategory] = useState('Street (ST)');
   const [skillKnowledgeRating, setKnowledgeSkillRating] = useState(1);
   const [skillKnowledgePointsSpent, setKnowledgeSkillPointsSpent] = useState(CalcTotalSkillsRatings(characterSkills.filter(skill => skill.type === 'Knowledge')));
-  const [skillKnowledgeCategory, setKnowledgeSkillCategory] = useState(Object.keys(skillsData));
   const [newKnowledgeSkill, setKnowledgeNewSkill] = useState('ST:Arms Dealers');
 
   //Language Skills
   const [selectedLanguageSpecialization, setLanguageSelectedSpecialization] = useState('');
   const [selectedLanguageSkills, setLanguageSelectedSkills] = useState(characterSkills.filter(skill => skill.type === 'Language'));
-  const [selectedLanguageCategory, setLanguageSelectedCategory] = useState(CalcTotalSkillsRatings(characterSkills.filter(skill => skill.type === 'Language')));
   const [skillLanguageRating, setLanguageSkillRating] = useState(1);
   const [skillLanguagePointsSpent, setLanguageSkillPointsSpent] = useState(0);
-  const [skillLanguageCategory, setLanguageSkillCategory] = useState(Object.keys(skillsData));
   const [newLanguageSkill, setLanguageNewSkill] = useState('English');
 
 
@@ -68,13 +76,11 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
     setKnowledgeSelectedCategory(event.target.value);
   }
 
-  const handleLanguageCategoryChange = (event) => {
-    setLanguageSelectedCategory(event.target.value);
-  }
-
   //Handle Skill Change events
   const handleSkillChange = (event) => {
-    setNewSkill(event.target.value);
+    let skillArray = event.target.value.split('|');
+    setNewSkill(skillArray[0]);
+    setNewSkillAttribute(skillArray[1]);
     setSelectedSpecialization(''); // Reset selected specialization when a new skill is selected
   };
 
@@ -163,11 +169,18 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
 
   const handleAddSkill = () => {
     if (newSkill) {
-      const skillToAdd = { name: newSkill, rating:skillRating, specialization: selectedSpecialization, type:'Active' };
+      let costDiff = (parseInt(skillRating)-parseInt(currentCharacter.attributes[AcronymToAttribute[newSkillAttribute]]))
+      let cost = skillRating
+      if(costDiff > 0) {
+        cost += costDiff;
+      }
+    
+      const skillToAdd = { name: newSkill, cost:cost, rating:skillRating, attribute:newSkillAttribute, specialization: selectedSpecialization, type:'Active' };
       setSelectedSkills(prevSkills => [...prevSkills, skillToAdd]);
       setSkillPointsSpent(prevSkills => (prevSkills + skillRating));
       setNewSkill('');
       setSelectedSpecialization('');
+      setNewSkillAttribute('INT');
 
       // Update the characterSkills array with the new skill
       const updatedSkills = [...characterSkills, skillToAdd];
@@ -178,9 +191,14 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
 
   const handleKnowledgeAddSkill = () => {
     if (newKnowledgeSkill) {
-      const skillToAdd = { name: newKnowledgeSkill, rating:skillKnowledgeRating, specialization: selectedKnowledgeSpecialization, type:'Knowledge' };
+      let costDiff = (skillKnowledgeRating-currentCharacter.attributes['Intelligence'])
+      let cost = skillKnowledgeRating;
+      if(costDiff > 0) {
+        cost += costDiff;
+      }
+      const skillToAdd = { name: newKnowledgeSkill, cost:cost, rating:skillKnowledgeRating, attribute:'INT', specialization: selectedKnowledgeSpecialization, type:'Knowledge' };
       setKnowledgeSelectedSkills(prevSkills => [...prevSkills, skillToAdd]);
-      setKnowledgeSkillPointsSpent(prevSkills => (prevSkills + skillRating));
+      setKnowledgeSkillPointsSpent(prevSkills => (prevSkills + skillKnowledgeRating));
       setKnowledgeNewSkill('');
       setKnowledgeSkillRating(1);
       // Update the characterSkills array with the new skill
@@ -192,9 +210,14 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
 
   const handleLanguageAddSkill = () => {
     if (newLanguageSkill) {
-      const skillToAdd = { name: newLanguageSkill, rating:skillLanguageRating, specialization: selectedLanguageSpecialization, type:'Language' };
+      let costDiff = (skillLanguageRating-currentCharacter.attributes['Intelligence'])
+      let cost = skillLanguageRating
+      if(costDiff > 0) {
+        cost += costDiff;
+      }
+      const skillToAdd = { name: newLanguageSkill, cost:cost, rating:skillLanguageRating, attribute:'INT', specialization: selectedLanguageSpecialization, type:'Language' };
       setLanguageSelectedSkills(prevSkills => [...prevSkills, skillToAdd]);
-      setLanguageSkillPointsSpent(prevSkills => (prevSkills + skillRating));
+      setLanguageSkillPointsSpent(prevSkills => (prevSkills + skillLanguageRating));
       setLanguageNewSkill('');
       setLanguageSkillRating(1);
       // Update the characterSkills array with the new skill
@@ -215,6 +238,7 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
           setSelectedSpecialization(skillToEdit.specialization);
           setNewSkill(skillToEdit.name);
           setSkillRating(skillToEdit.rating);
+          setNewSkillAttribute(skillToEdit.attribute);
           editedSkills.splice(index, 1);
           setSelectedSkills(editedSkills);
           break;
@@ -254,24 +278,23 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
 
   const handleRemoveSkill = (index, type) => {
     let editedSkills = null;
-    let RemovedSkill = null;
 
     switch(type) {
       case "Active":
         editedSkills = [...selectedSkills];
-        RemovedSkill = editedSkills.splice(index, 1);
+        editedSkills.splice(index, 1);
         setSelectedSkills(editedSkills);
         onUpdateSkills([...selectedSkills,...selectedKnowledgeSkills,...selectedLanguageSkills]);
         break;
       case "Knowledge":
         editedSkills = [...selectedKnowledgeSkills];
-        RemovedSkill = editedSkills.splice(index, 1);
+        editedSkills.splice(index, 1);
         setKnowledgeSelectedSkills(editedSkills);
         onUpdateSkills([...selectedSkills,...selectedKnowledgeSkills,...selectedLanguageSkills]);
         break;
       case "Language":
         editedSkills = [...selectedLanguageSkills];
-        RemovedSkill = editedSkills.splice(index, 1);
+        editedSkills.splice(index, 1);
         setLanguageSelectedSkills(editedSkills);
         onUpdateSkills([...selectedSkills,...selectedKnowledgeSkills,...selectedLanguageSkills]);
         break;
@@ -320,7 +343,7 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
           onChange={handleSkillChange}
         >
           {skillsData[selectedCategory].map(skill => (
-            <option key={skill.name} value={skill.name}>{skill.name}</option>
+            <option key={skill.name} value={skill.name+'|'+skill.attribute}>{skill.name}</option>
           ))}
         </NativeSelect>
       </FormControl>
@@ -445,7 +468,7 @@ function SR3SkillsPanel({characterSkills, onUpdateSkills, activeSkillPoints, Kno
         {characterSkills.map((skill, index) => (
           <ListItem key={index}>
             <ListItemText
-              primary={skill.specialization ? `${skill.name} (${skill.rating-1}) ->  ${skill.specialization} (${skill.rating + 1})`:`${skill.name} (${skill.rating})`}
+              primary={skill.specialization ? `${skill.name} (${skill.rating-1}) ->  ${skill.specialization} (${skill.rating + 1}) Cost:[${skill.cost}]`:`${skill.name} (${skill.rating}) Cost:[${skill.cost}]`}
             />
             <Button color="primary" onClick={() => handleEditSkill(index, skill.type)}>
               Edit
