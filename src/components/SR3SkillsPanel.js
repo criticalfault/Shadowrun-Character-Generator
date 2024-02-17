@@ -78,9 +78,13 @@ function SR3SkillsPanel({currentCharacter, characterSkills, onUpdateSkills, acti
 
   //Handle Skill Change events
   const handleSkillChange = (event) => {
-    let skillArray = event.target.value.split('|');
-    setNewSkill(skillArray[0]);
-    setNewSkillAttribute(skillArray[1]);
+    let skill = event.target.value;
+    let skillsReMap ={};
+    skillsData[selectedCategory].map((element) => {
+      skillsReMap[element.name] = element;
+    });
+    setNewSkill(skill);
+    setNewSkillAttribute(skillsReMap[skill].attribute);
     setSelectedSpecialization(''); // Reset selected specialization when a new skill is selected
   };
 
@@ -340,10 +344,11 @@ function SR3SkillsPanel({currentCharacter, characterSkills, onUpdateSkills, acti
         <NativeSelect
           id="skill-dropdown"
           value={newSkill}
+          data-attribute={newSkillAttribute}
           onChange={handleSkillChange}
         >
           {skillsData[selectedCategory].map(skill => (
-            <option key={skill.name} value={skill.name+'|'+skill.attribute}>{skill.name}</option>
+            <option key={skill.name} value={skill.name} >{skill.name}</option>
           ))}
         </NativeSelect>
       </FormControl>

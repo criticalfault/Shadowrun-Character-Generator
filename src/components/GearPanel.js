@@ -19,7 +19,6 @@ export default function GearPanel(props) {
   const GearData = require('../data/'+props.Edition+'/Gear.json');
   const tempCategories = Object.keys(GearData);
   const GearCategories = [...tempCategories].sort();
-  //const GearCollection = ['Cyberdeck','Cyberdeck Parts'];
   const CalcTotalNuyenSpent = () =>{
       let TotalNuyen = 0;
       props.Gear.forEach(function(gear){
@@ -27,17 +26,7 @@ export default function GearPanel(props) {
       });
       return TotalNuyen;
   }
-  GearData['Firearms'].entries.forEach(function(item) {
-    if(!item.hasOwnProperty('BookPage')){
-      console.log("No BookPage");
-      console.log(item);
-      return;
-    }
-    if(!item.BookPage.includes('.')){
-      console.log("BookPage lacks .");
-      console.log(item);
-    }
-  });
+
   const [NewGear, setNewGear]           = useState();
   const [NewGearCost, setNewGearCost]   = useState();
   const [NewGearIndex, setNewGearIndex] = useState(0);
@@ -48,6 +37,7 @@ export default function GearPanel(props) {
     const handleGearCategoryChange = (event) => {
         setSelectedGearCategory(event.target.value);
     }
+    
     const handleGearChange = (event) => {
       console.log("SelectedGearCategory:"+SelectedGearCategory);
       var TempGear = {}
@@ -225,7 +215,7 @@ export default function GearPanel(props) {
                 return;
               }
               return (
-              <TableRow key={gear.Name+index}>
+              <TableRow key={gear.name+index}>
                 <TableCell component="th" scope="row">{gear.name}</TableCell>
                 <TableCell align="right">{gear.Rating??'N/A'}</TableCell>
                 <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}</TableCell>
