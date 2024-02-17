@@ -143,16 +143,19 @@ function SheetDisplay(props) {
                 }
             })
         }
-        return(<>
-                <br/><br/>
-                   <TextField
-                       className='pool_display'
-                       id="rating-input"
-                       label="Hacking"
-                       type="text"
-                       value={ poolValue }
+        if(poolValue !== 0){
+            return(<>
+                    <br/><br/>
+                    <TextField
+                        className='pool_display'
+                        id="rating-input"
+                        label="Hacking"
+                        type="text"
+                        value={ poolValue }
                     />
-                </>)
+                </>
+            )
+        }
     }
 
     const renderSpellPool = () => {
@@ -390,37 +393,84 @@ function SheetDisplay(props) {
                 {renderTaskPool()}
             </Item>
         </Grid>
-        <Grid item xs={6} md={3}>
+        <Grid item xs={12}>
             <Item style={{"minHeight":"341px"}}>
-            <h2 className={"boxHeader"}>Cyberware</h2>
-            {props.currentCharacter.cyberware.map((cyberware, index) => (
-                <div key={cyberware.Name+index}>
-                 {cyberware.name}
-                </div>
-              ))}
+                <h2 className={"boxHeader"}>Cyberware</h2>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Name</TableCell>
+                                <TableCell align="right">Rating</TableCell>
+                                <TableCell align="right">Notes</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {props.currentCharacter.cyberware.map((cyberware, index) => (
+                                <TableRow key={cyberware.Name+index}>
+                                    <TableCell component="th" scope="row">{cyberware.Name}</TableCell>
+                                    <TableCell align="right">{cyberware.Rating}</TableCell>
+                                    <TableCell align="right">{cyberware.Notes}</TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </Item>
+        </Grid>
+        <Grid item xs={6}>
+            <Item>
+                <h2 className={"boxHeader"}>Gear</h2>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Name</TableCell>
+                                <TableCell align="right">Rating</TableCell>
+                                <TableCell align="right">Notes</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {props.currentCharacter.gear.filter(item => !item.hasOwnProperty('Damage') && !item.hasOwnProperty('Ballistic')).map((gear, index) => (
+                            <TableRow key={gear.name+index}>
+                                <TableCell component="th" scope="row">{gear.name}</TableCell>
+                                <TableCell align="right">{gear.Rating}</TableCell>
+                                <TableCell align="right">{gear.Notes}</TableCell>
+                            </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </Item>
+        </Grid>
+        <Grid item xs={6}>
+            <Item>
+            <h2 className={"boxHeader"}>Armor</h2>
+            <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Name</TableCell>
+                                <TableCell align="right">Ballistic</TableCell>
+                                <TableCell align="right">Impact</TableCell>
+                                <TableCell align="right">Notes</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {props.currentCharacter.gear.filter(item => item.hasOwnProperty('Ballistic')).map((gear, index) => (
+                                <TableRow key={gear.name+index}>
+                                    <TableCell component="th" scope="row">{gear.name}</TableCell>
+                                    <TableCell align="right">{gear.Ballistic}</TableCell>
+                                    <TableCell align="right">{gear.Impact}</TableCell>
+                                    <TableCell align="right">{gear.Notes}</TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
             </Item>
         </Grid>
         <Grid item xs={12}>
-            <Item>
-            <h2 className={"boxHeader"}>Gear</h2>
-            {props.currentCharacter.gear.filter(item => !item.hasOwnProperty('Damage') && !item.hasOwnProperty('Ballistic')).map((gear, index) => (
-                <div key={gear.Name+index}>
-                 {gear.name}
-                </div>
-              ))}
-            </Item>
-        </Grid>
-        <Grid item xs={4}>
-            <Item>
-            <h2 className={"boxHeader"}>Armor</h2>
-            {props.currentCharacter.gear.filter(item => item.hasOwnProperty('Ballistic')).map((gear, index) => (
-                <div key={gear.Name+index}>
-                    {gear.name}: {gear.Ballistic} / {gear.Impact}
-                </div>
-              ))}
-            </Item>
-        </Grid>
-        <Grid item xs={8}>
             <Item>
                 <h2 className={"boxHeader"}>Weapons</h2>
                 <TableContainer component={Paper}>
