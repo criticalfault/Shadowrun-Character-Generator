@@ -139,24 +139,29 @@ export default function GearPanel(props) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {props.Gear.map((gear, index) => {
-              if(!gear.hasOwnProperty('Ballistic')){
-                return;
-              }
-              return(
-              <TableRow key={gear.Name+index}>
-                <TableCell component="th" scope="row">{gear.name}</TableCell>
-                <TableCell align="right">{gear.Ballistic}</TableCell>
-                <TableCell align="right">{gear.Impact}</TableCell>
-                <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}</TableCell>
-                <TableCell align="right">{gear.BookPage}</TableCell>
-                <TableCell align="right">{gear.Availability}</TableCell>
-                <TableCell align="right">{gear.Notes}</TableCell>
-                <TableCell align="right">
-                    <Button color="secondary" onClick={() => handleRemoveGear(index)}>Remove</Button>
-                </TableCell>
-              </TableRow>
-            )})}
+            {
+              props.Gear.map(
+                (gear, index) => {
+                  if(!gear.hasOwnProperty('Ballistic')){
+                    return;
+                  }
+                  return(
+                  <TableRow key={index}>
+                    <TableCell component="th" scope="row">{gear.name}</TableCell>
+                    <TableCell align="right">{gear.Ballistic}</TableCell>
+                    <TableCell align="right">{gear.Impact}</TableCell>
+                    <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}</TableCell>
+                    <TableCell align="right">{gear.BookPage}</TableCell>
+                    <TableCell align="right">{gear.Availability}</TableCell>
+                    <TableCell align="right">{gear.Notes}</TableCell>
+                    <TableCell align="right">
+                        <Button color="secondary" onClick={() => handleRemoveGear(index)}>Remove</Button>
+                    </TableCell>
+                  </TableRow>
+                  )
+                }
+              )
+            }
           </TableBody>
         </Table>
       </TableContainer>
@@ -180,7 +185,7 @@ export default function GearPanel(props) {
                 return;
               }
               return(
-              <TableRow key={gear.Name+index}>
+              <TableRow key={index}>
                 <TableCell component="th" scope="row">{gear.name}</TableCell>
                 <TableCell align="right">{gear.Damage}</TableCell>
                 <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}</TableCell>
@@ -215,7 +220,7 @@ export default function GearPanel(props) {
                 return;
               }
               return (
-              <TableRow key={gear.name+index}>
+              <TableRow key={index}>
                 <TableCell component="th" scope="row">{gear.name}</TableCell>
                 <TableCell align="right">{gear.Rating??'N/A'}</TableCell>
                 <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}</TableCell>
