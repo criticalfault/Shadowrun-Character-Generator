@@ -215,7 +215,7 @@ export default function GearPanel(props) {
                 return;
               }
               return (
-              <TableRow key={gear.Name+index}>
+              <TableRow key={gear.name+index}>
                 <TableCell component="th" scope="row">{gear.name}</TableCell>
                 <TableCell align="right">{gear.Rating??'N/A'}</TableCell>
                 <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}</TableCell>

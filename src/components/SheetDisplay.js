@@ -102,9 +102,12 @@ function SheetDisplay(props) {
             if(props.currentCharacter.decks.length !== 0){
                 MPCP = props.currentCharacter.decks[0].Persona;
             }
-            poolValue = ((parseInt(props.currentCharacter.attributes.Intelligence) +
+            poolValue = Math.floor(
+                (parseInt(props.currentCharacter.attributes.Intelligence) +
             parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
-            parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+parseInt(MPCP))/3)+ parseInt(props.currentCharacter.cyberAttributeBonuses.Hacking_Pool??0);
+            parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+
+            parseInt(MPCP))/3)+
+            parseInt(props.currentCharacter.cyberAttributeBonuses.Hacking_Pool??0);
         }else{
             props.currentCharacter.skills.forEach(function(skill){
                 if(skill.name === "Computers"){
@@ -118,7 +121,7 @@ function SheetDisplay(props) {
                         });
                         
                         poolValue = parseInt(subRating) +
-                        (
+                        Math.floor(
                             (
                                 parseInt(props.currentCharacter.attributes.Intelligence) +
                                 parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
@@ -128,7 +131,7 @@ function SheetDisplay(props) {
                     }else{
                         poolValue = parseInt(skill.rating) +
                         (
-                            (
+                            Math.floor(
                                 parseInt(props.currentCharacter.attributes.Intelligence) +
                                 parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
                                 parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+
@@ -163,13 +166,13 @@ function SheetDisplay(props) {
         if(props.Edition === 'SR3'){
             poolValue = (Math.floor(
                 (
-                parseInt(props.currentCharacter.attributes.Magic)+
-                parseInt(props.currentCharacter.attributes.Intelligence) +
-                parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
-                parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+
-                parseInt(props.currentCharacter.attributes.Willpower) +
-                parseInt(props.currentCharacter.raceBonuses.Willpower??0) +
-                parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower??0)
+                    parseInt(props.currentCharacter.attributes.Magic)+
+                    parseInt(props.currentCharacter.attributes.Intelligence) +
+                    parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
+                    parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)+
+                    parseInt(props.currentCharacter.attributes.Willpower) +
+                    parseInt(props.currentCharacter.raceBonuses.Willpower??0) +
+                    parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower??0)
                 )
                 
                 /3))
@@ -322,13 +325,18 @@ function SheetDisplay(props) {
                             id="rating-input"
                             label="Reaction"
                             type="text"
-                            value={(Math.floor(parseInt(props.currentCharacter.attributes.Quickness) +
-                                parseInt(props.currentCharacter.raceBonuses.Quickness??0) +
-                                parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+
-                                parseInt(props.currentCharacter.magicalAttributeBonuses.Quickness)+
-                                parseInt(props.currentCharacter.attributes.Intelligence) +
-                                parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
-                                parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0))/2)+parseInt(props.currentCharacter.cyberAttributeBonuses.Reaction)}
+                            value={
+                                    (Math.floor(
+                                    parseInt(props.currentCharacter.attributes.Quickness) +
+                                    parseInt(props.currentCharacter.raceBonuses.Quickness??0) +
+                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+
+                                    parseInt(props.currentCharacter.magicalAttributeBonuses.Quickness)+
+                                    parseInt(props.currentCharacter.attributes.Intelligence) +
+                                    parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
+                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)/2)+
+                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Reaction)
+                                    )
+                                }
                         /><br></br><br></br>
                         <TextField
                             style={{ width: '90px', marginRight: '10px', display: 'inline-block' }}
@@ -383,7 +391,8 @@ function SheetDisplay(props) {
                                     parseInt(props.currentCharacter.magicalAttributeBonuses.Willpower??0)
                                    )/2)
                                     +parseInt(props.currentCharacter.magicalAttributeBonuses.Combat_Pool??0)
-                                )}
+                                )
+                            }
                 />
                 
                 {renderHackingPool()}
