@@ -2,7 +2,9 @@
   padding-left: 50px;
   padding-bottom: 100px;
 }
-
+body{
+  background: whitesmoke;
+}
 
 @media only screen and (max-width: 600px) {
   .mainHeader{

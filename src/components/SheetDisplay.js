@@ -20,10 +20,22 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.primary,
 }));
 function SheetDisplay(props) {
-    // const Ranges = require('../data/ranges.json');
-    // const getRangesFromName = (name) =>{
+    const Ranges = require('../data/ranges.json');
+    const getRangesFromName = (name) =>{
+       let RangeNames = Object.keys(Ranges);
+       for(let i = 0; i < RangeNames.length; i++){
+           if(name.includes(RangeNames[i])){
+               return Ranges[RangeNames[i]];
+           }
+       }
 
-    // }
+       return {
+        "short":'N/A',
+        "medium":'N/A',
+        "long":'N/A',
+        "extreme":'N/A'
+       }
+    }
     const isFetishSpell = (spell) => {
         if(spell){
             return (<span>F&nbsp;</span>)
@@ -479,8 +491,8 @@ function SheetDisplay(props) {
                         </TableHead>
                         <TableBody>
                             {props.currentCharacter.gear.filter(item => !item.hasOwnProperty('Damage') && !item.hasOwnProperty('Ballistic')).map((gear, index) => (
-                            <TableRow key={gear.name+index}>
-                                <TableCell component="th" scope="row"> {gear.name}
+                            <TableRow key={gear.Name+index}>
+                                <TableCell component="th" scope="row"> {gear.Name}
                                 {gear.Amount !== 0?`  x${gear.Amount}`:''}</TableCell>
                                 <TableCell align="right">{gear.Rating}</TableCell>
                                 <TableCell align="right">{gear.Notes}</TableCell>
@@ -506,8 +518,8 @@ function SheetDisplay(props) {
                         </TableHead>
                         <TableBody>
                             {props.currentCharacter.gear.filter(item => item.hasOwnProperty('Ballistic')).map((gear, index) => (
-                                <TableRow key={gear.name+index}>
-                                    <TableCell component="th" scope="row">{gear.name}</TableCell>
+                                <TableRow key={gear.Name+index}>
+                                    <TableCell component="th" scope="row">{gear.Name}</TableCell>
                                     <TableCell align="right">{gear.Ballistic}</TableCell>
                                     <TableCell align="right">{gear.Impact}</TableCell>
                                     <TableCell align="right">{gear.Notes}</TableCell>
@@ -527,17 +539,32 @@ function SheetDisplay(props) {
                             <TableRow>
                             <TableCell>Name</TableCell>
                             <TableCell align="right">Damage</TableCell>
+                            <TableCell align="right">Short</TableCell>
+                            <TableCell align="right">Medium</TableCell>
+                            <TableCell align="right">Long</TableCell>
+                            <TableCell align="right">Extreme</TableCell>
                             <TableCell align="right">Notes</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {props.currentCharacter.gear.filter(item => item.hasOwnProperty('Damage')).map((gear, index) => (
-                            <TableRow key={gear.Name+index}>
-                                <TableCell component="th" scope="row">{gear.name}</TableCell>
-                                <TableCell align="right">{gear.Damage}</TableCell>
-                                <TableCell align="right">{gear.Notes}</TableCell>
-                            </TableRow>
-                            ))}
+                            {props.currentCharacter.gear.filter(item => item.hasOwnProperty('Damage')).map((gear, index) => 
+                                {
+                                    let gearRange = getRangesFromName(gear.Name);
+                                    
+                            
+                                return (
+                                        <TableRow key={gear.Name+index}>
+                                            <TableCell component="th" scope="row">{gear.Name}</TableCell>
+                                            <TableCell align="right">{gear.Damage}</TableCell>
+                                            <TableCell align="right">{gearRange.short??'N/A'}</TableCell>
+                                            <TableCell align="right">{gearRange.medium??'N/A'}</TableCell>
+                                            <TableCell align="right">{gearRange.long??'N/A'}</TableCell>
+                                            <TableCell align="right">{gearRange.extreme??'N/A'}</TableCell>
+                                            <TableCell align="right">{gear.Notes}</TableCell>
+                                        </TableRow>
+                                    )
+                                }
+                            )}
                         </TableBody>
                     </Table>
                 </TableContainer>
