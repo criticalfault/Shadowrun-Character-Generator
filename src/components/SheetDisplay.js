@@ -38,6 +38,15 @@ function SheetDisplay(props) {
     
     }
 
+    const SpellCategories = {
+        "C":"Combat",
+        "M":"Manipulation",
+        "H":"Health",
+        "D":"Detection",
+        "I":"Illusion",
+        "Z":"Transformation"
+    }
+
     const renderControlPool = () =>{
 
         if(props.currentCharacter.cyberAttributeBonuses.hasOwnProperty('Vehicle_Control_Rig_Level')) {
@@ -515,6 +524,7 @@ function SheetDisplay(props) {
               <TableCell>Spell Name</TableCell>
               <TableCell align="right">Rating</TableCell>
               <TableCell align="right">Type</TableCell>
+              <TableCell align="right">Category</TableCell>
               <TableCell align="right">Target</TableCell>
               <TableCell align="right">Duration</TableCell>
               <TableCell align="right">Drain Code</TableCell>
@@ -531,6 +541,7 @@ function SheetDisplay(props) {
                 </TableCell>
                 <TableCell align="right">{spell.Rating}</TableCell>
                 <TableCell align="right">{spell.Type}</TableCell>
+                <TableCell align="right">{SpellCategories[spell.Class]}</TableCell>
                 <TableCell align="right">{spell.Target}</TableCell>
                 <TableCell align="right">{spell.Duration}</TableCell>
                 <TableCell align="right">{spell.Drain}</TableCell>
