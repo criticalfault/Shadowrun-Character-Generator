@@ -412,7 +412,7 @@ function SheetDisplay(props) {
             </Item>
         </Grid>
         <Grid item xs={12}>
-            <Item style={{"minHeight":"341px"}}>
+            <Item>
                 <h2 className={"boxHeader"}>Cyberware</h2>
                 <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -429,6 +429,33 @@ function SheetDisplay(props) {
                                     <TableCell component="th" scope="row">{cyberware.Name}</TableCell>
                                     <TableCell align="right">{cyberware.Rating}</TableCell>
                                     <TableCell align="right">{cyberware.Notes}</TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </Item>
+        </Grid>
+        <Grid item xs={12}>
+            <Item>
+                <h4>Bioware</h4>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+                        <TableHead>
+                        <TableRow>
+                            <TableCell>Name</TableCell>
+                            <TableCell align="right">BioIndex Cost</TableCell>
+                            <TableCell align="right">Book.Page</TableCell>
+                            <TableCell align="right">Notes</TableCell>
+                        </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {props.currentCharacter.bioware.map((bioware, index) => (
+                                <TableRow key={bioware.Name+index}>
+                                    <TableCell component="th" scope="row">{bioware.Name}</TableCell>
+                                    <TableCell align="right">{bioware.BioIndex}</TableCell>
+                                    <TableCell align="right">{bioware.BookPage}</TableCell>
+                                    <TableCell align="right">{bioware.Notes}</TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>

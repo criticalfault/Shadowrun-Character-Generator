@@ -95,13 +95,11 @@ function SR2SkillsPanel({characterSkills, onUpdateSkills, maxSkillPoints}) {
     if (!isNaN(rating) && rating >= 1 && rating <= 6) {
       const editedSkills = [...selectedSkills];
       let hasConcentrations = 0;
-      let hasSpecialization = 0;
       if(editedSkills[index].selectedConcentrations.length > 0) {
         hasConcentrations = 1;
         editedSkills[index].selectedConcentrations.forEach(element => {
           element.rating = rating + 2;
           if(element.specializations.length > 0){
-            hasSpecialization=1;
             element.specializations.forEach(special => {
               special.rating = element.rating + 2;
             })
