@@ -29,6 +29,7 @@ export default function GearPanel(props) {
 
   const [NewGear, setNewGear]           = useState();
   const [NewGearCost, setNewGearCost]   = useState();
+  const [NewGearAmount, setNewGearAmount] = useState(1);
   const [NewGearIndex, setNewGearIndex] = useState(0);
   const [NewGearDesc, setNewGearDesc]   = useState('');
   const [SelectedGear, setSelectedGear] = useState(props.Gear);
@@ -50,6 +51,7 @@ export default function GearPanel(props) {
       setNewGear(TempGear);
       setNewGearIndex(event.target.value)
       setNewGearCost(TempGear.Cost);
+      setNewGearAmount(1);
       if(TempGear.hasOwnProperty('Notes')){
         setNewGearDesc(TempGear.Notes)
       }
@@ -59,9 +61,11 @@ export default function GearPanel(props) {
       if (NewGear) {
         const gearToAdd = {...NewGear};
         gearToAdd.Type = SelectedGearCategory;
+        gearToAdd.Amount = NewGearAmount;
         setSelectedGear(prevGear => [...prevGear, gearToAdd]);
         setNewGear('');
         setNewGearIndex('');
+        setNewGearAmount(1);
         props.onChangeGear([...SelectedGear, gearToAdd]);
       }
     }
@@ -116,6 +120,13 @@ export default function GearPanel(props) {
             type="number"
             value={NewGearCost}
             />
+            <TextField style={{'width':'100px', 'marginRight':'20px'}}
+            id="power-cost-input"
+            label="Amount"
+            type="number"
+            value={NewGearAmount}
+            onChange={(event) => setNewGearAmount(event.target.value)}
+            />
             <Button variant="contained" color="primary" onClick={handleAddGear}>
             Add Gear
             </Button>
@@ -147,10 +158,16 @@ export default function GearPanel(props) {
                   }
                   return(
                   <TableRow key={index}>
-                    <TableCell component="th" scope="row">{gear.name}</TableCell>
+                    <TableCell component="th" scope="row">
+                      {gear.name}
+                      {gear.Amount !== 0?`  x${gear.Amount}`:''}
+                    </TableCell>
                     <TableCell align="right">{gear.Ballistic}</TableCell>
                     <TableCell align="right">{gear.Impact}</TableCell>
-                    <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}</TableCell>
+                    <TableCell align="right">
+                      {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}
+                      {gear.Amount !== 0?`  [${new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost*gear.Amount)}]`:''}
+                    </TableCell>
                     <TableCell align="right">{gear.BookPage}</TableCell>
                     <TableCell align="right">{gear.Availability}</TableCell>
                     <TableCell align="right">{gear.Notes}</TableCell>
@@ -186,9 +203,11 @@ export default function GearPanel(props) {
               }
               return(
               <TableRow key={index}>
-                <TableCell component="th" scope="row">{gear.name}</TableCell>
+                <TableCell component="th" scope="row"> {gear.name}
+                      {gear.Amount !== 0?`  x${gear.Amount}`:''}</TableCell>
                 <TableCell align="right">{gear.Damage}</TableCell>
-                <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}</TableCell>
+                <TableCell align="right"> {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}
+                      {gear.Amount !== 0?`  [${new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost*gear.Amount)}]`:''}</TableCell>
                 <TableCell align="right">{gear.BookPage}</TableCell>
                 <TableCell align="right">{gear.Availability}</TableCell>
                 <TableCell align="right">{gear.Notes}</TableCell>
@@ -221,9 +240,11 @@ export default function GearPanel(props) {
               }
               return (
               <TableRow key={index}>
-                <TableCell component="th" scope="row">{gear.name}</TableCell>
+                <TableCell component="th" scope="row"> {gear.name}
+                      {gear.Amount !== 0?`  x${gear.Amount}`:''}</TableCell>
                 <TableCell align="right">{gear.Rating??'N/A'}</TableCell>
-                <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}</TableCell>
+                <TableCell align="right"> {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}
+                      {gear.Amount !== 0?`  [${new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost*gear.Amount)}]`:''}</TableCell>
                 <TableCell align="right">{gear.BookPage}</TableCell>
                 <TableCell align="right">{gear.Availability}</TableCell>
                 <TableCell align="right">{gear.Notes}</TableCell>

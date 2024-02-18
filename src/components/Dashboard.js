@@ -158,7 +158,8 @@ export default function BasicTabs() {
         });
 
         Character.gear.forEach(function(gear){
-            tempCashSpent+=parseFloat(gear.Cost);
+            let amount = gear.Amount??1;
+            tempCashSpent+=parseFloat(gear.Cost*amount);
         });
 
         Character.decks.forEach(function(deck){
