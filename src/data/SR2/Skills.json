@@ -1,5 +1,6 @@
 {"Armed Combat":{
     "name":"Armed Combat", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Clubs","Specializations":["*weapon"]},
         {"name":"Edged weapons","Specializations":["*weapon"]},
@@ -9,6 +10,7 @@
 },
 "Demolitions":{
     "name":"Demolitions", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Conventional Explosives","Specializations":[]},
         {"name":"Plastic Explosives","Specializations":[]}
@@ -16,6 +18,7 @@
 },
 "Firearms":{
     "name":"Firearms", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Grenade launchers","Specializations":["*weapon"]},
         {"name":"LMG","Specializations":["*weapon"]},
@@ -27,6 +30,7 @@
 },
 "Gunnery":{
     "name":"Gunnery", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Assault Cannon","Specializations":["*weapon"]},
         {"name":"Machine Guns","Specializations":["*weapon"]},
@@ -36,6 +40,7 @@
 },
 "Projectile weapons":{
     "name":"Projectile weapons", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Bows","Specializations":["*weapon"]},
         {"name":"Crossbows","Specializations":["*weapon"]}
@@ -43,6 +48,7 @@
 },
 "Throwing weapons":{
     "name":"Throwing weapons", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Aerodynamic","Specializations":["Shuriken","Airfoil grenades"]},
         {"name":"Non-aerodynamic","Specializations":["Grenades","Knives"]},
@@ -51,6 +57,7 @@
 },
 "Unarmed combat":{
     "name":"Unarmed combat", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Cyber Implant Weaponry","Specializations":["*weapon"]},
         {"name":"Martial Arts Style","Specializations":["*style"]},
@@ -59,6 +66,7 @@
 },
 "Atlethics":{
     "name":"Atlethics", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Climbing","Specializations":[]},
         {"name":"Jumping","Specializations":[]},
@@ -69,6 +77,7 @@
 },
 "Stealth":{
     "name":"Stealth", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Farmland","Specializations":["*aspect"]},
         {"name":"Urban","Specializations":["*aspect"]},
@@ -77,6 +86,7 @@
 },
 "Conjuring":{
     "name":"Conjuring", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Banishing","Specializations":["*type"]},
         {"name":"Controlling","Specializations":["*type"]},
@@ -86,6 +96,7 @@
 },
 "Enchanting":{
     "name":"Enchanting", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Alchemy","Specializations":[]},
         {"name":"Talismongering","Specializations":["*type"]}
@@ -93,6 +104,7 @@
 },
 "Sorcery":{
     "name":"Sorcery", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Astral Sorcery","Specializations":["*aspect"]},
         {"name":"Combat Spells","Specializations":["*technique"]},
@@ -108,6 +120,7 @@
 },
 "Biotech":{
     "name":"Biotech", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Extended care","Specializations":[]},
         {"name":"First aid","Specializations":[]},
@@ -118,6 +131,7 @@
 },
 "Computers":{
     "name":"Computers", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Hardware","Specializations":["Mainframes","Micros","Interface tech","Implant tech"]},
         {"name":"Software","Specializations":["Decking"," Matrix programming","Non-matrix programming","Interface programming","Implant programming"]},
@@ -126,6 +140,7 @@
 },
 "Etiquette":{
     "name":"Etiquette", 
+    "requiresConcentration":true,
     "Concentrations":[
         {"name":"Corporate","Specializations":[]},
         {"name":"Magical","Specializations":[]},
@@ -137,6 +152,7 @@
 },
 "Interrogation":{
     "name":"Interrogation", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Machine-aided","Specializations":["Lie detectors","Voice stress analysis"]},
         {"name":"Verbal","Specializations":[]}
@@ -144,6 +160,7 @@
 },
 "Negotiation":{
     "name":"Negotiation", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Bargain","Specializations":[]},
         {"name":"Bribe","Specializations":[]},
@@ -153,6 +170,7 @@
 },
 "Leadership":{
     "name":"Leadership", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Commercial","Specializations":["Strategy","Tactics","Morale"]},
         {"name":"Military","Specializations":["Strategy","Tactics","Morale"]},
@@ -162,6 +180,7 @@
 },
 "Bike":{
     "name":"Bike", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Racing","Specializations":["*vehicle"]},
         {"name":"Two-wheeler","Specializations":["*vehicle"]},
@@ -170,6 +189,7 @@
 },
 "Car":{
     "name":"Car", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Passenger vehicle","Specializations":["*vehicle"]},
         {"name":"Racing","Specializations":["*vehicle"]},
@@ -179,6 +199,7 @@
 },
 "Hovecraft":{
     "name":"Hovecraft", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Passenger craft","Specializations":["*vehicle"]},
         {"name":"Racing","Specializations":["*vehicle"]},
@@ -188,6 +209,7 @@
 },
 "Motorboat":{
     "name":"Motorboat", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Pleasure craft","Specializations":["*vehicle"]},
         {"name":"Racing","Specializations":["*vehicle"]},
@@ -197,6 +219,7 @@
 },
 "Rotor craft":{
     "name":"Rotor craft", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Fixed-rotor","Specializations":["*vehicle"]},
         {"name":"Remote operation","Specializations":["*category"]},
@@ -205,6 +228,7 @@
 },
 "Sailboat":{
     "name":"Sailboat", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Pleasure craft","Specializations":["*vehicle"]},
         {"name":"Racing","Specializations":["*vehicle"]},
@@ -213,6 +237,7 @@
 },
 "Vectored thrust":{
     "name":"Vectored thrust", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"LAV craft","Specializations":["*vehicle"]},
         {"name":"Remote operation","Specializations":["*category"]},
@@ -222,6 +247,7 @@
 },
 "Winged planes":{
     "name":"Winged planes", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Gliders","Specializations":["*vehicle"]},
         {"name":"Jets","Specializations":["*vehicle"]},
@@ -234,6 +260,7 @@
 },
 "Biology":{
     "name":"Biology", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Botany","Specializations":[]},
         {"name":"Medicine","Specializations":[]},
@@ -244,6 +271,7 @@
 },
 "Computer theory":{
     "name":"Computer theory", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Hardware","Specializations":["Mainframes","Micros","Matrix programming","Interface tech","Implant tech"]},
         {"name":"Matrix Theory","Specializations":[]},
@@ -252,6 +280,7 @@
 },
 "Cybertechnology":{
     "name":"Cybertechnology", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Bodyware","Specializations":["*device"]},
         {"name":"Headware","Specializations":["*device"]}
@@ -259,6 +288,7 @@
 },
 "Magical theory":{
     "name":"Magical theory", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Design","Specializations":["Shamanic","Hermetic"]},
         {"name":"History","Specializations":["*continent"]}
@@ -266,6 +296,7 @@
 },
 "Military theory":{
     "name":"Military theory", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Military history","Specializations":["*continent/period"]},
         {"name":"Tactics","Specializations":["Air","Land","Sea"]}
@@ -273,6 +304,7 @@
 },
 "Physical sciences":{
     "name":"Physical sciences", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Chemistry","Specializations":[]},
         {"name":"Engineering","Specializations":[]},
@@ -282,6 +314,7 @@
 },
 "Psychology":{
     "name":"Psychology", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Deviant behavior","Specializations":[]},
         {"name":"Group behavior","Specializations":[]},
@@ -290,6 +323,7 @@
 },
 "Police Procedures":{
     "name":"Police Procedures", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Find Contraband","Specializations":[]},
         {"name":"Bureaucracy","Specializations":[]},
@@ -298,6 +332,7 @@
 },
 "Sociology":{
     "name":"Sociology", 
+    "requiresConcentration":false,
     "Concentrations":[
         {"name":"Anthropology","Specializations":[]},
         {"name":"Archaelogy","Specializations":[]},
@@ -306,46 +341,57 @@
 },
 "Aircraft B/R":{
     "name":"Aircraft B/R", 
+    "requiresConcentration":false,
     "Concentrations":[]
 },
 "Armed combat B/R":{
     "name":"Armed combat B/R", 
+    "requiresConcentration":false,
     "Concentrations":[]
 },
 "Boats B/R":{
     "name":"Boats B/R", 
+    "requiresConcentration":false,
     "Concentrations":[]
 },
 "Biotech B/R":{
     "name":"Biotech B/R", 
+    "requiresConcentration":false,
     "Concentrations":[]
 },
 "Computer B/R":{
     "name":"Computer B/R", 
+    "requiresConcentration":false,
     "Concentrations":[]
 },
 "Electronics B/R":{
     "name":"Electronics B/R", 
+    "requiresConcentration":false,
     "Concentrations":[]
 },
 "Firearms B/R":{
     "name":"Firearms B/R", 
+    "requiresConcentration":false,
     "Concentrations":[]
 },
 "Ground vehicles B/R":{
     "name":"Ground vehicles B/R", 
+    "requiresConcentration":false,
     "Concentrations":[]
 },
 "Gunnery B/R":{
     "name":"Gunnery B/R", 
+    "requiresConcentration":false,
     "Concentrations":[]
 },
 "Projectile B/R":{
     "name":"Projectile B/R", 
+    "requiresConcentration":false,
     "Concentrations":[]
 },
 "Throwings B/R":{
     "name":"Throwings B/R", 
+    "requiresConcentration":false,
     "Concentrations":[]
 }
 }

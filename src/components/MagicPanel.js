@@ -735,7 +735,14 @@ function MagicPanel(props) {
               value={newSpellIndex}
               onChange={handleSpellChange}
             >
-              {spellsData.sort((a, b) => a.Name.localeCompare(b.Name)).map( (spell, index) => (
+              {spellsData.sort((a, b) => { 
+                  if(a.hasOwnProperty('Name')){
+                    return a.Name.localeCompare(b.Name); 
+                  }else{
+                    return a > b;
+                  }
+                  
+              } ).map( (spell, index) => (
                 <MenuItem key={index} value={index}>{spell.Name}</MenuItem>
               ))}
             </Select>
