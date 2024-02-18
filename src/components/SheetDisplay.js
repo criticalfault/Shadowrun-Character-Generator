@@ -20,8 +20,10 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.primary,
 }));
 function SheetDisplay(props) {
+    // const Ranges = require('../data/ranges.json');
+    // const getRangesFromName = (name) =>{
 
-
+    // }
     const isFetishSpell = (spell) => {
         if(spell){
             return (<span>F&nbsp;</span>)
@@ -282,8 +284,6 @@ function SheetDisplay(props) {
             return;
         }
     }
-
-
   return (
     <Grid container spacing={2} className='sheetBody'>
         <Grid item xs={12} md={6}>
@@ -336,14 +336,16 @@ function SheetDisplay(props) {
                             type="text"
                             value={
                                     (Math.floor(
-                                    parseInt(props.currentCharacter.attributes.Quickness) +
-                                    parseInt(props.currentCharacter.raceBonuses.Quickness??0) +
-                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+
-                                    parseInt(props.currentCharacter.magicalAttributeBonuses.Quickness)+
-                                    parseInt(props.currentCharacter.attributes.Intelligence) +
-                                    parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
-                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)/2)+
-                                    parseInt(props.currentCharacter.cyberAttributeBonuses.Reaction)
+                                    (
+                                        parseInt(props.currentCharacter.attributes.Quickness) +
+                                        parseInt(props.currentCharacter.raceBonuses.Quickness??0) +
+                                        parseInt(props.currentCharacter.cyberAttributeBonuses.Quickness??0)+
+                                        parseInt(props.currentCharacter.magicalAttributeBonuses.Quickness)+
+                                        parseInt(props.currentCharacter.attributes.Intelligence) +
+                                        parseInt(props.currentCharacter.raceBonuses.Intelligence??0) +
+                                        parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence??0)
+                                    )/2)+
+                                        parseInt(props.currentCharacter.cyberAttributeBonuses.Reaction)
                                     )
                                 }
                         /><br></br><br></br>
@@ -478,7 +480,8 @@ function SheetDisplay(props) {
                         <TableBody>
                             {props.currentCharacter.gear.filter(item => !item.hasOwnProperty('Damage') && !item.hasOwnProperty('Ballistic')).map((gear, index) => (
                             <TableRow key={gear.name+index}>
-                                <TableCell component="th" scope="row">{gear.name}</TableCell>
+                                <TableCell component="th" scope="row"> {gear.name}
+                                {gear.Amount !== 0?`  x${gear.Amount}`:''}</TableCell>
                                 <TableCell align="right">{gear.Rating}</TableCell>
                                 <TableCell align="right">{gear.Notes}</TableCell>
                             </TableRow>
