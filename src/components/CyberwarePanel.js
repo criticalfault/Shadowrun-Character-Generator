@@ -163,6 +163,7 @@ const handleCyberOrBioChange = (event) => {
   try{
     let cyberAttributeBonuses = {'Body':0,'Quickness':0,'Strength':0,'Charisma':0,'Willpower':0,'Intelligence':0,'Reaction':0,'Initative':0};
     let cyberModsTotals = [];
+    let bioModsTotals = [];
     selectedCyberware.forEach(function(cyber){
       if(cyber.Mods !== ''){
         cyberModsTotals.push(cyber.Mods)
@@ -170,6 +171,20 @@ const handleCyberOrBioChange = (event) => {
     });
     cyberModsTotals.forEach(function(mod){
       console.log(mod);
+      let AttributesToMod = convertModsToAttributes(mod.split(','));
+      for(let i=0; i<AttributesToMod.length; i++){
+          if(!cyberAttributeBonuses.hasOwnProperty(Object.keys(AttributesToMod[i])[0])){
+              cyberAttributeBonuses[Object.keys(AttributesToMod[i])[0]] = 0;
+          }
+          cyberAttributeBonuses[Object.keys(AttributesToMod[i])[0]] += parseInt(Object.values(AttributesToMod[i])[0]);
+        }
+    });
+    SelectedBioware.forEach(function(cyber){
+      if(cyber.Mods !== ''){
+        bioModsTotals.push(cyber.Mods)
+      }
+    });
+    bioModsTotals.forEach(function(mod){
       let AttributesToMod = convertModsToAttributes(mod.split(','));
       for(let i=0; i<AttributesToMod.length; i++){
           if(!cyberAttributeBonuses.hasOwnProperty(Object.keys(AttributesToMod[i])[0])){

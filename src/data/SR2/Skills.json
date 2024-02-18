@@ -1,351 +1,415 @@
-{"Armed Combat":{
-    "name":"Armed Combat", 
-    "Concentrations":[
-        {"name":"Clubs","Specializations":["*weapon"]},
-        {"name":"Edged weapons","Specializations":["*weapon"]},
-        {"name":"Pole Arms / Staff","Specializations":["*weapon"]},
-        {"name":"Whips/Flails","Specializations":["*weapon"]}
-    ]
-},
-"Demolitions":{
-    "name":"Demolitions", 
-    "Concentrations":[
-        {"name":"Conventional Explosives","Specializations":[]},
-        {"name":"Plastic Explosives","Specializations":[]}
-    ]
-},
-"Firearms":{
-    "name":"Firearms", 
-    "Concentrations":[
-        {"name":"Grenade launchers","Specializations":["*weapon"]},
-        {"name":"LMG","Specializations":["*weapon"]},
-        {"name":"Pistols","Specializations":["*weapon"]},
-        {"name":"Rifles","Specializations":["*weapon"]},
-        {"name":"SMG","Specializations":["*weapon"]},
-        {"name":"Tasers","Specializations":["*weapon"]}
-    ]
-},
-"Gunnery":{
-    "name":"Gunnery", 
-    "Concentrations":[
-        {"name":"Assault Cannon","Specializations":["*weapon"]},
-        {"name":"Machine Guns","Specializations":["*weapon"]},
-        {"name":"Missile Launchers","Specializations":["*weapon"]},
-        {"name":"Vehicle Cannons","Specializations":["*weapon"]}
-    ]
-},
-"Projectile weapons":{
-    "name":"Projectile weapons", 
-    "Concentrations":[
-        {"name":"Bows","Specializations":["*weapon"]},
-        {"name":"Crossbows","Specializations":["*weapon"]}
-    ]
-},
-"Throwing weapons":{
-    "name":"Throwing weapons", 
-    "Concentrations":[
-        {"name":"Aerodynamic","Specializations":["Shuriken","Airfoil grenades"]},
-        {"name":"Non-aerodynamic","Specializations":["Grenades","Knives"]},
-        {"name":"Shafted","Specializations":["*weapon"]}
-    ]
-},
-"Unarmed combat":{
-    "name":"Unarmed combat", 
-    "Concentrations":[
-        {"name":"Cyber Implant Weaponry","Specializations":["*weapon"]},
-        {"name":"Martial Arts Style","Specializations":["*style"]},
-        {"name":"Subduing Combat","Specializations":[]}
-    ]
-},
-"Atlethics":{
-    "name":"Atlethics", 
-    "Concentrations":[
-        {"name":"Climbing","Specializations":[]},
-        {"name":"Jumping","Specializations":[]},
-        {"name":"Lifting","Specializations":[]},
-        {"name":"Running","Specializations":[]},
-        {"name":"Swimming","Specializations":[]}
-    ]
-},
-"Stealth":{
-    "name":"Stealth", 
-    "Concentrations":[
-        {"name":"Farmland","Specializations":["*aspect"]},
-        {"name":"Urban","Specializations":["*aspect"]},
-        {"name":"Wilderness","Specializations":["*aspect"]}
-    ]
-},
-"Conjuring":{
-    "name":"Conjuring", 
-    "Concentrations":[
-        {"name":"Banishing","Specializations":["*type"]},
-        {"name":"Controlling","Specializations":["*type"]},
-        {"name":"Elemental","Specializations":["*type"]},
-        {"name":"Nature spirit","Specializations":["*type"]}
-    ]
-},
-"Enchanting":{
-    "name":"Enchanting", 
-    "Concentrations":[
-        {"name":"Alchemy","Specializations":[]},
-        {"name":"Talismongering","Specializations":["*type"]}
-    ]
-},
-"Sorcery":{
-    "name":"Sorcery", 
-    "Concentrations":[
-        {"name":"Astral Sorcery","Specializations":["*aspect"]},
-        {"name":"Combat Spells","Specializations":["*technique"]},
-        {"name":"Detection Spells","Specializations":["*technique"]},
-        {"name":"Forensic Magic","Specializations":[]},
-        {"name":"Health Spells","Specializations":["*technique"]},
-        {"name":"Illusion Spells","Specializations":["*technique"]},
-        {"name":"Manipulation Spells","Specializations":["*technique"]},
-        {"name":"Ritual Sorcery","Specializations":["category"]},
-        {"name":"Spellcasting","Specializations":["*spell category"]},
-        {"name":"Spell Defense","Specializations":["*spell category"]}
-    ]
-},
-"Biotech":{
-    "name":"Biotech", 
-    "Concentrations":[
-        {"name":"Extended care","Specializations":[]},
-        {"name":"First aid","Specializations":[]},
-        {"name":"Organ culture","Specializations":["*organ/limb"]},
-        {"name":"Replacement construction","Specializations":["*organ/limb"]},
-        {"name":"Transimplant surgery","Specializations":["Headware","Bodyware","Organic replacements"]}
-    ]
-},
-"Computers":{
-    "name":"Computers", 
-    "Concentrations":[
-        {"name":"Hardware","Specializations":["Mainframes","Micros","Interface tech","Implant tech"]},
-        {"name":"Software","Specializations":["Decking"," Matrix programming","Non-matrix programming","Interface programming","Implant programming"]},
-        {"name":"Electronics","Specializations":["Control systems","Diagnostic","Electronic warfare","Linking between devices","Maglocks"]}
-    ]
-},
-"Etiquette":{
-    "name":"Etiquette", 
-    "Concentrations":[
-        {"name":"Corporate","Specializations":[]},
-        {"name":"Magical","Specializations":[]},
-        {"name":"Matrix","Specializations":[]},
-        {"name":"Media","Specializations":[]},
-        {"name":"Street","Specializations":[]},
-        {"name":"Tribal","Specializations":[]}
-    ]
-},
-"Interrogation":{
-    "name":"Interrogation", 
-    "Concentrations":[
-        {"name":"Machine-aided","Specializations":["Lie detectors","Voice stress analysis"]},
-        {"name":"Verbal","Specializations":[]}
-    ]
-},
-"Negotiation":{
-    "name":"Negotiation", 
-    "Concentrations":[
-        {"name":"Bargain","Specializations":[]},
-        {"name":"Bribe","Specializations":[]},
-        {"name":"Fast Talk","Specializations":[]}
-        
-    ]
-},
-"Leadership":{
-    "name":"Leadership", 
-    "Concentrations":[
-        {"name":"Commercial","Specializations":["Strategy","Tactics","Morale"]},
-        {"name":"Military","Specializations":["Strategy","Tactics","Morale"]},
-        {"name":"Political","Specializations":["Strategy","Tactics","Morale"]},
-        {"name":"Negotiation","Specializations":["Bargain","Bribe","Fast Talk"]}
-    ]
-},
-"Bike":{
-    "name":"Bike", 
-    "Concentrations":[
-        {"name":"Racing","Specializations":["*vehicle"]},
-        {"name":"Two-wheeler","Specializations":["*vehicle"]},
-        {"name":"Three-wheeler","Specializations":["*vehicle"]}
-    ]
-},
-"Car":{
-    "name":"Car", 
-    "Concentrations":[
-        {"name":"Passenger vehicle","Specializations":["*vehicle"]},
-        {"name":"Racing","Specializations":["*vehicle"]},
-        {"name":"Remote operation","Specializations":["*category"]},
-        {"name":"Truck","Specializations":["*vehicle"]}
-    ]
-},
-"Hovecraft":{
-    "name":"Hovecraft", 
-    "Concentrations":[
-        {"name":"Passenger craft","Specializations":["*vehicle"]},
-        {"name":"Racing","Specializations":["*vehicle"]},
-        {"name":"Remote operation","Specializations":["*category"]},
-        {"name":"Transport craft","Specializations":["*vehicle"]}
-    ]
-},
-"Motorboat":{
-    "name":"Motorboat", 
-    "Concentrations":[
-        {"name":"Pleasure craft","Specializations":["*vehicle"]},
-        {"name":"Racing","Specializations":["*vehicle"]},
-        {"name":"Remote operation","Specializations":["*category"]},
-        {"name":"Transport","Specializations":["*vehicle"]}
-    ]
-},
-"Rotor craft":{
-    "name":"Rotor craft", 
-    "Concentrations":[
-        {"name":"Fixed-rotor","Specializations":["*vehicle"]},
-        {"name":"Remote operation","Specializations":["*category"]},
-        {"name":"Tilt-rotor","Specializations":["*vehicle"]}
-    ]
-},
-"Sailboat":{
-    "name":"Sailboat", 
-    "Concentrations":[
-        {"name":"Pleasure craft","Specializations":["*vehicle"]},
-        {"name":"Racing","Specializations":["*vehicle"]},
-        {"name":"Transport","Specializations":["*vehicle"]}
-    ]
-},
-"Vectored thrust":{
-    "name":"Vectored thrust", 
-    "Concentrations":[
-        {"name":"LAV craft","Specializations":["*vehicle"]},
-        {"name":"Remote operation","Specializations":["*category"]},
-        {"name":"VTOL","Specializations":["*vehicle"]}
+{
+    "Aircraft B/R":{
+        "name":"Aircraft B/R", 
+        "requiresConcentration":false,
+        "Concentrations":[]
+    },
+    "Armed Combat":{
+        "name":"Armed Combat", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Clubs","Specializations":["*weapon"]},
+            {"name":"Edged weapons","Specializations":["*weapon"]},
+            {"name":"Pole Arms / Staff","Specializations":["*weapon"]},
+            {"name":"Whips/Flails","Specializations":["*weapon"]}
+        ]
+    },
+    "Armed Combat B/R":{
+        "name":"Armed Combat B/R", 
+        "requiresConcentration":false,
+        "Concentrations":[]
+    }, 
+    "Atlethics":{
+        "name":"Atlethics", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Climbing","Specializations":[]},
+            {"name":"Jumping","Specializations":[]},
+            {"name":"Lifting","Specializations":[]},
+            {"name":"Running","Specializations":[]},
+            {"name":"Swimming","Specializations":[]}
+        ]
+    },
+    "Bike":{
+        "name":"Bike", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Racing","Specializations":["*vehicle"]},
+            {"name":"Two-wheeler","Specializations":["*vehicle"]},
+            {"name":"Three-wheeler","Specializations":["*vehicle"]}
+        ]
+    },
+    "Biology":{
+        "name":"Biology", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Botany","Specializations":[]},
+            {"name":"Medicine","Specializations":[]},
+            {"name":"Parabotany","Specializations":[]},
+            {"name":"Parazoology","Specializations":[]},
+            {"name":"Zoology","Specializations":[]}
+        ]
+    },
+    "Biotech":{
+        "name":"Biotech", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Extended care","Specializations":[]},
+            {"name":"First aid","Specializations":[]},
+            {"name":"Organ culture","Specializations":["*organ/limb"]},
+            {"name":"Replacement construction","Specializations":["*organ/limb"]},
+            {"name":"Transimplant surgery","Specializations":["Headware","Bodyware","Organic replacements"]}
+        ]
+    },
+    "Biotech B/R":{
+        "name":"Biotech B/R", 
+        "requiresConcentration":false,
+        "Concentrations":[]
+    },
+    "Boats B/R":{
+        "name":"Boats B/R", 
+        "requiresConcentration":false,
+        "Concentrations":[]
+    },
+    "Car":{
+        "name":"Car", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Passenger vehicle","Specializations":["*vehicle"]},
+            {"name":"Racing","Specializations":["*vehicle"]},
+            {"name":"Remote operation","Specializations":["*category"]},
+            {"name":"Truck","Specializations":["*vehicle"]}
+        ]
+    },
 
-    ]
-},
-"Winged planes":{
-    "name":"Winged planes", 
-    "Concentrations":[
-        {"name":"Gliders","Specializations":["*vehicle"]},
-        {"name":"Jets","Specializations":["*vehicle"]},
-        {"name":"Propellers","Specializations":["*vehicle"]},
-        {"name":"Racing","Specializations":["*vehicle"]},
-        {"name":"Remote operation","Specializations":["*category"]}
-        
+    "Computer":{
+        "name":"Computer", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Hardware","Specializations":["Mainframes","Micros","Interface tech","Implant tech"]},
+            {"name":"Software","Specializations":["Decking"," Matrix programming","Non-matrix programming","Interface programming","Implant programming"]}
+        ]
+    },
+    "Computer B/R":{
+        "name":"Computer B/R", 
+        "requiresConcentration":false,
+        "Concentrations":[]
+    },
+    "Computer theory":{
+        "name":"Computer theory", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Hardware","Specializations":["Mainframes","Micros","Matrix programming","Interface tech","Implant tech"]},
+            {"name":"Matrix Theory","Specializations":[]},
+            {"name":"Software","Specializations":["Decking","Matrix programming","Non-matrix programming","Interface programming","Implant programming"]}
+        ]
+    },
+    "Conjuring":{
+        "name":"Conjuring", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Banishing","Specializations":["*type"]},
+            {"name":"Controlling","Specializations":["*type"]},
+            {"name":"Elemental","Specializations":["*type"]},
+            {"name":"Nature spirit","Specializations":["*type"]}
+        ]
+    },
+    "Cybertechnology":{
+        "name":"Cybertechnology", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Bodyware","Specializations":["*device"]},
+            {"name":"Headware","Specializations":["*device"]}
+        ]
+    },
+    "Demolitions":{
+        "name":"Demolitions", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Conventional Explosives","Specializations":[]},
+            {"name":"Plastic Explosives","Specializations":[]}
+        ]
+    },
+    "Electronics":{
+        "name":"Electronics", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Control systems","Specializations":[]},
+            {"name":"Diagnostic","Specializations":[]},
+            {"name":"Electronic warfare","Specializations":[]},
+            {"name":"Linking between devices","Specializations":[]},
+            {"name":"Maglocks","Specializations":[]}
+        ]
+    },
+    "Electronics B/R":{
+        "name":"Electronics B/R", 
+        "requiresConcentration":false,
+        "Concentrations":[]
+    },
+    "Enchanting":{
+        "name":"Enchanting", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Alchemy","Specializations":[]},
+            {"name":"Talismongering","Specializations":["*type"]}
+        ]
+    },
+    "Etiquette":{
+        "name":"Etiquette", 
+        "requiresConcentration":true,
+        "Concentrations":[
+            {"name":"Corporate","Specializations":[]},
+            {"name":"Magical","Specializations":[]},
+            {"name":"Matrix","Specializations":[]},
+            {"name":"Media","Specializations":[]},
+            {"name":"Street","Specializations":[]},
+            {"name":"Tribal","Specializations":[]}
+        ]
+    },
+    "Firearms":{
+        "name":"Firearms", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Grenade launchers","Specializations":["*weapon"]},
+            {"name":"LMG","Specializations":["*weapon"]},
+            {"name":"Pistols","Specializations":["*weapon"]},
+            {"name":"Rifles","Specializations":["*weapon"]},
+            {"name":"SMG","Specializations":["*weapon"]},
+            {"name":"Tasers","Specializations":["*weapon"]}
+        ]
+    },
+    "Firearms B/R":{
+        "name":"Firearms B/R", 
+        "requiresConcentration":false,
+        "Concentrations":[]
+    },
+    "Ground vehicles B/R":{
+        "name":"Ground vehicles B/R", 
+        "requiresConcentration":false,
+        "Concentrations":[]
+    },
+    "Gunnery":{
+        "name":"Gunnery", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Assault Cannon","Specializations":["*weapon"]},
+            {"name":"Machine Guns","Specializations":["*weapon"]},
+            {"name":"Missile Launchers","Specializations":["*weapon"]},
+            {"name":"Vehicle Cannons","Specializations":["*weapon"]}
+        ]
+    },
+    "Gunnery B/R":{
+        "name":"Gunnery B/R", 
+        "requiresConcentration":false,
+        "Concentrations":[]
+    },
+    "Hovecraft":{
+        "name":"Hovecraft", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Passenger craft","Specializations":["*vehicle"]},
+            {"name":"Racing","Specializations":["*vehicle"]},
+            {"name":"Remote operation","Specializations":["*category"]},
+            {"name":"Transport craft","Specializations":["*vehicle"]}
+        ]
+    },
+    "Interrogation":{
+        "name":"Interrogation", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Machine-aided","Specializations":["Lie detectors","Voice stress analysis"]},
+            {"name":"Verbal","Specializations":[]}
+        ]
+    },
+    "Leadership":{
+        "name":"Leadership", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Commercial","Specializations":["Strategy","Tactics","Morale"]},
+            {"name":"Military","Specializations":["Strategy","Tactics","Morale"]},
+            {"name":"Political","Specializations":["Strategy","Tactics","Morale"]},
+            {"name":"Negotiation","Specializations":["Bargain","Bribe","Fast Talk"]}
+        ]
+    },
+    "Magical theory":{
+        "name":"Magical theory", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Design","Specializations":["Shamanic","Hermetic"]},
+            {"name":"History","Specializations":["*continent"]}
+        ]
+    },
+    "Military theory":{
+        "name":"Military theory", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Military history","Specializations":["*continent/period"]},
+            {"name":"Tactics","Specializations":["Air","Land","Sea"]}
+        ]
+    },
+    "Negotiation":{
+        "name":"Negotiation", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Bargain","Specializations":[]},
+            {"name":"Bribe","Specializations":[]},
+            {"name":"Fast Talk","Specializations":[]}
+            
+        ]
+    },
+    "Motorboat":{
+        "name":"Motorboat", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Pleasure craft","Specializations":["*vehicle"]},
+            {"name":"Racing","Specializations":["*vehicle"]},
+            {"name":"Remote operation","Specializations":["*category"]},
+            {"name":"Transport","Specializations":["*vehicle"]}
+        ]
+    },
+    "Physical sciences":{
+        "name":"Physical sciences", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Chemistry","Specializations":[]},
+            {"name":"Engineering","Specializations":[]},
+            {"name":"Geology","Specializations":[]},
+            {"name":"Physics","Specializations":[]}
+        ]
+    },
+    "Police Procedures":{
+        "name":"Police Procedures", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Find Contraband","Specializations":[]},
+            {"name":"Bureaucracy","Specializations":[]},
+            {"name":"Laws and Statutes","Specializations":[]}
+        ]
+    },
 
-    ]
-},
-"Biology":{
-    "name":"Biology", 
-    "Concentrations":[
-        {"name":"Botany","Specializations":[]},
-        {"name":"Medicine","Specializations":[]},
-        {"name":"Parabotany","Specializations":[]},
-        {"name":"Parazoology","Specializations":[]},
-        {"name":"Zoology","Specializations":[]}
-    ]
-},
-"Computer theory":{
-    "name":"Computer theory", 
-    "Concentrations":[
-        {"name":"Hardware","Specializations":["Mainframes","Micros","Matrix programming","Interface tech","Implant tech"]},
-        {"name":"Matrix Theory","Specializations":[]},
-        {"name":"Software","Specializations":["Decking","Matrix programming","Non-matrix programming","Interface programming","Implant programming"]}
-    ]
-},
-"Cybertechnology":{
-    "name":"Cybertechnology", 
-    "Concentrations":[
-        {"name":"Bodyware","Specializations":["*device"]},
-        {"name":"Headware","Specializations":["*device"]}
-    ]
-},
-"Magical theory":{
-    "name":"Magical theory", 
-    "Concentrations":[
-        {"name":"Design","Specializations":["Shamanic","Hermetic"]},
-        {"name":"History","Specializations":["*continent"]}
-    ]
-},
-"Military theory":{
-    "name":"Military theory", 
-    "Concentrations":[
-        {"name":"Military history","Specializations":["*continent/period"]},
-        {"name":"Tactics","Specializations":["Air","Land","Sea"]}
-    ]
-},
-"Physical sciences":{
-    "name":"Physical sciences", 
-    "Concentrations":[
-        {"name":"Chemistry","Specializations":[]},
-        {"name":"Engineering","Specializations":[]},
-        {"name":"Geology","Specializations":[]},
-        {"name":"Physics","Specializations":[]}
-    ]
-},
-"Psychology":{
-    "name":"Psychology", 
-    "Concentrations":[
-        {"name":"Deviant behavior","Specializations":[]},
-        {"name":"Group behavior","Specializations":[]},
-        {"name":"Individual behavior","Specializations":[]}
-    ]
-},
-"Police Procedures":{
-    "name":"Police Procedures", 
-    "Concentrations":[
-        {"name":"Find Contraband","Specializations":[]},
-        {"name":"Bureaucracy","Specializations":[]},
-        {"name":"Laws and Statutes","Specializations":[]}
-    ]
-},
-"Sociology":{
-    "name":"Sociology", 
-    "Concentrations":[
-        {"name":"Anthropology","Specializations":[]},
-        {"name":"Archaelogy","Specializations":[]},
-        {"name":"History","Specializations":[]}
-    ]
-},
-"Aircraft B/R":{
-    "name":"Aircraft B/R", 
-    "Concentrations":[]
-},
-"Armed combat B/R":{
-    "name":"Armed combat B/R", 
-    "Concentrations":[]
-},
-"Boats B/R":{
-    "name":"Boats B/R", 
-    "Concentrations":[]
-},
-"Biotech B/R":{
-    "name":"Biotech B/R", 
-    "Concentrations":[]
-},
-"Computer B/R":{
-    "name":"Computer B/R", 
-    "Concentrations":[]
-},
-"Electronics B/R":{
-    "name":"Electronics B/R", 
-    "Concentrations":[]
-},
-"Firearms B/R":{
-    "name":"Firearms B/R", 
-    "Concentrations":[]
-},
-"Ground vehicles B/R":{
-    "name":"Ground vehicles B/R", 
-    "Concentrations":[]
-},
-"Gunnery B/R":{
-    "name":"Gunnery B/R", 
-    "Concentrations":[]
-},
-"Projectile B/R":{
-    "name":"Projectile B/R", 
-    "Concentrations":[]
-},
-"Throwings B/R":{
-    "name":"Throwings B/R", 
-    "Concentrations":[]
-}
+    "Projectile Weapons":{
+        "name":"Projectile Weapons", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Bows","Specializations":["*weapon"]},
+            {"name":"Crossbows","Specializations":["*weapon"]}
+        ]
+    },
+    "Projectile Weapons B/R":{
+        "name":"Projectile Weapons B/R", 
+        "requiresConcentration":false,
+        "Concentrations":[]
+    },
+    "Psychology":{
+        "name":"Psychology", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Deviant behavior","Specializations":[]},
+            {"name":"Group behavior","Specializations":[]},
+            {"name":"Individual behavior","Specializations":[]}
+        ]
+    },
+    "Rotor craft":{
+        "name":"Rotor craft", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Fixed-rotor","Specializations":["*vehicle"]},
+            {"name":"Remote operation","Specializations":["*category"]},
+            {"name":"Tilt-rotor","Specializations":["*vehicle"]}
+        ]
+    },
+    "Sailboat":{
+        "name":"Sailboat", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Pleasure craft","Specializations":["*vehicle"]},
+            {"name":"Racing","Specializations":["*vehicle"]},
+            {"name":"Transport","Specializations":["*vehicle"]}
+        ]
+    },
+
+    "Sociology":{
+        "name":"Sociology", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Anthropology","Specializations":[]},
+            {"name":"Archaelogy","Specializations":[]},
+            {"name":"History","Specializations":[]}
+        ]
+    },
+
+    "Sorcery":{
+        "name":"Sorcery", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Astral Sorcery","Specializations":["*aspect"]},
+            {"name":"Combat Spells","Specializations":["*technique"]},
+            {"name":"Detection Spells","Specializations":["*technique"]},
+            {"name":"Forensic Magic","Specializations":[]},
+            {"name":"Health Spells","Specializations":["*technique"]},
+            {"name":"Illusion Spells","Specializations":["*technique"]},
+            {"name":"Manipulation Spells","Specializations":["*technique"]},
+            {"name":"Ritual Sorcery","Specializations":["category"]},
+            {"name":"Spellcasting","Specializations":["*spell category"]},
+            {"name":"Spell Defense","Specializations":["*spell category"]}
+        ]
+    },
+    "Stealth":{
+        "name":"Stealth", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Farmland","Specializations":["*aspect"]},
+            {"name":"Urban","Specializations":["*aspect"]},
+            {"name":"Wilderness","Specializations":["*aspect"]}
+        ]
+    },
+    "Throwing Weapons":{
+        "name":"Throwing Weapons", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Aerodynamic","Specializations":["Shuriken","Airfoil grenades"]},
+            {"name":"Non-aerodynamic","Specializations":["Grenades","Knives"]},
+            {"name":"Shafted","Specializations":["*weapon"]}
+        ]
+    },
+    "Throwings Weapons B/R":{
+        "name":"Throwings Weapons B/R", 
+        "requiresConcentration":false,
+        "Concentrations":[]
+    },
+
+    "Unarmed combat":{
+        "name":"Unarmed combat", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Cyber Implant Weaponry","Specializations":["*weapon"]},
+            {"name":"Martial Arts Style","Specializations":["*style"]},
+            {"name":"Subduing Combat","Specializations":[]}
+        ]
+    },
+
+    "Vectored thrust":{
+        "name":"Vectored thrust", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"LAV craft","Specializations":["*vehicle"]},
+            {"name":"Remote operation","Specializations":["*category"]},
+            {"name":"VTOL","Specializations":["*vehicle"]}
+
+        ]
+    },
+
+    "Winged planes":{
+        "name":"Winged planes", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Gliders","Specializations":["*vehicle"]},
+            {"name":"Jets","Specializations":["*vehicle"]},
+            {"name":"Propellers","Specializations":["*vehicle"]},
+            {"name":"Racing","Specializations":["*vehicle"]},
+            {"name":"Remote operation","Specializations":["*category"]}
+            
+
+        ]
+    }
 }
