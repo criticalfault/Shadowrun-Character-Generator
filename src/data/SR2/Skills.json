@@ -142,6 +142,15 @@
         {"name":"Verbal","Specializations":[]}
     ]
 },
+"Negotiation":{
+    "name":"Negotiation", 
+    "Concentrations":[
+        {"name":"Bargain","Specializations":[]},
+        {"name":"Bribe","Specializations":[]},
+        {"name":"Fast Talk","Specializations":[]}
+        
+    ]
+},
 "Leadership":{
     "name":"Leadership", 
     "Concentrations":[
