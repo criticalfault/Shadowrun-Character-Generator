@@ -43,9 +43,9 @@ export default function GearPanel(props) {
       console.log("SelectedGearCategory:"+SelectedGearCategory);
       var TempGear = {}
       if(props.Edition === 'SR3'){
-        TempGear = GearData[SelectedGearCategory].entries.sort((a, b) => a.name.localeCompare(b.name)).filter(item => item.hasOwnProperty('BookPage') && props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
+        TempGear = GearData[SelectedGearCategory].entries.sort((a, b) => a.Name.localeCompare(b.Name)).filter(item => item.hasOwnProperty('BookPage') && props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
       }else{
-        TempGear = GearData[SelectedGearCategory].entries.sort((a, b) => a.name.localeCompare(b.name))[event.target.value];
+        TempGear = GearData[SelectedGearCategory].entries.sort((a, b) => a.Name.localeCompare(b.Name))[event.target.value];
       }
       console.log(TempGear);
       setNewGear(TempGear);
@@ -105,8 +105,9 @@ export default function GearPanel(props) {
             value={NewGearIndex}
             onChange={handleGearChange}>
             
-          { GearData[SelectedGearCategory].entries.filter(item => !item.hasOwnProperty('BookPage') || props.BooksFilter.includes(item.BookPage.split('.')[0])).sort((a, b) => a.name.localeCompare(b.name)).map( (gear, index) => (
-            <MenuItem selected={NewGearIndex === index} key={index} value={index}>{gear.name}</MenuItem>
+          { GearData[SelectedGearCategory].entries.filter(item => !item.hasOwnProperty('BookPage') || 
+          props.BooksFilter.includes(item.BookPage.split('.')[0])).sort((a, b) => a.Name.localeCompare(b.Name)).map( (gear, index) => (
+            <MenuItem selected={NewGearIndex === index} key={index} value={index}>{gear.Name}</MenuItem>
           ))}
         </Select>
         </FormControl>
@@ -159,14 +160,14 @@ export default function GearPanel(props) {
                   return(
                   <TableRow key={index}>
                     <TableCell component="th" scope="row">
-                      {gear.name}
+                      {gear.Name}
                       {gear.Amount !== 0?`  x${gear.Amount}`:''}
                     </TableCell>
                     <TableCell align="right">{gear.Ballistic}</TableCell>
                     <TableCell align="right">{gear.Impact}</TableCell>
                     <TableCell align="right">
                       {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}
-                      {gear.Amount !== 0?`  [${new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost*gear.Amount)}]`:''}
+                      {gear.Amount !== 0 && gear.Amount !== 1 ?`  [${new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost*gear.Amount)}]`:''}
                     </TableCell>
                     <TableCell align="right">{gear.BookPage}</TableCell>
                     <TableCell align="right">{gear.Availability}</TableCell>
@@ -203,11 +204,13 @@ export default function GearPanel(props) {
               }
               return(
               <TableRow key={index}>
-                <TableCell component="th" scope="row"> {gear.name}
+                <TableCell component="th" scope="row"> {gear.Name}
                       {gear.Amount !== 0?`  x${gear.Amount}`:''}</TableCell>
                 <TableCell align="right">{gear.Damage}</TableCell>
-                <TableCell align="right"> {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}
-                      {gear.Amount !== 0?`  [${new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost*gear.Amount)}]`:''}</TableCell>
+                <TableCell align="right"> 
+                    {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}
+                    {gear.Amount !== 0 && gear.Amount !== 1 ?`  [${new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost*gear.Amount)}]`:''}
+                </TableCell>
                 <TableCell align="right">{gear.BookPage}</TableCell>
                 <TableCell align="right">{gear.Availability}</TableCell>
                 <TableCell align="right">{gear.Notes}</TableCell>
@@ -240,11 +243,13 @@ export default function GearPanel(props) {
               }
               return (
               <TableRow key={index}>
-                <TableCell component="th" scope="row"> {gear.name}
+                <TableCell component="th" scope="row"> {gear.Name}
                       {gear.Amount !== 0?`  x${gear.Amount}`:''}</TableCell>
                 <TableCell align="right">{gear.Rating??'N/A'}</TableCell>
-                <TableCell align="right"> {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}
-                      {gear.Amount !== 0?`  [${new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost*gear.Amount)}]`:''}</TableCell>
+                <TableCell align="right"> 
+                    {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}
+                    {gear.Amount !== 0 && gear.Amount !== 1 ?`  [${new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost*gear.Amount)}]`:''}
+                </TableCell>
                 <TableCell align="right">{gear.BookPage}</TableCell>
                 <TableCell align="right">{gear.Availability}</TableCell>
                 <TableCell align="right">{gear.Notes}</TableCell>
