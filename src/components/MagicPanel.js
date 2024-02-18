@@ -373,7 +373,14 @@ function MagicPanel(props) {
   const [NewTotemIndex, setNewTotemIndex] = useState(findTotemID(props.magicalTotem));
 
   var TraditionList = {};
-
+  const SpellCategories = {
+    "C":"Combat",
+    "M":"Manipulation",
+    "H":"Health",
+    "D":"Detection",
+    "I":"Illusion",
+    "Z":"Transformation"
+  }
 
   const convertModsToAttributes = (mods) => {
     const ModToAttributes ={ 
@@ -775,6 +782,7 @@ function MagicPanel(props) {
               <TableCell>Spell Name</TableCell>
               <TableCell align="right">Rating</TableCell>
               <TableCell align="right">Type</TableCell>
+              <TableCell align="right">Category</TableCell>
               <TableCell align="right">Target</TableCell>
               <TableCell align="right">Duration</TableCell>
               <TableCell align="right">Drain Code</TableCell>
@@ -792,6 +800,7 @@ function MagicPanel(props) {
                 </TableCell>
                 <TableCell align="right">{spell.Rating} {CalcSpellRating(spell)}</TableCell>
                 <TableCell align="right">{spell.Type}</TableCell>
+                <TableCell align="right">{SpellCategories[spell.Class]}</TableCell>
                 <TableCell align="right">{spell.Target}</TableCell>
                 <TableCell align="right">{spell.Duration}</TableCell>
                 <TableCell align="right">{spell.Drain}</TableCell>
