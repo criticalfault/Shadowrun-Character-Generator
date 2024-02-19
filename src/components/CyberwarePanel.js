@@ -87,7 +87,8 @@ export default function CyberwarePanel(props) {
       const TempCyber = CyberwareData[SelectedCyberwareCategory].filter(item => props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
       setNewCyberware(TempCyber);
       setNewCyberwareIndex(event.target.value)
-      TempCyber.Cost *= CyberwareGrades[NewCyberwareGrade].CostMod;
+      setNewCyberwareGrade('standard');
+      TempCyber.Cost *= CyberwareGrades['standard'].CostMod;
       setNewCyberwareCost(TempCyber.Cost);
       setNewCyberwareDesc(TempCyber.Notes)
     }else{
