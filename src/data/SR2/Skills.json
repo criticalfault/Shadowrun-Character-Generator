@@ -154,17 +154,35 @@
             {"name":"Talismongering","Specializations":["*type"]}
         ]
     },
-    "Etiquette":{
-        "name":"Etiquette", 
+    "Etiquette: Corporate":{
+        "name":"Etiquette: Corporate", 
         "requiresConcentration":true,
-        "Concentrations":[
-            {"name":"Corporate","Specializations":[]},
-            {"name":"Magical","Specializations":[]},
-            {"name":"Matrix","Specializations":[]},
-            {"name":"Media","Specializations":[]},
-            {"name":"Street","Specializations":[]},
-            {"name":"Tribal","Specializations":[]}
-        ]
+        "Concentrations":[]
+    },
+    "Etiquette: Magical":{
+        "name":"Etiquette: Magical", 
+        "requiresConcentration":true,
+        "Concentrations":[]
+    },
+    "Etiquette: Matrix":{
+        "name":"Etiquette: Matrix", 
+        "requiresConcentration":true,
+        "Concentrations":[]
+    },
+    "Etiquette: Media":{
+        "name":"Etiquette: Media", 
+        "requiresConcentration":true,
+        "Concentrations":[]
+    },
+    "Etiquette: Street":{
+        "name":"Etiquette: Street", 
+        "requiresConcentration":true,
+        "Concentrations":[]
+    },
+    "Etiquette: Tribal":{
+        "name":"Etiquette: Tribal", 
+        "requiresConcentration":true,
+        "Concentrations":[]
     },
     "Firearms":{
         "name":"Firearms", 
