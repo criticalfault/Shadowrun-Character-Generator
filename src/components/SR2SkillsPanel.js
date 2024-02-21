@@ -67,6 +67,16 @@ function SR2SkillsPanel({characterSkills, onUpdateSkills, maxSkillPoints}) {
     selectedSkillData.totalCost = 1;
     selectedSkillData.selectedConcentrations = [];
     selectedSkillData.type = 'Active';
+    if(selectedSkillData.requiresConcentration === true){
+      selectedSkillData.rating = 1;
+      selectedSkillData.totalCost = 2;
+      const newConcentration = {
+        name: selectedSkillData.requiredConcentration,
+        rating: selectedSkillData.rating + 1,
+        specializations: []
+      };
+      selectedSkillData.selectedConcentrations = [newConcentration]
+    }
     setSelectedSkills(prevSkills => [...prevSkills, selectedSkillData]);
     onUpdateSkills(selectedSkills);
   };
@@ -176,7 +186,13 @@ function SR2SkillsPanel({characterSkills, onUpdateSkills, maxSkillPoints}) {
   const showConcentrations = () => {
     
     if(selectedSkills.length > 0 && selectedSkills[selectedSkillIndex] !== undefined && selectedSkills[selectedSkillIndex].hasOwnProperty('Concentrations')){
-      return (<>
+
+      if(selectedSkills[selectedSkillIndex].hasOwnProperty('requiresConcentration') && selectedSkills[selectedSkillIndex].requiresConcentration === true){
+          return (<>
+            Required Concentration: {selectedSkills[selectedSkillIndex].requiredConcentration}
+          </>)
+      }else{
+        return (<>
           <Select id="concentration-dropdown" 
             onChange={handleSelectedConcentrationChange}
             value={selectedConcentration} 
@@ -191,7 +207,8 @@ function SR2SkillsPanel({characterSkills, onUpdateSkills, maxSkillPoints}) {
           <br></br>
           <Button onClick={() => handleAddConcentration(selectedSkillIndex, selectedConcentration)}>Add Concentration</Button>
         </>
-      )
+        )
+      }
     }else{
       return (<span>No Concentrations for this skill</span>)
     }

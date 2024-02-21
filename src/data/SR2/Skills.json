@@ -154,17 +154,41 @@
             {"name":"Talismongering","Specializations":["*type"]}
         ]
     },
-    "Etiquette":{
-        "name":"Etiquette", 
+    "Etiquette: Corporate":{
+        "name":"Etiquette: Corporate", 
         "requiresConcentration":true,
-        "Concentrations":[
-            {"name":"Corporate","Specializations":[]},
-            {"name":"Magical","Specializations":[]},
-            {"name":"Matrix","Specializations":[]},
-            {"name":"Media","Specializations":[]},
-            {"name":"Street","Specializations":[]},
-            {"name":"Tribal","Specializations":[]}
-        ]
+        "requiredConcentration":"Corporate",
+        "Concentrations":[]
+    },
+    "Etiquette: Magical":{
+        "name":"Etiquette: Magical", 
+        "requiresConcentration":true,
+        "requiredConcentration":"Magical",
+        "Concentrations":[]
+    },
+    "Etiquette: Matrix":{
+        "name":"Etiquette: Matrix", 
+        "requiresConcentration":true,
+        "requiredConcentration":"Matrix",
+        "Concentrations":[]
+    },
+    "Etiquette: Media":{
+        "name":"Etiquette: Media", 
+        "requiresConcentration":true,
+        "requiredConcentration":"Media",
+        "Concentrations":[]
+    },
+    "Etiquette: Street":{
+        "name":"Etiquette: Street", 
+        "requiresConcentration":true,
+        "requiredConcentration":"Street",
+        "Concentrations":[]
+    },
+    "Etiquette: Tribal":{
+        "name":"Etiquette: Tribal", 
+        "requiresConcentration":true,
+        "requiredConcentration":"Tribal",
+        "Concentrations":[]
     },
     "Firearms":{
         "name":"Firearms", 
