@@ -173,8 +173,8 @@ function SR3SkillsPanel({currentCharacter, characterSkills, onUpdateSkills, acti
 
   const handleAddSkill = () => {
     if (newSkill) {
-      let costDiff = (parseInt(skillRating)-parseInt(currentCharacter.attributes[AcronymToAttribute[newSkillAttribute]]))
-      let cost = skillRating
+      let costDiff = (parseInt(skillRating)-(parseInt(currentCharacter.attributes[AcronymToAttribute[newSkillAttribute]]) + parseInt(currentCharacter.raceBonuses[AcronymToAttribute[newSkillAttribute]])))
+      let cost = skillRating;
       if(costDiff > 0) {
         cost += costDiff;
       }
