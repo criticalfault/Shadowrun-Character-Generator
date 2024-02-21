@@ -130,15 +130,22 @@ export default function CyberwarePanel(props) {
       setBiowareSelectedCategory(event.target.value);
   }
   const convertModsToAttributes = (mods) => {
+    //,+1STG
     const ModToAttributes ={ 
         'BOD':'Body',
+        'ROD':'Body',
         'STR':'Strength',
+        'RTR':'Strength',
         'QCK':'Quickness', 
+        'RCK':"Quickness",
         'INT':'Intelligence', 
+        'RNT':'Intelligence',
         'CHA':'Charisma',
         'WIL':'Willpower',
         'RCT':'Reaction',
+        'NCT':'Reaction',
         'INI':"Initative",
+        'NNI':"Initative",
         'IMP':'Impact',
         'BAL':'Ballastic',
         'TAS':'Task_Pool',
