@@ -74,6 +74,15 @@ export default function LoadCharacter(props) {
       setOpenLocalStorage(false);
     }
 
+    const getSaveDescription = (saveSlot) => {
+      let characterJSON = localStorage.getItem('characterSlot'+saveSlot);
+      if(characterJSON !== null) {
+        let tempCharacter = JSON.parse(characterJSON);
+        return ( <span style={{'text-transform': 'capitalize'}}> - {tempCharacter.street_name}</span>
+        )
+      }
+    }
+
     return (
       <div>
         <Button onClick={SaveCharacter} variant="contained">Save</Button>&nbsp;&nbsp;
@@ -104,20 +113,20 @@ export default function LoadCharacter(props) {
                 <Grid item xs={12} md={6}>
                     Save Character
                     <hr></hr>
-                    <Button onClick={function(event){ localStroageSave(1)} }>Save 1</Button><br></br>
-                    <Button onClick={function(event){ localStroageSave(2)} }>Save 2</Button><br></br>
-                    <Button onClick={function(event){ localStroageSave(3)} }>Save 3</Button><br></br>
-                    <Button onClick={function(event){ localStroageSave(4)} }>Save 4</Button><br></br>
-                    <Button onClick={function(event){ localStroageSave(5)} }>Save 5</Button><br></br>
+                    <Button onClick={function(event){ localStroageSave(1)} }>Save 1 </Button><br></br>
+                    <Button onClick={function(event){ localStroageSave(2)} }>Save 2 </Button><br></br>
+                    <Button onClick={function(event){ localStroageSave(3)} }>Save 3 </Button><br></br>
+                    <Button onClick={function(event){ localStroageSave(4)} }>Save 4 </Button><br></br>
+                    <Button onClick={function(event){ localStroageSave(5)} }>Save 5 </Button><br></br>
                 </Grid>
                 <Grid item xs={12} md={6}>
                     Load Character
                     <hr></hr>
-                    <Button onClick={function(event){ localStroageLoad(1)} }>Load 1</Button><br></br>
-                    <Button onClick={function(event){ localStroageLoad(2)} }>Load 2</Button><br></br>
-                    <Button onClick={function(event){ localStroageLoad(3)} }>Load 3</Button><br></br>
-                    <Button onClick={function(event){ localStroageLoad(4)} }>Load 4</Button><br></br>
-                    <Button onClick={function(event){ localStroageLoad(5)} }>Load 5</Button><br></br>
+                    <Button onClick={function(event){ localStroageLoad(1)} }>Load {getSaveDescription(1)}</Button><br></br>
+                    <Button onClick={function(event){ localStroageLoad(2)} }>Load {getSaveDescription(2)}</Button><br></br>
+                    <Button onClick={function(event){ localStroageLoad(3)} }>Load {getSaveDescription(3)}</Button><br></br>
+                    <Button onClick={function(event){ localStroageLoad(4)} }>Load {getSaveDescription(4)}</Button><br></br>
+                    <Button onClick={function(event){ localStroageLoad(5)} }>Load {getSaveDescription(5)}</Button><br></br>
                 </Grid>
               </Grid>
             </Box>
