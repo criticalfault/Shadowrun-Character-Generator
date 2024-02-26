@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
-
+import { Grid } from '@mui/material';
 const style = {
   position: 'absolute',
   top: '50%',
@@ -19,6 +19,11 @@ export default function LoadCharacter(props) {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    const [openLocalStorage, setOpenLocalStorage] = React.useState(false);
+    const handleOpenLocalStorage = () => setOpenLocalStorage(true);
+    const handleCloseLocalStorage = () => setOpenLocalStorage(false);
+
     const SaveCharacter = () => {
         let characterJSON = JSON.stringify(props.Character);
         const blob = new Blob([characterJSON], { type: 'application/json' });
@@ -55,13 +60,25 @@ export default function LoadCharacter(props) {
             console.log(err);
             console.log("Fathom wasn't found. Prolly a blocker");
         }
-       
+    }
+
+    const localStroageSave = (saveSlot) => {
+      let characterJSON = JSON.stringify(props.Character);
+      localStorage.setItem('characterSlot'+saveSlot, characterJSON);
+      setOpenLocalStorage(false);
+    }
+
+    const localStroageLoad = (saveSlot) => {
+      let characterJSON = localStorage.getItem('characterSlot'+saveSlot);
+      props.loadCharacter(JSON.parse(characterJSON));
+      setOpenLocalStorage(false);
     }
 
     return (
       <div>
         <Button onClick={SaveCharacter} variant="contained">Save</Button>&nbsp;&nbsp;
-        <Button onClick={handleOpen} variant="contained">Load</Button>
+        <Button onClick={handleOpen} variant="contained">Load</Button>&nbsp;&nbsp;
+        <Button onClick={handleOpenLocalStorage} variant="contained">Local Storage Save/Load</Button>
         <Modal
             open={open}
             onClose={handleClose}
@@ -72,6 +89,37 @@ export default function LoadCharacter(props) {
                     Import Character<br></br><br></br>
                     <input type='file' name='characterLoad' onChange={LoadCharacter}/> 
                 </label>
+            </Box>
+        </Modal>
+        <Modal
+            open={openLocalStorage}
+            onClose={handleCloseLocalStorage}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description">
+            <Box sx={style}>
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  This uses your browsers storage mechanism to save/load characters. This is PER computer and PER browser. So its not for instance available on your phone if you saved it on your PC. You'll need to use the file save for that, but then you can save it on your phone!
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    Save Character
+                    <hr></hr>
+                    <Button onClick={function(event){ localStroageSave(1)} }>Save 1</Button><br></br>
+                    <Button onClick={function(event){ localStroageSave(2)} }>Save 2</Button><br></br>
+                    <Button onClick={function(event){ localStroageSave(3)} }>Save 3</Button><br></br>
+                    <Button onClick={function(event){ localStroageSave(4)} }>Save 4</Button><br></br>
+                    <Button onClick={function(event){ localStroageSave(5)} }>Save 5</Button><br></br>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    Load Character
+                    <hr></hr>
+                    <Button onClick={function(event){ localStroageLoad(1)} }>Load 1</Button><br></br>
+                    <Button onClick={function(event){ localStroageLoad(2)} }>Load 2</Button><br></br>
+                    <Button onClick={function(event){ localStroageLoad(3)} }>Load 3</Button><br></br>
+                    <Button onClick={function(event){ localStroageLoad(4)} }>Load 4</Button><br></br>
+                    <Button onClick={function(event){ localStroageLoad(5)} }>Load 5</Button><br></br>
+                </Grid>
+              </Grid>
             </Box>
         </Modal>
       </div>

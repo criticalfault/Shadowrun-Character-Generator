@@ -41,20 +41,21 @@ export default function IdentityPanel(props) {
     return (<>
         <div>
             <h3>Welcome To the SR 2/3 Character Creator</h3>
-            <p>I have been working on this for a good month and have finally decided to show it off in its partially working glory. It is in <strong>Alpha</strong> at the moment.
-            So be prepared if it decideds to randomly die. There is a bunch of fixes still pending as well as a lot of known missing parts which will be added once this thing is partially stable.
+            <p>It is in <strong>Alpha</strong> at the moment.<br></br> So be prepared if it decideds to randomly die. There is a bunch of fixes still pending as well as a lot of known missing parts which will be added once this thing is partially stable.
             I'll list the known issues below, but feel free to poke and prod. See what you can get it to do. I'm going to continue to work on this as i get reports of breaks and the likes.</p>
             <p>Thanks for your consideration and time in testing! -D (dean 'at' nullsheen.com)</p>
-            <h5>Known Issues (As of 02-15-24 - 8:10pm CST)</h5>
+            <h5>Known Issues (As of 02-26-24 - 7:30am CST)</h5>
             <ul>
-                <li>Skills page still buggy with edits/removes (Though maybe i fixed it?)</li>
-                <li>SR2's Specializations still missing and we are having some errors from concentrations</li>
+                <li>Magic Tab has been causing some strange issues with Totems and such. I need to spend some more time on that.</li>
+                <li>Skills page still buggy with edits for SR3. Its easiest to just remove and readd them currently.</li>
                 <li>All nesting of improvements (Weapon / Deck / Vehicle accessories and building). These will be handled in a completely different way, but I promise it will feel awesome to do!</li>
             </ul>
         </div>
         <hr/>
         <h5>Resolved Issues</h5>
         <ul>
+            <li>LocalStorage save/load for faster and easier character handling</li>
+            <li>Finally fixed Etiquette for SR2!!!!</li>
             <li>Fixed a bunch of dice pools. Hopefully those are looking much better!</li>
             <li>Fixed Skill ordering, removals and edits. So many skill errors.</li>
             <li>Added a Dice Roller on the Sheet Display</li>
