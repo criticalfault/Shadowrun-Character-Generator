@@ -44,9 +44,8 @@ export default function IdentityPanel(props) {
             <p>It is in <strong>Alpha</strong> at the moment.<br></br> So be prepared if it decideds to randomly die. There is a bunch of fixes still pending as well as a lot of known missing parts which will be added once this thing is partially stable.
             I'll list the known issues below, but feel free to poke and prod. See what you can get it to do. I'm going to continue to work on this as i get reports of breaks and the likes.</p>
             <p>Thanks for your consideration and time in testing! -D (dean 'at' nullsheen.com)</p>
-            <h5>Known Issues (As of 02-26-24 - 7:30am CST)</h5>
+            <h5>Known Issues (As of 03-24-24 - 4:30pm CDT)</h5>
             <ul>
-                <li>Magic Tab has been causing some strange issues with Totems and such. I need to spend some more time on that.</li>
                 <li>Skills page still buggy with edits for SR3. Its easiest to just remove and readd them currently.</li>
                 <li>All nesting of improvements (Weapon / Deck / Vehicle accessories and building). These will be handled in a completely different way, but I promise it will feel awesome to do!</li>
             </ul>
@@ -54,11 +53,10 @@ export default function IdentityPanel(props) {
         <hr/>
         <h5>Resolved Issues</h5>
         <ul>
+            <li>Fixed totem errors. Missed the elemental mage attributes which were causing the issue.</li>
             <li>LocalStorage save/load for faster and easier character handling</li>
             <li>Finally fixed Etiquette for SR2!!!!</li>
             <li>Fixed a bunch of dice pools. Hopefully those are looking much better!</li>
-            <li>Fixed Skill ordering, removals and edits. So many skill errors.</li>
-            <li>Added a Dice Roller on the Sheet Display</li>
         </ul>
         <hr/>
 

@@ -28,11 +28,17 @@ function MagicPanel(props) {
   const AdeptPaths = ["Athelete's Way","Artist's Way","Warriors's Way","Invisible Way","Spirit Way","Totem Way", "Magician's Way"]
 
 
-  const CalcTotalSpellRatings = (spellList) =>{
+  const CalcTotalSpellRatings = (spellList, fociList) =>{
     let totalRatings = 0;
     spellList.forEach(function(spell){
       totalRatings += spell.Rating;
     })
+    fociList.forEach(function(foci){
+      if(foci.Bound === 'Yes'){
+        totalRatings += foci.KarmaCost;
+      }
+    })  
+  
     return totalRatings;
   }
 
@@ -50,6 +56,12 @@ function MagicPanel(props) {
   }
  
   const AspectedTraditions = {
+    "None":{
+      "name":"None",
+      "description":"Please select a Tradition",
+      "conjures":"none",
+      "totemList":"none"
+    },
     'Shamanist':{
       "description":"Must be a shaman. Can only cast spells and summon spirits for which they receive a totem advantage.",
       "conjures":"",
@@ -78,6 +90,12 @@ function MagicPanel(props) {
   }
   //Cannot use Sorcery only Conjuring skills.
   const FullMageTraditions = {
+    "None":{
+      "name":"None",
+      "description":"Please select a Tradition",
+      "conjures":"none",
+      "totemList":"none"
+    },
     "Mage":{
       "name":"Mage",
       "description":"Can use Sorcery and Conjuring skills, access the astral plane, and use foci.",
@@ -213,27 +231,27 @@ function MagicPanel(props) {
     }
   }
   
-  const MetaMagic = { "SR2": [
-      {"Name":"Centering"},
-      {"Name":"Dispelling"},
-      {"Name":"Shielding"},
-      {"Name":"Masking"},
-      {"Name":"Quickening"},
-      {"Name":"Anchoring"}
-    ],
-    "SR3": [
-      {"Name":"Anchoring"},
-      {"Name":"Centering"},
-      {"Name":"Cleansing"},
-      {"Name":"Divining"},
-      {"Name":"Invoking"},
-      {"Name":"Masking"},
-      {"Name":"Possessing"},
-      {"Name":"Quickening"},
-      {"Name":"Reflecting"},
-      {"Name":"Shielding"},
-    ]
-  }
+  // const MetaMagic = { "SR2": [
+  //     {"Name":"Centering"},
+  //     {"Name":"Dispelling"},
+  //     {"Name":"Shielding"},
+  //     {"Name":"Masking"},
+  //     {"Name":"Quickening"},
+  //     {"Name":"Anchoring"}
+  //   ],
+  //   "SR3": [
+  //     {"Name":"Anchoring"},
+  //     {"Name":"Centering"},
+  //     {"Name":"Cleansing"},
+  //     {"Name":"Divining"},
+  //     {"Name":"Invoking"},
+  //     {"Name":"Masking"},
+  //     {"Name":"Possessing"},
+  //     {"Name":"Quickening"},
+  //     {"Name":"Reflecting"},
+  //     {"Name":"Shielding"},
+  //   ]
+  // }
 
 
   /*
@@ -269,84 +287,118 @@ function MagicPanel(props) {
     */
   
   const MagicalItems = { "SR3": [
-    { "Name": "Anchoring Focus, Expendable lvl 1","Cost": 3000,"Force":1,"KarmaCost":1},
-    { "Name": "Anchoring Focus, Expendable lvl 2","Cost": 6000,"Force":2,"KarmaCost":2},
-    { "Name": "Anchoring Focus, Expendable lvl 3","Cost": 9000,"Force":3,"KarmaCost":3},
-    { "Name": "Anchoring Focus, Expendable lvl 4","Cost": 12000,"Force":4,"KarmaCost":4},
-    { "Name": "Anchoring Focus, Expendable lvl 5","Cost": 15000,"Force":5,"KarmaCost":5},
-    { "Name": "Anchoring Focus, Expendable lvl 6","Cost": 18000,"Force":6,"KarmaCost":6},
-    { "Name": "Anchoring Focus, Reusable lvl 1","Cost": 30000, "Force":1,"KarmaCost":3},
-    { "Name": "Anchoring Focus, Reusable lvl 2","Cost": 60000, "Force":2,"KarmaCost":6},
-    { "Name": "Anchoring Focus, Reusable lvl 3","Cost": 90000, "Force":3,"KarmaCost":9},
-    { "Name": "Anchoring Focus, Reusable lvl 4","Cost": 120000,"Force":4,"KarmaCost":12},
-    { "Name": "Anchoring Focus, Reusable lvl 5","Cost": 150000,"Force":5,"KarmaCost":15},
-    { "Name": "Anchoring Focus, Reusable lvl 6","Cost": 180000,"Force":6,"KarmaCost":18},
-    { "Name": "Centering Focus lvl 1","Cost": 75000, "Force":1,"KarmaCost":3},
-    { "Name": "Centering Focus lvl 2","Cost": 150000,"Force":2,"KarmaCost":6},
-    { "Name": "Centering Focus lvl 3","Cost": 225000,"Force":3,"KarmaCost":9},
-    { "Name": "Centering Focus lvl 4","Cost": 300000,"Force":4,"KarmaCost":12},
-    { "Name": "Centering Focus lvl 5","Cost": 375000,"Force":5,"KarmaCost":15},
-    { "Name": "Centering Focus lvl 6","Cost": 450000,"Force":6,"KarmaCost":18},
-    { "Name": "Expendable Spell Focus lvl 1","Cost": 1500,"Force":1,"KarmaCost":0},
-    { "Name": "Expendable Spell Focus lvl 2","Cost": 3000,"Force":2,"KarmaCost":0},
-    { "Name": "Expendable Spell Focus lvl 3","Cost": 4500,"Force":3,"KarmaCost":0},
-    { "Name": "Expendable Spell Focus lvl 4","Cost": 6000,"Force":4,"KarmaCost":0},
-    { "Name": "Expendable Spell Focus lvl 5","Cost": 7500,"Force":5,"KarmaCost":0},
-    { "Name": "Expendable Spell Focus lvl 6","Cost": 9000,"Force":6,"KarmaCost":0},
-    { "Name": "Power Focus lvl 1","Cost": 105000,"Force":1,"KarmaCost":5 },
-    { "Name": "Power Focus lvl 2","Cost": 210000,"Force":2,"KarmaCost":10},
-    { "Name": "Power Focus lvl 3","Cost": 315000,"Force":3,"KarmaCost":15},
-    { "Name": "Power Focus lvl 4","Cost": 420000,"Force":4,"KarmaCost":20},
-    { "Name": "Power Focus lvl 5","Cost": 525000,"Force":5,"KarmaCost":25},
-    { "Name": "Power Focus lvl 6","Cost": 630000,"Force":6,"KarmaCost":30},
-    { "Name": "Shielding Focus lvl 1","Cost": 95000, "Force":1,"KarmaCost":4 },
-    { "Name": "Shielding Focus lvl 2","Cost": 190000,"Force":2,"KarmaCost":8 },
-    { "Name": "Shielding Focus lvl 3","Cost": 285000,"Force":3,"KarmaCost":12},
-    { "Name": "Shielding Focus lvl 4","Cost": 380000,"Force":4,"KarmaCost":16},
-    { "Name": "Shielding Focus lvl 5","Cost": 475000,"Force":5,"KarmaCost":20},
-    { "Name": "Shielding Focus lvl 6","Cost": 570000,"Force":6,"KarmaCost":24},
-    { "Name": "Specific Spell Focus lvl 1","Cost": 45000, "Force":1,"KarmaCost":1},
-    { "Name": "Specific Spell Focus lvl 2","Cost": 90000, "Force":2,"KarmaCost":2},
-    { "Name": "Specific Spell Focus lvl 3","Cost": 4500,  "Force":3,"KarmaCost":3},
-    { "Name": "Specific Spell Focus lvl 4","Cost": 6000,  "Force":4,"KarmaCost":4},
-    { "Name": "Specific Spell Focus lvl 5","Cost": 7500,  "Force":5,"KarmaCost":5},
-    { "Name": "Specific Spell Focus lvl 6","Cost": 9000,  "Force":6,"KarmaCost":6},
-    { "Name": "Spell Category Focus lvl 1","Cost": 75000, "Force":1,"KarmaCost":3},
-    { "Name": "Spell Category Focus lvl 2","Cost": 150000,"Force":2,"KarmaCost":6},
-    { "Name": "Spell Category Focus lvl 3","Cost": 225000,"Force":3,"KarmaCost":9},
-    { "Name": "Spell Category Focus lvl 4","Cost": 300000,"Force":4,"KarmaCost":12},
-    { "Name": "Spell Category Focus lvl 5","Cost": 375000,"Force":5,"KarmaCost":15},
-    { "Name": "Spell Category Focus lvl 6","Cost": 450000,"Force":6,"KarmaCost":18},
-    { "Name": "Spell Defense Focus lvl 1","Cost": 75000, "Force":1,"KarmaCost":3},
-    { "Name": "Spell Defense Focus lvl 2","Cost": 150000,"Force":2,"KarmaCost":6},
-    { "Name": "Spell Defense Focus lvl 3","Cost": 225000,"Force":3,"KarmaCost":9},
-    { "Name": "Spell Defense Focus lvl 4","Cost": 300000,"Force":4,"KarmaCost":12},
-    { "Name": "Spell Defense Focus lvl 5","Cost": 375000,"Force":5,"KarmaCost":15},
-    { "Name": "Spell Defense Focus lvl 6","Cost": 450000,"Force":6,"KarmaCost":18},
-    { "Name": "Spirit Focus lvl 1","Cost": 60000, "Force":1,"KarmaCost":2 },
-    { "Name": "Spirit Focus lvl 2","Cost": 120000,"Force":2,"KarmaCost":4 },
-    { "Name": "Spirit Focus lvl 3","Cost": 180000,"Force":3,"KarmaCost":6 },
-    { "Name": "Spirit Focus lvl 4","Cost": 240000,"Force":4,"KarmaCost":8 },
-    { "Name": "Spirit Focus lvl 5","Cost": 300000,"Force":5,"KarmaCost":10},
-    { "Name": "Spirit Focus lvl 6","Cost": 360000,"Force":6,"KarmaCost":12},
-    { "Name": "Sustaining Spell Focus lvl 1","Cost": 15000, "Force":1, "KarmaCost":1},
-    { "Name": "Sustaining Spell Focus lvl 2","Cost": 30000, "Force":2, "KarmaCost":2},
-    { "Name": "Sustaining Spell Focus lvl 3","Cost": 45000, "Force":3, "KarmaCost":3},
-    { "Name": "Sustaining Spell Focus lvl 4","Cost": 60000, "Force":4, "KarmaCost":4},
-    { "Name": "Sustaining Spell Focus lvl 5","Cost": 75000, "Force":5, "KarmaCost":5},
-    { "Name": "Sustaining Spell Focus lvl 6","Cost": 90000, "Force":6, "KarmaCost":6},
+    { "Name": "Anchoring Focus, Expendable lvl 1","Rating":1,"Cost": 3000,"Force":1,"KarmaCost":1},
+    { "Name": "Anchoring Focus, Expendable lvl 2","Rating":2,"Cost": 6000,"Force":2,"KarmaCost":2},
+    { "Name": "Anchoring Focus, Expendable lvl 3","Rating":3,"Cost": 9000,"Force":3,"KarmaCost":3},
+    { "Name": "Anchoring Focus, Expendable lvl 4","Rating":4,"Cost": 12000,"Force":4,"KarmaCost":4},
+    { "Name": "Anchoring Focus, Expendable lvl 5","Rating":5,"Cost": 15000,"Force":5,"KarmaCost":5},
+    { "Name": "Anchoring Focus, Expendable lvl 6","Rating":6,"Cost": 18000,"Force":6,"KarmaCost":6},
+    { "Name": "Anchoring Focus, Reusable lvl 1","Rating":1,"Cost": 30000, "Force":1,"KarmaCost":3},
+    { "Name": "Anchoring Focus, Reusable lvl 2","Rating":2,"Cost": 60000, "Force":2,"KarmaCost":6},
+    { "Name": "Anchoring Focus, Reusable lvl 3","Rating":3,"Cost": 90000, "Force":3,"KarmaCost":9},
+    { "Name": "Anchoring Focus, Reusable lvl 4","Rating":4,"Cost": 120000,"Force":4,"KarmaCost":12},
+    { "Name": "Anchoring Focus, Reusable lvl 5","Rating":5,"Cost": 150000,"Force":5,"KarmaCost":15},
+    { "Name": "Anchoring Focus, Reusable lvl 6","Rating":6,"Cost": 180000,"Force":6,"KarmaCost":18},
+    { "Name": "Centering Focus lvl 1","Rating":1,"Cost": 75000, "Force":1,"KarmaCost":3},
+    { "Name": "Centering Focus lvl 2","Rating":2,"Cost": 150000,"Force":2,"KarmaCost":6},
+    { "Name": "Centering Focus lvl 3","Rating":3,"Cost": 225000,"Force":3,"KarmaCost":9},
+    { "Name": "Centering Focus lvl 4","Rating":4,"Cost": 300000,"Force":4,"KarmaCost":12},
+    { "Name": "Centering Focus lvl 5","Rating":5,"Cost": 375000,"Force":5,"KarmaCost":15},
+    { "Name": "Centering Focus lvl 6","Rating":6,"Cost": 450000,"Force":6,"KarmaCost":18},
+    { "Name": "Expendable Spell Focus lvl 1","Rating":1,"Cost": 1500,"Force":1,"KarmaCost":0},
+    { "Name": "Expendable Spell Focus lvl 2","Rating":2,"Cost": 3000,"Force":2,"KarmaCost":0},
+    { "Name": "Expendable Spell Focus lvl 3","Rating":3,"Cost": 4500,"Force":3,"KarmaCost":0},
+    { "Name": "Expendable Spell Focus lvl 4","Rating":4,"Cost": 6000,"Force":4,"KarmaCost":0},
+    { "Name": "Expendable Spell Focus lvl 5","Rating":5,"Cost": 7500,"Force":5,"KarmaCost":0},
+    { "Name": "Expendable Spell Focus lvl 6","Rating":6,"Cost": 9000,"Force":6,"KarmaCost":0},
+    { "Name": "Power Focus lvl 1","Rating":1,"Cost": 105000,"Force":1,"KarmaCost":5 },
+    { "Name": "Power Focus lvl 2","Rating":2,"Cost": 210000,"Force":2,"KarmaCost":10},
+    { "Name": "Power Focus lvl 3","Rating":3,"Cost": 315000,"Force":3,"KarmaCost":15},
+    { "Name": "Power Focus lvl 4","Rating":4,"Cost": 420000,"Force":4,"KarmaCost":20},
+    { "Name": "Power Focus lvl 5","Rating":5,"Cost": 525000,"Force":5,"KarmaCost":25},
+    { "Name": "Power Focus lvl 6","Rating":6,"Cost": 630000,"Force":6,"KarmaCost":30},
+    { "Name": "Shielding Focus lvl 1","Rating":1,"Cost": 95000, "Force":1,"KarmaCost":4 },
+    { "Name": "Shielding Focus lvl 2","Rating":2,"Cost": 190000,"Force":2,"KarmaCost":8 },
+    { "Name": "Shielding Focus lvl 3","Rating":3,"Cost": 285000,"Force":3,"KarmaCost":12},
+    { "Name": "Shielding Focus lvl 4","Rating":4,"Cost": 380000,"Force":4,"KarmaCost":16},
+    { "Name": "Shielding Focus lvl 5","Rating":5,"Cost": 475000,"Force":5,"KarmaCost":20},
+    { "Name": "Shielding Focus lvl 6","Rating":6,"Cost": 570000,"Force":6,"KarmaCost":24},
+    { "Name": "Specific Spell Focus lvl 1","Rating":1,"Cost": 45000, "Force":1,"KarmaCost":1},
+    { "Name": "Specific Spell Focus lvl 2","Rating":2,"Cost": 90000, "Force":2,"KarmaCost":2},
+    { "Name": "Specific Spell Focus lvl 3","Rating":3,"Cost": 4500,  "Force":3,"KarmaCost":3},
+    { "Name": "Specific Spell Focus lvl 4","Rating":4,"Cost": 6000,  "Force":4,"KarmaCost":4},
+    { "Name": "Specific Spell Focus lvl 5","Rating":5,"Cost": 7500,  "Force":5,"KarmaCost":5},
+    { "Name": "Specific Spell Focus lvl 6","Rating":6,"Cost": 9000,  "Force":6,"KarmaCost":6},
+    { "Name": "Spell Category Focus lvl 1","Rating":1,"Cost": 75000, "Force":1,"KarmaCost":3},
+    { "Name": "Spell Category Focus lvl 2","Rating":2,"Cost": 150000,"Force":2,"KarmaCost":6},
+    { "Name": "Spell Category Focus lvl 3","Rating":3,"Cost": 225000,"Force":3,"KarmaCost":9},
+    { "Name": "Spell Category Focus lvl 4","Rating":4,"Cost": 300000,"Force":4,"KarmaCost":12},
+    { "Name": "Spell Category Focus lvl 5","Rating":5,"Cost": 375000,"Force":5,"KarmaCost":15},
+    { "Name": "Spell Category Focus lvl 6","Rating":6,"Cost": 450000,"Force":6,"KarmaCost":18},
+    { "Name": "Spell Defense Focus lvl 1","Rating":1,"Cost": 75000, "Force":1,"KarmaCost":3},
+    { "Name": "Spell Defense Focus lvl 2","Rating":2,"Cost": 150000,"Force":2,"KarmaCost":6},
+    { "Name": "Spell Defense Focus lvl 3","Rating":3,"Cost": 225000,"Force":3,"KarmaCost":9},
+    { "Name": "Spell Defense Focus lvl 4","Rating":4,"Cost": 300000,"Force":4,"KarmaCost":12},
+    { "Name": "Spell Defense Focus lvl 5","Rating":5,"Cost": 375000,"Force":5,"KarmaCost":15},
+    { "Name": "Spell Defense Focus lvl 6","Rating":6,"Cost": 450000,"Force":6,"KarmaCost":18},
+    { "Name": "Spirit Focus lvl 1","Rating":1,"Cost": 60000, "Force":1,"KarmaCost":2 },
+    { "Name": "Spirit Focus lvl 2","Rating":2,"Cost": 120000,"Force":2,"KarmaCost":4 },
+    { "Name": "Spirit Focus lvl 3","Rating":3,"Cost": 180000,"Force":3,"KarmaCost":6 },
+    { "Name": "Spirit Focus lvl 4","Rating":4,"Cost": 240000,"Force":4,"KarmaCost":8 },
+    { "Name": "Spirit Focus lvl 5","Rating":5,"Cost": 300000,"Force":5,"KarmaCost":10},
+    { "Name": "Spirit Focus lvl 6","Rating":6,"Cost": 360000,"Force":6,"KarmaCost":12},
+    { "Name": "Sustaining Spell Focus lvl 1","Rating":1,"Cost": 15000, "Force":1, "KarmaCost":1},
+    { "Name": "Sustaining Spell Focus lvl 2","Rating":2,"Cost": 30000, "Force":2, "KarmaCost":2},
+    { "Name": "Sustaining Spell Focus lvl 3","Rating":3,"Cost": 45000, "Force":3, "KarmaCost":3},
+    { "Name": "Sustaining Spell Focus lvl 4","Rating":4,"Cost": 60000, "Force":4, "KarmaCost":4},
+    { "Name": "Sustaining Spell Focus lvl 5","Rating":5,"Cost": 75000, "Force":5, "KarmaCost":5},
+    { "Name": "Sustaining Spell Focus lvl 6","Rating":6,"Cost": 90000, "Force":6, "KarmaCost":6},
   ],
   "SR2":[
-
+    { "Name": "Expendable Spell Focus lvl 1","Rating":1,"Cost": 1500,"Force":1,"KarmaCost":0},
+    { "Name": "Expendable Spell Focus lvl 2","Rating":2,"Cost": 3000,"Force":2,"KarmaCost":0},
+    { "Name": "Expendable Spell Focus lvl 3","Rating":3,"Cost": 4500,"Force":3,"KarmaCost":0},
+    { "Name": "Expendable Spell Focus lvl 4","Rating":4,"Cost": 6000,"Force":4,"KarmaCost":0},
+    { "Name": "Expendable Spell Focus lvl 5","Rating":5,"Cost": 7500,"Force":5,"KarmaCost":0},
+    { "Name": "Expendable Spell Focus lvl 6","Rating":6,"Cost": 9000,"Force":6,"KarmaCost":0},
+    { "Name": "Power Focus lvl 1","Rating":1,"Cost": 105000,"Force":1,"KarmaCost":5 },
+    { "Name": "Power Focus lvl 2","Rating":2,"Cost": 210000,"Force":2,"KarmaCost":10},
+    { "Name": "Power Focus lvl 3","Rating":3,"Cost": 315000,"Force":3,"KarmaCost":15},
+    { "Name": "Power Focus lvl 4","Rating":4,"Cost": 420000,"Force":4,"KarmaCost":20},
+    { "Name": "Power Focus lvl 5","Rating":5,"Cost": 525000,"Force":5,"KarmaCost":25},
+    { "Name": "Power Focus lvl 6","Rating":6,"Cost": 630000,"Force":6,"KarmaCost":30},
+    { "Name": "Specific Spell Focus lvl 1","Rating":1,"Cost": 45000, "Force":1,"KarmaCost":1},
+    { "Name": "Specific Spell Focus lvl 2","Rating":2,"Cost": 90000, "Force":2,"KarmaCost":2},
+    { "Name": "Specific Spell Focus lvl 3","Rating":3,"Cost": 4500,  "Force":3,"KarmaCost":3},
+    { "Name": "Specific Spell Focus lvl 4","Rating":4,"Cost": 6000,  "Force":4,"KarmaCost":4},
+    { "Name": "Specific Spell Focus lvl 5","Rating":5,"Cost": 7500,  "Force":5,"KarmaCost":5},
+    { "Name": "Specific Spell Focus lvl 6","Rating":6,"Cost": 9000,  "Force":6,"KarmaCost":6},
+    { "Name": "Spell Category Focus lvl 1","Rating":1,"Cost": 75000, "Force":1,"KarmaCost":3},
+    { "Name": "Spell Category Focus lvl 2","Rating":2,"Cost": 150000,"Force":2,"KarmaCost":6},
+    { "Name": "Spell Category Focus lvl 3","Rating":3,"Cost": 225000,"Force":3,"KarmaCost":9},
+    { "Name": "Spell Category Focus lvl 4","Rating":4,"Cost": 300000,"Force":4,"KarmaCost":12},
+    { "Name": "Spell Category Focus lvl 5","Rating":5,"Cost": 375000,"Force":5,"KarmaCost":15},
+    { "Name": "Spell Category Focus lvl 6","Rating":6,"Cost": 450000,"Force":6,"KarmaCost":18},
+    { "Name": "Spirit Focus lvl 1","Rating":1,"Cost": 60000, "Force":1,"KarmaCost":2 },
+    { "Name": "Spirit Focus lvl 2","Rating":2,"Cost": 120000,"Force":2,"KarmaCost":4 },
+    { "Name": "Spirit Focus lvl 3","Rating":3,"Cost": 180000,"Force":3,"KarmaCost":6 },
+    { "Name": "Spirit Focus lvl 4","Rating":4,"Cost": 240000,"Force":4,"KarmaCost":8 },
+    { "Name": "Spirit Focus lvl 5","Rating":5,"Cost": 300000,"Force":5,"KarmaCost":10},
+    { "Name": "Spirit Focus lvl 6","Rating":6,"Cost": 360000,"Force":6,"KarmaCost":12},
+    { "Name": "Spell Lock","Rating":1,"Cost": 45000, "Force":1, "KarmaCost":1},
   ]
 }
 
   const [newSpell, setNewSpell] = useState('');
+  const [newFoci, setNewFoci] = useState('');
+  const [newFociIndex, setNewFociIndex] = useState('');
   const [newSpellIndex, setNewSpellIndex] = useState('');
   const [selectedSpells, setSelectedSpells] = useState(props.spells);
+  const [selectedFoci, setSelectedFoci] = useState(props.foci);
+  const [selectedFociToAdd, setSelectedFociToAdd] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [spellRating, setSpellRating] = useState(1);
-  const [spellPointsSpent, setSpellPointsSpent] = useState(CalcTotalSpellRatings(props.spells));
+  const [spellPointsSpent, setSpellPointsSpent] = useState(CalcTotalSpellRatings(props.spells, props.foci));
   const spellPointsMax = props.maxSpellPoints;
   const [magicalTradition, setMagicalTradition] = useState(props.chosenTradition.name)
   const [magicalTotem, setMagicalTotem] = useState(props.magicalTotem.name)
@@ -666,6 +718,24 @@ function MagicPanel(props) {
     }
   };
 
+  const handleFociChange = (event) => {
+    const TempFoci = MagicalItems[props.Edition][event.target.value];
+    setNewFoci(TempFoci);
+    setNewFociIndex(event.target.value);
+  };
+
+  const handleAddFoci = () => {
+    if(newFoci){
+      const fociToAdd = {...newFoci};
+      fociToAdd.Bound = 'No';
+      fociToAdd.Cost = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(newFoci.Cost)
+      setSelectedFoci(prevFoci => [...prevFoci, fociToAdd]);
+      setNewFoci('');
+      setNewFociIndex('');
+      props.onChangeFoci([...selectedFoci, fociToAdd]);
+    }
+  }
+
   // const handleEditSpell = (index) => {
   //   const editedSpells = [...selectedSpells];
   //   const spellToEdit = editedSpells[index];
@@ -683,6 +753,37 @@ function MagicPanel(props) {
     props.onChangeSpells(editedSpells);
   };
 
+  const handleRemoveFoci = (index) => {
+    const editedFoci = [...selectedFoci];
+    let FociRemoved = editedFoci.splice(index, 1);
+    setSelectedFoci(editedFoci);
+    props.onChangeFoci(editedFoci);
+    if(editedFoci.Bound === 'Yes'){
+      setSpellPointsSpent(prevSpells => (prevSpells - editedFoci[index].KarmaCost));
+    }
+  };
+
+  const handleBindFoci = (index) => {
+    const editedFoci = [...selectedFoci];
+    if(editedFoci.Bound === 'No'){
+      editedFoci[index].Bound = 'Yes';
+      setSelectedFoci(editedFoci);
+      props.onChangeFoci(editedFoci);
+      setSpellPointsSpent(prevSpells => (prevSpells + editedFoci[index].KarmaCost));
+    }
+   
+  }
+
+  const handleUnbindFoci = (index) => {
+    const editedFoci = [...selectedFoci];
+    if(editedFoci.Bound === 'Yes'){
+      editedFoci[index].Bound = 'No';
+      setSelectedFoci(editedFoci);
+      props.onChangeFoci(editedFoci);
+      setSpellPointsSpent(prevSpells => (prevSpells - editedFoci[index].KarmaCost));
+    }
+  }
+  
   const handleChangeSpellFetish = (event) => {
     setSpellFetish(event.target.checked);
   };
@@ -719,7 +820,6 @@ function MagicPanel(props) {
     }else{
       return;
     }
-   
   }
 
   const RenderMagicianWithSpells = () =>{
@@ -781,6 +881,30 @@ function MagicPanel(props) {
           </Button>
 
     <hr></hr>
+    <FormControl style={{'width':'200px'}}>
+      <InputLabel id="foci-label">{selectedFociToAdd}</InputLabel>
+      <Select
+        id="foci-dropdown"
+        value={newFociIndex}
+        onChange={handleFociChange}
+      >
+        {MagicalItems[props.Edition].sort((a, b) => { 
+            if(a.hasOwnProperty('Name')){
+              return a.Name.localeCompare(b.Name); 
+            }else{
+              return a > b;
+            }
+            
+        } ).map( (foci, index) => (
+          <MenuItem key={index} value={index}>{foci.Name}</MenuItem>
+        ))}
+      </Select>
+    </FormControl>
+    <br></br><br></br>
+    <Button variant="contained" color="primary" onClick={handleAddFoci}>
+      Add Foci
+    </Button>
+    <hr></hr>
     <h3>Spells</h3>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -827,6 +951,44 @@ function MagicPanel(props) {
   const handleTraditionChange = (event) => {
     setMagicalTradition(TraditionList[event.target.value].name);
     props.onChangeMagicalTradition(TraditionList[event.target.value]);
+  }
+
+  const RenderFociList = () => {
+    return ( <>
+      <h3>Foci</h3>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Foci Name</TableCell>
+              <TableCell align="right">Rating</TableCell>
+              <TableCell align="right">Nuyen Cost</TableCell>
+              <TableCell align="right">Binding Cost</TableCell>
+              <TableCell align="right">Bound</TableCell>
+              <TableCell align="right">Notes</TableCell>
+              <TableCell align="right">Actions</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {selectedFoci.map((foci, index) => (
+              <TableRow key={foci.Name}>
+                <TableCell component="th" scope="row">{foci.Name}</TableCell>
+                <TableCell align="right">{foci.Rating}</TableCell>
+                <TableCell align="right">{foci.Cost}</TableCell>
+                <TableCell align="right">{foci.KarmaCost}</TableCell>
+                <TableCell align="right">{foci.Bound}</TableCell>
+                <TableCell align="right">{foci.Notes}</TableCell>
+                <TableCell align="right">
+                  <Button onClick={() => handleBindFoci(index)}>Bind</Button>
+                  <Button onClick={() => handleUnbindFoci(index)}>Unbind</Button>
+                  <Button onClick={() => handleRemoveFoci(index)}>Remove</Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </>)
   }
 
   const renderTraditionList = () => {
@@ -905,7 +1067,7 @@ function MagicPanel(props) {
       {renderTraditionList()}
       <hr></hr>
       {RenderWindow()}
-
+      {RenderFociList()}
     </div>
   );
 }

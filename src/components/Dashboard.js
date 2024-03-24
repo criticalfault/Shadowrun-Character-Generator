@@ -92,6 +92,7 @@ export default function BasicTabs() {
         magical: true,
         magicalTradition: false,
         magicalTotem:false,
+        foci:[],
         spells:[],
         powers:[],
         chargenCash: 20000,
@@ -479,8 +480,10 @@ export default function BasicTabs() {
                 <MagicPanel 
                     spells={Character.spells}
                     powers={Character.powers}
+                    foci={Character.foci}
                     onChangePowers={(powers) => setCharacter({ ...Character, powers})}
                     onChangeSpells={(spells) => setCharacter({ ...Character, spells })} 
+                    onChangeFoci={(foci) => setCharacter({ ...Character, foci:foci})}
                     magicalTraditions={Character.availableMagics}
                     chosenTradition={Character.magicalTradition}
                     magicalTotem={Character.magicalTotem}
