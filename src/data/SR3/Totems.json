@@ -100,5 +100,11 @@
         {"name":"Obatala","environment":"Anywhere","advantages":"+2 dice for detection, health and control manipulation spells ","disadvantages":"Houngans of Obatala cannot cast combat spells. They suffer +2 to all magical target numbers when they are not wearing at least one article of white clothing. "},
         {"name":"Ogoun","environment":"Anywhere","advantages":"+2 dice for combat spells","disadvantages":"-1 die for illusion spells. Houngans of Ogoun  must make a Willpower (6) Test to back down from any insult  to their honor or prowess."},
         {"name":"Shango","environment":"Anywhere","advantages":"+3 dice for Fire and Lightning elemental manipulation spells","disadvantages":"Houngans of Shango may go berserk in combat, in the same way as Bear shamans (p. 163, SR3)"}
+    ],
+    "ELEMENTS":[
+        {"name":"Earth","environment":"Anywhere","advantages":"+2 dice for manipulation spells and earth elementals","disadvantages":"-1 die for detection spells and air elementals"},
+        {"name":"Air","environment":"Anywhere","advantages":"+2 dice for detection spells and air elementals","disadvantages":"-1 die for manipulation spells and earth elementals"},
+        {"name":"Fire","environment":"Anywhere","advantages":"+2 dice for combat spells and fire elementals","disadvantages":"-1 die for illusion spells and water elementals"},
+        {"name":"Water","environment":"Anywhere","advantages":"+2 dice for illusion spells and water elementals","disadvantages":"-1 die for combat spells and fire elementals"}
     ]
 }
