@@ -22,7 +22,7 @@ export default function GearPanel(props) {
   const CalcTotalNuyenSpent = () =>{
       let TotalNuyen = 0;
       props.Gear.forEach(function(gear){
-          TotalNuyen += parseInt(gear.Cost);
+          TotalNuyen += parseInt(gear.Cost)*parseInt(gear.Amount);
       });
       return TotalNuyen;
   }

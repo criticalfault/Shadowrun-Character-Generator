@@ -728,7 +728,6 @@ function MagicPanel(props) {
     if(newFoci){
       const fociToAdd = {...newFoci};
       fociToAdd.Bound = 'No';
-      fociToAdd.Cost = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(newFoci.Cost)
       setSelectedFoci(prevFoci => [...prevFoci, fociToAdd]);
       setNewFoci('');
       setNewFociIndex('');
@@ -771,7 +770,6 @@ function MagicPanel(props) {
       props.onChangeFoci(editedFoci);
       setSpellPointsSpent(prevSpells => (prevSpells + editedFoci[index].KarmaCost));
     }
-   
   }
 
   const handleUnbindFoci = (index) => {
@@ -783,6 +781,14 @@ function MagicPanel(props) {
       setSpellPointsSpent(prevSpells => (prevSpells - editedFoci[index].KarmaCost));
     }
   }
+
+  const handleSetFociExtras = (index) => {
+    const editedFoci = [...selectedFoci];
+    editedFoci[index].Extra = '';
+    setSelectedFoci(editedFoci);
+    props.onChangeFoci(editedFoci);
+  }
+
   
   const handleChangeSpellFetish = (event) => {
     setSpellFetish(event.target.checked);
@@ -974,11 +980,12 @@ function MagicPanel(props) {
               <TableRow key={foci.Name}>
                 <TableCell component="th" scope="row">{foci.Name}</TableCell>
                 <TableCell align="right">{foci.Rating}</TableCell>
-                <TableCell align="right">{foci.Cost}</TableCell>
+                <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(foci.Cost)}</TableCell>
                 <TableCell align="right">{foci.KarmaCost}</TableCell>
                 <TableCell align="right">{foci.Bound}</TableCell>
                 <TableCell align="right">{foci.Notes}</TableCell>
                 <TableCell align="right">
+                  <Button onClick={() => handleSetFociExtras(index)}>Set Foci</Button>
                   <Button onClick={() => handleBindFoci(index)}>Bind</Button>
                   <Button onClick={() => handleUnbindFoci(index)}>Unbind</Button>
                   <Button onClick={() => handleRemoveFoci(index)}>Remove</Button>
