@@ -178,6 +178,10 @@ export default function BasicTabs() {
             tempCashSpent+=parseFloat(drone['$Cost']);
         });
 
+        Character.foci.forEach(function(foci){
+            tempCashSpent+=parseFloat(foci.Cost);
+        });
+
         Character.contacts.forEach(function(contact){
             if(Edition === 'SR3'){
                 switch(contact.Level) {
