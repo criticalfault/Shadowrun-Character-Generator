@@ -19,6 +19,11 @@ import Box from '@mui/material/Box';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import Checkbox from '@mui/material/Checkbox';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 function MagicPanel(props) {
   const spellsData = require('../data/'+props.Edition+'/Spells.json');
@@ -26,7 +31,17 @@ function MagicPanel(props) {
   const Totems = require('../data/'+props.Edition+'/Totems.json');
   const AspectedMageTraditions = ['Shamanist','Conjurer','Elementalist','Sorcerer','WuFa'];
   const AdeptPaths = ["Athelete's Way","Artist's Way","Warriors's Way","Invisible Way","Spirit Way","Totem Way", "Magician's Way"]
+  const [openModal, setOpenModal] = React.useState(false);
+  const [modalExtra, setModalExtra] = React.useState('');
+  const [modalExtraIndex, setModalExtraIndex] = React.useState(0);
 
+  const handleClickOpenModal = () => {
+      setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+      setOpenModal(false);
+  };
 
   const CalcTotalSpellRatings = (spellList, fociList) =>{
     let totalRatings = 0;
@@ -230,31 +245,7 @@ function MagicPanel(props) {
       "totemList":"none"
     }
   }
-  
-  // const MetaMagic = { "SR2": [
-  //     {"Name":"Centering"},
-  //     {"Name":"Dispelling"},
-  //     {"Name":"Shielding"},
-  //     {"Name":"Masking"},
-  //     {"Name":"Quickening"},
-  //     {"Name":"Anchoring"}
-  //   ],
-  //   "SR3": [
-  //     {"Name":"Anchoring"},
-  //     {"Name":"Centering"},
-  //     {"Name":"Cleansing"},
-  //     {"Name":"Divining"},
-  //     {"Name":"Invoking"},
-  //     {"Name":"Masking"},
-  //     {"Name":"Possessing"},
-  //     {"Name":"Quickening"},
-  //     {"Name":"Reflecting"},
-  //     {"Name":"Shielding"},
-  //   ]
-  // }
-
-
-  /*
+   /*
     SR3
     Foci                            Availability  Cost                Street Index  Bonding Cost
     --------------------------------------------------------------------------------------------
@@ -323,18 +314,18 @@ function MagicPanel(props) {
     { "Name": "Shielding Focus lvl 4","Rating":4,"Cost": 380000,"Force":4,"KarmaCost":16},
     { "Name": "Shielding Focus lvl 5","Rating":5,"Cost": 475000,"Force":5,"KarmaCost":20},
     { "Name": "Shielding Focus lvl 6","Rating":6,"Cost": 570000,"Force":6,"KarmaCost":24},
-    { "Name": "Specific Spell Focus lvl 1","Rating":1,"Cost": 45000, "Force":1,"KarmaCost":1},
-    { "Name": "Specific Spell Focus lvl 2","Rating":2,"Cost": 90000, "Force":2,"KarmaCost":2},
-    { "Name": "Specific Spell Focus lvl 3","Rating":3,"Cost": 4500,  "Force":3,"KarmaCost":3},
-    { "Name": "Specific Spell Focus lvl 4","Rating":4,"Cost": 6000,  "Force":4,"KarmaCost":4},
-    { "Name": "Specific Spell Focus lvl 5","Rating":5,"Cost": 7500,  "Force":5,"KarmaCost":5},
-    { "Name": "Specific Spell Focus lvl 6","Rating":6,"Cost": 9000,  "Force":6,"KarmaCost":6},
-    { "Name": "Spell Category Focus lvl 1","Rating":1,"Cost": 75000, "Force":1,"KarmaCost":3},
-    { "Name": "Spell Category Focus lvl 2","Rating":2,"Cost": 150000,"Force":2,"KarmaCost":6},
-    { "Name": "Spell Category Focus lvl 3","Rating":3,"Cost": 225000,"Force":3,"KarmaCost":9},
-    { "Name": "Spell Category Focus lvl 4","Rating":4,"Cost": 300000,"Force":4,"KarmaCost":12},
-    { "Name": "Spell Category Focus lvl 5","Rating":5,"Cost": 375000,"Force":5,"KarmaCost":15},
-    { "Name": "Spell Category Focus lvl 6","Rating":6,"Cost": 450000,"Force":6,"KarmaCost":18},
+    { "Name": "Specific Spell Focus lvl 1","NeedsExtra":true,"Rating":1,"Cost": 45000, "Force":1,"KarmaCost":1},
+    { "Name": "Specific Spell Focus lvl 2","NeedsExtra":true,"Rating":2,"Cost": 90000, "Force":2,"KarmaCost":2},
+    { "Name": "Specific Spell Focus lvl 3","NeedsExtra":true,"Rating":3,"Cost": 4500,  "Force":3,"KarmaCost":3},
+    { "Name": "Specific Spell Focus lvl 4","NeedsExtra":true,"Rating":4,"Cost": 6000,  "Force":4,"KarmaCost":4},
+    { "Name": "Specific Spell Focus lvl 5","NeedsExtra":true,"Rating":5,"Cost": 7500,  "Force":5,"KarmaCost":5},
+    { "Name": "Specific Spell Focus lvl 6","NeedsExtra":true,"Rating":6,"Cost": 9000,  "Force":6,"KarmaCost":6},
+    { "Name": "Spell Category Focus lvl 1","NeedsExtra":true,"Rating":1,"Cost": 75000, "Force":1,"KarmaCost":3},
+    { "Name": "Spell Category Focus lvl 2","NeedsExtra":true,"Rating":2,"Cost": 150000,"Force":2,"KarmaCost":6},
+    { "Name": "Spell Category Focus lvl 3","NeedsExtra":true,"Rating":3,"Cost": 225000,"Force":3,"KarmaCost":9},
+    { "Name": "Spell Category Focus lvl 4","NeedsExtra":true,"Rating":4,"Cost": 300000,"Force":4,"KarmaCost":12},
+    { "Name": "Spell Category Focus lvl 5","NeedsExtra":true,"Rating":5,"Cost": 375000,"Force":5,"KarmaCost":15},
+    { "Name": "Spell Category Focus lvl 6","NeedsExtra":true,"Rating":6,"Cost": 450000,"Force":6,"KarmaCost":18},
     { "Name": "Spell Defense Focus lvl 1","Rating":1,"Cost": 75000, "Force":1,"KarmaCost":3},
     { "Name": "Spell Defense Focus lvl 2","Rating":2,"Cost": 150000,"Force":2,"KarmaCost":6},
     { "Name": "Spell Defense Focus lvl 3","Rating":3,"Cost": 225000,"Force":3,"KarmaCost":9},
@@ -367,18 +358,18 @@ function MagicPanel(props) {
     { "Name": "Power Focus lvl 4","Rating":4,"Cost": 420000,"Force":4,"KarmaCost":20},
     { "Name": "Power Focus lvl 5","Rating":5,"Cost": 525000,"Force":5,"KarmaCost":25},
     { "Name": "Power Focus lvl 6","Rating":6,"Cost": 630000,"Force":6,"KarmaCost":30},
-    { "Name": "Specific Spell Focus lvl 1","Rating":1,"Cost": 45000, "Force":1,"KarmaCost":1},
-    { "Name": "Specific Spell Focus lvl 2","Rating":2,"Cost": 90000, "Force":2,"KarmaCost":2},
-    { "Name": "Specific Spell Focus lvl 3","Rating":3,"Cost": 4500,  "Force":3,"KarmaCost":3},
-    { "Name": "Specific Spell Focus lvl 4","Rating":4,"Cost": 6000,  "Force":4,"KarmaCost":4},
-    { "Name": "Specific Spell Focus lvl 5","Rating":5,"Cost": 7500,  "Force":5,"KarmaCost":5},
-    { "Name": "Specific Spell Focus lvl 6","Rating":6,"Cost": 9000,  "Force":6,"KarmaCost":6},
-    { "Name": "Spell Category Focus lvl 1","Rating":1,"Cost": 75000, "Force":1,"KarmaCost":3},
-    { "Name": "Spell Category Focus lvl 2","Rating":2,"Cost": 150000,"Force":2,"KarmaCost":6},
-    { "Name": "Spell Category Focus lvl 3","Rating":3,"Cost": 225000,"Force":3,"KarmaCost":9},
-    { "Name": "Spell Category Focus lvl 4","Rating":4,"Cost": 300000,"Force":4,"KarmaCost":12},
-    { "Name": "Spell Category Focus lvl 5","Rating":5,"Cost": 375000,"Force":5,"KarmaCost":15},
-    { "Name": "Spell Category Focus lvl 6","Rating":6,"Cost": 450000,"Force":6,"KarmaCost":18},
+    { "Name": "Specific Spell Focus lvl 1","NeedsExtra":true,"Rating":1,"Cost": 45000, "Force":1,"KarmaCost":1},
+    { "Name": "Specific Spell Focus lvl 2","NeedsExtra":true,"Rating":2,"Cost": 90000, "Force":2,"KarmaCost":2},
+    { "Name": "Specific Spell Focus lvl 3","NeedsExtra":true,"Rating":3,"Cost": 4500,  "Force":3,"KarmaCost":3},
+    { "Name": "Specific Spell Focus lvl 4","NeedsExtra":true,"Rating":4,"Cost": 6000,  "Force":4,"KarmaCost":4},
+    { "Name": "Specific Spell Focus lvl 5","NeedsExtra":true,"Rating":5,"Cost": 7500,  "Force":5,"KarmaCost":5},
+    { "Name": "Specific Spell Focus lvl 6","NeedsExtra":true,"Rating":6,"Cost": 9000,  "Force":6,"KarmaCost":6},
+    { "Name": "Spell Category Focus lvl 1","NeedsExtra":true,"Rating":1,"Cost": 75000, "Force":1,"KarmaCost":3},
+    { "Name": "Spell Category Focus lvl 2","NeedsExtra":true,"Rating":2,"Cost": 150000,"Force":2,"KarmaCost":6},
+    { "Name": "Spell Category Focus lvl 3","NeedsExtra":true,"Rating":3,"Cost": 225000,"Force":3,"KarmaCost":9},
+    { "Name": "Spell Category Focus lvl 4","NeedsExtra":true,"Rating":4,"Cost": 300000,"Force":4,"KarmaCost":12},
+    { "Name": "Spell Category Focus lvl 5","NeedsExtra":true,"Rating":5,"Cost": 375000,"Force":5,"KarmaCost":15},
+    { "Name": "Spell Category Focus lvl 6","NeedsExtra":true,"Rating":6,"Cost": 450000,"Force":6,"KarmaCost":18},
     { "Name": "Spirit Focus lvl 1","Rating":1,"Cost": 60000, "Force":1,"KarmaCost":2 },
     { "Name": "Spirit Focus lvl 2","Rating":2,"Cost": 120000,"Force":2,"KarmaCost":4 },
     { "Name": "Spirit Focus lvl 3","Rating":3,"Cost": 180000,"Force":3,"KarmaCost":6 },
@@ -436,25 +427,25 @@ function MagicPanel(props) {
 
   const convertModsToAttributes = (mods) => {
     const ModToAttributes ={ 
-        'BOD':'Body',
-        'RBOD':'Body',
-        'STR':'Strength',
-        'RSTR':'Strength',
-        'QCK':'Quickness', 
-        'RQCK':'Quickness',
-        'INT':'Intelligence', 
-        'CHA':'Charisma',
-        'WIL':'Willpower',
-        'RCT':'Reaction',
-        'INI':"Initative",
-        'IMP':'Impact',
-        'BAL':'Ballastic',
-        'CPL':'Combat_Pool',
-        'TAS':'Task_Pool',
-        'HAC':'Hacking_Pool',
-        'VNI':'Vehicle_Initative',
-        'VCT':'Vehicle_Control_Reaction',
-        'VCR':'Vehicle_Control_Rig_Level'
+      'BOD':'Body',
+      'RBOD':'Body',
+      'STR':'Strength',
+      'RSTR':'Strength',
+      'QCK':'Quickness', 
+      'RQCK':'Quickness',
+      'INT':'Intelligence', 
+      'CHA':'Charisma',
+      'WIL':'Willpower',
+      'RCT':'Reaction',
+      'INI':"Initative",
+      'IMP':'Impact',
+      'BAL':'Ballastic',
+      'CPL':'Combat_Pool',
+      'TAS':'Task_Pool',
+      'HAC':'Hacking_Pool',
+      'VNI':'Vehicle_Initative',
+      'VCT':'Vehicle_Control_Reaction',
+      'VCR':'Vehicle_Control_Rig_Level'
     }
 
     return mods.map(mod => {
@@ -676,7 +667,6 @@ function MagicPanel(props) {
               <div>Notes:{newPowerDesc}</div>
             </>
           )}
-
     <hr></hr>
     <h3>Powers</h3>
       <List style={{maxWidth:'500px'}}>
@@ -724,26 +714,25 @@ function MagicPanel(props) {
     setNewFociIndex(event.target.value);
   };
 
+  const handleSetExtraFociModal = (event) => {
+    const editedFoci = [...selectedFoci];
+    editedFoci[modalExtraIndex].Extra = modalExtra;
+    setSelectedFoci(editedFoci);
+    props.onChangeFoci(editedFoci);
+    handleCloseModal();
+  }
+
   const handleAddFoci = () => {
     if(newFoci){
       const fociToAdd = {...newFoci};
       fociToAdd.Bound = 'No';
-      fociToAdd.Cost = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(newFoci.Cost)
+      fociToAdd.Extra = '';
       setSelectedFoci(prevFoci => [...prevFoci, fociToAdd]);
       setNewFoci('');
       setNewFociIndex('');
       props.onChangeFoci([...selectedFoci, fociToAdd]);
     }
   }
-
-  // const handleEditSpell = (index) => {
-  //   const editedSpells = [...selectedSpells];
-  //   const spellToEdit = editedSpells[index];
-  //   setNewSpell(spellToEdit.name);
-  //   setSpellRating(spellToEdit.rating);
-  //   editedSpells.splice(index, 1);
-  //   setSelectedSpells(editedSpells);
-  // };
 
   const handleRemoveSpell = (index) => {
     const editedSpells = [...selectedSpells];
@@ -765,23 +754,27 @@ function MagicPanel(props) {
 
   const handleBindFoci = (index) => {
     const editedFoci = [...selectedFoci];
-    if(editedFoci.Bound === 'No'){
+    if(editedFoci[index].Bound === 'No'){
       editedFoci[index].Bound = 'Yes';
       setSelectedFoci(editedFoci);
       props.onChangeFoci(editedFoci);
       setSpellPointsSpent(prevSpells => (prevSpells + editedFoci[index].KarmaCost));
     }
-   
   }
 
   const handleUnbindFoci = (index) => {
     const editedFoci = [...selectedFoci];
-    if(editedFoci.Bound === 'Yes'){
+    if(editedFoci[index].Bound === 'Yes'){
       editedFoci[index].Bound = 'No';
       setSelectedFoci(editedFoci);
       props.onChangeFoci(editedFoci);
       setSpellPointsSpent(prevSpells => (prevSpells - editedFoci[index].KarmaCost));
     }
+  }
+
+  const handleSetFociExtras = (index) => {
+    handleClickOpenModal();
+    setModalExtraIndex(index);
   }
   
   const handleChangeSpellFetish = (event) => {
@@ -938,7 +931,9 @@ function MagicPanel(props) {
                 <TableCell align="right">
                  {isFetishSpell(spell.Fetish)} {isExclusiveSpell(spell.Exclusive)}
                 </TableCell>
-                <TableCell align="right"><Button onClick={() => handleRemoveSpell(index)}>Remove</Button></TableCell>
+                <TableCell align="right">
+                  <Button onClick={() => handleRemoveSpell(index)}>Remove</Button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -972,13 +967,19 @@ function MagicPanel(props) {
           <TableBody>
             {selectedFoci.map((foci, index) => (
               <TableRow key={foci.Name}>
-                <TableCell component="th" scope="row">{foci.Name}</TableCell>
+                <TableCell component="th" scope="row">
+                  {foci.Name} 
+                  {(foci.Extra !== '' ? "("+foci.Extra+")": '')}
+                </TableCell>
                 <TableCell align="right">{foci.Rating}</TableCell>
-                <TableCell align="right">{foci.Cost}</TableCell>
+                <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(foci.Cost)}</TableCell>
                 <TableCell align="right">{foci.KarmaCost}</TableCell>
                 <TableCell align="right">{foci.Bound}</TableCell>
                 <TableCell align="right">{foci.Notes}</TableCell>
                 <TableCell align="right">
+                  {(foci.NeedsExtra ? ( 
+                    <Button onClick={() => handleSetFociExtras(index)}>Set Foci</Button>
+                  ):'')}
                   <Button onClick={() => handleBindFoci(index)}>Bind</Button>
                   <Button onClick={() => handleUnbindFoci(index)}>Unbind</Button>
                   <Button onClick={() => handleRemoveFoci(index)}>Remove</Button>
@@ -1068,6 +1069,33 @@ function MagicPanel(props) {
       <hr></hr>
       {RenderWindow()}
       {RenderFociList()}
+      <Dialog
+        open={openModal}
+        onClose={handleCloseModal}
+      >
+        <DialogTitle>Set Foci</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+           Set Foci's Extra Description
+          </DialogContentText>
+          <TextField
+            autoFocus
+            required
+            margin="dense"
+            id="name"
+            value={modalExtra}
+            label="Foci Description"
+            type="text"
+            fullWidth
+            variant="standard"
+            onChange={(event) => setModalExtra(event.target.value)}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseModal}>Cancel</Button>
+          <Button type="submit" onClick={handleSetExtraFociModal}>Add Extra</Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }

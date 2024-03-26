@@ -17,6 +17,7 @@ import DeckingPanel from './DeckingPanel';
 import VehiclesPanel from './VehiclesPanel';
 import ContactsPanel from './ContactsPanel';
 import SheetDisplay from './SheetDisplay';
+import KarmaDisplay from './KarmaDisplay';
 import './SheetDisplay.css';
 import DiceRollerTray from './DiceRollerTray';
 function CustomTabPanel(props) {
@@ -176,6 +177,10 @@ export default function BasicTabs() {
 
         Character.drones.forEach(function(drone){
             tempCashSpent+=parseFloat(drone['$Cost']);
+        });
+
+        Character.foci.forEach(function(foci){
+            tempCashSpent+=parseFloat(foci.Cost);
         });
 
         Character.contacts.forEach(function(contact){
@@ -551,6 +556,7 @@ export default function BasicTabs() {
             </CustomTabPanel>
             <CustomTabPanel value={value} index={10}>
                  <span>Coming Soon!</span>
+                 <KarmaDisplay />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={11}>
                 <SheetDisplay 
