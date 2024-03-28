@@ -61,6 +61,33 @@ function SheetDisplay(props) {
         "Z":"Transformation"
     }
 
+    const renderPowerListItem = (power,index) =>{
+        if(power.HasLevels){
+            return (<TableRow key={index}><TableCell>{power.Name}</TableCell><TableCell>{power.Rating}</TableCell></TableRow>)
+        }else{
+            return (<TableRow key={index}><TableCell>{power.Name}</TableCell><TableCell></TableCell></TableRow>)
+        }
+    }
+
+    const renderPhysicalAdeptPowers = () => {
+       return (<>
+        <h2>Physical Adept Powers</h2>
+        <Table component={Paper}>
+        <TableHead>
+            <TableRow>
+                <TableCell>Name</TableCell>
+                <TableCell>Rating</TableCell>
+            </TableRow>
+        </TableHead>
+        <TableBody>
+            {props.currentCharacter.powers.map((power, index) => (
+                renderPowerListItem(power, index)
+            ))}
+        </TableBody>
+    </Table>
+       </>)
+    }
+
     const renderControlPool = () =>{
 
         if(props.currentCharacter.cyberAttributeBonuses.hasOwnProperty('Vehicle_Control_Rig_Level')) {
@@ -425,7 +452,7 @@ function SheetDisplay(props) {
                 {renderTaskPool()}
             </Item>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item md={6} xs={12}>
             <Item>
                 <h2 className={"boxHeader"}>Cyberware</h2>
                 <TableContainer component={Paper}>
@@ -450,9 +477,9 @@ function SheetDisplay(props) {
                 </TableContainer>
             </Item>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item md={6} xs={12}>
             <Item>
-                <h4>Bioware</h4>
+                <h2 className={"boxHeader"}>Bioware</h2>
                 <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
                         <TableHead>
@@ -570,9 +597,17 @@ function SheetDisplay(props) {
                 </TableContainer>
             </Item>
         </Grid>
+        {props.currentCharacter.powers && props.currentCharacter.powers.length > 0 ? (
+            <Grid item xs={12}>
+                <Item>
+                    {renderPhysicalAdeptPowers()}
+                </Item>
+            </Grid>
+        ):''}
     
 {props.currentCharacter.spells && props.currentCharacter.spells.length? (
     <Grid item xs={12}>
+        <Item>
         <h3>Spells</h3>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -610,11 +645,13 @@ function SheetDisplay(props) {
           </TableBody>
         </Table>
       </TableContainer>
+      </Item>
     </Grid>   
     ):''}
-{props.currentCharacter.vehicles && props.currentCharacter.vehicles.length? ( 
+{props.currentCharacter.vehicles ? ( 
     <Grid item xs={12}>
-        <h2 className={"boxHeader"}>Vehicle</h2>
+        <Item>
+        <h2 className={"boxHeader"}>Vehicles</h2>
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
             <TableHead>
@@ -647,6 +684,7 @@ function SheetDisplay(props) {
             </TableBody>
             </Table>
         </TableContainer>
+        </Item>
     </Grid>   
     ):''}
 </Grid>
