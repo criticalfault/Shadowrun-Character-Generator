@@ -14,13 +14,25 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import AccordionCard from './AccordianCard'
+
+//New Vehicle Display
+import { styled } from '@mui/material/styles';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 
 export default function VehiclesPanel(props) {
   const VehicleData = require('../data/'+props.Edition+'/Vehicles.json');
   const DronesData = require('../data/'+props.Edition+'/Drones.json');
-  //const VehicleGear = require('../data/'+props.Edition+'/VehicleGear.json');
-  //const VehicleWeapons = require('../data/'+props.Edition+'/VehicleWeapons.json');
+  // if(props.Edition === 'SR3'){
+  //   const VehicleGear = require('../data/SR3/VehicleGear.json');
+  //   const VehicleWeapons = require('../data/SR3/VehicleWeapons.json');
+  // }else{
+  //   const VehicleGear = [];
+  //   const VehicleWeapons = [];
+  // }
   const CalcTotalNuyenSpent = () =>{
       let TotalNuyen = 0;
       props.Vehicles.forEach(function(vehicle){
@@ -66,41 +78,190 @@ export default function VehiclesPanel(props) {
 
   const handleRemoveDrone = (index) => {
     const editedDrone = [...SelectedDrone];
-    let RemovedDrone = editedDrone.splice(index, 1);
+    editedDrone.splice(index, 1);
     setSelectedDrone(editedDrone);
     props.onChangeDrones([...editedDrone]);
   };
 
-
   const handleVehicleChange = (event) => {
-      
-      const TempVehicle = VehicleData.filter(item => props.BooksFilter.includes(item['Book.Page'].split('.')[0]))[event.target.value];
-      setNewVehicle(TempVehicle);
-      setNewVehicleIndex(event.target.value)
-      setNewVehicleCost(TempVehicle['$Cost']);
-      if(TempVehicle.hasOwnProperty('Notes')){
-        setNewVehicleDesc(TempVehicle.Notes)
-      }
+    const TempVehicle = VehicleData.filter(item => props.BooksFilter.includes(item['Book.Page'].split('.')[0]))[event.target.value];
+    setNewVehicle(TempVehicle);
+    setNewVehicleIndex(event.target.value)
+    setNewVehicleCost(TempVehicle['$Cost']);
+    if(TempVehicle.hasOwnProperty('Notes')){
+      setNewVehicleDesc(TempVehicle.Notes)
+    }
   }
 
   const handleAddVehicle = () => {
-      if (NewVehicle) {
-        const VehicleToAdd = {...NewVehicle};
-        setSelectedVehicle(prevVehicle => [...prevVehicle, VehicleToAdd]);
-        setNewVehicle('');
-        setNewVehicleIndex('');
-        props.onChangeVehicle([...SelectedVehicle, VehicleToAdd]);
-      }
+    if (NewVehicle) {
+      const VehicleToAdd = {...NewVehicle};
+      setSelectedVehicle(prevVehicle => [...prevVehicle, VehicleToAdd]);
+      setNewVehicle('');
+      setNewVehicleIndex('');
+      props.onChangeVehicle([...SelectedVehicle, VehicleToAdd]);
+    }
   }
 
   const handleRemoveVehicle = (index) => {
     const editedVehicle = [...SelectedVehicle];
-    let RemovedVehicle = editedVehicle.splice(index, 1);
-    console.log("Removed Vehicle");
-    console.log(RemovedVehicle);
+    editedVehicle.splice(index, 1);
     setSelectedVehicle(editedVehicle);
     props.onChangeVehicle([...editedVehicle]);
   };
+
+  const renderDrones = () => {
+    return (<TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Name</TableCell>
+            <TableCell align="right">Handling</TableCell>
+            <TableCell align="right">Speed/Accel</TableCell>
+            <TableCell align="right">Body/Armor</TableCell>
+            <TableCell align="right">Sig/Autonav</TableCell>
+            <TableCell align="right">Pilot/Sensor</TableCell>
+            <TableCell align="right">Cargo/Load</TableCell>
+            <TableCell align="right">Seating</TableCell>
+            <TableCell align="right">Cost</TableCell>
+            <TableCell align="right">Availability</TableCell>
+            <TableCell align="right">Book Page</TableCell>
+            <TableCell align="right">Notes</TableCell>
+            <TableCell align="right">Actions</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {props.Drones.map((drone, index) => (
+            <TableRow key={drone.Name+index}>
+              <TableCell component="th" scope="row">{drone.name}</TableCell>
+              <TableCell align="right">{drone.Handling}</TableCell>
+              <TableCell align="right">{drone['Speed/Accel']}</TableCell>
+              <TableCell align="right">{drone['Body/Armor']}</TableCell>
+              <TableCell align="right">{drone['Sig/Autonav']}</TableCell>
+              <TableCell align="right">{drone['Pilot/Sensor']}</TableCell>
+              <TableCell align="right">{drone['Cargo/Load']}</TableCell>
+              <TableCell align="right">{drone.Seating}</TableCell>
+              <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(drone['$Cost'])}</TableCell>
+              <TableCell align="right">{drone.Availability}</TableCell>
+              <TableCell align="right">{drone['Book.Page']}</TableCell>
+              <TableCell align="right">{drone.Notes}</TableCell>
+              <TableCell align="right">
+                  <Button color="secondary" onClick={() => handleRemoveDrone(index)}>Remove</Button>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>)
+  }
+
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
+
+  
+  const handleModalVehicle = () => {
+
+
+  }
+  const renderVehiclesNew = () => {
+
+    console.log(props.vehicles);
+    return props.Vehicles.map((vehicle, index) => (
+      <Card sx={{ minWidth: 275, marginTop: 2 }} key={index}>
+      <CardContent>
+        <Typography variant="h5" component="div">
+          {vehicle.name}
+        </Typography>
+        <Typography variant="h5" component="div">
+        {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(vehicle['$Cost'])}
+        </Typography>
+        <Typography>
+          <Grid container spacing={2}>
+            <Grid item md={2} xs={12}>
+              <Item><strong>Handling</strong><br></br> {vehicle.Handling}</Item>
+            </Grid>
+            <Grid item md={2} xs={12}>
+              <Item><strong>Speed/Accel</strong><br></br> {vehicle['Speed/Accel']}</Item>
+            </Grid>
+            <Grid item md={2} xs={12}>
+              <Item><strong>Body/Armor</strong><br></br> {vehicle['Body/Armor']}</Item>
+            </Grid>
+            <Grid item md={2} xs={12}>
+              <Item><strong>Sig/Autonav</strong><br></br> {vehicle['Sig/Autonav']}</Item>
+            </Grid>
+            <Grid item md={2} xs={12}>
+              <Item><strong>Pilot/Sensor</strong><br></br> {vehicle['Pilot/Sensor']}</Item>
+            </Grid>
+            
+            <Grid item  md={2} xs={12}>
+              <Item><strong>Cargo/Load</strong><br></br> {vehicle['Cargo/Load']}</Item>
+            </Grid>
+            <Grid item md={2} xs={12}>
+              <Item><strong>Seating</strong><br></br> {vehicle['Seating']}</Item>
+            </Grid>
+            <Grid item md={12} xs={12}>
+              <Item><strong>Notes</strong><br></br> {vehicle.Notes}</Item>
+            </Grid>
+          </Grid>
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small" onClick={() => handleModalVehicle(index)}>Customize</Button>
+        <Button size="small" onClick={() => handleRemoveVehicle(index)}>Remove</Button>
+      </CardActions>
+    </Card>))
+  }
+
+  // const renderVehicles = () => {
+
+  //   return (
+  //     <TableContainer component={Paper}>
+  //     <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+  //       <TableHead>
+  //         <TableRow>
+  //           <TableCell>Name</TableCell>
+  //           <TableCell align="right">Handling</TableCell>
+  //           <TableCell align="right">Speed/Accel</TableCell>
+  //           <TableCell align="right">Body/Armor</TableCell>
+  //           <TableCell align="right">Sig/Autonav</TableCell>
+  //           <TableCell align="right">Pilot/Sensor</TableCell>
+  //           <TableCell align="right">Cargo/Load</TableCell>
+  //           <TableCell align="right">Seating</TableCell>
+  //           <TableCell align="right">Cost</TableCell>
+  //           <TableCell align="right">Availability</TableCell>
+  //           <TableCell align="right">Notes</TableCell>
+  //           <TableCell align="right">Actions</TableCell>
+  //         </TableRow>
+  //       </TableHead>
+  //       <TableBody>
+  //         {props.Vehicles.map((vehicle, index) => (
+  //           <TableRow key={vehicle.Name+index}>
+  //             <TableCell component="th" scope="row">{vehicle.name}</TableCell>
+  //             <TableCell align="right">{vehicle.Handling}</TableCell>
+  //             <TableCell align="right">{vehicle['Speed/Accel']}</TableCell>
+  //             <TableCell align="right">{vehicle['Body/Armor']}</TableCell>
+  //             <TableCell align="right">{vehicle['Sig/Autonav']}</TableCell>
+  //             <TableCell align="right">{vehicle['Pilot/Sensor']}</TableCell>
+  //             <TableCell align="right">{vehicle['Cargo/Load']}</TableCell>
+  //             <TableCell align="right">{vehicle.Seating}</TableCell>
+  //             <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(vehicle['$Cost'])}</TableCell>
+  //             <TableCell align="right">{vehicle.Availability}</TableCell>
+  //             <TableCell align="right">{vehicle.Notes}</TableCell>
+  //             <TableCell align="right">
+  //                 <Button color="secondary" onClick={() => handleRemoveVehicle(index)}>Remove</Button>
+  //             </TableCell>
+  //           </TableRow>
+  //         ))}
+  //       </TableBody>
+  //     </Table>
+  //   </TableContainer>
+  //   )
+  // }
 
     return ( <>
     <Box sx={{ width: '250px' }}>
@@ -138,51 +299,8 @@ export default function VehiclesPanel(props) {
     )}
     <br></br><br></br>
    
-   
-    <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
-          <TableHead>
-            <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell align="right">Handling</TableCell>
-              <TableCell align="right">Speed/Accel</TableCell>
-              <TableCell align="right">Body/Armor</TableCell>
-              <TableCell align="right">Sig/Autonav</TableCell>
-              <TableCell align="right">Pilot/Sensor</TableCell>
-              <TableCell align="right">Cargo/Load</TableCell>
-              <TableCell align="right">Seating</TableCell>
-              <TableCell align="right">Cost</TableCell>
-              <TableCell align="right">Availability</TableCell>
-              <TableCell align="right">Book Page</TableCell>
-              <TableCell align="right">Notes</TableCell>
-              <TableCell align="right">Actions</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {props.Vehicles.map((vehicle, index) => (
-              <TableRow key={vehicle.Name+index}>
-                <TableCell component="th" scope="row">{vehicle.name}</TableCell>
-                <TableCell align="right">{vehicle.Handling}</TableCell>
-                <TableCell align="right">{vehicle['Speed/Accel']}</TableCell>
-                <TableCell align="right">{vehicle['Body/Armor']}</TableCell>
-                <TableCell align="right">{vehicle['Sig/Autonav']}</TableCell>
-                <TableCell align="right">{vehicle['Pilot/Sensor']}</TableCell>
-                <TableCell align="right">{vehicle['Cargo/Load']}</TableCell>
-                <TableCell align="right">{vehicle.Seating}</TableCell>
-                <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(vehicle['$Cost'])}</TableCell>
-                <TableCell align="right">{vehicle.Availability}</TableCell>
-                <TableCell align="right">{vehicle['Book.Page']}</TableCell>
-                <TableCell align="right">{vehicle.Notes}</TableCell>
-                <TableCell align="right">
-                    <Button color="secondary" onClick={() => handleRemoveVehicle(index)}>Remove</Button>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-
-      <hr style={{marginTop:30, marginBottom:30}}></hr>
+    {renderVehiclesNew()}
+    <hr style={{marginTop:30, marginBottom:30}}></hr>
 
       <h3>Drones</h3>
       <FormControl style={{ minWidth: 650 }}>
@@ -215,48 +333,7 @@ export default function VehiclesPanel(props) {
         </div>
     )}
     <br></br><br></br>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
-          <TableHead>
-            <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell align="right">Handling</TableCell>
-              <TableCell align="right">Speed/Accel</TableCell>
-              <TableCell align="right">Body/Armor</TableCell>
-              <TableCell align="right">Sig/Autonav</TableCell>
-              <TableCell align="right">Pilot/Sensor</TableCell>
-              <TableCell align="right">Cargo/Load</TableCell>
-              <TableCell align="right">Seating</TableCell>
-              <TableCell align="right">Cost</TableCell>
-              <TableCell align="right">Availability</TableCell>
-              <TableCell align="right">Book Page</TableCell>
-              <TableCell align="right">Notes</TableCell>
-              <TableCell align="right">Actions</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {props.Drones.map((drone, index) => (
-              <TableRow key={drone.Name+index}>
-                <TableCell component="th" scope="row">{drone.name}</TableCell>
-                <TableCell align="right">{drone.Handling}</TableCell>
-                <TableCell align="right">{drone['Speed/Accel']}</TableCell>
-                <TableCell align="right">{drone['Body/Armor']}</TableCell>
-                <TableCell align="right">{drone['Sig/Autonav']}</TableCell>
-                <TableCell align="right">{drone['Pilot/Sensor']}</TableCell>
-                <TableCell align="right">{drone['Cargo/Load']}</TableCell>
-                <TableCell align="right">{drone.Seating}</TableCell>
-                <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(drone['$Cost'])}</TableCell>
-                <TableCell align="right">{drone.Availability}</TableCell>
-                <TableCell align="right">{drone['Book.Page']}</TableCell>
-                <TableCell align="right">{drone.Notes}</TableCell>
-                <TableCell align="right">
-                    <Button color="secondary" onClick={() => handleRemoveDrone(index)}>Remove</Button>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      {renderDrones()}
     </>)
 
 }
