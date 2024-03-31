@@ -40,14 +40,12 @@ export default function GearPanel(props) {
     }
     
     const handleGearChange = (event) => {
-      console.log("SelectedGearCategory:"+SelectedGearCategory);
       var TempGear = {}
       if(props.Edition === 'SR3'){
         TempGear = GearData[SelectedGearCategory].entries.sort((a, b) => a.Name.localeCompare(b.Name)).filter(item => item.hasOwnProperty('BookPage') && props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
       }else{
         TempGear = GearData[SelectedGearCategory].entries.sort((a, b) => a.Name.localeCompare(b.Name))[event.target.value];
       }
-      console.log(TempGear);
       setNewGear(TempGear);
       setNewGearIndex(event.target.value)
       setNewGearCost(TempGear.Cost);
@@ -77,6 +75,35 @@ export default function GearPanel(props) {
       props.onChangeGear([...editedGear]);
     };
 
+    const renderGearList = () => {
+
+      if(props.Edition === 'SR3'){
+        return GearData[SelectedGearCategory].entries
+        .filter(
+          item => !item.hasOwnProperty('BookPage') || 
+          ( 
+            props.Edition === 'SR3' && props.BooksFilter.includes(item.BookPage.split('.')[0])
+          )
+        )
+          .sort((a, b) => a.Name.localeCompare(b.Name))
+          .map( (gear, index) => (
+              <MenuItem selected={NewGearIndex === index} key={index} value={index}>{gear.Name}</MenuItem>
+            )
+          )
+      }else{
+        return GearData[SelectedGearCategory].entries
+        .sort((a, b) => a.Name.localeCompare(b.Name))
+        .map( (gear, index) => (
+            <MenuItem selected={NewGearIndex === index} key={index} value={index}>{gear.Name}</MenuItem>
+          )
+        )
+      }
+      
+      
+
+
+    }
+
     return ( <>
     <h3>Notice: SR2 Gear is currently missing data needing for filtering by book. So filtering is ignored.</h3>
     <Box sx={{ width: '250px' }}>
@@ -104,11 +131,7 @@ export default function GearPanel(props) {
             id="power-dropdown"
             value={NewGearIndex}
             onChange={handleGearChange}>
-            
-          { GearData[SelectedGearCategory].entries.filter(item => !item.hasOwnProperty('BookPage') || 
-          props.BooksFilter.includes(item.BookPage.split('.')[0])).sort((a, b) => a.Name.localeCompare(b.Name)).map( (gear, index) => (
-            <MenuItem selected={NewGearIndex === index} key={index} value={index}>{gear.Name}</MenuItem>
-          ))}
+          { renderGearList() }
         </Select>
         </FormControl>
     )}
