@@ -27,17 +27,16 @@ import Modal from '@mui/material/Modal';
 export default function VehiclesPanel(props) {
   const VehicleData = require('../data/'+props.Edition+'/Vehicles.json');
   const DronesData = require('../data/'+props.Edition+'/Drones.json');
-  // if(props.Edition === 'SR3'){
-  //   const VehicleGear = require('../data/SR3/VehicleGear.json');
-  //   const VehicleWeapons = require('../data/SR3/VehicleWeapons.json');
-  // }else{
-  //   const VehicleGear = [];
-  //   const VehicleWeapons = [];
-  // }
+  const VehicleGear = require('../data/SR3/VehicleMods.json');
+  const VehicleWeapons = require('../data/SR3/VehicleWeapons.json');
+
   const CalcTotalNuyenSpent = () =>{
       let TotalNuyen = 0;
       props.Vehicles.forEach(function(vehicle){
           TotalNuyen += parseInt(vehicle['$Cost']);
+          vehicle.options.forEach(function(option){
+            TotalNuyen += parseInt(option['$Cost']);
+          })
       });
 
       props.Drones.forEach(function(drone){
@@ -48,7 +47,7 @@ export default function VehiclesPanel(props) {
 
   const [NewVehicle, setNewVehicle]           = useState();
   const [NewVehicleCost, setNewVehicleCost]   = useState();
-  const [NewVehicleIndex, setNewVehicleIndex] = useState(0);
+  const [NewVehicleIndex, setNewVehicleIndex] = useState(-1);
   const [NewVehicleDesc, setNewVehicleDesc]   = useState('');
   const [SelectedVehicle, setSelectedVehicle] = useState(props.Vehicles);
   const [NewDrone, setNewDrone]           = useState();
@@ -85,6 +84,9 @@ export default function VehiclesPanel(props) {
   };
 
   const handleVehicleChange = (event) => {
+    if(event.target.value === -1){
+      return;
+    }
     const TempVehicle = VehicleData.filter(item => props.BooksFilter.includes(item['Book.Page'].split('.')[0]))[event.target.value];
     setNewVehicle(TempVehicle);
     setNewVehicleIndex(event.target.value)
@@ -97,9 +99,10 @@ export default function VehiclesPanel(props) {
   const handleAddVehicle = () => {
     if (NewVehicle) {
       const VehicleToAdd = {...NewVehicle};
+      VehicleToAdd.options = [];
       setSelectedVehicle(prevVehicle => [...prevVehicle, VehicleToAdd]);
       setNewVehicle('');
-      setNewVehicleIndex('');
+      setNewVehicleIndex(-1);
       props.onChangeVehicle([...SelectedVehicle, VehicleToAdd]);
     }
   }
@@ -179,15 +182,30 @@ export default function VehiclesPanel(props) {
   const [open, setOpen] = React.useState(false);
   const handleClose = () => setOpen(false);
   const [vehicleToCustomize, setVehicleToCustomize] = useState(false);
-  const [vehicleToCustomizeIndex, setVehicleToCustomizeIndex] = useState(0)
+  const [vehicleToCustomizeIndex, setVehicleToCustomizeIndex] = useState(0);
+  const [VehicleGearCustomizationIndex, setVehicleGearCustomizationIndex] = useState(0)
   const handleModalVehicle = (index) => {
     setOpen(true);
     setVehicleToCustomizeIndex(index);
     setVehicleToCustomize(props.Vehicles[index]);
   }
 
-  const saveCustomization = () => {
-    
+  const handleVehicleCustomizationGearChange = (event) => {
+    setVehicleGearCustomizationIndex(event.target.value);
+  }
+
+  const VehicleGearCustomizationAdd = () => {
+    const editedVehicle = [...props.Vehicles];
+    editedVehicle[vehicleToCustomizeIndex].options.push(VehicleGear[VehicleGearCustomizationIndex]);
+    setVehicleToCustomize(false);
+    setVehicleGearCustomizationIndex(0);
+    props.onChangeVehicle([...editedVehicle]);
+  }
+
+  const removeVehicleOption = (index, index2) => {
+    const editedVehicle = [...SelectedVehicle];
+    editedVehicle[index].options.splice(index2,1);
+    props.onChangeVehicle([...editedVehicle]);
   }
 
   const renderVehiclesNew = () => {
@@ -200,35 +218,47 @@ export default function VehiclesPanel(props) {
         <Typography variant="h5" component="div">
         {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(vehicle['$Cost'])}
         </Typography>
-        <Typography>
-          <Grid container spacing={2}>
-            <Grid item md={2} xs={12}>
-              <Item><strong>Handling</strong><br></br> {vehicle.Handling}</Item>
-            </Grid>
-            <Grid item md={2} xs={12}>
-              <Item><strong>Speed/Accel</strong><br></br> {vehicle['Speed/Accel']}</Item>
-            </Grid>
-            <Grid item md={2} xs={12}>
-              <Item><strong>Body/Armor</strong><br></br> {vehicle['Body/Armor']}</Item>
-            </Grid>
-            <Grid item md={2} xs={12}>
-              <Item><strong>Sig/Autonav</strong><br></br> {vehicle['Sig/Autonav']}</Item>
-            </Grid>
-            <Grid item md={2} xs={12}>
-              <Item><strong>Pilot/Sensor</strong><br></br> {vehicle['Pilot/Sensor']}</Item>
-            </Grid>
-            
-            <Grid item  md={2} xs={12}>
-              <Item><strong>Cargo/Load</strong><br></br> {vehicle['Cargo/Load']}</Item>
-            </Grid>
-            <Grid item md={2} xs={12}>
-              <Item><strong>Seating</strong><br></br> {vehicle['Seating']}</Item>
-            </Grid>
-            <Grid item md={12} xs={12}>
-              <Item><strong>Notes</strong><br></br> {vehicle.Notes}</Item>
-            </Grid>
+        <Grid container spacing={2}>
+          <Grid item md={2} xs={12}>
+            <Item><strong>Handling</strong><br></br> {vehicle.Handling}</Item>
           </Grid>
-        </Typography>
+          <Grid item md={2} xs={12}>
+            <Item><strong>Speed/Accel</strong><br></br> {vehicle['Speed/Accel']}</Item>
+          </Grid>
+          <Grid item md={2} xs={12}>
+            <Item><strong>Body/Armor</strong><br></br> {vehicle['Body/Armor']}</Item>
+          </Grid>
+          <Grid item md={2} xs={12}>
+            <Item><strong>Sig/Autonav</strong><br></br> {vehicle['Sig/Autonav']}</Item>
+          </Grid>
+          <Grid item md={2} xs={12}>
+            <Item><strong>Pilot/Sensor</strong><br></br> {vehicle['Pilot/Sensor']}</Item>
+          </Grid>
+          
+          <Grid item  md={2} xs={12}>
+            <Item><strong>Cargo/Load</strong><br></br> {vehicle['Cargo/Load']}</Item>
+          </Grid>
+          <Grid item md={2} xs={12}>
+            <Item><strong>Seating</strong><br></br> {vehicle['Seating']}</Item>
+          </Grid>
+          <Grid item md={12} xs={12}>
+            <Item><strong>Notes</strong><br></br> {vehicle.Notes}</Item>
+          </Grid>
+          <Grid item md={12} xs={12}>
+            <Item><strong>Options</strong>
+            <ul>
+              {vehicle.options.map( (opt, index2) => (
+                    <li key={index}>
+                      {opt.name} - {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(opt['$Cost'])}
+                      <Button onClick={() => removeVehicleOption(index, index2)}>Remove</Button>
+                    </li>
+                  )
+                )
+              }
+             </ul>
+            </Item>
+          </Grid>
+        </Grid>
       </CardContent>
       <CardActions>
         <Button size="small" onClick={() => handleModalVehicle(index)}>Customize</Button>
@@ -247,6 +277,7 @@ export default function VehiclesPanel(props) {
             id="power-dropdown"
             value={NewVehicleIndex}
             onChange={handleVehicleChange}>
+              <MenuItem selected={NewVehicleIndex === -1} key={-1} value={-1}>Select A Vehicle</MenuItem>
             { 
                 VehicleData.filter(item => props.BooksFilter.includes(item['Book.Page'].split('.')[0])).sort((a, b) => a - b).map( (gear, index) => (
                     <MenuItem selected={NewVehicleIndex === index} key={index} value={index}>{gear.name}</MenuItem>
@@ -273,7 +304,21 @@ export default function VehiclesPanel(props) {
       >
       <Box sx={style}>
        {vehicleToCustomize.name}
-       <Button onClick={saveCustomization}>Save</Button>
+       <hr></hr>
+       <Select 
+        value={VehicleGearCustomizationIndex}
+        onChange={handleVehicleCustomizationGearChange}>
+          { 
+            VehicleGear.map( (gear, index) => (
+                <MenuItem selected={VehicleGearCustomizationIndex === index} key={index} value={index}>{gear.name}</MenuItem>
+            ))
+          }
+        </Select>
+        <Button variant="contained" color="primary" onClick={VehicleGearCustomizationAdd}>
+          Add Gear
+        </Button>
+        <hr></hr>
+       <Button onClick={handleClose}>Close</Button>
       </Box>
      
     </Modal>
