@@ -2,10 +2,16 @@
     margin: 0;
     margin-bottom: 10px;
 }
+
 .pool_display{
     width: 110px;
     margin-right: 10px
 }
+
 .sheetBody{
     background: whitesmoke;
+}
+
+li{
+    list-style: none;
 }

@@ -173,6 +173,11 @@ export default function BasicTabs() {
 
         Character.vehicles.forEach(function(vehicle){
             tempCashSpent+=parseFloat(vehicle['$Cost']);
+            if(vehicle.hasOwnProperty('options')){
+                vehicle.options.forEach(function(option){
+                    tempCashSpent += parseInt(option['$Cost']);
+                })
+            }
         });
 
         Character.drones.forEach(function(drone){
