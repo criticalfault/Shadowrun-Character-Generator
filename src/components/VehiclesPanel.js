@@ -22,6 +22,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import Modal from '@mui/material/Modal';
 
 export default function VehiclesPanel(props) {
   const VehicleData = require('../data/'+props.Edition+'/Vehicles.json');
@@ -163,14 +164,33 @@ export default function VehiclesPanel(props) {
     color: theme.palette.text.secondary,
   }));
 
-  
-  const handleModalVehicle = () => {
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
 
-
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => setOpen(false);
+  const [vehicleToCustomize, setVehicleToCustomize] = useState(false);
+  const [vehicleToCustomizeIndex, setVehicleToCustomizeIndex] = useState(0)
+  const handleModalVehicle = (index) => {
+    setOpen(true);
+    setVehicleToCustomizeIndex(index);
+    setVehicleToCustomize(props.Vehicles[index]);
   }
-  const renderVehiclesNew = () => {
 
-    console.log(props.vehicles);
+  const saveCustomization = () => {
+    
+  }
+
+  const renderVehiclesNew = () => {
     return props.Vehicles.map((vehicle, index) => (
       <Card sx={{ minWidth: 275, marginTop: 2 }} key={index}>
       <CardContent>
@@ -216,53 +236,6 @@ export default function VehiclesPanel(props) {
       </CardActions>
     </Card>))
   }
-
-  // const renderVehicles = () => {
-
-  //   return (
-  //     <TableContainer component={Paper}>
-  //     <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
-  //       <TableHead>
-  //         <TableRow>
-  //           <TableCell>Name</TableCell>
-  //           <TableCell align="right">Handling</TableCell>
-  //           <TableCell align="right">Speed/Accel</TableCell>
-  //           <TableCell align="right">Body/Armor</TableCell>
-  //           <TableCell align="right">Sig/Autonav</TableCell>
-  //           <TableCell align="right">Pilot/Sensor</TableCell>
-  //           <TableCell align="right">Cargo/Load</TableCell>
-  //           <TableCell align="right">Seating</TableCell>
-  //           <TableCell align="right">Cost</TableCell>
-  //           <TableCell align="right">Availability</TableCell>
-  //           <TableCell align="right">Notes</TableCell>
-  //           <TableCell align="right">Actions</TableCell>
-  //         </TableRow>
-  //       </TableHead>
-  //       <TableBody>
-  //         {props.Vehicles.map((vehicle, index) => (
-  //           <TableRow key={vehicle.Name+index}>
-  //             <TableCell component="th" scope="row">{vehicle.name}</TableCell>
-  //             <TableCell align="right">{vehicle.Handling}</TableCell>
-  //             <TableCell align="right">{vehicle['Speed/Accel']}</TableCell>
-  //             <TableCell align="right">{vehicle['Body/Armor']}</TableCell>
-  //             <TableCell align="right">{vehicle['Sig/Autonav']}</TableCell>
-  //             <TableCell align="right">{vehicle['Pilot/Sensor']}</TableCell>
-  //             <TableCell align="right">{vehicle['Cargo/Load']}</TableCell>
-  //             <TableCell align="right">{vehicle.Seating}</TableCell>
-  //             <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(vehicle['$Cost'])}</TableCell>
-  //             <TableCell align="right">{vehicle.Availability}</TableCell>
-  //             <TableCell align="right">{vehicle.Notes}</TableCell>
-  //             <TableCell align="right">
-  //                 <Button color="secondary" onClick={() => handleRemoveVehicle(index)}>Remove</Button>
-  //             </TableCell>
-  //           </TableRow>
-  //         ))}
-  //       </TableBody>
-  //     </Table>
-  //   </TableContainer>
-  //   )
-  // }
-
     return ( <>
     <Box sx={{ width: '250px' }}>
         Nuyen Spent: {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(CalcTotalNuyenSpent())} 
@@ -284,21 +257,26 @@ export default function VehiclesPanel(props) {
 
     {NewVehicle && (
         <div style={{marginTop:20 }}>
-            <TextField style={{'width':'100px', 'marginRight':'20px'}}
-            id="power-cost-input"
-            disabled={true}
-            label="Cost"
-            type="number"
-            value={NewVehicleCost}
-            />
-            <Button variant="contained" color="primary" onClick={handleAddVehicle}>
+          <TextField style={{'width':'100px', 'marginRight':'20px'}} id="power-cost-input" disabled={true}  label="Cost" type="number" value={NewVehicleCost} />
+          <Button variant="contained" color="primary" onClick={handleAddVehicle}>
             Add Vehicle
-            </Button>
-            <div>Notes:{NewVehicleDesc}</div>
+          </Button>
+          <div>Notes:{NewVehicleDesc}</div>
         </div>
     )}
     <br></br><br></br>
-   
+    <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+      <Box sx={style}>
+       {vehicleToCustomize.name}
+       <Button onClick={saveCustomization}>Save</Button>
+      </Box>
+     
+    </Modal>
     {renderVehiclesNew()}
     <hr style={{marginTop:30, marginBottom:30}}></hr>
 
