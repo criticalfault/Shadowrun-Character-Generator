@@ -90,6 +90,8 @@ export default function BasicTabs() {
         bioware:[],
         skills:[],
         gear:[],
+        karma:0,
+        karmaPool:1,
         magical: true,
         magicalTradition: false,
         magicalTotem:false,
@@ -560,8 +562,14 @@ export default function BasicTabs() {
                 />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={10}>
-                 <span>Coming Soon!</span>
-                 <KarmaDisplay />
+                 <KarmaDisplay
+                     onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
+                     Cash={Character.cash}
+                     onChangeKarma={(karma) => setCharacter({ ...Character, karma:karma})}
+                     Karma={Character.karma}
+                     Log={Character.log}
+                     onChangeKarmaPool={(karmaPool) => setCharacter({ ...Character, karmaPool:karmaPool})}
+                 />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={11}>
                 <SheetDisplay 
