@@ -93,6 +93,8 @@ export default function BasicTabs() {
         karma:0,
         karmaPool:1,
         magical: true,
+        initation:false,
+        submerison:false,
         magicalTradition: false,
         magicalTotem:false,
         foci:[],
@@ -424,7 +426,7 @@ export default function BasicTabs() {
             Edition={Edition}
             NuyenSpent={NuyenSpent}
         />
-        <LoadCharacter Character={Character} loadCharacter={handleLoadCharacter}/>
+        <LoadCharacter Character={Character} loadCharacter={handleLoadCharacter} BaseCharacter={baseCharacter} />
         <DiceRollerTray showDice={value} />
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider', }}>
@@ -564,11 +566,9 @@ export default function BasicTabs() {
             <CustomTabPanel value={value} index={10}>
                  <KarmaDisplay
                      onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
-                     Cash={Character.cash}
                      onChangeKarma={(karma) => setCharacter({ ...Character, karma:karma})}
-                     Karma={Character.karma}
+                     onChangeLog={(log) => setCharacter({ ...Character, log:log})}
                      Log={Character.log}
-                     onChangeKarmaPool={(karmaPool) => setCharacter({ ...Character, karmaPool:karmaPool})}
                  />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={11}>
