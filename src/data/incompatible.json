@@ -1,47 +1,33 @@
 [
-    {"Name1":"Adrenal Pump", "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Move-by-Wire", "BookPage":"mm.79"},
-    {"Name1":"Cat's Eyes", "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Eye" , "BookPage":"mm.79"},
-    {"Name1":"Chloroplast Skin", "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Dermal Plating" , "BookPage":"mm.79"},
-    {"Name1":"Chloroplast Skin", "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Dermal Sheath" , "BookPage":"mm.79"},
-    {"Name1":"Chloroplast Skin", "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"D. Sheath" , "BookPage":"mm.79"},
-    {"Name1":"Chloroplast Skin", "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"DS Coloration" , "BookPage":"mm.79"},
-    {"Name1":"Dermal Plating", "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Dermal Sheath",  "BookPage":"mm.28"},
-    {"Name1":"", "Panel1":"", "Panel2":"", "Name2":"", "BookPage":"" },
-    {"Name1":"", "Panel1":"", "Panel2":"", "Name2":"", "BookPage":"" },
-    {"Name1":"", "Panel1":"", "Panel2":"", "Name2":"", "BookPage":"" },
-    {"Name1":"", "Panel1":"", "Panel2":"", "Name2":"", "BookPage":"" },
-    {"Name1":"", "Panel1":"", "Panel2":"", "Name2":"", "BookPage":"" },
-    {"Name1":"", "Panel1":"", "Panel2":"", "Name2":"", "BookPage":"" },
-    {"Name1":"", "Panel1":"", "Panel2":"", "Name2":"", "BookPage":"" },
-    {"Name1":"", "Panel1":"", "Panel2":"", "Name2":"", "BookPage":"" },
-    V
+    {"Name1":"Adrenal Pump",            "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Move-by-Wire",             "BookPage":"mm.79"},
+    {"Name1":"Cat's Eyes",              "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Eye",                      "BookPage":"mm.79"},
+    {"Name1":"Chloroplast Skin",        "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Dermal Plating",           "BookPage":"mm.79"},
+    {"Name1":"Chloroplast Skin",        "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Dermal Sheath",            "BookPage":"mm.79"},
+    {"Name1":"Chloroplast Skin",        "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"D. Sheath" ,               "BookPage":"mm.79"},
+    {"Name1":"Chloroplast Skin",        "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"DS Coloration" ,           "BookPage":"mm.79"},
+    {"Name1":"Dermal Plating",          "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Dermal Sheath",            "BookPage":"mm.28"},
+    {"Name1":"Sensitive Skin",          "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Dermal Plating",           "BookPage":"mm.28"},
+    {"Name1":"Sensitive Skin",          "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Dermal Sheath",            "BookPage":"mm.79"},
+    {"Name1":"Sensitive Skin",          "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"D. Sheath",                "BookPage":"mm.79"},
+    {"Name1":"Sensitive Skin",          "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"DS Coloration",            "BookPage":"mm.79"},
+    {"Name1":"Skin Pigmentation",       "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Dermal Sheath",            "BookPage":"mm.79"},
+    {"Name1":"Skin Pigmentation",       "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"D. Sheath",                "BookPage":"mm.79"},
+    {"Name1":"Skin Pigmentation",       "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"DS Coloration",            "BookPage":"mm.79"},
+    {"Name1":"Digestive Expansion",     "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Ingested Toxin",           "BookPage":"mm.79"},
+    {"Name1":"Enhanced Articulation",   "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Quickness??",              "BookPage":"mm.79"},
+    {"Name1":"Extended Volume",         "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Internal Air Tank",        "BookPage":"mm.79" },
+    {"Name1":"Muscle Augmentation",     "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Muscle Replac.",           "BookPage":"tss.5" },
+    {"Name1":"Muscle Augmentation",     "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"PMP Musculature Lacing",   "BookPage":"mm.79" },
+    {"Name1":"Muscle Toner",            "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"PMP Musculature Lacing",   "BookPage":"tss.5" },
+    {"Name1":"Nictitating Membranes",   "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Eye",                      "BookPage":"mm.79" },
+    {"Name1":"Nictitating Membranes",   "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Flare Comp",               "BookPage":"mm.79" },
+    {"Name1":"Orthoskin",               "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Dermal Plating",           "BookPage":"mm.79" },
+    {"Name1":"Orthoskin",               "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Dermal Sheath",            "BookPage":"mm.79" },
+    {"Name1":"Orthoskin",               "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"D. Sheath",                "BookPage":"mm.79" },
+    {"Name1":"Orthoskin",               "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"DS Coloration",            "BookPage":"mm.79" },
+    {"Name1":"Suprathyroid Gland",      "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Move-by-Wire",             "BookPage":"|mm.79" },
+    {"Name1":"Synaptic Accel",          "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Move-by-Wire",             "BookPage":"|mm.79" },
+    {"Name1":"Synaptic Accel",          "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Wired Reflexes",           "BookPage":"|mm.79" },
+    {"Name1":"Tracheal Filter",         "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"Filter: Air",              "BookPage":"|mm.79" },
+    {"Name1":"Tracheal Filter",         "Panel1":"Cyberware", "Panel2":"Cyberware", "Name2":"OXSYS",                    "BookPage":"|mm.79" }
 ]
-
-
-
-Sensitive Skin|B|Dermal Plating|C|mm.79
-Sensitive Skin|B|Dermal Sheath|C|mm.79
-Sensitive Skin|B|D. Sheath|C|mm.79
-Sensitive Skin|B|DS Coloration|C|mm.79
-Skin Pigmentation|B|Dermal Sheath|C|mm.79
-Skin Pigmentation|B|D. Sheath|C|mm.79
-Skin Pigmentation|B|DS Coloration||C|mm.79
-Digestive Expansion|B|Ingested Toxin|C|mm.79
-Enhanced Articulation|B|Quickness|C|mm.79
-Extended Volume|B|Internal Air Tank|C|mm.79
-Muscle Augmentation|B|Muscle Replac.|C|mm.79
-Muscle Augmentation|B|PMP Musculature Lacing|C|tss.5
-Muscle Toner|B|Muscle Replac.|C|mm.79
-Muscle Toner|B|PMP Musculature Lacing|C|tss.5
-Nictitating Membranes|B|Eye|C|mm.79
-Nictitating Membranes|B|Flare Comp|C|mm.79
-Orthoskin|B|Dermal Plating|C|mm.79
-Orthoskin|B|Dermal Sheath|C|mm.79
-Orthoskin|B|D. Sheath|C|mm.79
-Orthoskin|B|DS Coloration|C|mm.79
-Suprathyroid Gland|B|Move-by-Wire|C|mm.79
-Suprathyroid Gland|B|Suprathyroid Gland|B|mm.79
-Synaptic Accel|B|Move-by-Wire|C|mm.79
-Synaptic Accel|B|Wired Reflexes|C|mm.30
-Tracheal Filter|B|Filter: Air|C|mm.79
-Tracheal Filter|B|OXSYS|C|mm.79

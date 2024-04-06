@@ -23,7 +23,11 @@ export default function LoadCharacter(props) {
     const [openLocalStorage, setOpenLocalStorage] = React.useState(false);
     const handleOpenLocalStorage = () => setOpenLocalStorage(true);
     const handleCloseLocalStorage = () => setOpenLocalStorage(false);
-
+    
+    const fixOlderCharactersMissingProperties = (characterObject) => {
+      let characterObjectFixed = {...props.BaseCharacter,...characterObject};
+      return characterObjectFixed;
+    }
     const SaveCharacter = () => {
         let characterJSON = JSON.stringify(props.Character);
         const blob = new Blob([characterJSON], { type: 'application/json' });
@@ -50,7 +54,8 @@ export default function LoadCharacter(props) {
         const reader = new FileReader();
         reader.onload = (e) => {
           const fileData = e.target.result;
-          props.loadCharacter(JSON.parse(fileData));
+          props.loadCharacter(fixOlderCharactersMissingProperties(JSON.parse(fileData)));
+          
           setOpen(false);
         }    
         reader.readAsText(file); 
@@ -70,7 +75,7 @@ export default function LoadCharacter(props) {
 
     const localStroageLoad = (saveSlot) => {
       let characterJSON = localStorage.getItem('characterSlot'+saveSlot);
-      props.loadCharacter(JSON.parse(characterJSON));
+      props.loadCharacter(fixOlderCharactersMissingProperties(JSON.parse(characterJSON)));
       setOpenLocalStorage(false);
     }
 
