@@ -90,7 +90,12 @@ export default function BasicTabs() {
         bioware:[],
         skills:[],
         gear:[],
+        karma:0,
+        karmaPool:1,
+        karmaSpent:0,
         magical: true,
+        initation:false,
+        submerison:false,
         magicalTradition: false,
         magicalTotem:false,
         foci:[],
@@ -422,7 +427,7 @@ export default function BasicTabs() {
             Edition={Edition}
             NuyenSpent={NuyenSpent}
         />
-        <LoadCharacter Character={Character} loadCharacter={handleLoadCharacter}/>
+        <LoadCharacter Character={Character} loadCharacter={handleLoadCharacter} BaseCharacter={baseCharacter} />
         <DiceRollerTray showDice={value} />
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider', }}>
@@ -560,8 +565,14 @@ export default function BasicTabs() {
                 />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={10}>
-                 <span>Coming Soon!</span>
-                 <KarmaDisplay />
+                 <KarmaDisplay
+                    race={Character.race}
+                    onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
+                    onChangeKarma={(karma) => setCharacter({ ...Character, karma:karma})}
+                    onChangeKarmaPool={(karmaPool) => setCharacter({ ...Character, karmaPool:karmaPool})}
+                    onChangeLog={(log) => setCharacter({ ...Character, log:log})}
+                    Log={Character.log}
+                 />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={11}>
                 <SheetDisplay 
