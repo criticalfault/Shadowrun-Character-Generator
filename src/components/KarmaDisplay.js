@@ -34,19 +34,29 @@ function KarmaDisplay(props) {
     const handleOpen  = () => setOpen(true);
    
     useEffect(() => {
-      let tempKarma = 0;
-      let tempCash = 0;
-      Logs.forEach(function(log){
-          if(log.Type === 'AddNuyen'){
-            tempCash += log.Amount;
-          }else if(log.Type === 'AddKarma'){
-            tempKarma += log.Amount;
-          }
+      var tempKarma = 0;
+      var tempCash = 0;
+      Logs.forEach(function(log) {
+        console.log(log);
+        if(log.Type === 'addNuyen'){
+          tempCash += parseFloat(log.Amount);
+        }else if(log.Type === 'addKarma'){
+          tempKarma += parseInt(log.Amount);
         }
-      )
+        return;
+      });
+      
+      let KP = 0;
+      if(props.race === 'Human'){
+        KP = Math.floor(tempKarma/10);
+      }else{
+        KP = Math.floor(tempKarma/20);
+      }
+      console.log(KP,tempCash,tempKarma);
+      tempKarma = tempKarma-KP;
+      props.onChangeKarmaPool(KP);
       props.onChangeCash(tempCash);
       props.onChangeKarma(tempKarma);
-      props.onChangeLog(Logs);
     },[Logs])
 
     const MetaMagic = {
@@ -84,7 +94,7 @@ function KarmaDisplay(props) {
       const event = new Date();
       let improvementLog = {
         "Type": improvementChoice,
-        "Date": event.toUTCString(),
+        "Date": event.getTime(),
         "Amount": Amount,
         "Notes":  Notes
       }
@@ -93,6 +103,7 @@ function KarmaDisplay(props) {
       setAmount(0);
       setNotes('');
       setImprovementChoice('addNuyen');
+      props.onChangeLog([...Logs, improvementLog]);
       handleClose();
     }
 
@@ -101,11 +112,19 @@ function KarmaDisplay(props) {
     }
 
     const renderCardValues = (log) => {
-      if(log.Name === 'addNuyen'){
+      if(log.Type === 'addNuyen'){
         return new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(log.Amount);
       }else{
-        return log.Amount;
+        return log.Amount + ' Karma';
       }
+    }
+
+    const renderDate = (date) => {
+      const myUnixTimestamp = date; // start with a Unix timestamp
+      const myDate = new Date(myUnixTimestamp); // convert timestamp to milliseconds and construct Date object
+      return (
+        <span>{myDate.toLocaleString()}</span>
+      )
     }
 
     const handleRemoveLog = (index) => {
@@ -129,7 +148,7 @@ function KarmaDisplay(props) {
                           {log.Notes} - {log.Type.replace(/add/,'Added ')}
                         </Typography>
                         <Typography variant="subtitle1" component="div">
-                          {log.Date}
+                          {renderDate(log.Date)}
                         </Typography>
                         <Typography variant="body1" component="div">
                           {renderCardValues(log)}

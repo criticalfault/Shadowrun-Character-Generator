@@ -92,6 +92,7 @@ export default function BasicTabs() {
         gear:[],
         karma:0,
         karmaPool:1,
+        karmaSpent:0,
         magical: true,
         initation:false,
         submerison:false,
@@ -565,10 +566,12 @@ export default function BasicTabs() {
             </CustomTabPanel>
             <CustomTabPanel value={value} index={10}>
                  <KarmaDisplay
-                     onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
-                     onChangeKarma={(karma) => setCharacter({ ...Character, karma:karma})}
-                     onChangeLog={(log) => setCharacter({ ...Character, log:log})}
-                     Log={Character.log}
+                    race={Character.race}
+                    onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
+                    onChangeKarma={(karma) => setCharacter({ ...Character, karma:karma})}
+                    onChangeKarmaPool={(karmaPool) => setCharacter({ ...Character, karmaPool:karmaPool})}
+                    onChangeLog={(log) => setCharacter({ ...Character, log:log})}
+                    Log={Character.log}
                  />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={11}>

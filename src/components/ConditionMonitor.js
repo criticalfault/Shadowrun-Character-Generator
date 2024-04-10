@@ -1,41 +1,37 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import './ConditionMonitor.css';
 
 const ConditionMonitor = (props) => {
   const [selectedCondition, setSelectedCondition] = useState(null);
-  const Condition = useRef();
-  const handleClick = (number, key) => {
-    let reset = false;
-    console.log("Number:"+number + ' Key:'+key);
+
+  const handleClick = (number, key, selected) => {
     setSelectedCondition((prevCondition) => {
-      if (prevCondition === number) {
-        console.log("Resetting selected condition:"+reset);
-        reset = true;
-        return -1; // Unselect the condition if it was already selected
+      if (prevCondition === number || selected === true) {
+        return null; // Unselect the condition if it was already selected
       } else {
         return number; // Select the condition if it was not previously selected
       }
     });
-    props.onConditionSelect(number,props.type, reset, key);
   };
 
   const renderBoxes = () => {
     const boxes = ['L', '_', 'M', '_', '_', 'S', '_', '_', '_', 'D'];
+
     return boxes.map((box, index) => {
-      const isSelected = selectedCondition !== -1 && index <= selectedCondition;
+      const isSelected = selectedCondition !== null && index <= selectedCondition;
 
       return (
         <div
           key={index}
           data-number={index}
-          onClick={() => handleClick(index, props.targetID)}
+          onClick={() => handleClick(index, props.targetID,isSelected)}
           style={{
             ...styles.rectangle,
             borderColor: isSelected ? 'black' : 'black',
             backgroundColor: isSelected ? 'cyan' : 'transparent',
           }}
         >
-          <span>{box}</span>
+          <span className='noselect'>{box}</span>
         </div>
       );
     });
@@ -44,7 +40,7 @@ const ConditionMonitor = (props) => {
   return (
     <div className="conditionMonitor">
       <div className="conditionBoxes">
-        <span>{props.type}</span>
+        <span className='noselect'>{props.type}</span>
         {renderBoxes()}
       </div>
     </div>
@@ -53,8 +49,8 @@ const ConditionMonitor = (props) => {
 
 const styles = {
   rectangle: {
-    width: '50px',
-    height: '50px',
+    width: '40px',
+    height: '40px',
     border: 'solid 1px black',
     display: 'inline-block',
     margin: '1px',

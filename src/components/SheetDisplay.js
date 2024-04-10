@@ -264,6 +264,22 @@ function SheetDisplay(props) {
         }
     }
 
+    const renderKarmaPool = () => {
+        if(props.currentCharacter.karmaPool > 0){
+            return(<>
+                    <br/><br/>
+                    <TextField
+                        className='pool_display'
+                        id="rating-input"
+                        label="Karma"
+                        type="text"
+                        value={parseInt(props.currentCharacter.karmaPool)}
+                    />
+                </>
+            )
+        }
+    }
+
     const renderSkillsPanel = () => {
         if(props.Edition === 'SR3'){
             return props.currentCharacter.skills.map((skill, index) => (
@@ -345,6 +361,13 @@ function SheetDisplay(props) {
         <Grid item xs={12}>
             <Item>Notes: </Item>
         </Grid>
+        <Grid item xs={12}>
+            <Item>
+                <h2 className={"boxHeader"}>Condition Monitor</h2>
+                <ConditionMonitor type="Stun &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" key={'S'} actor='S' onConditionSelect={handleConditionSelect} />
+                <ConditionMonitor type="Physical &nbsp;" key={'P'} actor="P" onConditionSelect={handleConditionSelect} />
+            </Item>
+        </Grid>
         <Grid item xs={12} md={4}>
             <Item>
                 <h2 className={"boxHeader"}>Attributes</h2>
@@ -401,21 +424,6 @@ function SheetDisplay(props) {
                 </Grid>
             </Item>
         </Grid>
-        <Grid item xs={12} md={8}>
-            <Item>
-                <h2 className={"boxHeader"}>Condition Monitor</h2>
-                <ConditionMonitor type="Stun &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" key={'S'} actor='S'  onConditionSelect={handleConditionSelect} />
-                <ConditionMonitor type="Physical &nbsp;" key={'P'} actor="P" onConditionSelect={handleConditionSelect} />
-            </Item>
-        </Grid>
-        <Grid item xs={12} md={6}>
-            <Item style={{"minHeight":"341px"}}>
-                <h2 className={"boxHeader"}>Skills</h2>
-                {
-                    renderSkillsPanel()
-                }
-            </Item>
-        </Grid>
         <Grid item xs={6} md={3}>
             <Item style={{"minHeight":"341px"}}>
                 <h2 className={"boxHeader"}>Dice Pools</h2>
@@ -450,8 +458,18 @@ function SheetDisplay(props) {
                 {renderAstralCombatPool()}
                 {renderSpellPool()}
                 {renderTaskPool()}
+                {renderKarmaPool()}
             </Item>
         </Grid>
+        <Grid item xs={12} md={6}>
+            <Item style={{"minHeight":"341px"}}>
+                <h2 className={"boxHeader"}>Skills</h2>
+                {
+                    renderSkillsPanel()
+                }
+            </Item>
+        </Grid>
+        
         <Grid item md={6} xs={12}>
             <Item>
                 <h2 className={"boxHeader"}>Cyberware</h2>
@@ -504,7 +522,7 @@ function SheetDisplay(props) {
                 </TableContainer>
             </Item>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item md={6} xs={12}>
             <Item>
                 <h2 className={"boxHeader"}>Gear</h2>
                 <TableContainer component={Paper}>
@@ -530,7 +548,7 @@ function SheetDisplay(props) {
                 </TableContainer>
             </Item>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item md={6} xs={12}>
             <Item>
             <h2 className={"boxHeader"}>Armor</h2>
             <TableContainer component={Paper}>
