@@ -398,17 +398,15 @@ export default function BasicTabs() {
         }));
     }
 
-    
-
     const SkillsPanelRender = (ed) => {
         if(ed === 'SR3'){
             return ( <SR3SkillsPanel    
-                                        currentCharacter={Character}
-                                        characterSkills={Character.skills} 
-                                        onUpdateSkills={handleSkillsUpdate} 
-                                        activeSkillPoints={Character.maxSkillPoints} 
-                                        KnowledgeSkillsMax={(Character.attributes.Intelligence*5)} 
-                                        LanguageSkillsMax={(Math.floor(Character.attributes.Intelligence*1.5))} />)
+                                    currentCharacter={Character}
+                                    characterSkills={Character.skills} 
+                                    onUpdateSkills={handleSkillsUpdate} 
+                                    activeSkillPoints={Character.maxSkillPoints} 
+                                    KnowledgeSkillsMax={(Character.attributes.Intelligence*5)} 
+                                    LanguageSkillsMax={(Math.floor(Character.attributes.Intelligence*1.5))} />)
         }else{
             return  (<SR2SkillsPanel    characterSkills={Character.skills} 
                                         onUpdateSkills={handleSkillsUpdate} 
@@ -496,9 +494,9 @@ export default function BasicTabs() {
                     spells={Character.spells}
                     powers={Character.powers}
                     foci={Character.foci}
-                    onChangePowers={(powers) => setCharacter({ ...Character, powers})}
-                    onChangeSpells={(spells) => setCharacter({ ...Character, spells })} 
-                    onChangeFoci={(foci) => setCharacter({ ...Character, foci:foci})}
+                    onChangePowers={    (powers)    => setCharacter({ ...Character, powers})    }
+                    onChangeSpells={    (spells)    => setCharacter({ ...Character, spells })   } 
+                    onChangeFoci={      (foci)      => setCharacter({ ...Character, foci:foci}) }
                     magicalTraditions={Character.availableMagics}
                     chosenTradition={Character.magicalTradition}
                     magicalTotem={Character.magicalTotem}
@@ -530,17 +528,17 @@ export default function BasicTabs() {
             <CustomTabPanel value={value} index={6}>
                 <GearPanel
                     Gear={Character.gear}
-                    Edition={Edition}
-                    onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
-                    onChangeGear={(gear) => setCharacter({ ...Character, gear:gear})}
+                    Edition={Edition}   
+                    onChangeCash={  (cash) => setCharacter({ ...Character, cash:cash})    }
+                    onChangeGear={  (gear) => setCharacter({ ...Character, gear:gear})    }
                     BooksFilter={Character.allowedBooks}
                 />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={7}>
                <DeckingPanel
                     Decks={Character.decks}
-                    onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
-                    onChangeDeck={(decks) => setCharacter({ ...Character, decks:decks})}
+                    onChangeCash={  (cash) => setCharacter({ ...Character, cash:cash})      }
+                    onChangeDeck={  (decks) => setCharacter({ ...Character, decks:decks})   }
                     Edition={Edition}
                     BooksFilter={Character.allowedBooks}
                />
@@ -551,9 +549,9 @@ export default function BasicTabs() {
                     Drones={Character.drones} 
                     Edition={Edition}
                     CashOnHand={Character.chargenCash}
-                    onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
-                    onChangeVehicle={(vehicles) => setCharacter({ ...Character, vehicles:vehicles})}
-                    onChangeDrones={(drones) => setCharacter({ ...Character, drones:drones})}
+                    onChangeCash={      (cash)      => setCharacter({ ...Character, cash:cash})}
+                    onChangeVehicle={   (vehicles)  => setCharacter({ ...Character, vehicles:vehicles})}
+                    onChangeDrones={    (drones)    => setCharacter({ ...Character, drones:drones})}
                     BooksFilter={Character.allowedBooks}
                 />
             </CustomTabPanel>
@@ -567,16 +565,14 @@ export default function BasicTabs() {
             <CustomTabPanel value={value} index={10}>
                  <KarmaDisplay
                     race={Character.race}
-                    onChangeCash={(cash) => setCharacter({ ...Character, cash:cash})}
-                    onChangeKarma={(karma) => setCharacter({ ...Character, karma:karma})}
-                    onChangeKarmaPool={(karmaPool) => setCharacter({ ...Character, karmaPool:karmaPool})}
-                    onChangeLog={(log) => setCharacter({ ...Character, log:log})}
+                    onChangeKarmaStuff = {  (cash, karma, karmaPool)    => setCharacter({ ...Character, cash: cash, karma: karma, karmaPool: karmaPool}) }
+                    onChangeLog={           (log)                       => setCharacter({ ...Character, log:log}) }
                     Log={Character.log}
                  />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={11}>
                 <SheetDisplay 
-                            onChangeStreetName={(name) => setCharacter({...Character, street_name: name})}
+                            onChangeStreetName={    (name) => setCharacter({...Character, street_name: name})   }
                             Edition={Edition}
                             currentCharacter={Character} />
             </CustomTabPanel>
