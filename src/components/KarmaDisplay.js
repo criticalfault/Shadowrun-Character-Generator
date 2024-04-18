@@ -34,8 +34,11 @@ function KarmaDisplay(props) {
     const handleOpen  = () => setOpen(true);
    
     useEffect(() => {
-      var tempKarma = 0;
-      var tempCash = 0;
+      let finalKarma = 0;
+      let tempKarma = 0;
+      let tempCash = 0;
+      let tempKarmaPool = 1;
+
       Logs.forEach(function(log) {
         console.log(log);
         if(log.Type === 'addNuyen'){
@@ -46,17 +49,14 @@ function KarmaDisplay(props) {
         return;
       });
       
-      let KP = 0;
       if(props.race === 'Human'){
-        KP = Math.floor(tempKarma/10);
+        tempKarmaPool = Math.floor(tempKarma/10);
       }else{
-        KP = Math.floor(tempKarma/20);
+        tempKarmaPool = Math.floor(tempKarma/20);
       }
-      console.log(KP,tempCash,tempKarma);
-      tempKarma = tempKarma-KP;
-      props.onChangeKarmaPool(KP);
-      props.onChangeCash(tempCash);
-      props.onChangeKarma(tempKarma);
+
+      finalKarma = tempKarma-tempKarmaPool;
+      props.onChangeKarmaStuff( tempCash, finalKarma, tempKarmaPool );
     },[Logs])
 
     const MetaMagic = {
