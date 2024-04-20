@@ -349,17 +349,39 @@ function SheetDisplay(props) {
                 onChange={event => props.onChangeStreetName(event.target.value)}
             />
         </Grid>
-        <Grid item xs={6} md={3}>
-            <Item>Metatype: {props.currentCharacter.race}</Item>
-        </Grid>
-        <Grid item xs={6} md={3}>
-            <Item>Age: </Item>
+        <Grid item xs={12} md={6} >
+            <TextField
+                label="Race"
+                type="text"
+                value={props.currentCharacter.race}
+                disabled={true}
+            />
         </Grid>
         <Grid item xs={12}>
-            <Item>Description: </Item>
+            <TextField
+                label="Age"
+                type="text"
+                value={props.currentCharacter.age}
+                onChange={event => props.onChangeAge(event.target.value)}
+            />
         </Grid>
         <Grid item xs={12}>
-            <Item>Notes: </Item>
+            <TextField
+                style={{width:'100%'}}
+                label="Description"
+                type="text"
+                value={props.currentCharacter.description}
+                onChange={event => props.onChangeDescription(event.target.value)}
+            />
+        </Grid>
+        <Grid item xs={12}>
+            <TextField
+                style={{width:'100%'}}
+                label="Notes"
+                type="text"
+                value={props.currentCharacter.notes}
+                onChange={event => props.onChangeNotes(event.target.value)}
+            />
         </Grid>
         <Grid item xs={12}>
             <Item>

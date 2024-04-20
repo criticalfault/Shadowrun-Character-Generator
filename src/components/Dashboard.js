@@ -57,6 +57,7 @@ function a11yProps(index) {
 export default function BasicTabs() {
     const baseCharacter = {
         allowedBooks:['cc', 'mits','sr2','sr3','mm','mat','r3'],
+        age:18,
         bookTogglesSR3:{'cc':true, 'mits':true, 'sr3':true,'mm':true,'mat':true,'r3':true},
         bookTogglesSR2:{'sr2':true},
         step:'chargen',
@@ -587,6 +588,9 @@ export default function BasicTabs() {
             <CustomTabPanel value={value} index={11}>
                 <SheetDisplay 
                             onChangeStreetName={    (name) => setCharacter({...Character, street_name: name})   }
+                            onChangeAge= { (age) => setCharacter({...Character, age: age}) }
+                            onChangeDescription= { (description) => setCharacter({...Character, description: description})}
+                            onChangeNotes={ (notes) => setCharacter({...Character, notes: notes})}
                             Edition={Edition}
                             currentCharacter={Character} />
             </CustomTabPanel>
