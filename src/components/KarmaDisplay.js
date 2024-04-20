@@ -32,7 +32,9 @@ function KarmaDisplay(props) {
     const [Amount, setAmount] = useState(0);
     const handleClose = () => setOpen(false);
     const handleOpen  = () => setOpen(true);
-   
+    const [openFinalizeCharacterModal, setOpenFinalizeCharacterModal] = useState(false);
+    const handleOpenFinalizeCharacterModal = () => setOpenFinalizeCharacterModal(true);
+    const handleCloseFinalizeCharacterModal = () => setOpenFinalizeCharacterModal(false);
     useEffect(() => {
       let finalKarma = 0;
       let tempKarma = 0;
@@ -50,37 +52,39 @@ function KarmaDisplay(props) {
       });
       
       if(props.race === 'Human'){
-        tempKarmaPool = Math.floor(tempKarma/10);
+        tempKarmaPool += Math.floor(tempKarma/10);
       }else{
-        tempKarmaPool = Math.floor(tempKarma/20);
+        tempKarmaPool += Math.floor(tempKarma/20);
       }
 
-      finalKarma = tempKarma-tempKarmaPool;
+      finalKarma = tempKarma-(tempKarmaPool-1);
       props.onChangeKarmaStuff( tempCash, finalKarma, tempKarmaPool );
     },[Logs])
 
-    const MetaMagic = {
-      "SR2": [  
-          { "Name" : "Centering"   },
-          { "Name" : "Dispelling"  },
-          { "Name" : "Shielding"   },
-          { "Name" : "Masking"     },
-          { "Name" : "Quickening"  },
-          { "Name" : "Anchoring"   }
-      ], 
-      "SR3": [
-          { "Name" : "Anchoring"   },
-          { "Name" : "Centering"   },
-          { "Name" : "Cleansing"   },
-          { "Name" : "Divining"    },
-          { "Name" : "Invoking"    },
-          { "Name" : "Masking"     },
-          { "Name" : "Possessing"  },
-          { "Name" : "Quickening"  },
-          { "Name" : "Reflecting"  },
-          { "Name" : "Shielding"   },
-      ]
-    }
+    // const MetaMagic = {
+    //   "SR2": [  
+    //       { "Name" : "Centering"   },
+    //       { "Name" : "Dispelling"  },
+    //       { "Name" : "Shielding"   },
+    //       { "Name" : "Masking"     },
+    //       { "Name" : "Quickening"  },
+    //       { "Name" : "Anchoring"   }
+    //   ], 
+    //   "SR3": [
+    //       { "Name" : "Anchoring"   },
+    //       { "Name" : "Centering"   },
+    //       { "Name" : "Cleansing"   },
+    //       { "Name" : "Divining"    },
+    //       { "Name" : "Invoking"    },
+    //       { "Name" : "Masking"     },
+    //       { "Name" : "Possessing"  },
+    //       { "Name" : "Quickening"  },
+    //       { "Name" : "Reflecting"  },
+    //       { "Name" : "Shielding"   },
+    //   ]
+    // }
+
+
     const handleAmountChange = (event) => {
       let value = event.target.value;
       setAmount(value);
@@ -134,7 +138,13 @@ function KarmaDisplay(props) {
       setLogs(newLogs);
     }
 
-    return (
+    const handleFinalizeCharacter = () => {
+      props.onFinalization('finalized');
+      setOpenFinalizeCharacterModal(false);
+    }
+
+    const displayFinalizedCharacter = () => {
+      return (
         <>
             <h2>Character Karma/Cash</h2>
             <p>Below is a list of Karma / Cash Additions with timestamps of when it was added. This money can then be used to buy near gear.</p>
@@ -188,7 +198,7 @@ function KarmaDisplay(props) {
                     <input type="number" placeholder="Amount To Add" value={Amount} onChange={handleAmountChange} ></input>
                   <br></br>
                   <InputLabel>Notes:</InputLabel>
-                  <input type="text" placeholder="Notes" value={Notes} onChange={handleNoteChange} ></input>
+                  <input type="text" placeholder="Notes" value={Notes} onChange={handleNoteChange}></input>
                   <br></br>
                   <Button variant="contained" color="primary" onClick={addImprovement}>Add</Button>
               <hr></hr>
@@ -196,6 +206,40 @@ function KarmaDisplay(props) {
             </Box>
           </Modal>
         </>
+      )
+    }
+
+    const displayChargenCharacter = () => {
+      return (
+        <>
+           <Modal
+              open={openFinalizeCharacterModal}
+              onClose={handleCloseFinalizeCharacterModal}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+              <Button variant="contained" color="primary" onClick={handleFinalizeCharacter}>Finalize Character</Button>
+              <hr></hr>
+              <Button onClick={handleCloseFinalizeCharacterModal}>Close</Button>
+            </Box>
+          </Modal>
+          <p>Finalizing your character switches it over to allowing you to do things like advance skills, improve attributes, initate, etc. This cannot be undone. If you want to continue to edit, make a save pre-finalized first.</p>
+          <Button size='large' color="primary" onClick={handleOpenFinalizeCharacterModal} >Finalize Character?</Button>
+        </>
+      )
+    }
+
+    const determineWhichDisplay = () => {
+        if(props.step === 'chargen'){
+          return displayChargenCharacter();
+        }else{
+          return displayFinalizedCharacter();
+        }
+    }
+
+    return (
+      determineWhichDisplay()
     )
 }
 

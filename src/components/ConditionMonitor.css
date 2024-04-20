@@ -11,4 +11,19 @@
           -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
+}
+
+@media only screen and (max-width: 631px) {
+  .conditionBox{
+    width:23px !important;
+    height:23px !important;
   }
+
+  .noselect{
+    display: block;
+  }
+
+  .conditionMonitor{
+    margin-bottom: 10px;
+  }
+}
