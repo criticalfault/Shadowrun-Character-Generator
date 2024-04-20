@@ -189,6 +189,11 @@ export default function BasicTabs() {
 
         Character.drones.forEach(function(drone){
             tempCashSpent+=parseFloat(drone['$Cost']);
+            if(drone.hasOwnProperty('options')){
+                drone.options.forEach(function(option){
+                    tempCashSpent += parseInt(option['$Cost']);
+                })
+            }
         });
 
         Character.foci.forEach(function(foci){
