@@ -22,6 +22,7 @@ const ConditionMonitor = (props) => {
 
       return (
         <div
+          className='conditionBox'
           key={index}
           data-number={index}
           onClick={() => handleClick(index, props.targetID,isSelected)}

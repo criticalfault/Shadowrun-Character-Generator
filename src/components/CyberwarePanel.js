@@ -130,7 +130,6 @@ export default function CyberwarePanel(props) {
       setBiowareSelectedCategory(event.target.value);
   }
   const convertModsToAttributes = (mods) => {
-    //,+1STG
     const ModToAttributes ={ 
         'BOD':'Body',
         'ROD':'Body',

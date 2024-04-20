@@ -12,6 +12,7 @@ import MagicPanel from './MagicPanel';
 import GearPanel from './GearPanel';
 import LoadCharacter from './LoadCharacter';
 import ChargenBox from './ChargenBox';
+import FinalizedBox from './FinalizedBox';
 import CyberwarePanel from './CyberwarePanel';
 import DeckingPanel from './DeckingPanel';
 import VehiclesPanel from './VehiclesPanel';
@@ -418,13 +419,24 @@ export default function BasicTabs() {
         setCharacter(characterData);
     }
 
+    const displayBox = () => {
+        if(Character.step === 'chargen'){
+            return (<ChargenBox
+                currentCharacter={Character}
+                Edition={Edition}
+                NuyenSpent={NuyenSpent}
+            />)
+        }else{
+            return (<FinalizedBox
+                currentCharacter={Character}
+                Edition={Edition}
+            />)
+        }
+    }
+
   return (
     <div className='dashboard'>
-        <ChargenBox
-            currentCharacter={Character}
-            Edition={Edition}
-            NuyenSpent={NuyenSpent}
-        />
+        {displayBox()}
         <LoadCharacter Character={Character} loadCharacter={handleLoadCharacter} BaseCharacter={baseCharacter} />
         <DiceRollerTray showDice={value} />
         <Box sx={{ width: '100%' }}>
@@ -564,6 +576,8 @@ export default function BasicTabs() {
             </CustomTabPanel>
             <CustomTabPanel value={value} index={10}>
                  <KarmaDisplay
+                    onFinalization={ (step) => { setCharacter({ ...Character, step:step}) } }
+                    step={Character.step}
                     race={Character.race}
                     onChangeKarmaStuff = {  (cash, karma, karmaPool)    => setCharacter({ ...Character, cash: cash, karma: karma, karmaPool: karmaPool}) }
                     onChangeLog={           (log)                       => setCharacter({ ...Character, log:log}) }
