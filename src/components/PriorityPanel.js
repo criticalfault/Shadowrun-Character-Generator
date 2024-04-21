@@ -107,6 +107,14 @@ export default function PriorityPanel(props) {
         setMagic(prorityChart[props.Edition].magic[newPriorityMagic][0])
         props.ChangeMagicChoices(prorityChart[props.Edition].magic[newPriorityMagic]);
         props.ChangeMagic(prorityChart[props.Edition].magic[newPriorityMagic][0])
+        if(props.Edition === 'SR3'){
+            if(newPriority === 'A'){
+                props.ChangeMaxSpellPoints(25);
+            }else if(newPriority === 'B'){
+                props.ChangeMaxSpellPoints(35);
+            }
+            
+        }
     };
 
     const handleRaceChange = (race) => {
@@ -132,7 +140,9 @@ export default function PriorityPanel(props) {
     
     const handleChangePriorityResources = (newPriority) => {
         props.ChangeMaxCash(prorityChart[props.Edition].resources[newPriority].nuyen);
-        props.ChangeMaxSpellPoints(prorityChart[props.Edition].resources[newPriority].spell_points)
+        if(props.Edition === 'SR2'){
+            props.ChangeMaxSpellPoints(prorityChart[props.Edition].resources[newPriority].spell_points)
+        }
     };
 
 

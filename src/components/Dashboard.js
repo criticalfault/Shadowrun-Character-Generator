@@ -69,7 +69,7 @@ export default function BasicTabs() {
         availableRaces:['Human'],
         availableMagics:['Full Magician'],
         magicalChoice:'Full Magician',
-        maxSpellPoints:36,
+        maxSpellPoints:25,
         race:'Human',
         bodyIndex:2,
         magicalAttributeBonuses:{'Body':0, 'Quickness':0, 'Strength':0, 'Charisma':0, 'Willpower':0, 'Intelligence':0, 'Reaction':0, 'Initative':0, 'Impact':0, 'Ballastic':0},
