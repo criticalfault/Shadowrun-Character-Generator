@@ -33,11 +33,11 @@ export default function PriorityPanel(props) {
             "attributes":   {"A":30,     "B":27,    "C":24,   "D":21,   "E":18},
             "skills":       {"A":50,     "B":40,    "C":34,   "D":30,   "E":27},
             "resources":    {
-                                "A":{"nuyen":1000000, "spell_points":36},
-                                "B":{"nuyen":400000, "spell_points":36},
-                                "C":{"nuyen":90000, "spell_points":36},
-                                "D":{"nuyen":20000, "spell_points":36},
-                                "E":{"nuyen":5000, "spell_points":36} 
+                                "A":{"nuyen":1000000, "spell_points":25},
+                                "B":{"nuyen":400000, "spell_points":25},
+                                "C":{"nuyen":90000, "spell_points":25},
+                                "D":{"nuyen":20000, "spell_points":25},
+                                "E":{"nuyen":5000, "spell_points":25} 
                             }
                             
         },
