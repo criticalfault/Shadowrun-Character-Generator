@@ -24291,7 +24291,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "Dart",
+        "Name": "Dart, Empty",
         "Concealability": "8",
         "Damage": "as toxin",
         "Weight": ".01",
@@ -24301,7 +24301,7 @@
         "BookPage": "mm.116"
       },
       {
-        "Name": "Dart",
+        "Name": "Dart, Atropine",
         "Concealability": "8",
         "Damage": "6D",
         "Weight": ".01",
@@ -24311,7 +24311,7 @@
         "BookPage": "mm.116"
       },
       {
-        "Name": "Dart",
+        "Name": "Dart, Cyanide",
         "Concealability": "8",
         "Damage": "7D",
         "Weight": ".01",
@@ -24321,7 +24321,7 @@
         "BookPage": "mm.116"
       },
       {
-        "Name": "Dart",
+        "Name": "Dart, Fugu 5",
         "Concealability": "8",
         "Damage": "3D",
         "Weight": ".01",
@@ -24331,7 +24331,7 @@
         "BookPage": "sr3.250"
       },
       {
-        "Name": "Dart",
+        "Name": "Dart, Fugu 6",
         "Concealability": "8",
         "Damage": "6D",
         "Weight": ".01",
@@ -24341,7 +24341,7 @@
         "BookPage": "sr3.250"
       },
       {
-        "Name": "Dart",
+        "Name": "Dart, Fugu 8",
         "Concealability": "8",
         "Damage": "8D",
         "Weight": ".01",
@@ -24351,7 +24351,7 @@
         "BookPage": "sr3.250"
       },
       {
-        "Name": "Dart",
+        "Name": "Dart, Gamma-Scopolamine",
         "Concealability": "8",
         "Damage": "10D stun",
         "Weight": ".01",
@@ -24361,7 +24361,7 @@
         "BookPage": "sr3.250"
       },
       {
-        "Name": "Dart",
+        "Name": "Dart, Hyper",
         "Concealability": "8",
         "Damage": "6S stun",
         "Weight": ".01",
@@ -24371,7 +24371,7 @@
         "BookPage": "mm.119"
       },
       {
-        "Name": "Dart",
+        "Name": "Dart, Insecticide",
         "Concealability": "8",
         "Damage": "Special",
         "Weight": ".01",
@@ -24381,7 +24381,7 @@
         "BookPage": "mm.113"
       },
       {
-        "Name": "Dart",
+        "Name": "Dart, MAO",
         "Concealability": "8",
         "Damage": "Special",
         "Weight": ".01",
@@ -24391,7 +24391,7 @@
         "BookPage": "mm.119"
       },
       {
-        "Name": "Dart",
+        "Name": "Dart, Narcoject",
         "Concealability": "8",
         "Damage": "6D stun",
         "Weight": ".01",
