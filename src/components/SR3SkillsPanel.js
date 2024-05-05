@@ -67,6 +67,21 @@ function SR3SkillsPanel({currentCharacter, characterSkills, onUpdateSkills, acti
     setLanguageSkillPointsSpent(CalcTotalSkillsRatings([...selectedLanguageSkills]));
   }, [selectedSkills,selectedKnowledgeSkills,selectedLanguageSkills])
 
+  let skillCosts = {
+    "baseSkill":{
+      "active":[1.5,2,2.5],
+      "knowledge":[1,1.5,2]
+    },
+    "specialization": {
+      "active":[.5,1,1.5],
+      "knowledge":[.5,1,1.5]
+    },
+    "attributeCosts":{
+      "limit":2,
+      "max":3
+    }
+  }
+
  // Handle CategoryChange events
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);

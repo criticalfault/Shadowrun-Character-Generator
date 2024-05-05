@@ -60,6 +60,7 @@ export default function BasicTabs() {
         age:18,
         bookTogglesSR3:{'cc':true, 'mits':true, 'sr3':true,'mm':true,'mat':true,'r3':true},
         bookTogglesSR2:{'sr2':true},
+        edition:'SR3',
         step:'chargen',
         priorities:{'Magic':'A','Attributes':'B','Skills':'C','Resources':'D','Race':'E'},
         maxSkillPoints: 34,
@@ -443,7 +444,7 @@ export default function BasicTabs() {
   return (
     <div className='dashboard'>
         {displayBox()}
-        <LoadCharacter Character={Character} loadCharacter={handleLoadCharacter} BaseCharacter={baseCharacter} />
+        <LoadCharacter Character={Character} loadCharacter={handleLoadCharacter} BaseCharacter={baseCharacter} Edition={Edition} ChangeEdition={handleChangeEdition}  />
         <DiceRollerTray showDice={value} />
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider', }}>
@@ -502,6 +503,12 @@ export default function BasicTabs() {
                     ChangeAttributes={handleAttributesChange} 
                     currentCharacter={Character}
                     Edition={Edition}
+                    onChangeLog={ (log) => setCharacter({ ...Character, log:log}) }
+                    onSpendKarma={ (karma) => {
+                            let karmaSpentToSave = Character.karmaSpent += karma;
+                            setCharacter({ ...Character, karmaSpent:karmaSpentToSave});
+                    }}
+                    Log={Character.log}
                 />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={3}>
@@ -583,6 +590,8 @@ export default function BasicTabs() {
             <CustomTabPanel value={value} index={10}>
                  <KarmaDisplay
                     onFinalization={ (step) => { setCharacter({ ...Character, step:step}) } }
+                    skills={Character.skills}
+                    attributes={Character.attributes}
                     step={Character.step}
                     race={Character.race}
                     onChangeKarmaStuff = {  (cash, karma, karmaPool)    => setCharacter({ ...Character, cash: cash, karma: karma, karmaPool: karmaPool}) }

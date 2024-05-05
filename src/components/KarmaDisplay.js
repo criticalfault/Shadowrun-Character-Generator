@@ -61,30 +61,6 @@ function KarmaDisplay(props) {
       props.onChangeKarmaStuff( tempCash, finalKarma, tempKarmaPool );
     },[Logs])
 
-    // const MetaMagic = {
-    //   "SR2": [  
-    //       { "Name" : "Centering"   },
-    //       { "Name" : "Dispelling"  },
-    //       { "Name" : "Shielding"   },
-    //       { "Name" : "Masking"     },
-    //       { "Name" : "Quickening"  },
-    //       { "Name" : "Anchoring"   }
-    //   ], 
-    //   "SR3": [
-    //       { "Name" : "Anchoring"   },
-    //       { "Name" : "Centering"   },
-    //       { "Name" : "Cleansing"   },
-    //       { "Name" : "Divining"    },
-    //       { "Name" : "Invoking"    },
-    //       { "Name" : "Masking"     },
-    //       { "Name" : "Possessing"  },
-    //       { "Name" : "Quickening"  },
-    //       { "Name" : "Reflecting"  },
-    //       { "Name" : "Shielding"   },
-    //   ]
-    // }
-
-
     const handleAmountChange = (event) => {
       let value = event.target.value;
       setAmount(value);
@@ -93,7 +69,6 @@ function KarmaDisplay(props) {
     const handleImprovementChange = (event) => {
       setImprovementChoice(event.target.value);
     }
-
     const addImprovement = () => {
       const event = new Date();
       let improvementLog = {
@@ -155,7 +130,7 @@ function KarmaDisplay(props) {
                      <Card sx={{ minWidth: 275, marginTop: 2 }}>
                       <CardContent>
                         <Typography variant="h5" component="div">
-                          {log.Notes} - {log.Type.replace(/add/,'Added ')}
+                          {log.Notes}
                         </Typography>
                         <Typography variant="subtitle1" component="div">
                           {renderDate(log.Date)}
@@ -174,6 +149,7 @@ function KarmaDisplay(props) {
               }
 
             </ul>
+
             <Modal
               open={open}
               onClose={handleClose}
