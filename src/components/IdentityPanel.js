@@ -45,8 +45,9 @@ export default function IdentityPanel(props) {
             <p>It is in <strong>Alpha</strong> at the moment.<br></br> So be prepared if it decideds to randomly die. There is a bunch of fixes still pending as well as a lot of known missing parts which will be added once this thing is partially stable.
             I'll list the known issues below, but feel free to poke and prod. See what you can get it to do. I'm going to continue to work on this as i get reports of breaks and the likes.</p>
             <p>Thanks for your consideration and time in testing! -D (dean 'at' nullsheen.com)</p>
-            <h5>Known Issues (As of 04-20-24 - 10:40am CDT)</h5>
+            <h5>Known Issues (As of 05-5-24 - 2:12pm CDT)</h5>
             <ul>
+                <li>Characters will need to be resaved with their proper edition. I dont know why i hadn't saved this, but i am doing that now.</li>
                 <li>Still need to add "improvements" and tracking Nuyen post finalization.</li>
                 <li>All nesting of improvements (Weapon / Deck / Vehicle accessories and building). These will be handled in a completely different way, but I promise it will feel awesome to do!</li>
             </ul>
@@ -54,6 +55,8 @@ export default function IdentityPanel(props) {
         <hr/>
         <h5>Resolved Issues</h5>
         <ul>
+            <li>Added magical initative bonuses to the sheet display</li>
+            <li>Added increasing attributes with Karma... so it begins</li>
             <li>Added Karma and Karma Pool tracking. Its very basic but for now it should be fine to carry us forward until I can spend a lot more time on it.</li>
             <li>Fixed totem errors. Missed the elemental mage attributes which were causing the issue.</li>
             <li>LocalStorage save/load for faster and easier character handling</li>

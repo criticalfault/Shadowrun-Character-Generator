@@ -444,7 +444,7 @@ export default function BasicTabs() {
   return (
     <div className='dashboard'>
         {displayBox()}
-        <LoadCharacter Character={Character} loadCharacter={handleLoadCharacter} BaseCharacter={baseCharacter}  ChangeEdition={handleChangeEdition}  />
+        <LoadCharacter Character={Character} loadCharacter={handleLoadCharacter} BaseCharacter={baseCharacter} Edition={Edition} ChangeEdition={handleChangeEdition}  />
         <DiceRollerTray showDice={value} />
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider', }}>
@@ -503,6 +503,12 @@ export default function BasicTabs() {
                     ChangeAttributes={handleAttributesChange} 
                     currentCharacter={Character}
                     Edition={Edition}
+                    onChangeLog={ (log) => setCharacter({ ...Character, log:log}) }
+                    onSpendKarma={ (karma) => {
+                            let karmaSpentToSave = Character.karmaSpent += karma;
+                            setCharacter({ ...Character, karmaSpent:karmaSpentToSave});
+                    }}
+                    Log={Character.log}
                 />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={3}>

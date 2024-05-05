@@ -29,7 +29,9 @@ export default function LoadCharacter(props) {
       return characterObjectFixed;
     }
     const SaveCharacter = () => {
-        let characterJSON = JSON.stringify(props.Character);
+        let Char = props.Character;
+        Char.edition = props.Edition
+        let characterJSON = JSON.stringify(Char);
         const blob = new Blob([characterJSON], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
       
@@ -56,7 +58,8 @@ export default function LoadCharacter(props) {
           const fileData = e.target.result;
           const characterToLoad = fixOlderCharactersMissingProperties(JSON.parse(fileData));
           props.loadCharacter(characterToLoad);
-          props.ChangeEdition(characterToLoad.Edition);
+          console.log(characterToLoad.edition)
+          props.ChangeEdition(characterToLoad.edition);
           setOpen(false);
         }    
         reader.readAsText(file); 
@@ -69,14 +72,19 @@ export default function LoadCharacter(props) {
     }
 
     const localStroageSave = (saveSlot) => {
-      let characterJSON = JSON.stringify(props.Character);
+      let Char = props.Character;
+      Char.edition = props.Edition
+      let characterJSON = JSON.stringify(Char);
       localStorage.setItem('characterSlot'+saveSlot, characterJSON);
       setOpenLocalStorage(false);
     }
 
     const localStroageLoad = (saveSlot) => {
       let characterJSON = localStorage.getItem('characterSlot'+saveSlot);
-      props.loadCharacter(fixOlderCharactersMissingProperties(JSON.parse(characterJSON)));
+      let characterToLoad = fixOlderCharactersMissingProperties(JSON.parse(characterJSON));
+      props.loadCharacter(characterToLoad);
+      props.ChangeEdition(characterToLoad.edition);
+      console.log(characterToLoad.edition)
       setOpenLocalStorage(false);
     }
 

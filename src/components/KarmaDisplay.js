@@ -130,7 +130,7 @@ function KarmaDisplay(props) {
                      <Card sx={{ minWidth: 275, marginTop: 2 }}>
                       <CardContent>
                         <Typography variant="h5" component="div">
-                          {log.Notes} - {log.Type.replace(/add/,'Added ')}
+                          {log.Notes}
                         </Typography>
                         <Typography variant="subtitle1" component="div">
                           {renderDate(log.Date)}

@@ -1,7 +1,23 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import './AttributesPanel.css';
 import Button from '@mui/material/Button';
-export default function PriorityPanel(props) {
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+
+export default function AttributesPanel(props) {
+
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 400,
+        bgcolor: 'background.paper',
+        border: '2px solid #000',
+        boxShadow: 24,
+        p: 4,
+    };
+
     const AttributeMax = React.useRef(6);
     const [Body, setBody] = React.useState(props.currentCharacter.attributes.Body);
     const [Quickness, setQuickness] = React.useState(props.currentCharacter.attributes.Quickness);
@@ -9,157 +25,290 @@ export default function PriorityPanel(props) {
     const [Charisma, setCharisma] = React.useState(props.currentCharacter.attributes.Charisma);
     const [Intelligence, setIntelligence] = React.useState(props.currentCharacter.attributes.Intelligence);
     const [Willpower, setWillpower] = React.useState(props.currentCharacter.attributes.Willpower);
-    const [Initative, setInitative] = React.useState(props.currentCharacter.attributes.Initative);
+    const [Initative] = React.useState(props.currentCharacter.attributes.Initative);
+    const [open, setOpen] = useState(false);
+    const handleClose = () => setOpen(false);
+    const handleOpen  = () => setOpen(true);
+
     const KarmaCosts = {
         "SR3":{
-        "racialLimits":{
-          "Elf":{
-            "bodyLimit":6,
-            "bodyMax":9,
-            "quicknessLimit":7,
-            "quicknessMax":11,
-            "strengthLimit":6,
-            "strengthMax":9,
-            "charimasLimit":8,
-            "charimasMax":12,
-            "intelligenceLimit":6,
-            "intelligenceMax":9,
-            "willpowerLimit":6,
-            "willpowerMax":9,
-          },
-          "Dwarf":{
-            "bodyLimit":7,
-            "bodyMax":11,
-            "quicknessLimit":6,
-            "quicknessMax":9,
-            "strengthLimit":8,
-            "strengthMax":12,
-            "charimasLimit":6,
-            "charimasMax":9,
-            "intelligenceLimit":6,
-            "intelligenceMax":9,
-            "willpowerLimit":7,
-            "willpowerMax":11,
-          },
-          "Ork":{
-            "bodyLimit":9,
-            "bodyMax":14,
-            "quicknessLimit":6,
-            "quicknessMax":9,
-            "strengthLimit":8,
-            "strengthMax":12,
-            "charimasLimit":5,
-            "charimasMax":8,
-            "intelligenceLimit":5,
-            "intelligenceMax":8,
-            "willpowerLimit":6,
-            "willpowerMax":9,
-          },
-          "Troll":{
-            "bodyLimit":11,
-            "bodyMax":17,
-            "quicknessLimit":5,
-            "quicknessMax":8,
-            "strengthLimit":10,
-            "strengthMax":15,
-            "charimasLimit":4,
-            "charimasMax":6,
-            "intelligenceLimit":4,
-            "intelligenceMax":6,
-            "willpowerLimit":6,
-            "willpowerMax":9,
-          },
-          "Human":{
-            "bodyLimit":6,
-            "bodyMax":9,
-            "quicknessLimit":6,
-            "quicknessMax":9,
-            "strengthLimit":6,
-            "strengthMax":9,
-            "charimasLimit":6,
-            "charimasMax":9,
-            "intelligenceLimit":6,
-            "intelligenceMax":9,
-            "willpowerLimit":6,
-            "willpowerMax":9,
-          }
-        }
-      },
-      "SR2":{
-        "racialLimits":{
-            "Elf":{
-              "bodyLimit":6,
-              "bodyMax":9,
-              "quicknessLimit":7,
-              "quicknessMax":11,
-              "strengthLimit":6,
-              "strengthMax":9,
-              "charimasLimit":8,
-              "charimasMax":12,
-              "intelligenceLimit":6,
-              "intelligenceMax":9,
-              "willpowerLimit":6,
-              "willpowerMax":9,
+            "costs":{
+                'underLimit':2,
+                'overLimit':3,
             },
-            "Dwarf":{
-              "bodyLimit":7,
-              "bodyMax":11,
-              "quicknessLimit":5,
-              "quicknessMax":8,
-              "strengthLimit":8,
-              "strengthMax":12,
-              "charimasLimit":6,
-              "charimasMax":9,
-              "intelligenceLimit":6,
-              "intelligenceMax":9,
-              "willpowerLimit":7,
-              "willpowerMax":11,
-            },
-            "Ork":{
-              "bodyLimit":9,
-              "bodyMax":14,
-              "quicknessLimit":6,
-              "quicknessMax":9,
-              "strengthLimit":8,
-              "strengthMax":12,
-              "charimasLimit":5,
-              "charimasMax":8,
-              "intelligenceLimit":5,
-              "intelligenceMax":8,
-              "willpowerLimit":6,
-              "willpowerMax":9,
-            },
-            "Troll":{
-              "bodyLimit":11,
-              "bodyMax":17,
-              "quicknessLimit":5,
-              "quicknessMax":8,
-              "strengthLimit":10,
-              "strengthMax":15,
-              "charimasLimit":4,
-              "charimasMax":6,
-              "intelligenceLimit":4,
-              "intelligenceMax":6,
-              "willpowerLimit":5,
-              "willpowerMax":8,
-            },
-            "Human":{
-              "bodyLimit":6,
-              "bodyMax":9,
-              "quicknessLimit":6,
-              "quicknessMax":9,
-              "strengthLimit":6,
-              "strengthMax":9,
-              "charimasLimit":6,
-              "charimasMax":9,
-              "intelligenceLimit":6,
-              "intelligenceMax":9,
-              "willpowerLimit":6,
-              "willpowerMax":9,
+            "racialLimits":{
+                "Elf":{
+                    "Body":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Quickness":{
+                        "limit":7,
+                        "max":11
+                    },
+                    "Strength":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Charisma":{
+                        "limit":8,
+                        "max":12
+                    },
+                    "Intelligence":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Willpower":{
+                        "limit":6,
+                        "max":9
+                    }
+                },
+                "Dwarf":{
+                    "Body":{
+                        "limit":7,
+                        "max":11
+                    },
+                    "Quickness":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Strength":{
+                        "limit":8,
+                        "max":12
+                    },
+                    "Charisma":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Intelligence":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Willpower":{
+                        "limit":7,
+                        "max":11
+                    }
+                },
+                "Ork":{
+                    "Body":{
+                        "limit":9,
+                        "max":14
+                    },
+                    "Quickness":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Strength":{
+                        "limit":8,
+                        "max":12
+                    },
+                    "Charisma":{
+                        "limit":5,
+                        "max":8
+                    },
+                    "Intelligence":{
+                        "limit":5,
+                        "max":8
+                    },
+                    "Willpower":{
+                        "limit":6,
+                        "max":9
+                    }
+                },
+                "Troll":{
+                    "Body":{
+                        "limit":11,
+                        "max":17
+                    },
+                    "Quickness":{
+                        "limit":5,
+                        "max":8
+                    },
+                    "Strength":{
+                        "limit":10,
+                        "max":15
+                    },
+                    "Charisma":{
+                        "limit":4,
+                        "max":6
+                    },
+                    "Intelligence":{
+                        "limit":4,
+                        "max":6
+                    },
+                    "Willpower":{
+                        "limit":6,
+                        "max":9
+                    }
+                },
+                "Human":{
+                    "Body":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Quickness":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Strength":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Charisma":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Intelligence":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Willpower":{
+                        "limit":6,
+                        "max":9
+                    }
+                }
             }
-          }
+        },
+        "SR2":{
+            "costs":{
+                'underLimit':1,
+                'overLimit':2,
+            },
+            "racialLimits":{
+                "Elf":{ 
+                    "Body":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Quickness":{
+                        "limit":7,
+                        "max":11
+                    },
+                    "Strength":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Charisma":{
+                        "limit":8,
+                        "max":12
+                    },
+                    "Intelligence":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Willpower":{
+                        "limit":6,
+                        "max":9
+                    }
+                },
+                "Dwarf":{
+                    "Body":{
+                        "limit":7,
+                        "max":11
+                    },
+                    "Quickness":{
+                        "limit":5,
+                        "max":8
+                    },
+                    "Strength":{
+                        "limit":8,
+                        "max":12
+                    },
+                    "Charisma":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Intelligence":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Willpower":{
+                        "limit":7,
+                        "max":11
+                    }
+                },
+                "Ork":{
+                    "Body":{
+                        "limit":9,
+                        "max":14
+                    },
+                    "Quickness":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Strength":{
+                        "limit":8,
+                        "max":12
+                    },
+                    "Charisma":{
+                        "limit":5,
+                        "max":8
+                    },
+                    "Intelligence":{
+                        "limit":5,
+                        "max":8
+                    },
+                    "Willpower":{
+                        "limit":6,
+                        "max":9
+                    }
+                },
+                "Troll":{
+                  "Body":{
+                        "limit":11,
+                        "max":17
+                    },
+                    "Quickness":{
+                        "limit":5,
+                        "max":8
+                    },
+                    "Strength":{
+                        "limit":10,
+                        "max":15
+                    },
+                    "Charisma":{
+                        "limit":4,
+                        "max":6
+                    },
+                    "Intelligence":{
+                        "limit":4,
+                        "max":6
+                    },
+                    "Willpower":{
+                        "limit":5,
+                        "max":8
+                    }
+                
+                },
+                "Human":{
+                    "Body":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Quickness":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Strength":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Charisma":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Intelligence":{
+                        "limit":6,
+                        "max":9
+                    },
+                    "Willpower":{
+                        "limit":6,
+                        "max":9
+                    }
+                }
+            }
         }
-      }
+    }
     
     const handleChangeAttribute = (event) => {
         const attributesArray = {'Body':Body,'Quickness':Quickness,'Strength':Strength,'Charisma':Charisma,'Intelligence':Intelligence,'Willpower':Willpower};
@@ -205,12 +354,12 @@ export default function PriorityPanel(props) {
        props.ChangeAttributes(attribute,value);
     }
 
-    const [Essence, setEssence] = React.useState(6);
-    const [Magic, setMagic] = React.useState(0);
+    const Essence= React.useState(6);
+    const Magic = React.useState(0);
 
     const displayChargenPointsLeft = () => {
 
-        if(props.currentCharacter.step == 'chargen'){
+        if(props.currentCharacter.step === 'chargen'){
             return (
                 <div>Attribute Points Left: {parseInt(props.currentCharacter.maxAttributePoints)-Body-Quickness-Strength-Charisma-Intelligence-Willpower}</div>
             )
@@ -218,7 +367,7 @@ export default function PriorityPanel(props) {
     }
 
     const lockAttributes = () => {
-        if(props.currentCharacter.step == 'chargen'){
+        if(props.currentCharacter.step === 'chargen'){
             return false;
         }else{
             return true;
@@ -226,11 +375,11 @@ export default function PriorityPanel(props) {
     }
 
     const displayImproveAttribute = (where, attribute) =>{
-        if(props.currentCharacter.step == 'finalized'){
+        if(props.currentCharacter.step === 'finalized'){
             if (where === 'header'){
                 return (<th>Action</th>);
             }else if(where === 'body'){
-                return (<td><Button variant="contained" color="primary" onClick={increaseAttribute(attribute)}>Increase {attribute}</Button></td>);
+                return (<td><Button variant="contained" color="primary" onClick={() => { increaseAttribute(attribute) } }>Increase {attribute}</Button></td>);
             }else if(where === 'empty'){
                 return (<td></td>)
             }else{
@@ -241,14 +390,86 @@ export default function PriorityPanel(props) {
         }
     }
 
-    const increaseAttribute = (attribute) => {
+    const [increaseAttributeTarget, setIncreaseAttributeTarget] = useState('Body');
 
-        
+    const increaseAttribute = (attribute) => {
+        setIncreaseAttributeTarget(attribute);
+        handleOpen();
         return;
+    }
+
+    const increaseAttributeConfirm = () => {
+        let karmaCost = calcIncreaseAttributeTarget();
+        let AttributeStart = props.currentCharacter.attributes[increaseAttributeTarget];
+        let AttributeFinal = props.currentCharacter.attributes[increaseAttributeTarget] += 1
+        props.currentCharacter.attributes[increaseAttributeTarget] = AttributeFinal
+        switch(increaseAttributeTarget){
+            case "Strength":
+                setStrength(AttributeFinal);
+            break;
+            case "Quickness":
+                setQuickness(AttributeFinal);
+            break;
+            case "Body":
+                setBody(AttributeFinal);
+            break;
+            case "Charisma":
+                setCharisma(AttributeFinal);
+            break;
+            case "Intelligence":
+                setIntelligence(AttributeFinal);
+            break;
+            case "Willpower":
+                setWillpower(AttributeFinal);
+            break;
+            default:
+                break;
+        }
+
+        //Fire off Karma Spending Log
+        const event = new Date();
+        let improvementLog = {
+            "Type": 'IncreaseAttribute',
+            "Date": event.getTime(),
+            "Amount": (karmaCost*-1),
+            "Notes":  "Increased "+increaseAttributeTarget+" from "+AttributeStart+ " to "+AttributeFinal+" for "+karmaCost +" Karma."
+        }
+        props.onSpendKarma(karmaCost);
+        props.onChangeLog([...props.Log, improvementLog]);
+        handleClose();
+    }
+
+    const calcIncreaseAttributeTarget = () => {
+        console.log(props.Edition);
+        let attributeCost = KarmaCosts[props.Edition]['racialLimits'][props.currentCharacter.race][increaseAttributeTarget];
+        console.log(attributeCost);
+        if(props.currentCharacter.attributes[increaseAttributeTarget] >= attributeCost['limit'] && props.currentCharacter.attributes[increaseAttributeTarget] <= attributeCost['max']){
+            return (props.currentCharacter.attributes[increaseAttributeTarget]+1) * KarmaCosts[props.Edition].costs.overLimit;
+        }else if(props.currentCharacter.attributes[increaseAttributeTarget] < attributeCost['limit'] ){
+
+            return (props.currentCharacter.attributes[increaseAttributeTarget]+1) * KarmaCosts[props.Edition].costs.underLimit;
+        }else{
+            console.log("Invalid range");
+            return "1";
+        }
     }
 
     return (
         <div>
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+                <Box sx={style}>
+                    <p>Are you sure you want to increase {increaseAttributeTarget}?</p>
+                    <p>It will cost you {calcIncreaseAttributeTarget()} karma.</p>
+                    <Button variant="contained" color="primary" onClick={increaseAttributeConfirm}>Are you sure?</Button>
+                    <hr></hr>
+                    <Button onClick={handleClose}>Close</Button>
+                </Box>
+            </Modal>
             { displayChargenPointsLeft() }
             <table>
                 <thead>
