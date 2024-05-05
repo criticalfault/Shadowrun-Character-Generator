@@ -25,13 +25,118 @@ function KarmaDisplay(props) {
       p: 4,
     };
     
+    const KarmaCosts = {
+      "SR3":{
+      "skillCosts":{
+        "baseSkill":{
+          "active":[1.5,2,2.5],
+          "knowledge":[1,1.5,2]
+        },
+        "specialization": {
+          "active":[.5,1,1.5],
+          "knowledge":[.5,1,1.5]
+        },
+        "attributeCosts":{
+          "limit":2,
+          "max":3
+        }
+       
+      },
+      "racialLimits":{
+        "Elf":{
+          "bodyLimit":6,
+          "bodyMax":9,
+          "quicknessLimit":7,
+          "quicknessMax":11,
+          "strengthLimit":6,
+          "strengthMax":9,
+          "charimasLimit":8,
+          "charimasMax":12,
+          "intelligenceLimit":6,
+          "intelligenceMax":9,
+          "willpowerLimit":6,
+          "willpowerMax":9,
+        },
+        "Dwarf":{
+          "bodyLimit":7,
+          "bodyMax":11,
+          "quicknessLimit":6,
+          "quicknessMax":9,
+          "strengthLimit":8,
+          "strengthMax":12,
+          "charimasLimit":6,
+          "charimasMax":9,
+          "intelligenceLimit":6,
+          "intelligenceMax":9,
+          "willpowerLimit":7,
+          "willpowerMax":11,
+        },
+        "Ork":{
+          "bodyLimit":9,
+          "bodyMax":14,
+          "quicknessLimit":6,
+          "quicknessMax":9,
+          "strengthLimit":8,
+          "strengthMax":12,
+          "charimasLimit":5,
+          "charimasMax":8,
+          "intelligenceLimit":5,
+          "intelligenceMax":8,
+          "willpowerLimit":6,
+          "willpowerMax":9,
+        },
+        "Troll":{
+          "bodyLimit":11,
+          "bodyMax":17,
+          "quicknessLimit":5,
+          "quicknessMax":8,
+          "strengthLimit":10,
+          "strengthMax":15,
+          "charimasLimit":4,
+          "charimasMax":6,
+          "intelligenceLimit":4,
+          "intelligenceMax":6,
+          "willpowerLimit":6,
+          "willpowerMax":9,
+        },
+        "Human":{
+          "bodyLimit":6,
+          "bodyMax":9,
+          "quicknessLimit":6,
+          "quicknessMax":9,
+          "strengthLimit":6,
+          "strengthMax":9,
+          "charimasLimit":6,
+          "charimasMax":9,
+          "intelligenceLimit":6,
+          "intelligenceMax":9,
+          "willpowerLimit":6,
+          "willpowerMax":9,
+        }
+      }
+    },
+    "SR2":{
+
+    }
+  }
     const [Logs, setLogs] = useState(props.Log);
     const [open, setOpen] = useState(false);
+    const [openSkillImprove, setOpenSkillImprove] = useState(false);
+    const [openAttributeImprove, setOpenAttributeImprove] = useState(false);
     const [improvementChoice, setImprovementChoice] = useState('addNuyen');
+    const [improvementChoiceSkill, setImprovementChoiceSkill] = useState(0);
+    const [improvementChoiceAttribute, setImprovementChoiceAttribute] = useState(0);
     const [Notes, setNotes] = useState('');
     const [Amount, setAmount] = useState(0);
+    const [NotesSkills, setNotesSkills] = useState('');
+    const [AmountSkills, setAmountSkills] = useState(0);
+    const [NotesAttributes, setNotesAttributes] = useState('');
+    const [AmountAttributes, setAmountAttributes] = useState(0);
     const handleClose = () => setOpen(false);
     const handleOpen  = () => setOpen(true);
+    const handleOpenSkillImprove = () => setOpenSkillImprove(true);
+    const handleCloseSkillImprove = () => setOpenSkillImprove(false);
+    const handleOpenAttributeImprove = () => setOpen(true);
     const [openFinalizeCharacterModal, setOpenFinalizeCharacterModal] = useState(false);
     const handleOpenFinalizeCharacterModal = () => setOpenFinalizeCharacterModal(true);
     const handleCloseFinalizeCharacterModal = () => setOpenFinalizeCharacterModal(false);
@@ -61,28 +166,28 @@ function KarmaDisplay(props) {
       props.onChangeKarmaStuff( tempCash, finalKarma, tempKarmaPool );
     },[Logs])
 
-    // const MetaMagic = {
-    //   "SR2": [  
-    //       { "Name" : "Centering"   },
-    //       { "Name" : "Dispelling"  },
-    //       { "Name" : "Shielding"   },
-    //       { "Name" : "Masking"     },
-    //       { "Name" : "Quickening"  },
-    //       { "Name" : "Anchoring"   }
-    //   ], 
-    //   "SR3": [
-    //       { "Name" : "Anchoring"   },
-    //       { "Name" : "Centering"   },
-    //       { "Name" : "Cleansing"   },
-    //       { "Name" : "Divining"    },
-    //       { "Name" : "Invoking"    },
-    //       { "Name" : "Masking"     },
-    //       { "Name" : "Possessing"  },
-    //       { "Name" : "Quickening"  },
-    //       { "Name" : "Reflecting"  },
-    //       { "Name" : "Shielding"   },
-    //   ]
-    // }
+    const MetaMagic = {
+      "SR2": [  
+          { "Name" : "Centering"   },
+          { "Name" : "Dispelling"  },
+          { "Name" : "Shielding"   },
+          { "Name" : "Masking"     },
+          { "Name" : "Quickening"  },
+          { "Name" : "Anchoring"   }
+      ], 
+      "SR3": [
+          { "Name" : "Anchoring"   },
+          { "Name" : "Centering"   },
+          { "Name" : "Cleansing"   },
+          { "Name" : "Divining"    },
+          { "Name" : "Invoking"    },
+          { "Name" : "Masking"     },
+          { "Name" : "Possessing"  },
+          { "Name" : "Quickening"  },
+          { "Name" : "Reflecting"  },
+          { "Name" : "Shielding"   },
+      ]
+    }
 
 
     const handleAmountChange = (event) => {
@@ -92,6 +197,14 @@ function KarmaDisplay(props) {
 
     const handleImprovementChange = (event) => {
       setImprovementChoice(event.target.value);
+    }
+
+    const handleImprovementChangeSkill = (event) => {
+      setImprovementChoiceSkill(event.target.value);
+    }
+
+    const handleImprovementChangeAttribute = (event) => {
+      setImprovementChoiceAttribute(event.target.value);
     }
 
     const addImprovement = () => {
@@ -111,8 +224,32 @@ function KarmaDisplay(props) {
       handleClose();
     }
 
+    const addSkillImprovement = () => {
+      const event = new Date();
+      let improvementLog = {
+        "Type": 'skillImprovement',
+        "Date": event.getTime(),
+        "Amount": AmountSkills,
+        "Notes":  Notes
+      }
+      
+      setLogs([...Logs, improvementLog]);
+      setAmountSkills(0);
+      setNotesSkills('');
+      setImprovementChoiceSkill(0);
+      props.onChangeLog([...Logs, improvementLog]);
+    }
+
     const handleNoteChange = (event) =>{
       setNotes(event.target.value);
+    }
+
+    const handleSkillNoteChange = (event) =>{
+      setNotesSkills(event.target.value);
+    }
+
+    const handleAttributeNoteChange = (event) =>{
+      setNotesAttributes(event.target.value);
     }
 
     const renderCardValues = (log) => {
@@ -149,6 +286,8 @@ function KarmaDisplay(props) {
             <h2>Character Karma/Cash</h2>
             <p>Below is a list of Karma / Cash Additions with timestamps of when it was added. This money can then be used to buy near gear.</p>
             <Button onClick={handleOpen}>Add Improvement</Button>
+            <Button onClick={handleOpenSkillImprove}>Improve Skill</Button>
+            <Button onClick={handleOpenAttributeImprove}>Improve Attribute</Button>
             <ul>
              {Logs.map( (log, index) => (
                     <li key={index}>
@@ -174,6 +313,41 @@ function KarmaDisplay(props) {
               }
 
             </ul>
+            {
+              //Skill Improvement
+            }
+            <Modal
+              open={openSkillImprove}
+              onClose={handleCloseSkillImprove}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+                <FormControl fullWidth>
+                  <h3>Improve A Skill</h3>
+                  <InputLabel>What To Add</InputLabel>
+                  <Select id='WhatToAdd'
+                    value={improvementChoiceSkill}
+                    onChange={handleImprovementChangeSkill}>
+                    {props.skills.map((skill, index) => (
+                          <MenuItem value={index}>{skill.name}</MenuItem>
+                        )
+                      )
+                    }
+                    </Select>
+                  </FormControl>
+                  <InputLabel id="demo-simple-select-label">Amount</InputLabel>
+                    <input type="number" placeholder="Amount To Add" value={Amount} onChange={handleAmountChange} ></input>
+                  <br></br>
+                  <InputLabel>Notes:</InputLabel>
+                  <input type="text" placeholder="Notes" value={Notes} onChange={handleSkillNoteChange}></input>
+                  <br></br>
+                  <Button variant="contained" color="primary" onClick={addSkillImprovement}>Add</Button>
+              <hr></hr>
+              <Button onClick={handleCloseSkillImprove}>Close</Button>
+            </Box>
+          </Modal>
+
             <Modal
               open={open}
               onClose={handleClose}
