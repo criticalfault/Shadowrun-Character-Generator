@@ -55,12 +55,18 @@ export default function LoadCharacter(props) {
         const file = event.target.files[0];
         const reader = new FileReader();
         reader.onload = (e) => {
-          const fileData = e.target.result;
-          const characterToLoad = fixOlderCharactersMissingProperties(JSON.parse(fileData));
-          props.loadCharacter(characterToLoad);
-          console.log(characterToLoad.edition)
-          props.ChangeEdition(characterToLoad.edition);
-          setOpen(false);
+          try{
+            const fileData = e.target.result;
+            const characterToLoad = fixOlderCharactersMissingProperties(JSON.parse(fileData));
+            props.loadCharacter(characterToLoad);
+            console.log(characterToLoad.edition)
+            props.ChangeEdition(characterToLoad.edition);
+            setOpen(false);
+          }catch(err){
+            console.log(err);
+            console.log("Something went wrong trying to load a character");
+            alert("Unable to load character. Please ensure that the character is a json file you made with this site. PDFs cannot be read unfortunately.");
+          }
         }    
         reader.readAsText(file); 
         try{
