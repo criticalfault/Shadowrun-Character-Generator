@@ -21,6 +21,7 @@ import SheetDisplay from "./SheetDisplay";
 import KarmaDisplay from "./KarmaDisplay";
 import "./SheetDisplay.css";
 import DiceRollerTray from "./DiceRollerTray";
+import TableAttribute from "./CustomTable";
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -33,7 +34,7 @@ function CustomTabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ paddingTop: 3 }}>
           <div>{children}</div>
         </Box>
       )}
@@ -538,7 +539,7 @@ export default function BasicTabs() {
             onChange={handleChange}
             aria-label="basic tabs example"
             variant="scrollable"
-            scrollButtons={true}
+            scrollButtons="auto"
             allowScrollButtonsMobile
           >
             <Tab label="Identity" {...a11yProps(0)} />
@@ -554,6 +555,9 @@ export default function BasicTabs() {
             <Tab label="Karma" {...a11yProps(10)} />
             <Tab label="Sheet Display" {...a11yProps(11)} />
           </Tabs>
+          {/* Example TabPanel */}
+
+          {/* Additional TabPanels for other tabs */}
         </Box>
         <CustomTabPanel value={value} index={0}>
           <IdentityPanel
@@ -591,6 +595,17 @@ export default function BasicTabs() {
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>
+          <TableAttribute
+            ChangeAttributes={handleAttributesChange}
+            currentCharacter={Character}
+            Edition={Edition}
+            onChangeLog={(log) => setCharacter({ ...Character, log: log })}
+            onSpendKarma={(karma) => {
+              let karmaSpentToSave = (Character.karmaSpent += karma);
+              setCharacter({ ...Character, karmaSpent: karmaSpentToSave });
+            }}
+            Log={Character.log}
+          />
           <AttributesPanel
             ChangeAttributes={handleAttributesChange}
             currentCharacter={Character}

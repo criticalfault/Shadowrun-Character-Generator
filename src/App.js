@@ -1,6 +1,7 @@
 import "./App.css";
 import * as Sentry from "@sentry/react";
 import Dashboard from "./components/Dashboard";
+import { Container } from "@mui/material";
 
 function App() {
   //   Sentry.init({
@@ -27,10 +28,19 @@ function App() {
   // });
   return (
     <div className="App">
-      <h1 className="mainHeader" style={{ paddingLeft: "10px" }}>
-        Shadowrun Character Generator
-      </h1>
-      <Dashboard className="dashboard" />
+      <Container maxWidth="2xl" sx="mx-auto">
+        <h1
+          className="mainHeader"
+          style={{
+            paddingLeft: "48px",
+            paddingTop: "20px",
+            paddingBottom: "20px",
+          }}
+        >
+          Shadowrun Character Generator
+        </h1>
+        <Dashboard className="dashboard" />
+      </Container>
     </div>
   );
 }
