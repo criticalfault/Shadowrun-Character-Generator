@@ -34,7 +34,7 @@ function CustomTabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ paddingTop: 3 }}>
+        <Box sx={{ paddingTop: 5 }}>
           <div>{children}</div>
         </Box>
       )}

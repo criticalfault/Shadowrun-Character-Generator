@@ -453,6 +453,8 @@ export default function DeckingPanel(props) {
           variant="contained"
           color="primary"
           onClick={handleAddCyberdeck}
+          className=""
+          style={{ marginTop: "30px" }}
         >
           Add Cyberdeck
         </Button>
@@ -501,7 +503,7 @@ export default function DeckingPanel(props) {
         }).format(CalcTotalNuyenSpent())}
       </Box>
       {showCyberdeckDropdown()}
-      <hr></hr>
+      <hr sx="mt-6"></hr>
       {RenderSelectedCyberdeck()}
       {RenderProgramSelectionModal()}
     </>
