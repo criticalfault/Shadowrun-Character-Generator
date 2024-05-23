@@ -148,6 +148,7 @@ function SheetDisplay(props) {
           <br />
           <br />
           <TextField
+            style={{ width: "100%" }}
             className="pool_display"
             id="rating-input"
             label="Astral Combat"
@@ -302,6 +303,7 @@ function SheetDisplay(props) {
           <br />
           <br />
           <TextField
+            style={{ width: "100%" }}
             className="pool_display"
             id="rating-input"
             label="Spell"
@@ -343,6 +345,7 @@ function SheetDisplay(props) {
           <br />
           <br />
           <TextField
+            style={{ width: "100%" }}
             className="pool_display"
             id="rating-input"
             label="Karma"
@@ -465,49 +468,62 @@ function SheetDisplay(props) {
   };
   return (
     <Grid container spacing={2} className="sheetBody">
-      <Grid item xs={12} md={6}>
-        <TextField
-          label="Runner Name"
-          type="text"
-          value={props.currentCharacter.street_name}
-          onChange={(event) => props.onChangeStreetName(event.target.value)}
-        />
+      <Grid
+        container
+        spacing={3}
+        style={{ background: "#ffffff", marginBottom: "20px", padding: "20px" }}
+      >
+        <Grid item xs={12} md={6}>
+          <TextField
+            style={{ width: "100%" }}
+            label="Runner Name"
+            type="text"
+            value={props.currentCharacter.street_name}
+            onChange={(event) => props.onChangeStreetName(event.target.value)}
+          />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <TextField
+            style={{ width: "100%" }}
+            label="Race"
+            type="text"
+            value={props.currentCharacter.race}
+            disabled={true}
+          />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <TextField
+            style={{ width: "100%" }}
+            label="Age"
+            type="text"
+            value={props.currentCharacter.age}
+            onChange={(event) => props.onChangeAge(event.target.value)}
+          />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <TextField
+            style={{ width: "100%" }}
+            label="Description"
+            type="text"
+            value={props.currentCharacter.description}
+            onChange={(event) => props.onChangeDescription(event.target.value)}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <TextField
+            style={{ width: "100%" }}
+            label="Notes"
+            type="text"
+            value={props.currentCharacter.notes}
+            onChange={(event) => props.onChangeNotes(event.target.value)}
+          />
+        </Grid>
       </Grid>
-      <Grid item xs={12} md={6}>
-        <TextField
-          label="Race"
-          type="text"
-          value={props.currentCharacter.race}
-          disabled={true}
-        />
-      </Grid>
-      <Grid item xs={12}>
-        <TextField
-          label="Age"
-          type="text"
-          value={props.currentCharacter.age}
-          onChange={(event) => props.onChangeAge(event.target.value)}
-        />
-      </Grid>
-      <Grid item xs={12}>
-        <TextField
-          style={{ width: "100%" }}
-          label="Description"
-          type="text"
-          value={props.currentCharacter.description}
-          onChange={(event) => props.onChangeDescription(event.target.value)}
-        />
-      </Grid>
-      <Grid item xs={12}>
-        <TextField
-          style={{ width: "100%" }}
-          label="Notes"
-          type="text"
-          value={props.currentCharacter.notes}
-          onChange={(event) => props.onChangeNotes(event.target.value)}
-        />
-      </Grid>
-      <Grid item xs={12}>
+      <Grid
+        item
+        xs={12}
+        style={{ background: "#ffffff", marginBottom: "20px", padding: "20px" }}
+      >
         <Item>
           <h2 className={"boxHeader"}>Condition Monitor</h2>
           <ConditionMonitor
@@ -524,7 +540,8 @@ function SheetDisplay(props) {
           />
         </Item>
       </Grid>
-      <Grid item xs={12} md={4}>
+
+      <Grid item xs={12} md={4} style={{ width: "100%" }}>
         <Item>
           <h2 className={"boxHeader"}>Attributes</h2>
           <Grid container>
@@ -535,10 +552,10 @@ function SheetDisplay(props) {
                     (attribute) => (
                       <tr key={attribute}>
                         <td>{attribute}</td>
-                        <td style={{ width: "25px" }}>
+                        <td style={{ width: "25px", paddingBottom: "8px" }}>
                           {props.currentCharacter.attributes[attribute]}
                         </td>
-                        <td style={{ width: "25px" }}>
+                        <td style={{ width: "25px", paddingBottom: "8px" }}>
                           {parseInt(
                             props.currentCharacter.attributes[attribute]
                           ) +
@@ -627,10 +644,11 @@ function SheetDisplay(props) {
           </Grid>
         </Item>
       </Grid>
-      <Grid item xs={6} md={3}>
-        <Item style={{ minHeight: "341px" }}>
+      <Grid item xs={12} md={8}>
+        <Item style={{}}>
           <h2 className={"boxHeader"}>Dice Pools</h2>
           <TextField
+            style={{ width: "100%" }}
             className="pool_display"
             id="rating-input"
             label="Combat"
