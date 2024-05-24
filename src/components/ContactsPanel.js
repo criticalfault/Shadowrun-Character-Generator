@@ -77,6 +77,7 @@ function ContactsPanel(props) {
               value={contact.Name}
               onChange={(event) => handleContactChange(event, index, "Name")}
               sx={{ marginRight: "20px" }}
+              style={{ width: "100%" }}
             />
             <FormControl sx={{ marginRight: "20px" }}>
               <InputLabel>Level</InputLabel>

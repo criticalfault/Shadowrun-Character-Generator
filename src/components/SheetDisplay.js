@@ -546,16 +546,19 @@ function SheetDisplay(props) {
           <h2 className={"boxHeader"}>Attributes</h2>
           <Grid container>
             <Grid item xs={8}>
-              <table className="">
+              <table className=" ">
                 <tbody>
                   {Object.keys(props.currentCharacter.attributes).map(
                     (attribute) => (
-                      <tr key={attribute}>
+                      <tr
+                        key={attribute}
+                        style={{ border: "1px solid #696969" }}
+                      >
                         <td>{attribute}</td>
-                        <td style={{ width: "25px", paddingBottom: "8px" }}>
+                        <td style={{ width: "25px", paddingBottom: "12px" }}>
                           {props.currentCharacter.attributes[attribute]}
                         </td>
-                        <td style={{ width: "25px", paddingBottom: "8px" }}>
+                        <td style={{ width: "25px", paddingBottom: "12px" }}>
                           {parseInt(
                             props.currentCharacter.attributes[attribute]
                           ) +
@@ -695,14 +698,14 @@ function SheetDisplay(props) {
           {renderKarmaPool()}
         </Item>
       </Grid>
-      <Grid item xs={12} md={6}>
+      {/* <Grid item xs={12} md={6}>
         <Item style={{ minHeight: "341px" }}>
           <h2 className={"boxHeader"}>Skills</h2>
           {renderSkillsPanel()}
         </Item>
-      </Grid>
+      </Grid> */}
 
-      <Grid item md={6} xs={12}>
+      <Grid item md={12} xs={12}>
         <Item>
           <h2 className={"boxHeader"}>Cyberware</h2>
           <TableContainer component={Paper}>
@@ -733,7 +736,7 @@ function SheetDisplay(props) {
           </TableContainer>
         </Item>
       </Grid>
-      <Grid item md={6} xs={12}>
+      <Grid item md={12} xs={12}>
         <Item>
           <h2 className={"boxHeader"}>Bioware</h2>
           <TableContainer component={Paper}>
