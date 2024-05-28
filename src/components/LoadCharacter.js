@@ -24,6 +24,7 @@ export default function LoadCharacter(props) {
   const handleOpenLocalStorage = () => setOpenLocalStorage(true);
   const handleCloseLocalStorage = () => setOpenLocalStorage(false);
 
+
   const fixOlderCharactersMissingProperties = (characterObject) => {
     let characterObjectFixed = { ...props.BaseCharacter, ...characterObject };
     return characterObjectFixed;
@@ -40,6 +41,32 @@ export default function LoadCharacter(props) {
     link.href = url;
     link.download = "SRCharacter.json";
     link.click();
+
+    const LoadCharacter = (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          try{
+            const fileData = e.target.result;
+            const characterToLoad = fixOlderCharactersMissingProperties(JSON.parse(fileData));
+            props.loadCharacter(characterToLoad);
+            console.log(characterToLoad.edition)
+            props.ChangeEdition(characterToLoad.edition);
+            setOpen(false);
+          }catch(err){
+            console.log(err);
+            console.log("Something went wrong trying to load a character");
+            alert("Unable to load character. Please ensure that the character is a json file you made with this site. PDFs cannot be read unfortunately.");
+          }
+        }    
+        reader.readAsText(file); 
+        try{
+          fathom.trackEvent('Load Character'); // eslint-disable-line
+        }catch(err){
+            console.log(err);
+            console.log("Fathom wasn't found. Prolly a blocker");
+        }
+    }
 
     // Clean up by revoking the object URL
     URL.revokeObjectURL(url);
