@@ -750,44 +750,6 @@ function SR3SkillsPanel({
         </Grid>
       </Grid>
     </Container>
-
-          <Button onClick={AddLanguageRating}  variant="contained" color="primary" className='btn'>+</Button> &nbsp;&nbsp;
-          <Button onClick={RemoveLanguageRating} variant="contained" color="primary" className='btn'>-</Button>
-        </>
-      <Button variant="contained" color="primary" style={{'marginLeft':'20px'}} onClick={handleLanguageAddSkill}>
-        Add Skill
-      </Button>
-      <hr></hr>
-      <h3>Skills</h3>
-      <List style={{maxWidth:'500px'}}>
-        {characterSkills.map((skill, index) => {
-            if(!skill.hasOwnProperty('cost')){
-              let costDiff = (skill.rating-currentCharacter.attributes['Intelligence'])
-              let cost = skill.rating;
-              if(costDiff > 0) {
-                cost += costDiff;
-              }
-              skill.cost = cost;
-            }
-            return (
-              <ListItem key={index}>
-                <ListItemText
-                  primary={skill.specialization ? `${skill.name} (${skill.rating-1}) ->  ${skill.specialization} (${skill.rating + 1}) Cost:[${skill.cost}]`:`${skill.name} (${skill.rating}) Cost:[${skill.cost}]`}
-                />
-                <Button color="primary" onClick={() => handleEditSkill(index, skill.type)}>
-                  Edit
-                </Button>
-                <Button color="secondary" onClick={() => handleRemoveSkill(index, skill.type)}>
-                  Remove
-                </Button>
-              </ListItem>
-            )
-          }
-        )
-        }
-      </List>
-      
-    </div>
   );
 }
 
