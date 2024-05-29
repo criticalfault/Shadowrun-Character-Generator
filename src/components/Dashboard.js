@@ -595,7 +595,7 @@ export default function BasicTabs() {
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>
-          <TableAttribute
+          {/* <TableAttribute
             ChangeAttributes={handleAttributesChange}
             currentCharacter={Character}
             Edition={Edition}
@@ -605,7 +605,7 @@ export default function BasicTabs() {
               setCharacter({ ...Character, karmaSpent: karmaSpentToSave });
             }}
             Log={Character.log}
-          />
+          /> */}
           <AttributesPanel
             ChangeAttributes={handleAttributesChange}
             currentCharacter={Character}

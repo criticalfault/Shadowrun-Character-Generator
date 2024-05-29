@@ -260,94 +260,94 @@ export default function PriorityPanel(props) {
 
   const TableRender = function (edition) {
     return (
-      //   <table className="">
-      //     <thead>
-      //       <tr>
-      //         <th style={{ width: "100px" }}>Priority</th>
-      //         <th>Race</th>
-      //         <th style={{ width: "310px" }}>Magic</th>
-      //         <th>Attributes</th>
-      //         <th>Skills</th>
-      //         <th>Resources</th>
-      //       </tr>
-      //     </thead>
-      //     <tbody>
-      //       {Priorities.map((letter) => {
-      //         return (
-      //           <tr key={letter}>
-      //             <td>{letter}</td>
-      //             <td
-      //               className={
-      //                 props.CharacterPriorities.Race === letter
-      //                   ? "highlighted"
-      //                   : ""
-      //               }
-      //             >
-      //               <label>
-      //                 {prorityChart[props.Edition]["race"][letter].join(", ")}
-      //               </label>
-      //             </td>
-      //             <td
-      //               className={
-      //                 props.CharacterPriorities.Magic === letter
-      //                   ? "highlighted"
-      //                   : ""
-      //               }
-      //             >
-      //               <label>
-      //                 {prorityChart[props.Edition]["magic"][letter].join(", ")}
-      //               </label>
-      //             </td>
-      //             <td
-      //               className={
-      //                 props.CharacterPriorities.Attributes === letter
-      //                   ? "highlighted"
-      //                   : ""
-      //               }
-      //             >
-      //               <label>
-      //                 {prorityChart[props.Edition]["attributes"][letter]}
-      //               </label>
-      //             </td>
-      //             <td
-      //               className={
-      //                 props.CharacterPriorities.Skills === letter
-      //                   ? "highlighted"
-      //                   : ""
-      //               }
-      //             >
-      //               <label>{prorityChart[props.Edition]["skills"][letter]}</label>
-      //             </td>
-      //             <td
-      //               className={
-      //                 props.CharacterPriorities.Resources === letter
-      //                   ? "highlighted"
-      //                   : ""
-      //               }
-      //             >
-      //               <label>
-      //                 {new Intl.NumberFormat("ja-JP", {
-      //                   style: "currency",
-      //                   currency: "JPY",
-      //                 }).format(
-      //                   prorityChart[props.Edition]["resources"][letter]["nuyen"]
-      //                 )}{" "}
-      //                 {props.Edition === "SR2"
-      //                   ? " / " +
-      //                     prorityChart[props.Edition]["resources"][letter][
-      //                       "spell_points"
-      //                     ]
-      //                   : ""}
-      //               </label>
-      //             </td>
-      //           </tr>
-      //         );
-      //       })}
-      //     </tbody>
-      //   </table>
-      <div>
-        <TableProperties />
-      </div>
+        <table className="">
+          <thead>
+            <tr>
+              <th style={{ width: "100px" }}>Priority</th>
+              <th>Race</th>
+              <th style={{ width: "310px" }}>Magic</th>
+              <th>Attributes</th>
+              <th>Skills</th>
+              <th>Resources</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Priorities.map((letter) => {
+              return (
+                <tr key={letter}>
+                  <td>{letter}</td>
+                  <td
+                    className={
+                      props.CharacterPriorities.Race === letter
+                        ? "highlighted"
+                        : ""
+                    }
+                  >
+                    <label>
+                      {prorityChart[props.Edition]["race"][letter].join(", ")}
+                    </label>
+                  </td>
+                  <td
+                    className={
+                      props.CharacterPriorities.Magic === letter
+                        ? "highlighted"
+                        : ""
+                    }
+                  >
+                    <label>
+                      {prorityChart[props.Edition]["magic"][letter].join(", ")}
+                    </label>
+                  </td>
+                  <td
+                    className={
+                      props.CharacterPriorities.Attributes === letter
+                        ? "highlighted"
+                        : ""
+                    }
+                  >
+                    <label>
+                      {prorityChart[props.Edition]["attributes"][letter]}
+                    </label>
+                  </td>
+                  <td
+                    className={
+                      props.CharacterPriorities.Skills === letter
+                        ? "highlighted"
+                        : ""
+                    }
+                  >
+                    <label>{prorityChart[props.Edition]["skills"][letter]}</label>
+                  </td>
+                  <td
+                    className={
+                      props.CharacterPriorities.Resources === letter
+                        ? "highlighted"
+                        : ""
+                    }
+                  >
+                    <label>
+                      {new Intl.NumberFormat("ja-JP", {
+                        style: "currency",
+                        currency: "JPY",
+                      }).format(
+                        prorityChart[props.Edition]["resources"][letter]["nuyen"]
+                      )}{" "}
+                      {props.Edition === "SR2"
+                        ? " / " +
+                          prorityChart[props.Edition]["resources"][letter][
+                            "spell_points"
+                          ]
+                        : ""}
+                    </label>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      // <div>
+      //   <TableProperties />
+      // </div>
     );
   };
 
