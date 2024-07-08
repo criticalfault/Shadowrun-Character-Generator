@@ -19,8 +19,8 @@
         "requiresConcentration":false,
         "Concentrations":[]
     }, 
-    "Atlethics":{
-        "name":"Atlethics", 
+    "Athletics":{
+        "name":"Athletics", 
         "requiresConcentration":false,
         "Concentrations":[
             {"name":"Climbing","Specializations":[]},
