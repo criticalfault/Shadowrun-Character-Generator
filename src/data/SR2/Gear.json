@@ -26768,7 +26768,7 @@
       ],
       "entries": [
         {
-          "Name": "General Skill Chip",
+          "Name": "General Skill Chip Rating 1",
           "Type": "Active",
           "Rating": "1",
           "Memory": "10",
@@ -26777,7 +26777,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "General Skill Chip",
+          "Name": "General Skill Chip Rating 2",
           "Type": "Active",
           "Rating": "2",
           "Memory": "20",
@@ -26786,7 +26786,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "General Skill Chip",
+          "Name": "General Skill Chip Rating 3",
           "Type": "Active",
           "Rating": "3",
           "Memory": "30",
@@ -26795,7 +26795,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "General Skill Chip",
+          "Name": "General Skill Chip Rating 4",
           "Type": "Active",
           "Rating": "4",
           "Memory": "200",
@@ -26804,7 +26804,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "General Skill Chip",
+          "Name": "General Skill Chip Rating 5",
           "Type": "Active",
           "Rating": "5",
           "Memory": "250",
@@ -26813,7 +26813,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "General Skill Chip",
+          "Name": "General Skill Chip  Rating 6",
           "Type": "Active",
           "Rating": "6",
           "Memory": "300",
@@ -26822,7 +26822,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "General Skill Chip",
+          "Name": "General Skill Chip Rating 7",
           "Type": "Active",
           "Rating": "7",
           "Memory": "700",
@@ -26831,7 +26831,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "General Skill Chip",
+          "Name": "General Skill Chip Rating 8",
           "Type": "Active",
           "Rating": "8",
           "Memory": "800",
@@ -26840,7 +26840,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "General Skill Chip",
+          "Name": "General Skill Chip Rating 9",
           "Type": "Active",
           "Rating": "9",
           "Memory": "900",
@@ -26849,7 +26849,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "General Skill Chip",
+          "Name": "General Skill Chip Rating 10",
           "Type": "Active",
           "Rating": "10",
           "Memory": "2000",
@@ -26858,7 +26858,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Concentration Chip",
+          "Name": "Concentration Chip Rating 1",
           "Type": "Active",
           "Rating": "1",
           "Memory": "6",
@@ -26867,7 +26867,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Concentration Chip",
+          "Name": "Concentration Chip Rating 2",
           "Type": "Active",
           "Rating": "2",
           "Memory": "12",
@@ -26876,7 +26876,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Concentration Chip",
+          "Name": "Concentration Chip Rating 3",
           "Type": "Active",
           "Rating": "3",
           "Memory": "18",
@@ -26885,7 +26885,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Concentration Chip",
+          "Name": "Concentration Chip Rating 4",
           "Type": "Active",
           "Rating": "4",
           "Memory": "120",
@@ -26894,7 +26894,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Concentration Chip",
+          "Name": "Concentration Chip Rating 5",
           "Type": "Active",
           "Rating": "5",
           "Memory": "150",
@@ -26903,7 +26903,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Concentration Chip",
+          "Name": "Concentration Chip Rating 6",
           "Type": "Active",
           "Rating": "6",
           "Memory": "180",
@@ -26912,7 +26912,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Concentration Chip",
+          "Name": "Concentration Chip Rating 7",
           "Type": "Active",
           "Rating": "7",
           "Memory": "420",
@@ -26921,7 +26921,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Concentration Chip",
+          "Name": "Concentration Chip Rating 8",
           "Type": "Active",
           "Rating": "8",
           "Memory": "480",
@@ -26930,7 +26930,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Concentration Chip",
+          "Name": "Concentration Chip Rating 9",
           "Type": "Active",
           "Rating": "9",
           "Memory": "540",
@@ -26939,7 +26939,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Concentration Chip",
+          "Name": "Concentration Chip Rating 10",
           "Type": "Active",
           "Rating": "10",
           "Memory": "1200",
@@ -26948,7 +26948,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Specialization Chip",
+          "Name": "Specialization Chip Rating 1",
           "Type": "Active",
           "Rating": "1",
           "Memory": "4",
@@ -26957,7 +26957,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Specialization Chip",
+          "Name": "Specialization Chip Rating 2",
           "Type": "Active",
           "Rating": "2",
           "Memory": "8",
@@ -26966,7 +26966,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Specialization Chip",
+          "Name": "Specialization Chip Rating 3",
           "Type": "Active",
           "Rating": "3",
           "Memory": "12",
@@ -26975,7 +26975,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Specialization Chip",
+          "Name": "Specialization Chip Rating 4",
           "Type": "Active",
           "Rating": "4",
           "Memory": "80",
@@ -26984,7 +26984,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Specialization Chip",
+          "Name": "Specialization Chip Rating 5",
           "Type": "Active",
           "Rating": "5",
           "Memory": "100",
@@ -26993,7 +26993,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Specialization Chip",
+          "Name": "Specialization Chip Rating 6",
           "Type": "Active",
           "Rating": "6",
           "Memory": "120",
@@ -27002,7 +27002,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Specialization Chip",
+          "Name": "Specialization Chip Rating 7",
           "Type": "Active",
           "Rating": "7",
           "Memory": "280",
@@ -27011,7 +27011,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Specialization Chip",
+          "Name": "Specialization Chip Rating 8",
           "Type": "Active",
           "Rating": "8",
           "Memory": "320",
@@ -27020,7 +27020,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Specialization Chip",
+          "Name": "Specialization Chip Rating 9",
           "Type": "Active",
           "Rating": "9",
           "Memory": "360",
@@ -27029,7 +27029,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Specialization Chip",
+          "Name": "Specialization Chip Rating 10",
           "Type": "Active",
           "Rating": "10",
           "Memory": "800",
@@ -27038,7 +27038,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Ambidexterity Chip 1",
+          "Name": "Ambidexterity Chip Rating 1",
           "Type": "Active",
           "Rating": "1",
           "Memory": "10",
@@ -27047,7 +27047,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Ambidexterity Chip 2",
+          "Name": "Ambidexterity Chip Rating 2",
           "Type": "Active",
           "Rating": "2",
           "Memory": "20",
@@ -27056,7 +27056,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Ambidexterity Chip 3",
+          "Name": "Ambidexterity Chip Rating 3",
           "Type": "Active",
           "Rating": "3",
           "Memory": "30",
@@ -27065,7 +27065,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Ambidexterity Chip 4",
+          "Name": "Ambidexterity Chip Rating 4",
           "Type": "Active",
           "Rating": "4",
           "Memory": "200",
@@ -27074,7 +27074,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "Ambidexterity Chip 5",
+          "Name": "Ambidexterity Chip Rating 5",
           "Type": "Active",
           "Rating": "5",
           "Memory": "250",
@@ -27083,7 +27083,7 @@
           "Street Index": "1.25"
         },
         {
-          "Name": "DeathTrance Chip",
+          "Name": "DeathTrance Chip Rating 1",
           "Type": "Active",
           "Rating": "1",
           "Memory": "50",
@@ -27092,7 +27092,7 @@
           "Street Index": ".9"
         },
         {
-          "Name": "Mister Lover Chip 1",
+          "Name": "Mister Lover Chip Rating 1",
           "Type": "Active",
           "Rating": "1",
           "Memory": "5",
@@ -27101,7 +27101,7 @@
           "Street Index": ".9"
         },
         {
-          "Name": "Mister Lover Chip 2",
+          "Name": "Mister Lover Chip Rating 2",
           "Type": "Active",
           "Rating": "2",
           "Memory": "10",
@@ -27110,7 +27110,7 @@
           "Street Index": ".9"
         },
         {
-          "Name": "Mister Lover Chip 3",
+          "Name": "Mister Lover Chip Rating 3",
           "Type": "Active",
           "Rating": "3",
           "Memory": "15",
@@ -27137,7 +27137,7 @@
           "Street Index": "1"
         },
         {
-          "Name": "General Skill Chip",
+          "Name": "General Skill Chip Rating 1 Memory 10",
           "Type": "Know",
           "Rating": "1",
           "Memory": "10",
