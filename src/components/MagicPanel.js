@@ -114,28 +114,33 @@ function MagicPanel(props) {
       totemList: "none",
     },
     Shamanist: {
+      name:"Shamanist",
       description:
         "Must be a shaman. Can only cast spells and summon spirits for which they receive a totem advantage.",
       conjures: "",
       totemList: "ANIMAL TOTEMS",
     },
     Conjurer: {
+      name:"Conjurer",
       description: "Cannot use Sorcery only Conjuring skills.",
       conjures: "Spirits or Elementals",
       totemList: "none",
     },
     Elementalist: {
+      name:"Elementalist",
       description:
         "Must be a mage. Can only cast spells and summon spirits related in one hemetic element (fire, water, air, or earth).  Must subtract one die from thier skill for spells or spirits of their opposing element.",
       conjures: "Elementals",
       totemList: "none",
     },
     Sorcerer: {
+      name:"Sorcerer",
       description: "Can only use the Sorcery skill but cannot use Conjuring.",
       conjures: "none",
       totemList: "none",
     },
     WuFa: {
+      name:"WuFa",
       description:
         "These aspected magicians must follow the path of Wuxing. Can only cast spells and summon spirits related to one wuxing element (wood, fire, earth, metal, or water). Conjurers can only summon spirits and sorcerers may only cast spells.",
       conjures: "Elementals",
@@ -1774,6 +1779,8 @@ function MagicPanel(props) {
   };
 
   const renderTraditionList = () => {
+    console.log("Render Tradition List fired");
+    console.log("Magical Choice: "+props.magicalChoice);
     var list = [];
     switch (props.magicalChoice) {
       case "Full Magician":
@@ -1792,10 +1799,11 @@ function MagicPanel(props) {
       case "Metahuman Sorcerer":
       case "Human Sorcerer":
       case "Aspected":
-        list = AspectedMageTraditions;
+        list = AspectedTraditions;
         break;
 
       default:
+        
         break;
     }
     TraditionList = list;
