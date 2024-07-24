@@ -63,7 +63,7 @@ function SR3SkillsPanel({
   };
 
   //Active Skills
-  const [selectedSpecialization, setSelectedSpecialization] = useState("None");
+  const [selectedSpecialization, setSelectedSpecialization] = useState("");
   const [selectedSkills, setSelectedSkills] = useState(
     characterSkills.filter((skill) => skill.type === "Active")
   );
@@ -78,7 +78,7 @@ function SR3SkillsPanel({
   const [newSkillAttribute, setNewSkillAttribute] = useState("INT");
 
   //Knowledge Skills
-  const [selectedKnowledgeSpecialization, setKnowledgeSelectedSpecialization] = useState("None");
+  const [selectedKnowledgeSpecialization, setKnowledgeSelectedSpecialization] = useState("");
   const [selectedKnowledgeSkills, setKnowledgeSelectedSkills] = useState(
     characterSkills.filter((skill) => skill.type === "Knowledge")
   );
@@ -93,7 +93,7 @@ function SR3SkillsPanel({
   const [newKnowledgeSkill, setKnowledgeNewSkill] = useState("ST:Arms Dealers");
 
   //Language Skills
-  const [selectedLanguageSpecialization, setLanguageSelectedSpecialization] = useState("None");
+  const [selectedLanguageSpecialization, setLanguageSelectedSpecialization] = useState("");
   const [selectedLanguageSkills, setLanguageSelectedSkills] = useState(
     characterSkills.filter((skill) => skill.type === "Language")
   );
