@@ -36,15 +36,56 @@ function MagicPanel(props) {
     "Sorcerer",
     "WuFa",
   ];
-  const AdeptPaths = [
-    "Athelete's Way",
-    "Artist's Way",
-    "Warriors's Way",
-    "Invisible Way",
-    "Spirit Way",
-    "Totem Way",
-    "Magician's Way",
-  ];
+  const AdeptPaths = {
+    None: {
+      name: "None",
+      description: "Please select a Tradition",
+      conjures: "none",
+      totemList: "none",
+    },
+    "Athelete's Way": {
+      name: "Athelete's Way",
+      description: "Some adepts channel their abilities into excellence in athletics. Devoted to their chosen sport, they are driven to excel just as were champion athletes of the past, except their dedication is backed by the power of their magic.",
+      conjures: "none",
+      totemList: "none",
+    },
+    "Artist's Way": {
+      name: "Artist's Way",
+      description: "These adepts have the intense focus their art gives them. They never lack for a means to center themselves on their way because the performance of their art provides them with a Centering Skill to use as an initiate.",
+      conjures: "none",
+      totemList: "none",
+    },
+    "Warriors's Way": {
+      name: "Warriors's Way",
+      description: "The warrior's way is the image that comes to mind when most people think of adepts. Warrior adepts range from masters of the martial arts to swordsmen, from Zen archers to those who have an uncanny facility for modern firearms.",
+      conjures: "none",
+      totemList: "none",
+    },
+    "Invisible Way": {
+      name: "Invisible Way",
+      description: "Adepts of the invisible way are masters of stealth. Some can walk through a crowd without being seen or stalk across snow or sand and leave no trace of their passing. They often make their way into otherwise secure places; most are able climbers and athletes as well as being skilled in deception and sleight of hand.",
+      conjures: "none",
+      totemList: "none",
+    },
+    "Spirit Way": {
+      name: "Spirit Way",
+      description: "Followers of the spirit way often become specialists in dealing with the inhabitants of astral space. They find work as ghost hunters, aura readers and magical bodyguards able to detect astral threats to their clients.",
+      conjures: "none",
+      totemList: "none",
+    },
+    "Totem Way": {
+      name: "Totem Way",
+      description: "Followers of the totem way may choose an astral quest as an ordeal for initiation (see Initiation MiTs, p. 57). Though an adept does not possess the ability to astrally project or travel to the metaplanes, the totem opens the way for the adept for the duration of the ordeal and guides the adept safely back when it is finished. The adept cannot travel to the metaplanes except to perform the astral quest ordeal.",
+      conjures: "none",
+      totemList: "none",
+    },
+    "Magician's Way": {
+      name: "Magician's Way",
+      description: "THIS IS STILL PENDING",
+      conjures: "none",
+      totemList: "none",
+    },
+};
   const [openModal, setOpenModal] = React.useState(false);
   const [modalExtra, setModalExtra] = React.useState("");
   const [modalExtraIndex, setModalExtraIndex] = React.useState(0);
