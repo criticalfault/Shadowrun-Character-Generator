@@ -45,7 +45,10 @@ export default function IdentityPanel(props) {
             <p>It is in <strong>Alpha</strong> at the moment.<br></br> So be prepared if it decideds to randomly die. There is a bunch of fixes still pending as well as a lot of known missing parts which will be added once this thing is partially stable.
             I'll list the known issues below, but feel free to poke and prod. See what you can get it to do. I'm going to continue to work on this as i get reports of breaks and the likes.</p>
             <p>Thanks for your consideration and time in testing! -D (dean 'at' nullsheen.com)</p>
-            <h5>Known Issues (As of 05-5-24 - 2:12pm CDT)</h5>
+            <p>
+                <span>Love this utility? We have more! Checkout <a href="https://www.nullsheen.com" target="_blank">NullSheen.com</a></span>
+            </p>
+            <h5>Known Issues (As of 07-24-24 - 8:12am CDT)</h5>
             <ul>
                 <li>Characters will need to be resaved with their proper edition. I dont know why i hadn't saved this, but i am doing that now.</li>
                 <li>Still need to add "improvements" and tracking Nuyen post finalization.</li>
@@ -55,6 +58,7 @@ export default function IdentityPanel(props) {
         <hr/>
         <h5>Resolved Issues</h5>
         <ul>
+            <li>Fixed some issues with Physical Adept powers/traditions</li>
             <li>Added magical initative bonuses to the sheet display</li>
             <li>Added increasing attributes with Karma... so it begins</li>
             <li>Added Karma and Karma Pool tracking. Its very basic but for now it should be fine to carry us forward until I can spend a lot more time on it.</li>
