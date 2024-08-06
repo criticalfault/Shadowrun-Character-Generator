@@ -347,7 +347,7 @@ const handleCyberOrBioChange = (event) => {
                 <TableRow key={cyberware.Name+index}>
                   <TableCell component="th" scope="row">{cyberware.Name}</TableCell>
                   <TableCell align="right">{cyberware.Grade}</TableCell>
-                  <TableCell align="right">{cyberware.EssCost}</TableCell>
+                  <TableCell align="right">{parseFloat(cyberware.EssCost).toFixed(2)}</TableCell>
                   <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(cyberware.Cost)}</TableCell>
                   <TableCell align="right">{cyberware.BookPage}</TableCell>
                   <TableCell align="right">{cyberware.Notes}</TableCell>
