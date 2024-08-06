@@ -31081,7 +31081,7 @@
         "BookPage": "cb1.32"
       },
       {
-        "Name": "Plastic",
+        "Name": "Plastic Compound IV",
         "Concealability": "6",
         "Rating": "6",
         "Weight": "1",
@@ -31091,7 +31091,7 @@
         "BookPage": "sr3.283"
       },
       {
-        "Name": "Plastic",
+        "Name": "Plastic Compound XII",
         "Concealability": "6",
         "Rating": "12",
         "Weight": "1",
@@ -34745,7 +34745,7 @@
         "BookPage": "sr3.290"
       },
       {
-        "Name": "Binoculars",
+        "Name": "Binoculars - Low Light",
         "Concealability": "5",
         "Mag:": "50x",
         "Weight": "1",
@@ -34755,7 +34755,7 @@
         "BookPage": "sr3.290"
       },
       {
-        "Name": "Binoculars",
+        "Name": "Binoculars - Thermographic",
         "Concealability": "5",
         "Mag:": "50x",
         "Weight": "1",
@@ -34785,7 +34785,7 @@
         "BookPage": "tss.12"
       },
       {
-        "Name": "Flashlight",
+        "Name": "Flashlight - Pocket",
         "Concealability": "12",
         "Mag:": "-",
         "Weight": "-",
@@ -34795,7 +34795,7 @@
         "BookPage": "sr3.290"
       },
       {
-        "Name": "Flashlight",
+        "Name": "Flashlight - Large",
         "Concealability": "7",
         "Mag:": "-",
         "Weight": "2",
@@ -34815,7 +34815,7 @@
         "BookPage": "sr3.290"
       },
       {
-        "Name": "Goggles",
+        "Name": "Goggles - Low Light",
         "Concealability": "6",
         "Mag:": "20x",
         "Weight": "-",
@@ -34825,7 +34825,7 @@
         "BookPage": "sr3.290"
       },
       {
-        "Name": "Goggles",
+        "Name": "Goggles - Thermographic",
         "Concealability": "6",
         "Mag:": "20x",
         "Weight": "-",
@@ -34835,7 +34835,7 @@
         "BookPage": "sr3.290"
       },
       {
-        "Name": "Goggles",
+        "Name": "Goggles - Low Light + Thermographic",
         "Concealability": "6",
         "Mag:": "20x",
         "Weight": "-",
@@ -34865,7 +34865,7 @@
         "BookPage": "sr3.XXX"
       },
       {
-        "Name": "Shades",
+        "Name": "Shades - Low Light",
         "Concealability": "6",
         "Mag:": "20x",
         "Weight": "-",
@@ -34875,7 +34875,7 @@
         "BookPage": "sr3.XXX"
       },
       {
-        "Name": "Shades",
+        "Name": "Shades - Thermographic",
         "Concealability": "6",
         "Mag:": "20x",
         "Weight": "-",
@@ -34885,7 +34885,7 @@
         "BookPage": "sr3.XXX"
       },
       {
-        "Name": "Shades",
+        "Name": "Shades - Low Light + Thermographic",
         "Concealability": "6",
         "Mag:": "20x",
         "Weight": "-",
@@ -38847,7 +38847,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "Music",
+        "Name": "Music - Disk/Chip",
         "Concealability": "12",
         "Weight": "-",
         "Availability": "Always",
@@ -38856,7 +38856,7 @@
         "BookPage": "sr3.285"
       },
       {
-        "Name": "Music",
+        "Name": "Music - Playback Unit",
         "Concealability": "9",
         "Weight": ".5",
         "Availability": "Always",
@@ -38865,7 +38865,7 @@
         "BookPage": "sr3.285"
       },
       {
-        "Name": "Music",
+        "Name": "Music - Quad Speakers",
         "Concealability": "-",
         "Weight": "5",
         "Availability": "Always",
@@ -40007,7 +40007,7 @@
         "BookPage": "sr3.287"
       },
       {
-        "Name": "Data",
+        "Name": "Data - Headset",
         "Concealability": "4",
         "Weight": ".5",
         "Availability": "Always",
@@ -40016,7 +40016,7 @@
         "BookPage": "sr3.287"
       },
       {
-        "Name": "Data",
+        "Name": "Data - Heads-Up Diplay",
         "Concealability": "-",
         "Weight": ".5",
         "Availability": "6/7days",
@@ -57939,7 +57939,7 @@
         "BookPage": "mm.123"
       },
       {
-        "Name": "Witch",
+        "Name": "Witchs Moss",
         "Addiction": "-",
         "Tolerance": "-",
         "Edge": "-",
@@ -57949,7 +57949,7 @@
         "BookPage": "mm.123"
       },
       {
-        "Name": "Wudu",
+        "Name": "Wudu Aku",
         "Addiction": "-",
         "Tolerance": "-",
         "Edge": "-",
