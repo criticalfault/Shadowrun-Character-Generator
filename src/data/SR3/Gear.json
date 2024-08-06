@@ -59813,7 +59813,7 @@
         "Rating": "1",
         "Weight": "-",
         "Availability": "1/24hrs",
-        "Cost": "1000?",
+        "Cost": "1000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59823,7 +59823,7 @@
         "Rating": "2",
         "Weight": "-",
         "Availability": "2/24hrs",
-        "Cost": "4000?",
+        "Cost": "4000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59833,7 +59833,7 @@
         "Rating": "3",
         "Weight": "-",
         "Availability": "3/24hrs",
-        "Cost": "9000?",
+        "Cost": "9000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59843,7 +59843,7 @@
         "Rating": "4",
         "Weight": "-",
         "Availability": "4/24hrs",
-        "Cost": "16000?",
+        "Cost": "16000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59853,7 +59853,7 @@
         "Rating": "5",
         "Weight": "-",
         "Availability": "5/72hrs",
-        "Cost": "25000?",
+        "Cost": "25000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59863,7 +59863,7 @@
         "Rating": "6",
         "Weight": "-",
         "Availability": "6/72hrs",
-        "Cost": "30000?",
+        "Cost": "30000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59873,7 +59873,7 @@
         "Rating": "7",
         "Weight": "-",
         "Availability": "7/72hrs",
-        "Cost": "35000?",
+        "Cost": "35000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59883,7 +59883,7 @@
         "Rating": "8",
         "Weight": "-",
         "Availability": "8/72hrs",
-        "Cost": "40000?",
+        "Cost": "40000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59893,7 +59893,7 @@
         "Rating": "9",
         "Weight": "-",
         "Availability": "9/14days",
-        "Cost": "90000?",
+        "Cost": "90000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59903,7 +59903,7 @@
         "Rating": "10",
         "Weight": "-",
         "Availability": "10/14days",
-        "Cost": "100000?",
+        "Cost": "100000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59913,7 +59913,7 @@
         "Rating": "11",
         "Weight": "-",
         "Availability": "11/14days",
-        "Cost": "110000?",
+        "Cost": "110000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59923,7 +59923,7 @@
         "Rating": "12",
         "Weight": "-",
         "Availability": "12/14days",
-        "Cost": "120000?",
+        "Cost": "120000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59933,7 +59933,7 @@
         "Rating": "13",
         "Weight": "-",
         "Availability": "13/30days",
-        "Cost": "650000?",
+        "Cost": "650000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59943,7 +59943,7 @@
         "Rating": "1",
         "Weight": "-",
         "Availability": "1/24hrs",
-        "Cost": "1000?",
+        "Cost": "1000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59953,7 +59953,7 @@
         "Rating": "2",
         "Weight": "-",
         "Availability": "2/24hrs",
-        "Cost": "4000?",
+        "Cost": "4000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59963,7 +59963,7 @@
         "Rating": "3",
         "Weight": "-",
         "Availability": "3/24hrs",
-        "Cost": "9000?",
+        "Cost": "9000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59973,7 +59973,7 @@
         "Rating": "4",
         "Weight": "-",
         "Availability": "4/24hrs",
-        "Cost": "16000?",
+        "Cost": "16000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59983,7 +59983,7 @@
         "Rating": "5",
         "Weight": "-",
         "Availability": "5/72hrs",
-        "Cost": "25000?",
+        "Cost": "25000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -59993,7 +59993,7 @@
         "Rating": "6",
         "Weight": "-",
         "Availability": "6/72hrs",
-        "Cost": "30000?",
+        "Cost": "30000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60003,7 +60003,7 @@
         "Rating": "7",
         "Weight": "-",
         "Availability": "7/72hrs",
-        "Cost": "35000?",
+        "Cost": "35000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60013,7 +60013,7 @@
         "Rating": "8",
         "Weight": "-",
         "Availability": "8/72hrs",
-        "Cost": "40000?",
+        "Cost": "40000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60023,7 +60023,7 @@
         "Rating": "9",
         "Weight": "-",
         "Availability": "9/14days",
-        "Cost": "90000?",
+        "Cost": "90000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60033,7 +60033,7 @@
         "Rating": "10",
         "Weight": "-",
         "Availability": "10/14days",
-        "Cost": "100000?",
+        "Cost": "100000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60043,7 +60043,7 @@
         "Rating": "11",
         "Weight": "-",
         "Availability": "11/14days",
-        "Cost": "110000?",
+        "Cost": "110000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60053,7 +60053,7 @@
         "Rating": "12",
         "Weight": "-",
         "Availability": "12/14days",
-        "Cost": "120000?",
+        "Cost": "120000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60063,7 +60063,7 @@
         "Rating": "13",
         "Weight": "-",
         "Availability": "13/30days",
-        "Cost": "650000?",
+        "Cost": "650000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60093,7 +60093,7 @@
         "Rating": "1",
         "Weight": "-",
         "Availability": "1/24hrs",
-        "Cost": "1000?",
+        "Cost": "1000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60103,7 +60103,7 @@
         "Rating": "2",
         "Weight": "-",
         "Availability": "2/24hrs",
-        "Cost": "4000?",
+        "Cost": "4000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60113,7 +60113,7 @@
         "Rating": "3",
         "Weight": "-",
         "Availability": "3/24hrs",
-        "Cost": "9000?",
+        "Cost": "9000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60123,7 +60123,7 @@
         "Rating": "4",
         "Weight": "-",
         "Availability": "4/24hrs",
-        "Cost": "16000?",
+        "Cost": "16000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60133,7 +60133,7 @@
         "Rating": "5",
         "Weight": "-",
         "Availability": "5/72hrs",
-        "Cost": "25000?",
+        "Cost": "25000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60143,7 +60143,7 @@
         "Rating": "6",
         "Weight": "-",
         "Availability": "6/72hrs",
-        "Cost": "30000?",
+        "Cost": "30000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60153,7 +60153,7 @@
         "Rating": "7",
         "Weight": "-",
         "Availability": "7/72hrs",
-        "Cost": "35000?",
+        "Cost": "35000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60163,7 +60163,7 @@
         "Rating": "8",
         "Weight": "-",
         "Availability": "8/72hrs",
-        "Cost": "40000?",
+        "Cost": "40000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60173,7 +60173,7 @@
         "Rating": "9",
         "Weight": "-",
         "Availability": "9/14days",
-        "Cost": "90000?",
+        "Cost": "90000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60183,7 +60183,7 @@
         "Rating": "10",
         "Weight": "-",
         "Availability": "10/14days",
-        "Cost": "100000?",
+        "Cost": "100000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60193,7 +60193,7 @@
         "Rating": "11",
         "Weight": "-",
         "Availability": "11/14days",
-        "Cost": "110000?",
+        "Cost": "110000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60203,7 +60203,7 @@
         "Rating": "12",
         "Weight": "-",
         "Availability": "12/14days",
-        "Cost": "120000?",
+        "Cost": "120000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60213,7 +60213,7 @@
         "Rating": "13",
         "Weight": "-",
         "Availability": "13/30days",
-        "Cost": "650000?",
+        "Cost": "650000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60223,7 +60223,7 @@
         "Rating": "1",
         "Weight": "-",
         "Availability": "1/24hrs",
-        "Cost": "1000?",
+        "Cost": "1000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60233,7 +60233,7 @@
         "Rating": "2",
         "Weight": "-",
         "Availability": "2/24hrs",
-        "Cost": "4000?",
+        "Cost": "4000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60243,7 +60243,7 @@
         "Rating": "3",
         "Weight": "-",
         "Availability": "3/24hrs",
-        "Cost": "9000?",
+        "Cost": "9000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60253,7 +60253,7 @@
         "Rating": "4",
         "Weight": "-",
         "Availability": "4/24hrs",
-        "Cost": "16000?",
+        "Cost": "16000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60263,7 +60263,7 @@
         "Rating": "5",
         "Weight": "-",
         "Availability": "5/72hrs",
-        "Cost": "25000?",
+        "Cost": "25000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60273,7 +60273,7 @@
         "Rating": "6",
         "Weight": "-",
         "Availability": "6/72hrs",
-        "Cost": "30000?",
+        "Cost": "30000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60283,7 +60283,7 @@
         "Rating": "7",
         "Weight": "-",
         "Availability": "7/72hrs",
-        "Cost": "35000?",
+        "Cost": "35000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60293,7 +60293,7 @@
         "Rating": "8",
         "Weight": "-",
         "Availability": "8/72hrs",
-        "Cost": "40000?",
+        "Cost": "40000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60303,7 +60303,7 @@
         "Rating": "9",
         "Weight": "-",
         "Availability": "9/14days",
-        "Cost": "90000?",
+        "Cost": "90000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60313,7 +60313,7 @@
         "Rating": "10",
         "Weight": "-",
         "Availability": "10/14days",
-        "Cost": "100000?",
+        "Cost": "100000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60323,7 +60323,7 @@
         "Rating": "11",
         "Weight": "-",
         "Availability": "11/14days",
-        "Cost": "110000?",
+        "Cost": "110000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60333,7 +60333,7 @@
         "Rating": "12",
         "Weight": "-",
         "Availability": "12/14days",
-        "Cost": "120000?",
+        "Cost": "120000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60343,7 +60343,7 @@
         "Rating": "13",
         "Weight": "-",
         "Availability": "13/30days",
-        "Cost": "650000?",
+        "Cost": "650000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60353,7 +60353,7 @@
         "Rating": "1",
         "Weight": "-",
         "Availability": "1/24hrs",
-        "Cost": "1000?",
+        "Cost": "1000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60363,7 +60363,7 @@
         "Rating": "2",
         "Weight": "-",
         "Availability": "2/24hrs",
-        "Cost": "4000?",
+        "Cost": "4000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60373,7 +60373,7 @@
         "Rating": "3",
         "Weight": "-",
         "Availability": "3/24hrs",
-        "Cost": "9000?",
+        "Cost": "9000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60383,7 +60383,7 @@
         "Rating": "4",
         "Weight": "-",
         "Availability": "4/24hrs",
-        "Cost": "16000?",
+        "Cost": "16000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60393,7 +60393,7 @@
         "Rating": "5",
         "Weight": "-",
         "Availability": "5/72hrs",
-        "Cost": "25000?",
+        "Cost": "25000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60403,7 +60403,7 @@
         "Rating": "6",
         "Weight": "-",
         "Availability": "6/72hrs",
-        "Cost": "30000?",
+        "Cost": "30000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60413,7 +60413,7 @@
         "Rating": "7",
         "Weight": "-",
         "Availability": "7/72hrs",
-        "Cost": "35000?",
+        "Cost": "35000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60423,7 +60423,7 @@
         "Rating": "8",
         "Weight": "-",
         "Availability": "8/72hrs",
-        "Cost": "40000?",
+        "Cost": "40000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60433,7 +60433,7 @@
         "Rating": "9",
         "Weight": "-",
         "Availability": "9/14days",
-        "Cost": "90000?",
+        "Cost": "90000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60443,7 +60443,7 @@
         "Rating": "10",
         "Weight": "-",
         "Availability": "10/14days",
-        "Cost": "100000?",
+        "Cost": "100000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60453,7 +60453,7 @@
         "Rating": "11",
         "Weight": "-",
         "Availability": "11/14days",
-        "Cost": "110000?",
+        "Cost": "110000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60463,7 +60463,7 @@
         "Rating": "12",
         "Weight": "-",
         "Availability": "12/14days",
-        "Cost": "120000?",
+        "Cost": "120000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60473,7 +60473,7 @@
         "Rating": "13",
         "Weight": "-",
         "Availability": "13/30days",
-        "Cost": "650000?",
+        "Cost": "650000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60483,7 +60483,7 @@
         "Rating": "1",
         "Weight": "-",
         "Availability": "1/24hrs",
-        "Cost": "1000?",
+        "Cost": "1000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60493,7 +60493,7 @@
         "Rating": "2",
         "Weight": "-",
         "Availability": "2/24hrs",
-        "Cost": "4000?",
+        "Cost": "4000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60513,7 +60513,7 @@
         "Rating": "4",
         "Weight": "-",
         "Availability": "4/24hrs",
-        "Cost": "16000?",
+        "Cost": "16000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60523,7 +60523,7 @@
         "Rating": "5",
         "Weight": "-",
         "Availability": "5/72hrs",
-        "Cost": "25000?",
+        "Cost": "25000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60533,7 +60533,7 @@
         "Rating": "6",
         "Weight": "-",
         "Availability": "6/72hrs",
-        "Cost": "30000?",
+        "Cost": "30000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60543,7 +60543,7 @@
         "Rating": "7",
         "Weight": "-",
         "Availability": "7/72hrs",
-        "Cost": "35000?",
+        "Cost": "35000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60553,7 +60553,7 @@
         "Rating": "8",
         "Weight": "-",
         "Availability": "8/72hrs",
-        "Cost": "40000?",
+        "Cost": "40000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60563,7 +60563,7 @@
         "Rating": "9",
         "Weight": "-",
         "Availability": "9/14days",
-        "Cost": "90000?",
+        "Cost": "90000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60573,7 +60573,7 @@
         "Rating": "10",
         "Weight": "-",
         "Availability": "10/14days",
-        "Cost": "100000?",
+        "Cost": "100000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60583,7 +60583,7 @@
         "Rating": "11",
         "Weight": "-",
         "Availability": "11/14days",
-        "Cost": "110000?",
+        "Cost": "110000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60593,7 +60593,7 @@
         "Rating": "12",
         "Weight": "-",
         "Availability": "12/14days",
-        "Cost": "120000?",
+        "Cost": "120000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60603,7 +60603,7 @@
         "Rating": "13",
         "Weight": "-",
         "Availability": "13/30days",
-        "Cost": "650000?",
+        "Cost": "650000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60613,7 +60613,7 @@
         "Rating": "1",
         "Weight": "-",
         "Availability": "1/24hrs",
-        "Cost": "1000?",
+        "Cost": "1000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60623,7 +60623,7 @@
         "Rating": "2",
         "Weight": "-",
         "Availability": "2/24hrs",
-        "Cost": "4000?",
+        "Cost": "4000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60633,7 +60633,7 @@
         "Rating": "3",
         "Weight": "-",
         "Availability": "3/24hrs",
-        "Cost": "9000?",
+        "Cost": "9000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60643,7 +60643,7 @@
         "Rating": "4",
         "Weight": "-",
         "Availability": "4/24hrs",
-        "Cost": "16000?",
+        "Cost": "16000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60653,7 +60653,7 @@
         "Rating": "5",
         "Weight": "-",
         "Availability": "5/72hrs",
-        "Cost": "25000?",
+        "Cost": "25000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60663,7 +60663,7 @@
         "Rating": "6",
         "Weight": "-",
         "Availability": "6/72hrs",
-        "Cost": "30000?",
+        "Cost": "30000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60673,7 +60673,7 @@
         "Rating": "7",
         "Weight": "-",
         "Availability": "7/72hrs",
-        "Cost": "35000?",
+        "Cost": "35000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60683,7 +60683,7 @@
         "Rating": "8",
         "Weight": "-",
         "Availability": "8/72hrs",
-        "Cost": "40000?",
+        "Cost": "40000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60693,7 +60693,7 @@
         "Rating": "9",
         "Weight": "-",
         "Availability": "9/14days",
-        "Cost": "90000?",
+        "Cost": "90000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60703,7 +60703,7 @@
         "Rating": "10",
         "Weight": "-",
         "Availability": "10/14days",
-        "Cost": "100000?",
+        "Cost": "100000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60713,7 +60713,7 @@
         "Rating": "11",
         "Weight": "-",
         "Availability": "11/14days",
-        "Cost": "110000?",
+        "Cost": "110000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60723,7 +60723,7 @@
         "Rating": "12",
         "Weight": "-",
         "Availability": "12/14days",
-        "Cost": "120000?",
+        "Cost": "120000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60733,7 +60733,7 @@
         "Rating": "13",
         "Weight": "-",
         "Availability": "13/30days",
-        "Cost": "650000?",
+        "Cost": "650000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60743,7 +60743,7 @@
         "Rating": "1",
         "Weight": "-",
         "Availability": "1/24hrs",
-        "Cost": "1000?",
+        "Cost": "1000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60753,7 +60753,7 @@
         "Rating": "2",
         "Weight": "-",
         "Availability": "2/24hrs",
-        "Cost": "4000?",
+        "Cost": "4000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60763,7 +60763,7 @@
         "Rating": "3",
         "Weight": "-",
         "Availability": "3/24hrs",
-        "Cost": "9000?",
+        "Cost": "9000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60773,7 +60773,7 @@
         "Rating": "4",
         "Weight": "-",
         "Availability": "4/24hrs",
-        "Cost": "16000?",
+        "Cost": "16000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60783,7 +60783,7 @@
         "Rating": "5",
         "Weight": "-",
         "Availability": "5/72hrs",
-        "Cost": "25000?",
+        "Cost": "25000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60793,7 +60793,7 @@
         "Rating": "6",
         "Weight": "-",
         "Availability": "6/72hrs",
-        "Cost": "30000?",
+        "Cost": "30000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60803,7 +60803,7 @@
         "Rating": "7",
         "Weight": "-",
         "Availability": "7/72hrs",
-        "Cost": "35000?",
+        "Cost": "35000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60813,7 +60813,7 @@
         "Rating": "8",
         "Weight": "-",
         "Availability": "8/72hrs",
-        "Cost": "40000?",
+        "Cost": "40000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60823,7 +60823,7 @@
         "Rating": "9",
         "Weight": "-",
         "Availability": "9/14days",
-        "Cost": "90000?",
+        "Cost": "90000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60833,7 +60833,7 @@
         "Rating": "10",
         "Weight": "-",
         "Availability": "10/14days",
-        "Cost": "100000?",
+        "Cost": "100000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60843,7 +60843,7 @@
         "Rating": "11",
         "Weight": "-",
         "Availability": "11/14days",
-        "Cost": "110000?",
+        "Cost": "110000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60853,7 +60853,7 @@
         "Rating": "12",
         "Weight": "-",
         "Availability": "12/14days",
-        "Cost": "120000?",
+        "Cost": "120000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -60863,7 +60863,7 @@
         "Rating": "13",
         "Weight": "-",
         "Availability": "13/30days",
-        "Cost": "650000?",
+        "Cost": "650000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       }
