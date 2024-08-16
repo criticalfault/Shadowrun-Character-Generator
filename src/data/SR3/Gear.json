@@ -36718,15 +36718,6 @@
     ],
     "entries": [
       {
-        "Name": "Dikote TM (100 cm^3)",
-        "Rating": "-",
-        "Availability": "6/14days",
-        "Weight": "-",
-        "Cost": "1000",
-        "Street Index": "2",
-        "BookPage": "mm.111"
-      },
-      {
         "Name": "Archaesthetic",
         "Rating": "-1",
         "Availability": "6/7days",
@@ -58509,6 +58500,15 @@
         "Cost": "800",
         "Street Index": "5",
         "BookPage": "sr3.250"
+      },
+      {
+        "Name": "Dikote TM (100 cm^3)",
+        "Rating": "-",
+        "Availability": "6/14days",
+        "Weight": "-",
+        "Cost": "1000",
+        "Street Index": "2",
+        "BookPage": "mm.111"
       },
       {
         "Name": "Hyper",
