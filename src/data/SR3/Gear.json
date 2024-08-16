@@ -5842,7 +5842,7 @@
         "Availability": "2/24hrs",
         "Cost": "505",
         "Street Index": "1",
-        "Accessories": "ambidextrous safety & slide-stop levers, many finishes at cost",
+        "Accessories": "ambidextrous safety  and  slide-stop levers, many finishes at cost",
         "BookPage": "ray.000"
       },
       {
@@ -5868,7 +5868,7 @@
         "Availability": "2/24hrs",
         "Cost": "505",
         "Street Index": "1",
-        "Accessories": "ambidextrous safety & slide-stop levers, many finishes at cost",
+        "Accessories": "ambidextrous safety  and  slide-stop levers, many finishes at cost",
         "BookPage": "ray.000"
       },
       {
@@ -5881,7 +5881,7 @@
         "Availability": "2/24hrs",
         "Cost": "590",
         "Street Index": "1",
-        "Accessories": "adjustable rear sight, ambidextrous safety & slide-stop levers, many finishes at cost",
+        "Accessories": "adjustable rear sight, ambidextrous safety and slide-stop levers, many finishes at cost",
         "BookPage": "ray.000"
       },
       {
@@ -8338,7 +8338,7 @@
         "Availability": "3/36hrs",
         "Cost": "725",
         "Street Index": "1",
-        "Accessories": "Duo-tone (stainless & black), Can't take int. smartlink",
+        "Accessories": "Duo-tone (stainless  and  black), Can't take int. smartlink",
         "BookPage": "ray.000"
       },
       {
@@ -8351,7 +8351,7 @@
         "Availability": "3/36hrs",
         "Cost": "725",
         "Street Index": "1",
-        "Accessories": "Duo-tone (stainless & black), Can't take int. smartlink",
+        "Accessories": "Duo-tone (stainless  and  black), Can't take int. smartlink",
         "BookPage": "ray.000"
       },
       {
@@ -9703,7 +9703,7 @@
         "Availability": "3/36hrs",
         "Cost": "600",
         "Street Index": "1",
-        "Accessories": "can use .40 S&W ammo at 8M and (MPist)",
+        "Accessories": "can use .40 S and W ammo at 8M and (MPist)",
         "BookPage": "ray.000"
       },
       {
@@ -11345,7 +11345,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "H",
+        "Name": "H&K MP7z Urban Combat (SMG)",
         "Concealability": "6/18",
         "Ammunition": "36(c)",
         "Mode": "SA/BF/FA",
@@ -11358,7 +11358,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "H",
+        "Name": "H&K MP7z Urb. Comb.Smart (SMG)",
         "Concealability": "6/18",
         "Ammunition": "36(c)",
         "Mode": "SA/BF/FA",
@@ -11371,7 +11371,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "H",
+        "Name": "H&K MP-9 (SMG)",
         "Concealability": "4",
         "Ammunition": "25(c)",
         "Mode": "SA/BF",
@@ -11384,7 +11384,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "H",
+        "Name": "H&K MP-2013 (SMG)",
         "Concealability": "3",
         "Ammunition": "35(c)",
         "Mode": "SA/BF/FA",
@@ -11397,7 +11397,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "H",
+        "Name": "H&K MPK9 (SMG)",
         "Concealability": "5",
         "Ammunition": "35(c)",
         "Mode": "SA/BF",
@@ -11410,7 +11410,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "H",
+        "Name": "H&K MPK-11 (SMG)",
         "Concealability": "4",
         "Ammunition": "30(c)",
         "Mode": "SA/FA",
@@ -11423,7 +11423,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "Heckler",
+        "Name": "Heckler and Koch HK227 (SMG)",
         "Concealability": "4",
         "Ammunition": "28(c)",
         "Mode": "SA/BF/FA",
@@ -11436,7 +11436,7 @@
         "BookPage": "sr3.278"
       },
       {
-        "Name": "Heckler",
+        "Name": "Heckler and Koch HK227-S (SMG)",
         "Concealability": "5",
         "Ammunition": "28(c)",
         "Mode": "SA/BF",
@@ -11449,7 +11449,7 @@
         "BookPage": "sr3.278"
       },
       {
-        "Name": "Heckler",
+        "Name": "Heckler and Koch MP-5 TX (SMG)",
         "Concealability": "5",
         "Ammunition": "20(c)",
         "Mode": "SA/BF/FA",
@@ -12606,7 +12606,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "H",
+        "Name": "H&K G9A4z/i (AsRf)",
         "Concealability": "3",
         "Ammunition": "30(c)",
         "Mode": "SA/BF/FA",
@@ -12619,7 +12619,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "Heckler",
+        "Name": "Heckler & Koch G12A3z (AsRf)",
         "Concealability": "2",
         "Ammunition": "32(c)",
         "Mode": "SA/BF/FA",
@@ -12632,7 +12632,7 @@
         "BookPage": "cc.22"
       },
       {
-        "Name": "H",
+        "Name": "H&K G36A3C Compact (Carb)",
         "Concealability": "3",
         "Ammunition": "30(c)",
         "Mode": "SA/BF/FA",
@@ -12645,7 +12645,7 @@
         "BookPage": "bjf.00"
       },
       {
-        "Name": "H",
+        "Name": "H&K HK 70 (AsRf)",
         "Concealability": "2(1)",
         "Ammunition": "20(45)(c)",
         "Mode": "SA/BF/FA",
@@ -12658,7 +12658,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "H",
+        "Name": "H&K HK 70 K (AsRf)",
         "Concealability": "3(2)",
         "Ammunition": "20(45)(c)",
         "Mode": "SA/BF/FA",
@@ -17610,7 +17610,7 @@
         "Availability": "16/14days",
         "Cost": "7200",
         "Street Index": "2",
-        "Accessories": "Either: Folding Bipod(2RC) or Shoulder Strap & Hip Brace(1RC)",
+        "Accessories": "Either: Folding Bipod(2RC) or Shoulder Strap  and  Hip Brace(1RC)",
         "BookPage": "cc.26"
       },
       {
@@ -18975,7 +18975,7 @@
         "Availability": "12/1wk",
         "Cost": "4000",
         "Street Index": "3",
-        "Accessories": "Dual Laser sight & Low Light Mag:(2) Scope, Gas Vent II(2RC) See Rules",
+        "Accessories": "Dual Laser sight  and  Low Light Mag:(2) Scope, Gas Vent II(2RC) See Rules",
         "BookPage": "cc.22"
       },
       {
@@ -23003,7 +23003,7 @@
       {
         "Name": "Barret Model 121 Rnds",
         "Concealability": "6",
-        "Damage": "1/2 Ballistic & Barrier Ratings",
+        "Damage": "1/2 Ballistic  and  Barrier Ratings",
         "Weight": ".075",
         "Availability": "14/30days",
         "Cost": "20",
@@ -28534,7 +28534,7 @@
         "Availability": "6/72hrs",
         "Cost": "500",
         "Street Index": "2",
-        "Notes": "9mm, W&M",
+        "Notes": "9mm, W and M",
         "BookPage": "ray.000"
       },
       {
@@ -29580,7 +29580,7 @@
         "Availability": "4/48hrs",
         "Cost": "5",
         "Street Index": "2",
-        "Notes": "rnds: +3@9mm, +2@.357sig, .40S&W, and.10mm auto, +1@.45ACP",
+        "Notes": "rnds: +3@9mm, +2@.357sig, .40S and W, and.10mm auto, +1@.45ACP",
         "BookPage": "ray.000"
       },
       {
@@ -30900,7 +30900,7 @@
         "Availability": "2/24hrs",
         "Cost": "45",
         "Street Index": "1",
-        "Notes": "for FAL 50.00, 50.64, StG, Para, & OSW",
+        "Notes": "for FAL 50.00, 50.64, StG, Para,  and  OSW",
         "BookPage": "ray.000"
       },
       {
@@ -59081,7 +59081,7 @@
         "Name": "Canteen Carrier",
         "Points Used": "2",
         "Cost": "15",
-        "Notes": "Holds 1L bottle & cup",
+        "Notes": "Holds 1L bottle  and  cup",
         "BookPage": "sr2.???"
       },
       {
