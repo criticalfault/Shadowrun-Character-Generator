@@ -159,7 +159,7 @@ function MagicPanel(props) {
       description:
         "Must be a shaman. Can only cast spells and summon spirits for which they receive a totem advantage.",
       conjures: "",
-      totemList: "ANIMAL TOTEMS",
+      totemList: "TOTEMS",
     },
     Conjurer: {
       name:"Conjurer",
