@@ -48,8 +48,9 @@ export default function IdentityPanel(props) {
             <p>
                 <span>Love this utility? We have more! Checkout <a href="https://www.nullsheen.com" target="_blank">NullSheen.com</a></span>
             </p>
-            <h5>Known Issues (As of 07-24-24 - 8:12am CDT)</h5>
+            <h5>Known Issues (As of 08-16-24 - 12:22pm CDT)</h5>
             <ul>
+                <li>Some issues with Knowledge and Langauge skills being edited or removed</li>
                 <li>Characters will need to be resaved with their proper edition. I dont know why i hadn't saved this, but i am doing that now.</li>
                 <li>Still need to add "improvements" and tracking Nuyen post finalization.</li>
                 <li>All nesting of improvements (Weapon / Deck / Vehicle accessories and building). These will be handled in a completely different way, but I promise it will feel awesome to do!</li>
@@ -58,6 +59,9 @@ export default function IdentityPanel(props) {
         <hr/>
         <h5>Resolved Issues</h5>
         <ul>
+            <li>Fixed a bunch of gear items having bad display names, if you find more please let me know and i can fix them!</li>
+            <li>Added Foci to the Sheet display</li>
+            <il>Added some 3 dozen totems for Shamans.</il>
             <li>Fixed some issues with Physical Adept powers/traditions</li>
             <li>Added magical initative bonuses to the sheet display</li>
             <li>Added increasing attributes with Karma... so it begins</li>
