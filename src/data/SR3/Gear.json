@@ -58656,10 +58656,18 @@
       "Cost",
       "Street Index",
       "Legal",
-      "BookPage",
-      ""
+      "BookPage"
     ],
     "entries": [
+      {
+        "Name": "Basic Pocket Secretary",
+        "Concealability": "8",
+        "Weight": ".5",
+        "Availability": "Always",
+        "Cost": "2000",
+        "Street Index": "1",
+        "BookPage": "sr3.287"
+      },
       {
         "Name": "Ares Attach",
         "Form": "Notebook",
