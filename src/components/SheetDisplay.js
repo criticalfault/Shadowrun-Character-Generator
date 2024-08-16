@@ -905,6 +905,54 @@ function SheetDisplay(props) {
         ""
       )}
 
+      {props.currentCharacter.foci && props.currentCharacter.foci.length ? (
+        <Grid item xs={12}>
+          <Item>
+            <h3>Foci</h3>
+            <TableContainer component={Paper}>
+              <Table
+                sx={{ minWidth: 650 }}
+                size="small"
+                aria-label="a dense table"
+              >
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Foci Name</TableCell>
+                    <TableCell align="right">Rating</TableCell>
+                    <TableCell align="right">Nuyen Cost</TableCell>
+                    <TableCell align="right">Binding Cost</TableCell>
+                    <TableCell align="right">Bound</TableCell>
+                    <TableCell align="right">Notes</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                {props.currentCharacter.foci.map((foci, index) => (
+                    <TableRow key={foci.Name}>
+                      <TableCell component="th" scope="row">
+                        {foci.Name}
+                        {foci.Extra !== "" ? "(" + foci.Extra + ")" : ""}
+                      </TableCell>
+                      <TableCell align="right">{foci.Rating}</TableCell>
+                      <TableCell align="right">
+                        {new Intl.NumberFormat("ja-JP", {
+                          style: "currency",
+                          currency: "JPY",
+                        }).format(foci.Cost)}
+                      </TableCell>
+                      <TableCell align="right">{foci.KarmaCost}</TableCell>
+                      <TableCell align="right">{foci.Bound}</TableCell>
+                      <TableCell align="right">{foci.Notes}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Item>
+        </Grid>
+      ) : (
+        ""
+      )}
+
       {props.currentCharacter.spells && props.currentCharacter.spells.length ? (
         <Grid item xs={12}>
           <Item>
