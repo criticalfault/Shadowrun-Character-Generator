@@ -12840,7 +12840,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "Semopal vz",
+        "Name": "Semopal vz/88V (AsRf)",
         "Concealability": "2",
         "Ammunition": "35(c)",
         "Mode": "SA/BF/FA",
@@ -12853,7 +12853,7 @@
         "BookPage": "cc.22"
       },
       {
-        "Name": "S",
+        "Name": "S&W MdF \"Cyborg Assault\" (AsRf)",
         "Concealability": "4",
         "Ammunition": "8(c)",
         "Mode": "SS",
@@ -12970,7 +12970,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "Armalite AR10 Carbine   (AsRf)",
+        "Name": "Armalite AR10 Carbine (AsRf)",
         "Concealability": "2",
         "Ammunition": "20(c)",
         "Mode": "SA/FA",
@@ -13125,7 +13125,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "M1A 7.62mm NATO  (LMG)",
+        "Name": "M1A 7.62mm NATO (LMG)",
         "Concealability": "2",
         "Ammunition": "10(c)",
         "Mode": "SA",
@@ -13138,7 +13138,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "M14 7.62mm NATO  (LMG)",
+        "Name": "M14 7.62mm NATO (LMG)",
         "Concealability": "2",
         "Ammunition": "20(c)",
         "Mode": "SA/FA",
@@ -13281,7 +13281,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "SAR 21 5.56mm NATO sc   (AsRf)",
+        "Name": "SAR 21 5.56mm NATO sc (AsRf)",
         "Concealability": "3",
         "Ammunition": "30(c)",
         "Mode": "SA/FA",
@@ -13294,7 +13294,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "SAR MMS 5.56mm NATO sc  (AsRf)",
+        "Name": "SAR MMS 5.56mm NATO sc (AsRf)",
         "Concealability": "3",
         "Ammunition": "30(c)",
         "Mode": "SA/FA",
@@ -13307,7 +13307,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "AR15 .223 Rem   (AsRf)",
+        "Name": "AR15 .223 Rem (AsRf)",
         "Concealability": "2",
         "Ammunition": "30(c)",
         "Mode": "SA",
@@ -13407,7 +13407,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "AR23 .223 Rem   (AsRf)",
+        "Name": "AR23 .223 Rem (AsRf)",
         "Concealability": "3",
         "Ammunition": "30(c)",
         "Mode": "SA",
@@ -13597,7 +13597,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "H",
+        "Name": "H&K G3A3 7.62mm NATO (LMG)",
         "Concealability": "2",
         "Ammunition": "20(c)",
         "Mode": "SA/FA",
@@ -13610,7 +13610,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "H",
+        "Name": "H&K G3KA4 7.62mm NATO (AsRf)",
         "Concealability": "3",
         "Ammunition": "20(c)",
         "Mode": "SA/FA",
@@ -13623,7 +13623,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "H",
+        "Name": "H&K G11A4zC 5.08x35mm (AsRf)",
         "Concealability": "2",
         "Ammunition": "50(c)",
         "Mode": "SA/BF/FA",
@@ -13636,7 +13636,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "H",
+        "Name": "H&K G36A3C 5.56mm NATO (Carb)",
         "Concealability": "3",
         "Ammunition": "30(c)",
         "Mode": "SA/BF/FA",
@@ -13649,7 +13649,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "H",
+        "Name": "H&K G36A3C 5.56mm NATO (Carb)",
         "Concealability": "3",
         "Ammunition": "30(c)",
         "Mode": "SA/BF/FA",
@@ -13662,7 +13662,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "H",
+        "Name": "H&K G36KA3 5.56mm NATO (Carb)",
         "Concealability": "3",
         "Ammunition": "30(c)",
         "Mode": "SA/BF/FA",
@@ -13675,7 +13675,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "H",
+        "Name": "H&K G36 5.56mm NATO (AsRf)",
         "Concealability": "2",
         "Ammunition": "30(c)",
         "Mode": "SA/BF/FA",
@@ -13688,7 +13688,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "H",
+        "Name": "H&K MG36 5.56mm NATO (AsRf)",
         "Concealability": "-",
         "Ammunition": "100 drum",
         "Mode": "SA/BF/FA",
@@ -13701,7 +13701,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "H",
+        "Name": "H&K G36/7KA3 7.62mm NATO (LMG)",
         "Concealability": "3",
         "Ammunition": "20(c)",
         "Mode": "SA/BF/FA",
@@ -13714,7 +13714,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "H",
+        "Name": "H&K G36/7A3 7.62mm NATO (LMG)",
         "Concealability": "2",
         "Ammunition": "20(c)",
         "Mode": "SA/BF/FA",
@@ -13727,7 +13727,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "H",
+        "Name": "H&K MG36/7 7.62mm NATO (LMG)",
         "Concealability": "-",
         "Ammunition": "100 drum",
         "Mode": "SA/BF/FA",
@@ -13740,7 +13740,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "H",
+        "Name": "H&K HK53A2 7.62mm NATO (AsRf)",
         "Concealability": "2",
         "Ammunition": "30(c)",
         "Mode": "SA/FA",
@@ -13753,7 +13753,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "H",
+        "Name": "H&K HK53KA2 7.62mm NATO (Carb)",
         "Concealability": "2",
         "Ammunition": "30(c)",
         "Mode": "SA/FA",
@@ -13766,7 +13766,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "H",
+        "Name": "H&K HK53A2 5.56mm NATO (Carb)",
         "Concealability": "2",
         "Ammunition": "30(c)",
         "Mode": "SA/FA",
@@ -13779,7 +13779,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "H",
+        "Name": "H&K HK53A3 5.56mm NATO (Carb)",
         "Concealability": "2",
         "Ammunition": "30(c)",
         "Mode": "SA/FA",
@@ -14026,7 +14026,7 @@
         "BookPage": "ray.000"
       },
       {
-        "Name": "Arasaka Rapid Ass.Shot12(ShtG)",
+        "Name": "Arasaka Rapid Ass. Shot12 (ShtG)",
         "Concealability": "1",
         "Ammunition": "20(c)",
         "Mode": "SA/FA",
@@ -14039,7 +14039,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "Ares Thunderer  (ShtG)",
+        "Name": "Ares Thunderer (ShtG)",
         "Concealability": "0",
         "Ammunition": "10(c)/10(c)",
         "Mode": "SA/BF",
@@ -14078,7 +14078,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "Benelli M1014   (ShtG)",
+        "Name": "Benelli M1014 (ShtG)",
         "Concealability": "2",
         "Ammunition": "6(m)",
         "Mode": "SA",
