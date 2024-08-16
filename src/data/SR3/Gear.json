@@ -11345,7 +11345,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "H",
+        "Name": "H&K MP7z Urban Combat (SMG)",
         "Concealability": "6/18",
         "Ammunition": "36(c)",
         "Mode": "SA/BF/FA",
@@ -11358,7 +11358,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "H",
+        "Name": "H&K MP7z Urb. Comb.Smart (SMG)",
         "Concealability": "6/18",
         "Ammunition": "36(c)",
         "Mode": "SA/BF/FA",
@@ -11371,7 +11371,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "H",
+        "Name": "H&K MP-9 (SMG)",
         "Concealability": "4",
         "Ammunition": "25(c)",
         "Mode": "SA/BF",
@@ -11384,7 +11384,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "H",
+        "Name": "H&K MP-2013 (SMG)",
         "Concealability": "3",
         "Ammunition": "35(c)",
         "Mode": "SA/BF/FA",
@@ -11397,7 +11397,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "H",
+        "Name": "H&K MPK9 (SMG)",
         "Concealability": "5",
         "Ammunition": "35(c)",
         "Mode": "SA/BF",
@@ -11410,7 +11410,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "H",
+        "Name": "H&K MPK-11 (SMG)",
         "Concealability": "4",
         "Ammunition": "30(c)",
         "Mode": "SA/FA",
@@ -11423,7 +11423,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "Heckler",
+        "Name": "Heckler and Koch HK227 (SMG)",
         "Concealability": "4",
         "Ammunition": "28(c)",
         "Mode": "SA/BF/FA",
@@ -11436,7 +11436,7 @@
         "BookPage": "sr3.278"
       },
       {
-        "Name": "Heckler",
+        "Name": "Heckler and Koch HK227-S (SMG)",
         "Concealability": "5",
         "Ammunition": "28(c)",
         "Mode": "SA/BF",
@@ -11449,7 +11449,7 @@
         "BookPage": "sr3.278"
       },
       {
-        "Name": "Heckler",
+        "Name": "Heckler and Koch MP-5 TX (SMG)",
         "Concealability": "5",
         "Ammunition": "20(c)",
         "Mode": "SA/BF/FA",
