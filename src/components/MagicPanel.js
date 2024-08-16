@@ -208,7 +208,7 @@ function MagicPanel(props) {
       description:
         "Can use Sorcery and Conjuring skills, access the astral plane, and use foci.  Plus the benefits and disadvantages of their totem/tradition. ",
       conjures: "Spirits",
-      totemList: "ANIMAL TOTEMS",
+      totemList: "TOTEMS",
     },
     Psionicist: {
       name: "Psionicist",
