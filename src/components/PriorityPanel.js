@@ -63,8 +63,8 @@ export default function PriorityPanel(props) {
       race: {
         A: ["N/A"],
         B: ["N/A"],
-        C: ["Troll", "Elf"],
-        D: ["Dwarf", "Ork"],
+        C: ["Troll", "Elf", "Human"],
+        D: ["Dwarf", "Ork", "Human"],
         E: ["Human"],
       },
       magic: {
