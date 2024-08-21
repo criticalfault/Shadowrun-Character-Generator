@@ -42006,6 +42006,96 @@
       }
     ]
   },
+  "Ritual Sorcery Materials": {
+    "Name": "Ritual Sorcery Materials",
+    "attributes": [
+      "KarmaCost",
+      "Availability",
+      "Cost",
+      "Street Index",
+      "BookPage",
+    ],
+    "entries": [
+      {
+        "Name": "Ritual Sorcery Materials - Combat Force 1",
+        "KarmaCost": "0",
+        "Availability": "3/24hrs",
+        "Cost": "1000",
+        "Street Index": "1",
+        "BookPage": "mits.170"
+      },
+      {
+        "Name": "Ritual Sorcery Materials - Combat Force 2",
+        "KarmaCost": "0",
+        "Availability": "3/24hrs",
+        "Cost": "2000",
+        "Street Index": "1",
+        "BookPage": "mits.170"
+      },
+      {
+        "Name": "Ritual Sorcery Materials - Combat Force 3",
+        "KarmaCost": "0",
+        "Availability": "3/24hrs",
+        "Cost": "3000",
+        "Street Index": "1",
+        "BookPage": "mits.170"
+      },
+      {
+        "Name": "Ritual Sorcery Materials - Combat Force 4",
+        "KarmaCost": "0",
+        "Availability": "3/24hrs",
+        "Cost": "4000",
+        "Street Index": "1",
+        "BookPage": "mits.170"
+      },
+      {
+        "Name": "Ritual Sorcery Materials - Combat Force 5",
+        "KarmaCost": "0",
+        "Availability": "3/24hrs",
+        "Cost": "5000",
+        "Street Index": "1",
+        "BookPage": "mits.170"
+      },
+      {
+        "Name": "Ritual Sorcery Materials - Combat Force 6",
+        "KarmaCost": "0",
+        "Availability": "3/24hrs",
+        "Cost": "6000",
+        "Street Index": "1",
+        "BookPage": "mits.170"
+      },
+      {
+        "Name": "Ritual Sorcery Materials - Combat Force 7",
+        "KarmaCost": "0",
+        "Availability": "3/24hrs",
+        "Cost": "7000",
+        "Street Index": "1",
+        "BookPage": "mits.170"
+      },
+      {
+        "Name": "Ritual Sorcery Materials - Combat Force 8",
+        "KarmaCost": "0",
+        "Availability": "3/24hrs",
+        "Cost": "8000",
+        "Street Index": "1",
+        "BookPage": "mits.170"
+      },{
+        "Name": "Ritual Sorcery Materials - Combat Force 9",
+        "KarmaCost": "0",
+        "Availability": "3/24hrs",
+        "Cost": "9000",
+        "Street Index": "1",
+        "BookPage": "mits.170"
+      },{
+        "Name": "Ritual Sorcery Materials - Combat Force 10",
+        "KarmaCost": "0",
+        "Availability": "3/24hrs",
+        "Cost": "10000",
+        "Street Index": "1",
+        "BookPage": "mits.170"
+      }
+    ]
+  },
   "Magical Equipment": {
     "Name": "Magical Equipment",
     "attributes": [
@@ -42014,7 +42104,6 @@
       "Cost",
       "Street Index",
       "BookPage",
-      ""
     ],
     "entries": [
       {
@@ -42074,13 +42163,442 @@
         "BookPage": "mits.169"
       },
       {
+        "Name": "Biofiber Nutrient Solution per meter",
+        "KarmaCost": "0",
+        "Availability": "6/1wk",
+        "Cost": "5",
+        "Street Index": "1",
+        "BookPage": "mits.170"
+      },
+    {
+        "Name": "FAB Strain-I 50 m3 aerosol",
+        "KarmaCost": "0",
+        "Availability": "6/1wk",
+        "Cost": "5000",
+        "Street Index": "2",
+        "BookPage": "mits.170"
+      },
+      {
+        "Name": "FAB Strain-I 500 m3 aerosol",
+        "KarmaCost": "0",
+        "Availability": "8/2wk",
+        "Cost": "45000",
+        "Street Index": "2",
+        "BookPage": "mits.170"
+      },
+
+      
+      {
         "Name": "Magemask",
         "KarmaCost": "0",
         "Availability": "4/48hrs",
         "Cost": "200",
         "Street Index": "2",
         "BookPage": "mits.170"
+      },
+      {
+        "Name": "Shaman Lodge Rating 1",
+        "KarmaCost": "0",
+        "Availability": "1/24hrs",
+        "Cost": "500",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Shaman Lodge Rating 2",
+        "KarmaCost": "0",
+        "Availability": "2/24hrs",
+        "Cost": "1000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Shaman Lodge Rating 3",
+        "KarmaCost": "0",
+        "Availability": "3/24hrs",
+        "Cost": "1500",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Shaman Lodge Rating 4",
+        "KarmaCost": "0",
+        "Availability": "4/24hrs",
+        "Cost": "2000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Shaman Lodge Rating 5",
+        "KarmaCost": "0",
+        "Availability": "5/24hrs",
+        "Cost": "2500",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Shaman Lodge Rating 6",
+        "KarmaCost": "0",
+        "Availability": "6/24hrs",
+        "Cost": "3000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Shaman Lodge Rating 7",
+        "KarmaCost": "0",
+        "Availability": "7/24hrs",
+        "Cost": "3500",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Shaman Lodge Rating 8",
+        "KarmaCost": "0",
+        "Availability": "8/24hrs",
+        "Cost": "4000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Shaman Lodge Rating 9",
+        "KarmaCost": "0",
+        "Availability": "9/24hrs",
+        "Cost": "4500",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Shaman Lodge Rating 10",
+        "KarmaCost": "0",
+        "Availability": "10/24hrs",
+        "Cost": "5000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Elemental Conjuring Materials Rating 1",
+        "KarmaCost": "0",
+        "Availability": "1/24hrs",
+        "Cost": "1000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Elemental Conjuring Materials Rating 2",
+        "KarmaCost": "0",
+        "Availability": "2/24hrs",
+        "Cost": "2000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Elemental Conjuring Materials Rating 3",
+        "KarmaCost": "0",
+        "Availability": "3/24hrs",
+        "Cost": "3000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Elemental Conjuring Materials Rating 4",
+        "KarmaCost": "0",
+        "Availability": "4/24hrs",
+        "Cost": "4000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Elemental Conjuring Materials Rating 5",
+        "KarmaCost": "0",
+        "Availability": "5/24hrs",
+        "Cost": "5000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Elemental Conjuring Materials Rating 6",
+        "KarmaCost": "0",
+        "Availability": "6/24hrs",
+        "Cost": "6000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Elemental Conjuring Materials Rating 7",
+        "KarmaCost": "0",
+        "Availability": "7/24hrs",
+        "Cost": "7000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Elemental Conjuring Materials Rating 8",
+        "KarmaCost": "0",
+        "Availability": "8/24hrs",
+        "Cost": "8000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Elemental Conjuring Materials Rating 9",
+        "KarmaCost": "0",
+        "Availability": "9/24hrs",
+        "Cost": "9000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Elemental Conjuring Materials Rating 10",
+        "KarmaCost": "0",
+        "Availability": "10/24hrs",
+        "Cost": "10000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Sorcery) Rating 1",
+        "KarmaCost": "0",
+        "Availability": "1/7days",
+        "Cost": "1000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Sorcery) Rating 2",
+        "KarmaCost": "0",
+        "Availability": "2/7days",
+        "Cost": "4000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Sorcery) Rating 3",
+        "KarmaCost": "0",
+        "Availability": "3/7days",
+        "Cost": "9000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Sorcery) Rating 4",
+        "KarmaCost": "0",
+        "Availability": "4/7days",
+        "Cost": "16000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Sorcery) Rating 5",
+        "KarmaCost": "0",
+        "Availability": "5/7days",
+        "Cost": "25000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Sorcery) Rating 6",
+        "KarmaCost": "0",
+        "Availability": "6/7days",
+        "Cost": "36000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Sorcery) Rating 7",
+        "KarmaCost": "0",
+        "Availability": "7/7days",
+        "Cost": "49000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Sorcery) Rating 8",
+        "KarmaCost": "0",
+        "Availability": "8/7days",
+        "Cost": "64000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Sorcery) Rating 9",
+        "KarmaCost": "0",
+        "Availability": "9/7days",
+        "Cost": "81000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Sorcery) Rating 10",
+        "KarmaCost": "0",
+        "Availability": "10/7days",
+        "Cost": "100000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Conjuring) Rating 1",
+        "KarmaCost": "0",
+        "Availability": "1/7days",
+        "Cost": "1000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Conjuring) Rating 2",
+        "KarmaCost": "0",
+        "Availability": "2/7days",
+        "Cost": "4000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Conjuring) Rating 3",
+        "KarmaCost": "0",
+        "Availability": "3/7days",
+        "Cost": "9000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Conjuring) Rating 4",
+        "KarmaCost": "0",
+        "Availability": "4/7days",
+        "Cost": "16000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Conjuring) Rating 5",
+        "KarmaCost": "0",
+        "Availability": "5/7days",
+        "Cost": "25000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Conjuring) Rating 6",
+        "KarmaCost": "0",
+        "Availability": "6/7days",
+        "Cost": "36000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Conjuring) Rating 7",
+        "KarmaCost": "0",
+        "Availability": "7/7days",
+        "Cost": "49000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Conjuring) Rating 8",
+        "KarmaCost": "0",
+        "Availability": "8/7days",
+        "Cost": "64000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Conjuring) Rating 9",
+        "KarmaCost": "0",
+        "Availability": "9/7days",
+        "Cost": "81000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Conjuring) Rating 10",
+        "KarmaCost": "0",
+        "Availability": "10/7days",
+        "Cost": "100000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Enchanting) Rating 1",
+        "KarmaCost": "0",
+        "Availability": "1/7days",
+        "Cost": "1000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Enchanting) Rating 2",
+        "KarmaCost": "0",
+        "Availability": "2/7days",
+        "Cost": "4000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Enchanting) Rating 3",
+        "KarmaCost": "0",
+        "Availability": "3/7days",
+        "Cost": "9000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Enchanting) Rating 4",
+        "KarmaCost": "0",
+        "Availability": "4/7days",
+        "Cost": "16000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Enchanting) Rating 5",
+        "KarmaCost": "0",
+        "Availability": "5/7days",
+        "Cost": "25000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Enchanting) Rating 6",
+        "KarmaCost": "0",
+        "Availability": "6/7days",
+        "Cost": "36000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Enchanting) Rating 7",
+        "KarmaCost": "0",
+        "Availability": "7/7days",
+        "Cost": "49000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Enchanting) Rating 8",
+        "KarmaCost": "0",
+        "Availability": "8/7days",
+        "Cost": "64000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Enchanting) Rating 9",
+        "KarmaCost": "0",
+        "Availability": "9/7days",
+        "Cost": "81000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
+      },
+      {
+        "Name": "Hermetic Library (Enchanting) Rating 10",
+        "KarmaCost": "0",
+        "Availability": "10/7days",
+        "Cost": "100000",
+        "Street Index": "1",
+        "BookPage": "sr3.305"
       }
+
+
+      
     ]
   },
   "Vehicles":{
