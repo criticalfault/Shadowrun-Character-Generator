@@ -1,6 +1,6 @@
 {
-  "Melee weapon": {
-    "Name": "Melee weapon",
+  "Melee weapons": {
+    "Name": "Melee weapons",
     "attributes": [
       "Concealability",
       "Reach",
@@ -11,8 +11,7 @@
       "Street Index",
       "BookPage",
       "Legal",
-      "Notes",
-      ""
+      "Notes"
     ],
     "entries": [
       {
@@ -42013,7 +42012,7 @@
       "Availability",
       "Cost",
       "Street Index",
-      "BookPage",
+      "BookPage"
     ],
     "entries": [
       {
@@ -42103,7 +42102,7 @@
       "Availability",
       "Cost",
       "Street Index",
-      "BookPage",
+      "BookPage"
     ],
     "entries": [
       {
@@ -42596,9 +42595,6 @@
         "Street Index": "1",
         "BookPage": "sr3.305"
       }
-
-
-      
     ]
   },
   "Vehicles":{
@@ -42614,8 +42610,7 @@
         "Availability",
         "$Cost",
         "Street Index",
-        "Book.Page",
-        ""
+        "Book.Page"
       ],
     "entries":[ {
         "10": "3/4",
