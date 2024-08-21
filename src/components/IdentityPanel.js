@@ -48,7 +48,7 @@ export default function IdentityPanel(props) {
             <p>
                 <span>Love this utility? We have more! Checkout <a href="https://www.nullsheen.com" target="_blank">NullSheen.com</a></span>
             </p>
-            <h5>Known Issues (As of 08-16-24 - 12:22pm CDT)</h5>
+            <h5>Known Issues (As of 08-21-24 - 12:39pm CDT)</h5>
             <ul>
                 <li>Some issues with Knowledge and Langauge skills being edited or removed</li>
                 <li>Characters will need to be resaved with their proper edition. I dont know why i hadn't saved this, but i am doing that now.</li>
@@ -59,6 +59,7 @@ export default function IdentityPanel(props) {
         <hr/>
         <h5>Resolved Issues</h5>
         <ul>
+            <li>Added magical libraries to 3rd edition. Still need to do that for 2nd edition</li>
             <li>Fixed a bunch of gear items having bad display names, if you find more please let me know and i can fix them!</li>
             <li>Added Foci to the Sheet display</li>
             <il>Added some 3 dozen totems for Shamans.</il>
