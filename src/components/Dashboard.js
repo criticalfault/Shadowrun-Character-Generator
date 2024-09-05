@@ -21,7 +21,7 @@ import SheetDisplay from "./SheetDisplay";
 import KarmaDisplay from "./KarmaDisplay";
 import "./SheetDisplay.css";
 import DiceRollerTray from "./DiceRollerTray";
-import TableAttribute from "./CustomTable";
+// import TableAttribute from "./CustomTable";
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -171,6 +171,7 @@ export default function BasicTabs() {
     submerison: false,
     magicalTradition: false,
     magicalTotem: false,
+    moreMetahumansOption:false,
     foci: [],
     spells: [],
     powers: [],
@@ -323,6 +324,10 @@ export default function BasicTabs() {
 
   const handleChangeEdition = (edition) => {
     setEdition(edition);
+  };
+
+  const handleChangeMoreMetahumansOption = (options) => {
+    setCharacter((prevCharacter) => ({ ...prevCharacter, moreMetahumansOption:!prevCharacter.moreMetahumansOption }));
   };
 
   const handleChangeCharacterTabs = (tabs) => {
@@ -578,6 +583,7 @@ export default function BasicTabs() {
             ChangePriorities={handleChangePriorities}
             CharacterPriorities={Character.priorities}
             magicalChoice={Character.magicalChoice}
+            moreMetahumansOption={Character.moreMetahumansOption}
             ChangeRace={handleRaceChange}
             ChangeMagic={handleChangeMagic}
             selectedRace={selectedRace}
@@ -590,6 +596,7 @@ export default function BasicTabs() {
             ChangeMaxSpellPoints={handleChangeMaxSpellPoints}
             ChangeMagicChoices={handleChangeMagicChoices}
             ChangeRaceBonuses={handleChangeRaceBonuses}
+            ChangeMoreMetahumansOption={handleChangeMoreMetahumansOption}
             Edition={Edition}
           />
         </CustomTabPanel>

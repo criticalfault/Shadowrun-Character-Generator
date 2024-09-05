@@ -2,11 +2,10 @@ import * as React from "react";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-import { Box, Select } from "@mui/material";
+import FormControlLabel from '@mui/material/FormControlLabel';
+import { Box, Select, Checkbox } from "@mui/material";
 import DraggableList from "./DraggableList";
 import "./PriorityPanel.css";
-import TableProperties from "./TableProperties";
-import { AddBox } from "@material-ui/icons";
 export default function PriorityPanel(props) {
   const Priorities = ["A", "B", "C", "D", "E"];
   const prorityChart = {
@@ -134,6 +133,27 @@ export default function PriorityPanel(props) {
             "Thermographic Vision, +1 Reach for Armed/Unarmed Combat, Dermal Armor (+1 Body)",
         },
       },
+      MMrace: {
+        A: ["Troll", "Ork", "Dwarf", "Elf", "Human"],
+        B: ["Troll", "Ork", "Dwarf", "Elf", "Human"],
+        C: ["Troll", "Ork", "Dwarf", "Elf", "Human"],
+        D: ["Human"],
+        E: ["Human"],
+      },
+      MMmagic: {
+        A: ["Human Full Magician", "Metahuman Full Magician"],
+        B: [
+          "Human Physical Adept",
+          "Human Shamanist",
+          "Human Sorcerer",
+          "Metahuman Physical Adept",
+          "Metahuman Shamanist",
+          "Metahuman Sorcerer",
+        ],
+        C: ["None"],
+        D: ["None"],
+        E: ["None"],
+      },
       race: {
         A: ["Troll", "Ork", "Dwarf", "Elf", "Human"],
         B: ["Human"],
@@ -166,8 +186,9 @@ export default function PriorityPanel(props) {
         D: { nuyen: 5000, spell_points: 15 },
         E: { nuyen: 500, spell_points: 5 },
       },
-    },
+    }
   };
+  const label = { inputProps: { 'aria-label': 'More Metahuman Options' } };
   const propertiesToOrderedList = (priorities) => {
     let templist = [];
     let finalArrayOfObjects = [];
@@ -197,8 +218,7 @@ export default function PriorityPanel(props) {
   ]);
   const [Race, setRace] = React.useState(props.Race);
   const [Magic, setMagic] = React.useState(props.magicalChoice);
-
-  console.log(props.magicalChoice, AvailableMagics);
+  
   const handleMagicChange = (magic) => {
     setMagic(magic.target.value);
     props.ChangeMagic(magic.target.value);
@@ -207,12 +227,22 @@ export default function PriorityPanel(props) {
   const handleChangePriorityMagic = (newPriority) => {
     const newPriorityMagic = newPriority;
     setPriorityMagic(newPriority);
-    setAvailableMagics(prorityChart[props.Edition].magic[newPriorityMagic]);
-    setMagic(prorityChart[props.Edition].magic[newPriorityMagic][0]);
-    props.ChangeMagicChoices(
-      prorityChart[props.Edition].magic[newPriorityMagic]
-    );
-    props.ChangeMagic(prorityChart[props.Edition].magic[newPriorityMagic][0]);
+    //Set MM options here
+    if(props.moreMetahumansOption === true){
+      setAvailableMagics(prorityChart[props.Edition]['MMmagic'][newPriorityMagic]);
+      setMagic(prorityChart[props.Edition]['MMmagic'][newPriorityMagic][0]);
+      props.ChangeMagicChoices(
+        prorityChart[props.Edition]['MMmagic'][newPriorityMagic]
+      );
+      props.ChangeMagic(prorityChart[props.Edition]['MMmagic'][newPriorityMagic][0]);
+    }else{
+      setAvailableMagics(prorityChart[props.Edition]['magic'][newPriorityMagic]);
+      setMagic(prorityChart[props.Edition]['magic'][newPriorityMagic][0]);
+      props.ChangeMagicChoices(
+        prorityChart[props.Edition]['magic'][newPriorityMagic]
+      );
+      props.ChangeMagic(prorityChart[props.Edition]['magic'][newPriorityMagic][0]);
+    }
     if (props.Edition === "SR3") {
       if (newPriority === "A") {
         props.ChangeMaxSpellPoints(25);
@@ -220,6 +250,7 @@ export default function PriorityPanel(props) {
         props.ChangeMaxSpellPoints(35);
       }
     }
+  
   };
 
   const handleRaceChange = (race) => {
@@ -232,9 +263,16 @@ export default function PriorityPanel(props) {
 
   const handleChangePriorityRace = (newPriority) => {
     setPriorityRace(newPriority);
-    setAvailableRaces(prorityChart[props.Edition].race[newPriority]);
-    setRace(prorityChart[props.Edition].race[newPriority][0]);
-    props.ChangeRaceChoices(prorityChart[props.Edition].race[newPriority]);
+    if(props.moreMetahumansOption === true){
+      setAvailableRaces(prorityChart[props.Edition]['MMrace'][newPriority]);
+      setRace(prorityChart[props.Edition]['MMrace'][newPriority][0]);
+      props.ChangeRaceChoices(prorityChart[props.Edition]['MMrace'][newPriority]);
+    }else{
+      setAvailableRaces(prorityChart[props.Edition]['race'][newPriority]);
+      setRace(prorityChart[props.Edition]['race'][newPriority][0]);
+      props.ChangeRaceChoices(prorityChart[props.Edition]['race'][newPriority]);
+    }
+    
   };
 
   const handleChangePriorityAttributes = (newPriority) => {
@@ -258,8 +296,36 @@ export default function PriorityPanel(props) {
     }
   };
 
+  const handleChangeMoreMetahumansOption = (event) => {
+    if(event.target.checked){
+      props.ChangeMoreMetahumansOption(false);
+    }else{
+      props.ChangeMoreMetahumansOption(true);
+    }
+  }
+
+  const MoreMetahumansDisplay = function(edition) {
+    if(props.Edition === 'SR2'){
+      return (<div>
+         <FormControlLabel
+              value="top"
+              control={<Checkbox {...label} name="MoreMetaHumansBox" color="success" onChange={handleChangeMoreMetahumansOption} checked={props.moreMetahumansOption} />}
+              label="More Metahumans Option"
+              labelPlacement="end"
+          />
+          <br></br>
+        </div>
+      )
+    }else{
+      return (<span></span>);
+    }
+  }
+
   const TableRender = function (edition) {
     return (
+      <div>
+          { MoreMetahumansDisplay(edition) }
+          
         <table className="">
           <thead>
             <tr>
@@ -284,7 +350,7 @@ export default function PriorityPanel(props) {
                     }
                   >
                     <label>
-                      {prorityChart[props.Edition]["race"][letter].join(", ")}
+                      {(props.moreMetahumansOption ? prorityChart[props.Edition]["MMrace"][letter].join(", ") : prorityChart[props.Edition]["race"][letter].join(", "))}
                     </label>
                   </td>
                   <td
@@ -295,7 +361,7 @@ export default function PriorityPanel(props) {
                     }
                   >
                     <label>
-                      {prorityChart[props.Edition]["magic"][letter].join(", ")}
+                      {(props.moreMetahumansOption ? prorityChart[props.Edition]["MMmagic"][letter].join(", ") : prorityChart[props.Edition]["magic"][letter].join(", "))}
                     </label>
                   </td>
                   <td
@@ -345,9 +411,7 @@ export default function PriorityPanel(props) {
             })}
           </tbody>
         </table>
-      // <div>
-      //   <TableProperties />
-      // </div>
+      </div>
     );
   };
 
@@ -397,9 +461,9 @@ export default function PriorityPanel(props) {
   };
 
   return (
-    <Box>
+    <Box sx={{ background: "#ffffff", padding: "20px", marginTop: "40px" }}>
       <h2>MASTER CHARACTER CREATION TABLE</h2>
-      {TableRender()}
+        {TableRender()}
       <h2>Drag Priorities as desired</h2>
       <DraggableList items={priorities} onDragEnd={onDragEnd} />
       <Box sx={{ background: "#ffffff", padding: "20px", marginTop: "40px" }}>
