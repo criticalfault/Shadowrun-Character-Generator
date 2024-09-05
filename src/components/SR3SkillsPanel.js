@@ -392,7 +392,8 @@ function SR3SkillsPanel({
 
   const handleRemoveSkill = (index, type) => {
     let editedSkills = null;
-
+    console.log(index, type)
+    console.log(...selectedSkills)
     switch (type) {
       case "Active":
         editedSkills = [...selectedSkills];
@@ -719,9 +720,66 @@ function SR3SkillsPanel({
               Add Skill
             </Button>
             <hr></hr>
-            <h3>Skills</h3>
+            <h3>Active Skills</h3>
             <List style={{ maxWidth: "500px" }}>
-              {characterSkills.map((skill, index) => (
+              {characterSkills.filter(sk => sk.type === 'Active').map((skill, index) => (
+                <ListItem key={index}>
+                  <ListItemText
+                    primary={
+                      skill.specialization
+                        ? `${skill.name} (${skill.rating - 1}) ->  ${
+                            skill.specialization
+                          } (${skill.rating + 1}) Cost:[${skill.cost}]`
+                        : `${skill.name} (${skill.rating}) Cost:[${skill.cost}]`
+                    }
+                  />
+                  <Button
+                    color="primary"
+                    onClick={() => handleEditSkill(index, skill.type)}
+                  >
+                    Edit
+                  </Button>
+                  <Button
+                    color="secondary"
+                    onClick={() => handleRemoveSkill(index, skill.type)}
+                  >
+                    Remove
+                  </Button>
+                </ListItem>
+              ))}
+            </List>
+            <h3>Knowledge Skills</h3>
+            <List style={{ maxWidth: "500px" }}>
+              {characterSkills.filter(sk => sk.type === 'Knowledge').map((skill, index) => (
+                <ListItem key={index}>
+                  <ListItemText
+                    primary={
+                      skill.specialization
+                        ? `${skill.name} (${skill.rating - 1}) ->  ${
+                            skill.specialization
+                          } (${skill.rating + 1}) Cost:[${skill.cost}]`
+                        : `${skill.name} (${skill.rating}) Cost:[${skill.cost}]`
+                    }
+                  />
+                  <Button
+                    color="primary"
+                    onClick={() => handleEditSkill(index, skill.type)}
+                  >
+                    Edit
+                  </Button>
+                  <Button
+                    color="secondary"
+                    onClick={() => handleRemoveSkill(index, skill.type)}
+                  >
+                    Remove
+                  </Button>
+                </ListItem>
+              ))}
+            </List>
+
+            <h3>Language Skills</h3>
+            <List style={{ maxWidth: "500px" }}>
+              {characterSkills.filter(sk => sk.type === 'Language').map((skill, index) => (
                 <ListItem key={index}>
                   <ListItemText
                     primary={
