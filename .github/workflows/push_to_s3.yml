@@ -37,7 +37,7 @@ jobs:
     steps:
       # Download the build artifact
       - name: Get build artifact
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4
         with:
           name: build
       # Setup the AWS credentials
