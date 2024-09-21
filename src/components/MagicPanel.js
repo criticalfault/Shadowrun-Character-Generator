@@ -1585,7 +1585,7 @@ function MagicPanel(props) {
     }
     if (spell.Exclusive) {
       limitedSpell = true;
-      tempRating += 1;
+      tempRating += 2;
     }
     if (limitedSpell) {
       return <span>&nbsp;({tempRating})</span>;
