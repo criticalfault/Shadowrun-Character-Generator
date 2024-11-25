@@ -115,10 +115,10 @@ export default function PriorityPanel(props) {
         },
         Ork: {
           Body: 3,
-          Quickness: -1,
+          Quickness: 0,
           Strength: 2,
           Charisma: -1,
-          Willpower: -1,
+          Willpower: 0,
           Intelligence: -1,
           Notes: "Low-light Vision",
         },
