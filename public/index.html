@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Fathom - beautiful, simple website analytics -->
-    <script src="https://cdn.usefathom.com/script.js" data-site="YOACWQSB" defer></script>
-    <!-- / Fathom -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BMGB9T4RYD"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-BMGB9T4RYD');
-    </script>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Shadowrun 2nd and 3rd Edition Character Creator"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+<head>
+  <!-- Fathom - beautiful, simple website analytics -->
+  <script src="https://cdn.usefathom.com/script.js" data-site="YOACWQSB" defer></script>
+  <!-- / Fathom -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BMGB9T4RYD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-BMGB9T4RYD');
+  </script>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Shadowrun 2nd and 3rd Edition Character Creator" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -36,90 +35,198 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
-    <title>Shadowrun Character Generator</title>
-    <script
-  src="https://code.jquery.com/jquery-3.7.1.min.js"
-  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-  crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <header class="cover bg-top" style="background-image:url(https://www.nullsheen.com/images/mainBG.jpg)">
-      <div class="bg-black-60"><nav class="pv3 ph3 ph4-ns" role="navigation">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+  <title>Shadowrun Character Generator</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://www.nullsheen.com/ananke/css/main.min.2438bcafd7af9675c426d1a4afcd16cfff18e4e10f401071e45b5ccd3be40a0d.css">
+  <style>
+    .dropdown {
+        position: relative;
+        display: inline-block
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 335px;
+        box-shadow: 0 8px 16px rgba(0,0,0,.2);
+        padding: 12px 16px;
+        z-index: 1
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block
+    }
+
+    .dropdown-content a {
+        color: #000;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block
+    }
+
+    #mobileMenuContainer {
+        padding: 20px;
+        background-color: #fff
+    }
+
+    #mobileMenuContainer ul {
+        list-style: none;
+        padding-left: 0
+    }
+
+    #mobileMenuContainer li a {
+        margin-top: 5px;
+        display: inline-block;
+        padding: 5px
+    }
+
+    #smallerHeader>div.stickyBar.hide-for-medium-down.accentBack>a>div {
+        color: #fff;
+        margin-top: 5px
+    }
+
+    #smallerHeader {
+        margin-top: 10px
+    }
+
+    .toolPadding {
+        padding-left: 10px
+    }
+
+    @media only screen and (max-width: 600px) {
+        #desktopHeader {
+            display:none
+        }
+
+        #smallerHeader {
+            display: block
+        }
+    }
+
+    @media only screen and (min-width: 600px) {
+        #desktopHeader {
+            display:none
+        }
+
+        #smallerHeader {
+            display: block
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        #desktopHeader {
+            display:none
+        }
+
+        #smallerHeader {
+            display: block
+        }
+    }
+
+    @media only screen and (min-width: 992px) {
+        #desktopHeader {
+            display:block
+        }
+
+        #smallerHeader {
+            display: none
+        }
+    }
+</style>
+</head>
+
+<body>
+  <header class="cover bg-top" style="background-image:url(https://www.nullsheen.com/images/mainBG.jpg)">
+    <div class="bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
         <div class="flex-l justify-between items-center center">
-          <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">NullSheen Shadowrun Tools</a>
-          <div class="flex-l items-center" id="desktopHeader"><ul class="pl0 mr3">
-            <li class="list f5 f4-ns fw4 dib">
-              <div class="dropdown dropdown2 flex-l justify-between items-center center">
-                <a class="dropbtn dropbtn2 hover-white no-underline white-90" href="https://www.nullsheen.com/software">Shadowrun Tools ▼</a>
-                <div class="dropdown-content">
-                  <a href="https://character-generator.nullsheen.com/" target="_blank">Character Generator (2nd/3rd)</a>
-                  <a href="https://matrix2.nullsheen.com/" target="_blank">Matrix Builder (2nd)</a>
-                  <a href="https://matrix.nullsheen.com/" target="_blank">Matrix Generator (3rd)</a>
-                  <a href="https://initiative-tracker.nullsheen.com/" target="_blank">Initative Tracker (2nd/3rd)</a>
-                  <a href="https://shadowrun-run-generator.vercel.app/" target="_blank">Run Generator</a>
+          <a href="https://character-generator.nullsheen.com/" class="f3 fw2 hover-white no-underline white-90 dib">NullSheen Shadowrun Tools</a>
+          <div class="flex-l items-center" id="desktopHeader">
+            <ul class="pl0 mr3">
+              <li class="list f5 f4-ns fw4 dib">
+                <div class="dropdown dropdown2 flex-l justify-between items-center center"><a
+                    class="dropbtn dropbtn2 hover-white no-underline white-90"
+                    href="https://www.nullsheen.com/software">Shadowrun Tools ▼</a>
+                  <div class="dropdown-content"><a href="https://character-generator.nullsheen.com/"
+                      target="_blank">Character Generator (2nd/3rd)</a>
+                    <a href="https://matrix2.nullsheen.com/" target="_blank">Matrix Builder (2nd)</a>
+                    <a href="https://matrix.nullsheen.com/" target="_blank">Matrix Generator (3rd)</a>
+                    <a href="https://initiative-tracker.nullsheen.com/" target="_blank">Initative Tracker (2nd/3rd)</a>
+                    <a href="https://shadowrun-run-generator.vercel.app/" target="_blank">Run Generator</a>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="list f5 f4-ns fw4 dib pr3">
-              <a class="ml-onclick-form over-white no-underline white-90" href="javascript:void(0)" onclick="ml('show','wHbKBq',!0)">Newsletter Signup</a>
-            </li>
-            <li class="list f5 f4-ns fw4 dib pr3">
-              <a class="hover-white no-underline white-90" href="https://www.nullsheen.com/archive/" title="The Archive page">The Archive</a>
-            </li>
-            <li class="list f5 f4-ns fw4 dib pr3">
-              <a class="hover-white no-underline white-90" href="https://www.nullsheen.com/contact/" title="Contact page">Contact</a>
-            </li>
-            <li class="list f5 f4-ns fw4 dib pr3">
-              <a class="hover-white no-underline white-90" href="https://www.nullsheen.com/about-me/" title="About Me page">About Me</a>
-            </li>
-            <li class="list f5 f4-ns fw4 dib pr3">
-              <a class="hover-white no-underline white-90" href="https://www.nullsheen.com/shadowrun-books/" title="Shadowrun Books page">Shadowrun Books</a>
-            </li>
-            <li class="list f5 f4-ns fw4 dib pr3">
-              <a class="hover-white no-underline white-90" href="https://www.nullsheen.com/shadowrun-podcasts-list/" title="Shadowrun Podcasts page">Shadowrun Podcasts</a>
-            </li>
-          </ul>
-        <div class="ananke-socials"></div></div>
-        <div class="flex-l items-center" id="smallerHeader">
-          <div class="stickyBar hide-for-medium-down accentBack">
-            <a href="#" class="menu-trigger" aria-label="Click to open menu">
-              <img src="https://www.nullsheen.com/images/menu-icon.svg" alt="Menu Icon" width="50" class="marginBottom5" draggable="false">
-              <div class="uppercase">Menu</div></a></div><div id="mobileMenuContainer" style="display:none">
-                <ul>
-                  <li><a href="https://www.nullsheen.com/software">Shadowrun Tools</a></li>
-                  <li class="toolPadding"><a href="https://character-generator.nullsheen.com/" target="_blank">Character Generator (2nd/3rd)</a></li>
-                  <li class="toolPadding"><a href="https://matrix2.nullsheen.com/" target="_blank">Matrix Builder (2nd)</a></li>
-                  <li class="toolPadding"><a href="https://matrix.nullsheen.com/" target="_blank">Matrix Generator (3rd)</a></li>
-                  <li class="toolPadding"><a href="https://initiative-tracker.nullsheen.com/" target="_blank">Initative Tracker (2nd/3rd)</a></li>
-                  <li class="toolPadding"><a href="https://shadowrun-run-generator.vercel.app/" target="_blank">Run Generator</a></li>
-                  <li><a href="javascript:void(0)" onclick="ml('show','wHbKBq',!0)">Newsletter Signup</a></li>
-                  <li><a href="https://www.nullsheen.com/archive/" title="The Archive page">The Archive</a></li>
-                  <li><a href="https://www.nullsheen.com/contact/" title="Contact page">Contact</a></li>
-                  <li><a href="https://www.nullsheen.com/about-me/" title="About Me page">About Me</a></li>
-                  <li><a href="https://www.nullsheen.com/shadowrun-books/" title="Shadowrun Books page">Shadowrun Books</a></li>
-                  <li><a href="https://www.nullsheen.com/shadowrun-podcasts-list" title="Shadowrun Podcasts page">Shadowrun Podcasts</a></li>
-                </ul>
-              </div>
+              </li>
+              <li class="list f5 f4-ns fw4 dib pr3"><a class="ml-onclick-form over-white no-underline white-90"
+                  href="javascript:void(0)" onclick="ml('show','wHbKBq',!0)">Newsletter Signup</a>
+              </li>
+              <li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90"
+                  href="https://www.nullsheen.com/archive/" title="The Archive page">The Archive</a></li>
+              <li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90"
+                  href="https://www.nullsheen.com/contact/" title="Contact page">Contact</a></li>
+              <li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90"
+                  href="https://www.nullsheen.com/about-me/" title="About Me page">About Me</a></li>
+              <li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90"
+                  href="https://www.nullsheen.com/shadowrun-books/" title="Shadowrun Books page">Shadowrun Books</a>
+              </li>
+              <li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90"
+                  href="https://www.nullsheen.com/shadowrun-podcasts-list/" title="Shadowrun Podcasts page">Shadowrun
+                  Podcasts</a></li>
+            </ul>
+            <div class="ananke-socials"></div>
+          </div>
+          <div class="flex-l items-center" id="smallerHeader">
+            <div class="stickyBar hide-for-medium-down accentBack"><a href="#" class="menu-trigger"
+                aria-label="Click to open menu"><img src="https://www.nullsheen.com/images/menu-icon.svg" alt="Menu Icon" width="50"
+                  class="marginBottom5" draggable="false">
+                <div class="uppercase">Menu</div>
+              </a></div>
+            <div id="mobileMenuContainer" style="display:none">
+              <ul>
+                <li><a href="https://www.nullsheen.com/software">Shadowrun Tools</a></li>
+                <li class="toolPadding"><a href="https://character-generator.nullsheen.com/" target="_blank">Character
+                    Generator (2nd/3rd)</a></li>
+                <li class="toolPadding"><a href="https://matrix2.nullsheen.com/" target="_blank">Matrix Builder
+                    (2nd)</a></li>
+                <li class="toolPadding"><a href="https://matrix.nullsheen.com/" target="_blank">Matrix Generator
+                    (3rd)</a></li>
+                <li class="toolPadding"><a href="https://initiative-tracker.nullsheen.com/" target="_blank">Initative
+                    Tracker (2nd/3rd)</a></li>
+                <li class="toolPadding"><a href="https://shadowrun-run-generator.vercel.app/" target="_blank">Run
+                    Generator</a></li>
+                <li><a href="javascript:void(0)" onclick="ml('show','wHbKBq',!0)">Newsletter
+                    Signup</a></li>
+                <li><a href="https://www.nullsheen.com/archive/" title="The Archive page">The Archive</a></li>
+                <li><a href="https://www.nullsheen.com/contact/" title="Contact page">Contact</a></li>
+                <li><a href="https://www.nullsheen.com/about-me/" title="About Me page">About Me</a></li>
+                <li><a href="https://www.nullsheen.com/shadowrun-books/" title="Shadowrun Books page">Shadowrun
+                    Books</a></li>
+                <li><a href="https://www.nullsheen.com/shadowrun-podcasts-list"
+                    title="Shadowrun Podcasts page">Shadowrun Podcasts</a></li>
+              </ul>
             </div>
           </div>
-        </nav>
-        <div class="tc-l pv4 pv6-l ph3 ph4-ns">
-          <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">NullSheen - Tools for Shadowrun (And more)</h1>
-          <h2 class="fw1 f5 f3-l white-80 measure-wide-l center mt3">RPG web tools, reviews, and discussions about Shadowrun including Character Generators, Matrix builders, Initative tracking.</h2>
         </div>
+      </nav>
+      <div class="tc-l pv4 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">NullSheen - Tools for Shadowrun (And more)</h1>
+        <h2 class="fw1 f5 f3-l white-80 measure-wide-l center mt3">RPG web tools, reviews, and discussions about
+          Shadowrun including Character Generators, Matrix builders, Initative tracking.</h2>
       </div>
-      <script>
-        $('.menu-trigger').on('click',function(event){
+    </div>
+    <script>
+      $('.menu-trigger').on('click',function(event){
           $('#mobileMenuContainer').slideToggle();
-        })
-      </script>
-    </header>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+     })
+    </script>
+  </header>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -129,13 +236,18 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-      <!-- MailerLite Universal -->
+  <!-- MailerLite Universal -->
   <script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    (function (w, d, e, u, f, l, n) {
+      w[f] = w[f] || function () {
+        (w[f].q = w[f].q || [])
+        .push(arguments);
+      }, l = d.createElement(e), l.async = 1, l.src = u,
+      n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+    })
+      (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
     ml('account', '1152748');
   </script>
-  </body>
+</body>
+
 </html>
