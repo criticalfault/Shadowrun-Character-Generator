@@ -1,11 +1,11 @@
 //Post React 18
-import ReactDOM from "react-dom";
+import { createRoot } from 'react-dom/client';
 import App from './App';
 
 const container = document.getElementById('root');
 
 // Create a root.
-const root = ReactDOM.createRoot(container);
+const root = createRoot(document.getElementById('root'));
 
 // Initial render
 root.render(<App/>);

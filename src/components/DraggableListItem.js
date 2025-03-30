@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Draggable } from "react-beautiful-dnd";
 
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import ListItemText from "@material-ui/core/ListItemText";
-import Avatar from "@material-ui/core/Avatar";
+import makeStyles from "@mui/styles/makeStyles";
+import ListItem from "@mui/material/ListItem";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
+import ListItemText from "@mui/material/ListItemText";
+import Avatar from "@mui/material/Avatar";
 import CachedIcon from "@mui/icons-material/Cached";
 import { Box } from "@mui/material";
 
