@@ -42,10 +42,18 @@ export default function GearPanel(props) {
     const handleGearChange = (event) => {
       var TempGear = {}
       if(props.Edition === 'SR3'){
-        TempGear = GearData[SelectedGearCategory].entries.sort((a, b) => a.Name.localeCompare(b.Name)).filter(item => item.hasOwnProperty('BookPage') && props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
+        TempGear = GearData[SelectedGearCategory].entries
+        .filter(
+          item => !item.hasOwnProperty('BookPage') || 
+          ( 
+            props.Edition === 'SR3' && props.BooksFilter.includes(item.BookPage.split('.')[0])
+          )
+        )
+          .sort((a, b) => a.Name.localeCompare(b.Name))[event.target.value];
       }else{
         TempGear = GearData[SelectedGearCategory].entries.sort((a, b) => a.Name.localeCompare(b.Name))[event.target.value];
       }
+
       setNewGear(TempGear);
       setNewGearIndex(event.target.value)
       setNewGearCost(TempGear.Cost);
