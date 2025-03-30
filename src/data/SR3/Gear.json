@@ -51637,7 +51637,7 @@
         "BookPage": "sr3.290"
       },
       {
-        "Name": "ECCM [1] (base",
+        "Name": "ECCM [1] (base, free)",
         "Concealability": "-",
         "Rating": "1",
         "Weight": "-",
@@ -51647,7 +51647,7 @@
         "BookPage": "sr3.290"
       },
       {
-        "Name": "ECCM",
+        "Name": "ECCM +1 [2]",
         "Concealability": "-",
         "Rating": "2",
         "Weight": "-",
@@ -51657,7 +51657,7 @@
         "BookPage": "sr3.290"
       },
       {
-        "Name": "ECCM",
+        "Name": "ECCM +2 [3]",
         "Concealability": "-",
         "Rating": "3",
         "Weight": "-",
@@ -51667,7 +51667,7 @@
         "BookPage": "sr3.290"
       },
       {
-        "Name": "ECCM",
+        "Name": "ECCM +3 [4]",
         "Concealability": "-",
         "Rating": "4",
         "Weight": "-",
@@ -51677,7 +51677,7 @@
         "BookPage": "sr3.290"
       },
       {
-        "Name": "ECCM",
+        "Name": "ECCM +4 [5]",
         "Concealability": "-",
         "Rating": "5",
         "Weight": "-",
@@ -51687,7 +51687,7 @@
         "BookPage": "sr3.290"
       },
       {
-        "Name": "ECCM",
+        "Name": "ECCM +5 [6]",
         "Concealability": "-",
         "Rating": "6",
         "Weight": "-",
@@ -51697,7 +51697,7 @@
         "BookPage": "sr3.290"
       },
       {
-        "Name": "ECCM",
+        "Name": "ECCM +6 [7]",
         "Concealability": "-",
         "Rating": "7",
         "Weight": "-",
@@ -51707,7 +51707,7 @@
         "BookPage": "sr3.290"
       },
       {
-        "Name": "ECCM",
+        "Name": "ECCM +7 [8]",
         "Concealability": "-",
         "Rating": "8",
         "Weight": "-",
@@ -51717,7 +51717,7 @@
         "BookPage": "sr3.290"
       },
       {
-        "Name": "ECCM",
+        "Name": "ECCM +8 [9]",
         "Concealability": "-",
         "Rating": "9",
         "Weight": "-",
@@ -51727,7 +51727,7 @@
         "BookPage": "sr3.290"
       },
       {
-        "Name": "ECCM",
+        "Name": "ECCM +9 [10]",
         "Concealability": "-",
         "Rating": "10",
         "Weight": "-",
