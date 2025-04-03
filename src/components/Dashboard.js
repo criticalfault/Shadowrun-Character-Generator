@@ -536,8 +536,8 @@ export default function BasicTabs() {
   return (
     <div className="dashboard">
       {displayBox()}
-       <Grid container spacing={2}>
-        <Grid item size={4}>
+       <Grid container spacing={2} style={{"width":"100%"}}>
+        <Grid item size={{ sm: 12, md: 4}}>
           <LoadCharacter
             Character={Character}
             loadCharacter={handleLoadCharacter}
@@ -546,7 +546,7 @@ export default function BasicTabs() {
             ChangeEdition={handleChangeEdition}
           />
         </Grid>
-        <Grid item size={7}>
+        <Grid item size={{ sm: 12, md: 7}}>
           <SignInPopup
             user={user} 
             onSignIn={handleSignIn}
