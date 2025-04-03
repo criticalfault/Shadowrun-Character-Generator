@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { auth, provider, signInWithPopup, onAuthStateChanged, db, doc, setDoc, getDoc } from "./firebase";
 import Button from "@mui/material/Button";
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
 import { Grid,Box } from "@mui/material";
 const SignInPopup = (props,{ onSignIn }) => {
     const style = {
-        width: 400,
-        bgcolor: "background.paper",
-        border: "2px solid #000",
-        boxShadow: 24,
-        margin:"10px",
-        p: 4,
+        
       };
     const [character1, setCharacter1] = useState([]);
     const [character2, setCharacter2] = useState([]);
@@ -123,56 +121,63 @@ const SignInPopup = (props,{ onSignIn }) => {
     <div>
       {props.user ? (
         
+        <Accordion>
+        <AccordionSummary id="panel-header" aria-controls="panel-content">
+          Google Cloud Storage
+        </AccordionSummary>
+        <AccordionDetails>
+          <Box sx={style}>
+      <p>Welcome, {props.user.displayName}!</p>
+      <p>This uses Cloud Storage, which can be accessed anywhere, but its not free, so it's limited to 2 characters for the moment.</p>
+            <Grid container spacing={2}>
+              <Grid item size={12}>
+                
+              </Grid>
+              <Grid item size={{ xs: 12, md: 6 }}>
+                Save Character
+                <hr></hr>
+                <Button
+                  onClick={function (event) {
+                      saveCharacterCloud(1);
+                  }}
+                >
+                  Save 1{" "}
+                </Button>
+                <br></br>
+                <Button
+                  onClick={function (event) {
+                      saveCharacterCloud(2);
+                  }}
+                >
+                  Save 2{" "}
+                </Button>
+                
+              </Grid>
+              <Grid item size={{ xs: 12, md: 6 }}>
+                Load Character
+                <hr></hr>
+                <Button
+                  onClick={function (event) {
+                    cloudLoad(1);
+                  }}
+                >
+                  Load {getSaveDescription(1)}
+                </Button>
+                <br></br>
+                <Button
+                  onClick={function (event) {
+                      cloudLoad(2);
+                  }}
+                >
+                  Load {getSaveDescription(2)}
+                </Button>
+                <br></br>
+              </Grid>
+            </Grid>
+          </Box>
+        </AccordionDetails>
+      </Accordion>
             
-            <Box sx={style}>
-                <p>Welcome, {props.user.displayName}!</p>
-                <p>This uses Cloud Storage, which can be accessed anywhere, but its not free, so it's limited to 2 characters for the moment.</p>
-                      <Grid container spacing={2}>
-                        <Grid item size={12}>
-                          
-                        </Grid>
-                        <Grid item size={{ xs: 12, md: 6 }}>
-                          Save Character
-                          <hr></hr>
-                          <Button
-                            onClick={function (event) {
-                                saveCharacterCloud(1);
-                            }}
-                          >
-                            Save 1{" "}
-                          </Button>
-                          <br></br>
-                          <Button
-                            onClick={function (event) {
-                                saveCharacterCloud(2);
-                            }}
-                          >
-                            Save 2{" "}
-                          </Button>
-                         
-                        </Grid>
-                        <Grid item size={{ xs: 12, md: 6 }}>
-                          Load Character
-                          <hr></hr>
-                          <Button
-                            onClick={function (event) {
-                              cloudLoad(1);
-                            }}
-                          >
-                            Load {getSaveDescription(1)}
-                          </Button>
-                          <br></br>
-                          <Button
-                            onClick={function (event) {
-                                cloudLoad(2);
-                            }}
-                          >
-                            Load {getSaveDescription(2)}
-                          </Button>
-                          <br></br>
-                        </Grid>
-                      </Grid>
-                    </Box>
       ) : (
             <Button 
             onClick={handleSignIn}

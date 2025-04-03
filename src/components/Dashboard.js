@@ -22,6 +22,7 @@ import KarmaDisplay from "./KarmaDisplay";
 import "./SheetDisplay.css";
 import DiceRollerTray from "./DiceRollerTray";
 import SignInPopup from "./SignInPopup";
+import { Grid } from "@mui/material";
 // import TableAttribute from "./CustomTable";
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -535,23 +536,29 @@ export default function BasicTabs() {
   return (
     <div className="dashboard">
       {displayBox()}
-      <LoadCharacter
-        Character={Character}
-        loadCharacter={handleLoadCharacter}
-        BaseCharacter={baseCharacter}
-        Edition={Edition}
-        ChangeEdition={handleChangeEdition}
-      />
-      <SignInPopup
-        user={user} 
-        onSignIn={handleSignIn}
-        setUser={setUser}
-        Character={Character}
-        loadCharacter={handleLoadCharacter}
-        BaseCharacter={baseCharacter}
-        Edition={Edition}
-        ChangeEdition={handleChangeEdition}
-      />
+       <Grid container spacing={2} style={{"width":"100%"}}>
+        <Grid item size={{ sm: 12, md: 4}}>
+          <LoadCharacter
+            Character={Character}
+            loadCharacter={handleLoadCharacter}
+            BaseCharacter={baseCharacter}
+            Edition={Edition}
+            ChangeEdition={handleChangeEdition}
+          />
+        </Grid>
+        <Grid item size={{ sm: 12, md: 7}}>
+          <SignInPopup
+            user={user} 
+            onSignIn={handleSignIn}
+            setUser={setUser}
+            Character={Character}
+            loadCharacter={handleLoadCharacter}
+            BaseCharacter={baseCharacter}
+            Edition={Edition}
+            ChangeEdition={handleChangeEdition}
+          />
+        </Grid>
+      </Grid>
       <DiceRollerTray showDice={value} />
       <Box sx={{ width: "100%" }}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
