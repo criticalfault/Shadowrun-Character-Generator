@@ -148,7 +148,6 @@ function SheetDisplay(props) {
           <br />
           <br />
           <TextField
-            style={{ width: "100%" }}
             className="pool_display"
             id="rating-input"
             label="Astral Combat"
@@ -303,7 +302,6 @@ function SheetDisplay(props) {
           <br />
           <br />
           <TextField
-            style={{ width: "100%" }}
             className="pool_display"
             id="rating-input"
             label="Spell"
@@ -345,7 +343,6 @@ function SheetDisplay(props) {
           <br />
           <br />
           <TextField
-            style={{ width: "100%" }}
             className="pool_display"
             id="rating-input"
             label="Karma"
@@ -473,7 +470,7 @@ function SheetDisplay(props) {
         spacing={3}
         style={{ background: "#ffffff", marginBottom: "20px", padding: "20px" }}
       >
-        <Grid item xs={12} md={6}>
+        <Grid item size={{ xs: 12, md: 6 }} >
           <TextField
             style={{ width: "100%" }}
             label="Runner Name"
@@ -482,7 +479,7 @@ function SheetDisplay(props) {
             onChange={(event) => props.onChangeStreetName(event.target.value)}
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item size={{ xs: 12, md: 6 }}>
           <TextField
             style={{ width: "100%" }}
             label="Race"
@@ -491,7 +488,7 @@ function SheetDisplay(props) {
             disabled={true}
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item size={{ xs: 12, md: 6 }}>
           <TextField
             style={{ width: "100%" }}
             label="Age"
@@ -500,7 +497,7 @@ function SheetDisplay(props) {
             onChange={(event) => props.onChangeAge(event.target.value)}
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item size={{ xs: 12, md: 6 }}>
           <TextField
             style={{ width: "100%" }}
             label="Description"
@@ -509,7 +506,7 @@ function SheetDisplay(props) {
             onChange={(event) => props.onChangeDescription(event.target.value)}
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item size={12}>
           <TextField
             style={{ width: "100%" }}
             label="Notes"
@@ -521,7 +518,7 @@ function SheetDisplay(props) {
       </Grid>
       <Grid
         item
-        xs={12}
+        size={12}
         style={{ background: "#ffffff", marginBottom: "20px", padding: "20px" }}
       >
         <Item>
@@ -541,11 +538,11 @@ function SheetDisplay(props) {
         </Item>
       </Grid>
 
-      <Grid item xs={12} md={4} style={{ width: "100%" }}>
+      <Grid item size={{ xs: 12, md: 4 }} style={{ width: "100%" }}>
         <Item>
           <h2 className={"boxHeader"}>Attributes</h2>
           <Grid container>
-            <Grid item xs={8}>
+            <Grid item size={8}>
               <table className=" ">
                 <tbody>
                   {Object.keys(props.currentCharacter.attributes).map(
@@ -582,7 +579,7 @@ function SheetDisplay(props) {
                 </tbody>
               </table>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item size={4}>
               <TextField
                 style={{
                   width: "90px",
@@ -647,11 +644,10 @@ function SheetDisplay(props) {
           </Grid>
         </Item>
       </Grid>
-      <Grid item xs={12} md={8}>
+      <Grid item size={{ xs: 12, md: 8 }}>
         <Item style={{}}>
           <h2 className={"boxHeader"}>Dice Pools</h2>
           <TextField
-            style={{ width: "100%" }}
             className="pool_display"
             id="rating-input"
             label="Combat"
@@ -698,14 +694,14 @@ function SheetDisplay(props) {
           {renderKarmaPool()}
         </Item>
       </Grid>
-      {/* <Grid item xs={12} md={6}>
+      {/* <Grid item size={{ xs: 12, md: 6 }}>
         <Item style={{ minHeight: "341px" }}>
           <h2 className={"boxHeader"}>Skills</h2>
           {renderSkillsPanel()}
         </Item>
       </Grid> */}
 
-      <Grid item md={12} xs={12}>
+      <Grid item size={12}>
         <Item>
           <h2 className={"boxHeader"}>Cyberware</h2>
           <TableContainer component={Paper}>
@@ -736,7 +732,7 @@ function SheetDisplay(props) {
           </TableContainer>
         </Item>
       </Grid>
-      <Grid item md={12} xs={12}>
+      <Grid item size={{ xs: 12, md: 12 }}>
         <Item>
           <h2 className={"boxHeader"}>Bioware</h2>
           <TableContainer component={Paper}>
@@ -769,7 +765,7 @@ function SheetDisplay(props) {
           </TableContainer>
         </Item>
       </Grid>
-      <Grid item md={6} xs={12}>
+      <Grid item size={{ xs: 12, md: 6 }}>
         <Item>
           <h2 className={"boxHeader"}>Gear</h2>
           <TableContainer component={Paper}>
@@ -808,7 +804,7 @@ function SheetDisplay(props) {
           </TableContainer>
         </Item>
       </Grid>
-      <Grid item md={6} xs={12}>
+      <Grid item size={{ xs: 12, md: 6 }}>
         <Item>
           <h2 className={"boxHeader"}>Armor</h2>
           <TableContainer component={Paper}>
@@ -843,7 +839,7 @@ function SheetDisplay(props) {
           </TableContainer>
         </Item>
       </Grid>
-      <Grid item xs={12}>
+      <Grid item size={12}>
         <Item>
           <h2 className={"boxHeader"}>Weapons</h2>
           <TableContainer component={Paper}>
@@ -898,7 +894,7 @@ function SheetDisplay(props) {
       </Grid>
       {props.currentCharacter.powers &&
       props.currentCharacter.powers.length > 0 ? (
-        <Grid item xs={12}>
+        <Grid item size={12}>
           <Item>{renderPhysicalAdeptPowers()}</Item>
         </Grid>
       ) : (
@@ -906,7 +902,7 @@ function SheetDisplay(props) {
       )}
 
       {props.currentCharacter.foci && props.currentCharacter.foci.length ? (
-        <Grid item xs={12}>
+        <Grid item size={12}>
           <Item>
             <h3>Foci</h3>
             <TableContainer component={Paper}>
@@ -954,7 +950,7 @@ function SheetDisplay(props) {
       )}
 
       {props.currentCharacter.spells && props.currentCharacter.spells.length ? (
-        <Grid item xs={12}>
+        <Grid item size={12}>
           <Item>
             <h3>Spells</h3>
             <TableContainer component={Paper}>
@@ -1004,7 +1000,7 @@ function SheetDisplay(props) {
         ""
       )}
       {props.currentCharacter.vehicles ? (
-        <Grid item xs={12}>
+        <Grid item size={12}>
           <Item>
             <h2 className={"boxHeader"}>Vehicles</h2>
             <TableContainer component={Paper}>

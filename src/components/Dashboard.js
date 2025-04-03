@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -21,10 +21,10 @@ import SheetDisplay from "./SheetDisplay";
 import KarmaDisplay from "./KarmaDisplay";
 import "./SheetDisplay.css";
 import DiceRollerTray from "./DiceRollerTray";
+import SignInPopup from "./SignInPopup";
 // import TableAttribute from "./CustomTable";
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
-
   return (
     <div
       role="tabpanel"
@@ -200,6 +200,12 @@ export default function BasicTabs() {
     10: 1000,
     11: 1000,
     12: 1000,
+  };
+
+  const [user, setUser] = useState(null);
+  const handleSignIn = (user) => {
+    setUser(user);
+    // Handle character save/load here
   };
 
   const handleChangePriorityRace = (event) => {
@@ -530,6 +536,16 @@ export default function BasicTabs() {
     <div className="dashboard">
       {displayBox()}
       <LoadCharacter
+        Character={Character}
+        loadCharacter={handleLoadCharacter}
+        BaseCharacter={baseCharacter}
+        Edition={Edition}
+        ChangeEdition={handleChangeEdition}
+      />
+      <SignInPopup
+        user={user} 
+        onSignIn={handleSignIn}
+        setUser={setUser}
         Character={Character}
         loadCharacter={handleLoadCharacter}
         BaseCharacter={baseCharacter}

@@ -13,7 +13,7 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import DeleteIcon from "@material-ui/icons/Delete";
+import DeleteIcon from "@mui/icons-material/Delete";
 import Modal from "@mui/material/Modal";
 import "./DeckingPanel.css";
 const modalStyle = {
@@ -215,7 +215,7 @@ export default function DeckingPanel(props) {
             <Box className="cyberdeckCard" key={index}>
               <h3>{cyberdeck.Name}</h3>
               <Grid container spacing={2}>
-                <Grid item xs={5} className="cyberDeckTable">
+                <Grid item size={{ xs: 5}} className="cyberDeckTable">
                   <div>
                     Persona Points Left:{" "}
                     {parseInt(cyberdeck.Persona) * 3 -
@@ -326,7 +326,7 @@ export default function DeckingPanel(props) {
                     </tbody>
                   </table>
                 </Grid>
-                <Grid item xs={7} className="">
+                <Grid item size={{ xs: 7}} className="">
                   <h4>Programs</h4>
                   <div>
                     <Button

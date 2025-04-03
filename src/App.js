@@ -2,6 +2,8 @@ import "./App.css";
 import * as Sentry from "@sentry/react";
 import Dashboard from "./components/Dashboard";
 import { Container } from "@mui/material";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+const theme = createTheme();
 
 function App() {
   //   Sentry.init({
@@ -27,8 +29,9 @@ function App() {
   //   replaysOnErrorSampleRate: 1.0, // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
   // });
   return (
+    <ThemeProvider theme={theme}>
     <div className="App">
-      <Container maxWidth="2xl" sx="mx-auto">
+      <Container maxWidth="2xl">
         <h1
           className="mainHeader"
           style={{
@@ -42,6 +45,7 @@ function App() {
         <Dashboard className="dashboard" />
       </Container>
     </div>
+    </ThemeProvider>
   );
 }
 

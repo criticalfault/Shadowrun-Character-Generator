@@ -483,7 +483,7 @@ function SR3SkillsPanel({
       </Box>
 
       <Grid container spacing={2}>
-        <Grid item xs={12}>
+        <Grid item size={12}>
           <Box sx={{ background: "#fafafa", padding: "20px" }}>
             <h3 style={{ paddingBottom: "20px" }}>Active Skills</h3>
             <FormControl>

@@ -60,7 +60,7 @@ export default function IdentityPanel(props) {
             <li>Added magical libraries to 3rd edition. Still need to do that for 2nd edition</li>
             <li>Fixed a bunch of gear items having bad display names, if you find more please let me know and i can fix them!</li>
             <li>Added Foci to the Sheet display</li>
-            <il>Added some 3 dozen totems for Shamans.</il>
+            <li>Added some 3 dozen totems for Shamans.</li>
             <li>Fixed some issues with Physical Adept powers/traditions</li>
             <li>Added magical initative bonuses to the sheet display</li>
             <li>Added increasing attributes with Karma... so it begins</li>
