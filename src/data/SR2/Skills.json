@@ -21,7 +21,7 @@
     }, 
     "Artistic Expression":{
         "name":"Artistic Expression", 
-        "requiresConcentration":true,
+        "requiresConcentration":false,
         "Concentrations":[
             {"name":"Painting","Specializations":["Spray","Oil","Watercolor"]},
             {"name":"Sculpting","Specializations":[]},
@@ -139,7 +139,7 @@
     },
     "Dancing":{
         "name":"Dancing", 
-        "requiresConcentration":true,
+        "requiresConcentration":false,
         "Concentrations":[
             {"name":"Ballet","Specializations":["*specific dance"]},
             {"name":"Modern","Specializations":["*specific dance"]},
