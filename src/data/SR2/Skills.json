@@ -19,6 +19,17 @@
         "requiresConcentration":false,
         "Concentrations":[]
     }, 
+    "Artistic Expression":{
+        "name":"Artistic Expression", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Painting","Specializations":["Spray","Oil","Watercolor"]},
+            {"name":"Sculpting","Specializations":[]},
+            {"name":"Drawing","Specializations":["Anime","Comic"]},
+            {"name":"Writing","Specializations":["Horror","Comedy","Screenplay"]},
+            {"name":"Photography","Specializations":["Digital","Film"]}
+        ]
+    },
     "Athletics":{
         "name":"Athletics", 
         "requiresConcentration":false,
@@ -27,7 +38,11 @@
             {"name":"Jumping","Specializations":[]},
             {"name":"Lifting","Specializations":[]},
             {"name":"Running","Specializations":[]},
-            {"name":"Swimming","Specializations":[]}
+            {"name":"Swimming","Specializations":[]},
+            {"name":"Football","Specializations":["Passing"]},
+            {"name":"Baseball","Specializations":[]},
+            {"name":"Urban Brawl","Specializations":[]},
+            {"name":"Combat Biking","Specializations":["Flagsnagging"]}
         ]
     },
     "Bike":{
@@ -122,6 +137,16 @@
             {"name":"Headware","Specializations":["*device"]}
         ]
     },
+    "Dancing":{
+        "name":"Dancing", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Ballet","Specializations":["*specific dance"]},
+            {"name":"Modern","Specializations":["*specific dance"]},
+            {"name":"Ballroom","Specializations":["*specific dance"]},
+            {"name":"Native American","Specializations":["*specific dance"]}
+        ]
+    },
     "Demolitions":{
         "name":"Demolitions", 
         "requiresConcentration":false,
@@ -146,6 +171,11 @@
         "requiresConcentration":false,
         "Concentrations":[]
     },
+    "Electronic Music":{
+        "name":"Electronic Music", 
+        "requiresConcentration":false,
+        "Concentrations":[]
+    },
     "Enchanting":{
         "name":"Enchanting", 
         "requiresConcentration":false,
@@ -153,6 +183,12 @@
             {"name":"Alchemy","Specializations":[]},
             {"name":"Talismongering","Specializations":["*type"]}
         ]
+    },
+    "Etiquette: Art":{
+        "name":"Etiquette: Art", 
+        "requiresConcentration":true,
+        "requiredConcentration":"Art",
+        "Concentrations":[]
     },
     "Etiquette: Corporate":{
         "name":"Etiquette: Corporate", 
@@ -242,7 +278,8 @@
         "requiresConcentration":false,
         "Concentrations":[
             {"name":"Machine-aided","Specializations":["Lie detectors","Voice stress analysis"]},
-            {"name":"Verbal","Specializations":[]}
+            {"name":"Verbal","Specializations":[]},
+            {"name":"Interviewing","Specializations":["Trideo Interviewing"]}
         ]
     },
     "Leadership":{
@@ -252,7 +289,8 @@
             {"name":"Commercial","Specializations":["Strategy","Tactics","Morale"]},
             {"name":"Military","Specializations":["Strategy","Tactics","Morale"]},
             {"name":"Political","Specializations":["Strategy","Tactics","Morale"]},
-            {"name":"Negotiation","Specializations":["Bargain","Bribe","Fast Talk"]}
+            {"name":"Negotiation","Specializations":["Bargain","Bribe","Fast Talk"]},
+            {"name":"Reporting","Specializations":[]}
         ]
     },
     "Magical theory":{
@@ -270,6 +308,25 @@
             {"name":"Military history","Specializations":["*continent/period"]},
             {"name":"Tactics","Specializations":["Air","Land","Sea"]}
         ]
+    },
+    "Musical Composition":{
+        "name":"Musical Composition", 
+        "requiresConcentration":false,
+        "Concentrations":[]
+    },
+    "Musical Instrument":{
+        "name":"Musical Instrument", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Acoustic","Specializations":["*instrument"]},
+            {"name":"Electric","Specializations":["*instrument"]},
+            {"name":"Synthesizer","Specializations":["*instrument"]}
+        ]
+    },
+    "Musical Production":{
+        "name":"Musical Production", 
+        "requiresConcentration":false,
+        "Concentrations":[]
     },
     "Negotiation":{
         "name":"Negotiation", 
@@ -310,7 +367,11 @@
             {"name":"Laws and Statutes","Specializations":[]}
         ]
     },
-
+    "Portacam":{
+        "name":"Portacam", 
+        "requiresConcentration":false,
+        "Concentrations":[]
+    },
     "Projectile Weapons":{
         "name":"Projectile Weapons", 
         "requiresConcentration":false,
@@ -351,7 +412,17 @@
             {"name":"Transport","Specializations":["*vehicle"]}
         ]
     },
-
+    "Singing":{
+        "name":"Singing", 
+        "requiresConcentration":false,
+        "Concentrations":[
+            {"name":"Chant","Specializations":["Gregorian Chant", "Native American Chant"]},
+            {"name":"Rock","Specializations":["Metal", "Thrash"]},
+            {"name":"Blues", "Specializations":[]},
+            {"name":"Classical","Specializations":[]},
+            {"name":"Pop","Specializations":[]}
+        ]
+    },
     "Sociology":{
         "name":"Sociology", 
         "requiresConcentration":false,
