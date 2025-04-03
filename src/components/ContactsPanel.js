@@ -60,7 +60,6 @@ function ContactsPanel(props) {
     <Box sx={{ background: "#fafafa !important", padding: "20px" }}>
       <h2>Contacts</h2>
       <Button
-        textSizeSmall
         variant="contained"
         color="primary"
         onClick={handleAddContact}

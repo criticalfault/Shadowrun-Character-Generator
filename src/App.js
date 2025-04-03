@@ -5,12 +5,6 @@ import { Container } from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 const theme = createTheme();
 
-// const useStyles = makeStyles((theme) => {
-//   root: {
-//     // some CSS that accesses the theme
-//   }
-// });
-
 function App() {
   //   Sentry.init({
   //   dsn: "https://34ee2aaefd40613b56d1255ffad6a382@o4506377711452160.ingest.sentry.io/4506377714335744",
@@ -37,7 +31,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
-      <Container maxWidth="2xl" sx="mx-auto">
+      <Container maxWidth="2xl">
         <h1
           className="mainHeader"
           style={{

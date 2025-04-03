@@ -167,14 +167,14 @@ export default function LoadCharacter(props) {
       >
         <Box sx={style}>
           <Grid container spacing={2}>
-            <Grid item xs={12}>
+            <Grid item size={12}>
               This uses your browsers storage mechanism to save/load characters.
               This is PER computer and PER browser. So its not for instance
               available on your phone if you saved it on your PC. You'll need to
               use the file save for that, but then you can save it on your
               phone!
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item size={{ xs: 12, md: 6 }}>
               Save Character
               <hr></hr>
               <Button
@@ -218,7 +218,7 @@ export default function LoadCharacter(props) {
               </Button>
               <br></br>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item size={{ xs: 12, md: 6 }}>
               Load Character
               <hr></hr>
               <Button
