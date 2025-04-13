@@ -29,13 +29,7 @@ function MagicPanel(props) {
   const spellsData = require("../data/" + props.Edition + "/Spells.json");
   const AdeptPowers = require("../data/" + props.Edition + "/AdeptPowers.json");
   const Totems = require("../data/" + props.Edition + "/Totems.json");
-  const AspectedMageTraditions = [
-    "Shamanist",
-    "Conjurer",
-    "Elementalist",
-    "Sorcerer",
-    "WuFa",
-  ];
+
   const AdeptPaths = {
     None: {
       name: "None",
@@ -158,7 +152,7 @@ function MagicPanel(props) {
       name:"Shamanist",
       description:
         "Must be a shaman. Can only cast spells and summon spirits for which they receive a totem advantage.",
-      conjures: "",
+      conjures: "Spirits",
       totemList: "TOTEMS",
     },
     Conjurer: {
@@ -1324,7 +1318,7 @@ function MagicPanel(props) {
       case "Metahuman Sorcerer":
       case "Human Sorcerer":
       case "Aspected":
-        list = AspectedMageTraditions;
+        list = AspectedTraditions;
         break;
 
       default:
