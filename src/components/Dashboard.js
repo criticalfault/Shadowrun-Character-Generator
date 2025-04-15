@@ -743,6 +743,7 @@ export default function BasicTabs() {
             attributes={Character.attributes}
             step={Character.step}
             race={Character.race}
+            Edition={Edition}
             onChangeKarmaStuff={(cash, karma, karmaPool) =>
               setCharacter({
                 ...Character,
