@@ -51,10 +51,19 @@ function KarmaDisplay(props) {
         return;
       });
       
-      if(props.race === 'Human'){
-        tempKarmaPool += Math.floor(tempKarma/10);
+      if(props.Edition === 'SR3'){
+        if(props.race === 'Human'){
+          tempKarmaPool += Math.floor(tempKarma/10);
+        }else{
+          tempKarmaPool += Math.floor(tempKarma/20);
+        }
       }else{
-        tempKarmaPool += Math.floor(tempKarma/20);
+        if(props.race !== 'Human'){
+          tempKarmaPool += 2;
+        }else{
+          console.log("Something went wrong...?"+props.race);
+        }
+        tempKarmaPool += Math.floor(tempKarma/10);
       }
 
       finalKarma = tempKarma-(tempKarmaPool-1);
