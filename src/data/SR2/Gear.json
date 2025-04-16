@@ -19656,11 +19656,35 @@
           "Street Index": "1"
         },
         {
-          "Name": "Telecom",
+          "Name": "Telecom (100 mp)",
           "Concealability": "-",
           "Weight": "15",
           "Availability": "Always",
-          "Cost": "MemCostx1.5",
+          "Cost": "3000",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Telecom (250 mp)",
+          "Concealability": "-",
+          "Weight": "15",
+          "Availability": "Always",
+          "Cost": "7500",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Telecom (500 mp)",
+          "Concealability": "-",
+          "Weight": "15",
+          "Availability": "Always",
+          "Cost": "15000",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Telecom (1000 mp)",
+          "Concealability": "-",
+          "Weight": "15",
+          "Availability": "Always",
+          "Cost": "30000",
           "Street Index": "1"
         },
         {
@@ -19952,11 +19976,35 @@
           "Street Index": ".75"
         },
         {
-          "Name": "Pocket Computer",
+          "Name": "Pocket Computer (100 mp)",
           "Concealability": "3",
           "Weight": "1",
           "Availability": "Always",
-          "Cost": "MemCostx5",
+          "Cost": "10000",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Pocket Computer (250 mp)",
+          "Concealability": "3",
+          "Weight": "1",
+          "Availability": "Always",
+          "Cost": "25000",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Pocket Computer (500 mp)",
+          "Concealability": "3",
+          "Weight": "1",
+          "Availability": "Always",
+          "Cost": "50000",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Pocket Computer (1000 mp)",
+          "Concealability": "3",
+          "Weight": "1",
+          "Availability": "Always",
+          "Cost": "100000",
           "Street Index": "1"
         },
         {
@@ -19976,19 +20024,83 @@
           "Street Index": "1.5"
         },
         {
-          "Name": "Table Top PC",
+          "Name": "Table Top PC (100 mp)",
           "Concealability": "-",
           "Weight": "10",
           "Availability": "Always",
-          "Cost": "MemCost",
+          "Cost": "2000",
           "Street Index": ".75"
         },
         {
-          "Name": "Wrist Computer",
+          "Name": "Table Top PC (250 mp)",
+          "Concealability": "-",
+          "Weight": "10",
+          "Availability": "Always",
+          "Cost": "5000",
+          "Street Index": ".75"
+        },
+        {
+          "Name": "Table Top PC (500 mp)",
+          "Concealability": "-",
+          "Weight": "10",
+          "Availability": "Always",
+          "Cost": "10000",
+          "Street Index": ".75"
+        },
+        {
+          "Name": "Table Top PC (1000 mp)",
+          "Concealability": "-",
+          "Weight": "10",
+          "Availability": "Always",
+          "Cost": "20000",
+          "Street Index": ".75"
+        },
+        {
+          "Name": "Table Top PC (1500 mp)",
+          "Concealability": "-",
+          "Weight": "10",
+          "Availability": "Always",
+          "Cost": "30000",
+          "Street Index": ".75"
+        },
+        {
+          "Name": "Wrist Computer (100 mp)",
           "Concealability": "4",
           "Weight": "-",
           "Availability": "Always",
-          "Cost": "MemCostx20",
+          "Cost": "40000",
+          "Street Index": "1.5"
+        },
+        {
+          "Name": "Wrist Computer (250 mp)",
+          "Concealability": "4",
+          "Weight": "-",
+          "Availability": "Always",
+          "Cost": "100000",
+          "Street Index": "1.5"
+        },
+        {
+          "Name": "Wrist Computer (500 mp)",
+          "Concealability": "4",
+          "Weight": "-",
+          "Availability": "Always",
+          "Cost": "200000",
+          "Street Index": "1.5"
+        },
+        {
+          "Name": "Wrist Computer (1000 mp)",
+          "Concealability": "4",
+          "Weight": "-",
+          "Availability": "Always",
+          "Cost": "400000",
+          "Street Index": "1.5"
+        },
+        {
+          "Name": "Wrist Computer (1500 mp)",
+          "Concealability": "4",
+          "Weight": "-",
+          "Availability": "Always",
+          "Cost": "600000",
           "Street Index": "1.5"
         },
         {
@@ -20032,7 +20144,7 @@
           "Street Index": ".75"
         },
         {
-          "Name": "Memory Upgrades (",
+          "Name": "Memory Upgrades (+10 Mp)",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "always",
@@ -20532,23 +20644,23 @@
           "Concealability": "3",
           "Weight": "2",
           "Availability": "Always",
-          "Cost": "MemCost",
+          "Cost": "20000",
           "Street Index": "1"
         },
         {
-          "Name": "Data",
+          "Name": "Data: Headset (500Mp)",
           "Concealability": "4",
           "Weight": "1",
           "Availability": "Always",
-          "Cost": "MemCostx2",
+          "Cost": "20000",
           "Street Index": "1.5"
         },
         {
-          "Name": "Data",
+          "Name": "Data: Heads-Up Display (200Mp)",
           "Concealability": "NA",
           "Weight": "1",
           "Availability": "6/7days",
-          "Cost": "MemCostx10",
+          "Cost": "40000",
           "Street Index": "3"
         },
         {
