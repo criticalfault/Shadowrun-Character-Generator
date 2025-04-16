@@ -21254,7 +21254,7 @@
           "Street Index": "2"
         },
         {
-          "Name": "Complexity 1",
+          "Name": "Musical instrument: Cheap Complexity 1",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21262,7 +21262,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Complexity 2",
+          "Name": "Musical instrument: Cheap Complexity 2",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21270,7 +21270,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Complexity 3",
+          "Name": "Musical instrument: Cheap Complexity 3",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21278,7 +21278,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Complexity 4",
+          "Name": "Musical instrument: Cheap Complexity 4",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21286,7 +21286,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Complexity 5",
+          "Name": "Musical instrument: Cheap Complexity 5",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21294,7 +21294,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Complexity 1",
+          "Name": "Musical instrument: Average Complexity 1",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21302,7 +21302,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Complexity 2",
+          "Name": "Musical instrument: Average Complexity 2",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21310,7 +21310,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Complexity 3",
+          "Name": "Musical instrument: Average Complexity 3",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21318,7 +21318,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Complexity 4",
+          "Name": "Musical instrument: Average Complexity 4",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21326,7 +21326,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Complexity 5",
+          "Name": "Musical instrument: Average Complexity 5",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21334,7 +21334,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Complexity 1",
+          "Name": "Musical instrument: Fine Complexity 1",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21342,7 +21342,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Complexity 2",
+          "Name": "Musical instrument: Fine Complexity 2",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21350,7 +21350,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Complexity 3",
+          "Name": "Musical instrument: Fine Complexity 3",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21358,7 +21358,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Complexity 4",
+          "Name": "Musical instrument: Fine Complexity 4",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21366,7 +21366,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Complexity 5",
+          "Name": "Musical instrument: Fine Complexity 5",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21374,7 +21374,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Cheap",
+          "Name": "Synthesizers Cheap, 1 voice",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21382,7 +21382,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Cheap",
+          "Name": "Synthesizers Cheap, 2 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21390,7 +21390,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Cheap",
+          "Name": "Synthesizers Cheap, 3 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21398,7 +21398,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Cheap",
+          "Name": "Synthesizers Cheap, 4 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21406,7 +21406,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Cheap",
+          "Name": "Synthesizers Cheap, 5 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21414,7 +21414,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Cheap",
+          "Name": "Synthesizers Cheap, 6 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21422,7 +21422,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Cheap",
+          "Name": "Synthesizers Cheap, 7 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21430,7 +21430,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Cheap",
+          "Name": "Synthesizers Cheap, 8 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21438,7 +21438,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Average",
+          "Name": "Synthesizers Average, 1 voice",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21446,7 +21446,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Average",
+          "Name": "Synthesizers Average, 2 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21454,7 +21454,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Average",
+          "Name": "Synthesizers Average, 3 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21462,7 +21462,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Average",
+          "Name": "Synthesizers Average, 4 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21470,7 +21470,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Average",
+          "Name": "Synthesizers Average, 5 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21478,7 +21478,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Average",
+          "Name": "Synthesizers Average, 6 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21486,7 +21486,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Average",
+          "Name": "Synthesizers Average, 7 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21494,7 +21494,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Average",
+          "Name": "Synthesizers Average, 8 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21502,7 +21502,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Average",
+          "Name": "Synthesizers Average, 9 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21510,7 +21510,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Average",
+          "Name": "Synthesizers Average, 10 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21518,7 +21518,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Average",
+          "Name": "Synthesizers Average, 11 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21526,7 +21526,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Average",
+          "Name": "Synthesizers Average, 12 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21534,7 +21534,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Average",
+          "Name": "Synthesizers Average, 13 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21542,7 +21542,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Average",
+          "Name": "Synthesizers Average, 14 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21550,7 +21550,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Average",
+          "Name": "Synthesizers Average, 15 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21558,7 +21558,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Average",
+          "Name": "Synthesizers Average, 16 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21566,7 +21566,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 1 voice",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21574,7 +21574,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 2 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21582,7 +21582,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 3 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21590,7 +21590,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 4 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21598,7 +21598,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 5 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21606,7 +21606,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 6 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21614,7 +21614,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 7 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21622,7 +21622,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 8 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21630,7 +21630,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 9 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21638,7 +21638,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 10 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21646,7 +21646,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 11 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21654,7 +21654,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 12 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21662,7 +21662,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 13 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21670,7 +21670,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 14 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21678,7 +21678,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 15 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21686,7 +21686,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 16 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21694,7 +21694,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 17 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21702,7 +21702,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 18 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21710,7 +21710,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 19 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21718,7 +21718,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 20 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21726,7 +21726,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 21 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21734,7 +21734,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 22 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21742,7 +21742,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 23 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21750,7 +21750,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 24 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21758,7 +21758,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 25 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21766,7 +21766,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 26 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21774,7 +21774,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 27 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21782,7 +21782,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 28 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21790,7 +21790,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 29 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21798,7 +21798,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 30 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21806,7 +21806,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 31 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21814,7 +21814,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Fine",
+          "Name": "Synthesizers Fine, 32 voices",
           "Concealability": "-",
           "Weight": "varies",
           "Availability": "always",
@@ -21822,7 +21822,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Autosynth",
+          "Name": "Autosynth, skill 1",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "always",
@@ -21830,7 +21830,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Autosynth",
+          "Name": "Autosynth, skill 2",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "always",
@@ -21838,7 +21838,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Autosynth",
+          "Name": "Autosynth, skill 3",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "always",
@@ -21846,7 +21846,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Autosynth",
+          "Name": "Autosynth, skill 4",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "always",
@@ -21854,7 +21854,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Autosynth",
+          "Name": "Autosynth, skill 5",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "always",
@@ -21862,7 +21862,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Autosynth",
+          "Name": "Autosynth, skill 6",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "always",
@@ -21870,7 +21870,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Autosynth",
+          "Name": "Autosynth, skill 7",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "always",
@@ -21878,7 +21878,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Autosynth",
+          "Name": "Autosynth, skill 8",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "always",
@@ -21886,7 +21886,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Autosynth",
+          "Name": "Autosynth, skill 9",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "always",
@@ -21894,7 +21894,7 @@
           "Street Index": "8"
         },
         {
-          "Name": "Autosynth",
+          "Name": "Autosynth, skill 10",
           "Concealability": "-",
           "Weight": "-",
           "Availability": "always",
