@@ -5237,6 +5237,259 @@
         }
       ]
     },
+    "Grenades": {
+      "Name": "Grenades",
+      "attributes": [
+        "Concealability",
+        "Damage",
+        "Weight",
+        "Availability",
+        "Cost",
+        "Street Index"
+      ],
+      "entries": [
+        {
+          "Name": "Concussion Grenade",
+          "Concealability": "6",
+          "Damage": "6M Stun",
+          "Weight": ".25",
+          "Availability": "5/4days",
+          "Cost": "30",
+          "Street Index": "2",
+          "BookPage": "sr2.283"
+        },
+        {
+          "Name": "Concussion Grenade",
+          "Concealability": "7",
+          "Damage": "10M Stun",
+          "Weight": ".25",
+          "Availability": "6/72hrs",
+          "Cost": "40",
+          "Street Index": "1.2",
+          "BookPage": "cb1.32"
+        },
+        {
+          "Name": "Crawler Grenade",
+          "Concealability": "6",
+          "Damage": "(see rules)",
+          "Weight": ".25",
+          "Availability": "20/14 days",
+          "Cost": "150",
+          "Street Index": "6",
+          "BookPage": "sr2.???"
+        },
+        {
+          "Name": "CS Grenade",
+          "Concealability": "5",
+          "Damage": "tear gas",
+          "Weight": ".5",
+          "Availability": "6/4 days",
+          "Cost": "75",
+          "Street Index": "2.5",
+          "BookPage": "sr2.???"
+        },
+        {
+          "Name": "IPE Concussion Grenade (N)",
+          "Concealability": "6",
+          "Damage": "16M Stun",
+          "Weight": ".5",
+          "Availability": "8/1wk",
+          "Cost": "70",
+          "Street Index": "2",
+          "BookPage": "cc.41"
+        },
+        {
+          "Name": "IPE Defensive AP Grenade",
+          "Concealability": "6",
+          "Damage": "15D(f)",
+          "Weight": ".5",
+          "Availability": "8/1wk",
+          "Cost": "60",
+          "Street Index": "2",
+          "BookPage": "cc.41"
+        },
+        {
+          "Name": "IPE Defensive HE Grenade",
+          "Concealability": "6",
+          "Damage": "15S",
+          "Weight": ".5",
+          "Availability": "8/1wk",
+          "Cost": "60",
+          "Street Index": "2",
+          "BookPage": "cc.41"
+        },
+        {
+          "Name": "IPE Offensive AP Grenade",
+          "Concealability": "6",
+          "Damage": "15D(f)",
+          "Weight": ".5",
+          "Availability": "8/1wk",
+          "Cost": "60",
+          "Street Index": "2",
+          "BookPage": "cc.41"
+        },
+        {
+          "Name": "IPE Offensive HE Grenade",
+          "Concealability": "6",
+          "Damage": "15S",
+          "Weight": ".5",
+          "Availability": "8/1wk",
+          "Cost": "60",
+          "Street Index": "2",
+          "BookPage": "cc.41"
+        },
+        {
+          "Name": "Mace XII Gas Grenade (N)",
+          "Concealability": "6",
+          "Damage": "gas",
+          "Weight": ".25",
+          "Availability": "8/6days",
+          "Cost": "50",
+          "Street Index": "2",
+          "BookPage": "sr2.???"
+        },
+        {
+          "Name": "Militech PDU-3 (N)",
+          "Concealability": "8",
+          "Damage": "10S",
+          "Weight": ".25",
+          "Availability": "10/7days",
+          "Cost": "150",
+          "Street Index": "2.5",
+          "BookPage": "sr2.???"
+        },
+        {
+          "Name": "Motion Restraints Grenade (N)",
+          "Concealability": "6",
+          "Damage": "-",
+          "Weight": ".5",
+          "Availability": "6/48hrs",
+          "Cost": "60",
+          "Street Index": "2",
+          "BookPage": "cb1.33"
+        },
+        {
+          "Name": "Neurostun IX Grenade (N)",
+          "Concealability": "6",
+          "Damage": "gas",
+          "Weight": ".25",
+          "Availability": "6/6days",
+          "Cost": "50",
+          "Street Index": "2",
+          "BookPage": "sr2.???"
+        },
+        {
+          "Name": "Niref D Gas Grenade (N)",
+          "Concealability": "6",
+          "Damage": "gas",
+          "Weight": ".25",
+          "Availability": "10/6days",
+          "Cost": "80",
+          "Street Index": "2",
+          "BookPage": "sr2.???"
+        },
+        {
+          "Name": "Offensive AP Grenade B",
+          "Concealability": "6",
+          "Damage": "10S(f)",
+          "Weight": ".25",
+          "Availability": "4/4days",
+          "Cost": "30",
+          "Street Index": "2",
+          "BookPage": "sr2.283"
+        },
+        {
+          "Name": "Offensive HE Grenade B",
+          "Concealability": "6",
+          "Damage": "10S",
+          "Weight": ".25",
+          "Availability": "4/4days",
+          "Cost": "30",
+          "Street Index": "2",
+          "BookPage": "sr2.283"
+        },
+        {
+          "Name": "Paint Grenade",
+          "Concealability": "6",
+          "Damage": "-",
+          "Weight": ".25",
+          "Availability": "3/48hrs",
+          "Cost": "20",
+          "Street Index": "2",
+          "BookPage": "sr2.???"
+        },
+        {
+          "Name": "Scatter Grenade",
+          "Concealability": "6",
+          "Damage": "per charge",
+          "Weight": ".25",
+          "Availability": "3/48hrs",
+          "Cost": "70",
+          "Street Index": "1.5",
+          "BookPage": "cb2.49,SR2-???"
+        },
+        {
+          "Name": "Smoke Grenade",
+          "Concealability": "6",
+          "Damage": "-",
+          "Weight": ".25",
+          "Availability": "3/24hrs",
+          "Cost": "30",
+          "Street Index": "2",
+          "BookPage": "sr2.283,fof.48"
+        },
+        {
+          "Name": "Smoke (IR) Grenade",
+          "Concealability": "6",
+          "Damage": "-",
+          "Weight": ".25",
+          "Availability": "4/48hrs",
+          "Cost": "40",
+          "Street Index": "2",
+          "BookPage": "sr2.283,fof.48"
+        },
+        {
+          "Name": "Spraypaint Grenade",
+          "Concealability": "6",
+          "Damage": "-",
+          "Weight": ".25",
+          "Availability": "2/3days",
+          "Cost": "20",
+          "Street Index": ".9",
+          "BookPage": "sr2.???"
+        },
+        {
+          "Name": "Stench Bomb",
+          "Concealability": "6",
+          "Damage": "-",
+          "Weight": ".25",
+          "Availability": "3/48hrs",
+          "Cost": "20",
+          "Street Index": ".8",
+          "BookPage": "sr2.???"
+        },
+        {
+          "Name": "Thermal Smoke",
+          "Concealability": "6",
+          "Damage": "-",
+          "Weight": ".25",
+          "Availability": "5/4days",
+          "Cost": "40",
+          "Street Index": "2",
+          "BookPage": "sr2.???"
+        },
+        {
+          "Name": "White Phosphorus Grenade",
+          "Concealability": "6",
+          "Damage": "14M/10L",
+          "Weight": ".25",
+          "Availability": "6/5days",
+          "Cost": "120",
+          "Street Index": "3",
+          "BookPage": "cc.41"
+        }
+      ]
+    },
     "Ammunition": {
       "Name": "Ammunition",
       "attributes": [
@@ -10608,956 +10861,7 @@
           "Street Index": "1.5",
           "BookPage": "tss.16"
         },
-        {
-          "Name": "Concussion Grenade B",
-          "Concealability": "6",
-          "Damage": "12M Stun",
-          "Weight": ".25",
-          "Availability": "5/4days",
-          "Cost": "30",
-          "Street Index": "2",
-          "BookPage": "sr2.283"
-        },
-        {
-          "Name": "Concussion Grenade (A)",
-          "Concealability": "7",
-          "Damage": "10M Stun",
-          "Weight": ".25",
-          "Availability": "6/72hrs",
-          "Cost": "40",
-          "Street Index": "1.2",
-          "BookPage": "cb1.32"
-        },
-        {
-          "Name": "Crawler Grenade (A)",
-          "Concealability": "6",
-          "Damage": "(see rules)",
-          "Weight": ".25",
-          "Availability": "20/14 days",
-          "Cost": "150",
-          "Street Index": "6",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "CS Grenade (A)",
-          "Concealability": "5",
-          "Damage": "tear gas",
-          "Weight": ".5",
-          "Availability": "6/4 days",
-          "Cost": "75",
-          "Street Index": "2.5",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Dual Charge Grenade (A)",
-          "Concealability": "5",
-          "Damage": "(Special)",
-          "Weight": ".5",
-          "Availability": "8/1wk",
-          "Cost": "150",
-          "Street Index": "3",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "Def AP Grenade B",
-          "Concealability": "6",
-          "Damage": "10S(f)",
-          "Weight": ".25",
-          "Availability": "4/4days",
-          "Cost": "30",
-          "Street Index": "2",
-          "BookPage": "sr2.283"
-        },
-        {
-          "Name": "Def HE Grenade B",
-          "Concealability": "6",
-          "Damage": "10S",
-          "Weight": ".25",
-          "Availability": "4/4days",
-          "Cost": "30",
-          "Street Index": "2",
-          "BookPage": "sr2.283"
-        },
-        {
-          "Name": "EMP Grenade (A)",
-          "Concealability": "6",
-          "Damage": "(Special)",
-          "Weight": ".3",
-          "Availability": "10/10days",
-          "Cost": "400",
-          "Street Index": "4",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Explosive Grenade (A)",
-          "Concealability": "7",
-          "Damage": "6M",
-          "Weight": ".25",
-          "Availability": "6/72hrs",
-          "Cost": "25",
-          "Street Index": "1.5",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "FEN Dz 22",
-          "Concealability": "7",
-          "Damage": "8S",
-          "Weight": ".25",
-          "Availability": "6/10days",
-          "Cost": "65",
-          "Street Index": "3",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Finger Bomb (A)",
-          "Concealability": "10",
-          "Damage": "8M",
-          "Weight": ".1",
-          "Availability": "6/6days",
-          "Cost": "35",
-          "Street Index": "1.5",
-          "BookPage": "cb1.25"
-        },
-        {
-          "Name": "Flare Grenade (A)",
-          "Concealability": "6",
-          "Damage": "(Special)",
-          "Weight": ".25",
-          "Availability": "2/24hrs",
-          "Cost": "40",
-          "Street Index": "1",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "Flash Grenade (A)",
-          "Concealability": "6",
-          "Damage": "(Special)",
-          "Weight": ".25",
-          "Availability": "4/48hrs",
-          "Cost": "40",
-          "Street Index": "1",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "Flash-Pak (A)",
-          "Concealability": "12",
-          "Damage": "(Special)",
-          "Weight": ".2",
-          "Availability": "3/36hrs",
-          "Cost": "250",
-          "Street Index": "1",
-          "BookPage": "sr2.283"
-        },
-        {
-          "Name": "Flashbang Grenade (A)",
-          "Concealability": "6",
-          "Damage": "12M Stun",
-          "Weight": ".25",
-          "Availability": "8/6days",
-          "Cost": "80",
-          "Street Index": "2.25",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Foam Grenade (A)",
-          "Concealability": "6",
-          "Damage": "-",
-          "Weight": ".25",
-          "Availability": "3/48hrs",
-          "Cost": "30",
-          "Street Index": ".9",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Fragmentation mini-grenade (A)",
-          "Concealability": "8",
-          "Damage": "10D(f)",
-          "Weight": ".1",
-          "Availability": "8/4days",
-          "Cost": "50",
-          "Street Index": "3",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Gas Grenade (A)",
-          "Concealability": "5",
-          "Damage": "Neuro-Stun VIII",
-          "Weight": ".5",
-          "Availability": "8/4days",
-          "Cost": "60",
-          "Street Index": "2",
-          "BookPage": "sr2.283"
-        },
-        {
-          "Name": "GPz-78 Grenade (A)",
-          "Concealability": "8",
-          "Damage": "8M",
-          "Weight": ".1",
-          "Availability": "4/60hrs",
-          "Cost": "40",
-          "Street Index": "1.5",
-          "BookPage": "cb1.33"
-        },
-        {
-          "Name": "Green Ring 4 Grenade (A)",
-          "Concealability": "6",
-          "Damage": "gas",
-          "Weight": ".25",
-          "Availability": "10/6 days",
-          "Cost": "80",
-          "Street Index": "2.5",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "HEP (High-Explosive Cratering)",
-          "Concealability": "8",
-          "Damage": "10S (see rules)",
-          "Weight": ".1",
-          "Availability": "9/5days",
-          "Cost": "60",
-          "Street Index": "2.5",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Incendary Grenade (A)",
-          "Concealability": "8",
-          "Damage": "(Special)",
-          "Weight": ".5",
-          "Availability": "4/4days",
-          "Cost": "50",
-          "Street Index": "3",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "Ink Grenade (A)",
-          "Concealability": "8",
-          "Damage": "None",
-          "Weight": ".25",
-          "Availability": "4/4days",
-          "Cost": "40",
-          "Street Index": "3",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "IPE Concussion Grenade (A)",
-          "Concealability": "6",
-          "Damage": "16M Stun",
-          "Weight": ".5",
-          "Availability": "8/1wk",
-          "Cost": "70",
-          "Street Index": "2",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "IPE Defensive AP Grenade (A)",
-          "Concealability": "6",
-          "Damage": "15D(f)",
-          "Weight": ".5",
-          "Availability": "8/1wk",
-          "Cost": "60",
-          "Street Index": "2",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "IPE Defensive HE Grenade (A)",
-          "Concealability": "6",
-          "Damage": "15S",
-          "Weight": ".5",
-          "Availability": "8/1wk",
-          "Cost": "60",
-          "Street Index": "2",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "IPE Offensive AP Grenade (A)",
-          "Concealability": "6",
-          "Damage": "15D(f)",
-          "Weight": ".5",
-          "Availability": "8/1wk",
-          "Cost": "60",
-          "Street Index": "2",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "IPE Offensive HE Grenade (A)",
-          "Concealability": "6",
-          "Damage": "15S",
-          "Weight": ".5",
-          "Availability": "8/1wk",
-          "Cost": "60",
-          "Street Index": "2",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "Limited EMP (LEMP) Grenade (A)",
-          "Concealability": "6",
-          "Damage": "12M",
-          "Weight": ".5",
-          "Availability": "8/20days",
-          "Cost": "180",
-          "Street Index": "2",
-          "BookPage": "tss.16"
-        },
-        {
-          "Name": "Mace XII Gas Grenade (A)",
-          "Concealability": "6",
-          "Damage": "gas",
-          "Weight": ".25",
-          "Availability": "8/6days",
-          "Cost": "50",
-          "Street Index": "2",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Militech PDU-3 (A)",
-          "Concealability": "8",
-          "Damage": "10S",
-          "Weight": ".25",
-          "Availability": "10/7days",
-          "Cost": "150",
-          "Street Index": "2.5",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Motion Restraints Grenade (A)",
-          "Concealability": "6",
-          "Damage": "-",
-          "Weight": ".5",
-          "Availability": "6/48hrs",
-          "Cost": "60",
-          "Street Index": "2",
-          "BookPage": "cb1.33"
-        },
-        {
-          "Name": "Neurostun IX Grenade (A)",
-          "Concealability": "6",
-          "Damage": "gas",
-          "Weight": ".25",
-          "Availability": "6/6days",
-          "Cost": "50",
-          "Street Index": "2",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Niref D Gas Grenade (A)",
-          "Concealability": "6",
-          "Damage": "gas",
-          "Weight": ".25",
-          "Availability": "10/6days",
-          "Cost": "80",
-          "Street Index": "2",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Offensive AP Grenade B",
-          "Concealability": "6",
-          "Damage": "10S(f)",
-          "Weight": ".25",
-          "Availability": "4/4days",
-          "Cost": "30",
-          "Street Index": "2",
-          "BookPage": "sr2.283"
-        },
-        {
-          "Name": "Offensive HE Grenade B",
-          "Concealability": "6",
-          "Damage": "10S",
-          "Weight": ".25",
-          "Availability": "4/4days",
-          "Cost": "30",
-          "Street Index": "2",
-          "BookPage": "sr2.283"
-        },
-        {
-          "Name": "Paint Grenade (A)",
-          "Concealability": "6",
-          "Damage": "-",
-          "Weight": ".25",
-          "Availability": "3/48hrs",
-          "Cost": "20",
-          "Street Index": "2",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Scatter Grenade (A)",
-          "Concealability": "6",
-          "Damage": "per charge",
-          "Weight": ".25",
-          "Availability": "3/48hrs",
-          "Cost": "70",
-          "Street Index": "1.5",
-          "BookPage": "cb2.49,SR2-???"
-        },
-        {
-          "Name": "Smoke Grenade (A)",
-          "Concealability": "6",
-          "Damage": "-",
-          "Weight": ".25",
-          "Availability": "3/24hrs",
-          "Cost": "30",
-          "Street Index": "2",
-          "BookPage": "sr2.283,fof.48"
-        },
-        {
-          "Name": "Smoke (IR) Grenade (A)",
-          "Concealability": "6",
-          "Damage": "-",
-          "Weight": ".25",
-          "Availability": "4/48hrs",
-          "Cost": "40",
-          "Street Index": "2",
-          "BookPage": "sr2.283,fof.48"
-        },
-        {
-          "Name": "Spraypaint Grenade (A)",
-          "Concealability": "6",
-          "Damage": "-",
-          "Weight": ".25",
-          "Availability": "2/3days",
-          "Cost": "20",
-          "Street Index": ".9",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Stench Bomb (A)",
-          "Concealability": "6",
-          "Damage": "-",
-          "Weight": ".25",
-          "Availability": "3/48hrs",
-          "Cost": "20",
-          "Street Index": ".8",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Thermal Smoke (A)",
-          "Concealability": "6",
-          "Damage": "-",
-          "Weight": ".25",
-          "Availability": "5/4days",
-          "Cost": "40",
-          "Street Index": "2",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Super Flash Grenade (A)",
-          "Concealability": "8",
-          "Damage": "(Special)",
-          "Weight": ".25",
-          "Availability": "10/2wks",
-          "Cost": "80",
-          "Street Index": "3",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "White Phosphorus Grenade (A)",
-          "Concealability": "6",
-          "Damage": "14M/10L",
-          "Weight": ".25",
-          "Availability": "6/5days",
-          "Cost": "120",
-          "Street Index": "3",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "Chaff (ECM) Grenade (N)",
-          "Concealability": "6",
-          "Damage": "Special",
-          "Weight": ".5",
-          "Availability": "4/4days",
-          "Cost": "30",
-          "Street Index": "1.5",
-          "BookPage": "tss.16"
-        },
-        {
-          "Name": "Concussion Grenade B",
-          "Concealability": "6",
-          "Damage": "12M Stun",
-          "Weight": ".25",
-          "Availability": "5/4days",
-          "Cost": "30",
-          "Street Index": "2",
-          "BookPage": "sr2.283"
-        },
-        {
-          "Name": "Concussion Grenade (N)",
-          "Concealability": "7",
-          "Damage": "10M Stun",
-          "Weight": ".25",
-          "Availability": "6/72hrs",
-          "Cost": "40",
-          "Street Index": "1.2",
-          "BookPage": "cb1.32"
-        },
-        {
-          "Name": "Crawler Grenade (N)",
-          "Concealability": "6",
-          "Damage": "(see rules)",
-          "Weight": ".25",
-          "Availability": "20/14 days",
-          "Cost": "150",
-          "Street Index": "6",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "CS Grenade (N)",
-          "Concealability": "5",
-          "Damage": "tear gas",
-          "Weight": ".5",
-          "Availability": "6/4 days",
-          "Cost": "75",
-          "Street Index": "2.5",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Dual Charge Grenade (N)",
-          "Concealability": "5",
-          "Damage": "(Special)",
-          "Weight": ".5",
-          "Availability": "8/1wk",
-          "Cost": "150",
-          "Street Index": "3",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "Def AP Grenade B",
-          "Concealability": "6",
-          "Damage": "10S(f)",
-          "Weight": ".25",
-          "Availability": "4/4days",
-          "Cost": "30",
-          "Street Index": "2",
-          "BookPage": "sr2.283"
-        },
-        {
-          "Name": "Def HE Grenade B",
-          "Concealability": "6",
-          "Damage": "10S",
-          "Weight": ".25",
-          "Availability": "4/4days",
-          "Cost": "30",
-          "Street Index": "2",
-          "BookPage": "sr2.283"
-        },
-        {
-          "Name": "EMP Grenade (N)",
-          "Concealability": "6",
-          "Damage": "(Special)",
-          "Weight": ".3",
-          "Availability": "10/10days",
-          "Cost": "400",
-          "Street Index": "4",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Explosive Grenade (N)",
-          "Concealability": "7",
-          "Damage": "6M",
-          "Weight": ".25",
-          "Availability": "6/72hrs",
-          "Cost": "25",
-          "Street Index": "1.5",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "FEN Dz 22",
-          "Concealability": "7",
-          "Damage": "8S",
-          "Weight": ".25",
-          "Availability": "6/10days",
-          "Cost": "65",
-          "Street Index": "3",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Finger Bomb (N)",
-          "Concealability": "10",
-          "Damage": "8M",
-          "Weight": ".1",
-          "Availability": "6/6days",
-          "Cost": "35",
-          "Street Index": "1.5",
-          "BookPage": "cb1.25"
-        },
-        {
-          "Name": "Flare Grenade (N)",
-          "Concealability": "6",
-          "Damage": "(Special)",
-          "Weight": ".25",
-          "Availability": "2/24hrs",
-          "Cost": "40",
-          "Street Index": "1",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "Flash Grenade (N)",
-          "Concealability": "6",
-          "Damage": "(Special)",
-          "Weight": ".25",
-          "Availability": "4/48hrs",
-          "Cost": "40",
-          "Street Index": "1",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "Flash-Pak (N)",
-          "Concealability": "12",
-          "Damage": "(Special)",
-          "Weight": ".2",
-          "Availability": "3/36hrs",
-          "Cost": "250",
-          "Street Index": "1",
-          "BookPage": "sr2.283"
-        },
-        {
-          "Name": "Flashbang Grenade (N)",
-          "Concealability": "6",
-          "Damage": "12M Stun",
-          "Weight": ".25",
-          "Availability": "8/6days",
-          "Cost": "80",
-          "Street Index": "2.25",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Foam Grenade (N)",
-          "Concealability": "6",
-          "Damage": "-",
-          "Weight": ".25",
-          "Availability": "3/48hrs",
-          "Cost": "30",
-          "Street Index": ".9",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Fragmentation mini-grenade (N)",
-          "Concealability": "8",
-          "Damage": "10D(f)",
-          "Weight": ".1",
-          "Availability": "8/4days",
-          "Cost": "50",
-          "Street Index": "3",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Gas Grenade (N)",
-          "Concealability": "5",
-          "Damage": "Neuro-Stun VIII",
-          "Weight": ".5",
-          "Availability": "8/4days",
-          "Cost": "60",
-          "Street Index": "2",
-          "BookPage": "sr2.283"
-        },
-        {
-          "Name": "GPz-78 Grenade (N)",
-          "Concealability": "8",
-          "Damage": "8M",
-          "Weight": ".1",
-          "Availability": "4/60hrs",
-          "Cost": "40",
-          "Street Index": "1.5",
-          "BookPage": "cb1.33"
-        },
-        {
-          "Name": "Green Ring 4 Grenade (N)",
-          "Concealability": "6",
-          "Damage": "gas",
-          "Weight": ".25",
-          "Availability": "10/6 days",
-          "Cost": "80",
-          "Street Index": "2.5",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "HEP (High-Explosive Cratering)",
-          "Concealability": "8",
-          "Damage": "10S (see rules)",
-          "Weight": ".1",
-          "Availability": "9/5days",
-          "Cost": "60",
-          "Street Index": "2.5",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Incendary Grenade (N)",
-          "Concealability": "8",
-          "Damage": "(Special)",
-          "Weight": ".5",
-          "Availability": "4/4days",
-          "Cost": "50",
-          "Street Index": "3",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "Ink Grenade (N)",
-          "Concealability": "8",
-          "Damage": "None",
-          "Weight": ".25",
-          "Availability": "4/4days",
-          "Cost": "40",
-          "Street Index": "3",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "IPE Concussion Grenade (N)",
-          "Concealability": "6",
-          "Damage": "16M Stun",
-          "Weight": ".5",
-          "Availability": "8/1wk",
-          "Cost": "70",
-          "Street Index": "2",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "IPE Defensive AP Grenade (N)",
-          "Concealability": "6",
-          "Damage": "15D(f)",
-          "Weight": ".5",
-          "Availability": "8/1wk",
-          "Cost": "60",
-          "Street Index": "2",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "IPE Defensive HE Grenade (N)",
-          "Concealability": "6",
-          "Damage": "15S",
-          "Weight": ".5",
-          "Availability": "8/1wk",
-          "Cost": "60",
-          "Street Index": "2",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "IPE Offensive AP Grenade (N)",
-          "Concealability": "6",
-          "Damage": "15D(f)",
-          "Weight": ".5",
-          "Availability": "8/1wk",
-          "Cost": "60",
-          "Street Index": "2",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "IPE Offensive HE Grenade (N)",
-          "Concealability": "6",
-          "Damage": "15S",
-          "Weight": ".5",
-          "Availability": "8/1wk",
-          "Cost": "60",
-          "Street Index": "2",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "Limited EMP (LEMP) Grenade (N)",
-          "Concealability": "6",
-          "Damage": "12M",
-          "Weight": ".5",
-          "Availability": "8/20days",
-          "Cost": "180",
-          "Street Index": "2",
-          "BookPage": "tss.16"
-        },
-        {
-          "Name": "Mace XII Gas Grenade (N)",
-          "Concealability": "6",
-          "Damage": "gas",
-          "Weight": ".25",
-          "Availability": "8/6days",
-          "Cost": "50",
-          "Street Index": "2",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Militech PDU-3 (N)",
-          "Concealability": "8",
-          "Damage": "10S",
-          "Weight": ".25",
-          "Availability": "10/7days",
-          "Cost": "150",
-          "Street Index": "2.5",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Motion Restraints Grenade (N)",
-          "Concealability": "6",
-          "Damage": "-",
-          "Weight": ".5",
-          "Availability": "6/48hrs",
-          "Cost": "60",
-          "Street Index": "2",
-          "BookPage": "cb1.33"
-        },
-        {
-          "Name": "Neurostun IX Grenade (N)",
-          "Concealability": "6",
-          "Damage": "gas",
-          "Weight": ".25",
-          "Availability": "6/6days",
-          "Cost": "50",
-          "Street Index": "2",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Niref D Gas Grenade (N)",
-          "Concealability": "6",
-          "Damage": "gas",
-          "Weight": ".25",
-          "Availability": "10/6days",
-          "Cost": "80",
-          "Street Index": "2",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Offensive AP Grenade B",
-          "Concealability": "6",
-          "Damage": "10S(f)",
-          "Weight": ".25",
-          "Availability": "4/4days",
-          "Cost": "30",
-          "Street Index": "2",
-          "BookPage": "sr2.283"
-        },
-        {
-          "Name": "Offensive HE Grenade B",
-          "Concealability": "6",
-          "Damage": "10S",
-          "Weight": ".25",
-          "Availability": "4/4days",
-          "Cost": "30",
-          "Street Index": "2",
-          "BookPage": "sr2.283"
-        },
-        {
-          "Name": "Paint Grenade (N)",
-          "Concealability": "6",
-          "Damage": "-",
-          "Weight": ".25",
-          "Availability": "3/48hrs",
-          "Cost": "20",
-          "Street Index": "2",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Scatter Grenade (N)",
-          "Concealability": "6",
-          "Damage": "per charge",
-          "Weight": ".25",
-          "Availability": "3/48hrs",
-          "Cost": "70",
-          "Street Index": "1.5",
-          "BookPage": "cb2.49,SR2-???"
-        },
-        {
-          "Name": "Smoke Grenade (N)",
-          "Concealability": "6",
-          "Damage": "-",
-          "Weight": ".25",
-          "Availability": "3/24hrs",
-          "Cost": "30",
-          "Street Index": "2",
-          "BookPage": "sr2.283,fof.48"
-        },
-        {
-          "Name": "Smoke (IR) Grenade (N)",
-          "Concealability": "6",
-          "Damage": "-",
-          "Weight": ".25",
-          "Availability": "4/48hrs",
-          "Cost": "40",
-          "Street Index": "2",
-          "BookPage": "sr2.283,fof.48"
-        },
-        {
-          "Name": "Spraypaint Grenade (N)",
-          "Concealability": "6",
-          "Damage": "-",
-          "Weight": ".25",
-          "Availability": "2/3days",
-          "Cost": "20",
-          "Street Index": ".9",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Stench Bomb (N)",
-          "Concealability": "6",
-          "Damage": "-",
-          "Weight": ".25",
-          "Availability": "3/48hrs",
-          "Cost": "20",
-          "Street Index": ".8",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Thermal Smoke (N)",
-          "Concealability": "6",
-          "Damage": "-",
-          "Weight": ".25",
-          "Availability": "5/4days",
-          "Cost": "40",
-          "Street Index": "2",
-          "BookPage": "sr2.???"
-        },
-        {
-          "Name": "Super Flash Grenade (N)",
-          "Concealability": "8",
-          "Damage": "(Special)",
-          "Weight": ".25",
-          "Availability": "10/2wks",
-          "Cost": "80",
-          "Street Index": "3",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "White Phosphorus Grenade (N)",
-          "Concealability": "6",
-          "Damage": "14M/10L",
-          "Weight": ".25",
-          "Availability": "6/5days",
-          "Cost": "120",
-          "Street Index": "3",
-          "BookPage": "cc.41"
-        },
-        {
-          "Name": "Splash Grenade",
-          "Concealability": "5",
-          "Damage": "-",
-          "Weight": "1",
-          "Availability": "8/4days",
-          "Cost": "50",
-          "Street Index": "2",
-          "BookPage": "mm.119"
-        },
-        {
-          "Name": "Splash Grenade",
-          "Concealability": "5",
-          "Damage": "-",
-          "Weight": "1",
-          "Availability": "8/4days",
-          "Cost": "3100",
-          "Street Index": "2",
-          "BookPage": "sr2.250"
-        },
-        {
-          "Name": "Splash Grenade",
-          "Concealability": "5",
-          "Damage": "-",
-          "Weight": "1",
-          "Availability": "8/4days",
-          "Cost": "60",
-          "Street Index": "2",
-          "BookPage": "mm.119"
-        },
-        {
-          "Name": "Splash Grenade",
-          "Concealability": "5",
-          "Damage": "-",
-          "Weight": "1",
-          "Availability": "8/4days",
-          "Cost": "150",
-          "Street Index": "2",
-          "BookPage": "mm.119"
-        },
+        
         {
           "Name": "Anti-Armor Minigrenade",
           "Concealability": "8",
@@ -19028,8 +18332,8 @@
         }
       ]
     },
-    "Lifestyle": {
-      "Name": "Lifestyle",
+    "Lifestyle Extras": {
+      "Name": "Lifestyle Extras",
       "attributes": [
         "Concealability",
         "Weight",
@@ -22303,6 +21607,43 @@
         }
       ]
     },
+    "Lifestyle":{
+      "Name": "Lifestyle",
+      "attributes": [
+        "Concealability",
+        "Weight",
+        "Availability",
+        "Cost",
+        "Street Index",
+        ""
+      ],
+      "entries":[
+        {
+          "Name": "Street Lifestyle",
+          "Cost": "0"
+        },
+        {
+          "Name": "Squatter Lifestyle",
+          "Cost": "100"
+        },
+        {
+          "Name": "Lower Lifestyle",
+          "Cost": "1000"
+        },
+        {
+          "Name": "Middle Lifestyle",
+          "Cost": "5000"
+        },
+        {
+          "Name": "High Lifestyle",
+          "Cost": "10000"
+        },
+        {
+          "Name": "Luxury Lifestyle",
+          "Cost": "100000"
+        }
+      ]
+    },
     "Magical Equipment": {
       "Name": "Magical Equipment",
       "attributes": [
@@ -22902,37 +22243,15 @@
         }
       ]
     },
-    "Extras": {
-      "Name": "Extras",
+    "Vehiclegear": {
+      "Name": "Vehiclegear",
       "attributes": [
+        "Availability",
         "Cost",
+        "Street Index",
         ""
       ],
       "entries": [
-        {
-          "Name": "Street Lifestyle",
-          "Cost": "0"
-        },
-        {
-          "Name": "Squatter Lifestyle",
-          "Cost": "100"
-        },
-        {
-          "Name": "Lower Lifestyle",
-          "Cost": "1000"
-        },
-        {
-          "Name": "Middle Lifestyle",
-          "Cost": "5000"
-        },
-        {
-          "Name": "High Lifestyle",
-          "Cost": "10000"
-        },
-        {
-          "Name": "Luxury Lifestyle",
-          "Cost": "100000"
-        },
         {
           "Name": "Anti-Theft System Level 1",
           "Cost": "100"
@@ -22974,3656 +22293,177 @@
           "Cost": "50000"
         },
         {
-          "Name": "Sidecar (Bike Body",
+          "Name": "Standard Tires (Vehicle Body 1)",
+          "Cost": "50"
+        },
+        {
+          "Name": "Standard Tires (Vehicle Body 2)",
+          "Cost": "100"
+        },
+        {
+          "Name": "Standard Tires (Vehicle Body 3)",
+          "Cost": "150"
+        },
+        {
+          "Name": "Standard Tires (Vehicle Body 4)",
+          "Cost": "200"
+        },
+        {
+          "Name": "Standard Tires (Vehicle Body 5)",
+          "Cost": "250"
+        },
+        {
+          "Name": "Performance Tires (Vehicle Body 1)",
+          "Cost": "75"
+        },
+        {
+          "Name": "Performance Tires (Vehicle Body 2)",
+          "Cost": "150"
+        },
+        {
+          "Name": "Performance Tires (Vehicle Body 3)",
+          "Cost": "225"
+        },
+        {
+          "Name": "Performance Tires (Vehicle Body 4)",
+          "Cost": "300"
+        },
+        {
+          "Name": "Performance Tires (Vehicle Body 5)",
+          "Cost": "375"
+        },
+        {
+          "Name": "Off-road Tires (Vehicle Body 1)",
+          "Cost": "125"
+        },
+        {
+          "Name": "Off-road Tires (Vehicle Body 2)",
+          "Cost": "250"
+        },
+        {
+          "Name": "Off-road Tires (Vehicle Body 3)",
+          "Cost": "375"
+        },
+        {
+          "Name": "Off-road Tires (Vehicle Body 4)",
+          "Cost": "500"
+        },
+        {
+          "Name": "Off-road Tires (Vehicle Body 5)",
+          "Cost": "625"
+        },
+        {
+          "Name": "Dual-Purpose Tires (Vehicle Body 1)",
+          "Cost": "250"
+        },
+        {
+          "Name": "Dual-Purpose Tires (Vehicle Body 2)",
+          "Cost": "500"
+        },
+        {
+          "Name": "Dual-Purpose Tires (Vehicle Body 3)",
+          "Cost": "750"
+        },
+        {
+          "Name": "Dual-Purpose Tires (Vehicle Body 4)",
           "Cost": "1000"
         },
         {
-          "Name": "Sidecar (Bike Body",
+          "Name": "Dual-Purpose Tires (Vehicle Body 5)",
+          "Cost": "1250"
+        },
+        {
+          "Name": "Standard Tires - Runflat (Vehicle Body 1)",
+          "Cost": "250"
+        },
+        {
+          "Name": "Standard Tires - Runflat (Vehicle Body 2)",
+          "Cost": "500"
+        },
+        {
+          "Name": "Standard Tires - Runflat (Vehicle Body 3)",
+          "Cost": "750"
+        },
+        {
+          "Name": "Standard Tires - Runflat (Vehicle Body 4)",
+          "Cost": "1000"
+        },
+        {
+          "Name": "Standard Tires - Runflat (Vehicle Body 5)",
+          "Cost": "1250"
+        },
+        {
+          "Name": "Performance Tires - Runflat (Vehicle Body 1)",
+          "Cost": "275"
+        },
+        {
+          "Name": "Performance Tires - Runflat (Vehicle Body 2)",
+          "Cost": "550"
+        },
+        {
+          "Name": "Performance Tires - Runflat (Vehicle Body 3)",
+          "Cost": "825"
+        },
+        {
+          "Name": "Performance Tires - Runflat (Vehicle Body 4)",
+          "Cost": "1150"
+        },
+        {
+          "Name": "Performance Tires - Runflat (Vehicle Body 5)",
+          "Cost": "1375"
+        },
+        {
+          "Name": "Off-road Tires - Runflat (Vehicle Body 1)",
+          "Cost": "325"
+        },
+        {
+          "Name": "Off-road Tires - Runflat (Vehicle Body 2)",
+          "Cost": "650"
+        },
+        {
+          "Name": "Off-road Tires - Runflat (Vehicle Body 3)",
+          "Cost": "975"
+        },
+        {
+          "Name": "Off-road Tires - Runflat (Vehicle Body 4)",
+          "Cost": "1300"
+        },
+        {
+          "Name": "Off-road Tires - Runflat (Vehicle Body 5)",
+          "Cost": "1625"
+        },
+        {
+          "Name": "Dual-Purpose Tires  - Runflat (Vehicle Body 1)",
+          "Cost": "450"
+        },
+        {
+          "Name": "Dual-Purpose Tires  - Runflat (Vehicle Body 2)",
+          "Cost": "900"
+        },
+        {
+          "Name": "Dual-Purpose Tires  - Runflat (Vehicle Body 3)",
+          "Cost": "1350"
+        },
+        {
+          "Name": "Dual-Purpose Tires  - Runflat (Vehicle Body 4)",
+          "Cost": "1800"
+        },
+        {
+          "Name": "Dual-Purpose Tires  - Runflat (Vehicle Body 5)",
+          "Cost": "2250"
+        },
+        {
+          "Name": "Sidecar (Bike Body 1)",
+          "Cost": "1000"
+        },
+        {
+          "Name": "Sidecar (Bike Body 2)",
           "Cost": "2000"
         },
         {
-          "Name": "Sidecar (Bike Body",
+          "Name": "Sidecar (Bike Body 3)",
           "Cost": "3500"
         },
-        {
-          "Name": "Standard Tires",
-          "Cost": "BODY x 50"
-        },
-        {
-          "Name": "Performance Tires",
-          "Cost": "BODY x 75"
-        },
-        {
-          "Name": "Off-road Tires",
-          "Cost": "BODY x 125"
-        },
-        {
-          "Name": "Dual-Purpose Tires",
-          "Cost": "BODY x 250"
-        },
-        {
-          "Name": "Standard Tires",
-          "Cost": "BODY x 250"
-        },
-        {
-          "Name": "Performance Tires",
-          "Cost": "BODY x 275"
-        },
-        {
-          "Name": "Off-road Tires",
-          "Cost": "BODY x 325"
-        },
-        {
-          "Name": "Dual-Purpose Tires",
-          "Cost": "BODY x 450"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Contact",
-          "Cost": "5000"
-        },
-        {
-          "Name": "Buddy",
-          "Cost": "10000"
-        },
-        {
-          "Name": "Gang",
-          "Cost": "50000"
-        },
-        {
-          "Name": "Tribe",
-          "Cost": "50000"
-        },
-        {
-          "Name": "Followers",
-          "Cost": "200000"
-        }
-      ]
-    },
-    "Cars": {
-      "Name": "Cars",
-      "attributes": [
-        "Handling",
-        "Speed",
-        "Body",
-        "Armor",
-        "Sig",
-        "Apilot",
-        "Availability",
-        "Cost",
-        "Street Index",
-        ""
-      ],
-      "entries": [
-        {
-          "Name": "BMW i985",
-          "Handling": "4/8",
-          "Speed": "80/220",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "1",
-          "Availability": "12/6days",
-          "Cost": "125000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "BMW 9018s",
-          "Handling": "3/8",
-          "Speed": "90/280",
-          "Body": "4",
-          "Armor": "2",
-          "Sig": "2",
-          "Apilot": "3",
-          "Availability": "50/25days",
-          "Cost": "500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "BMW Burowagen HSR",
-          "Handling": "3/10",
-          "Speed": "50/145",
-          "Body": "3",
-          "Armor": "1",
-          "Sig": "2",
-          "Apilot": "4",
-          "Availability": "90/45days",
-          "Cost": "900000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Cadence Industries Wanderer",
-          "Handling": "6/10",
-          "Speed": "35/105",
-          "Body": "2",
-          "Armor": "2",
-          "Sig": "3",
-          "Apilot": "3",
-          "Availability": "5/2days",
-          "Cost": "50000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Chrysler-Nissan Jackrabbit",
-          "Handling": "3/8",
-          "Speed": "25/75",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "5",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "15000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Chrysler-Nissan Python Turbo",
-          "Handling": "3/8",
-          "Speed": "65/195",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "8/4days",
-          "Cost": "85000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Crowder",
-          "Handling": "5/10",
-          "Speed": "25/55",
-          "Body": "1",
-          "Armor": "1",
-          "Sig": "6",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "9000",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "Dune Buggy",
-          "Handling": "5/4",
-          "Speed": "40/120",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "1",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "15000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "EMC Carrona",
-          "Handling": "3/8",
-          "Speed": "35/105",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "15000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "EMC Intracity E",
-          "Handling": "2/6",
-          "Speed": "35/50",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "3/6",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "8500",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "EMC Serena",
-          "Handling": "4/8",
-          "Speed": "35/90",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "19500",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Eurocar 3000",
-          "Handling": "3/8",
-          "Speed": "60/180",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "3",
-          "Availability": "7/3days",
-          "Cost": "75000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Eurocar Westwind 2000",
-          "Handling": "3/8",
-          "Speed": "70/210",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "3",
-          "Availability": "10/5days",
-          "Cost": "100000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Ford Americar",
-          "Handling": "4/8",
-          "Speed": "35/105",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "20000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Honda-GM 3220 ZX",
-          "Handling": "4/8",
-          "Speed": "40/120",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "1",
-          "Availability": "3/2days",
-          "Cost": "30000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Honda-GM 3220 ZX Turbo",
-          "Handling": "4/8",
-          "Speed": "50/150",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "1",
-          "Apilot": "2",
-          "Availability": "4/2days",
-          "Cost": "45000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Honda Metrocar",
-          "Handling": "4/10",
-          "Speed": "20/60",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "5",
-          "Apilot": "0",
-          "Availability": "2/1day",
-          "Cost": "7000",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "Leyland-Zil Tsarina",
-          "Handling": "4/8",
-          "Speed": "25/75",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "5",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "10000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Max Interceptor",
-          "Handling": "3/8",
-          "Speed": "65/240",
-          "Body": "2",
-          "Armor": "2",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "14/7days",
-          "Cost": "140000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Mercedes E160",
-          "Handling": "4/8",
-          "Speed": "50/120",
-          "Body": "2",
-          "Armor": "3",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "3/1day",
-          "Cost": "26000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Mercedes ER350",
-          "Handling": "3/8",
-          "Speed": "80/210",
-          "Body": "2",
-          "Armor": "3",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "14/7days",
-          "Cost": "140000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Mercedes L800",
-          "Handling": "3/8",
-          "Speed": "70/170",
-          "Body": "5",
-          "Armor": "9",
-          "Sig": "3",
-          "Apilot": "4",
-          "Availability": "45/22days",
-          "Cost": "450000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Mitsubishi Nightsky",
-          "Handling": "4/8",
-          "Speed": "45/120",
-          "Body": "5",
-          "Armor": "3",
-          "Sig": "4",
-          "Apilot": "4",
-          "Availability": "25/12days",
-          "Cost": "250000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Mitsubishi Runabout",
-          "Handling": "4/8",
-          "Speed": "25/75",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "5",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "10000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "New American Autoworks Roadcar",
-          "Handling": "4/8",
-          "Speed": "35/105",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "11000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "New American Motor",
-          "Handling": "4/8",
-          "Speed": "35/105",
-          "Body": "3",
-          "Armor": "1",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "9/4days",
-          "Cost": "90000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "New American Motors Armadillo",
-          "Handling": "6/10",
-          "Speed": "35/105",
-          "Body": "4",
-          "Armor": "3",
-          "Sig": "1",
-          "Apilot": "1",
-          "Availability": "8/4days",
-          "Cost": "85000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "New American Motors Nautilus",
-          "Handling": "6/10",
-          "Speed": "35/105",
-          "Body": "2",
-          "Armor": "1",
-          "Sig": "1",
-          "Apilot": "0",
-          "Availability": "3/1day",
-          "Cost": "32000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Porsche 996",
-          "Handling": "4/8",
-          "Speed": "80/260",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "1",
-          "Availability": "20/10days",
-          "Cost": "200000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Rolls-Royce Phaeton",
-          "Handling": "4/4",
-          "Speed": "60/180",
-          "Body": "5",
-          "Armor": "6",
-          "Sig": "2",
-          "Apilot": "4",
-          "Availability": "50/25days",
-          "Cost": "500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Saab Dynamite 778TDI",
-          "Handling": "4/8",
-          "Speed": "80/250",
-          "Body": "2",
-          "Armor": "3",
-          "Sig": "1",
-          "Apilot": "3",
-          "Availability": "25/12days",
-          "Cost": "250000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Takaya Daimyo",
-          "Handling": "3/8",
-          "Speed": "65/200",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "4",
-          "Apilot": "3",
-          "Availability": "4/2days",
-          "Cost": "44000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Toyo-Chevrolet",
-          "Handling": "3/7",
-          "Speed": "40/120",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "5",
-          "Apilot": "1",
-          "Availability": "3/1day",
-          "Cost": "35000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Toyo-Chrysler Omega",
-          "Handling": "4/8",
-          "Speed": "50/150",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "20000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Toyota Avante",
-          "Handling": "3/8",
-          "Speed": "95/285",
-          "Body": "2",
-          "Armor": "1",
-          "Sig": "1",
-          "Apilot": "3",
-          "Availability": "48/24days",
-          "Cost": "480000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Toyota Elite",
-          "Handling": "4/8",
-          "Speed": "40/120",
-          "Body": "4",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "4",
-          "Availability": "12/6days",
-          "Cost": "125000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Volkswagon Electra",
-          "Handling": "3/6",
-          "Speed": "20/60",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "5",
-          "Apilot": "0",
-          "Availability": "2/1day",
-          "Cost": "8000",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "VW Impuls",
-          "Handling": "3/8",
-          "Speed": "35/90",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "5",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "12000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "VW Integra",
-          "Handling": "4/8",
-          "Speed": "50/100",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "14000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "All-Terrain Bike (bicycle)",
-          "Handling": "3",
-          "Speed": "special",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "6",
-          "Apilot": "-",
-          "Availability": "2/1day",
-          "Cost": "650",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "Ashigaru",
-          "Handling": "3/8",
-          "Speed": "40/95",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "6",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "3500",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "Bermuda",
-          "Handling": "3/5",
-          "Speed": "60/205",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "15000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "BMW Blitzen 2025",
-          "Handling": "3/4",
-          "Speed": "70/210",
-          "Body": "3",
-          "Armor": "6",
-          "Sig": "1",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "15-20000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "BMW Blitzen 2050",
-          "Handling": "3/4",
-          "Speed": "95/285",
-          "Body": "3",
-          "Armor": "6",
-          "Sig": "1",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "25000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "BMW R60 Euro",
-          "Handling": "3/6",
-          "Speed": "35/130",
-          "Body": "2",
-          "Armor": "3",
-          "Sig": "3",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "11000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "BMW RG75 III",
-          "Handling": "3/3",
-          "Speed": "35/100",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "0",
-          "Availability": "2/1day",
-          "Cost": "14000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Brennan Cycles",
-          "Handling": "3/7",
-          "Speed": "40/125",
-          "Body": "1",
-          "Armor": "1",
-          "Sig": "1",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "21000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Brennan",
-          "Handling": "3/6",
-          "Speed": "30/95",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "0",
-          "Availability": "2/1day",
-          "Cost": "12500",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Darkwing",
-          "Handling": "4/4",
-          "Speed": "40/135",
-          "Body": "2",
-          "Armor": "1",
-          "Sig": "3",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "9000",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "Dodge Scoot",
-          "Handling": "3/6",
-          "Speed": "20/60",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "4",
-          "Apilot": "0",
-          "Availability": "2/1day",
-          "Cost": "2000",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "Entertainment Systems Papoose",
-          "Handling": "3/6",
-          "Speed": "30/90",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "5",
-          "Apilot": "0",
-          "Availability": "2/1day",
-          "Cost": "6000",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "Harley-Davidson Brawler",
-          "Handling": "5/7",
-          "Speed": "64/192",
-          "Body": "4",
-          "Armor": "6",
-          "Sig": "1",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "26000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Harley-Davidson Scorpion",
-          "Handling": "4/5",
-          "Speed": "50/150",
-          "Body": "3",
-          "Armor": "3",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "15000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Harley-Davidson Thundergod",
-          "Handling": "4/5",
-          "Speed": "50/150",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "15000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Honda Viking",
-          "Handling": "3/5",
-          "Speed": "50/150",
-          "Body": "4",
-          "Armor": "3",
-          "Sig": "1",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "17000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Hyundai Offroader",
-          "Handling": "4/2",
-          "Speed": "60/180",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "12500",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Gaz-Niki White Eagle",
-          "Handling": "3/3",
-          "Speed": "60/180",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "1",
-          "Apilot": "0",
-          "Availability": "2/1day",
-          "Cost": "15000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Kundalina Roadworks",
-          "Handling": "4/8(3/6)",
-          "Speed": "55/160",
-          "Body": "1",
-          "Armor": "1",
-          "Sig": "3",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "10000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Kundalina Roadworks Shiva",
-          "Handling": "2/6",
-          "Speed": "70/210",
-          "Body": "1",
-          "Armor": "1",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "12000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Kundalina",
-          "Handling": "4/6(3/5)",
-          "Speed": "65/190",
-          "Body": "1",
-          "Armor": "2",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "3/1day",
-          "Cost": "36000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Messerschmitt A200",
-          "Handling": "2/10",
-          "Speed": "50/220",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "0",
-          "Availability": "3/1day",
-          "Cost": "29000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Mitsubishi Portabike",
-          "Handling": "3/9",
-          "Speed": "10/35",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "7",
-          "Apilot": "0",
-          "Availability": "2/1day",
-          "Cost": "250",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "MZ E250CM",
-          "Handling": "4/6",
-          "Speed": "35/100",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "0",
-          "Availability": "2/1day",
-          "Cost": "4200",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "Nissan Stallion",
-          "Handling": "4",
-          "Speed": "80/200",
-          "Body": "4",
-          "Armor": "2",
-          "Sig": "2(5)",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "25000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Pedicab (bicycle)",
-          "Handling": "3/7",
-          "Speed": "10/30",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "10",
-          "Apilot": "0",
-          "Availability": "2/1day",
-          "Cost": "1200",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "Scion Technologies Dunemaster",
-          "Handling": "4/3",
-          "Speed": "45/135",
-          "Body": "2",
-          "Armor": "1",
-          "Sig": "1",
-          "Apilot": "1",
-          "Availability": "4/2days",
-          "Cost": "40000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Scion Technologies Dust Devil",
-          "Handling": "5/4",
-          "Speed": "35/105",
-          "Body": "2",
-          "Armor": "2",
-          "Sig": "1",
-          "Apilot": "1",
-          "Availability": "4/2days",
-          "Cost": "46000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Sport Eurasia",
-          "Handling": "4/12",
-          "Speed": "35/105",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "5",
-          "Apilot": "0",
-          "Availability": "2/1day",
-          "Cost": "1000",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "Suzuki 500ET",
-          "Handling": "3/6",
-          "Speed": "90/270",
-          "Body": "1",
-          "Armor": "2",
-          "Sig": "2",
-          "Apilot": "3",
-          "Availability": "2/1day",
-          "Cost": "25000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Suzuki Aurora",
-          "Handling": "2/4",
-          "Speed": "70/210",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "1",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "15000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Thundercload Pinto",
-          "Handling": "4/2",
-          "Speed": "20/60",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "0",
-          "Availability": "3/2days",
-          "Cost": "35000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "VW City Scooter",
-          "Handling": "3/9",
-          "Speed": "25/50",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "6500",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "Yamaha Rapier",
-          "Handling": "3/6",
-          "Speed": "65/195",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "1",
-          "Apilot": "1",
-          "Availability": "2/1day1",
-          "Cost": "10000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Ambunaught",
-          "Handling": "4/8",
-          "Speed": "30/95",
-          "Body": "5",
-          "Armor": "4",
-          "Sig": "1",
-          "Apilot": "2",
-          "Availability": "20/10days",
-          "Cost": "200000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Ares Roadmaster",
-          "Handling": "4/10",
-          "Speed": "30/90",
-          "Body": "4",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "4/2days",
-          "Cost": "45000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Conestoga Trailblazer",
-          "Handling": "4/8",
-          "Speed": "30/90",
-          "Body": "5",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "15/7days",
-          "Cost": "150000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Eurocar Blitz II",
-          "Handling": "4/9",
-          "Speed": "35/100",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "3/1day",
-          "Cost": "32000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Ford-Canada Bison",
-          "Handling": "4/3",
-          "Speed": "45/135",
-          "Body": "5",
-          "Armor": "6",
-          "Sig": "4",
-          "Apilot": "3",
-          "Availability": "15/7days",
-          "Cost": "150000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Gaz-Willy Nomad",
-          "Handling": "3/3",
-          "Speed": "30/90",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "5/3days",
-          "Cost": "50000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "GMC 4201",
-          "Handling": "3/6",
-          "Speed": "35/85",
-          "Body": "5",
-          "Armor": "3",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "7/4days",
-          "Cost": "75000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "GMC Bulldog Step-Van",
-          "Handling": "4/6",
-          "Speed": "35/85",
-          "Body": "4",
-          "Armor": "3",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "3/2days",
-          "Cost": "35000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "GMC Bulldog Van (Courier)",
-          "Handling": "4/8",
-          "Speed": "35/85",
-          "Body": "4",
-          "Armor": "6",
-          "Sig": "1",
-          "Apilot": "2",
-          "Availability": "6/3days",
-          "Cost": "60000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "GM",
-          "Handling": "4/10",
-          "Speed": "10/30",
-          "Body": "2",
-          "Armor": "2",
-          "Sig": "1",
-          "Apilot": "3",
-          "Availability": "15/7days",
-          "Cost": "150000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Landrover 2046 (short)",
-          "Handling": "3/3",
-          "Speed": "30/90",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "1",
-          "Availability": "3/2days",
-          "Cost": "35000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Landrover 2046 (long)",
-          "Handling": "3/3",
-          "Speed": "30/90",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "4/2days",
-          "Cost": "45000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Leyland-Rover Transport",
-          "Handling": "4/8",
-          "Speed": "25/75",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "5",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "25000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "New American Motors",
-          "Handling": "6/11",
-          "Speed": "35/105",
-          "Body": "5",
-          "Armor": "4",
-          "Sig": "2",
-          "Apilot": "0",
-          "Availability": "21/10days",
-          "Cost": "215000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Nissan-Holden Brumbry",
-          "Handling": "4/3",
-          "Speed": "30/90",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "25000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Nordkapp-Conestoga (Command)",
-          "Handling": "3/6",
-          "Speed": "30/90",
-          "Body": "6",
-          "Armor": "6",
-          "Sig": "2",
-          "Apilot": "4",
-          "Availability": "60/30days",
-          "Cost": "600000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Nordkapp-Conestoga (Cargo)",
-          "Handling": "3/6",
-          "Speed": "30/90",
-          "Body": "5",
-          "Armor": "3",
-          "Sig": "2",
-          "Apilot": "0",
-          "Availability": "20/10days",
-          "Cost": "200000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Renault Fiat Eurovan",
-          "Handling": "4/10",
-          "Speed": "35/105",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "25000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Rolls-Royce Prairie Cat",
-          "Handling": "2/3",
-          "Speed": "40/120",
-          "Body": "3",
-          "Armor": "3",
-          "Sig": "2",
-          "Apilot": "3",
-          "Availability": "2/1day",
-          "Cost": "275000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Spinelli Autotech",
-          "Handling": "4/2",
-          "Speed": "45/135",
-          "Body": "2",
-          "Armor": "1",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "5/2days",
-          "Cost": "55000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "ToyotaCorp Gopher",
-          "Handling": "4/4",
-          "Speed": "35/105",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "25000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Volkswagon SuperKombi III",
-          "Handling": "4/8",
-          "Speed": "35/105",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "25000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "VW TT50 ATV",
-          "Handling": "3/3",
-          "Speed": "40/100",
-          "Body": "3",
-          "Armor": "3",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "3/1days",
-          "Cost": "39000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Yakurichi-Ural BR70",
-          "Handling": "3/6",
-          "Speed": "50/150",
-          "Body": "4",
-          "Armor": "4",
-          "Sig": "2",
-          "Apilot": "4",
-          "Availability": "12/6days",
-          "Cost": "120000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Bensen Cascade",
-          "Handling": "7",
-          "Speed": "115/350",
-          "Body": "2",
-          "Armor": "1",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "20/10days",
-          "Cost": "200000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Bensen Violator",
-          "Handling": "4",
-          "Speed": "65/200",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "10/5days",
-          "Cost": "100000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Chrysler-Nissan G12a",
-          "Handling": "4",
-          "Speed": "40/120",
-          "Body": "4",
-          "Armor": "0",
-          "Sig": "5",
-          "Apilot": "2",
-          "Availability": "5/2days",
-          "Cost": "50000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Dornier Manta",
-          "Handling": "3",
-          "Speed": "60/150",
-          "Body": "4",
-          "Armor": "0",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "8/4days",
-          "Cost": "80000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "GMC-Beachcraft Vacationer",
-          "Handling": "4",
-          "Speed": "35/120",
-          "Body": "4",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "3",
-          "Availability": "10/5days",
-          "Cost": "100000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "GMC-Nissan Hovertruck",
-          "Handling": "4",
-          "Speed": "40/120",
-          "Body": "4",
-          "Armor": "0",
-          "Sig": "5",
-          "Apilot": "1",
-          "Availability": "10/5days",
-          "Cost": "100000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "MAN Titan",
-          "Handling": "4",
-          "Speed": "40/120",
-          "Body": "5",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "1",
-          "Availability": "14/7days",
-          "Cost": "140000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "MK QuietGlide",
-          "Handling": "4",
-          "Speed": "40/110",
-          "Body": "4",
-          "Armor": "0",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "10/5ays",
-          "Cost": "100000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Mostrans KVP-14T",
-          "Handling": "4",
-          "Speed": "60/180",
-          "Body": "4",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "1",
-          "Availability": "25/12days",
-          "Cost": "250000+",
-          "Street Index": "2"
-        },
-        {
-          "Name": "MosTrans KVT-2",
-          "Handling": "5",
-          "Speed": "35/105",
-          "Body": "14",
-          "Armor": "30",
-          "Sig": "3",
-          "Apilot": "4",
-          "Availability": "9000/3000days",
-          "Cost": "90000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Nissan Ford FanMaster",
-          "Handling": "5(6)",
-          "Speed": "35/135(3/7)",
-          "Body": "3",
-          "Armor": "2",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "20/10days",
-          "Cost": "200000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Suzuki Watersport",
-          "Handling": "2",
-          "Speed": "15/45",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "0",
-          "Availability": "2/1day",
-          "Cost": "12000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Aztech Nightrunner",
-          "Handling": "3",
-          "Speed": "25/75",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "4",
-          "Apilot": "3",
-          "Availability": "3/1day",
-          "Cost": "30000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Blohm",
-          "Handling": "3",
-          "Speed": "20/50",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "3/1day",
-          "Cost": "32000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Colorado Craft Cigarette",
-          "Handling": "4/5",
-          "Speed": "25/75",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "3/1day",
-          "Cost": "35000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Dornier-Zeppelin Hecht",
-          "Handling": "3",
-          "Speed": "15/40",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "4",
-          "Apilot": "`",
-          "Availability": "2/1day",
-          "Cost": "18000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Marine Tech Dolphine II",
-          "Handling": "3",
-          "Speed": "15/45",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "5/2days",
-          "Cost": "50000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Harland",
-          "Handling": "5",
-          "Speed": "15/45",
-          "Body": "6",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "4",
-          "Availability": "35/17days",
-          "Cost": "3500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Samuvani Criscraft Otter",
-          "Handling": "4",
-          "Speed": "15/45",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "20000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Vulkan Delphin RQ7",
-          "Handling": "4",
-          "Speed": "20/50",
-          "Body": "4",
-          "Armor": "9",
-          "Sig": "5",
-          "Apilot": "1",
-          "Availability": "40/20days",
-          "Cost": "400000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Vulkan Electronaut",
-          "Handling": "4",
-          "Speed": "15/40",
-          "Body": "3",
-          "Armor": "3",
-          "Sig": "6",
-          "Apilot": "1",
-          "Availability": "12/6days",
-          "Cost": "120000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Zemlya-Poltava Swordsman",
-          "Handling": "4",
-          "Speed": "25/75",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "5",
-          "Apilot": "0",
-          "Availability": "3/1day",
-          "Cost": "30000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Sendanko Marlin",
-          "Handling": "2",
-          "Speed": "20/30",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "5",
-          "Apilot": "0",
-          "Availability": "2/1day",
-          "Cost": "15000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Airbus A110",
-          "Handling": "5",
-          "Speed": "420/550",
-          "Body": "6",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "3",
-          "Availability": "90/45days",
-          "Cost": "900000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Cessna C750",
-          "Handling": "5",
-          "Speed": "340/680",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "2",
-          "Apilot": "2",
-          "Availability": "20/10days",
-          "Cost": "200000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Dornier Europa",
-          "Handling": "4",
-          "Speed": "380/580",
-          "Body": "4",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "3",
-          "Availability": "33/16days",
-          "Cost": "330000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Dornier K2",
-          "Handling": "4",
-          "Speed": "120/300",
-          "Body": "3",
-          "Armor": "3",
-          "Sig": "6",
-          "Apilot": "1",
-          "Availability": "17/8days",
-          "Cost": "170000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Dornier Wal II",
-          "Handling": "4",
-          "Speed": "320/480",
-          "Body": "7",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "85/42days",
-          "Cost": "850000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Embraer-Dessault Mistral",
-          "Handling": "4",
-          "Speed": "300/450",
-          "Body": "4",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "37/18days",
-          "Cost": "375000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Federated Boeing Eagle",
-          "Handling": "3",
-          "Speed": "900/1800",
-          "Body": "5",
-          "Armor": "12",
-          "Sig": "5",
-          "Apilot": "3",
-          "Availability": "500/250days",
-          "Cost": "50000000",
-          "Street Index": "-"
-        },
-        {
-          "Name": "Fiat-Fokker Cloud Nine",
-          "Handling": "4",
-          "Speed": "300/450",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "17/8days",
-          "Cost": "175000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Hawker-Ridley HS-895",
-          "Handling": "5",
-          "Speed": "400/600",
-          "Body": "5",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "250/125days",
-          "Cost": "2500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Lear Cessna Platinum I",
-          "Handling": "4",
-          "Speed": "400/550",
-          "Body": "5",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "3",
-          "Availability": "50/10days",
-          "Cost": "500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Lear Cessna Platinum II",
-          "Handling": "5",
-          "Speed": "800/1600",
-          "Body": "5",
-          "Armor": "3",
-          "Sig": "3",
-          "Apilot": "4",
-          "Availability": "150/75days",
-          "Cost": "1500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Piper Montebank",
-          "Handling": "2",
-          "Speed": "300/500",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "5/2days",
-          "Cost": "50000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Airbus AH 510",
-          "Handling": "5",
-          "Speed": "160/250",
-          "Body": "6",
-          "Armor": "1",
-          "Sig": "4",
-          "Apilot": "3",
-          "Availability": "75/37days",
-          "Cost": "750000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Augusta-Cierva Plutocrat",
-          "Handling": "4",
-          "Speed": "200/450",
-          "Body": "4",
-          "Armor": "3",
-          "Sig": "4",
-          "Apilot": "4",
-          "Availability": "95/47days",
-          "Cost": "950000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Ares Dragon",
-          "Handling": "5/7",
-          "Speed": "140/320",
-          "Body": "6",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "3",
-          "Availability": "60/30days",
-          "Cost": "600000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Ares TR-55C Cargoliner",
-          "Handling": "5",
-          "Speed": "170/350",
-          "Body": "4",
-          "Armor": "9",
-          "Sig": "3",
-          "Apilot": "3",
-          "Availability": "55/55days",
-          "Cost": "550000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Ares TR-55E Executive",
-          "Handling": "5",
-          "Speed": "170/350",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "3",
-          "Availability": "65/65days",
-          "Cost": "650000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Ares TR-55T Traveler",
-          "Handling": "5",
-          "Speed": "170/350",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "3",
-          "Availability": "50/25days",
-          "Cost": "500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Bell Boeing V-22B Osprey",
-          "Handling": "5",
-          "Speed": "170/510",
-          "Body": "4",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "3",
-          "Availability": "90/45days",
-          "Cost": "900000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Bell F-152 Aerogyro",
-          "Handling": "4",
-          "Speed": "160/480",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "4",
-          "Apilot": "1",
-          "Availability": "30/15days",
-          "Cost": "300000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Bell Spy-Eye 18",
-          "Handling": "2",
-          "Speed": "185/370",
-          "Body": "3",
-          "Armor": "1",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "50/25days",
-          "Cost": "500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Dornier Intercity",
-          "Handling": "3",
-          "Speed": "120/200",
-          "Body": "4",
-          "Armor": "3",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "28/14days",
-          "Cost": "280000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Federated Boeing Commuter",
-          "Handling": "5",
-          "Speed": "140/320",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "3",
-          "Availability": "6/3days",
-          "Cost": "625000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Hughes Aerospace Airstar",
-          "Handling": "4",
-          "Speed": "190/260",
-          "Body": "4",
-          "Armor": "6",
-          "Sig": "3",
-          "Apilot": "4",
-          "Availability": "90/45days",
-          "Cost": "900000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Hughes WK-2 Stallion",
-          "Handling": "5",
-          "Speed": "170/250",
-          "Body": "4",
-          "Armor": "0",
-          "Sig": "4",
-          "Apilot": "3",
-          "Availability": "30/15days",
-          "Cost": "300000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Hyundai Minicopter",
-          "Handling": "4",
-          "Speed": "70/160",
-          "Body": "1",
-          "Armor": "1",
-          "Sig": "2",
-          "Apilot": "1",
-          "Availability": "15/7days",
-          "Cost": "155000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Messerschmitt Grash",
-          "Handling": "3",
-          "Speed": "90/200",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "4",
-          "Apilot": "1",
-          "Availability": "17/8days",
-          "Cost": "170000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "MK Albatross",
-          "Handling": "5",
-          "Speed": "150/280",
-          "Body": "7",
-          "Armor": "1",
-          "Sig": "3",
-          "Apilot": "3",
-          "Availability": "72/36days",
-          "Cost": "720000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "MK Kolibri",
-          "Handling": "4",
-          "Speed": "150/280",
-          "Body": "4",
-          "Armor": "6",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "24/12days",
-          "Cost": "240000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Airbus AL800",
-          "Handling": "4",
-          "Speed": "80/200",
-          "Body": "10",
-          "Sig": "5",
-          "Apilot": "4",
-          "Availability": "200/100days",
-          "Cost": "2000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Airship Industries Skyswimmer",
-          "Handling": "3",
-          "Speed": "90/180",
-          "Body": "6",
-          "Armor": "3",
-          "Sig": "8",
-          "Apilot": "2",
-          "Availability": "10/5days",
-          "Cost": "100000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Goodyear Commuter-47",
-          "Handling": "3",
-          "Speed": "150/300",
-          "Body": "8",
-          "Armor": "3",
-          "Sig": "8",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "225000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "India Sky-Barge",
-          "Handling": "6",
-          "Speed": "40/80",
-          "Body": "6",
-          "Armor": "6",
-          "Sig": "7",
-          "Apilot": "2",
-          "Availability": "1000/500days",
-          "Cost": "10000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Luftschiffbau Zeppelin LZ-2049",
-          "Handling": "3",
-          "Speed": "100/250",
-          "Body": "12",
-          "Armor": "6",
-          "Sig": "8",
-          "Apilot": "2",
-          "Availability": "9/4days",
-          "Cost": "900000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Avenue",
-          "Handling": "6",
-          "Speed": "20/45",
-          "Body": "5",
-          "Armor": "1",
-          "Sig": "9",
-          "Apilot": "3",
-          "Availability": "250/125days",
-          "Cost": "2500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Sky Queen",
-          "Handling": "5",
-          "Speed": "55/135",
-          "Body": "10",
-          "Armor": "9",
-          "Sig": "7",
-          "Apilot": "4",
-          "Availability": "2000/1000days",
-          "Cost": "20000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Zeppelin LZ-51",
-          "Handling": "3",
-          "Speed": "120/280",
-          "Body": "6",
-          "Armor": "3",
-          "Sig": "8",
-          "Apilot": "2",
-          "Availability": "14/7days",
-          "Cost": "140000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Zeppeling LZ-2040",
-          "Handling": "3",
-          "Speed": "100/200",
-          "Body": "13",
-          "Armor": "3",
-          "Sig": "6",
-          "Apilot": "2",
-          "Availability": "150/75days",
-          "Cost": "1500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Arrow HSCT",
-          "Handling": "5",
-          "Speed": "1500/2900",
-          "Body": "4",
-          "Armor": "3",
-          "Sig": "2",
-          "Apilot": "4",
-          "Availability": "1000/500days",
-          "Cost": "10000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "China Clipper Suborbital",
-          "Handling": "5",
-          "Speed": "10k/24k",
-          "Body": "5",
-          "Armor": "6",
-          "Sig": "1",
-          "Apilot": "3",
-          "Availability": "1000/500days",
-          "Cost": "100000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Dynamics SV250 Semiballistic",
-          "Handling": "6",
-          "Speed": "10k/29k",
-          "Body": "5",
-          "Armor": "6",
-          "Sig": "1",
-          "Apilot": "4",
-          "Availability": "7500/3750days",
-          "Cost": "750000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Family Flier",
-          "Handling": "5",
-          "Speed": "100/200",
-          "Body": "3",
-          "Armor": "1",
-          "Sig": "0",
-          "Apilot": "2",
-          "Availability": "50/25days",
-          "Cost": "500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Ford Aerodyne Jayhawk",
-          "Handling": "(4)/(4/8)/(4)",
-          "Speed": "(140/300)/(30/90)/40/120)",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "2/4/3",
-          "Apilot": "3",
-          "Availability": "24/18days",
-          "Cost": "400000",
-          "Street Index": "4"
-        },
-        {
-          "Name": "Ford LAVT Enforcer",
-          "Handling": "(4)/(4/10)/(3)",
-          "Speed": "(160/320)/(30/90)/60/180)",
-          "Body": "2",
-          "Armor": "3",
-          "Sig": "3/4/4",
-          "Apilot": "3",
-          "Availability": "-",
-          "Cost": "800000",
-          "Street Index": "-"
-        },
-        {
-          "Name": "Mach",
-          "Handling": "3",
-          "Speed": "265/665",
-          "Body": "2",
-          "Armor": "1",
-          "Sig": "2",
-          "Apilot": "3",
-          "Availability": "130/65days",
-          "Cost": "1300000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Mitsubishi Vector",
-          "Handling": "(3)/(4/10)/(3)",
-          "Speed": "(160/320)/(30/90)/(60/180)",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "2/4/4",
-          "Apilot": "4",
-          "Availability": "26/20days",
-          "Cost": "600000",
-          "Street Index": "4"
-        },
-        {
-          "Name": "Swan",
-          "Handling": "5",
-          "Speed": "135/265",
-          "Body": "3",
-          "Armor": "2",
-          "Sig": "4",
-          "Apilot": "3",
-          "Availability": "80/40days",
-          "Cost": "800000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Tetracorp Fei Lien 100",
-          "Handling": "4",
-          "Speed": "300/600",
-          "Body": "2",
-          "Armor": "3",
-          "Sig": "1",
-          "Apilot": "3",
-          "Availability": "129/64days",
-          "Cost": "1290000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Arasaka Riot-VIII",
-          "Handling": "4/9",
-          "Speed": "55/160",
-          "Body": "8",
-          "Armor": "3",
-          "Sig": "1",
-          "Apilot": "3",
-          "Availability": "250/125days",
-          "Cost": "250000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Ares Citymaster",
-          "Handling": "4/10",
-          "Speed": "30/120",
-          "Body": "4",
-          "Armor": "12",
-          "Sig": "2",
-          "Apilot": "3",
-          "Availability": "50/25days",
-          "Cost": "500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Ares Mobmaster",
-          "Handling": "4/10",
-          "Speed": "30/120",
-          "Body": "5",
-          "Armor": "15",
-          "Sig": "2",
-          "Apilot": "5",
-          "Availability": "365/182days",
-          "Cost": "3650000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Chrysler-Nissan Patrol-One",
-          "Handling": "4/8",
-          "Speed": "60/180",
-          "Body": "3",
-          "Armor": "6",
-          "Sig": "4",
-          "Apilot": "3",
-          "Availability": "10/5days",
-          "Cost": "100000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Ferrari Appaloosa Light Scout",
-          "Handling": "2/3",
-          "Speed": "100/200",
-          "Body": "3",
-          "Armor": "9",
-          "Sig": "5",
-          "Apilot": "2",
-          "Availability": "100/50days",
-          "Cost": "1000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "General Products COP",
-          "Handling": "4/9",
-          "Speed": "30/90",
-          "Body": "1",
-          "Armor": "3",
-          "Sig": "4",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "25000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "GMC MPUV",
-          "Handling": "5/3",
-          "Speed": "40/120",
-          "Body": "2",
-          "Armor": "9",
-          "Sig": "4",
-          "Apilot": "0",
-          "Availability": "2/1day",
-          "Cost": "22000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Harley Electraglide-1000",
-          "Handling": "3/4",
-          "Speed": "95/285",
-          "Body": "3",
-          "Armor": "6",
-          "Sig": "2",
-          "Apilot": "1",
-          "Availability": "7/3days",
-          "Cost": "75000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "LAV-98",
-          "Handling": "5/3",
-          "Speed": "25/75",
-          "Body": "3",
-          "Armor": "12",
-          "Sig": "6",
-          "Apilot": "2",
-          "Availability": "25/12days",
-          "Cost": "250000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "LAV-103",
-          "Handling": "6/4",
-          "Speed": "25/75",
-          "Body": "5",
-          "Armor": "15",
-          "Sig": "6",
-          "Apilot": "2",
-          "Availability": "48/24days",
-          "Cost": "480000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "MAN BGS-TF3",
-          "Handling": "4/6",
-          "Speed": "35/140",
-          "Body": "4",
-          "Armor": "12",
-          "Sig": "2",
-          "Apilot": "3",
-          "Availability": "40/20days",
-          "Cost": "400000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "M-62",
-          "Handling": "3/4",
-          "Speed": "20/55",
-          "Body": "6",
-          "Armor": "4",
-          "Sig": "5",
-          "Apilot": "2",
-          "Availability": "950/475days",
-          "Cost": "9500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Mercedes PE Kommando",
-          "Handling": "3/6",
-          "Speed": "40/200",
-          "Body": "3",
-          "Armor": "6",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "35/17days",
-          "Cost": "350000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Ruhrmetall Wolf II AFV",
-          "Handling": "3/4",
-          "Speed": "90/180",
-          "Body": "4",
-          "Armor": "9",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "60/30days",
-          "Cost": "600000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "GMC Beachcraft Patroller",
-          "Handling": "4",
-          "Speed": "55/165",
-          "Body": "4",
-          "Armor": "6",
-          "Sig": "5",
-          "Apilot": "2",
-          "Availability": "75/37days",
-          "Cost": "750000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "GMC-Beachcraft Striker",
-          "Handling": "4",
-          "Speed": "80/200",
-          "Body": "4",
-          "Armor": "6",
-          "Sig": "5",
-          "Apilot": "2",
-          "Availability": "500/250days",
-          "Cost": "500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "GMI HovTransport",
-          "Handling": "5",
-          "Speed": "65/200",
-          "Body": "4",
-          "Armor": "4",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "720/360days",
-          "Cost": "720000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Ruhrmetall Orkan LK",
-          "Handling": "5",
-          "Speed": "60/140",
-          "Body": "4",
-          "Armor": "12",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "80/40days",
-          "Cost": "800000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Sikorsky-Bell",
-          "Handling": "4/6(3/5)",
-          "Speed": "150/450(30/90)",
-          "Body": "2",
-          "Armor": "6",
-          "Sig": "3(8)",
-          "Apilot": "3",
-          "Availability": "25/12days",
-          "Cost": "250000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Blohm",
-          "Handling": "4",
-          "Speed": "25/75",
-          "Body": "6",
-          "Armor": "9",
-          "Sig": "3",
-          "Apilot": "3",
-          "Availability": "30/15days",
-          "Cost": "300000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Blohm",
-          "Handling": "4",
-          "Speed": "40/100",
-          "Body": "7",
-          "Armor": "12",
-          "Sig": "3",
-          "Apilot": "4",
-          "Availability": "1500/750days",
-          "Cost": "15000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "GMC Riverine Assault Model",
-          "Handling": "3",
-          "Speed": "30/90",
-          "Body": "4",
-          "Armor": "6",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "12/6days",
-          "Cost": "125000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "GMC Riverine Police Model",
-          "Handling": "3",
-          "Speed": "30/90",
-          "Body": "4",
-          "Armor": "6",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "12/6days",
-          "Cost": "150000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "GMC Riverine Security Model",
-          "Handling": "3",
-          "Speed": "30/90",
-          "Body": "4",
-          "Armor": "6",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "12/6days",
-          "Cost": "200000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Surfstar Marine Seacop",
-          "Handling": "3",
-          "Speed": "30/90",
-          "Body": "3",
-          "Armor": "6",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "5/2days",
-          "Cost": "50000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Vulkan Typ 224 Jagd-U-Boot",
-          "Handling": "5",
-          "Speed": "30/70",
-          "Body": "7",
-          "Armor": "12",
-          "Sig": "6",
-          "Apilot": "2",
-          "Availability": "1600/800days",
-          "Cost": "16000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "ATF-37B Thunderhawk",
-          "Handling": "3",
-          "Speed": "600/1385",
-          "Body": "8",
-          "Armor": "2",
-          "Sig": "5",
-          "Apilot": "5",
-          "Availability": "1250/625days",
-          "Cost": "12500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "BAC-Dassault-MBB EFA Variants",
-          "Handling": "3",
-          "Speed": "950/1900",
-          "Body": "4",
-          "Armor": "6",
-          "Sig": "4",
-          "Apilot": "3",
-          "Availability": "500/250days",
-          "Cost": "5000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "C-60 Titan Medium Transport",
-          "Handling": "7",
-          "Speed": "150/350",
-          "Body": "5",
-          "Armor": "12",
-          "Sig": "4",
-          "Apilot": "3",
-          "Availability": "70/35days",
-          "Cost": "700000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "CASA J-239 Raven",
-          "Handling": "3",
-          "Speed": "200/400",
-          "Body": "3",
-          "Armor": "0",
-          "Sig": "4",
-          "Apilot": "1",
-          "Availability": "17/8days",
-          "Cost": "175000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "EFA 50",
-          "Handling": "3",
-          "Speed": "1000/2000",
-          "Body": "4",
-          "Armor": "9",
-          "Sig": "6",
-          "Apilot": "3",
-          "Availability": "1200/600days",
-          "Cost": "12000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Federated Boeing Eagle",
-          "Handling": "3",
-          "Speed": "900/1800",
-          "Body": "5",
-          "Armor": "12",
-          "Sig": "5",
-          "Apilot": "3",
-          "Availability": "5000/2500days",
-          "Cost": "50000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Fed-Boeing Falcon",
-          "Handling": "4",
-          "Speed": "135/400",
-          "Body": "4",
-          "Armor": "1",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "250/125days",
-          "Cost": "2500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "GD Hummingbird",
-          "Handling": "3",
-          "Speed": "400/800",
-          "Body": "4",
-          "Armor": "2",
-          "Sig": "2",
-          "Apilot": "3",
-          "Availability": "150/75days",
-          "Cost": "1500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "GF F-36 Comet",
-          "Handling": "1",
-          "Speed": "830/1860",
-          "Body": "7",
-          "Armor": "2",
-          "Sig": "5",
-          "Apilot": "3",
-          "Availability": "450/225days",
-          "Cost": "4500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Lockheed-Cessna Pinto",
-          "Handling": "3",
-          "Speed": "265/600",
-          "Body": "6",
-          "Armor": "2",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "1050/525days",
-          "Cost": "10500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "McDonnell Douglas C111",
-          "Handling": "4",
-          "Speed": "120/275",
-          "Body": "3",
-          "Armor": "4",
-          "Sig": "3",
-          "Apilot": "3",
-          "Availability": "75/37days",
-          "Cost": "750000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "MDD F-33 Wasp",
-          "Handling": "2",
-          "Speed": "730/1660",
-          "Body": "8",
-          "Armor": "2",
-          "Sig": "3",
-          "Apilot": "3",
-          "Availability": "350/175days",
-          "Cost": "3500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Moonlight Aerospace Avenger",
-          "Handling": "4",
-          "Speed": "100/200",
-          "Body": "3",
-          "Armor": "9",
-          "Sig": "8",
-          "Apilot": "2",
-          "Availability": "25/12days",
-          "Cost": "250000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Night Glider",
-          "Handling": "3",
-          "Speed": "15/60",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "12",
-          "Apilot": "1",
-          "Availability": "4/2days",
-          "Cost": "45000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Aztechnology Aguilar-EX",
-          "Handling": "4",
-          "Speed": "280/560",
-          "Body": "3",
-          "Armor": "6",
-          "Sig": "4(8)",
-          "Apilot": "4",
-          "Availability": "260/130days",
-          "Cost": "2600000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Bell UH-10 PAPC",
-          "Handling": "5",
-          "Speed": "90/180",
-          "Body": "8",
-          "Armor": "4",
-          "Sig": "5",
-          "Apilot": "4",
-          "Availability": "185/92days",
-          "Cost": "1850000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Mil-62",
-          "Handling": "4",
-          "Speed": "240/480",
-          "Body": "4",
-          "Armor": "8",
-          "Sig": "4",
-          "Apilot": "3",
-          "Availability": "190/95days",
-          "Cost": "1900000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "MK Sperber",
-          "Handling": "4",
-          "Speed": "240/430",
-          "Body": "4",
-          "Armor": "9",
-          "Sig": "4",
-          "Apilot": "3",
-          "Availability": "300/150days",
-          "Cost": "3000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "PRC-42B Wasp",
-          "Handling": "3",
-          "Speed": "65/100",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "5",
-          "Apilot": "0",
-          "Availability": "22/11days",
-          "Cost": "220000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "PRC-42F Wasp",
-          "Handling": "2",
-          "Speed": "65/100",
-          "Body": "2",
-          "Armor": "6",
-          "Sig": "7",
-          "Apilot": "0",
-          "Availability": "27/13days",
-          "Cost": "274000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "PRC-44B Yellowjacket",
-          "Handling": "4",
-          "Speed": "65/100",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "5",
-          "Apilot": "0",
-          "Availability": "28/14days",
-          "Cost": "280000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "PRC-44F Yellowjacket",
-          "Handling": "3",
-          "Speed": "65/100",
-          "Body": "3",
-          "Armor": "9",
-          "Sig": "7",
-          "Apilot": "0",
-          "Availability": "39/19days",
-          "Cost": "390000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Sikorsky-Mitsubishi Dragon",
-          "Handling": "4",
-          "Speed": "280/560",
-          "Body": "8",
-          "Armor": "9",
-          "Sig": "2",
-          "Apilot": "4",
-          "Availability": "500/250days",
-          "Cost": "5000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "UH-90 Utility",
-          "Handling": "4",
-          "Speed": "230/270",
-          "Body": "4",
-          "Armor": "3",
-          "Sig": "3",
-          "Apilot": "3",
-          "Availability": "100/50days",
-          "Cost": "1000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "AV-3",
-          "Handling": "4",
-          "Speed": "330/465",
-          "Body": "4",
-          "Armor": "2",
-          "Sig": "4",
-          "Apilot": "3",
-          "Availability": "150/75days",
-          "Cost": "1500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "AV-4",
-          "Handling": "5",
-          "Speed": "150/450",
-          "Body": "5",
-          "Armor": "6",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "150/75days",
-          "Cost": "1500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "AV-6",
-          "Handling": "5(4/8)",
-          "Speed": "210/630(80/200)",
-          "Body": "6",
-          "Armor": "9",
-          "Sig": "3(7)",
-          "Apilot": "3",
-          "Availability": "350/175days",
-          "Cost": "3500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "AV-9",
-          "Handling": "5",
-          "Speed": "270/530",
-          "Body": "7",
-          "Armor": "5",
-          "Sig": "2",
-          "Apilot": "4",
-          "Availability": "3000/1500days",
-          "Cost": "30000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Fledermaus PKF-40 Ausf. B",
-          "Handling": "3",
-          "Speed": "440/880",
-          "Body": "3",
-          "Armor": "1",
-          "Sig": "4",
-          "Apilot": "4",
-          "Availability": "250/125days",
-          "Cost": "2500000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "GMC Banshee LAV",
-          "Handling": "3",
-          "Speed": "650/1000",
-          "Body": "6",
-          "Armor": "18",
-          "Sig": "5",
-          "Apilot": "2",
-          "Availability": "1000/500days",
-          "Cost": "10000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Ruhrmetall Behemoth C",
-          "Handling": "5",
-          "Speed": "60/320",
-          "Body": "9",
-          "Armor": "24",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "800/400days",
-          "Cost": "8000000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Aerodesign Condor LDSD-23",
-          "Handling": "5",
-          "Speed": "20/60",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "10",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "2500",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "Aerodesign Condor II LD SD-41",
-          "Handling": "5",
-          "Speed": "30/90",
-          "Body": "1",
-          "Armor": "3",
-          "Sig": "11",
-          "Apilot": "3",
-          "Availability": "4/2days",
-          "Cost": "45000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Ares Guardian",
-          "Handling": "4/5",
-          "Speed": "30/60",
-          "Body": "4",
-          "Armor": "12",
-          "Sig": "6",
-          "Apilot": "3",
-          "Availability": "8/8days",
-          "Cost": "75000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Bell",
-          "Handling": "5",
-          "Speed": "80/160",
-          "Body": "1",
-          "Armor": "1",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "8000",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "CAS Windjina RPV",
-          "Handling": "3/5",
-          "Speed": "250/500",
-          "Body": "5",
-          "Armor": "6",
-          "Sig": "4/8",
-          "Apilot": "4",
-          "Availability": "7/3days",
-          "Cost": "75000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "GM-Nissan Spotter",
-          "Handling": "3",
-          "Speed": "35/100",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "12500",
-          "Street Index": "1"
-        },
-        {
-          "Name": "GM-Nissan Rotordrone",
-          "Handling": "4",
-          "Speed": "35/70",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "7500",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "Militech RPV-400 Tiltrotor",
-          "Handling": "4",
-          "Speed": "140/280",
-          "Body": "3",
-          "Armor": "3",
-          "Sig": "4",
-          "Apilot": "4",
-          "Availability": "15/7days",
-          "Cost": "150000",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Arasaka RDAK",
-          "Handling": "4",
-          "Speed": "12/36",
-          "Body": "1",
-          "Armor": "1",
-          "Sig": "18",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "12000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Aztech GCR-23C Crawler",
-          "Handling": "4/4",
-          "Speed": "5/15",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "4",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "1250",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "Cyberspace Designs Dalmation",
-          "Handling": "3",
-          "Speed": "35/105",
-          "Body": "2",
-          "Armor": "0",
-          "Sig": "4",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "15000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Ferret RPD-VI Perimeter Drone",
-          "Handling": "3/5",
-          "Speed": "10/30",
-          "Body": "1",
-          "Armor": "3",
-          "Sig": "8",
-          "Apilot": "3",
-          "Availability": "15/7days",
-          "Cost": "154800",
-          "Street Index": "2"
-        },
-        {
-          "Name": "Gaz-Niki GNRD-71 Snooper",
-          "Handling": "4/3",
-          "Speed": "25/75",
-          "Body": "1",
-          "Armor": "0",
-          "Sig": "5",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "1750",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "GM-Nissan Doberman",
-          "Handling": "3/5",
-          "Speed": "35/70",
-          "Body": "3",
-          "Armor": "6",
-          "Sig": "3",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "10000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Mitsubishi",
-          "Handling": "6/9",
-          "Speed": "20/60",
-          "Body": "2",
-          "Armor": "2",
-          "Sig": "3",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "9000",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "Sikorsky-Bell Microskimmer",
-          "Handling": "5",
-          "Speed": "30/90",
-          "Body": "2",
-          "Armor": "1",
-          "Sig": "0",
-          "Apilot": "1",
-          "Availability": "2/1day",
-          "Cost": "2750",
-          "Street Index": ".75"
-        },
-        {
-          "Name": "Steel Lynx Drone",
-          "Handling": "4/6",
-          "Speed": "40/80",
-          "Body": "4",
-          "Armor": "12",
-          "Sig": "5",
-          "Apilot": "2",
-          "Availability": "2/1day",
-          "Cost": "15000",
-          "Street Index": "1"
-        },
-        {
-          "Name": "Ares Sentinel P",
-          "Handling": "5",
-          "Speed": "10",
-          "Body": "4",
-          "Armor": "12",
-          "Sig": "6",
-          "Apilot": "3",
-          "Availability": "-",
-          "Cost": "60000",
-          "Street Index": "-"
-        }
-      ]
-    },
-    "Vehiclegear": {
-      "Name": "Vehiclegear",
-      "attributes": [
-        "Availability",
-        "Cost",
-        "Street Index",
-        ""
-      ],
-      "entries": [
         {
           "Name": "Remote Control Gear",
           "Availability": "4/72hrs",
@@ -31125,20 +26965,92 @@
           "CF": "2"
         },
         {
-          "Name": "EnviroSeal (Gas)",
-          "Cost": "BODY x 250",
+          "Name": "EnviroSeal (Gas) (Vehicle Body 1)",
+          "Cost": "250",
           "Equipment": "Facility",
           "CF": "1"
         },
         {
-          "Name": "EnviroSeal (Water)",
-          "Cost": "BODY x 750",
+          "Name": "EnviroSeal (Gas) (Vehicle Body 2)",
+          "Cost": "500",
           "Equipment": "Facility",
           "CF": "1"
         },
         {
-          "Name": "EnviroSeal (Engine)",
-          "Cost": "BODY x 1000",
+          "Name": "EnviroSeal (Gas) (Vehicle Body 3)",
+          "Cost": "750",
+          "Equipment": "Facility",
+          "CF": "1"
+        },
+        {
+          "Name": "EnviroSeal (Gas) (Vehicle Body 4)",
+          "Cost": "1000",
+          "Equipment": "Facility",
+          "CF": "1"
+        },
+        {
+          "Name": "EnviroSeal (Gas) (Vehicle Body 5)",
+          "Cost": "1250",
+          "Equipment": "Facility",
+          "CF": "1"
+        },
+        {
+          "Name": "EnviroSeal (Water) (Vehicle Body 1)",
+          "Cost": "750",
+          "Equipment": "Facility",
+          "CF": "1"
+        },
+        {
+          "Name": "EnviroSeal (Water) (Vehicle Body 2)",
+          "Cost": "1500",
+          "Equipment": "Facility",
+          "CF": "1"
+        },
+        {
+          "Name": "EnviroSeal (Water) (Vehicle Body 3)",
+          "Cost": "2250",
+          "Equipment": "Facility",
+          "CF": "1"
+        },
+        {
+          "Name": "EnviroSeal (Water) (Vehicle Body 4)",
+          "Cost": "3000",
+          "Equipment": "Facility",
+          "CF": "1"
+        },
+        {
+          "Name": "EnviroSeal (Water) (Vehicle Body 5)",
+          "Cost": "3750",
+          "Equipment": "Facility",
+          "CF": "1"
+        },
+        {
+          "Name": "EnviroSeal (Engine) (Vehicle Body 1)",
+          "Cost": "1000",
+          "Equipment": "Facility",
+          "CF": "1"
+        },
+        {
+          "Name": "EnviroSeal (Engine) (Vehicle Body 2)",
+          "Cost": "2000",
+          "Equipment": "Facility",
+          "CF": "1"
+        },
+        {
+          "Name": "EnviroSeal (Engine) (Vehicle Body 3)",
+          "Cost": "3000",
+          "Equipment": "Facility",
+          "CF": "1"
+        },
+        {
+          "Name": "EnviroSeal (Engine) (Vehicle Body 4)",
+          "Cost": "4000",
+          "Equipment": "Facility",
+          "CF": "1"
+        },
+        {
+          "Name": "EnviroSeal (Engine) (Vehicle Body 5)",
+          "Cost": "5000",
           "Equipment": "Facility",
           "CF": "1"
         },
@@ -31147,12 +27059,6 @@
           "Cost": "250",
           "Equipment": "Shop",
           "CF": "0"
-        },
-        {
-          "Name": "Flotation Package (Aircraft)",
-          "Cost": "10% of vehicle cost",
-          "Equipment": "Facility",
-          "CF": "2"
         },
         {
           "Name": "GridLink Power",
@@ -31203,19 +27109,19 @@
           "CF": "1"
         },
         {
-          "Name": "Amphibious Package",
+          "Name": "Amphibious Package lvl 1",
           "Cost": "2500",
           "Equipment": "Facility",
           "CF": "0"
         },
         {
-          "Name": "Amphibious Package",
+          "Name": "Amphibious Package lvl 2",
           "Cost": "7500",
           "Equipment": "Facility",
           "CF": "2"
         },
         {
-          "Name": "Amphibious Package",
+          "Name": "Amphibious Package lvl 3",
           "Cost": "15000",
           "Equipment": "Facility",
           "CF": "3"
@@ -31371,19 +27277,19 @@
           "CF": "1"
         },
         {
-          "Name": "Hardpoint",
+          "Name": "Hardpoint Single Centerline",
           "Cost": "1000",
           "Equipment": "-",
           "CF": "2"
         },
         {
-          "Name": "Hardpoint",
+          "Name": "Hardpoint Dual Centerline ",
           "Cost": "1750",
           "Equipment": "-",
           "CF": "3"
         },
         {
-          "Name": "Hardpoint",
+          "Name": "Hardpoint Wing/Fairing",
           "Cost": "750",
           "Equipment": "-",
           "CF": ".5"
