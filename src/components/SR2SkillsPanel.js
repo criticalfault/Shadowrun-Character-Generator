@@ -282,7 +282,7 @@ function SR2SkillsPanel({characterSkills, onUpdateSkills, maxSkillPoints}) {
                 <CardHeader  title={skill.name}></CardHeader>
                 <CardContent>
                   {
-                    (skill.requiresConcentration === true ? (<><span style={{color:'red', position: 'absolute',top: '75px'}}>Requires Concentration</span><br></br></>) :'')
+                    (skill.requiresConcentration === true ? (<><span style={{color:'blue', position: 'absolute',top: '75px'}}>Concentration Only</span><br></br></>) :'')
                   }
                   <TextField
                     style={{ width: '90px', marginRight: '10px', display: 'inline-block' }}
