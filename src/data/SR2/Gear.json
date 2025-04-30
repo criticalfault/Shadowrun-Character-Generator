@@ -26637,9 +26637,64 @@
           "Street Index": "2"
         },
         {
-          "Name": "Remote Control Deck",
+          "Name": "Remote Control Deck (R1)",
+          "Rating":1,
           "Availability": "4/72hrs",
-          "Cost": "2"
+          "Cost": "5000"
+        },
+        {
+          "Name": "Remote Control Deck (R2)",
+          "Rating":2,
+          "Availability": "4/72hrs",
+          "Cost": "10000"
+        },
+        {
+          "Name": "Remote Control Deck (R3)",
+          "Rating":3,
+          "Availability": "4/72hrs",
+          "Cost": "15000"
+        },
+        {
+          "Name": "Remote Control Deck (R4)",
+          "Rating":4,
+          "Availability": "4/72hrs",
+          "Cost": "20000"
+        },
+        {
+          "Name": "Remote Control Deck (R5)",
+          "Rating":5,
+          "Availability": "4/72hrs",
+          "Cost": "25000"
+        },
+        {
+          "Name": "Remote Control Deck (R6)",
+          "Rating":6,
+          "Availability": "4/72hrs",
+          "Cost": "30000"
+        },
+        {
+          "Name": "Remote Control Deck (R7)",
+          "Rating":7,
+          "Availability": "4/72hrs",
+          "Cost": "35000"
+        },
+        {
+          "Name": "Remote Control Deck (R68)",
+          "Rating":8,
+          "Availability": "4/72hrs",
+          "Cost": "40000"
+        },
+        {
+          "Name": "Remote Control Deck (R9)",
+          "Rating":9,
+          "Availability": "4/72hrs",
+          "Cost": "45000"
+        },
+        {
+          "Name": "Remote Control Deck (R10)",
+          "Rating":10,
+          "Availability": "4/72hrs",
+          "Cost": "50000"
         },
         {
           "Name": "Charges for Smokegen. (6)",
