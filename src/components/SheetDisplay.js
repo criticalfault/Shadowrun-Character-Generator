@@ -289,7 +289,19 @@ function SheetDisplay(props) {
     } else {
       props.currentCharacter.skills.forEach(function (skill) {
         if (skill.name === "Sorcery") {
-          poolValue = skill.value;
+          
+          if (
+            skill.hasOwnProperty("selectedConcentrations") &&
+            skill.selectedConcentrations.length > 0
+          ) {
+            skill.selectedConcentrations.forEach(function (subSkill) {
+              if (poolValue < subSkill.rating) {
+                poolValue = subSkill.rating;
+              }
+            });
+          }else{
+            poolValue = skill.rating;
+          }
         }
       });
     }
