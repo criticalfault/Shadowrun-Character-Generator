@@ -21876,139 +21876,319 @@
           "Street Index": "3"
         },
         {
-          "Name": "Ally Conjuring Materials",
+          "Name": "Ally Conjuring Materials (1 Unit)",
           "Availability": "(Force)/36hrs",
-          "Cost": "1000xUnit",
+          "Cost": "1000",
           "Street Index": "1"
         },
         {
-          "Name": "Elemental Conjuring Materials",
-          "Availability": "(Force)/24hrs",
-          "Cost": "1000xForce",
+          "Name": "Elemental Conjuring Materials - Force 1",
+          "Availability": "1/24hrs",
+          "Cost": "1000",
           "Street Index": "1"
         },
         {
-          "Name": "Fetish Focus",
+          "Name": "Elemental Conjuring Materials - Force 2",
+          "Availability": "2/24hrs",
+          "Cost": "2000",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Elemental Conjuring Materials - Force 3",
+          "Availability": "3/24hrs",
+          "Cost": "3000",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Elemental Conjuring Materials - Force 4",
+          "Availability": "4/24hrs",
+          "Cost": "4000",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Elemental Conjuring Materials - Force 5",
+          "Availability": "5/24hrs",
+          "Cost": "5000",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Elemental Conjuring Materials - Force 6",
+          "Availability": "6/24hrs",
+          "Cost": "6000",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Fetish Focus - Force 1",
           "Availability": "3/26hrs",
-          "Cost": "3000xRating",
+          "Cost": "3000",
           "Street Index": "1"
         },
         {
-          "Name": "Medicine Lodge Materials",
-          "Availability": "(Rating)/24hrs",
-          "Cost": "500xRating",
+          "Name": "Fetish Focus - Force 2",
+          "Availability": "3/26hrs",
+          "Cost": "6000",
           "Street Index": "1"
         },
         {
-          "Name": "Ward Casting Materials",
+          "Name": "Fetish Focus - Force 3",
+          "Availability": "3/26hrs",
+          "Cost": "9000",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Fetish Focus - Force 4",
+          "Availability": "3/26hrs",
+          "Cost": "12000",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Fetish Focus - Force 5",
+          "Availability": "3/26hrs",
+          "Cost": "15000",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Fetish Focus - Force 6",
+          "Availability": "3/26hrs",
+          "Cost": "18000",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Medicine Lodge Materials - Force 1",
+          "Availability": "1/24hrs",
+          "Cost": "500",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Medicine Lodge Materials - Force 2",
+          "Availability": "2/24hrs",
+          "Cost": "1000",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Medicine Lodge Materials - Force 3",
+          "Availability": "3/24hrs",
+          "Cost": "1500",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Medicine Lodge Materials - Force 4",
+          "Availability": "4/24hrs",
+          "Cost": "2000",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Medicine Lodge Materials - Force 5",
+          "Availability": "5/24hrs",
+          "Cost": "2500",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Medicine Lodge Materials - Force 6",
+          "Availability": "6/24hrs",
+          "Cost": "3000",
+          "Street Index": "1"
+        },
+        {
+          "Name": "Ward Casting Materials (1 Unit)",
           "Availability": "(Force)/36hrs",
-          "Cost": "1000xUnit",
+          "Cost": "1000",
           "Street Index": "1"
         },
         {
-          "Name": "Watcher Casting Materials",
+          "Name": "Watcher Casting Materials (1 Unit)",
           "Availability": "(Force)/36hrs",
-          "Cost": "1000xUnit",
+          "Cost": "1000",
           "Street Index": "1"
         },
         {
-          "Name": "Disk",
-          "Availability": "(Rating)/7days",
-          "Cost": "1000x(Rating^2)",
+          "Name": "Hermetic library - Disk - Rating 1",
+          "Availability": "1/7days",
+          "Cost": "1000",
           "Street Index": "2"
         },
         {
-          "Name": "Chip",
-          "Availability": "(Rating)/7days",
-          "Cost": "1200x(Rating^2)",
+          "Name": "Hermetic library - Disk - Rating 2",
+          "Availability": "2/7days",
+          "Cost": "4000",
           "Street Index": "2"
         },
         {
-          "Name": "Hardcopy",
-          "Availability": "(Rating)/14days",
-          "Cost": "2000x(Rating^2)",
+          "Name": "Hermetic library - Disk - Rating 3",
+          "Availability": "3/7days",
+          "Cost": "9000",
+          "Street Index": "2"
+        },
+        {
+          "Name": "Hermetic library - Disk - Rating 4",
+          "Availability": "4/7days",
+          "Cost": "16000",
+          "Street Index": "2"
+        },
+        {
+          "Name": "Hermetic library - Disk - Rating 5",
+          "Availability": "5/7days",
+          "Cost": "25000",
+          "Street Index": "2"
+        },
+        {
+          "Name": "Hermetic library - Disk - Rating 6",
+          "Availability": "6/7days",
+          "Cost": "36000",
+          "Street Index": "2"
+        },
+        {
+          "Name": "Hermetic library - Chip - Rating 1",
+          "Availability": "1/7days",
+          "Cost": "1200",
+          "Street Index": "2"
+        },
+        {
+          "Name": "Hermetic library - Chip - Rating 2",
+          "Availability": "2/7days",
+          "Cost": "4800",
+          "Street Index": "2"
+        },
+        {
+          "Name": "Hermetic library - Chip - Rating 3",
+          "Availability": "3/7days",
+          "Cost": "10800",
+          "Street Index": "2"
+        },
+        {
+          "Name": "Hermetic library - Chip - Rating 4",
+          "Availability": "4/7days",
+          "Cost": "19200",
+          "Street Index": "2"
+        },
+        {
+          "Name": "Hermetic library - Chip - Rating 5",
+          "Availability": "5/7days",
+          "Cost": "30000",
+          "Street Index": "2"
+        },
+        {
+          "Name": "Hermetic library - Chip - Rating 6",
+          "Availability": "6/7days",
+          "Cost": "43200",
+          "Street Index": "2"
+        },
+        {
+          "Name": "Hermetic library - Hardcopy - Force 1",
+          "Availability": "1/14days",
+          "Cost": "2000",
           "Street Index": "3"
         },
         {
-          "Name": "Combat",
+          "Name": "Hermetic library - Hardcopy - Force 2",
+          "Availability": "2/14days",
+          "Cost": "8000",
+          "Street Index": "3"
+        },
+        {
+          "Name": "Hermetic library - Hardcopy - Force 3",
+          "Availability": "3/14days",
+          "Cost": "18000",
+          "Street Index": "3"
+        },
+        {
+          "Name": "Hermetic library - Hardcopy - Force 4",
+          "Availability": "4/14days",
+          "Cost": "32000",
+          "Street Index": "3"
+        },
+        {
+          "Name": "Hermetic library - Hardcopy - Force 5",
+          "Availability": "5/14days",
+          "Cost": "50000",
+          "Street Index": "3"
+        },
+        {
+          "Name": "Hermetic library - Hardcopy - Force 6",
+          "Availability": "6/14days",
+          "Cost": "72000",
+          "Street Index": "3"
+        },
+        {
+          "Name": "Expendable fetish - Combat",
           "Availability": "2/24hrs",
           "Cost": "20",
           "Street Index": "1"
         },
         {
-          "Name": "Detection",
+          "Name": "Expendable fetish - Detection",
           "Availability": "2/24hrs",
           "Cost": "5",
           "Street Index": "1"
         },
         {
-          "Name": "Healing",
+          "Name": "Expendable fetish - Healing",
           "Availability": "2/24hrs",
           "Cost": "50",
           "Street Index": "1"
         },
         {
-          "Name": "Illusion",
+          "Name": "Expendable fetish - Illusion",
           "Availability": "2/24hrs",
           "Cost": "10",
           "Street Index": "1"
         },
         {
-          "Name": "Manipulation",
+          "Name": "Expendable fetish - Manipulation",
           "Availability": "2/24hrs",
           "Cost": "30",
           "Street Index": "1"
         },
         {
-          "Name": "Combat",
+          "Name": "Reusable fetishes - Combat",
           "Availability": "3/24hrs",
           "Cost": "200",
           "Street Index": "1"
         },
         {
-          "Name": "Detection",
+          "Name": "Reusable fetishes - Detection",
           "Availability": "3/24hrs",
           "Cost": "50",
           "Street Index": "1"
         },
         {
-          "Name": "Healing",
+          "Name": "Reusable fetishes - Healing",
           "Availability": "3/24hrs",
           "Cost": "500",
           "Street Index": "1"
         },
         {
-          "Name": "Illusion",
+          "Name": "Reusable fetishes - Illusion",
           "Availability": "3/24hrs",
           "Cost": "100",
           "Street Index": "1"
         },
         {
-          "Name": "Manipulation",
+          "Name": "Reusable fetishes - Manipulation",
           "Availability": "3/24hrs",
           "Cost": "300",
           "Street Index": "1"
         },
         {
-          "Name": "Detection",
+          "Name": "Ritual sorcery material - Detection",
           "Availability": "3/24hrs",
           "Cost": "100xForce",
           "Street Index": "1"
         },
         {
-          "Name": "Healing",
+          "Name": "Ritual sorcery material -Healing",
           "Availability": "3/24hrs",
           "Cost": "500xForce",
           "Street Index": "1"
         },
         {
-          "Name": "Illusion",
+          "Name": "Ritual sorcery material -Illusion",
           "Availability": "3/24hrs",
           "Cost": "100xForce",
           "Street Index": "1"
         },
         {
-          "Name": "Manipulation",
+          "Name": "Ritual sorcery material -Manipulation",
           "Availability": "3/24hrs",
           "Cost": "1000xForce",
           "Street Index": "1"
@@ -22218,25 +22398,25 @@
           "Street Index": "-"
         },
         {
-          "Name": "Force L",
+          "Name": "Spell formulae - Force L",
           "Availability": "-",
           "Cost": "50xForce",
           "Street Index": "-"
         },
         {
-          "Name": "Force M",
+          "Name": "Spell formulae - Force M",
           "Availability": "-",
           "Cost": "100xForce",
           "Street Index": "-"
         },
         {
-          "Name": "Force S",
+          "Name": "Spell formulae - Force S",
           "Availability": "-",
           "Cost": "500xForce",
           "Street Index": "-"
         },
         {
-          "Name": "Force D",
+          "Name": "Spell formulae - Force D",
           "Availability": "-",
           "Cost": "1000xForce",
           "Street Index": "-"

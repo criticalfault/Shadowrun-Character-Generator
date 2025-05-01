@@ -221,6 +221,7 @@ export default function GearPanel(props) {
             <TableRow>
               <TableCell>Name</TableCell>
               <TableCell align="right">Damage</TableCell>
+              <TableCell align="right">Ammunition</TableCell>
               <TableCell align="right">Cost</TableCell>
               <TableCell align="right">Book.Page</TableCell>
               <TableCell align="right">Availability</TableCell>
@@ -238,6 +239,7 @@ export default function GearPanel(props) {
                 <TableCell component="th" scope="row"> {gear.Name}
                       {gear.Amount !== 0?`  x${gear.Amount}`:''}</TableCell>
                 <TableCell align="right">{gear.Damage}</TableCell>
+                <TableCell align="right">{gear.Ammunition||'N/A'}</TableCell>
                 <TableCell align="right"> 
                     {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}
                     {gear.Amount !== 0 && gear.Amount !== 1 ?`  [${new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost*gear.Amount)}]`:''}
