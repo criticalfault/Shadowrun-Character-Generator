@@ -289,7 +289,19 @@ function SheetDisplay(props) {
     } else {
       props.currentCharacter.skills.forEach(function (skill) {
         if (skill.name === "Sorcery") {
-          poolValue = skill.value;
+          
+          if (
+            skill.hasOwnProperty("selectedConcentrations") &&
+            skill.selectedConcentrations.length > 0
+          ) {
+            skill.selectedConcentrations.forEach(function (subSkill) {
+              if (poolValue < subSkill.rating) {
+                poolValue = subSkill.rating;
+              }
+            });
+          }else{
+            poolValue = skill.rating;
+          }
         }
       });
     }
@@ -524,7 +536,7 @@ function SheetDisplay(props) {
         <Item>
           <h2 className={"boxHeader"}>Condition Monitor</h2>
           <ConditionMonitor
-            type="Stun &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+            type="Stun &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
             key={"S"}
             actor="S"
             onConditionSelect={handleConditionSelect}
@@ -538,7 +550,7 @@ function SheetDisplay(props) {
         </Item>
       </Grid>
 
-      <Grid item size={{ xs: 12, md: 4 }} style={{ width: "100%" }}>
+      <Grid item size={6}>
         <Item>
           <h2 className={"boxHeader"}>Attributes</h2>
           <Grid container>
@@ -644,7 +656,7 @@ function SheetDisplay(props) {
           </Grid>
         </Item>
       </Grid>
-      <Grid item size={{ xs: 12, md: 8 }}>
+      <Grid item size={4}>
         <Item style={{}}>
           <h2 className={"boxHeader"}>Dice Pools</h2>
           <TextField
@@ -694,12 +706,12 @@ function SheetDisplay(props) {
           {renderKarmaPool()}
         </Item>
       </Grid>
-      {/* <Grid item size={{ xs: 12, md: 6 }}>
+      <Grid item size={12}>
         <Item style={{ minHeight: "341px" }}>
           <h2 className={"boxHeader"}>Skills</h2>
           {renderSkillsPanel()}
         </Item>
-      </Grid> */}
+      </Grid>
 
       <Grid item size={12}>
         <Item>
@@ -732,7 +744,7 @@ function SheetDisplay(props) {
           </TableContainer>
         </Item>
       </Grid>
-      <Grid item size={{ xs: 12, md: 12 }}>
+      <Grid item size={12}>
         <Item>
           <h2 className={"boxHeader"}>Bioware</h2>
           <TableContainer component={Paper}>
@@ -765,7 +777,7 @@ function SheetDisplay(props) {
           </TableContainer>
         </Item>
       </Grid>
-      <Grid item size={{ xs: 12, md: 6 }}>
+      <Grid item size={12}>
         <Item>
           <h2 className={"boxHeader"}>Gear</h2>
           <TableContainer component={Paper}>
@@ -804,7 +816,7 @@ function SheetDisplay(props) {
           </TableContainer>
         </Item>
       </Grid>
-      <Grid item size={{ xs: 12, md: 6 }}>
+      <Grid item size={12}>
         <Item>
           <h2 className={"boxHeader"}>Armor</h2>
           <TableContainer component={Paper}>
@@ -852,6 +864,7 @@ function SheetDisplay(props) {
                 <TableRow>
                   <TableCell>Name</TableCell>
                   <TableCell align="right">Damage</TableCell>
+                  <TableCell align="right">Ammunition</TableCell>
                   <TableCell align="right">Short</TableCell>
                   <TableCell align="right">Medium</TableCell>
                   <TableCell align="right">Long</TableCell>
@@ -871,6 +884,7 @@ function SheetDisplay(props) {
                           {gear.Name}
                         </TableCell>
                         <TableCell align="right">{gear.Damage}</TableCell>
+                        <TableCell align="right">{gear.Ammunition??'N/A'}</TableCell>
                         <TableCell align="right">
                           {gearRange.short ?? "N/A"}
                         </TableCell>
