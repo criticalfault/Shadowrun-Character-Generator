@@ -206,7 +206,7 @@ function SheetDisplay(props) {
             }
           });
         }else{
-          poolValue = skill.value;
+          poolValue = skill.rating;
         }
       }
     });
