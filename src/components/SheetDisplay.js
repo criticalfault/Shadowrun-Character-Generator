@@ -713,6 +713,7 @@ function SheetDisplay(props) {
         </Item>
       </Grid>
 
+      {props.currentCharacter.cyberware && props.currentCharacter.cyberware.length ? (
       <Grid item size={12}>
         <Item>
           <h2 className={"boxHeader"}>Cyberware</h2>
@@ -744,6 +745,11 @@ function SheetDisplay(props) {
           </TableContainer>
         </Item>
       </Grid>
+      ) : (
+        ""
+      )}
+
+      {props.currentCharacter.bioware && props.currentCharacter.bioware.length ? (
       <Grid item size={12}>
         <Item>
           <h2 className={"boxHeader"}>Bioware</h2>
@@ -777,6 +783,9 @@ function SheetDisplay(props) {
           </TableContainer>
         </Item>
       </Grid>
+      ) : (
+        ""
+      )}
       <Grid item size={12}>
         <Item>
           <h2 className={"boxHeader"}>Gear</h2>
@@ -816,6 +825,7 @@ function SheetDisplay(props) {
           </TableContainer>
         </Item>
       </Grid>
+
       <Grid item size={12}>
         <Item>
           <h2 className={"boxHeader"}>Armor</h2>
@@ -851,6 +861,7 @@ function SheetDisplay(props) {
           </TableContainer>
         </Item>
       </Grid>
+      
       <Grid item size={12}>
         <Item>
           <h2 className={"boxHeader"}>Weapons</h2>
