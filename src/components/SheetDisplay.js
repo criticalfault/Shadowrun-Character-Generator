@@ -198,59 +198,18 @@ function SheetDisplay(props) {
         );
     } else {
       props.currentCharacter.skills.forEach(function (skill) {
-        if (skill.name === "Computers") {
-          if (
-            skill.hasOwnProperty("selectedConcentrations") &&
-            skill.selectedConcentrations.length > 0
-          ) {
-            let subRating = 0;
+        if (skill.name === "Computer") {
+          if (skill.hasOwnProperty("selectedConcentrations") && skill.selectedConcentrations.length > 0) {
             skill.selectedConcentrations.forEach(function (subSkill) {
-              console.log(subSkill.rating);
-              if (subRating < subSkill.rating) {
-                subRating = subSkill.rating;
-              }
-            });
-
-            poolValue =
-              parseInt(subRating) +
-              Math.floor(
-                parseInt(props.currentCharacter.attributes.Intelligence) +
-                  parseInt(
-                    props.currentCharacter.raceBonuses.Intelligence ?? 0
-                  ) +
-                  parseInt(
-                    props.currentCharacter.cyberAttributeBonuses.Intelligence ??
-                      0
-                  )
-              ) +
-              parseInt(
-                props.currentCharacter.cyberAttributeBonuses.Hacking_Pool ?? 0
-              );
-          } else {
-            poolValue =
-              parseInt(skill.rating) +
-              Math.floor(
-                parseInt(props.currentCharacter.attributes.Intelligence) +
-                  parseInt(
-                    props.currentCharacter.raceBonuses.Intelligence ?? 0
-                  ) +
-                  parseInt(
-                    props.currentCharacter.cyberAttributeBonuses.Intelligence ??
-                      0
-                  ) +
-                  parseInt(props.currentCharacter.attributes.Quickness) +
-                  parseInt(props.currentCharacter.raceBonuses.Quickness ?? 0) +
-                  parseInt(
-                    props.currentCharacter.cyberAttributeBonuses.Quickness ?? 0
-                  )
-              ) /
-                2 +
-              parseInt(
-                props.currentCharacter.cyberAttributeBonuses.Hacking_Pool ?? 0
-              );
-          }
+            if (poolValue < subSkill.rating) {
+              poolValue = subSkill.rating;
+            }
+          });
+        }else{
+          poolValue = skill.rating;
         }
-      });
+      }
+    });
     }
     if (poolValue !== 0) {
       return (
@@ -713,6 +672,7 @@ function SheetDisplay(props) {
         </Item>
       </Grid>
 
+      {props.currentCharacter.cyberware && props.currentCharacter.cyberware.length ? (
       <Grid item size={12}>
         <Item>
           <h2 className={"boxHeader"}>Cyberware</h2>
@@ -744,6 +704,11 @@ function SheetDisplay(props) {
           </TableContainer>
         </Item>
       </Grid>
+      ) : (
+        ""
+      )}
+
+      {props.currentCharacter.bioware && props.currentCharacter.bioware.length ? (
       <Grid item size={12}>
         <Item>
           <h2 className={"boxHeader"}>Bioware</h2>
@@ -777,6 +742,9 @@ function SheetDisplay(props) {
           </TableContainer>
         </Item>
       </Grid>
+      ) : (
+        ""
+      )}
       <Grid item size={12}>
         <Item>
           <h2 className={"boxHeader"}>Gear</h2>
@@ -816,6 +784,7 @@ function SheetDisplay(props) {
           </TableContainer>
         </Item>
       </Grid>
+
       <Grid item size={12}>
         <Item>
           <h2 className={"boxHeader"}>Armor</h2>
@@ -851,6 +820,7 @@ function SheetDisplay(props) {
           </TableContainer>
         </Item>
       </Grid>
+      
       <Grid item size={12}>
         <Item>
           <h2 className={"boxHeader"}>Weapons</h2>
