@@ -164,6 +164,7 @@ export default function BasicTabs() {
     bioware: [],
     skills: [],
     gear: [],
+    isOtaku: false,
     karma: 0,
     karmaPool: 1,
     karmaSpent: 0,
@@ -335,6 +336,10 @@ export default function BasicTabs() {
 
   const handleChangeMoreMetahumansOption = (options) => {
     setCharacter((prevCharacter) => ({ ...prevCharacter, moreMetahumansOption:!prevCharacter.moreMetahumansOption }));
+  };
+
+  const handleChangeIsOtakuOption = (options) => {
+    setCharacter((prevCharacter) => ({ ...prevCharacter, isOtaku:!prevCharacter.isOtaku }));
   };
 
   const handleChangeCharacterTabs = (tabs) => {
@@ -607,6 +612,7 @@ export default function BasicTabs() {
             CharacterPriorities={Character.priorities}
             magicalChoice={Character.magicalChoice}
             moreMetahumansOption={Character.moreMetahumansOption}
+            IsOtaku={Character.isOtaku}
             ChangeRace={handleRaceChange}
             ChangeMagic={handleChangeMagic}
             selectedRace={selectedRace}
@@ -620,22 +626,12 @@ export default function BasicTabs() {
             ChangeMagicChoices={handleChangeMagicChoices}
             ChangeRaceBonuses={handleChangeRaceBonuses}
             ChangeMoreMetahumansOption={handleChangeMoreMetahumansOption}
+            ChangeIsOtakuOption={handleChangeIsOtakuOption}
             Edition={Edition}
           />
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>
-          {/* <TableAttribute
-            ChangeAttributes={handleAttributesChange}
-            currentCharacter={Character}
-            Edition={Edition}
-            onChangeLog={(log) => setCharacter({ ...Character, log: log })}
-            onSpendKarma={(karma) => {
-              let karmaSpentToSave = (Character.karmaSpent += karma);
-              setCharacter({ ...Character, karmaSpent: karmaSpentToSave });
-            }}
-            Log={Character.log}
-          /> */}
           <AttributesPanel
             ChangeAttributes={handleAttributesChange}
             currentCharacter={Character}

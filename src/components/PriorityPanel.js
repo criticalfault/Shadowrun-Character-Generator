@@ -320,11 +320,36 @@ export default function PriorityPanel(props) {
     }
   }
 
+  const handleIsOtaku = (event) => {
+    if(event.target.checked){
+      props.ChangeIsOtakuOption(false);
+    }else{
+      props.ChangeIsOtakuOption(true);
+    }
+  }
+
+  const OtakuDisplay = function(edition){
+    if(props.Edition === 'SR2'){
+      return (<div>
+         <FormControlLabel
+              value="top"
+              control={<Checkbox {...label} name="IsOtakuBox" color="success" onChange={handleIsOtaku} checked={props.IsOtaku} />}
+              label="Character is an Otaku"
+              labelPlacement="end"
+          />
+          <br></br>
+        </div>
+      )
+    }else{
+      return (<span></span>);
+    }
+  }
+
   const TableRender = function (edition) {
     return (
       <div>
           { MoreMetahumansDisplay(edition) }
-          
+          { OtakuDisplay(edition)}
         <table className="">
           <thead>
             <tr>
