@@ -8,6 +8,7 @@ import IdentityPanel from "./IdentityPanel";
 import AttributesPanel from "./AttributesPanel";
 import SR2SkillsPanel from "./SR2SkillsPanel";
 import SR3SkillsPanel from "./SR3SkillsPanel";
+import OtakuPanel from "./OtakuPanel";
 import MagicPanel from "./MagicPanel";
 import GearPanel from "./GearPanel";
 import LoadCharacter from "./LoadCharacter";
@@ -579,7 +580,12 @@ export default function BasicTabs() {
             <Tab label="Priorities" {...a11yProps(1)} />
             <Tab label="Attributes" {...a11yProps(2)} />
             <Tab label="Skills" {...a11yProps(3)} />
-            <Tab label="Magic" {...a11yProps(4)} />
+            
+            {(Character.magicalChoice === 'Otaku') ? 
+            <Tab label="Otaku" {...a11yProps(4)} />
+            :
+            <Tab label="Magic" {...a11yProps(4)} /> }
+            
             <Tab label="Cyberware" {...a11yProps(5)} />
             <Tab label="Gear" {...a11yProps(6)} />
             <Tab label="Decking" {...a11yProps(7)} />
@@ -588,9 +594,7 @@ export default function BasicTabs() {
             <Tab label="Karma" {...a11yProps(10)} />
             <Tab label="Sheet Display" {...a11yProps(11)} />
           </Tabs>
-          {/* Example TabPanel */}
 
-          {/* Additional TabPanels for other tabs */}
         </Box>
         <CustomTabPanel value={value} index={0}>
           <IdentityPanel
@@ -648,6 +652,12 @@ export default function BasicTabs() {
           {SkillsPanelRender(Edition)}
         </CustomTabPanel>
         <CustomTabPanel value={value} index={4}>
+          {(Character.magicalChoice === 'Otaku') ? 
+          <OtakuPanel
+            Edition={Edition}
+            currentCharacter={Character}
+          /> 
+          : 
           <MagicPanel
             spells={Character.spells}
             powers={Character.powers}
@@ -666,6 +676,7 @@ export default function BasicTabs() {
             maxSpellPoints={Character.maxSpellPoints}
             onChangeMagicalAttributes={handleMagicAttributeUpdates}
           />
+        }
         </CustomTabPanel>
         <CustomTabPanel value={value} index={5}>
           <CyberwarePanel

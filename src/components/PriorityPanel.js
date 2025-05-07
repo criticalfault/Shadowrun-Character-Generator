@@ -71,7 +71,7 @@ export default function PriorityPanel(props) {
         B: ["Physical Adept", "Aspected"],
         C: ["None"],
         D: ["None"],
-        E: ["None"],
+        E: ["None","Otaku"],
       },
       attributes: { A: 30, B: 27, C: 24, D: 21, E: 18 },
       skills: { A: 50, B: 40, C: 34, D: 30, E: 27 },
@@ -151,7 +151,7 @@ export default function PriorityPanel(props) {
         ],
         C: ["Metahuman Physical Adept"],
         D: ["None"],
-        E: ["None"],
+        E: ["None","Otaku"],
       },
       race: {
         A: ["Troll", "Ork", "Dwarf", "Elf", "Human"],
@@ -174,7 +174,7 @@ export default function PriorityPanel(props) {
           "Metahuman Sorcerer",
         ],
         D: ["None"],
-        E: ["None"],
+        E: ["None","Otaku"],
       },
       attributes: { A: 30, B: 24, C: 20, D: 17, E: 15 },
       skills: { A: 40, B: 30, C: 24, D: 20, E: 17 },
@@ -285,13 +285,21 @@ export default function PriorityPanel(props) {
   };
 
   const handleChangePriorityResources = (newPriority) => {
-    props.ChangeMaxCash(
-      prorityChart[props.Edition].resources[newPriority].nuyen
-    );
+    
+    if(Magic === 'Otaku'){
+      props.ChangeMaxCash(prorityChart[props.Edition].resources['D'].nuyen);
+    }else{
+      props.ChangeMaxCash(
+        prorityChart[props.Edition].resources[newPriority].nuyen
+      );
+    }
+    
     if (props.Edition === "SR2") {
       props.ChangeMaxSpellPoints(
         prorityChart[props.Edition].resources[newPriority].spell_points
       );
+    }else{
+      
     }
   };
 
@@ -320,36 +328,10 @@ export default function PriorityPanel(props) {
     }
   }
 
-  const handleIsOtaku = (event) => {
-    if(event.target.checked){
-      props.ChangeIsOtakuOption(false);
-    }else{
-      props.ChangeIsOtakuOption(true);
-    }
-  }
-
-  const OtakuDisplay = function(edition){
-    if(props.Edition === 'SR2'){
-      return (<div>
-         <FormControlLabel
-              value="top"
-              control={<Checkbox {...label} name="IsOtakuBox" color="success" onChange={handleIsOtaku} checked={props.IsOtaku} />}
-              label="Character is an Otaku"
-              labelPlacement="end"
-          />
-          <br></br>
-        </div>
-      )
-    }else{
-      return (<span></span>);
-    }
-  }
-
   const TableRender = function (edition) {
     return (
       <div>
           { MoreMetahumansDisplay(edition) }
-          { OtakuDisplay(edition)}
         <table className="">
           <thead>
             <tr>
@@ -416,13 +398,19 @@ export default function PriorityPanel(props) {
                     }
                   >
                     <label>
-                      {new Intl.NumberFormat("ja-JP", {
+                      {Magic === "Otaku" ? new Intl.NumberFormat("ja-JP", {
+                        style: "currency",
+                        currency: "JPY",
+                      }).format(
+                        prorityChart[props.Edition]["resources"]['D']["nuyen"]
+                      ) :
+                      new Intl.NumberFormat("ja-JP", {
                         style: "currency",
                         currency: "JPY",
                       }).format(
                         prorityChart[props.Edition]["resources"][letter]["nuyen"]
                       )}{" "}
-                      {props.Edition === "SR2"
+                      {props.Edition === "SR2" && Magic !== "Otaku"
                         ? " / " +
                           prorityChart[props.Edition]["resources"][letter][
                             "spell_points"
@@ -482,6 +470,16 @@ export default function PriorityPanel(props) {
       }
     }
     props.ChangePriorities(tempPriorities);
+  };
+
+  const moveMagicAndResourcesToBottom = () => {
+    props.ChangePriorities({
+      "Attributes": "A",
+      "Skills": "B",
+      "Race": "C",
+      "Resources": "D",
+      "Magic": "E"
+    });
   };
 
   return (
