@@ -29,43 +29,82 @@ const modalStyle = {
 };
 
 export default function OtakuPanel(props) {
-  const rawPrograms = require("../data/" + props.Edition + "/Programs.json");
+  const rawPrograms = require("../data/SR2/ComplexForms.json");
   const [openModal, setOpenModal] = React.useState(false);
-  const [modalCurrentTarget, setModalCurrentTarget] = useState(0);
-  const handleOpenModal = (index) => {
+  const [NewComplexForm, setNewComplexForm] = useState(0);
+  const [NewComplexFormIndex, setNewComplexFormIndex] = useState(0);
+  const handleOpenModal = () => {
     setOpenModal(true);
-    setModalCurrentTarget(index);
   };
+
   const handleCloseModal = () => setOpenModal(false);
   /*
-
-  MPCP; (intelligence Rating + Willpower Rating + Charisma
-  Rating} / 3 (round up)
-
+  MPCP; (intelligence Rating + Willpower Rating + Charisma Rating} / 3 (round up)
   Bod: Willpower Rating
-
   Evasion: Intelligence Rating
-
   Masking: (Willpower Rating + Charisma Rating) / 2 (round up)
-  
   Sensor: Intelligence Rating
-
-  Response: (Intelligence Rating +Willpower Rating) / 2 {round
-  up) + 3D6 Initiative
-
+  Response: (Intelligence Rating +Willpower Rating) / 2 {round up) + 3D6 Initiative
   Armor: Willpower Rating
-
   Hardening: Willpower Rating + 2, round up
-
-
   */
+
+  const addComplexForm = () => { 
+    let ComplexForm = {
+      Name: NewComplexForm.Name,
+      Multiplyer: NewComplexForm.Multiplyer,
+      Rating: 1,
+      Size: NewComplexForm.Multiplyer,
+    };
+    props.complexForms.push(ComplexForm);
+    setOpenModal(false);
+    props.onChangeComplexForm(props.complexForms);
+  };
+
+  const removeComplexForm = (event, index) => {
+    let formIndex = index;
+    props.complexForms.splice(formIndex, 1);
+    props.onChangeComplexForm(props.complexForms);
+  };
+
+  const handleComplexFormChange = (event) => {
+    const TempProgram = rawPrograms[event.target.value];
+    setNewComplexForm(TempProgram);
+    setNewComplexFormIndex(event.target.value);
+  };
+
+  const handleCFRatingChange = (event, index) => {
+    let programIndex = index;
+    let CF = props.complexForms[programIndex];
+    props.complexForms[programIndex].Rating = event.target.value;
+    props.complexForms[programIndex].Size = (CF.Rating * CF.Rating) * CF.Multiplyer;
+    props.onChangeComplexForm(props.complexForms);
+  };
+
+  const renderFreeProgrammingDays = () => {
+    let poolValue = 0;
+    props.currentCharacter.skills.forEach(function (skill) {
+        if (skill.name === "Computer") {
+          if (skill.hasOwnProperty("selectedConcentrations") && skill.selectedConcentrations.length > 0) {
+            skill.selectedConcentrations.forEach(function (subSkill) {
+            if (poolValue < subSkill.rating) {
+              poolValue = subSkill.rating;
+            }
+          });
+        }else{
+          poolValue = skill.rating;
+        }
+      }
+    });
+    return (<span>{poolValue*3}</span>);
+  }
 
   return (
     <div>
       <h2>Otaku Living Persona</h2>
       <Box className="cyberdeckCard">
         <Grid container spacing={2}>
-          <Grid item size={{ xs: 5}} className="cyberDeckTable">
+          <Grid item size={{ xs: 3}} className="cyberDeckTable">
             <table className="">
               <thead>
                 <tr>
@@ -146,7 +185,7 @@ export default function OtakuPanel(props) {
                   <td>I/O:</td>
                   <td>{(parseInt(props.currentCharacter.attributes.Intelligence) +
                     parseInt(props.currentCharacter.raceBonuses.Intelligence ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence ?? 0)*100)}</td>
+                    parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence ?? 0))*100} MPs</td>
                 </tr>
                 <tr>
                   <td>Response Increase:</td>
@@ -163,25 +202,57 @@ export default function OtakuPanel(props) {
               </tbody>
             </table>
           </Grid>
-          <Grid item size={{ xs: 7}} className="">
-            <h4>Programs</h4>
+          <Grid item size={{ xs: 9}} className="">
+            <h3>Otaku Special Rules</h3>
+            <div><strong>Otaku Task Bonus:</strong> {Math.ceil(
+              (parseInt(props.currentCharacter.attributes.Intelligence) +
+              parseInt(props.currentCharacter.raceBonuses.Intelligence ?? 0) +
+              parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence ?? 0)+
+              parseInt(props.currentCharacter.attributes.Charisma) +
+              parseInt(props.currentCharacter.raceBonuses.Charisma ?? 0) +
+              parseInt(props.currentCharacter.cyberAttributeBonuses.Charisma ?? 0))/4
+            )}</div>
+            <div><strong>Character Gen Free Programming Days:</strong> {renderFreeProgrammingDays()}</div>
+            <h3>Complex Forms</h3>
             <div>
-              {/* <Button
+               <Modal
+                  open={openModal}
+                  onClose={handleCloseModal}
+                  aria-labelledby="modal-modal-title"
+                  aria-describedby="modal-modal-description"
+                >
+                <Box sx={modalStyle}>
+                  <FormControl style={{ width: "200px" }}>
+                    <InputLabel id="gear-label">Complex Form</InputLabel>
+                    <Select
+                      id="program-dropdown"
+                      value={NewComplexFormIndex}
+                      onChange={handleComplexFormChange}
+                    >
+                      {rawPrograms.map((prog, index) => (
+                        <MenuItem key={index} value={index}>
+                          {prog.Name}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                  <Button variant="contained" color="primary" onClick={addComplexForm}>
+                    Add Complex Form
+                  </Button>
+                </Box>
+              </Modal>
+              <Button
                 style={{ marginBottom: 10 }}
                 variant="contained"
                 color="primary"
-                data-index={index}
-                onClick={() => handleOpenModal(index)}
-              >
-                Add Program
-              </Button> */}
+                onClick={() => handleOpenModal()}>
+                Add Complex Form
+              </Button>
             </div>
-
-            {/* <TableContainer component={Paper}>
+            <TableContainer component={Paper}>
               <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell>Loaded</TableCell>
                     <TableCell>Name</TableCell>
                     <TableCell>Rating</TableCell>
                     <TableCell>Multiplyer</TableCell>
@@ -191,54 +262,58 @@ export default function OtakuPanel(props) {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {cyberdeck.ProgramsInStorage.map((program, index2) => (
-                    <TableRow key={index2 + program.Name}>
-                      <TableCell>
-                        <input
-                          type="checkbox"
-                          data-index={index}
-                          checked={program.Loaded === true}
-                          onChange={(event) =>
-                            handleProgramToggle(event, index, index2)
-                          }
-                        />
-                      </TableCell>
-                      <TableCell>{program.Name}</TableCell>
-                      <TableCell>
-                        <input
-                          type="number"
-                          data-index={index}
-                          value={program.Rating}
-                          min={1}
-                          max={12}
-                          onChange={(event) =>
-                            handleProgramRatingChange(
-                              event,
-                              index,
-                              index2
-                            )
-                          }
-                        />
-                      </TableCell>
-                      <TableCell>{program.Multiplyer}</TableCell>
-                      <TableCell>{program.Size}</TableCell>
-                      <TableCell>
-                        {new Intl.NumberFormat("ja-JP", {
-                          style: "currency",
-                          currency: "JPY",
-                        }).format(
-                          program.Rating *
-                            program.Rating *
-                            program.Multiplyer *
-                            ProgramCosts[program.Rating]
-                        )}
-                      </TableCell>
+                  <TableRow key={0}>
+                      <TableCell>Armor</TableCell>
+                      <TableCell>{parseInt(props.currentCharacter.attributes.Willpower) +
+                      parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
+                      parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0)}</TableCell>
+                      <TableCell>3</TableCell>
+                      <TableCell>{(parseInt(props.currentCharacter.attributes.Willpower) +
+                      parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
+                      parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0)+
+                      parseInt(props.currentCharacter.attributes.Willpower) +
+                      parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
+                      parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0))*3}</TableCell>
+                      <TableCell>Free</TableCell>
                       <TableCell>
                         <button
                           edge="end"
                           aria-label="delete"
                           onClick={(event) =>
-                            removeProgram(event, index, index2)
+                            removeComplexForm(event, index)
+                          }
+                        >
+                          <DeleteIcon />
+                        </button>
+                      </TableCell>
+                    </TableRow>
+                  {props.complexForms.map((cForm, index) => (
+                    <TableRow key={index}>
+                      <TableCell>{cForm.Name}</TableCell>
+                      <TableCell>
+                        <input
+                          type="number"
+                          data-index={index}
+                          value={cForm.Rating}
+                          min={1}
+                          max={12}
+                          onChange={(event) =>
+                            handleCFRatingChange(
+                              event,
+                              index
+                            )
+                          }
+                        />
+                      </TableCell>
+                      <TableCell>{cForm.Multiplyer}</TableCell>
+                      <TableCell>{cForm.Size}</TableCell>
+                      <TableCell>{cForm.Rating} Karma</TableCell>
+                      <TableCell>
+                        <button
+                          edge="end"
+                          aria-label="delete"
+                          onClick={(event) =>
+                            removeComplexForm(event, index)
                           }
                         >
                           <DeleteIcon />
@@ -248,7 +323,9 @@ export default function OtakuPanel(props) {
                   ))}
                 </TableBody>
               </Table>
-            </TableContainer> */}
+            </TableContainer>
+           <h3>Sprites</h3>
+           <div>Still Pending</div>
           </Grid>
         </Grid>
       </Box>

@@ -166,6 +166,7 @@ export default function BasicTabs() {
     skills: [],
     gear: [],
     isOtaku: false,
+    complexForms:[],
     karma: 0,
     karmaPool: 1,
     karmaSpent: 0,
@@ -440,6 +441,13 @@ export default function BasicTabs() {
     }));
   };
 
+  const handleComplexFormUpdate = (updatedComplexForms) => {
+    setCharacter((prevCharacter) => ({
+      ...prevCharacter,
+      complexForms: updatedComplexForms,
+    }));
+  }
+
   const handleContactsUpdate = (updatedContacts) => {
     setCharacter((prevCharacter) => ({
       ...prevCharacter,
@@ -513,6 +521,7 @@ export default function BasicTabs() {
     } else {
       return (
         <SR2SkillsPanel
+          isOtaku={(Character.magicalChoice === 'Otaku')}
           characterSkills={Character.skills}
           onUpdateSkills={handleSkillsUpdate}
           maxSkillPoints={Character.maxSkillPoints}
@@ -656,6 +665,8 @@ export default function BasicTabs() {
           <OtakuPanel
             Edition={Edition}
             currentCharacter={Character}
+            complexForms={Character.complexForms}
+            onChangeComplexForm={handleComplexFormUpdate}
           /> 
           : 
           <MagicPanel

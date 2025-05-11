@@ -96,7 +96,62 @@
             {"name":"Truck","Specializations":["*vehicle"]}
         ]
     },
-
+    "Channel: Access":{
+        "name":"Channel: Access",
+        "Concentrations":[
+            {"name":"Crash","Specializations":[]},
+            {"name":"Decrypt","Specializations":[]},
+            {"name":"Disinfect","Specializations":[]},
+            {"name":"Deception","Specializations":[]},
+            {"name":"Scanner","Specializations":[]}
+        ]
+    },
+    "Channel: Control":{
+        "name":"Channel: Control",
+        "Concentrations":[
+             {"name":"Analyze","Specializations":[]},
+             {"name":"Crash","Specializations":[]},
+             {"name":"Camo","Specializations":[]},
+             {"name":"Commlink","Specializations":[]},
+             {"name":"Deception","Specializations":[]},
+             {"name":"Disinfect","Specializations":[]},
+             {"name":"Mirrors","Specializations":[]},
+             {"name":"Validate","Specializations":[]},
+             {"name":"Scanner","Specializations":[]}
+        ]
+    },
+    "Channel: Index":{
+        "name":"Channel: Index",
+        "Concentrations":[
+            {"name":"Analyze","Specializations":[]},
+            {"name":"Browse","Specializations":[]},
+            {"name":"Crash","Specializations":[]},
+            {"name":"Disinfect","Specializations":[]},
+            {"name":"Evaluate","Specializations":[]},
+            {"name":"Scanner","Specializations":[]}
+        ]
+    },
+    "Channel: Files":{
+        "name":"Channel: Files",
+        "Concentrations":[
+            {"name":"Commlink","Specializations":[]},
+            {"name":"Crash","Specializations":[]},
+            {"name":"Decrypt","Specializations":[]},
+            {"name":"Disinfect","Specializations":[]},
+            {"name":"Read/Write","Specializations":[]},
+            {"name":"Scanner","Specializations":[]}
+        ]
+    },
+    "Channel: Slave":{
+        "name":"Channel: Slave",
+        "Concentrations":[
+             {"name":"Spoof","Specializations":[]},
+             {"name":"Crash","Specializations":[]},
+             {"name":"Decrypt","Specializations":[]},
+             {"name":"Disinfect","Specializations":[]},
+             {"name":"Scanner","Specializations":[]}
+        ]
+    },
     "Computer":{
         "name":"Computer", 
         "requiresConcentration":false,

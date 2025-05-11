@@ -71,7 +71,7 @@ export default function PriorityPanel(props) {
         B: ["Physical Adept", "Aspected"],
         C: ["None"],
         D: ["None"],
-        E: ["None","Otaku"],
+        E: ["None"],
       },
       attributes: { A: 30, B: 27, C: 24, D: 21, E: 18 },
       skills: { A: 50, B: 40, C: 34, D: 30, E: 27 },
