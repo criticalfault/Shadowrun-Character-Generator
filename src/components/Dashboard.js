@@ -8,6 +8,7 @@ import IdentityPanel from "./IdentityPanel";
 import AttributesPanel from "./AttributesPanel";
 import SR2SkillsPanel from "./SR2SkillsPanel";
 import SR3SkillsPanel from "./SR3SkillsPanel";
+import OtakuPanel from "./OtakuPanel";
 import MagicPanel from "./MagicPanel";
 import GearPanel from "./GearPanel";
 import LoadCharacter from "./LoadCharacter";
@@ -164,6 +165,8 @@ export default function BasicTabs() {
     bioware: [],
     skills: [],
     gear: [],
+    isOtaku: false,
+    complexForms:[],
     karma: 0,
     karmaPool: 1,
     karmaSpent: 0,
@@ -337,6 +340,10 @@ export default function BasicTabs() {
     setCharacter((prevCharacter) => ({ ...prevCharacter, moreMetahumansOption:!prevCharacter.moreMetahumansOption }));
   };
 
+  const handleChangeIsOtakuOption = (options) => {
+    setCharacter((prevCharacter) => ({ ...prevCharacter, isOtaku:!prevCharacter.isOtaku }));
+  };
+
   const handleChangeCharacterTabs = (tabs) => {
     setCharacter((prevCharacter) => ({
       ...prevCharacter,
@@ -434,6 +441,13 @@ export default function BasicTabs() {
     }));
   };
 
+  const handleComplexFormUpdate = (updatedComplexForms) => {
+    setCharacter((prevCharacter) => ({
+      ...prevCharacter,
+      complexForms: updatedComplexForms,
+    }));
+  }
+
   const handleContactsUpdate = (updatedContacts) => {
     setCharacter((prevCharacter) => ({
       ...prevCharacter,
@@ -507,6 +521,7 @@ export default function BasicTabs() {
     } else {
       return (
         <SR2SkillsPanel
+          isOtaku={(Character.magicalChoice === 'Otaku')}
           characterSkills={Character.skills}
           onUpdateSkills={handleSkillsUpdate}
           maxSkillPoints={Character.maxSkillPoints}
@@ -574,7 +589,12 @@ export default function BasicTabs() {
             <Tab label="Priorities" {...a11yProps(1)} />
             <Tab label="Attributes" {...a11yProps(2)} />
             <Tab label="Skills" {...a11yProps(3)} />
-            <Tab label="Magic" {...a11yProps(4)} />
+            
+            {(Character.magicalChoice === 'Otaku') ? 
+            <Tab label="Otaku" {...a11yProps(4)} />
+            :
+            <Tab label="Magic" {...a11yProps(4)} /> }
+            
             <Tab label="Cyberware" {...a11yProps(5)} />
             <Tab label="Gear" {...a11yProps(6)} />
             <Tab label="Decking" {...a11yProps(7)} />
@@ -583,9 +603,7 @@ export default function BasicTabs() {
             <Tab label="Karma" {...a11yProps(10)} />
             <Tab label="Sheet Display" {...a11yProps(11)} />
           </Tabs>
-          {/* Example TabPanel */}
 
-          {/* Additional TabPanels for other tabs */}
         </Box>
         <CustomTabPanel value={value} index={0}>
           <IdentityPanel
@@ -607,6 +625,7 @@ export default function BasicTabs() {
             CharacterPriorities={Character.priorities}
             magicalChoice={Character.magicalChoice}
             moreMetahumansOption={Character.moreMetahumansOption}
+            IsOtaku={Character.isOtaku}
             ChangeRace={handleRaceChange}
             ChangeMagic={handleChangeMagic}
             selectedRace={selectedRace}
@@ -620,22 +639,12 @@ export default function BasicTabs() {
             ChangeMagicChoices={handleChangeMagicChoices}
             ChangeRaceBonuses={handleChangeRaceBonuses}
             ChangeMoreMetahumansOption={handleChangeMoreMetahumansOption}
+            ChangeIsOtakuOption={handleChangeIsOtakuOption}
             Edition={Edition}
           />
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>
-          {/* <TableAttribute
-            ChangeAttributes={handleAttributesChange}
-            currentCharacter={Character}
-            Edition={Edition}
-            onChangeLog={(log) => setCharacter({ ...Character, log: log })}
-            onSpendKarma={(karma) => {
-              let karmaSpentToSave = (Character.karmaSpent += karma);
-              setCharacter({ ...Character, karmaSpent: karmaSpentToSave });
-            }}
-            Log={Character.log}
-          /> */}
           <AttributesPanel
             ChangeAttributes={handleAttributesChange}
             currentCharacter={Character}
@@ -652,6 +661,14 @@ export default function BasicTabs() {
           {SkillsPanelRender(Edition)}
         </CustomTabPanel>
         <CustomTabPanel value={value} index={4}>
+          {(Character.magicalChoice === 'Otaku') ? 
+          <OtakuPanel
+            Edition={Edition}
+            currentCharacter={Character}
+            complexForms={Character.complexForms}
+            onChangeComplexForm={handleComplexFormUpdate}
+          /> 
+          : 
           <MagicPanel
             spells={Character.spells}
             powers={Character.powers}
@@ -670,6 +687,7 @@ export default function BasicTabs() {
             maxSpellPoints={Character.maxSpellPoints}
             onChangeMagicalAttributes={handleMagicAttributeUpdates}
           />
+        }
         </CustomTabPanel>
         <CustomTabPanel value={value} index={5}>
           <CyberwarePanel

@@ -73,7 +73,7 @@ export default function IdentityPanel(props) {
         <br></br>
         <div>
             
-            <FormControl component="fieldset">
+            {/* <FormControl component="fieldset">
                 <FormLabel component="legend">Tabs for this character</FormLabel>
                 <FormGroup aria-label="position" row>
                     <FormControlLabel
@@ -88,7 +88,7 @@ export default function IdentityPanel(props) {
                         control={<Checkbox {...label} name="Otaku" color="success" onChange={handleChangeCharacterTabs} checked={Tabs.Otaku} />}
                         label="Otaku Tab"
                         labelPlacement="end"
-                        disabled={true}
+                        disabled={false}
                     />
                     <FormControlLabel
                         value="top"
@@ -98,7 +98,7 @@ export default function IdentityPanel(props) {
                         disabled={true}
                     />
                 </FormGroup>
-            </FormControl>
+            </FormControl> */}
         </div>
         <br></br>
         <FormControl component="fieldset">

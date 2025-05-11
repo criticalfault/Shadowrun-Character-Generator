@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Alert from '@mui/material/Alert';
 import { MenuItem } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
@@ -19,7 +20,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 const skillsData = require('../data/SR2/Skills.json');
 //const LanguageSkillsData = require('../data/SR2/LanguageSkills.json');
 
-function SR2SkillsPanel({characterSkills, onUpdateSkills, maxSkillPoints}) {
+function SR2SkillsPanel({isOtaku, characterSkills, onUpdateSkills, maxSkillPoints}) {
   const [selectedSkills, setSelectedSkills] = useState(characterSkills);
   const [selectedSkill, setSelectedSkill] = useState('');
   const [selectedSkillIndex, setSelectedSkillIndex] = useState(0);
@@ -214,8 +215,23 @@ function SR2SkillsPanel({characterSkills, onUpdateSkills, maxSkillPoints}) {
     }
   }
 
+
+  const showOtakuRules = () => {
+    if(isOtaku){
+      return (
+      <Alert severity="info">
+        Otaku can only take Etiquette: Matrix or Etiquette:Street at character creation. <br></br>
+        Only 1 channel can be 5, 1 can be 4, the rest must be 3. The Character Generator cannot calculate this, so please ensure you follow these character creation rules.
+      </Alert>)
+    }else{
+      return (<span></span>)
+    }
+    
+  }
+
   return (
     <div>
+      {showOtakuRules()}
       <Box sx={{ width: '250px', marginBottom:'20px' }}>Skill Points {skillPointsSpent}/{maxSkillPoints}
         <LinearProgress variant="determinate" value={skillPointsSpent/maxSkillPoints*100} />
       </Box>
