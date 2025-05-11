@@ -166,6 +166,7 @@ export default function BasicTabs() {
     skills: [],
     gear: [],
     isOtaku: false,
+    otakuPath:"Technoshaman",
     complexForms:[],
     karma: 0,
     karmaPool: 1,
@@ -342,6 +343,10 @@ export default function BasicTabs() {
 
   const handleChangeIsOtakuOption = (options) => {
     setCharacter((prevCharacter) => ({ ...prevCharacter, isOtaku:!prevCharacter.isOtaku }));
+  };
+
+  const onChangeOtakuPath = (otakuPath) => {
+    setCharacter((prevCharacter) => ({ ...prevCharacter, otakuPath:otakuPath }));
   };
 
   const handleChangeCharacterTabs = (tabs) => {
@@ -667,6 +672,7 @@ export default function BasicTabs() {
             currentCharacter={Character}
             complexForms={Character.complexForms}
             onChangeComplexForm={handleComplexFormUpdate}
+            onChangeOtakuPath={onChangeOtakuPath}
           /> 
           : 
           <MagicPanel

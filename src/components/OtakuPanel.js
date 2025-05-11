@@ -37,18 +37,12 @@ export default function OtakuPanel(props) {
     setOpenModal(true);
   };
 
-  const handleCloseModal = () => setOpenModal(false);
-  /*
-  MPCP; (intelligence Rating + Willpower Rating + Charisma Rating} / 3 (round up)
-  Bod: Willpower Rating
-  Evasion: Intelligence Rating
-  Masking: (Willpower Rating + Charisma Rating) / 2 (round up)
-  Sensor: Intelligence Rating
-  Response: (Intelligence Rating +Willpower Rating) / 2 {round up) + 3D6 Initiative
-  Armor: Willpower Rating
-  Hardening: Willpower Rating + 2, round up
-  */
+  const OtakuPathInfo = {
+    'Cyber Adept':"Complex Forms are considering 1 rating higher when used",
+    'Technoshaman':"Reduce All TNs by 1 when using Channel Skills"
+  }
 
+  const handleCloseModal = () => setOpenModal(false);
   const addComplexForm = () => { 
     let ComplexForm = {
       Name: NewComplexForm.Name,
@@ -98,6 +92,11 @@ export default function OtakuPanel(props) {
     });
     return (<span>{poolValue*3}</span>);
   }
+
+  const handlePathChange = (event) => {
+    props.currentCharacter.otakuPath = event.target.value;
+    props.onChangeOtakuPath(event.target.value)
+  };
 
   return (
     <div>
@@ -204,6 +203,23 @@ export default function OtakuPanel(props) {
           </Grid>
           <Grid item size={{ xs: 9}} className="">
             <h3>Otaku Special Rules</h3>
+            <div>
+              <FormControl style={{ width: "200px" }}>
+                <Select
+                  id="TraditionList-dropdown"
+                  value={props.currentCharacter.otakuPath}
+                  onChange={handlePathChange}
+                >
+                  {Object.keys(OtakuPathInfo).map((path, index) => (
+                    <MenuItem key={index} value={path}>
+                      {path}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </div>
+            <br></br>
+            <div><strong>Otaku Path:</strong> <em>{props.currentCharacter.otakuPath}</em>: {OtakuPathInfo[props.currentCharacter.otakuPath]} </div>
             <div><strong>Otaku Task Bonus:</strong> {Math.ceil(
               (parseInt(props.currentCharacter.attributes.Intelligence) +
               parseInt(props.currentCharacter.raceBonuses.Intelligence ?? 0) +
