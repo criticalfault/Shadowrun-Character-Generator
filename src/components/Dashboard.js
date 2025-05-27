@@ -4,6 +4,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import PriorityPanel from "./PriorityPanel";
+import PointBuyPanel from "./PointBuyPanel";
 import IdentityPanel from "./IdentityPanel";
 import AttributesPanel from "./AttributesPanel";
 import SR2SkillsPanel from "./SR2SkillsPanel";
@@ -71,6 +72,7 @@ export default function BasicTabs() {
     },
     bookTogglesSR2: { sr2: true },
     edition: "SR3",
+    cgmethod:"priorities",
     step: "chargen",
     priorities: {
       Magic: "A",
@@ -188,6 +190,7 @@ export default function BasicTabs() {
     notes: "",
   };
   const [Edition, setEdition] = React.useState("SR3");
+  const [CGMethod, setCGMethod] = React.useState('priorities');
   const [value, setValue] = React.useState(0);
   const [Character, setCharacter] = React.useState(baseCharacter);
   const [selectedRace, setSelectedRace] = React.useState("Human");
@@ -329,13 +332,20 @@ export default function BasicTabs() {
       }
     });
     console.log("Edition: " + Edition);
+    console.log("CGMethod: "  + CGMethod);
     console.log(Character);
     setNuyenSpent(tempCashSpent);
   }, [Character]);
 
   const handleChangeEdition = (edition) => {
     setEdition(edition);
+     setCharacter((prevCharacter) => ({ ...prevCharacter, Edition:edition }));
   };
+  
+  const handleChangeCGMethod = (method) => {
+    setCGMethod(method);
+    setCharacter((prevCharacter) => ({ ...prevCharacter, cgmethod:method }));
+  }
 
   const handleChangeMoreMetahumansOption = (options) => {
     setCharacter((prevCharacter) => ({ ...prevCharacter, moreMetahumansOption:!prevCharacter.moreMetahumansOption }));
@@ -564,6 +574,7 @@ export default function BasicTabs() {
             BaseCharacter={baseCharacter}
             Edition={Edition}
             ChangeEdition={handleChangeEdition}
+            CGMethod = {CGMethod}
           />
         </Grid>
         <Grid item size={{ sm: 12, md: 7}}>
@@ -576,6 +587,7 @@ export default function BasicTabs() {
             BaseCharacter={baseCharacter}
             Edition={Edition}
             ChangeEdition={handleChangeEdition}
+            CGMethod = {CGMethod}
           />
         </Grid>
       </Grid>
@@ -619,11 +631,15 @@ export default function BasicTabs() {
             ChangeCharacterTabs={handleChangeCharacterTabs}
             ChangeAllowedBooks={handleChangeAllowedBooks}
             ChangeEdition={handleChangeEdition}
-            Edition={Edition}
+            ChangeCGMethod={handleChangeCGMethod}
+            Edition={Character.Edition}
+            CGMethod={Character.cgmethod}
+            
           />
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={1}>
+           {(Character.cgmethod === 'priorities') ? 
           <PriorityPanel
             BooksFilter={Character.allowedBooks}
             ChangePriorities={handleChangePriorities}
@@ -646,7 +662,32 @@ export default function BasicTabs() {
             ChangeMoreMetahumansOption={handleChangeMoreMetahumansOption}
             ChangeIsOtakuOption={handleChangeIsOtakuOption}
             Edition={Edition}
+          /> 
+          : 
+          <PointBuyPanel
+            BooksFilter={Character.allowedBooks}
+            ChangePriorities={handleChangePriorities}
+            CharacterPriorities={Character.priorities}
+            magicalChoice={Character.magicalChoice}
+            moreMetahumansOption={Character.moreMetahumansOption}
+            IsOtaku={Character.isOtaku}
+            ChangeRace={handleRaceChange}
+            ChangeMagic={handleChangeMagic}
+            selectedRace={selectedRace}
+            Race={Character.race}
+            onChangePriorityRace={handleChangePriorityRace}
+            ChangeRaceChoices={handleChangeAvailabileRaces}
+            ChangeMaxAttributes={handleChangeMaxAttributes}
+            ChangeMaxSkills={handleChangeMaxSkills}
+            ChangeMaxCash={handleChangeMaxCash}
+            ChangeMaxSpellPoints={handleChangeMaxSpellPoints}
+            ChangeMagicChoices={handleChangeMagicChoices}
+            ChangeRaceBonuses={handleChangeRaceBonuses}
+            ChangeMoreMetahumansOption={handleChangeMoreMetahumansOption}
+            ChangeIsOtakuOption={handleChangeIsOtakuOption}
+            Edition={Edition}
           />
+        }
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>

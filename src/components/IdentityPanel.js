@@ -9,6 +9,7 @@ const AllBooks = require('../data/Books.json');
 
 export default function IdentityPanel(props) {
     const label = { inputProps: { 'aria-label': 'Edition Switch' } };
+    const label2 = { inputProps: { 'aria-label': 'Creation Method Switch' } };
     const [LocalEdition, setLocalEdition] = React.useState((props.Edition === 'SR3'?true:false));
     const handleSwitchEd = (event) => {
         setLocalEdition(event.target.checked);
@@ -18,6 +19,16 @@ export default function IdentityPanel(props) {
             props.ChangeEdition('SR2')
         }
     }
+    const [LocalMethod, setLocalMethod] = React.useState((props.CGMethod === 'pointbuy'?true:false));
+    const handleSwitchMethod = (event) => {
+        setLocalMethod(event.target.checked);
+        if(event.target.checked){
+            props.ChangeCGMethod('pointbuy')
+        }else{
+            props.ChangeCGMethod('priorities')
+        }
+    }
+
     const [Tabs, setTabs] = React.useState(props.characterTabs);
     const [bookStates, setBookStates] = React.useState((props.Edition === 'SR3'?props.characterBooks3:props.characterBooks2));
     const handleBookCheckboxChange = (event) => {
@@ -71,6 +82,8 @@ export default function IdentityPanel(props) {
         Character Edition:
         SR2 <Switch checked={LocalEdition} onChange={handleSwitchEd} {...label} /> SR3
         <br></br>
+        Character Creation Method:
+        Priorities <Switch checked={LocalMethod} onChange={handleSwitchMethod} {...label2} /> Point Buy
         <div>
             
             {/* <FormControl component="fieldset">
