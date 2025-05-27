@@ -9,6 +9,7 @@ const AllBooks = require('../data/Books.json');
 
 export default function IdentityPanel(props) {
     const label = { inputProps: { 'aria-label': 'Edition Switch' } };
+    const label2 = { inputProps: { 'aria-label': 'Creation Method Switch' } };
     const [LocalEdition, setLocalEdition] = React.useState((props.Edition === 'SR3'?true:false));
     const handleSwitchEd = (event) => {
         setLocalEdition(event.target.checked);
@@ -18,6 +19,16 @@ export default function IdentityPanel(props) {
             props.ChangeEdition('SR2')
         }
     }
+    const [LocalMethod, setLocalMethod] = React.useState((props.CGMethod === 'pointbuy'?true:false));
+    const handleSwitchMethod = (event) => {
+        setLocalMethod(event.target.checked);
+        if(event.target.checked){
+            props.ChangeCGMethod('pointbuy')
+        }else{
+            props.ChangeCGMethod('priorities')
+        }
+    }
+
     const [Tabs, setTabs] = React.useState(props.characterTabs);
     const [bookStates, setBookStates] = React.useState((props.Edition === 'SR3'?props.characterBooks3:props.characterBooks2));
     const handleBookCheckboxChange = (event) => {
@@ -43,9 +54,13 @@ export default function IdentityPanel(props) {
         <div>
             <h3>Welcome To the SR 2/3 Character Creator</h3>
             <p>It is in <strong>Beta</strong>, now that its a lot more stable. There is a bunch of fixes still pending as well as a lot of known missing parts which will be added once this thing is partially stable.
-            I'll list the known issues below, but feel free to poke and prod. See what you can get it to do. I'm going to continue to work on this as i get reports of breaks and the likes.</p>
+            I'll list the known issues below, but feel free to poke and prod. See what you can get it to do. I'm going to continue to work on this as I get reports of breaks and the likes.</p>
             <p>Thanks for your consideration and time in testing! -D (dean 'at' nullsheen.com)</p>
-            <h5>Known Issues (As of 04-29-25 - 10:15pm CST)</h5>
+            
+            <h3>Added Point Buy!</h3>
+            <p>This is extremely experimental! So if you run into a problem, drop me an email. DO NOT try to mix the two systems. It will break some stuff on your character!</p>
+            
+            <h5>Known Issues (As of 05-27-25 - 3:20pm CST)</h5>
             <ul>
                 <li>SR2 gear is still missing all books, so filtering doesnt work. Also temporarily removing "cars" from the gear section as I fix up the vehicles tab for SR2 specifically</li>
                 <li>Some issues with Knowledge and Langauge skills being edited or removed</li>
@@ -71,6 +86,8 @@ export default function IdentityPanel(props) {
         Character Edition:
         SR2 <Switch checked={LocalEdition} onChange={handleSwitchEd} {...label} /> SR3
         <br></br>
+        Character Creation Method:
+        Priorities <Switch checked={LocalMethod} onChange={handleSwitchMethod} {...label2} /> Point Buy
         <div>
             
             {/* <FormControl component="fieldset">
