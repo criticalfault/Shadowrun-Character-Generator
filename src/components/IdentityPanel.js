@@ -54,9 +54,13 @@ export default function IdentityPanel(props) {
         <div>
             <h3>Welcome To the SR 2/3 Character Creator</h3>
             <p>It is in <strong>Beta</strong>, now that its a lot more stable. There is a bunch of fixes still pending as well as a lot of known missing parts which will be added once this thing is partially stable.
-            I'll list the known issues below, but feel free to poke and prod. See what you can get it to do. I'm going to continue to work on this as i get reports of breaks and the likes.</p>
+            I'll list the known issues below, but feel free to poke and prod. See what you can get it to do. I'm going to continue to work on this as I get reports of breaks and the likes.</p>
             <p>Thanks for your consideration and time in testing! -D (dean 'at' nullsheen.com)</p>
-            <h5>Known Issues (As of 04-29-25 - 10:15pm CST)</h5>
+            
+            <h3>Added Point Buy!</h3>
+            <p>This is extremely experimental! So if you run into a problem, drop me an email. DO NOT try to mix the two systems. It will break some stuff on your character!</p>
+            
+            <h5>Known Issues (As of 05-27-25 - 3:20pm CST)</h5>
             <ul>
                 <li>SR2 gear is still missing all books, so filtering doesnt work. Also temporarily removing "cars" from the gear section as I fix up the vehicles tab for SR2 specifically</li>
                 <li>Some issues with Knowledge and Langauge skills being edited or removed</li>

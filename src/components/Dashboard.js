@@ -71,7 +71,7 @@ export default function BasicTabs() {
       r3: true,
     },
     bookTogglesSR2: { sr2: true },
-    edition: "SR3",
+    edition: "SR2",
     cgmethod:"priorities",
     step: "chargen",
     priorities: {
@@ -83,11 +83,15 @@ export default function BasicTabs() {
     },
     maxSkillPoints: 34,
     maxAttributePoints: 27,
+    pointbuySkillPoints:1,
+    pointbuyAttributePoints:1,
+    pointbuyExtraForce:0,
+    pointsRemaining:0,
     name: "",
     street_name: "New Runner",
     availableRaces: ["Human"],
     availableMagics: ["Full Magician"],
-    magicalChoice: "Full Magician",
+    magicalChoice: "None",
     maxSpellPoints: 25,
     race: "Human",
     bodyIndex: 2,
@@ -168,6 +172,9 @@ export default function BasicTabs() {
     skills: [],
     gear: [],
     isOtaku: false,
+    isGhoul: false,
+    isMetaVariant: false,
+    metaVariantType:'',
     otakuPath:"Technoshaman",
     complexForms:[],
     karma: 0,
@@ -182,14 +189,14 @@ export default function BasicTabs() {
     foci: [],
     spells: [],
     powers: [],
-    chargenCash: 20000,
+    chargenCash: 5000,
     cashSpent: 0,
     cash: 0,
     log: [],
     description: "",
     notes: "",
   };
-  const [Edition, setEdition] = React.useState("SR3");
+  const [Edition, setEdition] = React.useState("SR2");
   const [CGMethod, setCGMethod] = React.useState('priorities');
   const [value, setValue] = React.useState(0);
   const [Character, setCharacter] = React.useState(baseCharacter);
@@ -351,13 +358,37 @@ export default function BasicTabs() {
     setCharacter((prevCharacter) => ({ ...prevCharacter, moreMetahumansOption:!prevCharacter.moreMetahumansOption }));
   };
 
-  const handleChangeIsOtakuOption = (options) => {
-    setCharacter((prevCharacter) => ({ ...prevCharacter, isOtaku:!prevCharacter.isOtaku }));
+  const handleChangeIsOtakuOption = (isOtaku) => {
+    setCharacter((prevCharacter) => ({ ...prevCharacter, isOtaku:isOtaku }));
   };
 
   const onChangeOtakuPath = (otakuPath) => {
     setCharacter((prevCharacter) => ({ ...prevCharacter, otakuPath:otakuPath }));
   };
+
+  const handleChangeIsGhoulOption = (isGhoul) => {
+    setCharacter((prevCharacter) => ({ ...prevCharacter, isGhoul:isGhoul }));
+  };
+
+  const handleChangeIsMetavariantOption = (isMetaVariant) => {
+    setCharacter((prevCharacter) => ({ ...prevCharacter, isMetaVariant:isMetaVariant }));
+  };
+
+   const onChangeMetaVariantType = (metaVariantType) => {
+    setCharacter((prevCharacter) => ({ ...prevCharacter, metaVariantType:metaVariantType }));
+  };
+
+  const onChangePointbuySkillPoints = (pointbuySkillPoints) => {
+    setCharacter((prevCharacter) => ({ ...prevCharacter, pointbuySkillPoints:pointbuySkillPoints }));
+  }
+
+  const onChangePointbuyAttributePoints = (pointbuyAttributePoints) => {
+    setCharacter((prevCharacter) => ({ ...prevCharacter, pointbuyAttributePoints:pointbuyAttributePoints }));
+  }
+
+  const onChangePointbuyExtraForce = (pointbuyExtraForce) => {
+    setCharacter((prevCharacter) => ({ ...prevCharacter, pointbuyExtraForce:pointbuyExtraForce }));
+  }
 
   const handleChangeCharacterTabs = (tabs) => {
     setCharacter((prevCharacter) => ({
@@ -406,6 +437,13 @@ export default function BasicTabs() {
       maxSkillPoints: maxSkills,
     }));
   };
+
+  const handlePointsRemaining = (points) => {
+     setCharacter((prevCharacter) => ({
+      ...prevCharacter,
+      pointsRemaining: points,
+    }));
+  }
 
   const handleChangeMaxAttributes = (maxAttributes) => {
     setCharacter((prevCharacter) => ({
@@ -603,11 +641,15 @@ export default function BasicTabs() {
             allowScrollButtonsMobile
           >
             <Tab label="Identity" {...a11yProps(0)} />
+            {(Character.cgmethod === 'priorities') ? 
             <Tab label="Priorities" {...a11yProps(1)} />
+            :
+             <Tab label="Point Buy" {...a11yProps(1)} />
+            }
             <Tab label="Attributes" {...a11yProps(2)} />
             <Tab label="Skills" {...a11yProps(3)} />
             
-            {(Character.magicalChoice === 'Otaku') ? 
+            {(Character.isOtaku) ? 
             <Tab label="Otaku" {...a11yProps(4)} />
             :
             <Tab label="Magic" {...a11yProps(4)} /> }
@@ -671,10 +713,18 @@ export default function BasicTabs() {
             magicalChoice={Character.magicalChoice}
             moreMetahumansOption={Character.moreMetahumansOption}
             IsOtaku={Character.isOtaku}
+            IsGhoul={Character.isGhoul}
+            IsMetaVariant={Character.isMetaVariant}
+            ChangeMetaVariantType={onChangeMetaVariantType}
+            metaVariantType={Character.metaVariantType}
             ChangeRace={handleRaceChange}
             ChangeMagic={handleChangeMagic}
             selectedRace={selectedRace}
             Race={Character.race}
+            pointbuySkillPoints={Character.pointbuySkillPoints}
+            pointbuyAttributePoints={Character.pointbuyAttributePoints}
+            pointbuyExtraForce={Character.pointbuyExtraForce}
+            chargenCash={Character.chargenCash}
             onChangePriorityRace={handleChangePriorityRace}
             ChangeRaceChoices={handleChangeAvailabileRaces}
             ChangeMaxAttributes={handleChangeMaxAttributes}
@@ -683,8 +733,14 @@ export default function BasicTabs() {
             ChangeMaxSpellPoints={handleChangeMaxSpellPoints}
             ChangeMagicChoices={handleChangeMagicChoices}
             ChangeRaceBonuses={handleChangeRaceBonuses}
+            ChangePointBuyAttributes={onChangePointbuyAttributePoints}
+            ChangePointBuySkills={onChangePointbuySkillPoints}
+            ChangePointBuyExtraForce={onChangePointbuyExtraForce}
             ChangeMoreMetahumansOption={handleChangeMoreMetahumansOption}
             ChangeIsOtakuOption={handleChangeIsOtakuOption}
+            ChangeIsGhoulOption={handleChangeIsGhoulOption}
+            ChangeIsMetavariantOption={handleChangeIsMetavariantOption}
+            ChangePointsRemaining={handlePointsRemaining}
             Edition={Edition}
           />
         }
@@ -707,7 +763,7 @@ export default function BasicTabs() {
           {SkillsPanelRender(Edition)}
         </CustomTabPanel>
         <CustomTabPanel value={value} index={4}>
-          {(Character.magicalChoice === 'Otaku') ? 
+          {(Character.isOtaku) ? 
           <OtakuPanel
             Edition={Edition}
             currentCharacter={Character}

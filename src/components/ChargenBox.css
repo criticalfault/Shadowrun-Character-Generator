@@ -1,0 +1,24 @@
+@media (min-width: 769px) { 
+    #chargenBoxMain{
+        float: right;
+        border: Solid 1px black;
+        padding: 5px; 
+        width:250px; 
+        border-radius: 10px;
+        margin-top: -50px;
+        margin-right: 10px;
+    }    
+}
+
+@media (max-width: 768px) { 
+
+    #chargenBoxMain{
+        border: Solid 1px black;
+        padding: 5px; 
+        width: 250px; 
+        border-radius: 10px;
+        margin-top: -40px;
+        margin-bottom: 10px;
+    }
+
+}
