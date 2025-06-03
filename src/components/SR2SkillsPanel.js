@@ -101,6 +101,63 @@ function SR2SkillsPanel({isOtaku, characterSkills, onUpdateSkills, maxSkillPoint
     setSelectedSkill(skillsData[event.target.value].name);
   };
 
+  const increaseSkill = (index) => {
+    const editedSkills = [...selectedSkills];
+    var rating = parseInt(editedSkills[index].rating);
+    rating = rating+1;
+    if (!isNaN(rating) && rating >= 1 && rating <= 6) {
+      const editedSkills = [...selectedSkills];
+        let hasConcentrations = 0;
+      if(editedSkills[index].selectedConcentrations.length > 0) {
+        hasConcentrations = 1;
+        editedSkills[index].selectedConcentrations.forEach(element => {
+          element.rating = rating + 2;
+          if(element.specializations.length > 0){
+            element.specializations.forEach(special => {
+              special.rating = element.rating + 2;
+            })
+          }
+          
+        });
+      }
+      if(rating === 6 && hasConcentrations === 1){
+        return;
+      }
+      editedSkills[index].rating = rating;
+      editedSkills[index].totalCost = rating + hasConcentrations;
+      setSelectedSkills(editedSkills);
+      onUpdateSkills(editedSkills);
+    }
+  }
+
+  const decreaseSkill = (index) => {
+    const editedSkills = [...selectedSkills];
+    var rating = parseInt(editedSkills[index].rating);
+    rating = rating-1;
+    if (!isNaN(rating) && rating >= 1 && rating <= 6) {
+      let hasConcentrations = 0;
+      if(editedSkills[index].selectedConcentrations.length > 0) {
+        hasConcentrations = 1;
+        editedSkills[index].selectedConcentrations.forEach(element => {
+          element.rating = rating + 2;
+          if(element.specializations.length > 0){
+            element.specializations.forEach(special => {
+              special.rating = element.rating + 2;
+            })
+          }
+          
+        });
+      }
+      if(rating === 6 && hasConcentrations === 1){
+        return;
+      }
+      editedSkills[index].rating = rating;
+      editedSkills[index].totalCost = rating + hasConcentrations;
+      setSelectedSkills(editedSkills);
+      onUpdateSkills(editedSkills);
+    }
+  }
+
   const handleRatingChange = (event, index) => {
     const rating = parseInt(event.target.value);
     if (!isNaN(rating) && rating >= 1 && rating <= 6) {
@@ -337,13 +394,19 @@ function SR2SkillsPanel({isOtaku, characterSkills, onUpdateSkills, maxSkillPoint
                   </List>
                 </CardContent>
                 <CardActions>
-                {(skill.rating > 1 || skill.selectedConcentrations.length > 0 ? (
-                  <Button color="primary" onClick={() => handleOpen(skillIndex)}>
-                    Add Concentration
-                  </Button>):'')}
-                <Button color="secondary" onClick={() => handleRemoveSkill(skillIndex)}>
-                  Remove
-                </Button> 
+                <div style={{"width":"60px"}}>
+                  <Button style={{"margin-bottom":"5px"}} color="primary" variant="contained" onClick={() => increaseSkill(skillIndex)}>+</Button>
+                  <Button color="primary" variant="contained" onClick={() => decreaseSkill(skillIndex)}>-</Button>  
+                </div>
+                <div style={{"width":"200px"}}>
+                  {(skill.rating > 1 || skill.selectedConcentrations.length > 0 ? (
+                    <Button style={{"margin-bottom":"5px"}} color="primary" variant="contained" onClick={() => handleOpen(skillIndex)}>
+                      Add Concentration
+                    </Button>):'')}
+                  <Button color="secondary" variant="contained" onClick={() => handleRemoveSkill(skillIndex)}>
+                    Remove
+                  </Button> 
+                </div>
                 </CardActions>
               </Card>
           </ListItem>
