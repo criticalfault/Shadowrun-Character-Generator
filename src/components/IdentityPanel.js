@@ -122,7 +122,7 @@ export default function IdentityPanel(props) {
                 <FormLabel component="legend">Allowed Books for Character</FormLabel>
                 <FormGroup aria-label="position" row>
                     {Object.keys(AllBooks)
-                        .filter((book) => AllBooks[book].edition === props.Edition)
+                        .filter((book) => AllBooks[book].edition == props.Edition)
                         .sort((a, b) => a.loadByDefault - b.loadByDefault)
                         .map((book) => (
                             <div key={book}>

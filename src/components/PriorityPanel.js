@@ -5,6 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { Box, Select, Checkbox } from "@mui/material";
 import DraggableList from "./DraggableList";
+import Slider from '@mui/material/Slider';
 import "./PriorityPanel.css";
 export default function PriorityPanel(props) {
   const Priorities = ["A", "B", "C", "D", "E"];
@@ -235,6 +236,18 @@ export default function PriorityPanel(props) {
   ]);
   const [Race, setRace] = React.useState(props.Race);
   const [Magic, setMagic] = React.useState(props.magicalChoice);
+  const [PowerLevel, setPowerLevel] = React.useState(props.PowerLevel)
+  const PLString = PowerLevel === 1 ? "low_" : PowerLevel === 3 ? "high_" : "";
+
+  React.useEffect(() => {
+    applyPriorities(priorities);
+  }, [PowerLevel]);
+
+
+  const handlePLChange = (event) => {
+    setPowerLevel(event.target.value);
+    props.ChangePowerLevel(event.target.value);
+  }
   
   const handleMagicChange = (magic) => {
     setMagic(magic.target.value);
@@ -294,12 +307,12 @@ export default function PriorityPanel(props) {
 
   const handleChangePriorityAttributes = (newPriority) => {
     props.ChangeMaxAttributes(
-      prorityChart[props.Edition].attributes[newPriority]
+      prorityChart[props.Edition][PLString +'attributes'][newPriority]
     );
   };
 
   const handleChangePrioritySkills = (newPriority) => {
-    props.ChangeMaxSkills(prorityChart[props.Edition].skills[newPriority]);
+    props.ChangeMaxSkills(prorityChart[props.Edition][PLString +'skills'][newPriority]);
   };
 
   const handleChangePriorityResources = (newPriority) => {
@@ -308,7 +321,7 @@ export default function PriorityPanel(props) {
       props.ChangeMaxCash(prorityChart[props.Edition].resources['D'].nuyen);
     }else{
       props.ChangeMaxCash(
-        prorityChart[props.Edition].resources[newPriority].nuyen
+        prorityChart[props.Edition][PLString +'resources'][newPriority].nuyen
       );
     }
     
@@ -316,8 +329,6 @@ export default function PriorityPanel(props) {
       props.ChangeMaxSpellPoints(
         prorityChart[props.Edition].resources[newPriority].spell_points
       );
-    }else{
-      
     }
   };
 
@@ -391,22 +402,20 @@ export default function PriorityPanel(props) {
                   <td
                     className={
                       props.CharacterPriorities.Attributes === letter
-                        ? "highlighted"
-                        : ""
+                        ? "highlighted": ""
                     }
                   >
                     <label>
-                      {prorityChart[props.Edition]["attributes"][letter]}
+                      {prorityChart[props.Edition][PLString +"attributes"][letter]}
                     </label>
                   </td>
                   <td
                     className={
                       props.CharacterPriorities.Skills === letter
-                        ? "highlighted"
-                        : ""
+                        ? "highlighted" : ""
                     }
                   >
-                    <label>{prorityChart[props.Edition]["skills"][letter]}</label>
+                    <label>{prorityChart[props.Edition][PLString +"skills"][letter]}</label>
                   </td>
                   <td
                     className={
@@ -426,14 +435,15 @@ export default function PriorityPanel(props) {
                         style: "currency",
                         currency: "JPY",
                       }).format(
-                        prorityChart[props.Edition]["resources"][letter]["nuyen"]
+                        prorityChart[props.Edition][PLString +"resources"][letter]["nuyen"]
                       )}{" "}
-                      {props.Edition === "SR2" && Magic !== "Otaku"
-                        ? " / " +
-                          prorityChart[props.Edition]["resources"][letter][
-                            "spell_points"
-                          ]
-                        : ""}
+                      {
+                        props.Edition === "SR2" && Magic !== "Otaku" 
+                        ? 
+                        " / " + prorityChart[props.Edition]["resources"][letter]["spell_points"]
+                        : 
+                        ""
+                      }
                     </label>
                   </td>
                 </tr>
@@ -452,43 +462,49 @@ export default function PriorityPanel(props) {
     return result;
   };
 
-  const onDragEnd = ({ destination, source }) => {
-    // dropped outside the list
-    if (!destination) return;
-    const newItems = reorder(priorities, source.index, destination.index);
-    setPriorities(newItems);
-    let propertiesOrder = { 0: "A", 1: "B", 2: "C", 3: "D", 4: "E" };
-    let tempPriorities = {};
-    for (let i = 0; i < newItems.length; i++) {
-      switch (newItems[i].name) {
-        case "Race":
-          handleChangePriorityRace(propertiesOrder[i]);
-          tempPriorities.Race = propertiesOrder[i];
-          break;
-        case "Magic":
-          handleChangePriorityMagic(propertiesOrder[i]);
-          tempPriorities.Magic = propertiesOrder[i];
-          break;
-        case "Skills":
-          handleChangePrioritySkills(propertiesOrder[i]);
-          tempPriorities.Skills = propertiesOrder[i];
-          break;
-        case "Attributes":
-          handleChangePriorityAttributes(propertiesOrder[i]);
-          tempPriorities.Attributes = propertiesOrder[i];
-          break;
-        case "Resources":
-          handleChangePriorityResources(propertiesOrder[i]);
-          tempPriorities.Resources = propertiesOrder[i];
-          break;
+  const applyPriorities = (priorityList) => {
+  let propertiesOrder = { 0: "A", 1: "B", 2: "C", 3: "D", 4: "E" };
+  let tempPriorities = {};
 
-        default:
-          console.log("Something bad  ! " + newItems[i].name);
-          break;
-      }
+  for (let i = 0; i < priorityList.length; i++) {
+    const name = priorityList[i].name;
+    const level = propertiesOrder[i];
+
+    switch (name) {
+      case "Race":
+        handleChangePriorityRace(level);
+        tempPriorities.Race = level;
+        break;
+      case "Magic":
+        handleChangePriorityMagic(level);
+        tempPriorities.Magic = level;
+        break;
+      case "Skills":
+        handleChangePrioritySkills(level);
+        tempPriorities.Skills = level;
+        break;
+      case "Attributes":
+        handleChangePriorityAttributes(level);
+        tempPriorities.Attributes = level;
+        break;
+      case "Resources":
+        handleChangePriorityResources(level);
+        tempPriorities.Resources = level;
+        break;
+      default:
+        console.warn("Unknown priority: " + name);
     }
-    props.ChangePriorities(tempPriorities);
-  };
+  }
+
+  props.ChangePriorities(tempPriorities);
+};
+
+const onDragEnd = ({ destination, source }) => {
+  if (!destination) return;
+  const newItems = reorder(priorities, source.index, destination.index);
+  setPriorities(newItems);
+  applyPriorities(newItems);
+};
 
   const moveMagicAndResourcesToBottom = () => {
     props.ChangePriorities({
@@ -500,9 +516,43 @@ export default function PriorityPanel(props) {
     });
   };
 
+  const renderPowerLevel = () => {
+    const marks = [
+      {
+        value: 1,
+        label: 'Street Level',
+      },
+      {
+        value: 2,
+        label: 'Standard',
+      },
+      {
+        value: 3,
+        label: 'High Level',
+      },
+    ];
+    if(props.Edition === 'SR3'){
+      return (<Slider
+        aria-label="Custom marks"
+        defaultValue={2}
+        step={1}
+        min={1}
+        max={3}
+        style={{"width":"200px","marginLeft":"40px"}}
+        onChange={handlePLChange}
+        valueLabelDisplay="auto"
+        marks={marks}
+        value={PowerLevel}
+      />)
+    }else{
+      return "";
+    }
+  }
+
   return (
     <Box sx={{ background: "#ffffff", padding: "20px", marginTop: "40px" }}>
       <h2>MASTER CHARACTER CREATION TABLE</h2>
+        {renderPowerLevel()}
         {TableRender()}
       <h2>Drag Priorities as desired</h2>
       <DraggableList items={priorities} onDragEnd={onDragEnd} />
