@@ -74,6 +74,7 @@ export default function BasicTabs() {
     edition: "SR2",
     cgmethod:"priorities",
     step: "chargen",
+    plevel:2,
     priorities: {
       Magic: "A",
       Attributes: "B",
@@ -247,6 +248,13 @@ export default function BasicTabs() {
       }));
     }
   };
+
+  const handleChangePowerLevel = (powerLevel) => {
+    setCharacter((prevCharacter) => ({
+        ...prevCharacter,
+        plevel: powerLevel,
+      }));
+  }
 
   React.useEffect(() => {
     let tempCashSpent = 0;
@@ -676,7 +684,7 @@ export default function BasicTabs() {
             ChangeCGMethod={handleChangeCGMethod}
             Edition={Character.Edition}
             CGMethod={Character.cgmethod}
-            
+            ChangePowerLevel={handleChangePowerLevel}
           />
         </CustomTabPanel>
 
@@ -691,6 +699,8 @@ export default function BasicTabs() {
             IsOtaku={Character.isOtaku}
             ChangeRace={handleRaceChange}
             ChangeMagic={handleChangeMagic}
+            PowerLevel={Character.plevel}
+            ChangePowerLevel={handleChangePowerLevel}
             selectedRace={selectedRace}
             Race={Character.race}
             onChangePriorityRace={handleChangePriorityRace}

@@ -14,9 +14,10 @@ export default function IdentityPanel(props) {
     const handleSwitchEd = (event) => {
         setLocalEdition(event.target.checked);
         if(event.target.checked){
-            props.ChangeEdition('SR3')
+            props.ChangeEdition('SR3');
         }else{
-            props.ChangeEdition('SR2')
+            props.ChangePowerLevel(2);
+            props.ChangeEdition('SR2');
         }
     }
     const [LocalMethod, setLocalMethod] = React.useState((props.CGMethod === 'pointbuy'?true:false));
@@ -122,7 +123,7 @@ export default function IdentityPanel(props) {
                 <FormLabel component="legend">Allowed Books for Character</FormLabel>
                 <FormGroup aria-label="position" row>
                     {Object.keys(AllBooks)
-                        .filter((book) => AllBooks[book].edition === props.Edition)
+                        .filter((book) => AllBooks[book].edition == props.Edition)
                         .sort((a, b) => a.loadByDefault - b.loadByDefault)
                         .map((book) => (
                             <div key={book}>
