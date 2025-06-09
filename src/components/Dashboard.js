@@ -684,7 +684,7 @@ export default function BasicTabs() {
             ChangeCGMethod={handleChangeCGMethod}
             Edition={Character.Edition}
             CGMethod={Character.cgmethod}
-            
+            ChangePowerLevel={handleChangePowerLevel}
           />
         </CustomTabPanel>
 
