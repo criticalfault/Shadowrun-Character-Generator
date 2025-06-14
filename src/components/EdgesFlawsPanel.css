@@ -1,0 +1,73 @@
+.edges-flaws-panel .MuiPaper-root {
+  transition: all 0.3s ease;
+}
+
+.edges-flaws-panel .MuiPaper-root:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.edges-flaws-panel .MuiCard-root {
+  transition: all 0.3s ease;
+  overflow: visible;
+}
+
+.edges-flaws-panel .MuiCard-root:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.edges-flaws-panel .MuiListItem-root {
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.edges-flaws-panel .MuiListItem-root:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-left: 3px solid #3f51b5;
+}
+
+.edges-flaws-panel .balance-positive {
+  color: #4caf50;
+}
+
+.edges-flaws-panel .balance-negative {
+  color: #f44336;
+}
+
+.edges-flaws-panel .balance-zero {
+  color: #2196f3;
+}
+
+.edges-flaws-panel .MuiChip-root {
+  transition: all 0.2s ease;
+}
+
+.edges-flaws-panel .MuiChip-root:hover {
+  transform: scale(1.05);
+}
+
+.edges-flaws-panel .MuiSelect-select {
+  display: flex;
+  align-items: center;
+}
+
+.edges-flaws-panel .MuiCardHeader-root {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.edges-flaws-panel .MuiDivider-root {
+  margin: 16px 0;
+}
+
+.edges-flaws-panel .MuiAlert-root {
+  margin-bottom: 16px;
+}
+
+.edges-flaws-panel .MuiIconButton-root {
+  transition: all 0.2s ease;
+}
+
+.edges-flaws-panel .MuiIconButton-root:hover {
+  transform: scale(1.1);
+}
