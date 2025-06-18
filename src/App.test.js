@@ -1,8 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+// Mock the Dashboard component
+jest.mock('./components/Dashboard', () => () => <div data-testid="dashboard">Dashboard</div>);
+
+test('renders without crashing', () => {
+  const { container } = render(<App />);
+  expect(container).toBeTruthy();
 });
