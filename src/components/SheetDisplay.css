@@ -9,11 +9,66 @@
 }
 
 .sheetBody{
-    background: whitesmoke;
+    background: #1f1f1f;
     width: 960px;
     margin: 0 auto;
 }
 
 li{
     list-style: none;
+}
+
+.shadowrun-paper {
+  background-color: #1f1f1f !important;
+  color: #00ffc3;
+  border: 1px solid #00ffc3;
+  font-family: 'Share Tech Mono', monospace;
+  padding: 1rem;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 255, 195, 0.3);
+}
+
+.shadowrun-header {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #00ffc3;
+  border-bottom: 1px solid #00ffc3;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.shadowrun-table td,
+.shadowrun-table th {
+  padding: 6px 8px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #333;
+}
+
+.shadowrun-table td,
+.shadowrun-table th {
+  border-bottom: 1px solid #444;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.9rem;
+  color: #00ffc3;
+}
+
+.shadowrun-label {
+  color: #ff3c3c;
+  font-weight: bold;
+}
+
+.shadowrun-value {
+  color: #00ffc3;
+}
+
+.pool_display {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.sheetBody {
+  padding: 2rem;
 }
