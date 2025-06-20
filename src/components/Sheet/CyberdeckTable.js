@@ -14,8 +14,8 @@ import SRSection from './SRSection';
 import ConditionMonitorBlockCyberDeck from './ConditionMonitorBlockCyberDeck';
 
 
-const CyberdeckTable = ({ Decks }) => {
-  if (!Decks || Decks.length === 0) return null;
+const CyberdeckTable = (props) => {
+  if (!props.Decks || props.Decks.length === 0) return null;
   const handleConditionSelect = () => {};
   const CalcMemoryUsed = (deck) => {
     let memoryUsed = 0;
@@ -35,12 +35,12 @@ const CyberdeckTable = ({ Decks }) => {
     return storageUsed;
   };
 
-  const [SelectedCyberdecks, setSelectedCyberdecks] = useState(Decks);
+  const [SelectedCyberdecks, setSelectedCyberdecks] = useState(props.Decks);
 
-  const handleProgramToggle = (event, deck, index2) => {
+  const handleProgramToggle = (event, index, index2) => {
     let programIndex = index2;
-    const editedcyberdecks = [...deck];
-    deck.ProgramsInStorage[programIndex].Loaded = !deck.ProgramsInStorage[programIndex].Loaded;
+    const editedcyberdecks = [...props.Decks];
+    editedcyberdecks[index].ProgramsInStorage[programIndex].Loaded = !editedcyberdecks[index].ProgramsInStorage[programIndex].Loaded;
     setSelectedCyberdecks(editedcyberdecks);
     props.onChangeDeck(editedcyberdecks);
   };
@@ -48,7 +48,7 @@ const CyberdeckTable = ({ Decks }) => {
   return (
     <Grid item xs={12}>
       <SRSection title="Cyberdecks">
-        {Decks.map((deck, index) => (
+        {props.Decks.map((deck, index) => (
           <TableContainer
             component={Paper}
             key={deck.Name + index}
@@ -123,7 +123,7 @@ const CyberdeckTable = ({ Decks }) => {
                             data-index={index}
                             checked={program.Loaded === true}
                             onChange={(event) =>
-                              handleProgramToggle(event, deck, index2)
+                              handleProgramToggle(event, index, index2)
                             }
                           />
                         </TableCell>
