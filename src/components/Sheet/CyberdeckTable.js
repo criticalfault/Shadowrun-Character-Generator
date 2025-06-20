@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from "react";
 import {
   Grid,
   Table,
@@ -11,10 +11,12 @@ import {
   Typography,
 } from '@mui/material';
 import SRSection from './SRSection';
+import ConditionMonitorBlockCyberDeck from './ConditionMonitorBlockCyberDeck';
 
-const CyberdeckTable = ({ decks }) => {
-  if (!decks || decks.length === 0) return null;
 
+const CyberdeckTable = ({ Decks }) => {
+  if (!Decks || Decks.length === 0) return null;
+  const handleConditionSelect = () => {};
   const CalcMemoryUsed = (deck) => {
     let memoryUsed = 0;
     deck.ProgramsInStorage.forEach(function (prog) {
@@ -33,12 +35,20 @@ const CyberdeckTable = ({ decks }) => {
     return storageUsed;
   };
 
+  const [SelectedCyberdecks, setSelectedCyberdecks] = useState(Decks);
 
-  console.log(decks)
+  const handleProgramToggle = (event, deck, index2) => {
+    let programIndex = index2;
+    const editedcyberdecks = [...deck];
+    deck.ProgramsInStorage[programIndex].Loaded = !deck.ProgramsInStorage[programIndex].Loaded;
+    setSelectedCyberdecks(editedcyberdecks);
+    props.onChangeDeck(editedcyberdecks);
+  };
+
   return (
     <Grid item xs={12}>
       <SRSection title="Cyberdecks">
-        {decks.map((deck, index) => (
+        {Decks.map((deck, index) => (
           <TableContainer
             component={Paper}
             key={deck.Name + index}
@@ -77,40 +87,10 @@ const CyberdeckTable = ({ decks }) => {
                   <TableCell align="right">{deck.Storage}/{CalcStorageUsed(deck)}</TableCell>
                 </TableRow>
               </TableBody>
-            </Table>
-
-            {/* Options */}
-            {deck.Options && deck.Options.length > 0 && (
-              <>
-                <Typography
-                  variant="subtitle1"
-                  sx={{
-                    margin: '1rem 1rem 0 1rem',
-                    fontFamily: 'Share Tech Mono, monospace',
-                    color: '#00ffc3',
-                  }}
-                >
-                  Options
-                </Typography>
-                <Table size="small" className="shadowrun-table">
-                  <TableHead>
-                    <TableRow>
-                      <TableCell>Name</TableCell>
-                      <TableCell align="right">Rating</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {deck.Options.map((opt, idx) => (
-                      <TableRow key={opt.Name + idx}>
-                        <TableCell>{opt.Name}</TableCell>
-                        <TableCell align="right">{opt.Rating}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </>
-            )}
-
+            </Table>            
+            <Grid item size={12}>
+              <ConditionMonitorBlockCyberDeck onConditionSelect={handleConditionSelect} />
+            </Grid>
             {/* Programs */}
             {deck.ProgramsInStorage && deck.ProgramsInStorage.length > 0 && (
               <>
@@ -124,18 +104,33 @@ const CyberdeckTable = ({ decks }) => {
                 >
                   Programs
                 </Typography>
-                <Table size="small" className="shadowrun-table">
+                 <Table size="small" className="shadowrun-table">
                   <TableHead>
                     <TableRow>
+                      <TableCell>Loaded</TableCell>
                       <TableCell>Name</TableCell>
-                      <TableCell align="right">Rating</TableCell>
+                      <TableCell>Rating</TableCell>
+                      <TableCell>Multiplyer</TableCell>
+                      <TableCell>Size</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {deck.ProgramsInStorage.map((prog, idx) => (
-                      <TableRow key={prog.Name + idx}>
-                        <TableCell>{prog.Name}</TableCell>
-                        <TableCell align="right">{prog.Rating}</TableCell>
+                    {deck.ProgramsInStorage.map((program, index2) => (
+                      <TableRow key={index2 + program.Name}>
+                        <TableCell>
+                          <input
+                            type="checkbox"
+                            data-index={index}
+                            checked={program.Loaded === true}
+                            onChange={(event) =>
+                              handleProgramToggle(event, deck, index2)
+                            }
+                          />
+                        </TableCell>
+                        <TableCell>{program.Name}</TableCell>
+                        <TableCell>{program.Rating}</TableCell>
+                        <TableCell>{program.Multiplyer}</TableCell>
+                        <TableCell>{program.Size}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>

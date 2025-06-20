@@ -51,7 +51,6 @@ const RunnerInfo = ({ character, onChange }) => {
               fullWidth
               variant="outlined"
               value={character.race}
-              disabled
               InputLabelProps={{ style: { color: '#00ffc3' } }}
               InputProps={{
                 style: {
@@ -60,8 +59,9 @@ const RunnerInfo = ({ character, onChange }) => {
                 },
               }}
               sx={{
-                '& .Mui-disabled':{
-                   color: '#00ffc3'
+                '& .MuiOutlinedInput-notchedOutline':{
+                  color: '#00ffc3',
+                  border:"solid 1px #00ffc3"
                 },
                 '& .MuiOutlinedInput-root': {
                   color: '#00ffc3',
@@ -93,13 +93,6 @@ const RunnerInfo = ({ character, onChange }) => {
               variant="outlined"
               value={character.age}
               onChange={(e) => onChange('age', e.target.value)}
-              InputLabelProps={{ style: { color: '#00ffc3' } }}
-              InputProps={{
-                style: {
-                  color: '#00ffc3',
-                  fontFamily: 'Share Tech Mono, monospace',
-                },
-              }}
               sx={{
                 '& .MuiOutlinedInput-root': {
                   color: '#00ffc3',
@@ -124,20 +117,13 @@ const RunnerInfo = ({ character, onChange }) => {
               }}
             />
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12}>
             <TextField
               label="Description"
               fullWidth
               variant="outlined"
               value={character.description}
               onChange={(e) => onChange('description', e.target.value)}
-              InputLabelProps={{ style: { color: '#00ffc3' } }}
-              InputProps={{
-                style: {
-                  color: '#00ffc3',
-                  fontFamily: 'Share Tech Mono, monospace',
-                },
-              }}
               sx={{
                 '& .MuiOutlinedInput-root': {
                   color: '#00ffc3',
@@ -171,13 +157,6 @@ const RunnerInfo = ({ character, onChange }) => {
               variant="outlined"
               value={character.notes}
               onChange={(e) => onChange('notes', e.target.value)}
-              InputLabelProps={{ style: { color: '#00ffc3' } }}
-              InputProps={{
-                style: {
-                  color: '#00ffc3',
-                  fontFamily: 'Share Tech Mono, monospace',
-                },
-              }}
               sx={{
                 '& .MuiOutlinedInput-root': {
                   color: '#00ffc3',

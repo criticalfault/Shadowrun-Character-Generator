@@ -116,8 +116,7 @@ const DicePools = ({ character, edition, magicalChoice }) => {
               style: {
                 color: '#00ffc3',
                 fontFamily: 'Share Tech Mono, monospace',
-              },
-              readOnly: true,
+              }
             }}
             sx={{ mb: 2 }}
           />
