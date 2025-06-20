@@ -901,6 +901,9 @@ export default function BasicTabs() {
             }
             Edition={Edition}
             currentCharacter={Character}
+            onChangeDeck={(decks) =>
+              setCharacter({ ...Character, decks: decks })
+            }
           />
         </CustomTabPanel>
       </Box>

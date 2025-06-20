@@ -96,13 +96,10 @@ function SheetDisplay(props) {
         />
       </Grid>
       <Grid item size={12}>
-        <SkillsBlock
-          character={props.currentCharacter}
-          edition={props.Edition}
-        />
+        <SkillsBlock character={props.currentCharacter} edition={props.Edition}  />
       </Grid>
 
-      <CyberdeckTable decks={props.currentCharacter.decks} />
+      <CyberdeckTable Decks={props.currentCharacter.decks} onChangeDeck={props.onChangeDeck} />
 
       <CyberwareTable cyberware={props.currentCharacter.cyberware} />
 
