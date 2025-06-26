@@ -87,6 +87,7 @@ function SheetDisplay(props) {
         raceBonuses={props.currentCharacter.raceBonuses}
         cyberBonuses={props.currentCharacter.cyberAttributeBonuses}
         magicBonuses={props.currentCharacter.magicalAttributeBonuses}
+        Cyberware={props.currentCharacter.cyberware}
       />
       <Grid item size={4}>
        <DicePools
