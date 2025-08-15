@@ -1753,19 +1753,7 @@
         "BookPage": "cb1.4"
       },
       {
-        "Name": "Standard Bow (Bow)",
-        "Concealability": "2",
-        "Str.Min.": "1+",
-        "Damage": "(STR Min.+2)M",
-        "Weight": "1",
-        "Availability": "3/36hrs",
-        "Cost": "100xSTR Min.",
-        "Street Index": "1",
-        "Legal": "5-D",
-        "BookPage": "sr3.276"
-      },
-      {
-        " ": "Standard Bow (for STR1)  (Bow)",
+        "Name": "Standard Bow (for STR1)  (Bow)",
         "Concealability": "2",
         "Str.Min.": "1+",
         "Damage": "3M",

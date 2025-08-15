@@ -93,7 +93,7 @@ export default function GearPanel(props) {
             props.Edition === 'SR3' && props.BooksFilter.includes(item.BookPage.split('.')[0])
           )
         )
-          .sort((a, b) => a.Name.localeCompare(b.Name))
+          .sort((a, b) => a.Name.localeCompare(b.Name?? ''))
           .map( (gear, index) => (
               <MenuItem selected={NewGearIndex === index} key={index} value={index}>{gear.Name}</MenuItem>
             )
