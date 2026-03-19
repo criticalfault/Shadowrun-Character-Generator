@@ -1,5 +1,5 @@
-import { MenuItem } from '@mui/material';
 import React, { useState, useEffect } from 'react';
+import FilteredMenuItem from './FilteredMenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
@@ -20,10 +20,14 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 
+// Pre-import all edition data so Vite can bundle them (no runtime require)
+const allCyberware = import.meta.glob('../data/*/Cyberware.json', { eager: true });
+const allBioware = import.meta.glob('../data/*/Bioware.json', { eager: true });
+
 export default function CyberwarePanel(props) {
     
-  const CyberwareData = require('../data/'+props.Edition+'/Cyberware.json');
-  const BiowareData = require('../data/'+props.Edition+'/Bioware.json');
+  const CyberwareData = allCyberware[`../data/${props.Edition}/Cyberware.json`]?.default;
+  const BiowareData = allBioware[`../data/${props.Edition}/Bioware.json`]?.default;
   const CalcEssenceSpent = () =>{
     let EssenceSpent = 0;
     let EyeEssenceSpent = 0;
@@ -84,7 +88,7 @@ export default function CyberwarePanel(props) {
   }
   const handleCyberwareChange = (event) => {
     if(CyberwareData[SelectedCyberwareCategory] !== undefined){
-      const TempCyber = CyberwareData[SelectedCyberwareCategory].filter(item => props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
+      const TempCyber = CyberwareData[SelectedCyberwareCategory][event.target.value];
       setNewCyberware(TempCyber);
       setNewCyberwareIndex(event.target.value)
       setNewCyberwareGrade('standard');
@@ -209,7 +213,7 @@ const handleCyberOrBioChange = (event) => {
 }
 
   const handleBiowareChange = (event) => {
-      const TempCyber = BiowareData[BiowareSelectedCategory].filter(item => props.BooksFilter.includes(item.BookPage.split('.')[0]))[event.target.value];
+      const TempCyber = BiowareData[BiowareSelectedCategory][event.target.value];
       setNewBioware(TempCyber);
       setNewBiowareIndex(event.target.value)
       setNewBiowareCost(TempCyber.Cost);
@@ -290,8 +294,8 @@ const handleCyberOrBioChange = (event) => {
             id="power-dropdown"
             value={NewCyberwareIndex}
             onChange={handleCyberwareChange}>
-            {CyberwareData[SelectedCyberwareCategory].filter(item => props.BooksFilter.includes(item.BookPage.split('.')[0])).map( (cyber, index) => (
-            <MenuItem selected={NewCyberwareIndex === index} key={index} value={index}>{cyber.Name} - Essence Cost: {cyber.EssCost}</MenuItem>
+            {CyberwareData[SelectedCyberwareCategory].map( (cyber, index) => (
+            <FilteredMenuItem allowed={props.BooksFilter.includes(cyber.BookPage.split('.')[0])} bookCode={cyber.BookPage.split('.')[0]} selected={NewCyberwareIndex === index} key={index} value={index}>{cyber.Name} - Essence Cost: {cyber.EssCost}</FilteredMenuItem>
             ))}
         </Select>
         </FormControl>
@@ -387,8 +391,8 @@ const handleCyberOrBioChange = (event) => {
         id="power-dropdown"
         value={NewBiowareIndex}
         onChange={handleBiowareChange}>
-        {BiowareData[BiowareSelectedCategory].filter(item => props.BooksFilter.includes(item.BookPage.split('.')[0])).map( (cyber, index) => (
-        <MenuItem selected={NewBiowareIndex === index} key={index} value={index}>{cyber.Name} - BioIndex Cost: {cyber.BioIndex}</MenuItem>
+        {BiowareData[BiowareSelectedCategory].map( (cyber, index) => (
+        <FilteredMenuItem allowed={props.BooksFilter.includes(cyber.BookPage.split('.')[0])} bookCode={cyber.BookPage.split('.')[0]} selected={NewBiowareIndex === index} key={index} value={index}>{cyber.Name} - BioIndex Cost: {cyber.BioIndex}</FilteredMenuItem>
         ))}
     </Select>
     </FormControl>

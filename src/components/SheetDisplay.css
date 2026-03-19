@@ -72,3 +72,92 @@ li{
 .sheetBody {
   padding: 2rem;
 }
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  /* Hide everything except the sheet */
+  .no-print,
+  .no-print-tabs > .MuiBox-root:first-child {
+    display: none !important;
+  }
+
+  /* Show only the sheet tab panel */
+  .no-print-tabs [role="tabpanel"] {
+    display: none !important;
+  }
+
+  .no-print-tabs [role="tabpanel"]:last-child {
+    display: block !important;
+  }
+
+  /* Reset page for print */
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 11pt;
+  }
+
+  /* Flip dark theme to light */
+  .sheetBody {
+    background: #fff !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .shadowrun-paper {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    margin-bottom: 12px !important;
+  }
+
+  .shadowrun-header {
+    color: #000 !important;
+    border-bottom: 2px solid #000 !important;
+  }
+
+  .shadowrun-table td,
+  .shadowrun-table th {
+    color: #000 !important;
+    border-bottom: 1px solid #ccc !important;
+  }
+
+  .shadowrun-label {
+    color: #000 !important;
+  }
+
+  .shadowrun-value {
+    color: #000 !important;
+  }
+
+  /* MUI overrides for print */
+  .MuiPaper-root {
+    background-color: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+  }
+
+  .MuiInputBase-root,
+  .MuiOutlinedInput-root,
+  .MuiInputBase-input {
+    color: #000 !important;
+    font-family: 'Share Tech Mono', monospace !important;
+    -webkit-text-fill-color: #000 !important;
+  }
+
+  .MuiOutlinedInput-notchedOutline {
+    border-color: #000 !important;
+  }
+
+  .MuiInputLabel-root {
+    color: #000 !important;
+  }
+
+  /* Page break hints */
+  .MuiGrid-item {
+    page-break-inside: avoid;
+  }
+}

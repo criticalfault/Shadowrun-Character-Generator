@@ -1,5 +1,6 @@
 import { MenuItem } from '@mui/material';
 import React, { useState } from 'react';
+import FilteredMenuItem from './FilteredMenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
@@ -24,11 +25,17 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 
+// Pre-import all edition data so Vite can bundle them (no runtime require)
+const allVehicles = import.meta.glob('../data/*/Vehicles.json', { eager: true });
+const allDrones = import.meta.glob('../data/*/Drones.json', { eager: true });
+import VehicleGearData from '../data/SR3/VehicleMods.json';
+import VehicleWeaponsData from '../data/SR3/VehicleWeapons.json';
+
 export default function VehiclesPanel(props) {
-  const VehicleData = require('../data/'+props.Edition+'/Vehicles.json');
-  const DronesData = require('../data/'+props.Edition+'/Drones.json');
-  const VehicleGear = require('../data/SR3/VehicleMods.json');
-  const VehicleWeapons = require('../data/SR3/VehicleWeapons.json');
+  const VehicleData = allVehicles[`../data/${props.Edition}/Vehicles.json`]?.default;
+  const DronesData = allDrones[`../data/${props.Edition}/Drones.json`]?.default;
+  const VehicleGear = VehicleGearData;
+  const VehicleWeapons = VehicleWeaponsData;
 
   const CalcTotalNuyenSpent = () =>{
       let TotalNuyen = 0;
@@ -63,7 +70,7 @@ export default function VehiclesPanel(props) {
     if(event.target.value === -1){
       return;
     }
-    const TempDrone = DronesData.filter(item => props.BooksFilter.includes(item['Book.Page'].split('.')[0]))[event.target.value];
+    const TempDrone = DronesData[event.target.value];
     setNewDrone(TempDrone);
     setNewDroneIndex(event.target.value)
     setNewDroneCost(TempDrone['$Cost']);
@@ -94,7 +101,7 @@ export default function VehiclesPanel(props) {
     if(event.target.value === -1){
       return;
     }
-    const TempVehicle = VehicleData.filter(item => props.BooksFilter.includes(item['Book.Page'].split('.')[0]))[event.target.value];
+    const TempVehicle = VehicleData[event.target.value];
     setNewVehicle(TempVehicle);
     setNewVehicleIndex(event.target.value)
     setNewVehicleCost(TempVehicle['$Cost']);
@@ -383,8 +390,8 @@ export default function VehiclesPanel(props) {
             onChange={handleVehicleChange}>
               <MenuItem selected={NewVehicleIndex === -1} key={-1} value={-1}>Select A Vehicle</MenuItem>
             { 
-                VehicleData.filter(item => props.BooksFilter.includes(item['Book.Page'].split('.')[0])).sort((a, b) => a - b).map( (gear, index) => (
-                    <MenuItem selected={NewVehicleIndex === index} key={index} value={index}>{gear.name}</MenuItem>
+                VehicleData.sort((a, b) => a - b).map( (gear, index) => (
+                    <FilteredMenuItem allowed={props.BooksFilter.includes(gear['Book.Page'].split('.')[0])} bookCode={gear['Book.Page'].split('.')[0]} selected={NewVehicleIndex === index} key={index} value={index}>{gear.name}</FilteredMenuItem>
                 ))
             }
         </Select>
@@ -437,8 +444,8 @@ export default function VehiclesPanel(props) {
             onChange={handleDroneChange}>
               <MenuItem selected={NewDroneIndex === -1} key={-1} value={-1}>Select A Drone</MenuItem>
             { 
-                DronesData.filter(item => props.BooksFilter.includes(item['Book.Page'].split('.')[0])).sort((a, b) => a - b).map( (gear, index) => (
-                    <MenuItem selected={NewDroneIndex === index} key={index} value={index}>{gear.name}</MenuItem>
+                DronesData.sort((a, b) => a - b).map( (gear, index) => (
+                    <FilteredMenuItem allowed={props.BooksFilter.includes(gear['Book.Page'].split('.')[0])} bookCode={gear['Book.Page'].split('.')[0]} selected={NewDroneIndex === index} key={index} value={index}>{gear.name}</FilteredMenuItem>
                 ))
             }
         </Select>

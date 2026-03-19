@@ -28,8 +28,10 @@ const modalStyle = {
   p: 4,
 };
 
+import complexFormsData from "../data/SR2/ComplexForms.json";
+
 export default function OtakuPanel(props) {
-  const rawPrograms = require("../data/SR2/ComplexForms.json");
+  const rawPrograms = complexFormsData;
   const [openModal, setOpenModal] = React.useState(false);
   const [NewComplexForm, setNewComplexForm] = useState(0);
   const [NewComplexFormIndex, setNewComplexFormIndex] = useState(0);

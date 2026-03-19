@@ -1,5 +1,6 @@
 import { MenuItem } from '@mui/material';
 import React, { useState } from 'react';
+import FilteredMenuItem from './FilteredMenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
@@ -15,8 +16,11 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 
+// Pre-import all edition data so Vite can bundle them (no runtime require)
+const allGear = import.meta.glob('../data/*/Gear.json', { eager: true });
+
 export default function GearPanel(props) {
-  const GearData = require('../data/'+props.Edition+'/Gear.json');
+  const GearData = allGear[`../data/${props.Edition}/Gear.json`]?.default;
   const tempCategories = Object.keys(GearData);
   const GearCategories = [...tempCategories].sort();
   const CalcTotalNuyenSpent = () =>{
@@ -43,12 +47,6 @@ export default function GearPanel(props) {
       var TempGear = {}
       if(props.Edition === 'SR3'){
         TempGear = GearData[SelectedGearCategory].entries
-        .filter(
-          item => !item.hasOwnProperty('BookPage') || 
-          ( 
-            props.Edition === 'SR3' && props.BooksFilter.includes(item.BookPage.split('.')[0])
-          )
-        )
           .sort((a, b) => a.Name.localeCompare(b.Name))[event.target.value];
       }else{
         TempGear = GearData[SelectedGearCategory].entries.sort((a, b) => a.Name.localeCompare(b.Name))[event.target.value];
@@ -87,17 +85,14 @@ export default function GearPanel(props) {
 
       if(props.Edition === 'SR3'){
         return GearData[SelectedGearCategory].entries
-        .filter(
-          item => !item.hasOwnProperty('BookPage') || 
-          ( 
-            props.Edition === 'SR3' && props.BooksFilter.includes(item.BookPage.split('.')[0])
-          )
-        )
-          .sort((a, b) => a.Name.localeCompare(b.Name?? ''))
-          .map( (gear, index) => (
-              <MenuItem selected={NewGearIndex === index} key={index} value={index}>{gear.Name}</MenuItem>
-            )
-          )
+          .sort((a, b) => a.Name.localeCompare(b.Name ?? ''))
+          .map( (gear, index) => {
+            const allowed = !gear.hasOwnProperty('BookPage') || props.BooksFilter.includes(gear.BookPage.split('.')[0]);
+            const bookCode = gear.BookPage?.split('.')[0];
+            return (
+              <FilteredMenuItem allowed={allowed} bookCode={bookCode} selected={NewGearIndex === index} key={index} value={index}>{gear.Name}</FilteredMenuItem>
+            );
+          });
       }else{
         return GearData[SelectedGearCategory].entries
         .sort((a, b) => a.Name.localeCompare(b.Name))
@@ -106,10 +101,6 @@ export default function GearPanel(props) {
           )
         )
       }
-      
-      
-
-
     }
 
     return ( <>
