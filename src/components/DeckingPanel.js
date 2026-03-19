@@ -16,6 +16,11 @@ import TableRow from "@mui/material/TableRow";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Modal from "@mui/material/Modal";
 import "./DeckingPanel.css";
+
+// Pre-import all edition data so Vite can bundle them (no runtime require)
+const allCyberdecks = import.meta.glob('../data/*/Cyberdeck.json', { eager: true });
+const allPrograms = import.meta.glob('../data/*/Programs.json', { eager: true });
+
 const modalStyle = {
   position: "absolute",
   top: "50%",
@@ -28,8 +33,8 @@ const modalStyle = {
   p: 4,
 };
 export default function DeckingPanel(props) {
-  const rawCyberdecks = require("../data/" + props.Edition + "/Cyberdeck.json");
-  const rawPrograms = require("../data/" + props.Edition + "/Programs.json");
+  const rawCyberdecks = allCyberdecks[`../data/${props.Edition}/Cyberdeck.json`]?.default;
+  const rawPrograms = allPrograms[`../data/${props.Edition}/Programs.json`]?.default;
   const [NewCyberdeck, setNewCyberdeck] = useState();
   const [SelectedCyberdecks, setSelectedCyberdecks] = useState(props.Decks);
   const [NewCyberdeckIndex, setNewCyberdeckIndex] = useState(0);

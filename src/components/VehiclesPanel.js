@@ -25,11 +25,17 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 
+// Pre-import all edition data so Vite can bundle them (no runtime require)
+const allVehicles = import.meta.glob('../data/*/Vehicles.json', { eager: true });
+const allDrones = import.meta.glob('../data/*/Drones.json', { eager: true });
+import VehicleGearData from '../data/SR3/VehicleMods.json';
+import VehicleWeaponsData from '../data/SR3/VehicleWeapons.json';
+
 export default function VehiclesPanel(props) {
-  const VehicleData = require('../data/'+props.Edition+'/Vehicles.json');
-  const DronesData = require('../data/'+props.Edition+'/Drones.json');
-  const VehicleGear = require('../data/SR3/VehicleMods.json');
-  const VehicleWeapons = require('../data/SR3/VehicleWeapons.json');
+  const VehicleData = allVehicles[`../data/${props.Edition}/Vehicles.json`]?.default;
+  const DronesData = allDrones[`../data/${props.Edition}/Drones.json`]?.default;
+  const VehicleGear = VehicleGearData;
+  const VehicleWeapons = VehicleWeaponsData;
 
   const CalcTotalNuyenSpent = () =>{
       let TotalNuyen = 0;
@@ -385,7 +391,7 @@ export default function VehiclesPanel(props) {
               <MenuItem selected={NewVehicleIndex === -1} key={-1} value={-1}>Select A Vehicle</MenuItem>
             { 
                 VehicleData.sort((a, b) => a - b).map( (gear, index) => (
-                    <FilteredMenuItem allowed={props.BooksFilter.includes(gear['Book.Page'].split('.')[0])} selected={NewVehicleIndex === index} key={index} value={index}>{gear.name}</FilteredMenuItem>
+                    <FilteredMenuItem allowed={props.BooksFilter.includes(gear['Book.Page'].split('.')[0])} bookCode={gear['Book.Page'].split('.')[0]} selected={NewVehicleIndex === index} key={index} value={index}>{gear.name}</FilteredMenuItem>
                 ))
             }
         </Select>
@@ -439,7 +445,7 @@ export default function VehiclesPanel(props) {
               <MenuItem selected={NewDroneIndex === -1} key={-1} value={-1}>Select A Drone</MenuItem>
             { 
                 DronesData.sort((a, b) => a - b).map( (gear, index) => (
-                    <FilteredMenuItem allowed={props.BooksFilter.includes(gear['Book.Page'].split('.')[0])} selected={NewDroneIndex === index} key={index} value={index}>{gear.name}</FilteredMenuItem>
+                    <FilteredMenuItem allowed={props.BooksFilter.includes(gear['Book.Page'].split('.')[0])} bookCode={gear['Book.Page'].split('.')[0]} selected={NewDroneIndex === index} key={index} value={index}>{gear.name}</FilteredMenuItem>
                 ))
             }
         </Select>

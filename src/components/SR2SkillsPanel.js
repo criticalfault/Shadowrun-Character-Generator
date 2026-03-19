@@ -17,7 +17,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import LinearProgress from '@mui/material/LinearProgress';
-const skillsData = require('../data/SR2/Skills.json');
+import skillsData from '../data/SR2/Skills.json';
 //const LanguageSkillsData = require('../data/SR2/LanguageSkills.json');
 
 function SR2SkillsPanel({isOtaku, characterSkills, onUpdateSkills, maxSkillPoints}) {

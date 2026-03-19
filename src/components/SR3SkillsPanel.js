@@ -10,8 +10,8 @@ import TextField from "@mui/material/TextField";
 import LinearProgress from "@mui/material/LinearProgress";
 import Box from "@mui/material/Box";
 import { Container, Grid } from "@mui/material";
-const skillsData = require("../data/SR3/ActiveSkills.json");
-const LanguageSkillsData = require("../data/SR3/LanguageSkills.json");
+import skillsData from "../data/SR3/ActiveSkills.json";
+import LanguageSkillsData from "../data/SR3/LanguageSkills.json";
 function SR3SkillsPanel({
   currentCharacter,
   characterSkills,

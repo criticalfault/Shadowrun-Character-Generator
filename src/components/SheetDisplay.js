@@ -31,6 +31,7 @@ import CyberdeckTable from './Sheet/CyberdeckTable';
 import Button from "@mui/material/Button";
 import PrintIcon from "@mui/icons-material/Print";
 import "./SheetDisplay.css";
+import rangesData from "../data/ranges.json";
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#1f1f1f",
   ...theme.typography.body2,
@@ -39,7 +40,7 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.primary,
 }));
 function SheetDisplay(props) {
-  const Ranges = require("../data/ranges.json");
+  const Ranges = rangesData;
   const getRangesFromName = (name) => {
     let RangeNames = Object.keys(Ranges);
     for (let i = 0; i < RangeNames.length; i++) {

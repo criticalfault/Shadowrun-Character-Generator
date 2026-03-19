@@ -20,10 +20,14 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 
+// Pre-import all edition data so Vite can bundle them (no runtime require)
+const allCyberware = import.meta.glob('../data/*/Cyberware.json', { eager: true });
+const allBioware = import.meta.glob('../data/*/Bioware.json', { eager: true });
+
 export default function CyberwarePanel(props) {
     
-  const CyberwareData = require('../data/'+props.Edition+'/Cyberware.json');
-  const BiowareData = require('../data/'+props.Edition+'/Bioware.json');
+  const CyberwareData = allCyberware[`../data/${props.Edition}/Cyberware.json`]?.default;
+  const BiowareData = allBioware[`../data/${props.Edition}/Bioware.json`]?.default;
   const CalcEssenceSpent = () =>{
     let EssenceSpent = 0;
     let EyeEssenceSpent = 0;
@@ -291,7 +295,7 @@ const handleCyberOrBioChange = (event) => {
             value={NewCyberwareIndex}
             onChange={handleCyberwareChange}>
             {CyberwareData[SelectedCyberwareCategory].map( (cyber, index) => (
-            <FilteredMenuItem allowed={props.BooksFilter.includes(cyber.BookPage.split('.')[0])} selected={NewCyberwareIndex === index} key={index} value={index}>{cyber.Name} - Essence Cost: {cyber.EssCost}</FilteredMenuItem>
+            <FilteredMenuItem allowed={props.BooksFilter.includes(cyber.BookPage.split('.')[0])} bookCode={cyber.BookPage.split('.')[0]} selected={NewCyberwareIndex === index} key={index} value={index}>{cyber.Name} - Essence Cost: {cyber.EssCost}</FilteredMenuItem>
             ))}
         </Select>
         </FormControl>
@@ -388,7 +392,7 @@ const handleCyberOrBioChange = (event) => {
         value={NewBiowareIndex}
         onChange={handleBiowareChange}>
         {BiowareData[BiowareSelectedCategory].map( (cyber, index) => (
-        <FilteredMenuItem allowed={props.BooksFilter.includes(cyber.BookPage.split('.')[0])} selected={NewBiowareIndex === index} key={index} value={index}>{cyber.Name} - BioIndex Cost: {cyber.BioIndex}</FilteredMenuItem>
+        <FilteredMenuItem allowed={props.BooksFilter.includes(cyber.BookPage.split('.')[0])} bookCode={cyber.BookPage.split('.')[0]} selected={NewBiowareIndex === index} key={index} value={index}>{cyber.Name} - BioIndex Cost: {cyber.BioIndex}</FilteredMenuItem>
         ))}
     </Select>
     </FormControl>

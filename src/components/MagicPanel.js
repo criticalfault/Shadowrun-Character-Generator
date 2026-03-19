@@ -25,10 +25,15 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
+// Pre-import all edition data so Vite can bundle them (no runtime require)
+const allSpells = import.meta.glob('../data/*/Spells.json', { eager: true });
+const allAdeptPowers = import.meta.glob('../data/*/AdeptPowers.json', { eager: true });
+const allTotems = import.meta.glob('../data/*/Totems.json', { eager: true });
+
 function MagicPanel(props) {
-  const spellsData = require("../data/" + props.Edition + "/Spells.json");
-  const AdeptPowers = require("../data/" + props.Edition + "/AdeptPowers.json");
-  const Totems = require("../data/" + props.Edition + "/Totems.json");
+  const spellsData = allSpells[`../data/${props.Edition}/Spells.json`]?.default;
+  const AdeptPowers = allAdeptPowers[`../data/${props.Edition}/AdeptPowers.json`]?.default;
+  const Totems = allTotems[`../data/${props.Edition}/Totems.json`]?.default;
 
   const AdeptPaths = {
     None: {

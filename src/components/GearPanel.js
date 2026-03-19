@@ -16,8 +16,11 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 
+// Pre-import all edition data so Vite can bundle them (no runtime require)
+const allGear = import.meta.glob('../data/*/Gear.json', { eager: true });
+
 export default function GearPanel(props) {
-  const GearData = require('../data/'+props.Edition+'/Gear.json');
+  const GearData = allGear[`../data/${props.Edition}/Gear.json`]?.default;
   const tempCategories = Object.keys(GearData);
   const GearCategories = [...tempCategories].sort();
   const CalcTotalNuyenSpent = () =>{
@@ -85,8 +88,9 @@ export default function GearPanel(props) {
           .sort((a, b) => a.Name.localeCompare(b.Name ?? ''))
           .map( (gear, index) => {
             const allowed = !gear.hasOwnProperty('BookPage') || props.BooksFilter.includes(gear.BookPage.split('.')[0]);
+            const bookCode = gear.BookPage?.split('.')[0];
             return (
-              <FilteredMenuItem allowed={allowed} selected={NewGearIndex === index} key={index} value={index}>{gear.Name}</FilteredMenuItem>
+              <FilteredMenuItem allowed={allowed} bookCode={bookCode} selected={NewGearIndex === index} key={index} value={index}>{gear.Name}</FilteredMenuItem>
             );
           });
       }else{

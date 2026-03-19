@@ -5,7 +5,7 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-const AllBooks = require('../data/Books.json');
+import AllBooks from '../data/Books.json';
 
 export default function IdentityPanel(props) {
     const label = { inputProps: { 'aria-label': 'Edition Switch' } };
