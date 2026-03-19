@@ -28,6 +28,8 @@ import ConditionMonitorBlock from './Sheet/ConditionMonitorBlock';
 import CyberdeckTable from './Sheet/CyberdeckTable';
 
 
+import Button from "@mui/material/Button";
+import PrintIcon from "@mui/icons-material/Print";
 import "./SheetDisplay.css";
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#1f1f1f",
@@ -57,6 +59,21 @@ function SheetDisplay(props) {
 
   return (
     <Grid container spacing={2} className="sheetBody">
+      <Grid item xs={12} className="no-print" style={{ textAlign: 'right', paddingBottom: '8px' }}>
+        <Button
+          variant="outlined"
+          startIcon={<PrintIcon />}
+          onClick={() => window.print()}
+          sx={{
+            color: '#00ffc3',
+            borderColor: '#00ffc3',
+            fontFamily: 'Share Tech Mono, monospace',
+            '&:hover': { borderColor: '#00ffc3', backgroundColor: 'rgba(0,255,195,0.1)' },
+          }}
+        >
+          Print Sheet
+        </Button>
+      </Grid>
       <RunnerInfo
         character={props.currentCharacter}
         onChange={(key, value) => {

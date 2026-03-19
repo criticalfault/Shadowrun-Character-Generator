@@ -611,8 +611,8 @@ export default function BasicTabs() {
 
   return (
     <div className="dashboard">
-      {displayBox()}
-       <Grid container spacing={2} style={{"width":"100%"}}>
+      <div className="no-print">{displayBox()}</div>
+       <Grid container spacing={2} style={{"width":"100%"}} className="no-print">
         <Grid item size={{ sm: 12, md: 4}}>
           <LoadCharacter
             Character={Character}
@@ -637,8 +637,8 @@ export default function BasicTabs() {
           />
         </Grid>
       </Grid>
-      <DiceRollerTray showDice={value} />
-      <Box sx={{ width: "100%" }}>
+      <DiceRollerTray showDice={value} className="no-print" />
+      <Box sx={{ width: "100%" }} className="no-print-tabs">
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs
             value={value}

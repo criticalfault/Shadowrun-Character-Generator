@@ -1,5 +1,6 @@
 import { MenuItem } from '@mui/material';
 import React, { useState } from 'react';
+import FilteredMenuItem from './FilteredMenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
@@ -63,7 +64,7 @@ export default function VehiclesPanel(props) {
     if(event.target.value === -1){
       return;
     }
-    const TempDrone = DronesData.filter(item => props.BooksFilter.includes(item['Book.Page'].split('.')[0]))[event.target.value];
+    const TempDrone = DronesData[event.target.value];
     setNewDrone(TempDrone);
     setNewDroneIndex(event.target.value)
     setNewDroneCost(TempDrone['$Cost']);
@@ -94,7 +95,7 @@ export default function VehiclesPanel(props) {
     if(event.target.value === -1){
       return;
     }
-    const TempVehicle = VehicleData.filter(item => props.BooksFilter.includes(item['Book.Page'].split('.')[0]))[event.target.value];
+    const TempVehicle = VehicleData[event.target.value];
     setNewVehicle(TempVehicle);
     setNewVehicleIndex(event.target.value)
     setNewVehicleCost(TempVehicle['$Cost']);
@@ -383,8 +384,8 @@ export default function VehiclesPanel(props) {
             onChange={handleVehicleChange}>
               <MenuItem selected={NewVehicleIndex === -1} key={-1} value={-1}>Select A Vehicle</MenuItem>
             { 
-                VehicleData.filter(item => props.BooksFilter.includes(item['Book.Page'].split('.')[0])).sort((a, b) => a - b).map( (gear, index) => (
-                    <MenuItem selected={NewVehicleIndex === index} key={index} value={index}>{gear.name}</MenuItem>
+                VehicleData.sort((a, b) => a - b).map( (gear, index) => (
+                    <FilteredMenuItem allowed={props.BooksFilter.includes(gear['Book.Page'].split('.')[0])} selected={NewVehicleIndex === index} key={index} value={index}>{gear.name}</FilteredMenuItem>
                 ))
             }
         </Select>
@@ -437,8 +438,8 @@ export default function VehiclesPanel(props) {
             onChange={handleDroneChange}>
               <MenuItem selected={NewDroneIndex === -1} key={-1} value={-1}>Select A Drone</MenuItem>
             { 
-                DronesData.filter(item => props.BooksFilter.includes(item['Book.Page'].split('.')[0])).sort((a, b) => a - b).map( (gear, index) => (
-                    <MenuItem selected={NewDroneIndex === index} key={index} value={index}>{gear.name}</MenuItem>
+                DronesData.sort((a, b) => a - b).map( (gear, index) => (
+                    <FilteredMenuItem allowed={props.BooksFilter.includes(gear['Book.Page'].split('.')[0])} selected={NewDroneIndex === index} key={index} value={index}>{gear.name}</FilteredMenuItem>
                 ))
             }
         </Select>

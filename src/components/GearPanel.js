@@ -1,5 +1,6 @@
 import { MenuItem } from '@mui/material';
 import React, { useState } from 'react';
+import FilteredMenuItem from './FilteredMenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
@@ -43,12 +44,6 @@ export default function GearPanel(props) {
       var TempGear = {}
       if(props.Edition === 'SR3'){
         TempGear = GearData[SelectedGearCategory].entries
-        .filter(
-          item => !item.hasOwnProperty('BookPage') || 
-          ( 
-            props.Edition === 'SR3' && props.BooksFilter.includes(item.BookPage.split('.')[0])
-          )
-        )
           .sort((a, b) => a.Name.localeCompare(b.Name))[event.target.value];
       }else{
         TempGear = GearData[SelectedGearCategory].entries.sort((a, b) => a.Name.localeCompare(b.Name))[event.target.value];
@@ -87,17 +82,13 @@ export default function GearPanel(props) {
 
       if(props.Edition === 'SR3'){
         return GearData[SelectedGearCategory].entries
-        .filter(
-          item => !item.hasOwnProperty('BookPage') || 
-          ( 
-            props.Edition === 'SR3' && props.BooksFilter.includes(item.BookPage.split('.')[0])
-          )
-        )
-          .sort((a, b) => a.Name.localeCompare(b.Name?? ''))
-          .map( (gear, index) => (
-              <MenuItem selected={NewGearIndex === index} key={index} value={index}>{gear.Name}</MenuItem>
-            )
-          )
+          .sort((a, b) => a.Name.localeCompare(b.Name ?? ''))
+          .map( (gear, index) => {
+            const allowed = !gear.hasOwnProperty('BookPage') || props.BooksFilter.includes(gear.BookPage.split('.')[0]);
+            return (
+              <FilteredMenuItem allowed={allowed} selected={NewGearIndex === index} key={index} value={index}>{gear.Name}</FilteredMenuItem>
+            );
+          });
       }else{
         return GearData[SelectedGearCategory].entries
         .sort((a, b) => a.Name.localeCompare(b.Name))
@@ -106,10 +97,6 @@ export default function GearPanel(props) {
           )
         )
       }
-      
-      
-
-
     }
 
     return ( <>
