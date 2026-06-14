@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Paper from "@mui/material/Paper";
 import { Grid } from "@mui/material";
 import { MenuItem } from "@mui/material";
-import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import FormControl from "@mui/material/FormControl";
+import SearchableSelect from "./SearchableSelect";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -28,10 +28,11 @@ const modalStyle = {
   p: 4,
 };
 
-import complexFormsData from "../data/SR2/ComplexForms.json";
+const allComplexForms = import.meta.glob('../data/*/ComplexForms.json', { eager: true });
 
 export default function OtakuPanel(props) {
-  const rawPrograms = complexFormsData;
+  const edition = props.Edition ?? 'SR2';
+  const rawPrograms = allComplexForms[`../data/${edition}/ComplexForms.json`]?.default ?? [];
   const [openModal, setOpenModal] = React.useState(false);
   const [NewComplexForm, setNewComplexForm] = useState(0);
   const [NewComplexFormIndex, setNewComplexFormIndex] = useState(0);
@@ -39,28 +40,40 @@ export default function OtakuPanel(props) {
     setOpenModal(true);
   };
 
+  // Sum base + race + cyber bonus for a single attribute
+  const attr = (name) =>
+    parseInt(props.currentCharacter.attributes[name] ?? 0) +
+    parseInt(props.currentCharacter.raceBonuses[name] ?? 0) +
+    parseInt(props.currentCharacter.cyberAttributeBonuses[name] ?? 0);
+
+  const WIL = attr('Willpower');
+  const INT = attr('Intelligence');
+  const CHA = attr('Charisma');
+
+  const MPCP = Math.ceil((INT + WIL + CHA) / 3);
+  const hackingPool = Math.floor((MPCP + INT) / 3);
+
   const OtakuPathInfo = {
-    'Cyber Adept':"Complex Forms are considering 1 rating higher when used",
-    'Technoshaman':"Reduce All TNs by 1 when using Channel Skills"
+    'Cyber Adept': "Complex forms are treated as 1 rating higher when used (does not affect size)",
+    'Technoshaman': "Reduce all target numbers by 1 when using Channel skills",
   }
 
   const handleCloseModal = () => setOpenModal(false);
-  const addComplexForm = () => { 
-    let ComplexForm = {
+  const addComplexForm = () => {
+    const ComplexForm = {
       Name: NewComplexForm.Name,
       Multiplyer: NewComplexForm.Multiplyer,
       Rating: 1,
       Size: NewComplexForm.Multiplyer,
     };
-    props.complexForms.push(ComplexForm);
     setOpenModal(false);
-    props.onChangeComplexForm(props.complexForms);
+    props.onChangeComplexForm([...props.complexForms, ComplexForm]);
   };
 
   const removeComplexForm = (event, index) => {
-    let formIndex = index;
-    props.complexForms.splice(formIndex, 1);
-    props.onChangeComplexForm(props.complexForms);
+    const updated = [...props.complexForms];
+    updated.splice(index, 1);
+    props.onChangeComplexForm(updated);
   };
 
   const handleComplexFormChange = (event) => {
@@ -70,34 +83,25 @@ export default function OtakuPanel(props) {
   };
 
   const handleCFRatingChange = (event, index) => {
-    let programIndex = index;
-    let CF = props.complexForms[programIndex];
-    props.complexForms[programIndex].Rating = event.target.value;
-    props.complexForms[programIndex].Size = (CF.Rating * CF.Rating) * CF.Multiplyer;
-    props.onChangeComplexForm(props.complexForms);
+    const newRating = parseInt(event.target.value);
+    const updated = props.complexForms.map((cf, i) => {
+      if (i !== index) return cf;
+      return { ...cf, Rating: newRating, Size: newRating * newRating * cf.Multiplyer };
+    });
+    props.onChangeComplexForm(updated);
   };
 
-  const renderFreeProgrammingDays = () => {
-    let poolValue = 0;
-    props.currentCharacter.skills.forEach(function (skill) {
-        if (skill.name === "Computer") {
-          if (skill.hasOwnProperty("selectedConcentrations") && skill.selectedConcentrations.length > 0) {
-            skill.selectedConcentrations.forEach(function (subSkill) {
-            if (poolValue < subSkill.rating) {
-              poolValue = subSkill.rating;
-            }
-          });
-        }else{
-          poolValue = skill.rating;
-        }
-      }
-    });
-    return (<span>{poolValue*3}</span>);
-  }
+  // Book (Matrix p.137): free complex forms = Computer(Programming) skill × 50 Mp
+  const getFreeComplexFormMp = () => {
+    const compSkill = props.currentCharacter.skills.find(
+      (s) => s.name === "Computer" || s.name === "Computer (Programming)"
+    );
+    const rating = compSkill?.rating ?? 0;
+    return rating * 50;
+  };
 
   const handlePathChange = (event) => {
-    props.currentCharacter.otakuPath = event.target.value;
-    props.onChangeOtakuPath(event.target.value)
+    props.onChangeOtakuPath(event.target.value);
   };
 
   return (
@@ -116,89 +120,51 @@ export default function OtakuPanel(props) {
               <tbody>
                 <tr>
                   <td>MPCP</td>
-                  <td>{ 
-                  Math.ceil((
-                    parseInt(props.currentCharacter.attributes.Willpower) +
-                    parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0) +
-
-                    parseInt(props.currentCharacter.attributes.Intelligence) +
-                    parseInt(props.currentCharacter.raceBonuses.Intelligence ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence ?? 0)+
-
-                    parseInt(props.currentCharacter.attributes.Charisma) +
-                    parseInt(props.currentCharacter.raceBonuses.Charisma ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Charisma ?? 0)) / 3)
-                  }</td>
+                  <td>{MPCP}</td>
                 </tr>
                 <tr>
                   <td>Bod</td>
-                  <td>{
-                    parseInt(props.currentCharacter.attributes.Willpower) +
-                    parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0)
-                    }</td>
+                  <td>{WIL}</td>
                 </tr>
                 <tr>
-                  <td>Sensors</td>
-                  <td>{  parseInt(props.currentCharacter.attributes.Intelligence) +
-                    parseInt(props.currentCharacter.raceBonuses.Intelligence ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence ?? 0)}</td>
+                  <td>Sensor</td>
+                  <td>{INT}</td>
                 </tr>
                 <tr>
                   <td>Masking</td>
-                  <td>{ 
-
-                    Math.ceil(parseInt(props.currentCharacter.attributes.Willpower) +
-                    parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0) +
-                    parseInt(props.currentCharacter.attributes.Charisma) +
-                    parseInt(props.currentCharacter.raceBonuses.Charisma ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Charisma ?? 0) )/2
-                    
-                    }</td>
+                  <td>{Math.ceil((WIL + CHA) / 2)}</td>
                 </tr>
                 <tr>
                   <td>Evasion</td>
-                  <td>{ parseInt(props.currentCharacter.attributes.Intelligence) +
-                    parseInt(props.currentCharacter.raceBonuses.Intelligence ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence ?? 0)}</td>
+                  <td>{INT}</td>
                 </tr>
                 <tr>
                   <td>Hardening</td>
-                  <td>{
-                    Math.ceil((
-                      parseInt(props.currentCharacter.attributes.Willpower) +
-                      parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
-                      parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0)
-                    )/2)
-                    }</td>
+                  <td>{Math.ceil(WIL / 2)}</td>
+                </tr>
+                <tr>
+                  <td>Matrix Reaction</td>
+                  <td>{INT}</td>
+                </tr>
+                <tr>
+                  <td>Matrix Initiative</td>
+                  <td>{INT} + 4D6</td>
+                </tr>
+                <tr>
+                  <td>I/O Speed</td>
+                  <td>{INT * 100} Mp</td>
+                </tr>
+                <tr>
+                  <td>Hacking Pool</td>
+                  <td>{hackingPool}</td>
                 </tr>
                 <tr>
                   <td>Memory</td>
-                  <td>N/A</td>
+                  <td title="Complex forms require no active memory">N/A</td>
                 </tr>
                 <tr>
                   <td>Storage</td>
-                  <td>N/A</td>
-                </tr>
-                <tr>
-                  <td>I/O:</td>
-                  <td>{(parseInt(props.currentCharacter.attributes.Intelligence) +
-                    parseInt(props.currentCharacter.raceBonuses.Intelligence ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence ?? 0))*100} MPs</td>
-                </tr>
-                <tr>
-                  <td>Response Increase:</td>
-                  <td>{
-                    Math.ceil((
-                    parseInt(props.currentCharacter.attributes.Intelligence) +
-                    parseInt(props.currentCharacter.raceBonuses.Intelligence ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence ?? 0)+
-                    parseInt(props.currentCharacter.attributes.Willpower) +
-                      parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
-                      parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0))/2)
-                    } +3d6</td>
+                  <td title="Uses external headware memory for file transfers">External</td>
                 </tr>
               </tbody>
             </table>
@@ -222,15 +188,9 @@ export default function OtakuPanel(props) {
             </div>
             <br></br>
             <div><strong>Otaku Path:</strong> <em>{props.currentCharacter.otakuPath}</em>: {OtakuPathInfo[props.currentCharacter.otakuPath]} </div>
-            <div><strong>Otaku Task Bonus:</strong> {Math.ceil(
-              (parseInt(props.currentCharacter.attributes.Intelligence) +
-              parseInt(props.currentCharacter.raceBonuses.Intelligence ?? 0) +
-              parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence ?? 0)+
-              parseInt(props.currentCharacter.attributes.Charisma) +
-              parseInt(props.currentCharacter.raceBonuses.Charisma ?? 0) +
-              parseInt(props.currentCharacter.cyberAttributeBonuses.Charisma ?? 0))/4
-            )}</div>
-            <div><strong>Character Gen Free Programming Days:</strong> {renderFreeProgrammingDays()}</div>
+            <div><strong>Hacking Pool:</strong> {hackingPool}</div>
+            <div><strong>Starting Channel Points:</strong> {MPCP} (= MPCP; distribute among 5 channels)</div>
+            <div><strong>Free Complex Forms (char gen):</strong> {getFreeComplexFormMp()} Mp (Computer(Programming) × 50)</div>
             <h3>Complex Forms</h3>
             <div>
                <Modal
@@ -240,20 +200,14 @@ export default function OtakuPanel(props) {
                   aria-describedby="modal-modal-description"
                 >
                 <Box sx={modalStyle}>
-                  <FormControl style={{ width: "200px" }}>
-                    <InputLabel id="gear-label">Complex Form</InputLabel>
-                    <Select
-                      id="program-dropdown"
-                      value={NewComplexFormIndex}
-                      onChange={handleComplexFormChange}
-                    >
-                      {rawPrograms.map((prog, index) => (
-                        <MenuItem key={index} value={index}>
-                          {prog.Name}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
+                  <SearchableSelect
+                    items={rawPrograms}
+                    value={NewComplexFormIndex}
+                    onChange={handleComplexFormChange}
+                    label="Complex Form"
+                    getLabel={(prog) => prog.Name}
+                    style={{ width: "300px" }}
+                  />
                   <Button variant="contained" color="primary" onClick={addComplexForm}>
                     Add Complex Form
                   </Button>
@@ -282,28 +236,11 @@ export default function OtakuPanel(props) {
                 <TableBody>
                   <TableRow key={0}>
                       <TableCell>Armor</TableCell>
-                      <TableCell>{parseInt(props.currentCharacter.attributes.Willpower) +
-                      parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
-                      parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0)}</TableCell>
+                      <TableCell>{WIL}</TableCell>
                       <TableCell>3</TableCell>
-                      <TableCell>{(parseInt(props.currentCharacter.attributes.Willpower) +
-                      parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
-                      parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0)+
-                      parseInt(props.currentCharacter.attributes.Willpower) +
-                      parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
-                      parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0))*3}</TableCell>
+                      <TableCell>{WIL * WIL * 3}</TableCell>
                       <TableCell>Free</TableCell>
-                      <TableCell>
-                        <button
-                          edge="end"
-                          aria-label="delete"
-                          onClick={(event) =>
-                            removeComplexForm(event, index)
-                          }
-                        >
-                          <DeleteIcon />
-                        </button>
-                      </TableCell>
+                      <TableCell></TableCell>
                     </TableRow>
                   {props.complexForms.map((cForm, index) => (
                     <TableRow key={index}>

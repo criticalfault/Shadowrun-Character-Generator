@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import Paper from "@mui/material/Paper";
 import { Grid } from "@mui/material";
-import { MenuItem } from "@mui/material";
-import InputLabel from "@mui/material/InputLabel";
-import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import FormControl from "@mui/material/FormControl";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -15,6 +11,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Modal from "@mui/material/Modal";
+import SearchableSelect from "./SearchableSelect";
 import "./DeckingPanel.css";
 
 // Pre-import all edition data so Vite can bundle them (no runtime require)
@@ -116,82 +113,70 @@ export default function DeckingPanel(props) {
   };
 
   const handlePersonaChange = (event) => {
-    let value = event.target.value;
-    let index = event.target.attributes.getNamedItem("data-index").value;
-    let attribute = event.target.name;
-    let maxAttribute = SelectedCyberdecks[index].Persona;
-    let maxAttributes = parseInt(SelectedCyberdecks[index].Persona) * 3;
-    let AttributeSum =
-      parseInt(SelectedCyberdecks[index].Bod) +
-      parseInt(SelectedCyberdecks[index].Evasion) +
-      parseInt(SelectedCyberdecks[index].Sensors) +
-      parseInt(SelectedCyberdecks[index].Masking);
-    if (value > maxAttribute) {
-      value = maxAttribute;
-    }
+    let value = parseInt(event.target.value);
+    const index = parseInt(event.target.attributes.getNamedItem("data-index").value);
+    const attribute = event.target.name;
+    const deck = SelectedCyberdecks[index];
+    const maxAttribute = parseInt(deck.Persona);
+    const maxAttributes = maxAttribute * 3;
+    const AttributeSum =
+      parseInt(deck.Bod) + parseInt(deck.Evasion) +
+      parseInt(deck.Sensors) + parseInt(deck.Masking);
 
-    //No attribute can be negative
-    if (value < 0) {
-      value = 0;
-    }
+    if (value > maxAttribute) value = maxAttribute;
+    if (value < 0) value = 0;
+    if (AttributeSum - maxAttributes >= 0 && deck[attribute] < value) return;
 
-    //Need a better check to make sure the attributes max points arent negative.
-    if (parseInt(AttributeSum) - maxAttributes >= 0) {
-      if (SelectedCyberdecks[index][attribute] < value) {
-        return;
-      }
-    }
-
-    const editedcyberdecks = [...SelectedCyberdecks];
-    editedcyberdecks[index][attribute] = value;
+    const editedcyberdecks = SelectedCyberdecks.map((d, i) =>
+      i === index ? { ...d, [attribute]: value } : d
+    );
+    setSelectedCyberdecks(editedcyberdecks);
     props.onChangeDeck(editedcyberdecks);
   };
 
+  const updateDeckPrograms = (deckIndex, newPrograms) => {
+    const updated = SelectedCyberdecks.map((d, i) =>
+      i === deckIndex ? { ...d, ProgramsInStorage: newPrograms } : d
+    );
+    setSelectedCyberdecks(updated);
+    props.onChangeDeck(updated);
+  };
+
   const addProgram = () => {
-    const editedcyberdecks = [...SelectedCyberdecks];
-    let Program = {
+    const newProgram = {
       Name: NewCyberdeckProgram.Name,
       Multiplyer: NewCyberdeckProgram.Multiplyer,
       Rating: 1,
       Loaded: false,
       Size: NewCyberdeckProgram.Multiplyer,
     };
-    editedcyberdecks[modalCurrentTarget].ProgramsInStorage.push(Program);
-    props.onChangeDeck(editedcyberdecks);
+    const deck = SelectedCyberdecks[modalCurrentTarget];
+    updateDeckPrograms(modalCurrentTarget, [...deck.ProgramsInStorage, newProgram]);
     setOpenModal(false);
   };
 
-  const removeProgram = (event, index, index2) => {
-    let cyberdeckIndex = index;
-    let programIndex = index2;
-    const editedcyberdecks = [...SelectedCyberdecks];
-    editedcyberdecks[cyberdeckIndex].ProgramsInStorage.splice(programIndex, 1);
-    setSelectedCyberdecks(editedcyberdecks);
-    props.onChangeDeck(editedcyberdecks);
+  const removeProgram = (event, deckIndex, programIndex) => {
+    const programs = SelectedCyberdecks[deckIndex].ProgramsInStorage.filter(
+      (_, i) => i !== programIndex
+    );
+    updateDeckPrograms(deckIndex, programs);
   };
 
-  const handleProgramRatingChange = (event, index, index2) => {
-    let cyberdeckIndex = index;
-    let programIndex = index2;
-    const editedcyberdecks = [...SelectedCyberdecks];
-    let program =
-      editedcyberdecks[cyberdeckIndex].ProgramsInStorage[programIndex];
-    editedcyberdecks[cyberdeckIndex].ProgramsInStorage[programIndex].Rating =
-      event.target.value;
-    editedcyberdecks[cyberdeckIndex].ProgramsInStorage[programIndex].Size =
-      program.Rating * program.Rating * program.Multiplyer;
-    setSelectedCyberdecks(editedcyberdecks);
-    props.onChangeDeck(editedcyberdecks);
+  const handleProgramRatingChange = (event, deckIndex, programIndex) => {
+    const newRating = parseInt(event.target.value);
+    const programs = SelectedCyberdecks[deckIndex].ProgramsInStorage.map((p, i) =>
+      i === programIndex
+        ? { ...p, Rating: newRating, Size: newRating * newRating * p.Multiplyer }
+        : p
+    );
+    updateDeckPrograms(deckIndex, programs);
   };
 
-  const handleProgramToggle = (event, index, index2) => {
-    let cyberdeckIndex = index;
-    let programIndex = index2;
-    const editedcyberdecks = [...SelectedCyberdecks];
-    editedcyberdecks[cyberdeckIndex].ProgramsInStorage[programIndex].Loaded =
-      !editedcyberdecks[cyberdeckIndex].ProgramsInStorage[programIndex].Loaded;
-    setSelectedCyberdecks(editedcyberdecks);
-    props.onChangeDeck(editedcyberdecks);
+  const handleProgramToggle = (event, deckIndex, programIndex) => {
+    const programs = SelectedCyberdecks[deckIndex].ProgramsInStorage.map((p, i) =>
+      i === programIndex ? { ...p, Loaded: !p.Loaded } : p
+    );
+    updateDeckPrograms(deckIndex, programs);
   };
 
   const CalcMemoryUsed = (index) => {
@@ -439,27 +424,21 @@ export default function DeckingPanel(props) {
 
   const showCyberdeckDropdown = () => {
     return (
-      <Box sx={{ width: "250px" }}>
-        <FormControl style={{ width: "200px" }}>
-          <InputLabel id="gear-label">Cyberdecks</InputLabel>
-          <Select
-            id="cyberdeck-dropdown"
-            value={NewCyberdeckIndex}
-            onChange={handleCyberdeckChange}
-          >
-            {rawCyberdecks.map((deck, index) => (
-              <MenuItem key={index} value={index}>
-                {deck.Name}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+      <Box sx={{ width: "350px" }}>
+        <SearchableSelect
+          items={rawCyberdecks}
+          value={NewCyberdeckIndex}
+          onChange={handleCyberdeckChange}
+          label="Cyberdecks"
+          getLabel={(deck) => deck.Name}
+          style={{ width: "300px" }}
+        />
         <Button
           variant="contained"
           color="primary"
           onClick={handleAddCyberdeck}
           className=""
-          style={{ marginTop: "30px" }}
+          style={{ marginTop: "10px" }}
         >
           Add Cyberdeck
         </Button>
@@ -476,21 +455,15 @@ export default function DeckingPanel(props) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={modalStyle}>
-          <FormControl style={{ width: "200px" }}>
-            <InputLabel id="gear-label">Programs</InputLabel>
-            <Select
-              id="program-dropdown"
-              value={NewCyberdeckProgramIndex}
-              onChange={handleCyberdeckProgramChange}
-            >
-              {rawPrograms.map((prog, index) => (
-                <MenuItem key={index} value={index}>
-                  {prog.Name}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-          <Button variant="contained" color="primary" onClick={addProgram}>
+          <SearchableSelect
+            items={rawPrograms}
+            value={NewCyberdeckProgramIndex}
+            onChange={handleCyberdeckProgramChange}
+            label="Programs"
+            getLabel={(prog) => prog.Name}
+            style={{ width: "300px" }}
+          />
+          <Button variant="contained" color="primary" onClick={addProgram} style={{ marginTop: "10px" }}>
             Add Program
           </Button>
         </Box>
