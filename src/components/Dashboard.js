@@ -632,7 +632,7 @@ export default function BasicTabs() {
     <div className="dashboard">
       <div className="no-print">{displayBox()}</div>
        <Grid container spacing={2} style={{"width":"100%"}} className="no-print">
-        <Grid item size={{ sm: 12, md: 4}}>
+        <Grid item size={{ sm: 12 }}>
           <LoadCharacter
             Character={Character}
             loadCharacter={handleLoadCharacter}
@@ -641,10 +641,9 @@ export default function BasicTabs() {
             ChangeEdition={handleChangeEdition}
             CGMethod = {CGMethod}
           />
-        </Grid>
-        <Grid item size={{ sm: 12, md: 7}}>
+          &nbsp;&nbsp;
           <SignInPopup
-            user={user} 
+            user={user}
             onSignIn={handleSignIn}
             setUser={setUser}
             Character={Character}
