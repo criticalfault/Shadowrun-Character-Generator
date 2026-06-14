@@ -1170,16 +1170,13 @@ export default function AttributesPanel(props) {
     }
 
     const calcIncreaseAttributeTarget = () => {
-        console.log(props.Edition);
         let attributeCost = KarmaCosts[props.Edition]['racialLimits'][props.currentCharacter.race][increaseAttributeTarget];
-        console.log(attributeCost);
         if(props.currentCharacter.attributes[increaseAttributeTarget] >= attributeCost['limit'] && props.currentCharacter.attributes[increaseAttributeTarget] <= attributeCost['max']){
             return (props.currentCharacter.attributes[increaseAttributeTarget]+1) * KarmaCosts[props.Edition].costs.overLimit;
         }else if(props.currentCharacter.attributes[increaseAttributeTarget] < attributeCost['limit'] ){
 
             return (props.currentCharacter.attributes[increaseAttributeTarget]+1) * KarmaCosts[props.Edition].costs.underLimit;
         }else{
-            console.log("Invalid range");
             return "1";
         }
     }

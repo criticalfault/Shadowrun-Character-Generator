@@ -74,6 +74,7 @@
   {
     "Name": "Blend In\\Stand Out",
     "BookPage": "tss.4",
+    "HasLevels": false,
     "Cost": "0.75",
     "Mods": "",
     "Notes": "One power can be used either way.  Use counts as sustaining a spell but is not evident in astral."

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import FilteredMenuItem from './FilteredMenuItem';
+import SearchableSelect from './SearchableSelect';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
@@ -117,8 +118,6 @@ export default function CyberwarePanel(props) {
   const handleRemoveCyberware = (index) => {
     const editedCyberware = [...selectedCyberware];
     let RemovedCyberware = editedCyberware.splice(index, 1);
-    console.log("Removed Cyberware:");
-    console.log(RemovedCyberware);
     setSelectedCyberware(editedCyberware);
     props.onChangeCyberware([...editedCyberware]);
   };
@@ -181,7 +180,6 @@ const handleCyberOrBioChange = (event) => {
       }
     });
     cyberModsTotals.forEach(function(mod){
-      console.log(mod);
       let AttributesToMod = convertModsToAttributes(mod.split(','));
       for(let i=0; i<AttributesToMod.length; i++){
           if(!cyberAttributeBonuses.hasOwnProperty(Object.keys(AttributesToMod[i])[0])){
@@ -288,17 +286,22 @@ const handleCyberOrBioChange = (event) => {
       <br></br>
     {SelectedCyberwareCategory && (
       <>
-        <FormControl style={{ minWidth: 650 }}>
-        <InputLabel id="power-label">{SelectedCyberwareCategory}</InputLabel>
-        <Select
-            id="power-dropdown"
-            value={NewCyberwareIndex}
-            onChange={handleCyberwareChange}>
-            {CyberwareData[SelectedCyberwareCategory].map( (cyber, index) => (
-            <FilteredMenuItem allowed={props.BooksFilter.includes(cyber.BookPage.split('.')[0])} bookCode={cyber.BookPage.split('.')[0]} selected={NewCyberwareIndex === index} key={index} value={index}>{cyber.Name} - Essence Cost: {cyber.EssCost}</FilteredMenuItem>
-            ))}
-        </Select>
-        </FormControl>
+        <SearchableSelect
+          items={CyberwareData[SelectedCyberwareCategory]}
+          value={NewCyberwareIndex}
+          onChange={handleCyberwareChange}
+          label={SelectedCyberwareCategory}
+          renderItem={(cyber, i) => (
+            <FilteredMenuItem
+              allowed={props.BooksFilter.includes(cyber.BookPage.split('.')[0])}
+              bookCode={cyber.BookPage.split('.')[0]}
+              key={i} value={i}
+            >
+              {cyber.Name} - Essence Cost: {cyber.EssCost}
+            </FilteredMenuItem>
+          )}
+          style={{ minWidth: 650 }}
+        />
         <br/><br/>
         <FormControl>
           <FormLabel id="grade-radio-buttons-group-label">Grade</FormLabel>
@@ -385,17 +388,22 @@ const handleCyberOrBioChange = (event) => {
     <br></br>
     <br></br>
 {BiowareSelectedCategory && (
-    <FormControl style={{ minWidth: 650 }}>
-    <InputLabel  id="power-label">{BiowareSelectedCategory}</InputLabel>
-    <Select
-        id="power-dropdown"
-        value={NewBiowareIndex}
-        onChange={handleBiowareChange}>
-        {BiowareData[BiowareSelectedCategory].map( (cyber, index) => (
-        <FilteredMenuItem allowed={props.BooksFilter.includes(cyber.BookPage.split('.')[0])} bookCode={cyber.BookPage.split('.')[0]} selected={NewBiowareIndex === index} key={index} value={index}>{cyber.Name} - BioIndex Cost: {cyber.BioIndex}</FilteredMenuItem>
-        ))}
-    </Select>
-    </FormControl>
+    <SearchableSelect
+      items={BiowareData[BiowareSelectedCategory]}
+      value={NewBiowareIndex}
+      onChange={handleBiowareChange}
+      label={BiowareSelectedCategory}
+      renderItem={(bio, i) => (
+        <FilteredMenuItem
+          allowed={props.BooksFilter.includes(bio.BookPage.split('.')[0])}
+          bookCode={bio.BookPage.split('.')[0]}
+          key={i} value={i}
+        >
+          {bio.Name} - BioIndex Cost: {bio.BioIndex}
+        </FilteredMenuItem>
+      )}
+      style={{ minWidth: 650 }}
+    />
     )}
     {NewBioware && (
     <>

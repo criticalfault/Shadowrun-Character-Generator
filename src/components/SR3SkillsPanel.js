@@ -354,8 +354,6 @@ function SR3SkillsPanel({
         case "Knowledge":
           editedSkills = [...selectedKnowledgeSkills];
           skillToEdit = editedSkills[index];
-          console.log(editedSkills);
-          console.log(skillToEdit);
           if (skillToEdit !== undefined) {
             setKnowledgeSelectedSpecialization(
               skillToEdit.specialization ?? "None"
@@ -368,7 +366,7 @@ function SR3SkillsPanel({
           break;
 
         case "Language":
-          editedSkills = [...selectedKnowledgeSkills];
+          editedSkills = [...selectedLanguageSkills];
           skillToEdit = editedSkills[index];
           setLanguageSelectedSpecialization(
             skillToEdit.specialization ?? "None"
@@ -392,38 +390,21 @@ function SR3SkillsPanel({
 
   const handleRemoveSkill = (index, type) => {
     let editedSkills = null;
-    console.log(index, type)
-    console.log(...selectedSkills)
     switch (type) {
       case "Active":
         editedSkills = [...selectedSkills];
         editedSkills.splice(index, 1);
         setSelectedSkills(editedSkills);
-        onUpdateSkills([
-          ...selectedSkills,
-          ...selectedKnowledgeSkills,
-          ...selectedLanguageSkills,
-        ]);
         break;
       case "Knowledge":
         editedSkills = [...selectedKnowledgeSkills];
         editedSkills.splice(index, 1);
         setKnowledgeSelectedSkills(editedSkills);
-        onUpdateSkills([
-          ...selectedSkills,
-          ...selectedKnowledgeSkills,
-          ...selectedLanguageSkills,
-        ]);
         break;
       case "Language":
         editedSkills = [...selectedLanguageSkills];
         editedSkills.splice(index, 1);
         setLanguageSelectedSkills(editedSkills);
-        onUpdateSkills([
-          ...selectedSkills,
-          ...selectedKnowledgeSkills,
-          ...selectedLanguageSkills,
-        ]);
         break;
       default:
         break;
