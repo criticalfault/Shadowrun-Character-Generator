@@ -10,7 +10,6 @@ import TableRow from "@mui/material/TableRow";
 import TableHeader from "./TableHeader";
 
 export default function TableAttribute(props) {
-  console.log("🚀 ~ TableAttribute ~ props:", props);
 
   const columns = [
     { id: "attribute", label: "Attribute", minWidth: 120 },
@@ -146,7 +145,6 @@ export default function TableAttribute(props) {
       total: props.currentCharacter.attributes?.Initative ?? 1,
     },
   ];
-  console.log("🚀 ~ TableAttribute ~ rows:", rows);
 
   // Rest of the component code remains the same...
 

@@ -1,8 +1,8 @@
 import { MenuItem } from '@mui/material';
 import React, { useState } from 'react';
 import FilteredMenuItem from './FilteredMenuItem';
+import SearchableSelect from './SearchableSelect';
 import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
@@ -39,26 +39,23 @@ export default function GearPanel(props) {
   const [SelectedGear, setSelectedGear] = useState(props.Gear);
   const [SelectedGearCategory, setSelectedGearCategory] = useState(GearCategories[0]);
 
+    const getSortedEntries = () =>
+      GearData[SelectedGearCategory].entries.slice().sort((a, b) => a.Name.localeCompare(b.Name));
+
     const handleGearCategoryChange = (event) => {
         setSelectedGearCategory(event.target.value);
+        setNewGear(null);
+        setNewGearIndex(0);
+        setNewGearDesc('');
     }
-    
-    const handleGearChange = (event) => {
-      var TempGear = {}
-      if(props.Edition === 'SR3'){
-        TempGear = GearData[SelectedGearCategory].entries
-          .sort((a, b) => a.Name.localeCompare(b.Name))[event.target.value];
-      }else{
-        TempGear = GearData[SelectedGearCategory].entries.sort((a, b) => a.Name.localeCompare(b.Name))[event.target.value];
-      }
 
+    const handleGearChange = (event) => {
+      const TempGear = getSortedEntries()[event.target.value];
       setNewGear(TempGear);
-      setNewGearIndex(event.target.value)
+      setNewGearIndex(event.target.value);
       setNewGearCost(TempGear.Cost);
       setNewGearAmount(1);
-      if(TempGear.hasOwnProperty('Notes')){
-        setNewGearDesc(TempGear.Notes)
-      }
+      setNewGearDesc(TempGear.Notes ?? '');
     }
   
     const handleAddGear = () => {
@@ -81,26 +78,15 @@ export default function GearPanel(props) {
       props.onChangeGear([...editedGear]);
     };
 
-    const renderGearList = () => {
-
-      if(props.Edition === 'SR3'){
-        return GearData[SelectedGearCategory].entries
-          .sort((a, b) => a.Name.localeCompare(b.Name ?? ''))
-          .map( (gear, index) => {
-            const allowed = !gear.hasOwnProperty('BookPage') || props.BooksFilter.includes(gear.BookPage.split('.')[0]);
-            const bookCode = gear.BookPage?.split('.')[0];
-            return (
-              <FilteredMenuItem allowed={allowed} bookCode={bookCode} selected={NewGearIndex === index} key={index} value={index}>{gear.Name}</FilteredMenuItem>
-            );
-          });
-      }else{
-        return GearData[SelectedGearCategory].entries
-        .sort((a, b) => a.Name.localeCompare(b.Name))
-        .map( (gear, index) => (
-            <MenuItem selected={NewGearIndex === index} key={index} value={index}>{gear.Name}</MenuItem>
-          )
-        )
+    const renderGearItem = (gear, originalIndex) => {
+      if (props.Edition === 'SR3') {
+        const allowed = !gear.hasOwnProperty('BookPage') || props.BooksFilter.includes(gear.BookPage.split('.')[0]);
+        const bookCode = gear.BookPage?.split('.')[0];
+        return (
+          <FilteredMenuItem allowed={allowed} bookCode={bookCode} key={originalIndex} value={originalIndex}>{gear.Name}</FilteredMenuItem>
+        );
       }
+      return <MenuItem key={originalIndex} value={originalIndex}>{gear.Name}</MenuItem>;
     }
 
     return ( <>
@@ -124,15 +110,14 @@ export default function GearPanel(props) {
         </FormControl>
     </Box><br></br>
     {SelectedGearCategory && (
-        <FormControl style={{ minWidth: 650 }}>
-        <InputLabel id="power-label">{SelectedGearCategory}</InputLabel>
-        <Select
-            id="power-dropdown"
-            value={NewGearIndex}
-            onChange={handleGearChange}>
-          { renderGearList() }
-        </Select>
-        </FormControl>
+      <SearchableSelect
+        items={getSortedEntries()}
+        value={NewGearIndex}
+        onChange={handleGearChange}
+        label={SelectedGearCategory}
+        renderItem={renderGearItem}
+        style={{ minWidth: 650 }}
+      />
     )}
     {NewGear && (
         <>
