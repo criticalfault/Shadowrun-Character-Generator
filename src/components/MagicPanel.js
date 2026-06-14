@@ -1754,7 +1754,7 @@ function MagicPanel(props) {
         <br></br>
         {RenderSpellPointPurchase()}
         <SearchableSelect
-          items={spellsData.slice().sort((a, b) => (a.Name ?? '').localeCompare(b.Name ?? ''))}
+          items={(spellsData ?? []).slice().sort((a, b) => (a.Name ?? '').localeCompare(b.Name ?? ''))}
           value={newSpellIndex}
           onChange={handleSpellChange}
           label="Spells"
