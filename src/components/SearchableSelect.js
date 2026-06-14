@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import Box from '@mui/material/Box';
 
 /**
@@ -29,8 +30,13 @@ export default function SearchableSelect({
   const [filter, setFilter] = useState('');
 
   const resolveLabel = getLabel ?? ((item) => item.Name ?? item.name ?? '');
+  const defaultRenderItem = (item, originalIndex, filteredIdx) => (
+    <MenuItem key={filteredIdx} value={filteredIdx}>{resolveLabel(item)}</MenuItem>
+  );
+  const resolvedRenderItem = renderItem ?? defaultRenderItem;
 
-  const filteredItems = items
+  const safeItems = items ?? [];
+  const filteredItems = safeItems
     .map((item, originalIndex) => ({ item, originalIndex }))
     .filter(({ item }) => {
       if (!filter.trim()) return true;
@@ -59,7 +65,7 @@ export default function SearchableSelect({
         placeholder="Type to search..."
       />
       <Box sx={{ fontSize: '0.8rem', color: '#aaa', marginBottom: '6px' }}>
-        {filteredItems.length} / {items.length} item{items.length !== 1 ? 's' : ''}
+        {filteredItems.length} / {safeItems.length} item{safeItems.length !== 1 ? 's' : ''}
       </Box>
       <FormControl style={style}>
         <InputLabel>{label}</InputLabel>
@@ -68,7 +74,7 @@ export default function SearchableSelect({
           onChange={handleSelectChange}
         >
           {filteredItems.map(({ item, originalIndex }, filteredIdx) =>
-            renderItem(item, originalIndex, filteredIdx)
+            resolvedRenderItem(item, originalIndex, filteredIdx)
           )}
         </Select>
       </FormControl>

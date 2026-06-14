@@ -36,6 +36,86 @@ export default function OtakuPanel(props) {
   const [openModal, setOpenModal] = React.useState(false);
   const [NewComplexForm, setNewComplexForm] = useState(0);
   const [NewComplexFormIndex, setNewComplexFormIndex] = useState(0);
+
+  // Sprite state
+  const sprites = props.sprites ?? [];
+  const [spriteModalOpen, setSpriteModalOpen] = useState(false);
+  const [editingSpriteIndex, setEditingSpriteIndex] = useState(null);
+  const [spriteForm, setSpriteForm] = useState({ Name: '', CoreRating: 1, Bod: 1, Evasion: 1, Masking: 1, Sensor: 1, Pilot: 1, ExtraInitDice: 0, CFPayload: 0, ComplexForms: [] });
+  const [spriteCFIndex, setSpriteCFIndex] = useState(0);
+  const [spriteCFValue, setSpriteCFValue] = useState(0);
+  const [spriteCFModalOpen, setSpriteCFModalOpen] = useState(false);
+
+  const getCompSkillRating = () => {
+    const s = props.currentCharacter.skills.find(
+      (s) => s.name === 'Computer' || s.name === 'Computer (Programming)'
+    );
+    return s?.rating ?? 10;
+  };
+
+  const spritePersonaPointsLeft = (sf) => {
+    const core = parseInt(sf.CoreRating) || 1;
+    const used = parseInt(sf.Bod) + parseInt(sf.Evasion) + parseInt(sf.Masking) + parseInt(sf.Sensor);
+    return core * 3 - used;
+  };
+
+  const spriteFramePointsLeft = (sf) => {
+    const core = parseInt(sf.CoreRating) || 1;
+    const pilotCost = (parseInt(sf.Pilot) || 1) * 2;
+    const initCost = (parseInt(sf.ExtraInitDice) || 0) * 3;
+    const payloadCost = parseInt(sf.CFPayload) || 0;
+    return core * 4 - pilotCost - initCost - payloadCost;
+  };
+
+  const openNewSpriteModal = () => {
+    setEditingSpriteIndex(null);
+    setSpriteForm({ Name: '', CoreRating: 1, Bod: 1, Evasion: 1, Masking: 1, Sensor: 1, Pilot: 1, ExtraInitDice: 0, CFPayload: 0, ComplexForms: [] });
+    setSpriteModalOpen(true);
+  };
+
+  const openEditSpriteModal = (index) => {
+    setEditingSpriteIndex(index);
+    setSpriteForm({ ...sprites[index] });
+    setSpriteModalOpen(true);
+  };
+
+  const saveSpriteModal = () => {
+    if (editingSpriteIndex !== null) {
+      props.onChangeSprites(sprites.map((s, i) => i === editingSpriteIndex ? { ...spriteForm } : s));
+    } else {
+      props.onChangeSprites([...sprites, { ...spriteForm }]);
+    }
+    setSpriteModalOpen(false);
+  };
+
+  const removeSprite = (index) => {
+    props.onChangeSprites(sprites.filter((_, i) => i !== index));
+  };
+
+  const handleSpriteCFChange = (event) => {
+    setSpriteCFValue(rawPrograms[event.target.value]);
+    setSpriteCFIndex(event.target.value);
+  };
+
+  const addSpriteCF = () => {
+    const cf = { Name: spriteCFValue.Name, Multiplyer: spriteCFValue.Multiplyer, Rating: 1 };
+    setSpriteForm((prev) => ({ ...prev, ComplexForms: [...prev.ComplexForms, cf] }));
+    setSpriteCFModalOpen(false);
+  };
+
+  const removeSpriteCF = (cfIndex) => {
+    setSpriteForm((prev) => ({ ...prev, ComplexForms: prev.ComplexForms.filter((_, i) => i !== cfIndex) }));
+  };
+
+  const handleSpriteCFRating = (cfIndex, value) => {
+    const r = parseInt(value) || 1;
+    setSpriteForm((prev) => ({
+      ...prev,
+      ComplexForms: prev.ComplexForms.map((cf, i) => i === cfIndex ? { ...cf, Rating: r } : cf),
+    }));
+  };
+
+  const spritePayloadUsed = (sf) => sf.ComplexForms.reduce((sum, cf) => sum + (parseInt(cf.Rating) || 1), 0);
   const handleOpenModal = () => {
     setOpenModal(true);
   };
@@ -280,7 +360,187 @@ export default function OtakuPanel(props) {
               </Table>
             </TableContainer>
            <h3>Sprites</h3>
-           <div>Still Pending</div>
+           <p style={{ fontSize: '0.85em', opacity: 0.7 }}>
+             Frame core is a complex form (×5). Persona Points = core×3 (Bod/Evasion/Masking/Sensor, each ≤ core).
+             Frame Points = core×4 (Pilot costs 2 FP/pt; extra init dice cost 3 FP/die max 3; CF payload costs 1 FP/pt).
+             Karma cost = core rating.
+           </p>
+           <Button variant="contained" color="primary" style={{ marginBottom: 12 }} onClick={openNewSpriteModal}>
+             Add Sprite
+           </Button>
+
+           {sprites.map((sprite, si) => {
+             const core = parseInt(sprite.CoreRating) || 1;
+             const payloadUsed = spritePayloadUsed(sprite);
+             return (
+               <Box key={si} className="cyberdeckCard" sx={{ mb: 2 }}>
+                 <h4>{sprite.Name || 'Unnamed Sprite'} <span style={{ fontSize: '0.7em', opacity: 0.7 }}>(Core {core})</span></h4>
+                 <Grid container spacing={2}>
+                   <Grid item size={{ xs: 4 }} className="cyberDeckTable">
+                     <table>
+                       <thead><tr><th>Attribute</th><th>Value</th></tr></thead>
+                       <tbody>
+                         <tr><td>Bod</td><td>{sprite.Bod}</td></tr>
+                         <tr><td>Evasion</td><td>{sprite.Evasion}</td></tr>
+                         <tr><td>Masking</td><td>{sprite.Masking}</td></tr>
+                         <tr><td>Sensor</td><td>{sprite.Sensor}</td></tr>
+                         <tr><td>Pilot</td><td>{sprite.Pilot}</td></tr>
+                         <tr><td>Initiative</td><td>{core} + {1 + parseInt(sprite.ExtraInitDice)}D6</td></tr>
+                         <tr><td>CF Payload</td><td>{payloadUsed} / {sprite.CFPayload}</td></tr>
+                         <tr><td>Frame Core Size</td><td>{core * core * 5} Mp</td></tr>
+                         <tr><td>Karma Cost</td><td>{core}</td></tr>
+                       </tbody>
+                     </table>
+                   </Grid>
+                   <Grid item size={{ xs: 8 }}>
+                     <h5>Complex Form Payload</h5>
+                     <TableContainer component={Paper}>
+                       <Table size="small">
+                         <TableHead>
+                           <TableRow>
+                             <TableCell>Name</TableCell>
+                             <TableCell>Rating</TableCell>
+                             <TableCell>Multiplyer</TableCell>
+                           </TableRow>
+                         </TableHead>
+                         <TableBody>
+                           {sprite.ComplexForms.map((cf, cfi) => (
+                             <TableRow key={cfi}>
+                               <TableCell>{cf.Name}</TableCell>
+                               <TableCell>{cf.Rating}</TableCell>
+                               <TableCell>{cf.Multiplyer}</TableCell>
+                             </TableRow>
+                           ))}
+                         </TableBody>
+                       </Table>
+                     </TableContainer>
+                   </Grid>
+                 </Grid>
+                 <Box sx={{ mt: 1, display: 'flex', gap: 1 }}>
+                   <Button size="small" variant="outlined" onClick={() => openEditSpriteModal(si)}>Edit</Button>
+                   <Button size="small" variant="contained" color="error" onClick={() => removeSprite(si)}>Remove</Button>
+                 </Box>
+               </Box>
+             );
+           })}
+
+           {/* Sprite designer modal */}
+           <Modal open={spriteModalOpen} onClose={() => setSpriteModalOpen(false)}>
+             <Box sx={{ ...modalStyle, width: 520, maxHeight: '90vh', overflowY: 'auto' }}>
+               <h3>{editingSpriteIndex !== null ? 'Edit Sprite' : 'New Sprite'}</h3>
+               <div style={{ marginBottom: 8 }}>
+                 <label>Name:&nbsp;
+                   <input type="text" value={spriteForm.Name} onChange={(e) => setSpriteForm((p) => ({ ...p, Name: e.target.value }))} style={{ width: 200, padding: 4 }} />
+                 </label>
+               </div>
+               <div style={{ marginBottom: 8 }}>
+                 <label>Core Rating (1–{getCompSkillRating()}):&nbsp;
+                   <input type="number" min={1} max={getCompSkillRating()} value={spriteForm.CoreRating}
+                     onChange={(e) => {
+                       const core = Math.max(1, parseInt(e.target.value) || 1);
+                       setSpriteForm((p) => ({ ...p, CoreRating: core, Bod: 1, Evasion: 1, Masking: 1, Sensor: 1, Pilot: 1, ExtraInitDice: 0, CFPayload: 0 }));
+                     }}
+                     style={{ width: 50, padding: 4 }} />
+                 </label>
+               </div>
+               <p style={{ fontSize: '0.85em' }}>
+                 Persona Points: <strong>{spritePersonaPointsLeft(spriteForm)}</strong> remaining (pool = core×3 = {(parseInt(spriteForm.CoreRating)||1)*3})<br/>
+                 Frame Points: <strong>{spriteFramePointsLeft(spriteForm)}</strong> remaining (pool = core×4 = {(parseInt(spriteForm.CoreRating)||1)*4})
+               </p>
+               <table style={{ marginBottom: 12, width: '100%' }}>
+                 <thead><tr><th>Persona Attr</th><th>Value</th><th>Max</th></tr></thead>
+                 <tbody>
+                   {['Bod','Evasion','Masking','Sensor'].map((attr) => (
+                     <tr key={attr}>
+                       <td>{attr}</td>
+                       <td><input type="number" min={1} max={parseInt(spriteForm.CoreRating)||1} value={spriteForm[attr]}
+                         onChange={(e) => {
+                           const v = Math.min(parseInt(e.target.value)||1, parseInt(spriteForm.CoreRating)||1);
+                           const testForm = { ...spriteForm, [attr]: v };
+                           if (spritePersonaPointsLeft(testForm) >= 0) setSpriteForm(testForm);
+                         }}
+                         style={{ width: 50 }} /></td>
+                       <td>{parseInt(spriteForm.CoreRating)||1}</td>
+                     </tr>
+                   ))}
+                 </tbody>
+               </table>
+               <table style={{ marginBottom: 12, width: '100%' }}>
+                 <thead><tr><th>Frame Point Spend</th><th>Value</th><th>FP Cost</th></tr></thead>
+                 <tbody>
+                   <tr>
+                     <td>Pilot Rating (2 FP/pt, min 1)</td>
+                     <td><input type="number" min={1} max={getCompSkillRating()} value={spriteForm.Pilot}
+                       onChange={(e) => {
+                         const v = Math.max(1, parseInt(e.target.value)||1);
+                         const testForm = { ...spriteForm, Pilot: v };
+                         if (spriteFramePointsLeft(testForm) >= 0) setSpriteForm(testForm);
+                       }} style={{ width: 50 }} /></td>
+                     <td>{(parseInt(spriteForm.Pilot)||1)*2}</td>
+                   </tr>
+                   <tr>
+                     <td>Extra Init Dice (3 FP/die, max 3)</td>
+                     <td><input type="number" min={0} max={3} value={spriteForm.ExtraInitDice}
+                       onChange={(e) => {
+                         const v = Math.min(3, Math.max(0, parseInt(e.target.value)||0));
+                         const testForm = { ...spriteForm, ExtraInitDice: v };
+                         if (spriteFramePointsLeft(testForm) >= 0) setSpriteForm(testForm);
+                       }} style={{ width: 50 }} /></td>
+                     <td>{(parseInt(spriteForm.ExtraInitDice)||0)*3}</td>
+                   </tr>
+                   <tr>
+                     <td>CF Payload (1 FP/pt)</td>
+                     <td><input type="number" min={0} value={spriteForm.CFPayload}
+                       onChange={(e) => {
+                         const v = Math.max(0, parseInt(e.target.value)||0);
+                         const testForm = { ...spriteForm, CFPayload: v };
+                         if (spriteFramePointsLeft(testForm) >= 0) setSpriteForm(testForm);
+                       }} style={{ width: 50 }} /></td>
+                     <td>{parseInt(spriteForm.CFPayload)||0}</td>
+                   </tr>
+                 </tbody>
+               </table>
+
+               <h4>Complex Form Payload ({spritePayloadUsed(spriteForm)} / {spriteForm.CFPayload} used)</h4>
+               <Button size="small" variant="outlined" style={{ marginBottom: 8 }}
+                 onClick={() => setSpriteCFModalOpen(true)}
+                 disabled={spritePayloadUsed(spriteForm) >= (parseInt(spriteForm.CFPayload)||0)}>
+                 Add Complex Form
+               </Button>
+               <table style={{ width: '100%', marginBottom: 12 }}>
+                 <thead><tr><th>Name</th><th>Rating</th><th>×</th></tr></thead>
+                 <tbody>
+                   {spriteForm.ComplexForms.map((cf, cfi) => (
+                     <tr key={cfi}>
+                       <td>{cf.Name}</td>
+                       <td><input type="number" min={1} max={parseInt(spriteForm.CFPayload)||1} value={cf.Rating}
+                         onChange={(e) => handleSpriteCFRating(cfi, e.target.value)} style={{ width: 50 }} /></td>
+                       <td><button onClick={() => removeSpriteCF(cfi)}>✕</button></td>
+                     </tr>
+                   ))}
+                 </tbody>
+               </table>
+
+               <Button variant="contained" color="primary" onClick={saveSpriteModal}>Save Sprite</Button>
+             </Box>
+           </Modal>
+
+           {/* Sprite CF picker modal */}
+           <Modal open={spriteCFModalOpen} onClose={() => setSpriteCFModalOpen(false)}>
+             <Box sx={modalStyle}>
+               <SearchableSelect
+                 items={rawPrograms}
+                 value={spriteCFIndex}
+                 onChange={handleSpriteCFChange}
+                 label="Complex Form"
+                 getLabel={(prog) => prog.Name}
+                 style={{ width: '300px' }}
+               />
+               <Button variant="contained" color="primary" onClick={addSpriteCF} style={{ marginTop: '10px' }}>
+                 Add
+               </Button>
+             </Box>
+           </Modal>
           </Grid>
         </Grid>
       </Box>
