@@ -39,6 +39,83 @@ export default function DeckingPanel(props) {
   const [NewCyberdeckProgramIndex, setNewCyberdeckProgramIndex] = useState(0);
   const [openModal, setOpenModal] = React.useState(false);
   const [modalCurrentTarget, setModalCurrentTarget] = useState(0);
+
+  // Agents state
+  const [agents, setAgents] = useState(props.Agents ?? []);
+  const [newAgentName, setNewAgentName] = useState('');
+  const [newAgentRating, setNewAgentRating] = useState(1);
+  const [agentModalOpen, setAgentModalOpen] = useState(false);
+  const [agentModalTarget, setAgentModalTarget] = useState(0);
+  const [newAgentProgram, setNewAgentProgram] = useState(0);
+  const [newAgentProgramIndex, setNewAgentProgramIndex] = useState(0);
+
+  const updateAgents = (updated) => {
+    setAgents(updated);
+    props.onChangeAgents(updated);
+  };
+
+  const addAgent = () => {
+    if (!newAgentName.trim()) return;
+    const rating = parseInt(newAgentRating) || 1;
+    const newAgent = {
+      Name: newAgentName.trim(),
+      Rating: rating,
+      Programs: [],
+    };
+    updateAgents([...agents, newAgent]);
+    setNewAgentName('');
+    setNewAgentRating(1);
+  };
+
+  const removeAgent = (index) => {
+    updateAgents(agents.filter((_, i) => i !== index));
+  };
+
+  const handleAgentProgramChange = (event) => {
+    setNewAgentProgram(rawPrograms[event.target.value]);
+    setNewAgentProgramIndex(event.target.value);
+  };
+
+  const addAgentProgram = () => {
+    const prog = {
+      Name: newAgentProgram.Name,
+      Multiplyer: newAgentProgram.Multiplyer,
+      Rating: 1,
+      Loaded: true,
+      Size: newAgentProgram.Multiplyer,
+    };
+    const updated = agents.map((a, i) =>
+      i === agentModalTarget ? { ...a, Programs: [...a.Programs, prog] } : a
+    );
+    updateAgents(updated);
+    setAgentModalOpen(false);
+  };
+
+  const removeAgentProgram = (agentIndex, progIndex) => {
+    const updated = agents.map((a, i) =>
+      i === agentIndex
+        ? { ...a, Programs: a.Programs.filter((_, pi) => pi !== progIndex) }
+        : a
+    );
+    updateAgents(updated);
+  };
+
+  const handleAgentProgramRatingChange = (agentIndex, progIndex, value) => {
+    const newRating = parseInt(value) || 1;
+    const updated = agents.map((a, i) =>
+      i === agentIndex
+        ? {
+            ...a,
+            Programs: a.Programs.map((p, pi) =>
+              pi === progIndex
+                ? { ...p, Rating: newRating, Size: newRating * newRating * p.Multiplyer }
+                : p
+            ),
+          }
+        : a
+    );
+    updateAgents(updated);
+  };
   const handleOpenModal = (index) => {
     setOpenModal(true);
     setModalCurrentTarget(index);
@@ -471,6 +548,139 @@ export default function DeckingPanel(props) {
     );
   };
 
+  const RenderAgents = () => {
+    return (
+      <>
+        <hr />
+        <h2>Agents</h2>
+        <p style={{ fontSize: '0.85em', opacity: 0.7 }}>
+          Agents are autonomous programs (Rating² × 5 Mp) that run on your deck. All persona attributes = Rating. Hacking Pool = Rating ÷ 3. Initiative = Rating + 1D6.
+        </p>
+        <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', mb: 2, flexWrap: 'wrap' }}>
+          <input
+            type="text"
+            placeholder="Agent Name"
+            value={newAgentName}
+            onChange={(e) => setNewAgentName(e.target.value)}
+            style={{ padding: '6px', width: '180px' }}
+          />
+          <label>Rating:&nbsp;
+            <input
+              type="number"
+              min={1}
+              max={10}
+              value={newAgentRating}
+              onChange={(e) => setNewAgentRating(e.target.value)}
+              style={{ width: '50px', padding: '4px' }}
+            />
+          </label>
+          <Button variant="contained" color="primary" onClick={addAgent}>Add Agent</Button>
+        </Box>
+
+        {agents.map((agent, agentIndex) => {
+          const r = parseInt(agent.Rating);
+          const hackPool = Math.floor(r / 3);
+          const size = r * r * 5;
+          return (
+            <Box className="cyberdeckCard" key={agentIndex} sx={{ mb: 3 }}>
+              <h3>{agent.Name} <span style={{ fontSize: '0.7em', opacity: 0.7 }}>(Rating {r})</span></h3>
+              <Grid container spacing={2}>
+                <Grid item size={{ xs: 4 }} className="cyberDeckTable">
+                  <table>
+                    <thead><tr><th>Attribute</th><th>Value</th></tr></thead>
+                    <tbody>
+                      <tr><td>Rating</td><td>{r}</td></tr>
+                      <tr><td>Bod</td><td>{r}</td></tr>
+                      <tr><td>Evasion</td><td>{r}</td></tr>
+                      <tr><td>Masking</td><td>{r}</td></tr>
+                      <tr><td>Sensors</td><td>{r}</td></tr>
+                      <tr><td>Hacking Pool</td><td>{hackPool}</td></tr>
+                      <tr><td>Initiative</td><td>{r} + 1D6</td></tr>
+                      <tr><td>Deck Memory Used</td><td>{size} Mp</td></tr>
+                      <tr><td>Condition Monitor</td><td>10 boxes</td></tr>
+                    </tbody>
+                  </table>
+                </Grid>
+                <Grid item size={{ xs: 8 }}>
+                  <h4>Agent Programs</h4>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    style={{ marginBottom: 10 }}
+                    onClick={() => { setAgentModalTarget(agentIndex); setAgentModalOpen(true); }}
+                  >
+                    Add Program
+                  </Button>
+                  <TableContainer component={Paper}>
+                    <Table size="small" aria-label="agent programs">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell>Name</TableCell>
+                          <TableCell>Rating</TableCell>
+                          <TableCell>Multiplyer</TableCell>
+                          <TableCell>Size</TableCell>
+                          <TableCell>Actions</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {agent.Programs.map((prog, progIndex) => (
+                          <TableRow key={progIndex}>
+                            <TableCell>{prog.Name}</TableCell>
+                            <TableCell>
+                              <input
+                                type="number"
+                                min={1}
+                                max={12}
+                                value={prog.Rating}
+                                onChange={(e) => handleAgentProgramRatingChange(agentIndex, progIndex, e.target.value)}
+                                style={{ width: '50px' }}
+                              />
+                            </TableCell>
+                            <TableCell>{prog.Multiplyer}</TableCell>
+                            <TableCell>{prog.Size}</TableCell>
+                            <TableCell>
+                              <button onClick={() => removeAgentProgram(agentIndex, progIndex)}>
+                                <DeleteIcon />
+                              </button>
+                            </TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                </Grid>
+                <Button
+                  style={{ marginLeft: 15, marginTop: 10 }}
+                  variant="contained"
+                  color="error"
+                  onClick={() => removeAgent(agentIndex)}
+                >
+                  Remove Agent
+                </Button>
+              </Grid>
+            </Box>
+          );
+        })}
+
+        <Modal open={agentModalOpen} onClose={() => setAgentModalOpen(false)}>
+          <Box sx={modalStyle}>
+            <SearchableSelect
+              items={rawPrograms}
+              value={newAgentProgramIndex}
+              onChange={handleAgentProgramChange}
+              label="Programs"
+              getLabel={(prog) => prog.Name}
+              style={{ width: '300px' }}
+            />
+            <Button variant="contained" color="primary" onClick={addAgentProgram} style={{ marginTop: '10px' }}>
+              Add Program
+            </Button>
+          </Box>
+        </Modal>
+      </>
+    );
+  };
+
   return (
     <>
       <Box sx={{ width: "250px", marginBottom: "20px" }}>
@@ -484,6 +694,7 @@ export default function DeckingPanel(props) {
       <hr sx="mt-6"></hr>
       {RenderSelectedCyberdeck()}
       {RenderProgramSelectionModal()}
+      {RenderAgents()}
     </>
   );
 }
