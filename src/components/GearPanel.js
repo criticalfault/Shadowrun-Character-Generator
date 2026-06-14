@@ -15,6 +15,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
+import Chip from '@mui/material/Chip';
+import WeaponModsModal, { applyWeaponMods } from './WeaponModsModal';
 
 // Pre-import all edition data so Vite can bundle them (no runtime require)
 const allGear = import.meta.glob('../data/*/Gear.json', { eager: true });
@@ -85,6 +87,16 @@ export default function GearPanel(props) {
       editedGear.splice(index, 1);
       setSelectedGear(editedGear);
       props.onChangeGear([...editedGear]);
+    };
+
+    const [modifyingWeaponIndex, setModifyingWeaponIndex] = useState(null);
+
+    const handleSaveWeaponMods = (index, newMods) => {
+      const editedGear = SelectedGear.map((g, i) =>
+        i === index ? { ...g, weaponMods: newMods } : g
+      );
+      setSelectedGear(editedGear);
+      props.onChangeGear(editedGear);
     };
 
     const renderGearItem = (gear, originalIndex) => {
@@ -232,45 +244,84 @@ export default function GearPanel(props) {
       </TableContainer>
     <h3>Weapons</h3>
     <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+        <Table sx={{ minWidth: 650 }} size="small" aria-label="weapons table">
           <TableHead>
             <TableRow>
               <TableCell>Name</TableCell>
+              <TableCell align="right">Conceal</TableCell>
+              <TableCell align="right">Mode</TableCell>
               <TableCell align="right">Damage</TableCell>
+              <TableCell align="right">RC</TableCell>
               <TableCell align="right">Ammunition</TableCell>
-              <TableCell align="right">Cost</TableCell>
-              <TableCell align="right">Book.Page</TableCell>
               <TableCell align="right">Availability</TableCell>
-              <TableCell align="right">Notes</TableCell>
+              <TableCell align="right">Cost</TableCell>
               <TableCell align="right">Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {props.Gear.map((gear, index) => {
+            {SelectedGear.map((gear, index) => {
               if(!gear.hasOwnProperty('Damage')){
-                return;
+                return null;
               }
+              const weaponMods = gear.weaponMods ?? [];
+              const modified = applyWeaponMods(gear, weaponMods);
+              const baseConceal = parseInt(gear.Concealability ?? 0);
+              const hasMods = weaponMods.length > 0;
               return(
               <TableRow key={index}>
-                <TableCell component="th" scope="row"> {gear.Name}
-                      {gear.Amount !== 0?`  x${gear.Amount}`:''}</TableCell>
-                <TableCell align="right">{gear.Damage}</TableCell>
-                <TableCell align="right">{gear.Ammunition||'N/A'}</TableCell>
-                <TableCell align="right"> 
-                    {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}
-                    {gear.Amount !== 0 && gear.Amount !== 1 ?`  [${new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost*gear.Amount)}]`:''}
+                <TableCell component="th" scope="row">
+                  {gear.Name}{gear.Amount !== 0 ? `  x${gear.Amount}` : ''}
+                  {hasMods && (
+                    <Chip label={`${weaponMods.length} mod${weaponMods.length > 1 ? 's' : ''}`}
+                      size="small" color="primary" sx={{ ml: 1, fontSize: '0.7rem' }} />
+                  )}
                 </TableCell>
-                <TableCell align="right">{gear.BookPage}</TableCell>
-                <TableCell align="right">{gear.Availability}</TableCell>
-                <TableCell align="right">{gear.Notes}</TableCell>
                 <TableCell align="right">
-                    <Button color="secondary" onClick={() => handleRemoveGear(index)}>Remove</Button>
+                  {modified.conceal !== baseConceal
+                    ? <><s style={{opacity:0.5}}>{baseConceal}</s> <strong style={{color: modified.conceal > baseConceal ? '#4caf50' : '#f44336'}}>{modified.conceal}</strong></>
+                    : baseConceal}
+                </TableCell>
+                <TableCell align="right">
+                  {modified.mode !== (gear.Mode ?? '')
+                    ? <><s style={{opacity:0.5}}>{gear.Mode}</s> <strong style={{color:'#4caf50'}}>{modified.mode}</strong></>
+                    : gear.Mode ?? '—'}
+                </TableCell>
+                <TableCell align="right">
+                  {modified.damage !== (gear.Damage ?? '')
+                    ? <><s style={{opacity:0.5}}>{gear.Damage}</s> <strong style={{color:'#f44336'}}>{modified.damage}</strong></>
+                    : gear.Damage}
+                </TableCell>
+                <TableCell align="right">
+                  {modified.recoilComp > 0
+                    ? <strong style={{color:'#4caf50'}}>+{modified.recoilComp}</strong>
+                    : '—'}
+                </TableCell>
+                <TableCell align="right">{gear.Ammunition||'N/A'}</TableCell>
+                <TableCell align="right">{gear.Availability}</TableCell>
+                <TableCell align="right">
+                    {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(gear.Cost)}
+                </TableCell>
+                <TableCell align="right" sx={{ whiteSpace: 'nowrap' }}>
+                    {props.Edition === 'SR3' && (
+                      <Button size="small" onClick={() => setModifyingWeaponIndex(index)} sx={{ mr: 0.5 }}>
+                        {hasMods ? 'Mods' : 'Modify'}
+                      </Button>
+                    )}
+                    <Button color="secondary" size="small" onClick={() => handleRemoveGear(index)}>Remove</Button>
                 </TableCell>
               </TableRow>
             )})}
           </TableBody>
         </Table>
       </TableContainer>
+
+    <WeaponModsModal
+      open={modifyingWeaponIndex !== null}
+      weapon={modifyingWeaponIndex !== null ? SelectedGear[modifyingWeaponIndex] : null}
+      weaponIndex={modifyingWeaponIndex}
+      onClose={() => setModifyingWeaponIndex(null)}
+      onSave={handleSaveWeaponMods}
+    />
     <h3>Gear</h3>
     <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
