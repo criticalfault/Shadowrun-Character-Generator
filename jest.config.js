@@ -1,6 +1,7 @@
 module.exports = {
   transform: {
-    '^.+\\.[jt]sx?$': 'babel-jest',
+    // Custom transform strips Vite's import.meta.glob before Babel runs
+    '^.+\\.[jt]sx?$': './jest-transform.js',
   },
   transformIgnorePatterns: [
     'node_modules/(?!(@dice-roller|mathjs)/)',

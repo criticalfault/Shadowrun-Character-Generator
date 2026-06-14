@@ -31,6 +31,8 @@ const modalStyle = {
 import complexFormsData from "../data/SR2/ComplexForms.json";
 
 export default function OtakuPanel(props) {
+  const raceBonuses = props.currentCharacter.raceBonuses ?? {};
+  const cyberAttributeBonuses = props.currentCharacter.cyberAttributeBonuses ?? {};
   const rawPrograms = complexFormsData;
   const [openModal, setOpenModal] = React.useState(false);
   const [NewComplexForm, setNewComplexForm] = useState(0);
@@ -79,7 +81,7 @@ export default function OtakuPanel(props) {
 
   const renderFreeProgrammingDays = () => {
     let poolValue = 0;
-    props.currentCharacter.skills.forEach(function (skill) {
+    (props.currentCharacter.skills ?? []).forEach(function (skill) {
         if (skill.name === "Computer") {
           if (skill.hasOwnProperty("selectedConcentrations") && skill.selectedConcentrations.length > 0) {
             skill.selectedConcentrations.forEach(function (subSkill) {
@@ -119,58 +121,58 @@ export default function OtakuPanel(props) {
                   <td>{ 
                   Math.ceil((
                     parseInt(props.currentCharacter.attributes.Willpower) +
-                    parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0) +
+                    parseInt(raceBonuses.Willpower ?? 0) +
+                    parseInt(cyberAttributeBonuses.Willpower ?? 0) +
 
                     parseInt(props.currentCharacter.attributes.Intelligence) +
-                    parseInt(props.currentCharacter.raceBonuses.Intelligence ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence ?? 0)+
+                    parseInt(raceBonuses.Intelligence ?? 0) +
+                    parseInt(cyberAttributeBonuses.Intelligence ?? 0)+
 
                     parseInt(props.currentCharacter.attributes.Charisma) +
-                    parseInt(props.currentCharacter.raceBonuses.Charisma ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Charisma ?? 0)) / 3)
+                    parseInt(raceBonuses.Charisma ?? 0) +
+                    parseInt(cyberAttributeBonuses.Charisma ?? 0)) / 3)
                   }</td>
                 </tr>
                 <tr>
                   <td>Bod</td>
                   <td>{
                     parseInt(props.currentCharacter.attributes.Willpower) +
-                    parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0)
+                    parseInt(raceBonuses.Willpower ?? 0) +
+                    parseInt(cyberAttributeBonuses.Willpower ?? 0)
                     }</td>
                 </tr>
                 <tr>
                   <td>Sensors</td>
                   <td>{  parseInt(props.currentCharacter.attributes.Intelligence) +
-                    parseInt(props.currentCharacter.raceBonuses.Intelligence ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence ?? 0)}</td>
+                    parseInt(raceBonuses.Intelligence ?? 0) +
+                    parseInt(cyberAttributeBonuses.Intelligence ?? 0)}</td>
                 </tr>
                 <tr>
                   <td>Masking</td>
                   <td>{ 
 
                     Math.ceil(parseInt(props.currentCharacter.attributes.Willpower) +
-                    parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0) +
+                    parseInt(raceBonuses.Willpower ?? 0) +
+                    parseInt(cyberAttributeBonuses.Willpower ?? 0) +
                     parseInt(props.currentCharacter.attributes.Charisma) +
-                    parseInt(props.currentCharacter.raceBonuses.Charisma ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Charisma ?? 0) )/2
+                    parseInt(raceBonuses.Charisma ?? 0) +
+                    parseInt(cyberAttributeBonuses.Charisma ?? 0) )/2
                     
                     }</td>
                 </tr>
                 <tr>
                   <td>Evasion</td>
                   <td>{ parseInt(props.currentCharacter.attributes.Intelligence) +
-                    parseInt(props.currentCharacter.raceBonuses.Intelligence ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence ?? 0)}</td>
+                    parseInt(raceBonuses.Intelligence ?? 0) +
+                    parseInt(cyberAttributeBonuses.Intelligence ?? 0)}</td>
                 </tr>
                 <tr>
                   <td>Hardening</td>
                   <td>{
                     Math.ceil((
                       parseInt(props.currentCharacter.attributes.Willpower) +
-                      parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
-                      parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0)
+                      parseInt(raceBonuses.Willpower ?? 0) +
+                      parseInt(cyberAttributeBonuses.Willpower ?? 0)
                     )/2)
                     }</td>
                 </tr>
@@ -185,19 +187,19 @@ export default function OtakuPanel(props) {
                 <tr>
                   <td>I/O:</td>
                   <td>{(parseInt(props.currentCharacter.attributes.Intelligence) +
-                    parseInt(props.currentCharacter.raceBonuses.Intelligence ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence ?? 0))*100} MPs</td>
+                    parseInt(raceBonuses.Intelligence ?? 0) +
+                    parseInt(cyberAttributeBonuses.Intelligence ?? 0))*100} MPs</td>
                 </tr>
                 <tr>
                   <td>Response Increase:</td>
                   <td>{
                     Math.ceil((
                     parseInt(props.currentCharacter.attributes.Intelligence) +
-                    parseInt(props.currentCharacter.raceBonuses.Intelligence ?? 0) +
-                    parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence ?? 0)+
+                    parseInt(raceBonuses.Intelligence ?? 0) +
+                    parseInt(cyberAttributeBonuses.Intelligence ?? 0)+
                     parseInt(props.currentCharacter.attributes.Willpower) +
-                      parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
-                      parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0))/2)
+                      parseInt(raceBonuses.Willpower ?? 0) +
+                      parseInt(cyberAttributeBonuses.Willpower ?? 0))/2)
                     } +3d6</td>
                 </tr>
               </tbody>
@@ -224,11 +226,11 @@ export default function OtakuPanel(props) {
             <div><strong>Otaku Path:</strong> <em>{props.currentCharacter.otakuPath}</em>: {OtakuPathInfo[props.currentCharacter.otakuPath]} </div>
             <div><strong>Otaku Task Bonus:</strong> {Math.ceil(
               (parseInt(props.currentCharacter.attributes.Intelligence) +
-              parseInt(props.currentCharacter.raceBonuses.Intelligence ?? 0) +
-              parseInt(props.currentCharacter.cyberAttributeBonuses.Intelligence ?? 0)+
+              parseInt(raceBonuses.Intelligence ?? 0) +
+              parseInt(cyberAttributeBonuses.Intelligence ?? 0)+
               parseInt(props.currentCharacter.attributes.Charisma) +
-              parseInt(props.currentCharacter.raceBonuses.Charisma ?? 0) +
-              parseInt(props.currentCharacter.cyberAttributeBonuses.Charisma ?? 0))/4
+              parseInt(raceBonuses.Charisma ?? 0) +
+              parseInt(cyberAttributeBonuses.Charisma ?? 0))/4
             )}</div>
             <div><strong>Character Gen Free Programming Days:</strong> {renderFreeProgrammingDays()}</div>
             <h3>Complex Forms</h3>
@@ -283,15 +285,15 @@ export default function OtakuPanel(props) {
                   <TableRow key={0}>
                       <TableCell>Armor</TableCell>
                       <TableCell>{parseInt(props.currentCharacter.attributes.Willpower) +
-                      parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
-                      parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0)}</TableCell>
+                      parseInt(raceBonuses.Willpower ?? 0) +
+                      parseInt(cyberAttributeBonuses.Willpower ?? 0)}</TableCell>
                       <TableCell>3</TableCell>
                       <TableCell>{(parseInt(props.currentCharacter.attributes.Willpower) +
-                      parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
-                      parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0)+
+                      parseInt(raceBonuses.Willpower ?? 0) +
+                      parseInt(cyberAttributeBonuses.Willpower ?? 0)+
                       parseInt(props.currentCharacter.attributes.Willpower) +
-                      parseInt(props.currentCharacter.raceBonuses.Willpower ?? 0) +
-                      parseInt(props.currentCharacter.cyberAttributeBonuses.Willpower ?? 0))*3}</TableCell>
+                      parseInt(raceBonuses.Willpower ?? 0) +
+                      parseInt(cyberAttributeBonuses.Willpower ?? 0))*3}</TableCell>
                       <TableCell>Free</TableCell>
                       <TableCell>
                         <button

@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from '@mui/material';
 import SRSection from './SRSection';
 
-const AttributesBlock = ({ attributes, raceBonuses, cyberBonuses, magicBonuses, Cyberware }) => {
+const AttributesBlock = ({ attributes, raceBonuses = {}, cyberBonuses = {}, magicBonuses = {}, Cyberware = [] }) => {
   const CalcEssenceSpent = () =>{
     let EssenceSpent = 0;
     let EyeEssenceSpent = 0;

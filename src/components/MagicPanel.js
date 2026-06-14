@@ -1101,7 +1101,7 @@ function MagicPanel(props) {
   const [magicalTradition, setMagicalTradition] = useState(
     props.chosenTradition.name
   );
-  const [magicalTotem, setMagicalTotem] = useState(props.magicalTotem.name);
+  const [magicalTotem, setMagicalTotem] = useState(props.magicalTotem?.name);
   const [AdeptPointsSpent, setAdeptPointsSpent] = useState(
     CalcTotalPowerRatings(props.powers)
   );
@@ -1119,7 +1119,7 @@ function MagicPanel(props) {
   const label = { inputProps: { "aria-label": "Edition Switch" } };
 
   const findTotemID = (totem) => {
-    if (totem.hasOwnProperty("id")) {
+    if (totem && totem.hasOwnProperty("id")) {
       return totem.id;
     }
     return 0;
@@ -1628,7 +1628,7 @@ function MagicPanel(props) {
             value={newSpellIndex}
             onChange={handleSpellChange}
           >
-            {spellsData
+            {(spellsData ?? [])
               .sort((a, b) => {
                 if (a.hasOwnProperty("Name")) {
                   return a.Name.localeCompare(b.Name);
