@@ -1,193 +1,165 @@
 import React, { useState, useEffect } from "react";
 import { auth, provider, signInWithPopup, onAuthStateChanged, db, doc, setDoc, getDoc } from "./firebase";
 import Button from "@mui/material/Button";
-import Accordion from '@mui/material/Accordion';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import { Grid,Box } from "@mui/material";
-const SignInPopup = (props,{ onSignIn }) => {
-    const style = {
-        
-      };
-    const [character1, setCharacter1] = useState([]);
-    const [character2, setCharacter2] = useState([]);
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-          if (currentUser) {
-            props.setUser(currentUser);
-            const loadedCharacters = await loadCharacters(currentUser.uid);
-            // if (loadedCharacters) {
-            //   setCharacters(loadedCharacters);
-            // }
-          }
-        });
-    
-        return () => unsubscribe();
-      }, []);
+import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
+import { Grid } from "@mui/material";
 
-    const handleSignIn = async () => {
-       
-        try {
-            const result = await signInWithPopup(auth, provider);
-            props.setUser(result.user);
-            //onSignIn(result.user);
-            console.log(result.user);
-            const loadedCharacters = await loadCharacters(result.user.uid);
-        } catch (error) {
-            console.error("Error signing in:", error);
-        }
-    };
+const modalStyle = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 480,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
 
-    async function loadCharacters(userId){
-        const docRef = doc(db, "users", userId);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-            if(docSnap.data().hasOwnProperty('character1')){
-                setCharacter1(JSON.parse(docSnap.data().character1));
-            }else if(docSnap.data().hasOwnProperty('character2')){
-                setCharacter2(JSON.parse(docSnap.data().character2));
-            }
-        }
-    }
+const SignInPopup = (props) => {
+  const [open, setOpen] = useState(false);
+  const [character1, setCharacter1] = useState([]);
+  const [character2, setCharacter2] = useState([]);
 
-    async function saveCharacterCloud(characterID) {
-        
-        let Char = props.Character;
-        Char.edition = props.Edition;
-        let characterJSON = JSON.stringify(Char);     
-        
-        try {
-          if(characterID == 1){
-            await setDoc(doc(db, "users", props.user.uid), { character1: characterJSON });
-          }else{
-            await setDoc(doc(db, "users", props.user.uid), { character2: characterJSON });
-          }
-          
-          console.log("Character data saved!");
-        } catch (error) {
-          console.error("Error saving character data:", error);
-        }
-    }
-
-    async function cloudLoad(characterID) {
-        try {
-          const docRef = doc(db, "users", props.user.uid);
-          const docSnap = await getDoc(docRef);
-      
-          if (docSnap.exists()) {
-            console.log("Character data:", docSnap.data());
-            var characterToLoad = {};
-            console.log("CharacterID: "+characterID);
-            if(characterID == 1){
-                let rawCharacterJSON = docSnap.data().character1;
-                characterToLoad = JSON.parse(rawCharacterJSON);
-            }else{
-                let rawCharacterJSON = docSnap.data().character2;
-                characterToLoad = JSON.parse(rawCharacterJSON);
-            }
-            props.loadCharacter(characterToLoad);
-            props.ChangeEdition(characterToLoad.edition);
-            
-          } else {
-            console.log("No character data found!");
-            return null;
-          }
-        } catch (error) {
-          console.error("Error loading character data:", error);
-        }
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      if (currentUser) {
+        props.setUser(currentUser);
+        await loadCharacters(currentUser.uid);
       }
+    });
+    return () => unsubscribe();
+  }, []);
 
-      const getSaveDescription = (saveSlot) => {
+  const handleSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      props.setUser(result.user);
+      await loadCharacters(result.user.uid);
+    } catch (error) {
+      console.error("Error signing in:", error);
+    }
+  };
 
-        if(saveSlot == 1){
-            return (
-                <span style={{ textTransform: "capitalize" }}>
-                  {" "}
-                  - {character1.street_name}
-                </span>
-              );
-        }else{
-            return (
-                <span style={{ textTransform: "capitalize" }}>
-                  {" "}
-                  - {character2.street_name}
-                </span>
-              );
-        }
-         
-      };
+  const handleSignOut = () => {
+    auth.signOut();
+    props.setUser(null);
+    setOpen(false);
+  };
+
+  async function loadCharacters(userId) {
+    const docRef = doc(db, "users", userId);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      if (docSnap.data().hasOwnProperty("character1")) {
+        setCharacter1(JSON.parse(docSnap.data().character1));
+      }
+      if (docSnap.data().hasOwnProperty("character2")) {
+        setCharacter2(JSON.parse(docSnap.data().character2));
+      }
+    }
+  }
+
+  async function saveCharacterCloud(characterID) {
+    let Char = props.Character;
+    Char.edition = props.Edition;
+    let characterJSON = JSON.stringify(Char);
+    try {
+      if (characterID === 1) {
+        await setDoc(doc(db, "users", props.user.uid), { character1: characterJSON });
+        setCharacter1(props.Character);
+      } else {
+        await setDoc(doc(db, "users", props.user.uid), { character2: characterJSON });
+        setCharacter2(props.Character);
+      }
+    } catch (error) {
+      console.error("Error saving character data:", error);
+    }
+  }
+
+  async function cloudLoad(characterID) {
+    try {
+      const docRef = doc(db, "users", props.user.uid);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        const rawJSON = characterID === 1
+          ? docSnap.data().character1
+          : docSnap.data().character2;
+        const characterToLoad = JSON.parse(rawJSON);
+        props.loadCharacter(characterToLoad);
+        props.ChangeEdition(characterToLoad.edition);
+        setOpen(false);
+      }
+    } catch (error) {
+      console.error("Error loading character data:", error);
+    }
+  }
+
+  const slotLabel = (char) =>
+    char?.street_name ? ` — ${char.street_name}` : " (empty)";
+
+  if (!props.user) {
+    return (
+      <Button variant="contained" onClick={handleSignIn}>
+        Cloud Save (Sign In)
+      </Button>
+    );
+  }
 
   return (
-    <div>
-      {props.user ? (
-        
-        <Accordion>
-        <AccordionSummary id="panel-header" aria-controls="panel-content">
-          Google Cloud Storage
-        </AccordionSummary>
-        <AccordionDetails>
-          <Box sx={style}>
-      <p>Welcome, {props.user.displayName}!</p>
-      <p>This uses Cloud Storage, which can be accessed anywhere, but its not free, so it's limited to 2 characters for the moment.</p>
-            <Grid container spacing={2}>
-              <Grid item size={12}>
-                
-              </Grid>
-              <Grid item size={{ xs: 12, md: 6 }}>
-                Save Character
-                <hr></hr>
-                <Button
-                  onClick={function (event) {
-                      saveCharacterCloud(1);
-                  }}
-                >
-                  Save 1{" "}
-                </Button>
-                <br></br>
-                <Button
-                  onClick={function (event) {
-                      saveCharacterCloud(2);
-                  }}
-                >
-                  Save 2{" "}
-                </Button>
-                
-              </Grid>
-              <Grid item size={{ xs: 12, md: 6 }}>
-                Load Character
-                <hr></hr>
-                <Button
-                  onClick={function (event) {
-                    cloudLoad(1);
-                  }}
-                >
-                  Load {getSaveDescription(1)}
-                </Button>
-                <br></br>
-                <Button
-                  onClick={function (event) {
-                      cloudLoad(2);
-                  }}
-                >
-                  Load {getSaveDescription(2)}
-                </Button>
-                <br></br>
-              </Grid>
+    <>
+      <Button variant="contained" onClick={() => setOpen(true)}>
+        Cloud Save
+      </Button>
+
+      <Modal open={open} onClose={() => setOpen(false)}>
+        <Box sx={modalStyle}>
+          <strong>Google Cloud Storage</strong>
+          <p style={{ fontSize: "0.85em", marginTop: 4, marginBottom: 12 }}>
+            Signed in as {props.user.displayName}. Limited to 2 cloud slots.
+          </p>
+
+          <Grid container spacing={2}>
+            <Grid item size={{ xs: 12, md: 6 }}>
+              <strong>Save Character</strong>
+              <hr />
+              <Button fullWidth variant="outlined" sx={{ mb: 1 }}
+                onClick={() => saveCharacterCloud(1)}>
+                Save to Slot 1{slotLabel(character1)}
+              </Button>
+              <Button fullWidth variant="outlined"
+                onClick={() => saveCharacterCloud(2)}>
+                Save to Slot 2{slotLabel(character2)}
+              </Button>
             </Grid>
+            <Grid item size={{ xs: 12, md: 6 }}>
+              <strong>Load Character</strong>
+              <hr />
+              <Button fullWidth variant="outlined" sx={{ mb: 1 }}
+                onClick={() => cloudLoad(1)}
+                disabled={!character1?.street_name}>
+                Load Slot 1{slotLabel(character1)}
+              </Button>
+              <Button fullWidth variant="outlined"
+                onClick={() => cloudLoad(2)}
+                disabled={!character2?.street_name}>
+                Load Slot 2{slotLabel(character2)}
+              </Button>
+            </Grid>
+          </Grid>
+
+          <Box sx={{ mt: 2, display: "flex", justifyContent: "space-between" }}>
+            <Button size="small" color="secondary" onClick={handleSignOut}>
+              Sign Out
+            </Button>
+            <Button size="small" onClick={() => setOpen(false)}>
+              Close
+            </Button>
           </Box>
-        </AccordionDetails>
-      </Accordion>
-            
-      ) : (
-            <Button 
-            onClick={handleSignIn}
-            variant="contained"
-            color="primary"
-            style={{ marginTop: "30px" }}>
-            Sign in with Google
-        </Button>
-      )}
-    </div>
+        </Box>
+      </Modal>
+    </>
   );
 };
 
