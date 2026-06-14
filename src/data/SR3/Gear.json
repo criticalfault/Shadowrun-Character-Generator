@@ -42066,14 +42066,16 @@
         "Cost": "8000",
         "Street Index": "1",
         "BookPage": "mits.170"
-      },{
+      },
+      {
         "Name": "Ritual Sorcery Materials - Combat Force 9",
         "KarmaCost": "0",
         "Availability": "3/24hrs",
         "Cost": "9000",
         "Street Index": "1",
         "BookPage": "mits.170"
-      },{
+      },
+      {
         "Name": "Ritual Sorcery Materials - Combat Force 10",
         "KarmaCost": "0",
         "Availability": "3/24hrs",
@@ -42157,7 +42159,7 @@
         "Street Index": "1",
         "BookPage": "mits.170"
       },
-    {
+      {
         "Name": "FAB Strain-I 50 m3 aerosol",
         "KarmaCost": "0",
         "Availability": "6/1wk",
@@ -42173,8 +42175,6 @@
         "Street Index": "2",
         "BookPage": "mits.170"
       },
-
-      
       {
         "Name": "Magemask",
         "KarmaCost": "0",
@@ -42585,22 +42585,23 @@
       }
     ]
   },
-  "Vehicles":{
-    "Name":"Vehicles",
+  "Vehicles": {
+    "Name": "Vehicles",
     "attributes": [
-        "10",
-        "Handling",
-        "Speed",
-        "Body",
-        "Armor",
-        "Sig",
-        "Apilot",
-        "Availability",
-        "$Cost",
-        "Street Index",
-        "Book.Page"
-      ],
-    "entries":[ {
+      "10",
+      "Handling",
+      "Speed",
+      "Body",
+      "Armor",
+      "Sig",
+      "Apilot",
+      "Availability",
+      "$Cost",
+      "Street Index",
+      "Book.Page"
+    ],
+    "entries": [
+      {
         "10": "3/4",
         "Name": "BMW Blitzen 2025",
         "Handling": "70/210",
@@ -45025,486 +45026,487 @@
       ""
     ],
     "entries": [
-        {
-          "9": "Autocannon",
-          "Name": "Ares Vermicide Autocannon",
-          "Type": "10(c)",
-          "Ammunition": "SA",
-          "Mode": "12D",
-          "Damage": "45",
-          "Weight": "GM",
-          "Availability": "12000",
-          "$Cost": "GM",
-          "Street Index": "sr3.312"
-        },
-        {
-          "9": "LASER",
-          "Name": "AN",
-          "Type": "50",
-          "Ammunition": "SA/BF",
-          "Mode": "9LN",
-          "Damage": "1200",
-          "Weight": "GM",
-          "Availability": "600000",
-          "$Cost": "GM",
-          "Street Index": "r3.88"
-        },
-        {
-          "9": "LASER",
-          "Name": "Ares Firelance Vehicle Laser",
-          "Type": "40",
-          "Ammunition": "SA",
-          "Mode": "15S",
-          "Damage": "48",
-          "Weight": "GM",
-          "Availability": "300000",
-          "$Cost": "GM",
-          "Street Index": "r3.88"
-        },
-        {
-          "9": "Railgun",
-          "Name": "Ares Vaporizer Heavy Railgun",
-          "Type": "Belt",
-          "Ammunition": "SS",
-          "Mode": "15MN",
-          "Damage": "1540",
-          "Weight": "GM",
-          "Availability": "1000000",
-          "$Cost": "GM",
-          "Street Index": "r3.89"
-        },
-        {
-          "9": "MMG",
-          "Name": "Ares Vengeance Minigun",
-          "Type": "Belt",
-          "Ammunition": "FA",
-          "Mode": "9S",
-          "Damage": "30",
-          "Weight": "18/28days",
-          "Availability": "50000",
-          "$Cost": "3.5",
-          "Street Index": "r3.89"
-        },
-        {
-          "9": "HMG",
-          "Name": "Ares Vanquisher Minigun",
-          "Type": "Belt",
-          "Ammunition": "FA",
-          "Mode": "10S",
-          "Damage": "45",
-          "Weight": "18/28days",
-          "Availability": "75000",
-          "$Cost": "3.5",
-          "Street Index": "r3.89"
-        },
-        {
-          "9": "Autocannon",
-          "Name": "Ares Vigilant Autocannon",
-          "Type": "Belt",
-          "Ammunition": "SS/FA",
-          "Mode": "18D",
-          "Damage": "90",
-          "Weight": "20/45days",
-          "Availability": "90000",
-          "$Cost": "5",
-          "Street Index": "r3.91"
-        },
-        {
-          "9": "Autocannon",
-          "Name": "Ares Victory Autocannon",
-          "Type": "Belt",
-          "Ammunition": "SS/FA",
-          "Mode": "20D",
-          "Damage": "105",
-          "Weight": "20/45days",
-          "Availability": "125000",
-          "$Cost": "5",
-          "Street Index": "r3.91"
-        },
-        {
-          "9": "Railgun",
-          "Name": "Aztech Xicohtencatl L. Railgun",
-          "Type": "Belt",
-          "Ammunition": "SS",
-          "Mode": "6LN",
-          "Damage": "135",
-          "Weight": "GM",
-          "Availability": "135000",
-          "$Cost": "GM",
-          "Street Index": "r3.91"
-        },
-        {
-          "9": "Railgun",
-          "Name": "Aztech Relampago Med. Railgun",
-          "Type": "Belt",
-          "Ammunition": "SS",
-          "Mode": "8MN",
-          "Damage": "770",
-          "Weight": "GM",
-          "Availability": "620000",
-          "$Cost": "GM",
-          "Street Index": "r3.89"
-        },
-        {
-          "9": "Missile",
-          "Name": "EXOCET Omega (Missile)",
-          "Type": "1(m)",
-          "Ammunition": "SS",
-          "Mode": "19F",
-          "Damage": "(Missile)",
-          "Weight": "GM",
-          "Availability": "950000",
-          "$Cost": "-",
-          "Street Index": "fra.141"
-        },
-        {
-          "9": "MMG",
-          "Name": "Flechette Gun",
-          "Type": "20(c)",
-          "Ammunition": "SA/FA",
-          "Mode": "9D(f)",
-          "Damage": "45",
-          "Weight": "14/14days",
-          "Availability": "17000",
-          "$Cost": "1.5",
-          "Street Index": "sr2.???"
-        },
-        {
-          "9": "Cannon",
-          "Name": "Gauss Gun",
-          "Type": "10(c)",
-          "Ammunition": "SS",
-          "Mode": "11S",
-          "Damage": "135",
-          "Weight": "-",
-          "Availability": "500000",
-          "$Cost": "-",
-          "Street Index": "sr2.???"
-        },
-        {
-          "9": "Ship",
-          "Name": "Harpoon Gun",
-          "Type": "1",
-          "Ammunition": "SS",
-          "Mode": "(Harpoon)",
-          "Damage": "20",
-          "Weight": "3/24hrs",
-          "Availability": "6500",
-          "$Cost": "2",
-          "Street Index": "r3.88"
-        },
-        {
-          "9": "Hydrostatic Pulse Bafflers",
-          "Name": "Hydrostatic Pulse Bafflers",
-          "Type": "200",
-          "Ammunition": "SS",
-          "Mode": "22D(AV)",
-          "Damage": "500,00",
-          "Weight": "NA",
-          "Availability": "15000",
-          "$Cost": "0,00",
-          "Street Index": "twl.130"
-        },
-        {
-          "9": "Light Naval Gun",
-          "Name": "Light Naval Gun",
-          "Type": "500",
-          "Ammunition": "SA",
-          "Mode": "8LN",
-          "Damage": "250",
-          "Weight": "GM",
-          "Availability": "225000",
-          "$Cost": "GM",
-          "Street Index": "r3.88"
-        },
-        {
-          "9": "Medium Naval Gun",
-          "Name": "Medium Naval Gun",
-          "Type": "500",
-          "Ammunition": "SA",
-          "Mode": "11LN",
-          "Damage": "600",
-          "Weight": "GM",
-          "Availability": "475000",
-          "$Cost": "GM",
-          "Street Index": "r3.88"
-        },
-        {
-          "9": "Piranha Launcher",
-          "Name": "Piranha Launcher",
-          "Type": "8",
-          "Ammunition": "SS",
-          "Mode": "As rocket/missle",
-          "Damage": "120",
-          "Weight": "16/21days",
-          "Availability": "15000",
-          "$Cost": "3",
-          "Street Index": "r3.88"
-        },
-        {
-          "9": "Assault",
-          "Name": "Rocket Launcher",
-          "Type": "6(b)",
-          "Ammunition": "SS",
-          "Mode": "(Rocket)",
-          "Damage": "15",
-          "Weight": "GM",
-          "Availability": "15000",
-          "$Cost": "GM",
-          "Street Index": "sr2.???"
-        },
-        {
-          "9": "Missile",
-          "Name": "Ruhrmetall GPRL for vehicles",
-          "Type": "4(m)",
-          "Ammunition": "SS",
-          "Mode": "(Missile)",
-          "Damage": "10",
-          "Weight": "14/30days",
-          "Availability": "12000",
-          "$Cost": "4",
-          "Street Index": "sr2.???"
-        },
-        {
-          "9": "HMG",
-          "Name": "Ruhrmetall SF20 for vehicles",
-          "Type": "200(beltbox)",
-          "Ammunition": "BF/FA",
-          "Mode": "10S",
-          "Damage": "16",
-          "Weight": "18/30days",
-          "Availability": "8500",
-          "$Cost": ".5",
-          "Street Index": "sr2.???"
-        },
-        {
-          "9": "Mechanical Tentacle",
-          "Name": "Snake-Spine Whips (per arm)",
-          "Type": "NA",
-          "Ammunition": "SA",
-          "Mode": "8M",
-          "Damage": "20,00",
-          "Weight": "NA",
-          "Availability": "1500",
-          "$Cost": "0,00",
-          "Street Index": "twl.131"
-        },
-        {
-          "9": "Mechanical Tentacle",
-          "Name": "Snake-Spine Blade Arm",
-          "Type": "NA",
-          "Ammunition": "SA",
-          "Mode": "10M",
-          "Damage": "25,00",
-          "Weight": "NA",
-          "Availability": "2000",
-          "$Cost": "0,00",
-          "Street Index": "twl.131"
-        },
-        {
-          "9": "Mechanical Tentacle",
-          "Name": "Snake-Spine Hull Cutters",
-          "Type": "NA",
-          "Ammunition": "SA",
-          "Mode": "6MN",
-          "Damage": "50,00",
-          "Weight": "NA",
-          "Availability": "5000",
-          "$Cost": "0,00",
-          "Street Index": "twl.131"
-        },
-        {
-          "9": "Sniper",
-          "Name": "Twin Laser",
-          "Type": "(Special)",
-          "Ammunition": "SA",
-          "Mode": "18S",
-          "Damage": "340",
-          "Weight": "-",
-          "Availability": "700000",
-          "$Cost": "-",
-          "Street Index": "sr2.???"
-        },
-        {
-          "9": "HMG",
-          "Name": "Vengeance Minigun",
-          "Type": "100",
-          "Ammunition": "FA",
-          "Mode": "9S",
-          "Damage": "30",
-          "Weight": "GM",
-          "Availability": "50000",
-          "$Cost": "GM",
-          "Street Index": "sr2.???"
-        },
-        {
-          "9": "Shotgun",
-          "Name": "Vehicular Shotgun",
-          "Type": "10(c)",
-          "Ammunition": "SA",
-          "Mode": "9S",
-          "Damage": "8.5",
-          "Weight": "8/72hrs",
-          "Availability": "2500",
-          "$Cost": "1.75",
-          "Street Index": "sr2.???"
-        },
-        {
-          "9": "Cannon",
-          "Name": "Victory Rotary Assault Cannon",
-          "Type": "50",
-          "Ammunition": "FA",
-          "Mode": "18D",
-          "Damage": "90",
-          "Weight": "GM",
-          "Availability": "90000",
-          "$Cost": "GM",
-          "Street Index": "sr2.???"
-        },
-        {
-          "9": "Cannon",
-          "Name": "Vigilant Rotary Autocannon",
-          "Type": "25",
-          "Ammunition": "FA",
-          "Mode": "20D",
-          "Damage": "60",
-          "Weight": "GM",
-          "Availability": "125000",
-          "$Cost": "GM",
-          "Street Index": "sr2.???"
-        },
-        {
-          "9": "Shotgun",
-          "Name": "Water Cannon",
-          "Type": "20",
-          "Ammunition": "SA",
-          "Mode": "6M Stun",
-          "Damage": "12",
-          "Weight": "GM",
-          "Availability": "20000",
-          "$Cost": "GM",
-          "Street Index": "sr3.312"
-        },
-        {
-          "9": "Lure Launcher",
-          "Name": "Lure Launcher AM-56 [1]",
-          "Type": "2",
-          "Ammunition": "SS",
-          "Mode": "-",
-          "Damage": "1CF",
-          "Weight": "9/12 days",
-          "Availability": "20000",
-          "$Cost": "4",
-          "Street Index": "fra.141"
-        },
-        {
-          "9": "Lure Launcher",
-          "Name": "Lure Launcher AM-56 [2]",
-          "Type": "2",
-          "Ammunition": "SS",
-          "Mode": "-",
-          "Damage": "2CF",
-          "Weight": "9/12 days",
-          "Availability": "400000",
-          "$Cost": "4",
-          "Street Index": "fra.141"
-        },
-        {
-          "9": "Lure Launcher",
-          "Name": "Lure Launcher AM-56 [3]",
-          "Type": "2",
-          "Ammunition": "SS",
-          "Mode": "-",
-          "Damage": "3CF",
-          "Weight": "9/12 days",
-          "Availability": "60000",
-          "$Cost": "4",
-          "Street Index": "fra.141"
-        },
-        {
-          "9": "Lure Launcher",
-          "Name": "Lure Launcher AM-56 [4]",
-          "Type": "2",
-          "Ammunition": "SS",
-          "Mode": "-",
-          "Damage": "4CF",
-          "Weight": "9/12 days",
-          "Availability": "80000",
-          "$Cost": "4",
-          "Street Index": "fra.141"
-        },
-        {
-          "9": "Lure Launcher",
-          "Name": "Lure Launcher AM-56 [5]",
-          "Type": "2",
-          "Ammunition": "SS",
-          "Mode": "-",
-          "Damage": "5CF",
-          "Weight": "9/12 days",
-          "Availability": "100000",
-          "$Cost": "4",
-          "Street Index": "fra.141"
-        },
-        {
-          "9": "Lure Launcher",
-          "Name": "Lure Launcher AM-56 [6]",
-          "Type": "2",
-          "Ammunition": "SS",
-          "Mode": "-",
-          "Damage": "6CF",
-          "Weight": "9/12 days",
-          "Availability": "120000",
-          "$Cost": "4",
-          "Street Index": "fra.141"
-        },
-        {
-          "9": "Lure Launcher",
-          "Name": "Lure Launcher AM-56 [7]",
-          "Type": "2",
-          "Ammunition": "SS",
-          "Mode": "-",
-          "Damage": "7CF",
-          "Weight": "9/12 days",
-          "Availability": "140000",
-          "$Cost": "4",
-          "Street Index": "fra.141"
-        },
-        {
-          "9": "Lure Launcher",
-          "Name": "Lure Launcher AM-56 [8]",
-          "Type": "2",
-          "Ammunition": "SS",
-          "Mode": "-",
-          "Damage": "8CF",
-          "Weight": "9/12 days",
-          "Availability": "160000",
-          "$Cost": "4",
-          "Street Index": "fra.141"
-        },
-        {
-          "9": "Lure Launcher",
-          "Name": "Lure Launcher AM-56 [9]",
-          "Type": "2",
-          "Ammunition": "SS",
-          "Mode": "-",
-          "Damage": "9CF",
-          "Weight": "9/12 days",
-          "Availability": "180000",
-          "$Cost": "4",
-          "Street Index": "fra.141"
-        },
-        {
-          "9": "Lure Launcher",
-          "Name": "Lure Launcher AM-56 [10]",
-          "Type": "2",
-          "Ammunition": "SS",
-          "Mode": "-",
-          "Damage": "10CF",
-          "Weight": "9/12 days",
-          "Availability": "200000",
-          "$Cost": "4",
-          "Street Index": "fra.141"
-        }]
+      {
+        "9": "Autocannon",
+        "Name": "Ares Vermicide Autocannon",
+        "Type": "10(c)",
+        "Ammunition": "SA",
+        "Mode": "12D",
+        "Damage": "45",
+        "Weight": "GM",
+        "Availability": "12000",
+        "$Cost": "GM",
+        "Street Index": "sr3.312"
+      },
+      {
+        "9": "LASER",
+        "Name": "AN",
+        "Type": "50",
+        "Ammunition": "SA/BF",
+        "Mode": "9LN",
+        "Damage": "1200",
+        "Weight": "GM",
+        "Availability": "600000",
+        "$Cost": "GM",
+        "Street Index": "r3.88"
+      },
+      {
+        "9": "LASER",
+        "Name": "Ares Firelance Vehicle Laser",
+        "Type": "40",
+        "Ammunition": "SA",
+        "Mode": "15S",
+        "Damage": "48",
+        "Weight": "GM",
+        "Availability": "300000",
+        "$Cost": "GM",
+        "Street Index": "r3.88"
+      },
+      {
+        "9": "Railgun",
+        "Name": "Ares Vaporizer Heavy Railgun",
+        "Type": "Belt",
+        "Ammunition": "SS",
+        "Mode": "15MN",
+        "Damage": "1540",
+        "Weight": "GM",
+        "Availability": "1000000",
+        "$Cost": "GM",
+        "Street Index": "r3.89"
+      },
+      {
+        "9": "MMG",
+        "Name": "Ares Vengeance Minigun",
+        "Type": "Belt",
+        "Ammunition": "FA",
+        "Mode": "9S",
+        "Damage": "30",
+        "Weight": "18/28days",
+        "Availability": "50000",
+        "$Cost": "3.5",
+        "Street Index": "r3.89"
+      },
+      {
+        "9": "HMG",
+        "Name": "Ares Vanquisher Minigun",
+        "Type": "Belt",
+        "Ammunition": "FA",
+        "Mode": "10S",
+        "Damage": "45",
+        "Weight": "18/28days",
+        "Availability": "75000",
+        "$Cost": "3.5",
+        "Street Index": "r3.89"
+      },
+      {
+        "9": "Autocannon",
+        "Name": "Ares Vigilant Autocannon",
+        "Type": "Belt",
+        "Ammunition": "SS/FA",
+        "Mode": "18D",
+        "Damage": "90",
+        "Weight": "20/45days",
+        "Availability": "90000",
+        "$Cost": "5",
+        "Street Index": "r3.91"
+      },
+      {
+        "9": "Autocannon",
+        "Name": "Ares Victory Autocannon",
+        "Type": "Belt",
+        "Ammunition": "SS/FA",
+        "Mode": "20D",
+        "Damage": "105",
+        "Weight": "20/45days",
+        "Availability": "125000",
+        "$Cost": "5",
+        "Street Index": "r3.91"
+      },
+      {
+        "9": "Railgun",
+        "Name": "Aztech Xicohtencatl L. Railgun",
+        "Type": "Belt",
+        "Ammunition": "SS",
+        "Mode": "6LN",
+        "Damage": "135",
+        "Weight": "GM",
+        "Availability": "135000",
+        "$Cost": "GM",
+        "Street Index": "r3.91"
+      },
+      {
+        "9": "Railgun",
+        "Name": "Aztech Relampago Med. Railgun",
+        "Type": "Belt",
+        "Ammunition": "SS",
+        "Mode": "8MN",
+        "Damage": "770",
+        "Weight": "GM",
+        "Availability": "620000",
+        "$Cost": "GM",
+        "Street Index": "r3.89"
+      },
+      {
+        "9": "Missile",
+        "Name": "EXOCET Omega (Missile)",
+        "Type": "1(m)",
+        "Ammunition": "SS",
+        "Mode": "19F",
+        "Damage": "(Missile)",
+        "Weight": "GM",
+        "Availability": "950000",
+        "$Cost": "-",
+        "Street Index": "fra.141"
+      },
+      {
+        "9": "MMG",
+        "Name": "Flechette Gun",
+        "Type": "20(c)",
+        "Ammunition": "SA/FA",
+        "Mode": "9D(f)",
+        "Damage": "45",
+        "Weight": "14/14days",
+        "Availability": "17000",
+        "$Cost": "1.5",
+        "Street Index": "sr2.???"
+      },
+      {
+        "9": "Cannon",
+        "Name": "Gauss Gun",
+        "Type": "10(c)",
+        "Ammunition": "SS",
+        "Mode": "11S",
+        "Damage": "135",
+        "Weight": "-",
+        "Availability": "500000",
+        "$Cost": "-",
+        "Street Index": "sr2.???"
+      },
+      {
+        "9": "Ship",
+        "Name": "Harpoon Gun",
+        "Type": "1",
+        "Ammunition": "SS",
+        "Mode": "(Harpoon)",
+        "Damage": "20",
+        "Weight": "3/24hrs",
+        "Availability": "6500",
+        "$Cost": "2",
+        "Street Index": "r3.88"
+      },
+      {
+        "9": "Hydrostatic Pulse Bafflers",
+        "Name": "Hydrostatic Pulse Bafflers",
+        "Type": "200",
+        "Ammunition": "SS",
+        "Mode": "22D(AV)",
+        "Damage": "500,00",
+        "Weight": "NA",
+        "Availability": "15000",
+        "$Cost": "0,00",
+        "Street Index": "twl.130"
+      },
+      {
+        "9": "Light Naval Gun",
+        "Name": "Light Naval Gun",
+        "Type": "500",
+        "Ammunition": "SA",
+        "Mode": "8LN",
+        "Damage": "250",
+        "Weight": "GM",
+        "Availability": "225000",
+        "$Cost": "GM",
+        "Street Index": "r3.88"
+      },
+      {
+        "9": "Medium Naval Gun",
+        "Name": "Medium Naval Gun",
+        "Type": "500",
+        "Ammunition": "SA",
+        "Mode": "11LN",
+        "Damage": "600",
+        "Weight": "GM",
+        "Availability": "475000",
+        "$Cost": "GM",
+        "Street Index": "r3.88"
+      },
+      {
+        "9": "Piranha Launcher",
+        "Name": "Piranha Launcher",
+        "Type": "8",
+        "Ammunition": "SS",
+        "Mode": "As rocket/missle",
+        "Damage": "120",
+        "Weight": "16/21days",
+        "Availability": "15000",
+        "$Cost": "3",
+        "Street Index": "r3.88"
+      },
+      {
+        "9": "Assault",
+        "Name": "Rocket Launcher",
+        "Type": "6(b)",
+        "Ammunition": "SS",
+        "Mode": "(Rocket)",
+        "Damage": "15",
+        "Weight": "GM",
+        "Availability": "15000",
+        "$Cost": "GM",
+        "Street Index": "sr2.???"
+      },
+      {
+        "9": "Missile",
+        "Name": "Ruhrmetall GPRL for vehicles",
+        "Type": "4(m)",
+        "Ammunition": "SS",
+        "Mode": "(Missile)",
+        "Damage": "10",
+        "Weight": "14/30days",
+        "Availability": "12000",
+        "$Cost": "4",
+        "Street Index": "sr2.???"
+      },
+      {
+        "9": "HMG",
+        "Name": "Ruhrmetall SF20 for vehicles",
+        "Type": "200(beltbox)",
+        "Ammunition": "BF/FA",
+        "Mode": "10S",
+        "Damage": "16",
+        "Weight": "18/30days",
+        "Availability": "8500",
+        "$Cost": ".5",
+        "Street Index": "sr2.???"
+      },
+      {
+        "9": "Mechanical Tentacle",
+        "Name": "Snake-Spine Whips (per arm)",
+        "Type": "NA",
+        "Ammunition": "SA",
+        "Mode": "8M",
+        "Damage": "20,00",
+        "Weight": "NA",
+        "Availability": "1500",
+        "$Cost": "0,00",
+        "Street Index": "twl.131"
+      },
+      {
+        "9": "Mechanical Tentacle",
+        "Name": "Snake-Spine Blade Arm",
+        "Type": "NA",
+        "Ammunition": "SA",
+        "Mode": "10M",
+        "Damage": "25,00",
+        "Weight": "NA",
+        "Availability": "2000",
+        "$Cost": "0,00",
+        "Street Index": "twl.131"
+      },
+      {
+        "9": "Mechanical Tentacle",
+        "Name": "Snake-Spine Hull Cutters",
+        "Type": "NA",
+        "Ammunition": "SA",
+        "Mode": "6MN",
+        "Damage": "50,00",
+        "Weight": "NA",
+        "Availability": "5000",
+        "$Cost": "0,00",
+        "Street Index": "twl.131"
+      },
+      {
+        "9": "Sniper",
+        "Name": "Twin Laser",
+        "Type": "(Special)",
+        "Ammunition": "SA",
+        "Mode": "18S",
+        "Damage": "340",
+        "Weight": "-",
+        "Availability": "700000",
+        "$Cost": "-",
+        "Street Index": "sr2.???"
+      },
+      {
+        "9": "HMG",
+        "Name": "Vengeance Minigun",
+        "Type": "100",
+        "Ammunition": "FA",
+        "Mode": "9S",
+        "Damage": "30",
+        "Weight": "GM",
+        "Availability": "50000",
+        "$Cost": "GM",
+        "Street Index": "sr2.???"
+      },
+      {
+        "9": "Shotgun",
+        "Name": "Vehicular Shotgun",
+        "Type": "10(c)",
+        "Ammunition": "SA",
+        "Mode": "9S",
+        "Damage": "8.5",
+        "Weight": "8/72hrs",
+        "Availability": "2500",
+        "$Cost": "1.75",
+        "Street Index": "sr2.???"
+      },
+      {
+        "9": "Cannon",
+        "Name": "Victory Rotary Assault Cannon",
+        "Type": "50",
+        "Ammunition": "FA",
+        "Mode": "18D",
+        "Damage": "90",
+        "Weight": "GM",
+        "Availability": "90000",
+        "$Cost": "GM",
+        "Street Index": "sr2.???"
+      },
+      {
+        "9": "Cannon",
+        "Name": "Vigilant Rotary Autocannon",
+        "Type": "25",
+        "Ammunition": "FA",
+        "Mode": "20D",
+        "Damage": "60",
+        "Weight": "GM",
+        "Availability": "125000",
+        "$Cost": "GM",
+        "Street Index": "sr2.???"
+      },
+      {
+        "9": "Shotgun",
+        "Name": "Water Cannon",
+        "Type": "20",
+        "Ammunition": "SA",
+        "Mode": "6M Stun",
+        "Damage": "12",
+        "Weight": "GM",
+        "Availability": "20000",
+        "$Cost": "GM",
+        "Street Index": "sr3.312"
+      },
+      {
+        "9": "Lure Launcher",
+        "Name": "Lure Launcher AM-56 [1]",
+        "Type": "2",
+        "Ammunition": "SS",
+        "Mode": "-",
+        "Damage": "1CF",
+        "Weight": "9/12 days",
+        "Availability": "20000",
+        "$Cost": "4",
+        "Street Index": "fra.141"
+      },
+      {
+        "9": "Lure Launcher",
+        "Name": "Lure Launcher AM-56 [2]",
+        "Type": "2",
+        "Ammunition": "SS",
+        "Mode": "-",
+        "Damage": "2CF",
+        "Weight": "9/12 days",
+        "Availability": "400000",
+        "$Cost": "4",
+        "Street Index": "fra.141"
+      },
+      {
+        "9": "Lure Launcher",
+        "Name": "Lure Launcher AM-56 [3]",
+        "Type": "2",
+        "Ammunition": "SS",
+        "Mode": "-",
+        "Damage": "3CF",
+        "Weight": "9/12 days",
+        "Availability": "60000",
+        "$Cost": "4",
+        "Street Index": "fra.141"
+      },
+      {
+        "9": "Lure Launcher",
+        "Name": "Lure Launcher AM-56 [4]",
+        "Type": "2",
+        "Ammunition": "SS",
+        "Mode": "-",
+        "Damage": "4CF",
+        "Weight": "9/12 days",
+        "Availability": "80000",
+        "$Cost": "4",
+        "Street Index": "fra.141"
+      },
+      {
+        "9": "Lure Launcher",
+        "Name": "Lure Launcher AM-56 [5]",
+        "Type": "2",
+        "Ammunition": "SS",
+        "Mode": "-",
+        "Damage": "5CF",
+        "Weight": "9/12 days",
+        "Availability": "100000",
+        "$Cost": "4",
+        "Street Index": "fra.141"
+      },
+      {
+        "9": "Lure Launcher",
+        "Name": "Lure Launcher AM-56 [6]",
+        "Type": "2",
+        "Ammunition": "SS",
+        "Mode": "-",
+        "Damage": "6CF",
+        "Weight": "9/12 days",
+        "Availability": "120000",
+        "$Cost": "4",
+        "Street Index": "fra.141"
+      },
+      {
+        "9": "Lure Launcher",
+        "Name": "Lure Launcher AM-56 [7]",
+        "Type": "2",
+        "Ammunition": "SS",
+        "Mode": "-",
+        "Damage": "7CF",
+        "Weight": "9/12 days",
+        "Availability": "140000",
+        "$Cost": "4",
+        "Street Index": "fra.141"
+      },
+      {
+        "9": "Lure Launcher",
+        "Name": "Lure Launcher AM-56 [8]",
+        "Type": "2",
+        "Ammunition": "SS",
+        "Mode": "-",
+        "Damage": "8CF",
+        "Weight": "9/12 days",
+        "Availability": "160000",
+        "$Cost": "4",
+        "Street Index": "fra.141"
+      },
+      {
+        "9": "Lure Launcher",
+        "Name": "Lure Launcher AM-56 [9]",
+        "Type": "2",
+        "Ammunition": "SS",
+        "Mode": "-",
+        "Damage": "9CF",
+        "Weight": "9/12 days",
+        "Availability": "180000",
+        "$Cost": "4",
+        "Street Index": "fra.141"
+      },
+      {
+        "9": "Lure Launcher",
+        "Name": "Lure Launcher AM-56 [10]",
+        "Type": "2",
+        "Ammunition": "SS",
+        "Mode": "-",
+        "Damage": "10CF",
+        "Weight": "9/12 days",
+        "Availability": "200000",
+        "$Cost": "4",
+        "Street Index": "fra.141"
+      }
+    ]
   },
   "Chips": {
     "Name": "Chips",
@@ -49154,96 +49156,106 @@
       ""
     ],
     "entries": [
-        {
+      {
         "Name": "Remote Control Deck Rating [1]",
-        "Concealability": "1",
-        "Rating": "3",
-        "Weight": "4/72hrs",
-        "Availability": "5000",
-        "$Cost": "2",
-        "Street Index": "sr3.306"
-        },
-        {
+        "Concealability": "3",
+        "Rating": "1",
+        "Weight": "4",
+        "Availability": "4/72hrs",
+        "Cost": "5000",
+        "Street Index": "2",
+        "BookPage": "sr3.306"
+      },
+      {
         "Name": "Remote Control Deck Rating [2]",
-        "Concealability": "2",
-        "Rating": "3",
-        "Weight": "4/72hrs",
-        "Availability": "10000",
-        "$Cost": "2",
-        "Street Index": "sr3.306"
-        },
-        {
+        "Concealability": "3",
+        "Rating": "2",
+        "Weight": "4",
+        "Availability": "4/72hrs",
+        "Cost": "10000",
+        "Street Index": "2",
+        "BookPage": "sr3.306"
+      },
+      {
         "Name": "Remote Control Deck Rating [3]",
         "Concealability": "3",
         "Rating": "3",
-        "Weight": "4/72hrs",
-        "Availability": "15000",
-        "$Cost": "2",
-        "Street Index": "sr3.306"
-        },
-        {
+        "Weight": "4",
+        "Availability": "4/72hrs",
+        "Cost": "15000",
+        "Street Index": "2",
+        "BookPage": "sr3.306"
+      },
+      {
         "Name": "Remote Control Deck Rating [4]",
-        "Concealability": "4",
-        "Rating": "3",
-        "Weight": "4/72hrs",
-        "Availability": "20000",
-        "$Cost": "2",
-        "Street Index": "sr3.306"
-        },
-        {
+        "Concealability": "3",
+        "Rating": "4",
+        "Weight": "4",
+        "Availability": "4/72hrs",
+        "Cost": "20000",
+        "Street Index": "2",
+        "BookPage": "sr3.306"
+      },
+      {
         "Name": "Remote Control Deck Rating [5]",
-        "Concealability": "5",
-        "Rating": "3",
-        "Weight": "4/72hrs",
-        "Availability": "25000",
-        "$Cost": "2",
-        "Street Index": "sr3.306"
-        },
-        {
+        "Concealability": "3",
+        "Rating": "5",
+        "Weight": "4",
+        "Availability": "4/72hrs",
+        "Cost": "25000",
+        "Street Index": "2",
+        "BookPage": "sr3.306"
+      },
+      {
         "Name": "Remote Control Deck Rating [6]",
-        "Concealability": "6",
-        "Rating": "3",
-        "Weight": "4/72hrs",
-        "Availability": "30000",
-        "$Cost": "2",
-        "Street Index": "sr3.306"
-        },
-        {
+        "Concealability": "3",
+        "Rating": "6",
+        "Weight": "4",
+        "Availability": "4/72hrs",
+        "Cost": "30000",
+        "Street Index": "2",
+        "BookPage": "sr3.306"
+      },
+      {
         "Name": "Remote Control Deck Rating [7]",
-        "Concealability": "7",
-        "Rating": "3",
-        "Weight": "4/72hrs",
-        "Availability": "35000",
-        "$Cost": "2",
-        "Street Index": "sr3.306"
-        },
-        {
+        "Concealability": "3",
+        "Rating": "7",
+        "Weight": "4",
+        "Availability": "4/72hrs",
+        "Cost": "35000",
+        "Street Index": "2",
+        "BookPage": "sr3.306"
+      },
+      {
         "Name": "Remote Control Deck Rating [8]",
-        "Concealability": "8",
-        "Rating": "3",
-        "Weight": "4/72hrs",
-        "Availability": "40000",
-        "$Cost": "2",
-        "Street Index": "sr3.306"
-        },
-        {
+        "Concealability": "3",
+        "Rating": "8",
+        "Weight": "4",
+        "Availability": "4/72hrs",
+        "Cost": "40000",
+        "Street Index": "2",
+        "BookPage": "sr3.306"
+      },
+      {
         "Name": "Remote Control Deck Rating [9]",
-        "Concealability": "9",
-        "Rating": "3",
-        "Weight": "4/72hrs",
-        "Availability": "45000",
-        "$Cost": "2",
-        "Street Index": "sr3.306"
-        },
-        {
-        "Name": "Remote Control Deck Rating[10]",
-        "Concealability": "10",
-        "Rating": "3",
-        "Weight": "4/72hrs",
-        "Availability": "50000",
-        "$Cost": "2",
-        "Street Index": "sr3.306"
-        },
+        "Concealability": "3",
+        "Rating": "9",
+        "Weight": "4",
+        "Availability": "4/72hrs",
+        "Cost": "45000",
+        "Street Index": "2",
+        "BookPage": "sr3.306"
+      },
+      {
+        "Name": "Remote Control Deck Rating [10]",
+        "Concealability": "3",
+        "Rating": "10",
+        "Weight": "4",
+        "Availability": "4/72hrs",
+        "Cost": "50000",
+        "Street Index": "2",
+        "BookPage": "sr3.306"
+      },
       {
         "Name": "Chemical Seal Rating [1]",
         "Concealability": "-",
@@ -55665,7 +55677,7 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "Scanway Chem / Explosives detector" ,
+        "Name": "Scanway Chem / Explosives detector",
         "Concealability": "-",
         "Rating": "5",
         "Weight": "-",
@@ -58733,7 +58745,11 @@
   },
   "Lifestyles": {
     "Name": "Lifestyles",
-    "attributes": ["Cost", "BookPage", "Street Index"],
+    "attributes": [
+      "Cost",
+      "BookPage",
+      "Street Index"
+    ],
     "entries": [
       {
         "Name": "Street - 1 Month",
@@ -58872,7 +58888,13 @@
   },
   "Simsense": {
     "Name": "Simsense",
-    "attributes": ["Availability", "Cost", "Street Index", "BookPage", ""],
+    "attributes": [
+      "Availability",
+      "Cost",
+      "Street Index",
+      "BookPage",
+      ""
+    ],
     "entries": [
       {
         "Name": "CCSS External Decoder",
@@ -59515,7 +59537,14 @@
   },
   "FireForce Storage Frames": {
     "Name": "FireForce Storage Frames",
-    "attributes": ["Weight", "Points", "Cost", "Notes", "BookPage", ""],
+    "attributes": [
+      "Weight",
+      "Points",
+      "Cost",
+      "Notes",
+      "BookPage",
+      ""
+    ],
     "entries": [
       {
         "Name": "Utility Vest",
@@ -59569,7 +59598,13 @@
   },
   "FireForce Attachments": {
     "Name": "FireForce Attachments",
-    "attributes": ["Points Used", "Cost", "Notes", "BookPage", ""],
+    "attributes": [
+      "Points Used",
+      "Cost",
+      "Notes",
+      "BookPage",
+      ""
+    ],
     "entries": [
       {
         "Name": "Utility Pouch",
