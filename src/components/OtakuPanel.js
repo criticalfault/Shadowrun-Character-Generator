@@ -6,6 +6,7 @@ import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
 import SearchableSelect from "./SearchableSelect";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -15,6 +16,9 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Modal from "@mui/material/Modal";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import TextField from "@mui/material/TextField";
 
 const modalStyle = {
   position: "absolute",
@@ -47,7 +51,7 @@ export default function OtakuPanel(props) {
   const [spriteCFModalOpen, setSpriteCFModalOpen] = useState(false);
 
   const getCompSkillRating = () => {
-    const s = props.currentCharacter.skills.find(
+    const s = (props.currentCharacter.skills ?? []).find(
       (s) => s.name === 'Computer' || s.name === 'Computer (Programming)'
     );
     return s?.rating ?? 10;
@@ -121,10 +125,12 @@ export default function OtakuPanel(props) {
   };
 
   // Sum base + race + cyber bonus for a single attribute
+  const raceBonuses = props.currentCharacter.raceBonuses ?? {};
+  const cyberAttributeBonuses = props.currentCharacter.cyberAttributeBonuses ?? {};
   const attr = (name) =>
     parseInt(props.currentCharacter.attributes[name] ?? 0) +
-    parseInt(props.currentCharacter.raceBonuses[name] ?? 0) +
-    parseInt(props.currentCharacter.cyberAttributeBonuses[name] ?? 0);
+    parseInt(raceBonuses[name] ?? 0) +
+    parseInt(cyberAttributeBonuses[name] ?? 0);
 
   const WIL = attr('Willpower');
   const INT = attr('Intelligence');
@@ -173,7 +179,7 @@ export default function OtakuPanel(props) {
 
   // Book (Matrix p.137): free complex forms = Computer(Programming) skill × 50 Mp
   const getFreeComplexFormMp = () => {
-    const compSkill = props.currentCharacter.skills.find(
+    const compSkill = (props.currentCharacter.skills ?? []).find(
       (s) => s.name === "Computer" || s.name === "Computer (Programming)"
     );
     const rating = compSkill?.rating ?? 0;
@@ -182,6 +188,202 @@ export default function OtakuPanel(props) {
 
   const handlePathChange = (event) => {
     props.onChangeOtakuPath(event.target.value);
+  };
+
+  // ── Submersion ────────────────────────────────────────────────
+  const [submersionGrade, setSubmersionGrade] = useState(props.submersionGrade ?? 0);
+  const [submersions, setSubmersions] = useState(props.submersions ?? []);
+  const [pendingEcho, setPendingEcho] = useState('');
+  const blankTribe = { name: '', resources: 'Squatter', resonanceWell: '' };
+  const [otakuTribe, setOtakuTribe] = useState(props.otakuTribe ?? null);
+  const [editingTribe, setEditingTribe] = useState(false);
+  const [tribeDraft, setTribeDraft] = useState(props.otakuTribe ?? blankTribe);
+
+  const ECHOES_INCREMENTAL = [
+    'Improved I/O Speed',
+    'Improved Hardening',
+    'Improved MPCP',
+    'Improved Persona (Bod)',
+    'Improved Persona (Evasion)',
+    'Improved Persona (Masking)',
+    'Improved Persona (Sensor)',
+    'Improved Reaction',
+  ];
+  const ECHOES_STATIC = [
+    'Daemon Summoning',
+    'Ghosting',
+    'Info Sortilage',
+    'Neurofilter',
+    'Overclock',
+    'Resonance Link',
+    'Switch',
+    'Traceroute',
+  ];
+
+  const calcSubmersionCost = (grade) => (grade * 2) + 10;
+
+  const handleSubmerge = () => {
+    if (!pendingEcho) return;
+    const nextGrade = submersionGrade + 1;
+    const cost = calcSubmersionCost(nextGrade);
+    const newEntry = { grade: nextGrade, echoName: pendingEcho };
+    const newGrade = nextGrade;
+    const newSubmersions = [...submersions, newEntry];
+    setSubmersionGrade(newGrade);
+    setSubmersions(newSubmersions);
+    setPendingEcho('');
+    props.onSpendKarma?.(cost);
+    props.onChangeSubmersions?.(newGrade, newSubmersions);
+  };
+
+  const handleRemoveLastSubmersion = () => {
+    if (submersions.length === 0) return;
+    const last = submersions[submersions.length - 1];
+    const cost = calcSubmersionCost(last.grade);
+    const newGrade = submersionGrade - 1;
+    const newSubmersions = submersions.slice(0, -1);
+    setSubmersionGrade(newGrade);
+    setSubmersions(newSubmersions);
+    props.onSpendKarma?.(-cost);
+    props.onChangeSubmersions?.(newGrade, newSubmersions);
+  };
+
+  const saveTribe = () => {
+    setOtakuTribe(tribeDraft);
+    setEditingTribe(false);
+    props.onChangeOtakuTribe?.(tribeDraft);
+  };
+
+  const removeTribe = () => {
+    setOtakuTribe(null);
+    props.onChangeOtakuTribe?.(null);
+  };
+
+  const RenderSubmersionSection = () => {
+    const nextGrade = submersionGrade + 1;
+    const cost = calcSubmersionCost(nextGrade);
+    const learnedStatic = submersions
+      .map(s => s.echoName)
+      .filter(n => ECHOES_STATIC.includes(n) && n !== 'Resonance Link');
+    const availableEchoes = [
+      ...ECHOES_INCREMENTAL,
+      ...ECHOES_STATIC.filter(e => !learnedStatic.includes(e)),
+    ];
+
+    return (
+      <>
+        <hr />
+        <h3>Submersion</h3>
+
+        <Box sx={{ mb: 2 }}>
+          <strong>Grade:</strong> {submersionGrade}&nbsp;&nbsp;
+          <strong>Hacking Pool bonus:</strong> +{submersionGrade} dice
+          <div style={{ fontSize: '0.85em', color: '#888', marginTop: 4 }}>
+            Cost formula: (grade × 2) + 10 Karma — requires access to a resonance well
+          </div>
+        </Box>
+
+        {submersions.length > 0 && (
+          <TableContainer component={Paper} sx={{ mb: 2, maxWidth: 500 }}>
+            <Table size="small">
+              <TableHead>
+                <TableRow>
+                  <TableCell>Grade</TableCell>
+                  <TableCell>Echo Gained</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {submersions.map((row, i) => (
+                  <TableRow key={i}>
+                    <TableCell>{row.grade}</TableCell>
+                    <TableCell>{row.echoName}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        )}
+
+        <Box sx={{ border: '1px solid #444', borderRadius: 1, p: 2, maxWidth: 480, mb: 2 }}>
+          <strong>Next Submersion — Grade {nextGrade}</strong>
+          <Box sx={{ mt: 1, mb: 1 }}>
+            <strong>Karma cost: {cost}</strong>
+          </Box>
+          <Box sx={{ mt: 1 }}>
+            <strong>Echo to learn:</strong>{' '}
+            <FormControl size="small" style={{ minWidth: 240, marginLeft: 8 }}>
+              <InputLabel>Echo</InputLabel>
+              <Select value={pendingEcho} onChange={e => setPendingEcho(e.target.value)} label="Echo">
+                {availableEchoes.map(e => (
+                  <MenuItem key={e} value={e}>{e}</MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </Box>
+          <Box sx={{ mt: 2 }}>
+            <Button variant="contained" color="primary" onClick={handleSubmerge} disabled={!pendingEcho}>
+              Spend {cost} Karma &amp; Submerge to Grade {nextGrade}
+            </Button>
+            {submersions.length > 0 && (
+              <Button color="secondary" sx={{ ml: 2 }} onClick={handleRemoveLastSubmersion}>
+                Undo Last Submersion
+              </Button>
+            )}
+          </Box>
+        </Box>
+
+        <h3>Tribe</h3>
+        {!otakuTribe && !editingTribe && (
+          <Button variant="outlined" onClick={() => { setTribeDraft(blankTribe); setEditingTribe(true); }}>
+            Register Tribe
+          </Button>
+        )}
+        {otakuTribe && !editingTribe && (
+          <Box sx={{ border: '1px solid #666', borderRadius: 1, p: 2, maxWidth: 480 }}>
+            <strong>{otakuTribe.name}</strong>
+            <Box sx={{ fontSize: '0.85em', mt: 0.5 }}>
+              <div>Resources: {otakuTribe.resources}</div>
+              {otakuTribe.resonanceWell && <div>Resonance Well: {otakuTribe.resonanceWell}</div>}
+              <div style={{ color: '#888', fontSize: '0.9em', marginTop: 4 }}>
+                Tribe members live at one resource level below tribe resources.
+              </div>
+            </Box>
+            <Box sx={{ mt: 1 }}>
+              <Button size="small" onClick={() => { setTribeDraft({ ...otakuTribe }); setEditingTribe(true); }}>
+                Edit
+              </Button>
+              <Button size="small" color="secondary" sx={{ ml: 1 }} onClick={removeTribe}>
+                Leave Tribe
+              </Button>
+            </Box>
+          </Box>
+        )}
+        {editingTribe && (
+          <Box sx={{ border: '1px solid #666', borderRadius: 1, p: 2, maxWidth: 480 }}>
+            <TextField size="small" fullWidth label="Tribe Name" value={tribeDraft.name}
+              onChange={e => setTribeDraft({ ...tribeDraft, name: e.target.value })}
+              sx={{ mb: 1 }} />
+            <FormControl size="small" fullWidth sx={{ mb: 1 }}>
+              <InputLabel>Resources</InputLabel>
+              <Select value={tribeDraft.resources} label="Resources"
+                onChange={e => setTribeDraft({ ...tribeDraft, resources: e.target.value })}>
+                {['Squatter', 'Low', 'Middle', 'High', 'Luxury'].map(r => (
+                  <MenuItem key={r} value={r}>{r}</MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+            <TextField size="small" fullWidth label="Resonance Well location (optional)" value={tribeDraft.resonanceWell}
+              onChange={e => setTribeDraft({ ...tribeDraft, resonanceWell: e.target.value })}
+              sx={{ mb: 1 }} />
+            <Box>
+              <Button variant="contained" size="small" onClick={saveTribe}
+                disabled={!tribeDraft.name.trim()}>Save Tribe</Button>
+              <Button size="small" sx={{ ml: 1 }} onClick={() => setEditingTribe(false)}>Cancel</Button>
+            </Box>
+          </Box>
+        )}
+      </>
+    );
   };
 
   return (
@@ -541,6 +743,7 @@ export default function OtakuPanel(props) {
                </Button>
              </Box>
            </Modal>
+           {RenderSubmersionSection()}
           </Grid>
         </Grid>
       </Box>

@@ -188,6 +188,12 @@ export default function BasicTabs() {
     magical: true,
     initation: false,
     submerison: false,
+    submersionGrade: 0,
+    submersions: [],
+    otakuTribe: null,
+    initiateGrade: 0,
+    initiations: [],
+    magicalGroup: null,
     magicalTradition: false,
     magicalTotem: false,
     moreMetahumansOption:false,
@@ -794,6 +800,19 @@ export default function BasicTabs() {
             onChangeComplexForm={handleComplexFormUpdate}
             onChangeOtakuPath={onChangeOtakuPath}
             onChangeSprites={(sprites) => setCharacter({ ...Character, sprites })}
+            submersionGrade={Character.submersionGrade}
+            submersions={Character.submersions}
+            otakuTribe={Character.otakuTribe}
+            onChangeSubmersions={(submersionGrade, submersions) =>
+              setCharacter({ ...Character, submersionGrade, submersions })
+            }
+            onChangeOtakuTribe={(otakuTribe) =>
+              setCharacter({ ...Character, otakuTribe })
+            }
+            onSpendKarma={(karma) => {
+              let karmaSpentToSave = (Character.karmaSpent += karma);
+              setCharacter({ ...Character, karmaSpent: karmaSpentToSave });
+            }}
           /> 
           : 
           <MagicPanel
@@ -815,6 +834,19 @@ export default function BasicTabs() {
             purchasedSpellPoints={Character.purchasedSpellPoints ?? 0}
             onChangePurchasedSpellPoints={handleChangePurchasedSpellPoints}
             onChangeMagicalAttributes={handleMagicAttributeUpdates}
+            initiateGrade={Character.initiateGrade}
+            initiations={Character.initiations}
+            magicalGroup={Character.magicalGroup}
+            onChangeInitiations={(initiateGrade, initiations) =>
+              setCharacter({ ...Character, initiateGrade, initiations })
+            }
+            onChangeMagicalGroup={(magicalGroup) =>
+              setCharacter({ ...Character, magicalGroup })
+            }
+            onSpendKarma={(karma) => {
+              let karmaSpentToSave = (Character.karmaSpent += karma);
+              setCharacter({ ...Character, karmaSpent: karmaSpentToSave });
+            }}
           />
         }
         </CustomTabPanel>

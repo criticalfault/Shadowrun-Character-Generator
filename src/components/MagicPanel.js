@@ -81,8 +81,8 @@ function MagicPanel(props) {
     },
     "Magician's Way": {
       name: "Magician's Way",
-      description: "Adepts of the Magician's Way channel their power toward spellcasting rather than physical enhancement. They walk the line between physical adept and full mage, focusing their inner magic on learning and casting spells without the need for hermetic or shamanic training.",
-      conjures: "none",
+      description: "Rather than devoting all their time to magical study, magician adepts channel some of their power into physical abilities like standard adepts while reserving the rest for Sorcery and Conjuring. They purchase the Magical Power adept power (1 Power Point per level), which grants an effective Magic Attribute for magical skills equal to their level. They must choose a shamanic or hermetic tradition at character creation. (MitS, p. 22)",
+      conjures: "Elementals or Spirits (by tradition)",
       totemList: "none",
     },
 };
@@ -220,30 +220,29 @@ function MagicPanel(props) {
     "Aboriginal Magic": {
       name: "Aboriginal Magic",
       "book.page": "mits.24",
-      description: "Nature-based shamanic tradition from Australia and the Pacific Islands. Practitioners follow totems unique to their region and culture, connecting to the land and its spirits in ways distinct from both Western shamanism and hermetic magic.",
+      description: "The native Australians have a rich tradition dating back tens of thousands of years rooted in the Dreamtime, a timeless realm of magic similar to the metaplanes. Aboriginal shamans are skilled astral travelers with deep knowledge of dealing with astral powers. Almost exclusively shamans, they follow totems such as Badger, Crocodile, Scorpion, Shark and Snake, or nature totems like Sun, Moon, Sea and Mountain. Many are wilderness shamans.",
       conjures: "Nature Spirits",
-      totemList: "ANIMAL TOTEMS",
+      totemList: "TOTEMS",
     },
     "Aztec Magic": {
       name: "Aztec Magic",
-      description: "Combines shamanic spirit contact with hermetic-style ritual. Practitioners follow a complex pantheon of Aztec gods and view sacrifice as a fundamental part of magical practice. Magic is deeply tied to cycles of time and cosmic renewal.",
-      conjures: "Nature Spirits",
-      totemList: "ANIMAL TOTEMS",
+      "book.page": "mits.24",
+      description: "A revival of ancient Aztec traditions reconstructed from historical sources, focused on the gods and totems of the culture. Animal and human sacrifice is a predominant theme, making blood magic common among initiates. Shamanic tradition with common totems including Bat, Eagle, Jaguar, Lizard, Moon, Plumed Serpent, Puma, Snake and Sun. Use elaborate ceremonial costumes and obsidian knives in ritual magic.",
+      conjures: "Spirits",
+      totemList: "TOTEMS",
     },
     "Black Magic": {
       name: "Black Magic",
-      description: "A hermetic tradition that focuses on the darker applications of magic — domination, destruction, and self-aggrandizement. Practitioners tap into pain and suffering as a source of power. Many are eventually consumed by it.",
-      conjures: "Elementals",
-      totemList: "none",
-      diceBonus: [
-        { category: "Combat & Manipulation spells", bonus: "+2 dice" },
-        { category: "Health & Detection spells", bonus: "-1 die" },
-      ],
+      "book.page": "mits.24",
+      description: "Despite their reputation, most black magic groups follow a philosophy of freedom from social constraints combined with a will to power, steeped in Christian, hermetic and pagan symbolism. Hermetic black magic practitioners tend to be strict and disciplined. Shamanic practitioners often follow idols such as the Adversary, the Horned Man or the Seductress. Truly evil blood-sacrifice variants are a rarer exception.",
+      conjures: "Elementals or Spirits (by tradition)",
+      totemList: "TOTEMS",
     },
     "Chaos Magic": {
       name: "Chaos Magic",
-      description: "No fixed belief system — chaos mages hold that any symbol system can channel magic if the practitioner truly believes in it. Each chaos mage adopts a personal 'paradigm.' Versatile but often unstable; the magic shifts with the mage's belief.",
-      conjures: "Chaos Forms (Elementals)",
+      "book.page": "mits.24",
+      description: "A highly eclectic and post-modern magical system designed to be free of dogma, incorporating symbols and ideas from many cultures including qabbalistic, runic and shamanic elements. Usually hermetic, though chaos mages may interact with many spirit beings during astral quests. Practitioners are often technophiles who incorporate technology such as CD players and LCD screens into their magic.",
+      conjures: "Elementals",
       totemList: "none",
     },
     "Christian Magic": {
@@ -1101,7 +1100,7 @@ function MagicPanel(props) {
   const [magicalTradition, setMagicalTradition] = useState(
     props.chosenTradition.name
   );
-  const [magicalTotem, setMagicalTotem] = useState(props.magicalTotem.name);
+  const [magicalTotem, setMagicalTotem] = useState(props.magicalTotem?.name);
   const [AdeptPointsSpent, setAdeptPointsSpent] = useState(
     CalcTotalPowerRatings(props.powers)
   );
@@ -1116,10 +1115,30 @@ function MagicPanel(props) {
   const [spellFetish, setSpellFetish] = useState(false);
   const [spellExclusive, setSpellExclusive] = useState(false);
 
+  // ── Initiation state ──────────────────────────────────────────
+  const [initiateGrade, setInitiateGrade] = useState(props.initiateGrade ?? 0);
+  const [initiations, setInitiations] = useState(props.initiations ?? []);
+  const [useGroup, setUseGroup] = useState(!!(props.magicalGroup));
+  const [useOrdeal, setUseOrdeal] = useState(false);
+  const [pendingBenefit, setPendingBenefit] = useState('metamagic');
+  const [pendingMetamagic, setPendingMetamagic] = useState('');
+
+  // ── Magical Group state ───────────────────────────────────────
+  const blankGroup = { name: '', type: 'Initiatory', resources: 'Low', strictures: [], patron: '' };
+  const [magicalGroup, setMagicalGroup] = useState(props.magicalGroup ?? null);
+  const [editingGroup, setEditingGroup] = useState(false);
+  const [groupDraft, setGroupDraft] = useState(props.magicalGroup ?? blankGroup);
+
+  // Magician's Way: total levels of "Magical Power" purchased → spell budget = levels × 6
+  const magicalPowerLevel = selectedPowers
+    .filter(p => p.Name && p.Name.includes('Magical Power'))
+    .reduce((sum, p) => sum + (parseInt(p.Rating) || 1), 0);
+  const magicianSpellBudget = magicalPowerLevel * 6;
+
   const label = { inputProps: { "aria-label": "Edition Switch" } };
 
   const findTotemID = (totem) => {
-    if (totem.hasOwnProperty("id")) {
+    if (totem && totem.hasOwnProperty("id")) {
       return totem.id;
     }
     return 0;
@@ -1469,6 +1488,80 @@ function MagicPanel(props) {
             </ListItem>
           ))}
         </List>
+        {magicalTradition === "Magician's Way" && magicalPowerLevel > 0 && (
+          <>
+            <hr></hr>
+            <h3>Magician's Way — Spells</h3>
+            <p style={{ fontSize: '0.85em', color: '#888' }}>
+              Magical Power level {magicalPowerLevel} grants {magicianSpellBudget} Spell Points (MitS p.22).
+              Effective Magic Attribute = {magicalPowerLevel} for Sorcery and Conjuring.
+            </p>
+            <Box sx={{ width: "100%" }}>
+              Spell Points {spellPointsSpent}/{magicianSpellBudget}
+              <LinearProgress
+                variant="determinate"
+                value={Math.min((spellPointsSpent / magicianSpellBudget) * 100, 100)}
+              />
+            </Box>
+            <br />
+            <FormControl style={{ width: "200px" }}>
+              <InputLabel id="adept-spell-label">{selectedCategory || "Select Spell"}</InputLabel>
+              <Select
+                id="adept-spell-dropdown"
+                value={newSpellIndex}
+                onChange={handleSpellChange}
+              >
+                {(spellsData ?? [])
+                  .sort((a, b) => {
+                    if (a.hasOwnProperty("Name")) return a.Name.localeCompare(b.Name);
+                    return a > b;
+                  })
+                  .map((spell, index) => (
+                    <MenuItem key={index} value={index}>
+                      {spell.Name}
+                    </MenuItem>
+                  ))}
+              </Select>
+            </FormControl>
+            {newSpell && (
+              <>
+                <TextField
+                  style={{ width: "100px", marginRight: "20px" }}
+                  id="adept-spell-rating-input"
+                  label="Rating (1-6)"
+                  type="number"
+                  value={spellRating}
+                  onChange={handleRatingChange}
+                  InputProps={{ inputProps: { min: 1, max: 6 } }}
+                />
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleAddSpell}
+                  disabled={spellPointsSpent + spellRating > magicianSpellBudget}
+                >
+                  Add Spell
+                </Button>
+                <div>Notes: {newSpell.Notes ?? newSpell.Description ?? ''}</div>
+              </>
+            )}
+            <hr></hr>
+            <h3>Learned Spells</h3>
+            <List style={{ maxWidth: "600px" }}>
+              {selectedSpells.map((spell, index) => (
+                <ListItem key={index}>
+                  <ListItemText
+                    primary={`${spell.Name} (Rating ${spell.Rating})`}
+                    secondary={`Category: ${spell.Category ?? '—'}  Drain: ${spell.Drain ?? '—'}`}
+                  />
+                  <Button color="secondary" onClick={() => handleRemoveSpell(index)}>
+                    Remove
+                  </Button>
+                </ListItem>
+              ))}
+            </List>
+          </>
+        )}
       </>
     );
   };
@@ -1661,7 +1754,7 @@ function MagicPanel(props) {
         <br></br>
         {RenderSpellPointPurchase()}
         <SearchableSelect
-          items={spellsData.slice().sort((a, b) => (a.Name ?? '').localeCompare(b.Name ?? ''))}
+          items={(spellsData ?? []).slice().sort((a, b) => (a.Name ?? '').localeCompare(b.Name ?? ''))}
           value={newSpellIndex}
           onChange={handleSpellChange}
           label="Spells"
@@ -1922,6 +2015,256 @@ function MagicPanel(props) {
     }
   };
 
+  // ── Initiation helpers ───────────────────────────────────────
+  const calcInitiationCost = (targetGrade, inGroup, withOrdeal) => {
+    const base = 5 + targetGrade;
+    let mult;
+    if (inGroup)       mult = withOrdeal ? 1.5 : 2;
+    else               mult = withOrdeal ? 2.5 : 3;
+    return Math.floor(base * mult);
+  };
+
+  const isAdept = ['Physical Adept','Human Physical Adept','Metahuman Physical Adept']
+    .includes(props.magicalChoice);
+
+  const handleInitiate = () => {
+    if (!pendingBenefit) return;
+    if (pendingBenefit === 'metamagic' && !pendingMetamagic) return;
+    const nextGrade = initiateGrade + 1;
+    const cost = calcInitiationCost(nextGrade, useGroup && !!magicalGroup, useOrdeal);
+    const newEntry = {
+      grade: nextGrade,
+      benefit: pendingBenefit,
+      metamagicName: pendingBenefit === 'metamagic' ? pendingMetamagic : '',
+    };
+    const newGrade = nextGrade;
+    const newInitiations = [...initiations, newEntry];
+    setInitiateGrade(newGrade);
+    setInitiations(newInitiations);
+    setPendingMetamagic('');
+    props.onSpendKarma?.(cost);
+    props.onChangeInitiations?.(newGrade, newInitiations);
+  };
+
+  const handleRemoveLastInitiation = () => {
+    if (initiations.length === 0) return;
+    const last = initiations[initiations.length - 1];
+    const cost = calcInitiationCost(last.grade, useGroup && !!magicalGroup, false);
+    const newGrade = initiateGrade - 1;
+    const newInitiations = initiations.slice(0, -1);
+    setInitiateGrade(newGrade);
+    setInitiations(newInitiations);
+    props.onSpendKarma?.(-cost);
+    props.onChangeInitiations?.(newGrade, newInitiations);
+  };
+
+  const saveGroup = () => {
+    setMagicalGroup(groupDraft);
+    setUseGroup(true);
+    setEditingGroup(false);
+    props.onChangeMagicalGroup?.(groupDraft);
+  };
+
+  const removeGroup = () => {
+    setMagicalGroup(null);
+    setUseGroup(false);
+    props.onChangeMagicalGroup?.(null);
+  };
+
+  const ALL_STRICTURES = [
+    'Attendance','Belief','Deed','Exclusive Membership','Exclusive Ritual',
+    'Fraternity','Geasa','Obedience','Sacrifice','Secrecy',
+    'Limited Membership','Material Link','Oath',
+  ];
+
+  const toggleStricture = (s) => {
+    const cur = groupDraft.strictures ?? [];
+    const next = cur.includes(s) ? cur.filter(x => x !== s) : [...cur, s];
+    setGroupDraft({ ...groupDraft, strictures: next });
+  };
+
+  const RenderInitiationSection = () => {
+    const nextGrade = initiateGrade + 1;
+    const inGroup = useGroup && !!magicalGroup;
+    const cost = calcInitiationCost(nextGrade, inGroup, useOrdeal);
+    const metamagicList = MetaMagic[props.Edition] ?? MetaMagic['SR3'];
+    const learnedMeta = initiations.filter(i => i.benefit === 'metamagic').map(i => i.metamagicName);
+    const availableMeta = metamagicList.filter(m => !learnedMeta.includes(m.Name));
+
+    return (
+      <>
+        <hr />
+        <h3>Initiation</h3>
+
+        {/* Current grade summary */}
+        <Box sx={{ mb: 2 }}>
+          <strong>Grade:</strong> {initiateGrade}&nbsp;&nbsp;
+          <strong>Astral Pool:</strong> {initiateGrade} dice&nbsp;&nbsp;
+          {isAdept
+            ? <strong>Bonus Power Points: {initiateGrade}</strong>
+            : <strong>Magic bonus from initiation: +{initiateGrade}</strong>
+          }
+        </Box>
+
+        {/* Earned initiations list */}
+        {initiations.length > 0 && (
+          <TableContainer component={Paper} sx={{ mb: 2, maxWidth: 550 }}>
+            <Table size="small">
+              <TableHead>
+                <TableRow>
+                  <TableCell>Grade</TableCell>
+                  <TableCell>Benefit</TableCell>
+                  <TableCell>Detail</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {initiations.map((row, i) => (
+                  <TableRow key={i}>
+                    <TableCell>{row.grade}</TableCell>
+                    <TableCell style={{ textTransform: 'capitalize' }}>{row.benefit}</TableCell>
+                    <TableCell>{row.metamagicName || '—'}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        )}
+
+        {/* Buy next initiation */}
+        <Box sx={{ border: '1px solid #444', borderRadius: 1, p: 2, maxWidth: 500, mb: 2 }}>
+          <strong>Next Initiation — Grade {nextGrade}</strong>
+          <Box sx={{ mt: 1 }}>
+            <FormControlLabel
+              control={<Checkbox checked={inGroup} onChange={e => setUseGroup(e.target.checked)} disabled={!magicalGroup} />}
+              label={magicalGroup ? `Group initiation (${magicalGroup.name})` : 'Group initiation (no group set)'}
+            />
+            <FormControlLabel
+              control={<Checkbox checked={useOrdeal} onChange={e => setUseOrdeal(e.target.checked)} />}
+              label="Ordeal (reduces cost by ×0.5)"
+            />
+          </Box>
+          <Box sx={{ mt: 1, mb: 1 }}>
+            <strong>Karma cost: {cost}</strong>
+            {useOrdeal && <span style={{ fontSize: '0.8em', color: '#888' }}> (with ordeal)</span>}
+          </Box>
+          <Box sx={{ mt: 1 }}>
+            <strong>Benefit:</strong>{' '}
+            <select value={pendingBenefit} onChange={e => setPendingBenefit(e.target.value)}
+              style={{ marginLeft: 8 }}>
+              <option value="metamagic">Learn Metamagic</option>
+              <option value="geas">Shed a Geas</option>
+              <option value="signature">Alter Astral Signature</option>
+            </select>
+          </Box>
+          {pendingBenefit === 'metamagic' && (
+            <Box sx={{ mt: 1 }}>
+              <FormControl size="small" style={{ minWidth: 220 }}>
+                <InputLabel>Metamagic Technique</InputLabel>
+                <Select value={pendingMetamagic} onChange={e => setPendingMetamagic(e.target.value)}
+                  label="Metamagic Technique">
+                  {availableMeta.map(m => (
+                    <MenuItem key={m.Name} value={m.Name}>{m.Name}</MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </Box>
+          )}
+          <Box sx={{ mt: 2 }}>
+            <Button variant="contained" color="primary" onClick={handleInitiate}
+              disabled={pendingBenefit === 'metamagic' && !pendingMetamagic}>
+              Spend {cost} Karma &amp; Initiate to Grade {nextGrade}
+            </Button>
+            {initiations.length > 0 && (
+              <Button color="secondary" sx={{ ml: 2 }} onClick={handleRemoveLastInitiation}>
+                Undo Last Initiation
+              </Button>
+            )}
+          </Box>
+        </Box>
+
+        {/* Magical Group */}
+        <h3>Magical Group</h3>
+        {!magicalGroup && !editingGroup && (
+          <Button variant="outlined" onClick={() => { setGroupDraft(blankGroup); setEditingGroup(true); }}>
+            Join / Found a Group
+          </Button>
+        )}
+        {magicalGroup && !editingGroup && (
+          <Box sx={{ border: '1px solid #666', borderRadius: 1, p: 2, maxWidth: 500 }}>
+            <strong>{magicalGroup.name}</strong>
+            <Box sx={{ fontSize: '0.85em', mt: 0.5 }}>
+              <div>Type: {magicalGroup.type}</div>
+              <div>Resources: {magicalGroup.resources}</div>
+              {magicalGroup.patron && <div>Patron: {magicalGroup.patron}</div>}
+              {magicalGroup.strictures?.length > 0 && (
+                <div>Strictures: {magicalGroup.strictures.join(', ')}</div>
+              )}
+              <div style={{ color: '#888', fontSize: '0.9em', marginTop: 4 }}>
+                Group initiation: base × 2 (× 1.5 with ordeal)
+              </div>
+            </Box>
+            <Box sx={{ mt: 1 }}>
+              <Button size="small" onClick={() => { setGroupDraft({ ...magicalGroup }); setEditingGroup(true); }}>
+                Edit
+              </Button>
+              <Button size="small" color="secondary" sx={{ ml: 1 }} onClick={removeGroup}>
+                Leave Group
+              </Button>
+            </Box>
+          </Box>
+        )}
+        {editingGroup && (
+          <Box sx={{ border: '1px solid #666', borderRadius: 1, p: 2, maxWidth: 500 }}>
+            <TextField size="small" fullWidth label="Group Name" value={groupDraft.name}
+              onChange={e => setGroupDraft({ ...groupDraft, name: e.target.value })}
+              sx={{ mb: 1 }} />
+            <Box sx={{ display: 'flex', gap: 2, mb: 1 }}>
+              <FormControl size="small" style={{ minWidth: 160 }}>
+                <InputLabel>Type</InputLabel>
+                <Select value={groupDraft.type} label="Type"
+                  onChange={e => setGroupDraft({ ...groupDraft, type: e.target.value })}>
+                  <MenuItem value="Initiatory">Initiatory</MenuItem>
+                  <MenuItem value="Dedicated">Dedicated</MenuItem>
+                  <MenuItem value="Conspiratorial">Conspiratorial</MenuItem>
+                </Select>
+              </FormControl>
+              <FormControl size="small" style={{ minWidth: 160 }}>
+                <InputLabel>Resources</InputLabel>
+                <Select value={groupDraft.resources} label="Resources"
+                  onChange={e => setGroupDraft({ ...groupDraft, resources: e.target.value })}>
+                  {['Street','Squatter','Low','Middle','High','Luxury'].map(r => (
+                    <MenuItem key={r} value={r}>{r}</MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </Box>
+            <TextField size="small" fullWidth label="Patron (optional)" value={groupDraft.patron}
+              onChange={e => setGroupDraft({ ...groupDraft, patron: e.target.value })}
+              sx={{ mb: 1 }} />
+            <Box sx={{ mb: 1 }}>
+              <strong style={{ fontSize: '0.85em' }}>Strictures:</strong>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0 }}>
+                {ALL_STRICTURES.map(s => (
+                  <FormControlLabel key={s} label={s} sx={{ width: '48%' }}
+                    control={
+                      <Checkbox size="small"
+                        checked={(groupDraft.strictures ?? []).includes(s)}
+                        onChange={() => toggleStricture(s)} />
+                    } />
+                ))}
+              </Box>
+            </Box>
+            <Box>
+              <Button variant="contained" size="small" onClick={saveGroup}
+                disabled={!groupDraft.name.trim()}>Save Group</Button>
+              <Button size="small" sx={{ ml: 1 }} onClick={() => setEditingGroup(false)}>Cancel</Button>
+            </Box>
+          </Box>
+        )}
+      </>
+    );
+  };
+
   return (
     <div>
       <h3>Magical Talents ( {props.magicalChoice} )</h3>
@@ -1929,6 +2272,7 @@ function MagicPanel(props) {
       <hr></hr>
       {RenderWindow()}
       {RenderFociList()}
+      {props.magicalChoice !== 'Not Magical' && RenderInitiationSection()}
       <Dialog open={openModal} onClose={handleCloseModal}>
         <DialogTitle>Set Foci</DialogTitle>
         <DialogContent>

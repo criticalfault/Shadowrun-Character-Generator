@@ -1084,7 +1084,7 @@ export default function AttributesPanel(props) {
        props.ChangeAttributes(attribute,value);
     }
 
-    const Essence= React.useState(6);
+    const [Essence] = React.useState(6);
     const Magic = React.useState(0);
 
     const displayChargenPointsLeft = () => {
