@@ -25,6 +25,7 @@ import "./SheetDisplay.css";
 import DiceRollerTray from "./DiceRollerTray";
 import SignInPopup from "./SignInPopup";
 import { Grid } from "@mui/material";
+import { trackEditionChanged, trackTabChanged, trackCharacterFinalized } from '../analytics';
 // import TableAttribute from "./CustomTable";
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -355,7 +356,8 @@ export default function BasicTabs() {
 
   const handleChangeEdition = (edition) => {
     setEdition(edition);
-     setCharacter((prevCharacter) => ({ ...prevCharacter, Edition:edition }));
+    setCharacter((prevCharacter) => ({ ...prevCharacter, Edition:edition }));
+    trackEditionChanged(edition);
   };
   
   const handleChangeCGMethod = (method) => {
@@ -422,8 +424,10 @@ export default function BasicTabs() {
     }
   };
 
+  const tabNames = ['Identity','Priorities','Attributes','Skills','Magic/Otaku','Cyberware','Gear','Decking','Vehicles','Contacts','Karma','Sheet'];
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    trackTabChanged(tabNames[newValue] ?? `Tab ${newValue}`);
   };
 
   const handleChangeMaxCash = (Cash) => {
@@ -885,6 +889,7 @@ export default function BasicTabs() {
           <KarmaDisplay
             onFinalization={(step) => {
               setCharacter({ ...Character, step: step });
+              if (step !== 'chargen') trackCharacterFinalized(Edition, Character.race);
             }}
             skills={Character.skills}
             attributes={Character.attributes}

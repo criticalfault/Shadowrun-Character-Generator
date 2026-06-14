@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import CasinoOutlinedIcon from '@mui/icons-material/CasinoOutlined';
 import './DiceRollerTray.css';
 import Slider from '@mui/material/Slider';
+import { trackDiceRolled } from '../analytics';
 export default function DiceRollerTray(props) {
     const [DiceResult, setDiceResult] = useState([]);
     const [open, setOpen] = useState(false);
@@ -26,12 +27,7 @@ export default function DiceRollerTray(props) {
 
             
         });
-        try{
-            fathom.trackEvent('Dice Rolled'); // eslint-disable-line
-        }catch(err){
-            console.log(err);
-            console.log("Fathom wasn't found. Prolly a blocker");
-        }
+        trackDiceRolled(DiceAmount);
     };
 
     const handleDiceChange = (event, newValue) => {
