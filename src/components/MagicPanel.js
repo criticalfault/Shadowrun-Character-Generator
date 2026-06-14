@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { MenuItem } from "@mui/material";
+import SearchableSelect from "./SearchableSelect";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
@@ -80,7 +81,7 @@ function MagicPanel(props) {
     },
     "Magician's Way": {
       name: "Magician's Way",
-      description: "THIS IS STILL PENDING",
+      description: "Adepts of the Magician's Way channel their power toward spellcasting rather than physical enhancement. They walk the line between physical adept and full mage, focusing their inner magic on learning and casting spells without the need for hermetic or shamanic training.",
       conjures: "none",
       totemList: "none",
     },
@@ -219,116 +220,132 @@ function MagicPanel(props) {
     "Aboriginal Magic": {
       name: "Aboriginal Magic",
       "book.page": "mits.24",
-      description: "",
-      conjures: "",
+      description: "Nature-based shamanic tradition from Australia and the Pacific Islands. Practitioners follow totems unique to their region and culture, connecting to the land and its spirits in ways distinct from both Western shamanism and hermetic magic.",
+      conjures: "Nature Spirits",
       totemList: "ANIMAL TOTEMS",
     },
     "Aztec Magic": {
       name: "Aztec Magic",
-      description: "",
-      conjures: "",
+      description: "Combines shamanic spirit contact with hermetic-style ritual. Practitioners follow a complex pantheon of Aztec gods and view sacrifice as a fundamental part of magical practice. Magic is deeply tied to cycles of time and cosmic renewal.",
+      conjures: "Nature Spirits",
       totemList: "ANIMAL TOTEMS",
     },
     "Black Magic": {
       name: "Black Magic",
-      description: "",
-      conjures: "",
+      description: "A hermetic tradition that focuses on the darker applications of magic — domination, destruction, and self-aggrandizement. Practitioners tap into pain and suffering as a source of power. Many are eventually consumed by it.",
+      conjures: "Elementals",
       totemList: "none",
+      diceBonus: [
+        { category: "Combat & Manipulation spells", bonus: "+2 dice" },
+        { category: "Health & Detection spells", bonus: "-1 die" },
+      ],
     },
     "Chaos Magic": {
       name: "Chaos Magic",
-      description: "",
-      conjures: "",
+      description: "No fixed belief system — chaos mages hold that any symbol system can channel magic if the practitioner truly believes in it. Each chaos mage adopts a personal 'paradigm.' Versatile but often unstable; the magic shifts with the mage's belief.",
+      conjures: "Chaos Forms (Elementals)",
       totemList: "none",
     },
     "Christian Magic": {
       name: "Christian Magic",
-      description: "",
-      conjures: "",
+      description: "Also called Christian Theurgy. Magic flows through sincere faith in Christian doctrine. Practitioners call on saints and angels rather than casting spells in a traditional sense. Healing and protection are their greatest strengths; causing harm runs against their beliefs.",
+      conjures: "Angels (Spirits of Man)",
       totemList: "none",
+      diceBonus: [
+        { category: "Health spells", bonus: "+2 dice" },
+        { category: "Combat spells", bonus: "-1 die" },
+      ],
     },
     "Druid Magic": {
       name: "Druid Magic",
-      description: "",
-      conjures: "",
+      description: "An ancient Celtic nature-based tradition that sits between shamanic and hermetic practice. Druids venerate the cycles of nature, sacred groves, and the turning of the year. They work closely with the land and its spirits rather than imposing order on the magical world.",
+      conjures: "Nature Spirits",
       totemList: "none",
     },
     "Egyptian Magic": {
       name: "Egyptian Magic",
-      description: "",
-      conjures: "",
+      description: "Based on ancient Egyptian magical practices drawn from the traditions of the old priesthoods. Hermetic in approach, with elaborate ritual and the invocation of the Egyptian gods (Ra, Thoth, Isis, Osiris, etc.). Very structured and ceremonially demanding.",
+      conjures: "Elementals",
       totemList: "none",
     },
     "Gypsy Magic": {
       name: "Gypsy Magic",
-      description: "",
-      conjures: "",
+      description: "The Romani magical tradition, passed down through bloodlines. Shamanic in approach, emphasizing divination, warding, and curses. Romani mages maintain their own spirit contacts and traditions separate from established magical institutions.",
+      conjures: "Nature Spirits",
       totemList: "none",
     },
     "Hawai'ian Magic": {
       name: "Hawai'ian Magic",
-      description: "",
-      conjures: "",
+      description: "Based on traditional Hawaiian magical practice (Huna). Closely tied to the natural world of the islands — ocean, volcano, and wind. Practitioners follow the spiritual presence of place and nature, working with Aumakua (ancestor spirits) and Aumea (nature spirits).",
+      conjures: "Nature Spirits",
       totemList: "none",
     },
     "Hindu Magic": {
       name: "Hindu Magic",
-      description: "",
-      conjures: "",
+      description: "Draws on the vast traditions of Hindu spiritual practice. Practitioners invoke aspects of the Hindu pantheon — Brahma, Vishnu, Shiva, and their many forms. The tradition encompasses both ascetic and devotional paths and has unique spirit types not found in other systems.",
+      conjures: "Devas & Asuras (Spirits)",
       totemList: "none",
     },
     "Islamic Magic": {
       name: "Islamic Magic",
-      description: "",
-      conjures: "",
+      description: "Also called Sufi Magic. Rooted in Islamic mystical practice, specifically Sufism — the inner, esoteric dimension of Islam. Hermetic in method, the tradition invokes the 99 names of God and works through divine attributes. Very disciplined and ritualistic.",
+      conjures: "Elementals",
       totemList: "none",
     },
     "Norse Magic": {
       name: "Norse Magic",
-      description: "",
-      conjures: "",
+      description: "Also called Asatru Magic. Based on Norse/Viking magical practices including rune magic (galdr) and shamanic spirit journeying (seiðr). Practitioners follow the Norse pantheon and connect with spirits of land, sea, and sky. Rune carving and chanting are central practices.",
+      conjures: "Nature Spirits",
       totemList: "none",
     },
     "Qabbalistic Magic": {
       name: "Qabbalistic Magic",
-      description: "",
-      conjures: "",
+      description: "Based on Jewish mystical tradition, the Qabbalah. Hermetic in practice, the tradition maps reality through the Tree of Life and works with the divine names and the Sephirot. Practitioners invoke angelic presences and divine emanations. Extremely intellectual and disciplined.",
+      conjures: "Elementals (Angels of the Sephirot)",
       totemList: "none",
     },
     "Rastafarian Magic": {
       name: "Rastafarian Magic",
-      description: "",
-      conjures: "",
+      description: "Grounded in Rastafarian spiritual practice and deeply connected to African spiritual roots. Shamanic in character, emphasizing communal connection, natural living, and African ancestral spirits. Practitioners often use music and ritual to achieve magical focus.",
+      conjures: "Nature Spirits",
       totemList: "none",
     },
     "Shinto Magic": {
       name: "Shinto Magic",
-      description: "",
-      conjures: "",
+      description: "Based on Japanese Shinto practices. Practitioners work with Kami — spirits that inhabit all things: mountains, rivers, trees, ancestors, and natural phenomena. Purity, ritual cleansing, and respect for place are central to the tradition.",
+      conjures: "Nature Spirits (Kami)",
       totemList: "none",
     },
     Witchcraft: {
       name: "Witchcraft",
-      description: "",
-      conjures: "",
+      description: "European folk magic tradition with both shamanic and hermetic roots. Witches work with cycles of nature, herbal magic, divination, and spirit contact. The tradition emphasizes harmony with natural forces rather than imposing control over them. Health and protective magic come naturally; harm does not.",
+      conjures: "Nature Spirits",
       totemList: "none",
+      diceBonus: [
+        { category: "Health & Detection spells", bonus: "+1 die" },
+        { category: "Combat spells", bonus: "-1 die" },
+      ],
     },
     Voodoo: {
       name: "Voodoo",
-      description: "",
-      conjures: "none",
+      description: "A Caribbean spiritual tradition rooted in West African religious practices. Practitioners work with the Loa — powerful spirits that serve as intermediaries between the divine and the human. Voodoo mages invite the Loa to 'ride' them, granting power in exchange for service and devotion.",
+      conjures: "Loa (unique spirits)",
       totemList: "LOA",
     },
     "Elemental Mage": {
       name: "Elemental Mage",
-      description: "Mages specializing in a specific Element",
+      description: "A hermetic mage who has specialized deeply in a single element: Fire, Water, Air, or Earth. They gain greater affinity with their chosen element's spells and spirits at the cost of being weakened against the opposing element.",
       conjures: "Elementals",
       totemList: "ELEMENTS",
+      diceBonus: [
+        { category: "Chosen element spells & spirits", bonus: "+2 dice" },
+        { category: "Opposing element spells & spirits", bonus: "-1 die" },
+      ],
     },
     Wujen: {
       name: "Wujen",
-      description: "",
-      conjures: "",
+      description: "An East Asian magical tradition based on Wuxing — the five transformative phases (Wood, Fire, Earth, Metal, Water). Hermetic in structure but drawing on Taoist cosmology rather than Western symbolism. Each Wujen works with one primary element and its relationships to the others.",
+      conjures: "Elementals (Wuxing spirits)",
       totemList: "none",
     },
   };
@@ -638,7 +655,7 @@ function MagicPanel(props) {
         Name: "Specific Spell Focus lvl 3",
         NeedsExtra: true,
         Rating: 3,
-        Cost: 4500,
+        Cost: 135000,
         Force: 3,
         KarmaCost: 3,
       },
@@ -646,7 +663,7 @@ function MagicPanel(props) {
         Name: "Specific Spell Focus lvl 4",
         NeedsExtra: true,
         Rating: 4,
-        Cost: 6000,
+        Cost: 180000,
         Force: 4,
         KarmaCost: 4,
       },
@@ -654,7 +671,7 @@ function MagicPanel(props) {
         Name: "Specific Spell Focus lvl 5",
         NeedsExtra: true,
         Rating: 5,
-        Cost: 7500,
+        Cost: 225000,
         Force: 5,
         KarmaCost: 5,
       },
@@ -662,7 +679,7 @@ function MagicPanel(props) {
         Name: "Specific Spell Focus lvl 6",
         NeedsExtra: true,
         Rating: 6,
-        Cost: 9000,
+        Cost: 270000,
         Force: 6,
         KarmaCost: 6,
       },
@@ -946,7 +963,7 @@ function MagicPanel(props) {
         Name: "Specific Spell Focus lvl 3",
         NeedsExtra: true,
         Rating: 3,
-        Cost: 4500,
+        Cost: 135000,
         Force: 3,
         KarmaCost: 3,
       },
@@ -954,7 +971,7 @@ function MagicPanel(props) {
         Name: "Specific Spell Focus lvl 4",
         NeedsExtra: true,
         Rating: 4,
-        Cost: 6000,
+        Cost: 180000,
         Force: 4,
         KarmaCost: 4,
       },
@@ -962,7 +979,7 @@ function MagicPanel(props) {
         Name: "Specific Spell Focus lvl 5",
         NeedsExtra: true,
         Rating: 5,
-        Cost: 7500,
+        Cost: 225000,
         Force: 5,
         KarmaCost: 5,
       },
@@ -970,7 +987,7 @@ function MagicPanel(props) {
         Name: "Specific Spell Focus lvl 6",
         NeedsExtra: true,
         Rating: 6,
-        Cost: 9000,
+        Cost: 270000,
         Force: 6,
         KarmaCost: 6,
       },
@@ -1080,7 +1097,7 @@ function MagicPanel(props) {
   const [spellPointsSpent, setSpellPointsSpent] = useState(
     CalcTotalSpellRatings(props.spells, props.foci)
   );
-  const spellPointsMax = props.maxSpellPoints;
+  const spellPointsMax = props.maxSpellPoints + (props.purchasedSpellPoints ?? 0);
   const [magicalTradition, setMagicalTradition] = useState(
     props.chosenTradition.name
   );
@@ -1200,20 +1217,20 @@ function MagicPanel(props) {
 
   const handleAddPower = () => {
     if (newPower) {
-      var powerToAdd = { ...newPower };
+      var powerToAdd;
       if (newPowerHasRating) {
-        powerToAdd.Cost = newPower.Cost * newPowerRating;
         powerToAdd = { ...newPower, Rating: newPowerRating };
         setNewPowerRating(1);
       } else {
         powerToAdd = { ...newPower };
       }
 
+      const costToAdd = powerToAdd.HasLevels
+        ? parseFloat(newPower.Cost) * powerToAdd.Rating
+        : parseFloat(newPower.Cost);
+
       setSelectedPowers((prevPowers) => [...prevPowers, powerToAdd]);
-      setAdeptPointsSpent(
-        (prevPowersPointsSpent) =>
-          parseFloat(prevPowersPointsSpent) + parseFloat(powerToAdd.Cost)
-      );
+      setAdeptPointsSpent((prev) => parseFloat(prev) + costToAdd);
       setNewPower("");
       setNewPowerIndex("");
       props.onChangePowers([...selectedPowers, powerToAdd]);
@@ -1224,14 +1241,11 @@ function MagicPanel(props) {
   const handleRemovePower = (index) => {
     const editedPowers = [...selectedPowers];
     let PowerRemoved = editedPowers.splice(index, 1);
-    if (PowerRemoved.HasLevels) {
-      setAdeptPointsSpent(
-        (prevPowers) => prevPowers - PowerRemoved[0].Cost * PowerRemoved.Rating
-      );
-    } else {
-      setAdeptPointsSpent((prevPowers) => prevPowers - PowerRemoved[0].Cost);
-    }
+    const costToRemove = PowerRemoved[0].HasLevels
+      ? parseFloat(PowerRemoved[0].Cost) * PowerRemoved[0].Rating
+      : parseFloat(PowerRemoved[0].Cost);
 
+    setAdeptPointsSpent((prev) => prev - costToRemove);
     setSelectedPowers(editedPowers);
     props.onChangePowers(editedPowers);
     CalcPowerAttributeChanges();
@@ -1329,18 +1343,32 @@ function MagicPanel(props) {
       default:
         break;
     }
+    if (!list[tradition]) return null;
+    const t = list[tradition];
     return (
       <>
         <h4>Tradition</h4>
         <div>
-          <strong>Name:</strong> {list[tradition].name}
+          <strong>Name:</strong> {t.name}
         </div>
-        <div>
-          <strong>Description:</strong> {list[tradition].description}
+        <div style={{ margin: '4px 0' }}>
+          <strong>Description:</strong> {t.description || <em>No description available.</em>}
         </div>
-        <div>
-          <strong>Conjures:</strong> {list[tradition].conjures}
-        </div>
+        {t.conjures && t.conjures !== "none" && (
+          <div style={{ margin: '4px 0' }}>
+            <strong>Conjures:</strong> {t.conjures}
+          </div>
+        )}
+        {t.diceBonus && t.diceBonus.length > 0 && (
+          <div style={{ margin: '6px 0' }}>
+            <strong>Dice Modifiers:</strong>
+            <ul style={{ margin: '4px 0 0 16px', padding: 0 }}>
+              {t.diceBonus.map((b, i) => (
+                <li key={i}>{b.category}: <strong>{b.bonus}</strong></li>
+              ))}
+            </ul>
+          </div>
+        )}
       </>
     );
   };
@@ -1379,22 +1407,18 @@ function MagicPanel(props) {
           />
         </Box>
         <br></br>
-        <FormControl style={{ width: "400px" }}>
-          <InputLabel id="power-label">{selectedCategory}</InputLabel>
-          <Select
-            id="power-dropdown"
-            value={NewPowerIndex}
-            onChange={handlePowerChange}
-          >
-            {AdeptPowers.sort((a, b) => a.Name.localeCompare(b.Name)).map(
-              (power, index) => (
-                <MenuItem key={index} value={index}>
-                  {power.Name} - PP: {power.Cost}
-                </MenuItem>
-              )
-            )}
-          </Select>
-        </FormControl>
+        <SearchableSelect
+          items={AdeptPowers.slice().sort((a, b) => a.Name.localeCompare(b.Name))}
+          value={NewPowerIndex}
+          onChange={handlePowerChange}
+          label="Adept Powers"
+          renderItem={(power, i) => (
+            <MenuItem key={i} value={i}>
+              {power.Name} - PP: {power.Cost}
+            </MenuItem>
+          )}
+          style={{ width: "400px" }}
+        />
         {newPower && (
           <>
             <TextField
@@ -1519,10 +1543,8 @@ function MagicPanel(props) {
     let FociRemoved = editedFoci.splice(index, 1);
     setSelectedFoci(editedFoci);
     props.onChangeFoci(editedFoci);
-    if (editedFoci.Bound === "Yes") {
-      setSpellPointsSpent(
-        (prevSpells) => prevSpells - editedFoci[index].KarmaCost
-      );
+    if (FociRemoved[0].Bound === "Yes") {
+      setSpellPointsSpent((prevSpells) => prevSpells - FociRemoved[0].KarmaCost);
     }
   };
 
@@ -1593,6 +1615,39 @@ function MagicPanel(props) {
     }
   };
 
+  const RenderSpellPointPurchase = () => {
+    if (props.Edition !== "SR3") return null;
+    const purchased = props.purchasedSpellPoints ?? 0;
+    const maxPurchasable = 50 - props.maxSpellPoints;
+    const cost = purchased * 25000;
+
+    const handleAdd = () => {
+      if (purchased < maxPurchasable) {
+        props.onChangePurchasedSpellPoints(purchased + 1);
+      }
+    };
+
+    const handleRemove = () => {
+      if (purchased > 0) {
+        props.onChangePurchasedSpellPoints(purchased - 1);
+      }
+    };
+
+    return (
+      <Box sx={{ border: '1px solid #555', borderRadius: 1, padding: '12px', marginBottom: '16px', maxWidth: '500px' }}>
+        <strong>Purchase Spell Points</strong>
+        <div style={{ fontSize: '0.85rem', color: '#aaa', marginBottom: '8px' }}>
+          25,000¥ per point · max {maxPurchasable} purchasable (cap: 50 total)
+        </div>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <Button variant="outlined" size="small" onClick={handleRemove} disabled={purchased === 0}>−</Button>
+          <span>{purchased} purchased ({new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(cost)})</span>
+          <Button variant="outlined" size="small" onClick={handleAdd} disabled={purchased >= maxPurchasable}>+</Button>
+        </Box>
+      </Box>
+    );
+  };
+
   const RenderMagicianWithSpells = () => {
     return (
       <>
@@ -1604,28 +1659,17 @@ function MagicPanel(props) {
           />
         </Box>
         <br></br>
-        <FormControl style={{ width: "200px" }}>
-          <InputLabel id="spell-label">{selectedCategory}</InputLabel>
-          <Select
-            id="spell-dropdown"
-            value={newSpellIndex}
-            onChange={handleSpellChange}
-          >
-            {spellsData
-              .sort((a, b) => {
-                if (a.hasOwnProperty("Name")) {
-                  return a.Name.localeCompare(b.Name);
-                } else {
-                  return a > b;
-                }
-              })
-              .map((spell, index) => (
-                <MenuItem key={index} value={index}>
-                  {spell.Name}
-                </MenuItem>
-              ))}
-          </Select>
-        </FormControl>
+        {RenderSpellPointPurchase()}
+        <SearchableSelect
+          items={spellsData.slice().sort((a, b) => (a.Name ?? '').localeCompare(b.Name ?? ''))}
+          value={newSpellIndex}
+          onChange={handleSpellChange}
+          label="Spells"
+          renderItem={(spell, i) => (
+            <MenuItem key={i} value={i}>{spell.Name}</MenuItem>
+          )}
+          style={{ width: "400px" }}
+        />
         {newSpell && (
           <>
             <TextField
@@ -1676,28 +1720,16 @@ function MagicPanel(props) {
           Add Spell
         </Button>
         <hr></hr>
-        <FormControl style={{ width: "200px" }}>
-          <InputLabel id="foci-label">{selectedFociToAdd}</InputLabel>
-          <Select
-            id="foci-dropdown"
-            value={newFociIndex}
-            onChange={handleFociChange}
-          >
-            {MagicalItems[props.Edition]
-              .sort((a, b) => {
-                if (a.hasOwnProperty("Name")) {
-                  return a.Name.localeCompare(b.Name);
-                } else {
-                  return a > b;
-                }
-              })
-              .map((foci, index) => (
-                <MenuItem key={index} value={index}>
-                  {foci.Name}
-                </MenuItem>
-              ))}
-          </Select>
-        </FormControl>
+        <SearchableSelect
+          items={MagicalItems[props.Edition].slice().sort((a, b) => (a.Name ?? '').localeCompare(b.Name ?? ''))}
+          value={newFociIndex}
+          onChange={handleFociChange}
+          label="Foci"
+          renderItem={(foci, i) => (
+            <MenuItem key={i} value={i}>{foci.Name}</MenuItem>
+          )}
+          style={{ width: "400px" }}
+        />
         <br></br>
         <br></br>
         <Button variant="contained" color="primary" onClick={handleAddFoci}>
@@ -1819,8 +1851,6 @@ function MagicPanel(props) {
   };
 
   const renderTraditionList = () => {
-    console.log("Render Tradition List fired");
-    console.log("Magical Choice: "+props.magicalChoice);
     var list = [];
     switch (props.magicalChoice) {
       case "Full Magician":
