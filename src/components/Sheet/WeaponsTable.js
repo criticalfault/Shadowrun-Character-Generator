@@ -10,9 +10,8 @@ import {
   Paper,
 } from '@mui/material';
 import SRSection from './SRSection';
-
-// This should be passed in or imported, depending on your project structure
 import Ranges from '../../data/ranges.json';
+import { applyWeaponMods } from '../WeaponModsModal';
 
 const getRangesFromName = (name) => {
   const rangeKeys = Object.keys(Ranges);
@@ -44,7 +43,10 @@ const WeaponsTable = ({ gear }) => {
             <TableHead>
               <TableRow>
                 <TableCell>Name</TableCell>
+                <TableCell align="right">Conceal</TableCell>
+                <TableCell align="right">Mode</TableCell>
                 <TableCell align="right">Damage</TableCell>
+                <TableCell align="right">RC</TableCell>
                 <TableCell align="right">Ammo</TableCell>
                 <TableCell align="right">Short</TableCell>
                 <TableCell align="right">Medium</TableCell>
@@ -56,14 +58,26 @@ const WeaponsTable = ({ gear }) => {
             <TableBody>
               {weapons.map((item, index) => {
                 const range = getRangesFromName(item.Name);
+                const modified = applyWeaponMods(item, item.weaponMods ?? []);
+                const hasMods = (item.weaponMods ?? []).length > 0;
 
                 return (
                   <TableRow key={item.Name + index}>
                     <TableCell style={{ color: '#00ffc3' }}>
                       {item.Name}
+                      {hasMods && <span style={{ fontSize: '0.72em', opacity: 0.65, marginLeft: 6 }}>({item.weaponMods.length} mod{item.weaponMods.length > 1 ? 's' : ''})</span>}
                     </TableCell>
                     <TableCell align="right" style={{ color: '#00ffc3' }}>
-                      {item.Damage}
+                      {modified.conceal}
+                    </TableCell>
+                    <TableCell align="right" style={{ color: '#00ffc3' }}>
+                      {modified.damage}
+                    </TableCell>
+                    <TableCell align="right" style={{ color: '#00ffc3' }}>
+                      {modified.mode || '—'}
+                    </TableCell>
+                    <TableCell align="right" style={{ color: '#00ffc3' }}>
+                      {modified.recoilComp > 0 ? `+${modified.recoilComp}` : '—'}
                     </TableCell>
                     <TableCell align="right" style={{ color: '#00ffc3' }}>
                       {item.Ammunition ?? 'N/A'}
