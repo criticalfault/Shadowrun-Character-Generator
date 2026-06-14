@@ -67,13 +67,19 @@ export default function IdentityPanel(props) {
                 <li>Some issues with Knowledge and Langauge skills being edited or removed</li>
                 <li>Still need to add "improvements" and tracking Nuyen post finalization.</li>
                 <li>All nesting of improvements (Weapon / Deck / Vehicle accessories and building). These will be handled in a completely different way, but I promise it will feel awesome to do!</li>
-                <li>Otaku Sprites section is still pending implementation</li>
                 <li>Decker programming calculator (design and program your own utilities) not yet implemented</li>
             </ul>
         </div>
         <hr/>
         <h5>Resolved Issues</h5>
         <ul>
+            <li>Edges &amp; Flaws system (Shadowrun Companion) — full implementation with all ~65 Edges and Flaws, picker UI, variable-cost tiers, and balance enforcement (net-zero for Priority, ±6 BP cap for Point Buy)</li>
+            <li>Otaku Submersion grades, Echoes, and Tribe tracker added (mirroring the Initiation system). Costs follow Matrix book formula: (grade × 2) + 10 Karma</li>
+            <li>Otaku Sprites section fully implemented with SearchableSelect dropdowns and Living Persona formula display</li>
+            <li>SR3 Giants Body stat corrected to 5 (was 4); racial limits added to Attributes panel (were entirely missing)</li>
+            <li>SR3 and SR2 Ogre notes corrected — Ogres do NOT have Low-Light Vision unlike other Orks</li>
+            <li>Cloud Save button redesigned to match the Save/Load row style and opens a modal instead of an accordion</li>
+            <li>All magical tradition descriptions, conjure types, and dice bonuses filled in from the Magic in the Shadows sourcebook</li>
             <li>Full SR3 Cannon Companion weapons audit — corrected concealability and ammo capacity on modular weapon systems (HK G38, Steyr AUG-CSL), Ares Thunderer concealability, and weapon type classifications for Hammerli 610S and Morrissey Elite</li>
             <li>SR3 Decking Panel — fixed all direct state mutations (addProgram, removeProgram, persona changes, program rating/toggle). Added SearchableSelect dropdowns to cyberdeck and program selectors</li>
             <li>SR3 Otaku Panel — all Living Persona formulas verified against the Matrix book (MPCP, Bod, Sensor, Masking, Evasion, Hardening, Matrix Reaction, Matrix Initiative, I/O Speed, Hacking Pool). Fixed several previously invented/incorrect formulas</li>

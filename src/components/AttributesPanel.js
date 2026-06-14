@@ -115,6 +115,32 @@ export default function AttributesPanel(props) {
                         "max":9
                     }
                 },
+                "Giants":{
+                    "Body":{
+                        "limit":10,
+                        "max":13
+                    },
+                    "Quickness":{
+                        "limit":4,
+                        "max":7
+                    },
+                    "Strength":{
+                        "limit":9,
+                        "max":12
+                    },
+                    "Charisma":{
+                        "limit":2,
+                        "max":5
+                    },
+                    "Intelligence":{
+                        "limit":4,
+                        "max":7
+                    },
+                    "Willpower":{
+                        "limit":6,
+                        "max":9
+                    }
+                },
                 "Menehune":{
                     "Body":{
                         "limit":8,
@@ -608,6 +634,32 @@ export default function AttributesPanel(props) {
                     "Charisma":{
                         "limit":6,
                         "max":9
+                    },
+                    "Intelligence":{
+                        "limit":4,
+                        "max":7
+                    },
+                    "Willpower":{
+                        "limit":6,
+                        "max":9
+                    }
+                },
+                "Giants":{
+                    "Body":{
+                        "limit":10,
+                        "max":13
+                    },
+                    "Quickness":{
+                        "limit":4,
+                        "max":7
+                    },
+                    "Strength":{
+                        "limit":9,
+                        "max":12
+                    },
+                    "Charisma":{
+                        "limit":2,
+                        "max":5
                     },
                     "Intelligence":{
                         "limit":4,
