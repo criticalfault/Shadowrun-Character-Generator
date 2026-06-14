@@ -1116,6 +1116,12 @@ function MagicPanel(props) {
   const [spellFetish, setSpellFetish] = useState(false);
   const [spellExclusive, setSpellExclusive] = useState(false);
 
+  // Magician's Way: total levels of "Magical Power" purchased → spell budget = levels × 6
+  const magicalPowerLevel = selectedPowers
+    .filter(p => p.Name && p.Name.includes('Magical Power'))
+    .reduce((sum, p) => sum + (parseInt(p.Rating) || 1), 0);
+  const magicianSpellBudget = magicalPowerLevel * 6;
+
   const label = { inputProps: { "aria-label": "Edition Switch" } };
 
   const findTotemID = (totem) => {
@@ -1462,6 +1468,80 @@ function MagicPanel(props) {
             </ListItem>
           ))}
         </List>
+        {magicalTradition === "Magician's Way" && magicalPowerLevel > 0 && (
+          <>
+            <hr></hr>
+            <h3>Magician's Way — Spells</h3>
+            <p style={{ fontSize: '0.85em', color: '#888' }}>
+              Magical Power level {magicalPowerLevel} grants {magicianSpellBudget} Spell Points (MitS p.22).
+              Effective Magic Attribute = {magicalPowerLevel} for Sorcery and Conjuring.
+            </p>
+            <Box sx={{ width: "100%" }}>
+              Spell Points {spellPointsSpent}/{magicianSpellBudget}
+              <LinearProgress
+                variant="determinate"
+                value={Math.min((spellPointsSpent / magicianSpellBudget) * 100, 100)}
+              />
+            </Box>
+            <br />
+            <FormControl style={{ width: "200px" }}>
+              <InputLabel id="adept-spell-label">{selectedCategory || "Select Spell"}</InputLabel>
+              <Select
+                id="adept-spell-dropdown"
+                value={newSpellIndex}
+                onChange={handleSpellChange}
+              >
+                {(spellsData ?? [])
+                  .sort((a, b) => {
+                    if (a.hasOwnProperty("Name")) return a.Name.localeCompare(b.Name);
+                    return a > b;
+                  })
+                  .map((spell, index) => (
+                    <MenuItem key={index} value={index}>
+                      {spell.Name}
+                    </MenuItem>
+                  ))}
+              </Select>
+            </FormControl>
+            {newSpell && (
+              <>
+                <TextField
+                  style={{ width: "100px", marginRight: "20px" }}
+                  id="adept-spell-rating-input"
+                  label="Rating (1-6)"
+                  type="number"
+                  value={spellRating}
+                  onChange={handleRatingChange}
+                  InputProps={{ inputProps: { min: 1, max: 6 } }}
+                />
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleAddSpell}
+                  disabled={spellPointsSpent + spellRating > magicianSpellBudget}
+                >
+                  Add Spell
+                </Button>
+                <div>Notes: {newSpell.Notes ?? newSpell.Description ?? ''}</div>
+              </>
+            )}
+            <hr></hr>
+            <h3>Learned Spells</h3>
+            <List style={{ maxWidth: "600px" }}>
+              {selectedSpells.map((spell, index) => (
+                <ListItem key={index}>
+                  <ListItemText
+                    primary={`${spell.Name} (Rating ${spell.Rating})`}
+                    secondary={`Category: ${spell.Category ?? '—'}  Drain: ${spell.Drain ?? '—'}`}
+                  />
+                  <Button color="secondary" onClick={() => handleRemoveSpell(index)}>
+                    Remove
+                  </Button>
+                </ListItem>
+              ))}
+            </List>
+          </>
+        )}
       </>
     );
   };
