@@ -1,0 +1,957 @@
+{
+  "edges": [
+    {
+      "id": "bonus-attribute-point",
+      "name": "Bonus Attribute Point",
+      "category": "Attributes",
+      "cost": 2,
+      "description": "Gain 1 bonus Attribute Point to any Mental or Physical attribute. Only one attribute per character may be raised this way, and only one bonus point per attribute.",
+      "restrictions": null
+    },
+    {
+      "id": "exceptional-attribute",
+      "name": "Exceptional Attribute",
+      "category": "Attributes",
+      "cost": 2,
+      "description": "Increase the Racial Modified Limit for one attribute by 1 (also raises the maximum by 1).",
+      "restrictions": null,
+      "userInput": "attribute"
+    },
+    {
+      "id": "aptitude",
+      "name": "Aptitude",
+      "category": "Skills",
+      "cost": 4,
+      "description": "−1 TN to all tests using one chosen skill.",
+      "restrictions": null,
+      "userInput": "skill"
+    },
+    {
+      "id": "home-ground",
+      "name": "Home Ground",
+      "category": "Skills",
+      "cost": 2,
+      "description": "−1 TN for Active Skills on home turf; −2 TN for Knowledge Skills there.",
+      "restrictions": null,
+      "userInput": "location"
+    },
+    {
+      "id": "adrenaline-surge",
+      "name": "Adrenaline Surge",
+      "category": "Physical",
+      "cost": 2,
+      "description": "Apply the Rule of Six to Initiative rolls, but suffer +1 TN on all Combat and Perception tests. Not available to characters with cyberware, bioware, or magic that already enhances initiative.",
+      "restrictions": "Not for cyber/bio/magic-enhanced characters"
+    },
+    {
+      "id": "double-jointed",
+      "name": "Double Jointed",
+      "category": "Physical",
+      "cost": 1,
+      "description": "−1 TN for Athletics (Escape Artist) tests.",
+      "restrictions": null
+    },
+    {
+      "id": "high-pain-tolerance",
+      "name": "High Pain Tolerance",
+      "category": "Physical",
+      "cost": 2,
+      "costNote": "2 pts per box",
+      "description": "Resist 1 box of damage per 2 points spent. Each purchase adds one box of damage resistance.",
+      "restrictions": null,
+      "repeatable": true
+    },
+    {
+      "id": "lightning-reflexes",
+      "name": "Lightning Reflexes",
+      "category": "Physical",
+      "costOptions": [
+        { "value": 2, "label": "+1 Reaction (surprise only)" },
+        { "value": 4, "label": "+2 Reaction (surprise only)" },
+        { "value": 6, "label": "+3 Reaction (surprise only, max)" }
+      ],
+      "description": "+1 Reaction per 2 points, for surprise situations only (max +3). Not compatible with Combat Sense.",
+      "restrictions": "Not compatible with Combat Sense"
+    },
+    {
+      "id": "natural-immunity",
+      "name": "Natural Immunity",
+      "category": "Physical",
+      "costOptions": [
+        { "value": 1, "label": "Natural toxin" },
+        { "value": 3, "label": "Man-made toxin" }
+      ],
+      "description": "Complete immunity to one specific natural (1 pt) or man-made (3 pts) toxin.",
+      "restrictions": null,
+      "userInput": "toxin"
+    },
+    {
+      "id": "night-vision",
+      "name": "Night Vision",
+      "category": "Physical",
+      "costOptions": [
+        { "value": 2, "label": "Standard (2 pts)" },
+        { "value": 1, "label": "Rigger/Decker (1 pt)" }
+      ],
+      "description": "Low-light vision for humans (elves and orks already have this ability).",
+      "restrictions": "Human characters only (elves and orks already have low-light vision)"
+    },
+    {
+      "id": "quick-healer",
+      "name": "Quick Healer",
+      "category": "Physical",
+      "cost": 2,
+      "description": "−2 TN on Healing Tests (both natural healing and medical aid).",
+      "restrictions": null
+    },
+    {
+      "id": "resistance-to-pathogens",
+      "name": "Resistance to Pathogens",
+      "category": "Physical",
+      "cost": 1,
+      "description": "+1 Body die when resisting disease.",
+      "restrictions": null
+    },
+    {
+      "id": "resistance-to-toxins",
+      "name": "Resistance to Toxins",
+      "category": "Physical",
+      "cost": 1,
+      "description": "+1 Body die when resisting toxins and drugs.",
+      "restrictions": null
+    },
+    {
+      "id": "toughness",
+      "name": "Toughness",
+      "category": "Physical",
+      "cost": 3,
+      "description": "+1 Body die for Damage Resistance Tests.",
+      "restrictions": null
+    },
+    {
+      "id": "water-sprite",
+      "name": "Water Sprite",
+      "category": "Physical",
+      "cost": 1,
+      "costNote": "1 pt per ability",
+      "description": "Each point improves one aquatic ability: extended breath-holding, improved swimming speed, or reduced penalties for underwater actions.",
+      "restrictions": null,
+      "repeatable": true
+    },
+    {
+      "id": "will-to-live",
+      "name": "Will to Live",
+      "category": "Physical",
+      "costOptions": [
+        { "value": 1, "label": "+1 Overflow Box" },
+        { "value": 2, "label": "+2 Overflow Boxes" },
+        { "value": 3, "label": "+3 Overflow Boxes" }
+      ],
+      "description": "+1 Damage Overflow Box per point spent (delays death).",
+      "restrictions": null
+    },
+    {
+      "id": "bravery",
+      "name": "Bravery",
+      "category": "Mental",
+      "cost": 1,
+      "description": "−1 TN to resist fear and intimidation.",
+      "restrictions": null
+    },
+    {
+      "id": "college-education",
+      "name": "College Education",
+      "category": "Mental",
+      "cost": 1,
+      "description": "Reduced defaulting penalties when using Academic Knowledge Skills without specialization.",
+      "restrictions": null
+    },
+    {
+      "id": "common-sense",
+      "name": "Common Sense",
+      "category": "Mental",
+      "cost": 2,
+      "description": "The GM must warn the player before the character takes an action that seems foolish or dangerous.",
+      "restrictions": null
+    },
+    {
+      "id": "perceptive",
+      "name": "Perceptive",
+      "category": "Mental",
+      "cost": 3,
+      "description": "−1 TN on all Perception Tests, including Astral Perception.",
+      "restrictions": null
+    },
+    {
+      "id": "perfect-time",
+      "name": "Perfect Time",
+      "category": "Mental",
+      "cost": 1,
+      "description": "The character always knows the exact time without needing a timepiece.",
+      "restrictions": null
+    },
+    {
+      "id": "photographic-memory",
+      "name": "Photographic Memory",
+      "category": "Mental",
+      "cost": 3,
+      "description": "Perfect recall of anything the character has seen or heard.",
+      "restrictions": null
+    },
+    {
+      "id": "sense-of-direction",
+      "name": "Sense of Direction",
+      "category": "Mental",
+      "cost": 1,
+      "description": "The character never gets lost and always knows true north.",
+      "restrictions": null
+    },
+    {
+      "id": "spike-resistance",
+      "name": "Spike Resistance",
+      "category": "Mental",
+      "costOptions": [
+        { "value": 2, "label": "+1 effective WIL vs simsense damage" },
+        { "value": 4, "label": "+2 effective WIL vs simsense damage" }
+      ],
+      "description": "+1 effective Willpower per 2 points when resisting simsense damage.",
+      "restrictions": "Riggers and Deckers only"
+    },
+    {
+      "id": "technical-school-education",
+      "name": "Technical School Education",
+      "category": "Mental",
+      "cost": 1,
+      "description": "Reduced defaulting penalties when using Background (Technical) Knowledge Skills without specialization.",
+      "restrictions": null
+    },
+    {
+      "id": "animal-empathy",
+      "name": "Animal Empathy",
+      "category": "Social",
+      "cost": 2,
+      "description": "−1 TN on tests to influence or control animals.",
+      "restrictions": null
+    },
+    {
+      "id": "blandness",
+      "name": "Blandness",
+      "category": "Social",
+      "cost": 2,
+      "description": "+1 TN for anyone attempting to track or locate the character.",
+      "restrictions": null
+    },
+    {
+      "id": "connected",
+      "name": "Connected",
+      "category": "Social",
+      "costOptions": [
+        { "value": 3, "label": "One contact (limited contraband)" },
+        { "value": 5, "label": "One contact (all contraband)" }
+      ],
+      "description": "One contact always buys and sells contraband at the best possible price for the character.",
+      "restrictions": null,
+      "userInput": "contact type"
+    },
+    {
+      "id": "extra-contact",
+      "name": "Extra Contact",
+      "category": "Social",
+      "cost": 1,
+      "description": "Gain 1 additional Level 1 contact.",
+      "restrictions": null,
+      "repeatable": true,
+      "userInput": "contact"
+    },
+    {
+      "id": "friendly-face",
+      "name": "Friendly Face",
+      "category": "Social",
+      "cost": 1,
+      "description": "−1 TN on Social Skill Tests when in unfamiliar environments or meeting strangers.",
+      "restrictions": null
+    },
+    {
+      "id": "friends-abroad",
+      "name": "Friends Abroad",
+      "category": "Social",
+      "cost": 3,
+      "description": "Gain one extra foreign contact and the ability to establish new contacts in foreign nations more easily.",
+      "restrictions": null,
+      "userInput": "country/region"
+    },
+    {
+      "id": "friends-in-high-places",
+      "name": "Friends in High Places",
+      "category": "Social",
+      "cost": 2,
+      "description": "Gain influential Level 2 contacts in high social circles.",
+      "restrictions": null,
+      "userInput": "organization/circle"
+    },
+    {
+      "id": "good-looking-knows-it",
+      "name": "Good Looking and Knows It",
+      "category": "Social",
+      "cost": 1,
+      "description": "−2 TN on Social and Etiquette Tests with the opposite sex; +1 TN with same sex (example edge).",
+      "restrictions": null
+    },
+    {
+      "id": "good-reputation",
+      "name": "Good Reputation",
+      "category": "Social",
+      "costOptions": [
+        { "value": 1, "label": "−1 TN Social Skills" },
+        { "value": 2, "label": "−2 TN Social Skills" }
+      ],
+      "description": "−1 TN on Social Skills per point spent.",
+      "restrictions": null
+    },
+    {
+      "id": "human-looking",
+      "name": "Human-Looking",
+      "category": "Social",
+      "cost": 1,
+      "description": "An elf or dwarf (or ork if using metavariant rules) who can pass as human; negates racial social penalties.",
+      "restrictions": "Elves, Dwarves, or qualifying Orks only. Metavariants cannot take this Edge."
+    },
+    {
+      "id": "astral-chameleon",
+      "name": "Astral Chameleon",
+      "category": "Magical",
+      "cost": 2,
+      "description": "Astral signatures fade as if Force were 1 lower; +2 TN for others to assense the character's signatures.",
+      "restrictions": "Awakened characters only"
+    },
+    {
+      "id": "focused-concentration",
+      "name": "Focused Concentration",
+      "category": "Magical",
+      "cost": 2,
+      "description": "Only +1 TN when sustaining spells (instead of +2); can sustain Sorcery Skill +1 spells simultaneously.",
+      "restrictions": "Awakened characters only"
+    },
+    {
+      "id": "magic-resistance",
+      "name": "Magic Resistance",
+      "category": "Magical",
+      "costOptions": [
+        { "value": 1, "label": "+1 die Spell Resistance" },
+        { "value": 2, "label": "+2 dice Spell Resistance" },
+        { "value": 3, "label": "+3 dice Spell Resistance" },
+        { "value": 4, "label": "+4 dice Spell Resistance" }
+      ],
+      "description": "+1 die for Spell Resistance Tests per point. Works against all spells including beneficial ones. Cannot be lowered.",
+      "restrictions": "Non-Awakened characters only"
+    },
+    {
+      "id": "poor-link",
+      "name": "Poor Link",
+      "category": "Magical",
+      "cost": 2,
+      "description": "Ritual sorcery directed against the character receives +2 TN for the Link Test.",
+      "restrictions": null
+    },
+    {
+      "id": "spirit-affinity",
+      "name": "Spirit Affinity",
+      "category": "Magical",
+      "cost": 2,
+      "description": "One type of nature spirit is drawn to and favorably disposed toward the character, offering occasional favors and less likely to attack.",
+      "restrictions": null,
+      "userInput": "spirit type"
+    },
+    {
+      "id": "codeslinger",
+      "name": "Codeslinger",
+      "category": "Matrix",
+      "cost": 2,
+      "description": "Gain 1 extra die for one chosen type of system operation. May only be taken once.",
+      "restrictions": "Characters capable of decking only. Cannot be combined with Cracker.",
+      "userInput": "system operation"
+    },
+    {
+      "id": "cracker",
+      "name": "Cracker",
+      "category": "Matrix",
+      "cost": 4,
+      "description": "Gain 1 extra die for one chosen type of System Test (Access, Control, etc.). May only be taken once.",
+      "restrictions": "Characters capable of decking only. Not available to Otaku. Cannot be combined with Codeslinger.",
+      "userInput": "system test type"
+    },
+    {
+      "id": "natural-hardening",
+      "name": "Natural Hardening",
+      "category": "Matrix",
+      "cost": 4,
+      "description": "Gain 1 point of natural Hardening (stacks with cyberdeck Hardening).",
+      "restrictions": null
+    },
+    {
+      "id": "daredevil",
+      "name": "Daredevil",
+      "category": "Miscellaneous",
+      "cost": 3,
+      "description": "Once per game session, gain 1 extra Karma Pool point usable only in a heroically risky situation. Cannot be burned.",
+      "restrictions": null
+    },
+    {
+      "id": "pirate-family",
+      "name": "Pirate Family",
+      "category": "Miscellaneous",
+      "cost": 3,
+      "description": "Extended pirate family in multiple ports acts as Friends of Friends, providing contacts and assistance in unfamiliar cities worldwide.",
+      "restrictions": "Characters from pirate families only"
+    },
+    {
+      "id": "vehicle-empathy",
+      "name": "Vehicle Empathy",
+      "category": "Miscellaneous",
+      "cost": 2,
+      "description": "Reduce Handling of any vehicle by 1 when in physical contact with it (via manual controls or jacked in).",
+      "restrictions": null
+    }
+  ],
+  "flaws": [
+    {
+      "id": "incompetence",
+      "name": "Incompetence",
+      "category": "Skills",
+      "cost": -2,
+      "description": "+1 TN to all tests with one chosen skill.",
+      "restrictions": null,
+      "userInput": "skill"
+    },
+    {
+      "id": "computer-illiterate",
+      "name": "Computer Illiterate",
+      "category": "Skills",
+      "cost": -3,
+      "description": "+1 TN on all computer-related tests; may require Success Tests for tasks a normal person could do automatically.",
+      "restrictions": null
+    },
+    {
+      "id": "allergy",
+      "name": "Allergy",
+      "category": "Physical",
+      "costOptions": [
+        { "value": -2, "label": "Uncommon + Mild" },
+        { "value": -3, "label": "Uncommon + Moderate, or Common + Mild" },
+        { "value": -4, "label": "Uncommon + Severe, or Common + Moderate" },
+        { "value": -5, "label": "Common + Severe" }
+      ],
+      "description": "Allergic reaction to a specific substance. Severity and rarity determine the point value.",
+      "restrictions": null,
+      "userInput": "allergen"
+    },
+    {
+      "id": "bio-rejection",
+      "name": "Bio-Rejection",
+      "category": "Physical",
+      "costOptions": [
+        { "value": -5, "label": "Standard (−5)" },
+        { "value": -2, "label": "Magically active character (−2)" }
+      ],
+      "description": "Cannot use cyberware implants of any kind.",
+      "restrictions": null
+    },
+    {
+      "id": "blind",
+      "name": "Blind",
+      "category": "Physical",
+      "costOptions": [
+        { "value": -6, "label": "Standard (−6)" },
+        { "value": -2, "label": "Magically active character (−2)" }
+      ],
+      "description": "+6 TN on all visually dependent tests. Cannot be corrected by cybereyes.",
+      "restrictions": null
+    },
+    {
+      "id": "borrowed-time",
+      "name": "Borrowed Time",
+      "category": "Physical",
+      "cost": -6,
+      "description": "The GM secretly rolls 3D6 to determine how many months the character has to live. The character does not know their fate.",
+      "restrictions": null
+    },
+    {
+      "id": "color-blind",
+      "name": "Color Blind",
+      "category": "Physical",
+      "cost": -1,
+      "description": "+4 TN for any test that requires distinguishing colors.",
+      "restrictions": null
+    },
+    {
+      "id": "deaf",
+      "name": "Deaf",
+      "category": "Physical",
+      "costOptions": [
+        { "value": -3, "label": "Standard (−3)" },
+        { "value": -1, "label": "Rigger or Decker (−1)" }
+      ],
+      "description": "Cannot hear; +4 TN on any test where hearing is a factor.",
+      "restrictions": null
+    },
+    {
+      "id": "infirm",
+      "name": "Infirm",
+      "category": "Physical",
+      "costOptions": [
+        { "value": -1, "label": "−1 Physical Attribute Maximum" },
+        { "value": -2, "label": "−2 Physical Attribute Maximums" },
+        { "value": -3, "label": "−3 Physical Attribute Maximums" },
+        { "value": -4, "label": "−4 Physical Attribute Maximums" },
+        { "value": -5, "label": "−5 Physical Attribute Maximums" }
+      ],
+      "description": "−1 Physical Attribute Maximum per point (affects one attribute per point, chosen at character creation).",
+      "restrictions": null,
+      "userInput": "affected attributes"
+    },
+    {
+      "id": "low-pain-tolerance",
+      "name": "Low Pain Tolerance",
+      "category": "Physical",
+      "cost": -4,
+      "description": "Treat wound level as one higher for determining target number modifiers.",
+      "restrictions": null
+    },
+    {
+      "id": "night-blindness",
+      "name": "Night Blindness",
+      "category": "Physical",
+      "costOptions": [
+        { "value": -2, "label": "Standard (−2)" },
+        { "value": -1, "label": "Rigger or Decker (−1)" }
+      ],
+      "description": "+2 TN in darkness conditions, cumulative with standard lighting modifiers.",
+      "restrictions": null
+    },
+    {
+      "id": "paraplegic",
+      "name": "Paraplegic",
+      "category": "Physical",
+      "cost": -3,
+      "description": "Combat Pool is halved. No effect while in the Matrix or astral plane.",
+      "restrictions": null
+    },
+    {
+      "id": "quadriplegic",
+      "name": "Quadriplegic",
+      "category": "Physical",
+      "cost": -6,
+      "description": "Paralyzed from the neck down. Requires Hospitalized lifestyle to survive.",
+      "restrictions": null
+    },
+    {
+      "id": "sensitive-system",
+      "name": "Sensitive System",
+      "category": "Physical",
+      "costOptions": [
+        { "value": -3, "label": "Standard (−3)" },
+        { "value": -2, "label": "Magically active character (−2)" }
+      ],
+      "description": "All Essence losses from cyberware are doubled.",
+      "restrictions": null
+    },
+    {
+      "id": "weak-immune-system",
+      "name": "Weak Immune System",
+      "category": "Physical",
+      "cost": -1,
+      "description": "−1 Body die when resisting disease.",
+      "restrictions": null
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnesia",
+      "category": "Mental",
+      "costOptions": [
+        { "value": -2, "label": "Mild: partial memory loss" },
+        { "value": -3, "label": "Moderate: significant memory loss" },
+        { "value": -4, "label": "Severe: most memory lost" },
+        { "value": -5, "label": "Total: complete memory loss" }
+      ],
+      "description": "Lost memories; severity determines how many skills and contacts are retained.",
+      "restrictions": null
+    },
+    {
+      "id": "combat-monster",
+      "name": "Combat Monster",
+      "category": "Mental",
+      "cost": -1,
+      "description": "Cannot break off from a fight for 3 turns; requires a Willpower (6) test to disengage sooner.",
+      "restrictions": null
+    },
+    {
+      "id": "combat-paralysis",
+      "name": "Combat Paralysis",
+      "category": "Mental",
+      "cost": -4,
+      "description": "Minimum Initiative roll on the first turn of combat; +2 TN on Surprise Tests.",
+      "restrictions": null
+    },
+    {
+      "id": "compulsive",
+      "name": "Compulsive",
+      "category": "Mental",
+      "costOptions": [
+        { "value": -1, "label": "Minor compulsion (low danger)" },
+        { "value": -2, "label": "Moderate compulsion" },
+        { "value": -3, "label": "Major compulsion (high danger)" }
+      ],
+      "description": "Character has a compulsive behavior; value based on how dangerous or disruptive it is.",
+      "restrictions": null,
+      "userInput": "compulsion"
+    },
+    {
+      "id": "flashbacks",
+      "name": "Flashbacks",
+      "category": "Mental",
+      "cost": -4,
+      "description": "Willpower (6) test when encountering a trigger or when rendered incapacitated; failure causes 1D6 minute incapacitation.",
+      "restrictions": null,
+      "userInput": "trigger"
+    },
+    {
+      "id": "illiterate",
+      "name": "Illiterate",
+      "category": "Mental",
+      "cost": -3,
+      "description": "Knowledge Skills limited to INT×3; no Academic Skills; +4 TN on computer tests.",
+      "restrictions": null
+    },
+    {
+      "id": "impulsive",
+      "name": "Impulsive",
+      "category": "Mental",
+      "cost": -2,
+      "description": "Must pass Willpower (6) test to avoid jumping into dangerous situations.",
+      "restrictions": null
+    },
+    {
+      "id": "oblivious",
+      "name": "Oblivious",
+      "category": "Mental",
+      "cost": -2,
+      "description": "+1 TN on all Perception Tests.",
+      "restrictions": null
+    },
+    {
+      "id": "pacifist",
+      "name": "Pacifist",
+      "category": "Mental",
+      "cost": -2,
+      "description": "Cannot kill except in clear self-defense.",
+      "restrictions": null
+    },
+    {
+      "id": "phobia",
+      "name": "Phobia",
+      "category": "Mental",
+      "costOptions": [
+        { "value": -2, "label": "Uncommon + Mild" },
+        { "value": -3, "label": "Uncommon + Moderate, or Common + Mild" },
+        { "value": -4, "label": "Uncommon + Severe, or Common + Moderate" },
+        { "value": -5, "label": "Common + Severe" }
+      ],
+      "description": "Irrational fear of something; rarity and severity determine value (same structure as Allergy).",
+      "restrictions": null,
+      "userInput": "phobia subject"
+    },
+    {
+      "id": "sea-legs",
+      "name": "Sea Legs",
+      "category": "Mental",
+      "cost": -2,
+      "description": "After 24 hours on land, character feels a compulsive need to return to the sea.",
+      "restrictions": null
+    },
+    {
+      "id": "sea-madness",
+      "name": "Sea Madness",
+      "category": "Mental",
+      "cost": -4,
+      "description": "After 24 hours at sea with no land in sight, character goes mad.",
+      "restrictions": null
+    },
+    {
+      "id": "sensitive-neural-structure",
+      "name": "Sensitive Neural Structure",
+      "category": "Mental",
+      "costOptions": [
+        { "value": -2, "label": "−1 effective WIL vs neural damage" },
+        { "value": -4, "label": "−2 effective WIL vs neural damage" }
+      ],
+      "description": "Reduced effective Willpower when resisting neural damage.",
+      "restrictions": null
+    },
+    {
+      "id": "simsense-vertigo",
+      "name": "Simsense Vertigo",
+      "category": "Mental",
+      "costOptions": [
+        { "value": -2, "label": "Standard (−2)" },
+        { "value": -4, "label": "Rigger or Decker (−4)" }
+      ],
+      "description": "+1 TN and −1 Initiative when using simsense devices.",
+      "restrictions": null
+    },
+    {
+      "id": "total-pacifist",
+      "name": "Total Pacifist",
+      "category": "Mental",
+      "cost": -5,
+      "description": "Cannot kill or cause harm to any creature more intelligent than an insect.",
+      "restrictions": null
+    },
+    {
+      "id": "uneducated",
+      "name": "Uneducated",
+      "category": "Mental",
+      "cost": -2,
+      "description": "Knowledge Skills limited to INT×3; no Academic or Background Knowledge Skills; only one language.",
+      "restrictions": null
+    },
+    {
+      "id": "vindictive",
+      "name": "Vindictive",
+      "category": "Mental",
+      "cost": -2,
+      "description": "Goes out of the way to avenge any slight, no matter how minor.",
+      "restrictions": null
+    },
+    {
+      "id": "bad-reputation",
+      "name": "Bad Reputation",
+      "category": "Social",
+      "costOptions": [
+        { "value": -1, "label": "+1 TN Social Skills" },
+        { "value": -2, "label": "+2 TN Social Skills" },
+        { "value": -3, "label": "+3 TN Social Skills" },
+        { "value": -4, "label": "+4 TN Social Skills" }
+      ],
+      "description": "+1 TN on Social Skills per point; character is widely known for bad acts.",
+      "restrictions": null
+    },
+    {
+      "id": "braggart",
+      "name": "Braggart",
+      "category": "Social",
+      "cost": -1,
+      "description": "Must succeed at an Intelligence (6) test to avoid boasting about accomplishments.",
+      "restrictions": null
+    },
+    {
+      "id": "dark-secret",
+      "name": "Dark Secret",
+      "category": "Social",
+      "cost": -2,
+      "description": "Character has a terrible secret that must be kept hidden at all costs.",
+      "restrictions": null,
+      "userInput": "secret"
+    },
+    {
+      "id": "day-job",
+      "name": "Day Job",
+      "category": "Social",
+      "costOptions": [
+        { "value": -1, "label": "10 hours/week" },
+        { "value": -2, "label": "20 hours/week" },
+        { "value": -3, "label": "40 hours/week" }
+      ],
+      "description": "Character has a legitimate job requiring regular hours, limiting shadowrunning time.",
+      "restrictions": null,
+      "userInput": "job"
+    },
+    {
+      "id": "dependent",
+      "name": "Dependent",
+      "category": "Social",
+      "costOptions": [
+        { "value": -1, "label": "Minor dependent (child, elderly)" },
+        { "value": -2, "label": "Moderate dependent" },
+        { "value": -3, "label": "Major dependent (disabled)" }
+      ],
+      "description": "Character has a loved one who requires ongoing support, attention, or protection.",
+      "restrictions": null,
+      "userInput": "dependent"
+    },
+    {
+      "id": "distinctive-style",
+      "name": "Distinctive Style",
+      "category": "Social",
+      "cost": -1,
+      "description": "−1 TN for anyone attempting to track or identify the character (opposite of Blandness).",
+      "restrictions": null
+    },
+    {
+      "id": "elf-poser",
+      "name": "Elf Poser",
+      "category": "Social",
+      "cost": -1,
+      "description": "Human who poses as an elf; if an actual elf discovers the secret, the character is treated with contempt and Hostility.",
+      "restrictions": "Human characters only"
+    },
+    {
+      "id": "extra-enemy",
+      "name": "Extra Enemy",
+      "category": "Social",
+      "cost": -1,
+      "description": "Gain 1 additional Enemy contact.",
+      "restrictions": null,
+      "repeatable": true,
+      "userInput": "enemy"
+    },
+    {
+      "id": "hung-out-to-dry",
+      "name": "Hung Out to Dry",
+      "category": "Social",
+      "cost": -4,
+      "description": "All contacts have dried up — no one will deal with or help the character.",
+      "restrictions": null
+    },
+    {
+      "id": "liar",
+      "name": "Liar",
+      "category": "Social",
+      "cost": -2,
+      "description": "Each address to an NPC, GM rolls 1D6; on 1, the NPC thinks the character is lying. The threshold gets worse with each encounter until contact is permanently lost.",
+      "restrictions": null
+    },
+    {
+      "id": "ugly-and-doesnt-care",
+      "name": "Ugly and Doesn't Care",
+      "category": "Social",
+      "cost": -1,
+      "description": "+2 TN Social/Etiquette with opposite sex; +1 TN with same sex. New acquaintances have Suspicious attitude (example flaw).",
+      "restrictions": null
+    },
+    {
+      "id": "uncouth",
+      "name": "Uncouth",
+      "category": "Social",
+      "cost": -2,
+      "description": "+2 TN on all Social Skill Tests, including Negotiation and Etiquette.",
+      "restrictions": null
+    },
+    {
+      "id": "astral-impressions",
+      "name": "Astral Impressions",
+      "category": "Magical",
+      "cost": -2,
+      "description": "Astral signatures last as if Force were 1 higher; −2 TN for others to assense the character's signatures.",
+      "restrictions": "Awakened characters only"
+    },
+    {
+      "id": "spirit-bane",
+      "name": "Spirit Bane",
+      "category": "Magical",
+      "cost": -2,
+      "description": "One type of nature spirit actively dislikes the character, harasses them in their domain, and will target the character first if ordered to attack.",
+      "restrictions": null,
+      "userInput": "spirit type"
+    },
+    {
+      "id": "codeblock",
+      "name": "Codeblock",
+      "category": "Matrix",
+      "cost": -1,
+      "description": "Lose 1 die whenever performing one specific type of system operation.",
+      "restrictions": "Characters capable of decking only",
+      "userInput": "system operation"
+    },
+    {
+      "id": "choker",
+      "name": "Choker",
+      "category": "Matrix",
+      "cost": -2,
+      "description": "Lose 1 die whenever performing one specific type of System Test.",
+      "restrictions": "Characters capable of decking only",
+      "userInput": "system test type"
+    },
+    {
+      "id": "jack-itch",
+      "name": "Jack Itch",
+      "category": "Matrix",
+      "cost": -1,
+      "description": "Psychosomatic itch when jacked in; after WIL minutes, adds +1 TN per WIL minutes jacked in. At +8 TN character jacks out involuntarily.",
+      "restrictions": null
+    },
+    {
+      "id": "scorched",
+      "name": "Scorched",
+      "category": "Matrix",
+      "cost": -1,
+      "description": "Near-permanent psychotropic conditioning from Black IC; character does not get Willpower Tests to resist the conditioning's effects.",
+      "restrictions": null
+    },
+    {
+      "id": "bad-karma",
+      "name": "Bad Karma",
+      "category": "Miscellaneous",
+      "cost": -5,
+      "description": "Must earn double the Karma to increase Karma Pool.",
+      "restrictions": null
+    },
+    {
+      "id": "cranial-bomb",
+      "name": "Cranial Bomb",
+      "category": "Miscellaneous",
+      "cost": -6,
+      "description": "Someone has implanted a cranial bomb in the character's head; the GM decides who and why. Bomb is free.",
+      "restrictions": null
+    },
+    {
+      "id": "cursed-karma",
+      "name": "Cursed Karma",
+      "category": "Miscellaneous",
+      "cost": -6,
+      "description": "When spending a Karma Pool point, roll 1D6; on 1, the point is spent but has the opposite of the intended effect.",
+      "restrictions": null
+    },
+    {
+      "id": "gremlins",
+      "name": "Gremlins",
+      "category": "Miscellaneous",
+      "costOptions": [
+        { "value": -1, "label": "Minor: equipment operates at ±1 modifier" },
+        { "value": -2, "label": "Moderate: equipment stops working" },
+        { "value": -3, "label": "Major: equipment malfunctions, needs repair" },
+        { "value": -4, "label": "Severe: equipment breaks, needs major overhaul" }
+      ],
+      "description": "Equipment handled by character tends to malfunction; roll 2D6 on a result of 2, equipment breaks.",
+      "restrictions": "No effect on cyberware or magical equipment"
+    },
+    {
+      "id": "hunted",
+      "name": "Hunted",
+      "category": "Miscellaneous",
+      "costOptions": [
+        { "value": -2, "label": "Rank 3 Enemy (or +1 to existing)" },
+        { "value": -4, "label": "Rank 4 Enemy (or +2 to existing)" },
+        { "value": -6, "label": "Rank 5–6 Enemy (or +3 to existing)" }
+      ],
+      "description": "Enemy aggressively hunts the character; if killed, a replacement of equal or greater rank takes over.",
+      "restrictions": null,
+      "userInput": "hunter"
+    },
+    {
+      "id": "mysterious-cyberware",
+      "name": "Mysterious Cyberware",
+      "category": "Miscellaneous",
+      "cost": -3,
+      "description": "Character has an unknown piece of cyberware the GM chose; character doesn't know it exists until the GM reveals it.",
+      "restrictions": null
+    },
+    {
+      "id": "police-record",
+      "name": "Police Record",
+      "category": "Miscellaneous",
+      "cost": -6,
+      "description": "Criminal SIN; only street-level contacts allowed; Lone Star harasses on sight; corporate security has the character's file.",
+      "restrictions": null
+    }
+  ]
+}

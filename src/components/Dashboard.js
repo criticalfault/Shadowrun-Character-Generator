@@ -5,6 +5,7 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import PriorityPanel from "./PriorityPanel";
 import PointBuyPanel from "./PointBuyPanel";
+import EdgesFlawsPanel from "./EdgesFlawsPanel";
 import IdentityPanel from "./IdentityPanel";
 import AttributesPanel from "./AttributesPanel";
 import SR2SkillsPanel from "./SR2SkillsPanel";
@@ -206,6 +207,8 @@ export default function BasicTabs() {
     log: [],
     description: "",
     notes: "",
+    edges: [],
+    flaws: [],
   };
   const [Edition, setEdition] = React.useState("SR2");
   const [CGMethod, setCGMethod] = React.useState('priorities');
@@ -430,7 +433,7 @@ export default function BasicTabs() {
     }
   };
 
-  const tabNames = ['Identity','Priorities','Attributes','Skills','Magic/Otaku','Cyberware','Gear','Decking','Vehicles','Contacts','Karma','Sheet'];
+  const tabNames = ['Identity','Priorities','Edges & Flaws','Attributes','Skills','Magic/Otaku','Cyberware','Gear','Decking','Vehicles','Contacts','Karma','Sheet'];
   const handleChange = (event, newValue) => {
     setValue(newValue);
     trackTabChanged(tabNames[newValue] ?? `Tab ${newValue}`);
@@ -672,21 +675,22 @@ export default function BasicTabs() {
             :
              <Tab label="Point Buy" {...a11yProps(1)} />
             }
-            <Tab label="Attributes" {...a11yProps(2)} />
-            <Tab label="Skills" {...a11yProps(3)} />
-            
-            {(Character.isOtaku) ? 
-            <Tab label="Otaku" {...a11yProps(4)} />
+            <Tab label="Edges &amp; Flaws" {...a11yProps(2)} />
+            <Tab label="Attributes" {...a11yProps(3)} />
+            <Tab label="Skills" {...a11yProps(4)} />
+
+            {(Character.isOtaku) ?
+            <Tab label="Otaku" {...a11yProps(5)} />
             :
-            <Tab label="Magic" {...a11yProps(4)} /> }
-            
-            <Tab label="Cyberware" {...a11yProps(5)} />
-            <Tab label="Gear" {...a11yProps(6)} />
-            <Tab label="Decking" {...a11yProps(7)} />
-            <Tab label="Vehicles" {...a11yProps(8)} />
-            <Tab label="Contacts" {...a11yProps(9)} />
-            <Tab label="Karma" {...a11yProps(10)} />
-            <Tab label="Sheet Display" {...a11yProps(11)} />
+            <Tab label="Magic" {...a11yProps(5)} /> }
+
+            <Tab label="Cyberware" {...a11yProps(6)} />
+            <Tab label="Gear" {...a11yProps(7)} />
+            <Tab label="Decking" {...a11yProps(8)} />
+            <Tab label="Vehicles" {...a11yProps(9)} />
+            <Tab label="Contacts" {...a11yProps(10)} />
+            <Tab label="Karma" {...a11yProps(11)} />
+            <Tab label="Sheet Display" {...a11yProps(12)} />
           </Tabs>
 
         </Box>
@@ -775,6 +779,16 @@ export default function BasicTabs() {
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>
+          <EdgesFlawsPanel
+            edges={Character.edges ?? []}
+            flaws={Character.flaws ?? []}
+            cgmethod={Character.cgmethod}
+            onChangeEdges={(edges) => setCharacter({ ...Character, edges })}
+            onChangeFlaws={(flaws) => setCharacter({ ...Character, flaws })}
+          />
+        </CustomTabPanel>
+
+        <CustomTabPanel value={value} index={3}>
           <AttributesPanel
             ChangeAttributes={handleAttributesChange}
             currentCharacter={Character}
@@ -786,10 +800,10 @@ export default function BasicTabs() {
             Log={Character.log}
           />
         </CustomTabPanel>
-        <CustomTabPanel value={value} index={3}>
+        <CustomTabPanel value={value} index={4}>
           {SkillsPanelRender(Edition)}
         </CustomTabPanel>
-        <CustomTabPanel value={value} index={4}>
+        <CustomTabPanel value={value} index={5}>
           {(Character.isOtaku) ? 
           <OtakuPanel
             Edition={Edition}
@@ -849,7 +863,7 @@ export default function BasicTabs() {
           />
         }
         </CustomTabPanel>
-        <CustomTabPanel value={value} index={5}>
+        <CustomTabPanel value={value} index={6}>
           <CyberwarePanel
             CashOnHand={Character.chargenCash}
             Cyberware={Character.cyberware}
@@ -869,7 +883,7 @@ export default function BasicTabs() {
             BooksFilter={Character.allowedBooks}
           />
         </CustomTabPanel>
-        <CustomTabPanel value={value} index={6}>
+        <CustomTabPanel value={value} index={7}>
           <GearPanel
             Gear={Character.gear}
             Edition={Edition}
@@ -878,7 +892,7 @@ export default function BasicTabs() {
             BooksFilter={Character.allowedBooks}
           />
         </CustomTabPanel>
-        <CustomTabPanel value={value} index={7}>
+        <CustomTabPanel value={value} index={8}>
           <DeckingPanel
             Decks={Character.decks}
             Agents={Character.agents}
@@ -893,7 +907,7 @@ export default function BasicTabs() {
             BooksFilter={Character.allowedBooks}
           />
         </CustomTabPanel>
-        <CustomTabPanel value={value} index={8}>
+        <CustomTabPanel value={value} index={9}>
           <VehiclesPanel
             Vehicles={Character.vehicles}
             Drones={Character.drones}
@@ -909,14 +923,14 @@ export default function BasicTabs() {
             BooksFilter={Character.allowedBooks}
           />
         </CustomTabPanel>
-        <CustomTabPanel value={value} index={9}>
+        <CustomTabPanel value={value} index={10}>
           <ContactsPanel
             onChangeCash={(cash) => setCharacter({ ...Character, cash: cash })}
             updateContacts={handleContactsUpdate}
             Contacts={Character.contacts}
           />
         </CustomTabPanel>
-        <CustomTabPanel value={value} index={10}>
+        <CustomTabPanel value={value} index={11}>
           <KarmaDisplay
             onFinalization={(step) => {
               setCharacter({ ...Character, step: step });
@@ -939,7 +953,7 @@ export default function BasicTabs() {
             Log={Character.log}
           />
         </CustomTabPanel>
-        <CustomTabPanel value={value} index={11}>
+        <CustomTabPanel value={value} index={12}>
           <SheetDisplay
             onChangeStreetName={(name) =>
               setCharacter({ ...Character, street_name: name })
