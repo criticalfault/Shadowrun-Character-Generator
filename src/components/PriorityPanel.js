@@ -333,11 +333,7 @@ export default function PriorityPanel(props) {
   };
 
   const handleChangeMoreMetahumansOption = (event) => {
-    if(event.target.checked){
-      props.ChangeMoreMetahumansOption(false);
-    }else{
-      props.ChangeMoreMetahumansOption(true);
-    }
+    props.ChangeMoreMetahumansOption(event.target.checked);
   }
 
   const MoreMetahumansDisplay = function(edition) {
@@ -492,7 +488,6 @@ export default function PriorityPanel(props) {
         tempPriorities.Resources = level;
         break;
       default:
-        console.warn("Unknown priority: " + name);
     }
   }
 

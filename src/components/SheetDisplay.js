@@ -24,6 +24,7 @@ import PhysicalAdeptPowers from './Sheet/PhysicalAdeptPowers';
 import SpellsTable from './Sheet/SpellsTable';
 import FociTable from './Sheet/FociTable';
 import VehiclesTable from './Sheet/VehiclesTable';
+import DronesTable from './Sheet/DronesTable';
 import ConditionMonitorBlock from './Sheet/ConditionMonitorBlock';
 import CyberdeckTable from './Sheet/CyberdeckTable';
 
@@ -118,7 +119,7 @@ function SheetDisplay(props) {
         <SkillsBlock character={props.currentCharacter} edition={props.Edition}  />
       </Grid>
 
-      <CyberdeckTable Decks={props.currentCharacter.decks} onChangeDeck={props.onChangeDeck} />
+      <CyberdeckTable Decks={props.currentCharacter.decks} onChangeDeck={props.onChangeDeck} character={props.currentCharacter} />
 
       <CyberwareTable cyberware={props.currentCharacter.cyberware} />
 
@@ -137,6 +138,8 @@ function SheetDisplay(props) {
       <SpellsTable spells={props.currentCharacter.spells} />
 
       <VehiclesTable vehicles={props.currentCharacter.vehicles} />
+
+      <DronesTable drones={props.currentCharacter.drones} />
 
     </Grid>
   );

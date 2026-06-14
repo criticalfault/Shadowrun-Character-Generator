@@ -1,8 +1,8 @@
 import { MenuItem } from '@mui/material';
 import React, { useState } from 'react';
 import FilteredMenuItem from './FilteredMenuItem';
+import SearchableSelect from './SearchableSelect';
 import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
@@ -38,27 +38,33 @@ export default function GearPanel(props) {
   const [NewGearDesc, setNewGearDesc]   = useState('');
   const [SelectedGear, setSelectedGear] = useState(props.Gear);
   const [SelectedGearCategory, setSelectedGearCategory] = useState(GearCategories[0]);
+  const [globalSearch, setGlobalSearch] = useState('');
+
+  // Flat list of every item across all categories, with _category attached
+  const flatGearList = GearCategories.flatMap(cat =>
+    (GearData[cat]?.entries ?? []).map(item => ({ ...item, _category: cat }))
+  );
+
+    const getSortedEntries = () =>
+      GearData[SelectedGearCategory].entries.slice().sort((a, b) => a.Name.localeCompare(b.Name));
 
     const handleGearCategoryChange = (event) => {
         setSelectedGearCategory(event.target.value);
+        setNewGear(null);
+        setNewGearIndex(0);
+        setNewGearDesc('');
     }
-    
-    const handleGearChange = (event) => {
-      var TempGear = {}
-      if(props.Edition === 'SR3'){
-        TempGear = GearData[SelectedGearCategory].entries
-          .sort((a, b) => a.Name.localeCompare(b.Name))[event.target.value];
-      }else{
-        TempGear = GearData[SelectedGearCategory].entries.sort((a, b) => a.Name.localeCompare(b.Name))[event.target.value];
-      }
 
+    const handleGearChange = (event) => {
+      const TempGear = globalSearch.length >= 2
+        ? flatGearList[event.target.value]
+        : getSortedEntries()[event.target.value];
       setNewGear(TempGear);
-      setNewGearIndex(event.target.value)
-      setNewGearCost(TempGear.Cost);
+      setNewGearIndex(event.target.value);
+      setNewGearCost(TempGear.Cost ?? TempGear['$Cost'] ?? '0');
       setNewGearAmount(1);
-      if(TempGear.hasOwnProperty('Notes')){
-        setNewGearDesc(TempGear.Notes)
-      }
+      setNewGearDesc(TempGear.Notes ?? '');
+      if (TempGear._category) setSelectedGearCategory(TempGear._category);
     }
   
     const handleAddGear = () => {
@@ -81,26 +87,15 @@ export default function GearPanel(props) {
       props.onChangeGear([...editedGear]);
     };
 
-    const renderGearList = () => {
-
-      if(props.Edition === 'SR3'){
-        return GearData[SelectedGearCategory].entries
-          .sort((a, b) => a.Name.localeCompare(b.Name ?? ''))
-          .map( (gear, index) => {
-            const allowed = !gear.hasOwnProperty('BookPage') || props.BooksFilter.includes(gear.BookPage.split('.')[0]);
-            const bookCode = gear.BookPage?.split('.')[0];
-            return (
-              <FilteredMenuItem allowed={allowed} bookCode={bookCode} selected={NewGearIndex === index} key={index} value={index}>{gear.Name}</FilteredMenuItem>
-            );
-          });
-      }else{
-        return GearData[SelectedGearCategory].entries
-        .sort((a, b) => a.Name.localeCompare(b.Name))
-        .map( (gear, index) => (
-            <MenuItem selected={NewGearIndex === index} key={index} value={index}>{gear.Name}</MenuItem>
-          )
-        )
+    const renderGearItem = (gear, originalIndex) => {
+      if (props.Edition === 'SR3') {
+        const allowed = !gear.hasOwnProperty('BookPage') || props.BooksFilter.includes(gear.BookPage.split('.')[0]);
+        const bookCode = gear.BookPage?.split('.')[0];
+        return (
+          <FilteredMenuItem allowed={allowed} bookCode={bookCode} key={originalIndex} value={originalIndex}>{gear.Name}</FilteredMenuItem>
+        );
       }
+      return <MenuItem key={originalIndex} value={originalIndex}>{gear.Name}</MenuItem>;
     }
 
     return ( <>
@@ -110,29 +105,59 @@ export default function GearPanel(props) {
     </Box>
     <br></br>
 
-    <Box sx={{ width: '250px' }}>
-        <FormControl style={{'width':'200px'}}>
-            <InputLabel  id="gear-label">Gear Categories</InputLabel>
+    <TextField
+      label="Search all gear"
+      placeholder="Type to search across all categories..."
+      value={globalSearch}
+      onChange={(e) => { setGlobalSearch(e.target.value); setNewGear(null); setNewGearIndex(0); }}
+      size="small"
+      style={{ width: '400px', marginBottom: '12px' }}
+    />
+
+    {globalSearch.length >= 2 ? (
+      <SearchableSelect
+        items={flatGearList}
+        value={NewGearIndex}
+        onChange={handleGearChange}
+        label="All Gear"
+        getLabel={(item) => `${item.Name} (${item._category})`}
+        renderItem={(item, originalIndex) => {
+          const allowed = props.Edition !== 'SR3' || !item.BookPage || props.BooksFilter.includes(item.BookPage.split('.')[0]);
+          const bookCode = item.BookPage?.split('.')[0];
+          return (
+            <FilteredMenuItem allowed={allowed} bookCode={bookCode} key={originalIndex} value={originalIndex}>
+              {item.Name} <span style={{ opacity: 0.55, fontSize: '0.8em' }}>({item._category})</span>
+            </FilteredMenuItem>
+          );
+        }}
+        style={{ minWidth: 650 }}
+      />
+    ) : (
+      <>
+        <Box sx={{ width: '250px' }}>
+          <FormControl style={{ width: '200px' }}>
+            <InputLabel id="gear-label">Gear Categories</InputLabel>
             <NativeSelect
-                id="gear-dropdown"
-                value={SelectedGearCategory}
-                onChange={handleGearCategoryChange}>
-                {GearCategories.map(catName => (
-                    <option key={catName} value={catName}>{catName}</option>
-                ))}
+              id="gear-dropdown"
+              value={SelectedGearCategory}
+              onChange={handleGearCategoryChange}>
+              {GearCategories.map(catName => (
+                <option key={catName} value={catName}>{catName}</option>
+              ))}
             </NativeSelect>
-        </FormControl>
-    </Box><br></br>
-    {SelectedGearCategory && (
-        <FormControl style={{ minWidth: 650 }}>
-        <InputLabel id="power-label">{SelectedGearCategory}</InputLabel>
-        <Select
-            id="power-dropdown"
+          </FormControl>
+        </Box><br />
+        {SelectedGearCategory && (
+          <SearchableSelect
+            items={getSortedEntries()}
             value={NewGearIndex}
-            onChange={handleGearChange}>
-          { renderGearList() }
-        </Select>
-        </FormControl>
+            onChange={handleGearChange}
+            label={SelectedGearCategory}
+            renderItem={renderGearItem}
+            style={{ minWidth: 650 }}
+          />
+        )}
+      </>
     )}
     {NewGear && (
         <>

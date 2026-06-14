@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import { Grid } from "@mui/material";
+import { trackCharacterSaved, trackCharacterLoaded } from '../analytics';
 const style = {
   position: "absolute",
   top: "50%",
@@ -60,22 +61,12 @@ export default function LoadCharacter(props) {
           }
         }    
         reader.readAsText(file); 
-        try{
-          fathom.trackEvent('Load Character'); // eslint-disable-line
-        }catch(err){
-            console.log(err);
-            console.log("Fathom wasn't found. Prolly a blocker");
-        }
+        trackCharacterLoaded();
     }
 
     // Clean up by revoking the object URL
     URL.revokeObjectURL(url);
-    try {
-      fathom.trackEvent("Save Character"); // eslint-disable-line
-    } catch (err) {
-      console.log(err);
-      console.log("Fathom wasn't found. Prolly a blocker");
-    }
+    trackCharacterSaved();
   };
 
   const LoadCharacter = (event) => {
@@ -92,12 +83,7 @@ export default function LoadCharacter(props) {
       setOpen(false);
     };
     reader.readAsText(file);
-    try {
-      fathom.trackEvent("Load Character"); // eslint-disable-line
-    } catch (err) {
-      console.log(err);
-      console.log("Fathom wasn't found. Prolly a blocker");
-    }
+    trackCharacterLoaded();
   };
 
   const localStroageSave = (saveSlot) => {

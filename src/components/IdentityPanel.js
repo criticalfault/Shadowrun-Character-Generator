@@ -61,17 +61,24 @@ export default function IdentityPanel(props) {
             <h3>Added Point Buy!</h3>
             <p>This is extremely experimental! So if you run into a problem, drop me an email. DO NOT try to mix the two systems. It will break some stuff on your character!</p>
             
-            <h5>Known Issues (As of 05-27-25 - 3:20pm CST)</h5>
+            <h5>Known Issues (As of 06-14-26)</h5>
             <ul>
                 <li>SR2 gear is still missing all books, so filtering doesnt work. Also temporarily removing "cars" from the gear section as I fix up the vehicles tab for SR2 specifically</li>
                 <li>Some issues with Knowledge and Langauge skills being edited or removed</li>
                 <li>Still need to add "improvements" and tracking Nuyen post finalization.</li>
                 <li>All nesting of improvements (Weapon / Deck / Vehicle accessories and building). These will be handled in a completely different way, but I promise it will feel awesome to do!</li>
+                <li>Otaku Sprites section is still pending implementation</li>
+                <li>Decker programming calculator (design and program your own utilities) not yet implemented</li>
             </ul>
         </div>
         <hr/>
         <h5>Resolved Issues</h5>
         <ul>
+            <li>Full SR3 Cannon Companion weapons audit — corrected concealability and ammo capacity on modular weapon systems (HK G38, Steyr AUG-CSL), Ares Thunderer concealability, and weapon type classifications for Hammerli 610S and Morrissey Elite</li>
+            <li>SR3 Decking Panel — fixed all direct state mutations (addProgram, removeProgram, persona changes, program rating/toggle). Added SearchableSelect dropdowns to cyberdeck and program selectors</li>
+            <li>SR3 Otaku Panel — all Living Persona formulas verified against the Matrix book (MPCP, Bod, Sensor, Masking, Evasion, Hardening, Matrix Reaction, Matrix Initiative, I/O Speed, Hacking Pool). Fixed several previously invented/incorrect formulas</li>
+            <li>SR3 Programs.json — added missing Doorstop and Laser Link programs; split Erosion into 4 correct named variants (Blinder, Poison, Restrict, Reveal). All 54 program multipliers verified against the Matrix book</li>
+            <li>SR3 Cyberdeck.json — fixed placeholder "?" values on Kirama LPD-12, Zetatech Parraline 5750, SGI Technologies Elysia, and CATCo Babel</li>
             <li>Fixed a ton of problems in the gear sections of SR2 Gear. You should see new categories now to make it much easier to find things.</li>
             <li>Corrected well over 100 items descriptions for "Stuff With Ratings" in the gear section. Also corrected an index mismatch due to book filtering for that same dropdown</li>
             <li>Added magical libraries to 3rd edition. Still need to do that for 2nd edition</li>

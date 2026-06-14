@@ -1,6 +1,7 @@
 import { MenuItem } from '@mui/material';
 import React, { useState } from 'react';
 import FilteredMenuItem from './FilteredMenuItem';
+import SearchableSelect from './SearchableSelect';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
@@ -382,20 +383,23 @@ export default function VehiclesPanel(props) {
         Nuyen Spent: {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(CalcTotalNuyenSpent())} 
     </Box>
     <h3>Vehicles</h3>
-    <FormControl style={{ minWidth: 650, marginTop:20 }}>
-        <InputLabel id="power-label">Vehicles</InputLabel>
-        <Select
-            id="power-dropdown"
-            value={NewVehicleIndex}
-            onChange={handleVehicleChange}>
-              <MenuItem selected={NewVehicleIndex === -1} key={-1} value={-1}>Select A Vehicle</MenuItem>
-            { 
-                VehicleData.sort((a, b) => a - b).map( (gear, index) => (
-                    <FilteredMenuItem allowed={props.BooksFilter.includes(gear['Book.Page'].split('.')[0])} bookCode={gear['Book.Page'].split('.')[0]} selected={NewVehicleIndex === index} key={index} value={index}>{gear.name}</FilteredMenuItem>
-                ))
-            }
-        </Select>
-    </FormControl>
+    <SearchableSelect
+      items={VehicleData}
+      value={NewVehicleIndex}
+      onChange={handleVehicleChange}
+      label="Vehicles"
+      getLabel={(v) => v.name}
+      renderItem={(vehicle, i) => (
+        <FilteredMenuItem
+          allowed={props.BooksFilter.includes(vehicle['Book.Page'].split('.')[0])}
+          bookCode={vehicle['Book.Page'].split('.')[0]}
+          key={i} value={i}
+        >
+          {vehicle.name}
+        </FilteredMenuItem>
+      )}
+      style={{ minWidth: 650, marginTop: 20 }}
+    />
 
     {NewVehicle && (
         <div style={{marginTop:20 }}>
@@ -436,20 +440,23 @@ export default function VehiclesPanel(props) {
     {renderVehiclesNew()}
     <hr style={{marginTop:30, marginBottom:30}}></hr>
       <h3>Drones</h3>
-      <FormControl style={{ minWidth: 650 }}>
-        <InputLabel id="power-label">Drones</InputLabel>
-        <Select
-            id="power-dropdown"
-            value={NewDroneIndex}
-            onChange={handleDroneChange}>
-              <MenuItem selected={NewDroneIndex === -1} key={-1} value={-1}>Select A Drone</MenuItem>
-            { 
-                DronesData.sort((a, b) => a - b).map( (gear, index) => (
-                    <FilteredMenuItem allowed={props.BooksFilter.includes(gear['Book.Page'].split('.')[0])} bookCode={gear['Book.Page'].split('.')[0]} selected={NewDroneIndex === index} key={index} value={index}>{gear.name}</FilteredMenuItem>
-                ))
-            }
-        </Select>
-    </FormControl>
+      <SearchableSelect
+        items={DronesData}
+        value={NewDroneIndex}
+        onChange={handleDroneChange}
+        label="Drones"
+        getLabel={(d) => d.name}
+        renderItem={(drone, i) => (
+          <FilteredMenuItem
+            allowed={props.BooksFilter.includes(drone['Book.Page'].split('.')[0])}
+            bookCode={drone['Book.Page'].split('.')[0]}
+            key={i} value={i}
+          >
+            {drone.name}
+          </FilteredMenuItem>
+        )}
+        style={{ minWidth: 650 }}
+      />
 
     {NewDrone && (
         <div style={{marginTop:20 }}>

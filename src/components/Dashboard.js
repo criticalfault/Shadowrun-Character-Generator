@@ -25,6 +25,7 @@ import "./SheetDisplay.css";
 import DiceRollerTray from "./DiceRollerTray";
 import SignInPopup from "./SignInPopup";
 import { Grid } from "@mui/material";
+import { trackEditionChanged, trackTabChanged, trackCharacterFinalized } from '../analytics';
 // import TableAttribute from "./CustomTable";
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -94,6 +95,7 @@ export default function BasicTabs() {
     availableMagics: ["Full Magician"],
     magicalChoice: "None",
     maxSpellPoints: 25,
+    purchasedSpellPoints: 0,
     race: "Human",
     bodyIndex: 2,
     magicalAttributeBonuses: {
@@ -167,6 +169,7 @@ export default function BasicTabs() {
     ],
     mods: [],
     decks: [],
+    agents: [],
     selectedDeckIndex: false,
     cyberware: [],
     bioware: [],
@@ -178,6 +181,7 @@ export default function BasicTabs() {
     metaVariantType:'',
     otakuPath:"Technoshaman",
     complexForms:[],
+    sprites:[],
     karma: 0,
     karmaPool: 1,
     karmaSpent: 0,
@@ -349,15 +353,14 @@ export default function BasicTabs() {
         }
       }
     });
-    console.log("Edition: " + Edition);
-    console.log("CGMethod: "  + CGMethod);
-    console.log(Character);
+    tempCashSpent += (Character.purchasedSpellPoints ?? 0) * 25000;
     setNuyenSpent(tempCashSpent);
   }, [Character]);
 
   const handleChangeEdition = (edition) => {
     setEdition(edition);
-     setCharacter((prevCharacter) => ({ ...prevCharacter, Edition:edition }));
+    setCharacter((prevCharacter) => ({ ...prevCharacter, Edition:edition }));
+    trackEditionChanged(edition);
   };
   
   const handleChangeCGMethod = (method) => {
@@ -424,8 +427,10 @@ export default function BasicTabs() {
     }
   };
 
+  const tabNames = ['Identity','Priorities','Attributes','Skills','Magic/Otaku','Cyberware','Gear','Decking','Vehicles','Contacts','Karma','Sheet'];
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    trackTabChanged(tabNames[newValue] ?? `Tab ${newValue}`);
   };
 
   const handleChangeMaxCash = (Cash) => {
@@ -439,6 +444,14 @@ export default function BasicTabs() {
     setCharacter((prevCharacter) => ({
       ...prevCharacter,
       maxSpellPoints: Points,
+      purchasedSpellPoints: 0,
+    }));
+  };
+
+  const handleChangePurchasedSpellPoints = (points) => {
+    setCharacter((prevCharacter) => ({
+      ...prevCharacter,
+      purchasedSpellPoints: points,
     }));
   };
 
@@ -520,24 +533,24 @@ export default function BasicTabs() {
   };
 
   const handleAttributesChange = (attribute, value) => {
-    setCharacter((prevCharacter) => {
-      prevCharacter.attributes[attribute] = parseInt(value);
-      return prevCharacter;
-    });
+    setCharacter((prevCharacter) => ({
+      ...prevCharacter,
+      attributes: { ...prevCharacter.attributes, [attribute]: parseInt(value) },
+    }));
   };
 
   const handleEssenceChange = (value) => {
-    setCharacter((prevCharacter) => {
-      prevCharacter.attributes["Essence"] = parseFloat(value);
-      return prevCharacter;
-    });
+    setCharacter((prevCharacter) => ({
+      ...prevCharacter,
+      attributes: { ...prevCharacter.attributes, Essence: parseFloat(value) },
+    }));
   };
 
   const handleBodyIndexChange = (value) => {
-    setCharacter((prevCharacter) => {
-      prevCharacter.bodyIndex = parseFloat(value);
-      return prevCharacter;
-    });
+    setCharacter((prevCharacter) => ({
+      ...prevCharacter,
+      bodyIndex: parseFloat(value),
+    }));
   };
 
   const handleCyberAttributeUpdates = (cyberAttributeBonuses) => {
@@ -766,8 +779,7 @@ export default function BasicTabs() {
             Edition={Edition}
             onChangeLog={(log) => setCharacter({ ...Character, log: log })}
             onSpendKarma={(karma) => {
-              let karmaSpentToSave = (Character.karmaSpent += karma);
-              setCharacter({ ...Character, karmaSpent: karmaSpentToSave });
+              setCharacter((prev) => ({ ...prev, karmaSpent: prev.karmaSpent + karma }));
             }}
             Log={Character.log}
           />
@@ -781,8 +793,10 @@ export default function BasicTabs() {
             Edition={Edition}
             currentCharacter={Character}
             complexForms={Character.complexForms}
+            sprites={Character.sprites}
             onChangeComplexForm={handleComplexFormUpdate}
             onChangeOtakuPath={onChangeOtakuPath}
+            onChangeSprites={(sprites) => setCharacter({ ...Character, sprites })}
           /> 
           : 
           <MagicPanel
@@ -801,6 +815,8 @@ export default function BasicTabs() {
             BooksFilter={Character.allowedBooks}
             Edition={Edition}
             maxSpellPoints={Character.maxSpellPoints}
+            purchasedSpellPoints={Character.purchasedSpellPoints ?? 0}
+            onChangePurchasedSpellPoints={handleChangePurchasedSpellPoints}
             onChangeMagicalAttributes={handleMagicAttributeUpdates}
             initiateGrade={Character.initiateGrade}
             initiations={Character.initiations}
@@ -850,9 +866,13 @@ export default function BasicTabs() {
         <CustomTabPanel value={value} index={7}>
           <DeckingPanel
             Decks={Character.decks}
+            Agents={Character.agents}
             onChangeCash={(cash) => setCharacter({ ...Character, cash: cash })}
             onChangeDeck={(decks) =>
               setCharacter({ ...Character, decks: decks })
+            }
+            onChangeAgents={(agents) =>
+              setCharacter({ ...Character, agents: agents })
             }
             Edition={Edition}
             BooksFilter={Character.allowedBooks}
@@ -885,6 +905,7 @@ export default function BasicTabs() {
           <KarmaDisplay
             onFinalization={(step) => {
               setCharacter({ ...Character, step: step });
+              if (step !== 'chargen') trackCharacterFinalized(Edition, Character.race);
             }}
             skills={Character.skills}
             attributes={Character.attributes}
