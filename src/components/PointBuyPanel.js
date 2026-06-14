@@ -62,13 +62,13 @@ export default function PointBuyPanelSR3(props) {
           Notes: "Low-Light Vision",
         },
         Giants:{
-          Body: 4,
+          Body: 5,
           Quickness: -1,
           Strength: 5,
           Charisma: -2,
           Willpower: 0,
           Intelligence: -2,
-          Notes: "Thermographic Vision, +1 Reach for Armed/Unarmed Combat",
+          Notes: "Thermographic Vision, +1 Reach for Armed/Unarmed Combat. No dermal armor.",
         },
         Gnome:{
           Body: 1,
@@ -104,7 +104,7 @@ export default function PointBuyPanelSR3(props) {
           Charisma: 0,
           Willpower: 0,
           Intelligence: -1,
-          Notes: "",
+          Notes: "No Low-Light Vision (unlike other Orks).",
         },
         Minotaurs:{
           Body: 4,
@@ -275,13 +275,13 @@ export default function PointBuyPanelSR3(props) {
           Notes: "Low-Light Vision",
         },
         Ogre:{
-         Body: 3,
+          Body: 3,
           Quickness: 0,
           Strength: 2,
           Charisma: 0,
           Willpower: 0,
           Intelligence: -1,
-          Notes: "Low-light Vision",
+          Notes: "No Low-Light Vision (unlike other Orks).",
         },
         Minotaurs:{
           Body: 4,
