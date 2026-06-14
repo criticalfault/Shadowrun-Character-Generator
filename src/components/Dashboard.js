@@ -184,6 +184,9 @@ export default function BasicTabs() {
     magical: true,
     initation: false,
     submerison: false,
+    initiateGrade: 0,
+    initiations: [],
+    magicalGroup: null,
     magicalTradition: false,
     magicalTotem: false,
     moreMetahumansOption:false,
@@ -799,6 +802,19 @@ export default function BasicTabs() {
             Edition={Edition}
             maxSpellPoints={Character.maxSpellPoints}
             onChangeMagicalAttributes={handleMagicAttributeUpdates}
+            initiateGrade={Character.initiateGrade}
+            initiations={Character.initiations}
+            magicalGroup={Character.magicalGroup}
+            onChangeInitiations={(initiateGrade, initiations) =>
+              setCharacter({ ...Character, initiateGrade, initiations })
+            }
+            onChangeMagicalGroup={(magicalGroup) =>
+              setCharacter({ ...Character, magicalGroup })
+            }
+            onSpendKarma={(karma) => {
+              let karmaSpentToSave = (Character.karmaSpent += karma);
+              setCharacter({ ...Character, karmaSpent: karmaSpentToSave });
+            }}
           />
         }
         </CustomTabPanel>
