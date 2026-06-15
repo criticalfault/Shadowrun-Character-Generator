@@ -8,10 +8,29 @@
     margin-right: 10px
 }
 
-.sheetBody{
+.sheetBody {
     background: #1f1f1f;
     width: 960px;
     margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.sheet-print-row {
+    text-align: right;
+    margin-bottom: 12px;
+}
+
+.sheet-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
+    margin-bottom: 0;
+}
+
+.sheet-col {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
 }
 
 li{
@@ -69,9 +88,7 @@ li{
   margin-bottom: 8px;
 }
 
-.sheetBody {
-  padding: 2rem;
-}
+/* padding set on .sheetBody above */
 
 /* ===== PRINT STYLES ===== */
 @media print {

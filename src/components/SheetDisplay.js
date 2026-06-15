@@ -1,16 +1,8 @@
 import React from "react";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
-import { Grid } from "@mui/material";
-import ConditionMonitor from "./ConditionMonitor";
-import { ListItem, ListItemText } from "@mui/material";
-import TextField from "@mui/material/TextField";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
+import Button from "@mui/material/Button";
+import PrintIcon from "@mui/icons-material/Print";
+import "./SheetDisplay.css";
+
 import AttributesBlock from './Sheet/AttributesBlock';
 import RunnerInfo from './Sheet/RunnerInfo';
 import DicePools from './Sheet/DicePools';
@@ -30,41 +22,42 @@ import CyberdeckTable from './Sheet/CyberdeckTable';
 import AllyTable from './Sheet/AllyTable';
 import RCDSheet from './Sheet/RCDSheet';
 
-
-import Button from "@mui/material/Button";
-import PrintIcon from "@mui/icons-material/Print";
-import "./SheetDisplay.css";
 import rangesData from "../data/ranges.json";
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#1f1f1f",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "left",
-  color: theme.palette.text.primary,
-}));
-function SheetDisplay(props) {
-  const rcd = props.currentCharacter.rcd ?? {};
-  const Ranges = rangesData;
-  const getRangesFromName = (name) => {
-    let RangeNames = Object.keys(Ranges);
-    for (let i = 0; i < RangeNames.length; i++) {
-      if (name.includes(RangeNames[i])) {
-        return Ranges[RangeNames[i]];
-      }
-    }
 
-    return {
-      short: "N/A",
-      medium: "N/A",
-      long: "N/A",
-      extreme: "N/A",
-    };
-  };
+function SheetDisplay(props) {
+  const char = props.currentCharacter;
+  const rcd = char.rcd ?? {};
+
+  // ── Auto-show guards ──────────────────────────────────────────────────────
+  const hasCyberware = (char.cyberware?.length ?? 0) > 0;
+  const hasBioware   = (char.bioware?.length ?? 0) > 0;
+  const hasMagic     = (props.magicalChoice && props.magicalChoice !== 'none' && props.magicalChoice !== '')
+                    || (char.spells?.length ?? 0) > 0
+                    || (char.foci?.length ?? 0) > 0
+                    || (char.powers?.length ?? 0) > 0
+                    || !!char.ally;
+  const hasDecking   = (char.decks?.length ?? 0) > 0;
+  const hasRigging   = (char.vehicles?.length ?? 0) > 0
+                    || (char.drones?.length ?? 0) > 0
+                    || Object.values(rcd).some(v => v !== '' && v !== false && v !== null
+                        && !(Array.isArray(v) && v.length === 0)
+                        && typeof v !== 'object');
+
   const handleConditionSelect = () => {};
 
+  const getRangesFromName = (name) => {
+    const Ranges = rangesData;
+    for (const key of Object.keys(Ranges)) {
+      if (name.includes(key)) return Ranges[key];
+    }
+    return { short: "N/A", medium: "N/A", long: "N/A", extreme: "N/A" };
+  };
+
   return (
-    <Grid container spacing={2} className="sheetBody">
-      <Grid item xs={12} className="no-print" style={{ textAlign: 'right', paddingBottom: '8px' }}>
+    <div className="sheetBody">
+
+      {/* ── Print button ──────────────────────────────────────────────── */}
+      <div className="no-print sheet-print-row">
         <Button
           variant="outlined"
           startIcon={<PrintIcon />}
@@ -78,81 +71,94 @@ function SheetDisplay(props) {
         >
           Print Sheet
         </Button>
-      </Grid>
+      </div>
+
+      {/* ── Runner identity — full width ──────────────────────────────── */}
       <RunnerInfo
-        character={props.currentCharacter}
+        character={char}
         onChange={(key, value) => {
           switch (key) {
-            case 'street_name':
-              props.onChangeStreetName(value);
-              break;
-            case 'age':
-              props.onChangeAge(value);
-              break;
-            case 'description':
-              props.onChangeDescription(value);
-              break;
-            case 'notes':
-              props.onChangeNotes(value);
-              break;
-            default:
-              break;
+            case 'street_name':  props.onChangeStreetName(value); break;
+            case 'age':          props.onChangeAge(value);        break;
+            case 'description':  props.onChangeDescription(value); break;
+            case 'notes':        props.onChangeNotes(value);      break;
+            default: break;
           }
         }}
       />
-      <Grid item size={12}>
+
+      {/* ── 2-column core ─────────────────────────────────────────────── */}
+      <div className="sheet-two-col">
+
+        {/* Left: Attributes · Condition Monitors · Dice Pools */}
+        <div className="sheet-col">
+          <AttributesBlock
+            attributes={char.attributes}
+            raceBonuses={char.raceBonuses}
+            cyberBonuses={char.cyberAttributeBonuses}
+            magicBonuses={char.magicalAttributeBonuses}
+            Cyberware={char.cyberware}
+          />
           <ConditionMonitorBlock onConditionSelect={handleConditionSelect} />
-      </Grid>
+          <DicePools
+            character={char}
+            edition={props.Edition}
+            magicalChoice={props.magicalChoice}
+          />
+        </div>
 
-     <AttributesBlock
-        attributes={props.currentCharacter.attributes}
-        raceBonuses={props.currentCharacter.raceBonuses}
-        cyberBonuses={props.currentCharacter.cyberAttributeBonuses}
-        magicBonuses={props.currentCharacter.magicalAttributeBonuses}
-        Cyberware={props.currentCharacter.cyberware}
-      />
-      <Grid item size={4}>
-       <DicePools
-          character={props.currentCharacter}
-          edition={props.Edition}
-          magicalChoice={props.magicalChoice}
+        {/* Right: Skills · Armor · Gear */}
+        <div className="sheet-col">
+          <SkillsBlock character={char} edition={props.Edition} />
+          <ArmorTable gear={char.gear} />
+          <GearTable  gear={char.gear} />
+        </div>
+
+      </div>
+
+      {/* ── Weapons — full width ──────────────────────────────────────── */}
+      <WeaponsTable gear={char.gear} />
+
+      {/* ── Optional sections — full width, auto-hidden ───────────────── */}
+
+      {hasCyberware && (
+        <CyberwareTable cyberware={char.cyberware} />
+      )}
+
+      {hasBioware && (
+        <BiowareTable bioware={char.bioware} />
+      )}
+
+      {hasMagic && (
+        <>
+          <PhysicalAdeptPowers powers={char.powers} />
+          <SpellsTable spells={char.spells} />
+          <FociTable foci={char.foci} />
+          <AllyTable ally={char.ally} />
+        </>
+      )}
+
+      {hasDecking && (
+        <CyberdeckTable
+          Decks={char.decks}
+          onChangeDeck={props.onChangeDeck}
+          character={char}
         />
-      </Grid>
-      <Grid item size={12}>
-        <SkillsBlock character={props.currentCharacter} edition={props.Edition}  />
-      </Grid>
+      )}
 
-      <CyberdeckTable Decks={props.currentCharacter.decks} onChangeDeck={props.onChangeDeck} character={props.currentCharacter} />
+      {hasRigging && (
+        <>
+          <VehiclesTable vehicles={char.vehicles} />
+          <DronesTable drones={char.drones} />
+          <RCDSheet
+            rcd={rcd}
+            drones={char.drones}
+            onChangeRCD={props.onChangeRCD}
+          />
+        </>
+      )}
 
-      <CyberwareTable cyberware={props.currentCharacter.cyberware} />
-
-      <BiowareTable bioware={props.currentCharacter.bioware} />
-
-      <GearTable gear={props.currentCharacter.gear} />
-
-      <ArmorTable gear={props.currentCharacter.gear} />
-      
-      <WeaponsTable gear={props.currentCharacter.gear} />
-
-      <PhysicalAdeptPowers powers={props.currentCharacter.powers} />
-
-      <FociTable foci={props.currentCharacter.foci} />
-
-      <SpellsTable spells={props.currentCharacter.spells} />
-
-      <AllyTable ally={props.currentCharacter.ally} />
-
-      <VehiclesTable vehicles={props.currentCharacter.vehicles} />
-
-      <DronesTable drones={props.currentCharacter.drones} />
-
-      <RCDSheet
-        rcd={rcd}
-        drones={props.currentCharacter.drones}
-        onChangeRCD={props.onChangeRCD}
-      />
-
-    </Grid>
+    </div>
   );
 }
 
