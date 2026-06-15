@@ -962,9 +962,18 @@ export default function BasicTabs() {
           />
           <KarmaSkillAdvancement
             skills={Character.skills}
+            spells={Character.spells}
+            magicalChoice={Character.magicalChoice}
+            magicRating={
+              (parseInt(Character.attributes?.Magic) || 0) +
+              (parseInt(Character.magicalAttributeBonuses?.Magic) || 0)
+            }
+            allowedBooks={Character.allowedBooks}
+            Edition={Edition}
             karmaAvailable={Character.karma}
             step={Character.step}
             onUpdateSkills={handleSkillsUpdate}
+            onChangeSpells={(spells) => setCharacter({ ...Character, spells })}
             onSpendKarma={(karma) =>
               setCharacter((prev) => ({ ...prev, karmaSpent: prev.karmaSpent + karma }))
             }
