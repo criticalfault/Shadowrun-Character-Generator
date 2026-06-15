@@ -187,6 +187,7 @@ export default function BasicTabs() {
     karma: 0,
     karmaPool: 1,
     karmaSpent: 0,
+    karmaPoolBurned: 0,
     magical: true,
     initation: false,
     submerison: false,
@@ -964,6 +965,9 @@ export default function BasicTabs() {
           <KarmaSkillAdvancement
             skills={Character.skills}
             spells={Character.spells}
+            karmaPool={Character.karmaPool}
+            karmaPoolBurned={Character.karmaPoolBurned ?? 0}
+            onChangeKarmaPoolBurned={(burned) => setCharacter({ ...Character, karmaPoolBurned: burned })}
             magicalChoice={Character.magicalChoice}
             magicRating={
               (parseInt(Character.attributes?.Magic) || 0) +

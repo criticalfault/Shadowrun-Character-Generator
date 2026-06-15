@@ -50,6 +50,9 @@ const TYPES = ['Active', 'Knowledge', 'Language'];
 export default function KarmaSkillAdvancement({
   skills,
   spells,
+  karmaPool,
+  karmaPoolBurned,
+  onChangeKarmaPoolBurned,
   magicalChoice,
   magicRating,
   allowedBooks,
@@ -181,6 +184,35 @@ export default function KarmaSkillAdvancement({
         size="small"
         sx={{ mb: 2 }}
       />
+
+      {/* ── Karma Pool tracker ── */}
+      <Divider sx={{ my: 2 }} />
+      <Typography variant="h6" sx={{ mb: 0.5 }}>Karma Pool</Typography>
+      <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+        Track permanently spent pool points (buying successes, p.191). Pool refreshes each scene except permanently burned points.
+      </Typography>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexWrap: 'wrap' }}>
+        <Typography>
+          Effective pool: <strong>{(karmaPool ?? 0) - (karmaPoolBurned ?? 0)}</strong> / {karmaPool ?? 0}
+        </Typography>
+        <Button
+          size="small"
+          variant="outlined"
+          disabled={(karmaPoolBurned ?? 0) >= (karmaPool ?? 0)}
+          onClick={() => onChangeKarmaPoolBurned((karmaPoolBurned ?? 0) + 1)}
+        >
+          Burn 1 (−1 permanent)
+        </Button>
+        <Button
+          size="small"
+          variant="outlined"
+          disabled={(karmaPoolBurned ?? 0) <= 0}
+          onClick={() => onChangeKarmaPoolBurned((karmaPoolBurned ?? 0) - 1)}
+        >
+          Undo
+        </Button>
+      </Box>
+      <Divider sx={{ my: 2 }} />
 
       {/* ── Existing skills ── */}
       <Typography variant="h6" sx={{ mt: 2, mb: 1 }}>Improve Skills</Typography>
