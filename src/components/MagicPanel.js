@@ -21,6 +21,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import Checkbox from "@mui/material/Checkbox";
 import Dialog from "@mui/material/Dialog";
+import AllySection from "./AllySection";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
@@ -2273,6 +2274,17 @@ function MagicPanel(props) {
       {RenderWindow()}
       {RenderFociList()}
       {props.magicalChoice !== 'Not Magical' && RenderInitiationSection()}
+      {(props.magicalChoice === 'Full Magician' ||
+        props.magicalChoice === 'Human Full Magician' ||
+        props.magicalChoice === 'Metahuman Full Magician') && (
+        <AllySection
+          ally={props.ally}
+          onChangeAlly={props.onChangeAlly}
+          creatorIntelligence={props.creatorIntelligence}
+          creatorWillpower={props.creatorWillpower}
+          onSpendKarma={props.onSpendKarma}
+        />
+      )}
       <Dialog open={openModal} onClose={handleCloseModal}>
         <DialogTitle>Set Foci</DialogTitle>
         <DialogContent>

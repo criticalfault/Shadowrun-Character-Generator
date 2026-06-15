@@ -1,21 +1,9 @@
-import { MenuItem } from '@mui/material';
 import React, { useState } from 'react';
 import FilteredMenuItem from './FilteredMenuItem';
 import SearchableSelect from './SearchableSelect';
-import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import FormControl from '@mui/material/FormControl';
-
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
 
 //New Vehicle Display
 import { styled } from '@mui/material/styles';
@@ -24,36 +12,31 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import Modal from '@mui/material/Modal';
 
 // Pre-import all edition data so Vite can bundle them (no runtime require)
 const allVehicles = import.meta.glob('../data/*/Vehicles.json', { eager: true });
 const allDrones = import.meta.glob('../data/*/Drones.json', { eager: true });
-import VehicleGearData from '../data/SR3/VehicleMods.json';
-import VehicleWeaponsData from '../data/SR3/VehicleWeapons.json';
+import VehicleModsModal, { applyVehicleMods } from './VehicleModsModal';
 
 export default function VehiclesPanel(props) {
   const VehicleData = allVehicles[`../data/${props.Edition}/Vehicles.json`]?.default;
   const DronesData = allDrones[`../data/${props.Edition}/Drones.json`]?.default;
-  const VehicleGear = VehicleGearData;
-  const VehicleWeapons = VehicleWeaponsData;
 
-  const CalcTotalNuyenSpent = () =>{
-      let TotalNuyen = 0;
-      props.Vehicles.forEach(function(vehicle){
-          TotalNuyen += parseInt(vehicle['$Cost']);
-          vehicle.options.forEach(function(option){
-            TotalNuyen += parseInt(option['$Cost']);
-          })
+  const CalcTotalNuyenSpent = () => {
+    let TotalNuyen = 0;
+    props.Vehicles.forEach(function(vehicle) {
+      TotalNuyen += parseInt(vehicle['$Cost']) || 0;
+      (vehicle.vehicleMods || []).forEach(function(mod) {
+        TotalNuyen += parseInt(mod.cost) || 0;
       });
-
-      props.Drones.forEach(function(drone){
-        TotalNuyen += parseInt(drone['$Cost']);
-        drone.options.forEach(function(option){
-          TotalNuyen += parseInt(option['$Cost']);
-        })
     });
-      return TotalNuyen;
+    props.Drones.forEach(function(drone) {
+      TotalNuyen += parseInt(drone['$Cost']) || 0;
+      (drone.vehicleMods || []).forEach(function(mod) {
+        TotalNuyen += parseInt(mod.cost) || 0;
+      });
+    });
+    return TotalNuyen;
   }
 
   const [NewVehicle, setNewVehicle]           = useState();
@@ -83,7 +66,7 @@ export default function VehiclesPanel(props) {
   const handleAddDrone = () => {
     if (NewDrone) {
       const DroneToAdd = {...NewDrone};
-      DroneToAdd.options = [];
+      DroneToAdd.vehicleMods = [];
       setSelectedDrone(prevDrone => [...prevDrone, DroneToAdd]);
       setNewDrone('');
       setNewDroneIndex('');
@@ -114,7 +97,7 @@ export default function VehiclesPanel(props) {
   const handleAddVehicle = () => {
     if (NewVehicle) {
       const VehicleToAdd = {...NewVehicle};
-      VehicleToAdd.options = [];
+      VehicleToAdd.vehicleMods = [];
       setSelectedVehicle(prevVehicle => [...prevVehicle, VehicleToAdd]);
       setNewVehicle('');
       setNewVehicleIndex(-1);
@@ -129,51 +112,6 @@ export default function VehiclesPanel(props) {
     props.onChangeVehicle([...editedVehicle]);
   };
 
-  const renderDrones = () => {
-    return (<TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell align="right">Handling</TableCell>
-            <TableCell align="right">Speed/Accel</TableCell>
-            <TableCell align="right">Body/Armor</TableCell>
-            <TableCell align="right">Sig/Autonav</TableCell>
-            <TableCell align="right">Pilot/Sensor</TableCell>
-            <TableCell align="right">Cargo/Load</TableCell>
-            <TableCell align="right">Seating</TableCell>
-            <TableCell align="right">Cost</TableCell>
-            <TableCell align="right">Availability</TableCell>
-            <TableCell align="right">Book Page</TableCell>
-            <TableCell align="right">Notes</TableCell>
-            <TableCell align="right">Actions</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {props.Drones.map((drone, index) => (
-            <TableRow key={drone.Name+index}>
-              <TableCell component="th" scope="row">{drone.name}</TableCell>
-              <TableCell align="right">{drone.Handling}</TableCell>
-              <TableCell align="right">{drone['Speed/Accel']}</TableCell>
-              <TableCell align="right">{drone['Body/Armor']}</TableCell>
-              <TableCell align="right">{drone['Sig/Autonav']}</TableCell>
-              <TableCell align="right">{drone['Pilot/Sensor']}</TableCell>
-              <TableCell align="right">{drone['Cargo/Load']}</TableCell>
-              <TableCell align="right">{drone.Seating}</TableCell>
-              <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(drone['$Cost'])}</TableCell>
-              <TableCell align="right">{drone.Availability}</TableCell>
-              <TableCell align="right">{drone['Book.Page']}</TableCell>
-              <TableCell align="right">{drone.Notes}</TableCell>
-              <TableCell align="right">
-                  <Button color="secondary" onClick={() => handleRemoveDrone(index)}>Remove</Button>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>)
-  }
-
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
@@ -182,82 +120,43 @@ export default function VehiclesPanel(props) {
     color: theme.palette.text.secondary,
   }));
 
-  const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
+  // Vehicle mods modal state
+  const [vehicleModsOpen, setVehicleModsOpen] = useState(false);
+  const [vehicleModsTarget, setVehicleModsTarget] = useState(null);
+  const [vehicleModsIndex, setVehicleModsIndex] = useState(-1);
+
+  const handleOpenVehicleMods = (index) => {
+    setVehicleModsTarget(props.Vehicles[index]);
+    setVehicleModsIndex(index);
+    setVehicleModsOpen(true);
   };
 
-  /*
-      VEHICLE CUSTOMIZATION
-  */
+  const handleSaveVehicleMods = (index, mods) => {
+    const edited = [...props.Vehicles];
+    edited[index] = { ...edited[index], vehicleMods: mods };
+    setSelectedVehicle(edited);
+    props.onChangeVehicle(edited);
+    setVehicleModsOpen(false);
+  };
 
-  const [open, setOpen] = React.useState(false);
-  const handleClose = () => setOpen(false);
-  const [vehicleToCustomize, setVehicleToCustomize] = useState(false);
-  const [vehicleToCustomizeIndex, setVehicleToCustomizeIndex] = useState(0);
-  const [VehicleGearCustomizationIndex, setVehicleGearCustomizationIndex] = useState(0)
-  const handleModalVehicle = (index) => {
-    setOpen(true);
-    setVehicleToCustomizeIndex(index);
-    setVehicleToCustomize(props.Vehicles[index]);
-  }
+  // Drone mods modal state
+  const [droneModsOpen, setDroneModsOpen] = useState(false);
+  const [droneModsTarget, setDroneModsTarget] = useState(null);
+  const [droneModsIndex, setDroneModsIndex] = useState(-1);
 
-  const handleVehicleCustomizationGearChange = (event) => {
-    setVehicleGearCustomizationIndex(event.target.value);
-  }
+  const handleOpenDroneMods = (index) => {
+    setDroneModsTarget(props.Drones[index]);
+    setDroneModsIndex(index);
+    setDroneModsOpen(true);
+  };
 
-  const VehicleGearCustomizationAdd = () => {
-    const editedVehicle = [...props.Vehicles];
-    editedVehicle[vehicleToCustomizeIndex].options.push(VehicleGear[VehicleGearCustomizationIndex]);
-    setVehicleToCustomize(false);
-    setVehicleGearCustomizationIndex(0);
-    props.onChangeVehicle([...editedVehicle]);
-  }
-
-  const removeVehicleOption = (index, index2) => {
-    const editedVehicle = [...SelectedVehicle];
-    editedVehicle[index].options.splice(index2,1);
-    props.onChangeVehicle([...editedVehicle]);
-  }
-
-/*
-  DRONE CUSTOMIZATION
-*/
-  const [openDrone, setOpenDrone] = React.useState(false);
-  const handleCloseDrone = () => setOpenDrone(false);
-  const [droneToCustomize, setDroneToCustomize] = useState(false);
-  const [droneToCustomizeIndex, setDroneToCustomizeIndex] = useState(0);
-  const [DroneGearCustomizationIndex, setDroneGearCustomizationIndex] = useState(0)
-  const handleModalDrone = (index) => {
-    setOpenDrone(true);
-    setDroneToCustomizeIndex(index);
-    setDroneToCustomize(props.Drones[index]);
-  }
-
-  const handleDroneCustomizationGearChange = (event) => {
-    setDroneGearCustomizationIndex(event.target.value);
-  }
-
-  const DroneGearCustomizationAdd = () => {
-    const editedDrone = [...props.Drones];
-    editedDrone[droneToCustomizeIndex].options.push(VehicleGear[DroneGearCustomizationIndex]);
-    setDroneToCustomize(false);
-    setDroneGearCustomizationIndex(0);
-    props.onChangeDrones([...editedDrone]);
-  }
-
-  const removeDroneOption = (index, index2) => {
-    const editedDrone = [...SelectedDrone];
-    editedDrone[index].options.splice(index2,1);
-    props.onChangeDrones([...editedDrone]);
-  }
+  const handleSaveDroneMods = (index, mods) => {
+    const edited = [...props.Drones];
+    edited[index] = { ...edited[index], vehicleMods: mods };
+    setSelectedDrone(edited);
+    props.onChangeDrones(edited);
+    setDroneModsOpen(false);
+  };
 
   const renderDronesNew = () => {
     return props.Drones.map((drone, index) => (
@@ -292,24 +191,19 @@ export default function VehiclesPanel(props) {
           <Grid item size={{ xs: 12, md:2 }}>
             <Item><strong>Notes</strong><br></br> {drone.Notes}</Item>
           </Grid>
-          <Grid item size={{ xs: 12, md:2 }}>
-            <Item><strong>Options</strong>
+          <Grid item size={{ xs: 12, md:12 }}>
+            <Item><strong>Mods</strong>
             <ul>
-              {drone.options.map( (opt, index2) => (
-                    <li key={index}>
-                      {opt.name} - {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(opt['$Cost'])}
-                      <Button onClick={() => removeDroneOption(index, index2)}>Remove</Button>
-                    </li>
-                  )
-                )
-              }
+              {(drone.vehicleMods || []).map((mod, index2) => (
+                <li key={index2}>{mod.label} — {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(mod.cost)}</li>
+              ))}
              </ul>
             </Item>
           </Grid>
         </Grid>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={() => handleModalDrone(index)}>Customize</Button>
+        <Button size="small" onClick={() => handleOpenDroneMods(index)}>Modify</Button>
         <Button size="small" onClick={() => handleRemoveDrone(index)}>Remove</Button>
       </CardActions>
     </Card>))
@@ -352,23 +246,18 @@ export default function VehiclesPanel(props) {
             <Item><strong>Notes</strong><br></br> {vehicle.Notes}</Item>
           </Grid>
           <Grid item size={{ xs: 12, md:12 }}>
-            <Item><strong>Options</strong>
+            <Item><strong>Mods</strong>
             <ul>
-              {vehicle.options.map( (opt, index2) => (
-                    <li key={index}>
-                      {opt.name} - {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(opt['$Cost'])}
-                      <Button onClick={() => removeVehicleOption(index, index2)}>Remove</Button>
-                    </li>
-                  )
-                )
-              }
-             </ul>
+              {(vehicle.vehicleMods || []).map((mod, index2) => (
+                <li key={index2}>{mod.label} — {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(mod.cost)}</li>
+              ))}
+            </ul>
             </Item>
           </Grid>
         </Grid>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={() => handleModalVehicle(index)}>Customize</Button>
+        <Button size="small" onClick={() => handleOpenVehicleMods(index)}>Modify</Button>
         <Button size="small" onClick={() => handleRemoveVehicle(index)}>Remove</Button>
       </CardActions>
     </Card>)
@@ -411,32 +300,13 @@ export default function VehiclesPanel(props) {
         </div>
     )}
     <br></br><br></br>
-    <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-      <Box sx={style}>
-       {vehicleToCustomize.name}
-       <hr></hr>
-       <Select 
-        value={VehicleGearCustomizationIndex}
-        onChange={handleVehicleCustomizationGearChange}>
-          { 
-            VehicleGear.map( (gear, index) => (
-                <MenuItem selected={VehicleGearCustomizationIndex === index} key={index} value={index}>{gear.name}</MenuItem>
-            ))
-          }
-        </Select>
-        <Button variant="contained" color="primary" onClick={VehicleGearCustomizationAdd}>
-          Add Gear
-        </Button>
-        <hr></hr>
-       <Button onClick={handleClose}>Close</Button>
-      </Box>
-     
-    </Modal>
+    <VehicleModsModal
+      open={vehicleModsOpen}
+      vehicle={vehicleModsTarget}
+      vehicleIndex={vehicleModsIndex}
+      onClose={() => setVehicleModsOpen(false)}
+      onSave={handleSaveVehicleMods}
+    />
     {renderVehiclesNew()}
     <hr style={{marginTop:30, marginBottom:30}}></hr>
       <h3>Drones</h3>
@@ -475,32 +345,13 @@ export default function VehiclesPanel(props) {
     )}
     <br></br><br></br>
       {renderDronesNew()}
-    <Modal
-        open={openDrone}
-        onClose={handleCloseDrone}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-      <Box sx={style}>
-       {droneToCustomize.name}
-       <hr></hr>
-       <Select 
-        value={DroneGearCustomizationIndex}
-        onChange={handleDroneCustomizationGearChange}>
-          { 
-            VehicleGear.map( (gear, index) => (
-                <MenuItem selected={DroneGearCustomizationIndex === index} key={index} value={index}>{gear.name}</MenuItem>
-            ))
-          }
-        </Select>
-        <Button variant="contained" color="primary" onClick={DroneGearCustomizationAdd}>
-          Add Gear
-        </Button>
-        <hr></hr>
-       <Button onClick={handleCloseDrone}>Close</Button>
-      </Box>
-     
-    </Modal>
+    <VehicleModsModal
+      open={droneModsOpen}
+      vehicle={droneModsTarget}
+      vehicleIndex={droneModsIndex}
+      onClose={() => setDroneModsOpen(false)}
+      onSave={handleSaveDroneMods}
+    />
     </>)
 
 }
