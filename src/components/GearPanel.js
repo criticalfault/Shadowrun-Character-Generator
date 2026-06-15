@@ -108,9 +108,17 @@ export default function GearPanel(props) {
       props.onChangeGear(editedGear);
     };
 
+    // Cyberdeck categories use VR2 or SR2 base rules exclusively — not both.
+    // When VR2 is enabled, suppress SR2-base-tagged items in these categories.
+    const deckCategories = ['Cyberdecks', 'Cyberdeck Other'];
+    const vr2Active = props.BooksFilter?.includes('vr2');
+
     const renderGearItem = (gear, originalIndex) => {
-      const allowed = !gear.hasOwnProperty('BookPage') || props.BooksFilter.includes(gear.BookPage.split('.')[0]);
       const bookCode = gear.BookPage?.split('.')[0];
+      const inDeckCategory = deckCategories.includes(SelectedGearCategory);
+      const suppressedByVr2 = inDeckCategory && vr2Active && bookCode === 'sr2';
+      const allowed = !suppressedByVr2 &&
+        (!gear.hasOwnProperty('BookPage') || props.BooksFilter.includes(bookCode));
       return (
         <FilteredMenuItem allowed={allowed} bookCode={bookCode} key={originalIndex} value={originalIndex}>{gear.Name}</FilteredMenuItem>
       );
@@ -139,8 +147,9 @@ export default function GearPanel(props) {
         label="All Gear"
         getLabel={(item) => `${item.Name} (${item._category})`}
         renderItem={(item, originalIndex) => {
-          const allowed = !item.BookPage || props.BooksFilter.includes(item.BookPage.split('.')[0]);
           const bookCode = item.BookPage?.split('.')[0];
+          const suppressedByVr2 = deckCategories.includes(item._category) && vr2Active && bookCode === 'sr2';
+          const allowed = !suppressedByVr2 && (!item.BookPage || props.BooksFilter.includes(bookCode));
           return (
             <FilteredMenuItem allowed={allowed} bookCode={bookCode} key={originalIndex} value={originalIndex}>
               {item.Name} <span style={{ opacity: 0.55, fontSize: '0.8em' }}>({item._category})</span>
