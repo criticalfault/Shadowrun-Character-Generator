@@ -22,6 +22,7 @@ import VehiclesPanel from "./VehiclesPanel";
 import ContactsPanel from "./ContactsPanel";
 import SheetDisplay from "./SheetDisplay";
 import KarmaDisplay from "./KarmaDisplay";
+import KarmaSkillAdvancement from "./KarmaSkillAdvancement";
 import "./SheetDisplay.css";
 import DiceRollerTray from "./DiceRollerTray";
 import SignInPopup from "./SignInPopup";
@@ -955,6 +956,17 @@ export default function BasicTabs() {
                 karma: karma,
                 karmaPool: karmaPool,
               })
+            }
+            onChangeLog={(log) => setCharacter({ ...Character, log: log })}
+            Log={Character.log}
+          />
+          <KarmaSkillAdvancement
+            skills={Character.skills}
+            karmaAvailable={Character.karma}
+            step={Character.step}
+            onUpdateSkills={handleSkillsUpdate}
+            onSpendKarma={(karma) =>
+              setCharacter((prev) => ({ ...prev, karmaSpent: prev.karmaSpent + karma }))
             }
             onChangeLog={(log) => setCharacter({ ...Character, log: log })}
             Log={Character.log}
