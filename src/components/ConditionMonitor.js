@@ -36,10 +36,10 @@ const ConditionMonitor = ({ type }) => {
     <div className="conditionMonitor">
       <div className="cm-type-label">{type}</div>
 
-      {/* Section header labels */}
+      {/* Section header labels — same grid as boxes for perfect alignment */}
       <div className="cm-section-headers">
         {SECTIONS.map((s) => (
-          <div key={s.label} className="cm-section-header" style={{ flex: s.boxes }}>
+          <div key={s.label} className="cm-section-header" style={{ gridColumn: `span ${s.boxes}` }}>
             {s.label}<br />{type === 'Stun' ? 'Stun' : 'Wound'}
           </div>
         ))}

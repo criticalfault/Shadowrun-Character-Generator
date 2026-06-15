@@ -28,17 +28,17 @@ const PersonaConditionMonitor = ({ iconRating }) => {
     <div style={{ padding: '8px 0 4px 0' }}>
       <div style={{ display: 'flex', alignItems: 'flex-end', gap: 16 }}>
         <div style={{ flex: 1 }}>
-          {/* Section header labels */}
-          <div style={{ display: 'flex', gap: 2, marginBottom: 2 }}>
+          {/* Section header labels — same grid as boxes */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(10, 1fr)', gap: 2, marginBottom: 2 }}>
             {SECTIONS.map((s) => (
-              <div key={s.label} style={{ flex: s.boxes, fontSize: '0.6rem', fontWeight: 600, textAlign: 'center', color: '#333', lineHeight: 1.2, whiteSpace: 'pre-line' }}>
+              <div key={s.label} style={{ gridColumn: `span ${s.boxes}`, fontSize: '0.6rem', fontWeight: 600, textAlign: 'center', color: '#333', lineHeight: 1.2, whiteSpace: 'pre-line' }}>
                 {s.label}
               </div>
             ))}
           </div>
 
           {/* Boxes */}
-          <div style={{ display: 'flex', gap: 2 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(10, 1fr)', gap: 2 }}>
             {BOX_LABELS.map((label, i) => {
               const isFilled = i < filled;
               return (
@@ -46,7 +46,6 @@ const PersonaConditionMonitor = ({ iconRating }) => {
                   key={i}
                   onClick={() => handleClick(i)}
                   style={{
-                    flex: 1,
                     minHeight: 40,
                     border: '1px solid #000',
                     backgroundColor: isFilled ? '#333' : 'transparent',

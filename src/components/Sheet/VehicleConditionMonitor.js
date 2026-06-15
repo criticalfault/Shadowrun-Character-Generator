@@ -37,17 +37,17 @@ const VehicleConditionMonitor = () => {
         Condition Monitor
       </div>
 
-      {/* Section header labels */}
-      <div style={{ display: 'flex', gap: 2, marginBottom: 2 }}>
+      {/* Grid: section headers + boxes share same 10-column grid */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(10, 1fr)', gap: 2, marginBottom: 2 }}>
         {SECTIONS.map((s) => (
-          <div key={s.label} style={{ flex: s.boxes, fontSize: '0.6rem', fontWeight: 600, textAlign: 'center', color: '#333', lineHeight: 1.2, whiteSpace: 'pre-line' }}>
+          <div key={s.label} style={{ gridColumn: `span ${s.boxes}`, fontSize: '0.6rem', fontWeight: 600, textAlign: 'center', color: '#333', lineHeight: 1.2, whiteSpace: 'pre-line' }}>
             {s.label}
           </div>
         ))}
       </div>
 
       {/* Box row */}
-      <div style={{ display: 'flex', gap: 2 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(10, 1fr)', gap: 2 }}>
         {BOX_LABELS.map((label, i) => {
           const isFilled = i < filled;
           return (
@@ -79,7 +79,7 @@ const VehicleConditionMonitor = () => {
       </div>
 
       {/* Speed rating reduction row */}
-      <div style={{ display: 'flex', gap: 2, marginTop: 2 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(10, 1fr)', gap: 2, marginTop: 2 }}>
         {BOX_LABELS.map((_, i) => (
           <div key={i} style={{ flex: 1, textAlign: 'center', fontSize: '0.6rem', color: '#555', minHeight: 14 }}>
             {SPEED_LABELS[i] ?? ''}
