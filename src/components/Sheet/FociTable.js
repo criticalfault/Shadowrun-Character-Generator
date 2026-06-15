@@ -6,7 +6,7 @@ import { tablePaperSx } from './sheetTheme';
 const FociTable = ({ foci }) => {
   if (!foci || foci.length === 0) return null;
 
-  const fmt¥ = (n) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'JPY', maximumFractionDigits: 0 }).format(n);
+  const fmtNuyen = (n) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'JPY', maximumFractionDigits: 0 }).format(n);
 
   return (
     <Grid item xs={12}>
@@ -30,7 +30,7 @@ const FociTable = ({ foci }) => {
                     {item.Name}{item.Extra ? ` (${item.Extra})` : ''}
                   </TableCell>
                   <TableCell align="center">{item.Rating}</TableCell>
-                  <TableCell align="right">{fmt¥(item.Cost)}</TableCell>
+                  <TableCell align="right">{fmtNuyen(item.Cost)}</TableCell>
                   <TableCell align="center">{item.KarmaCost}</TableCell>
                   <TableCell align="center">{item.Bound}</TableCell>
                   <TableCell>{item.Notes ?? ''}</TableCell>
