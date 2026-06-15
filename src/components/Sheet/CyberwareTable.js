@@ -14,7 +14,6 @@ const CyberwareTable = ({ cyberware }) => {
             <TableHead>
               <TableRow>
                 <TableCell>Name</TableCell>
-                <TableCell align="center">Rating</TableCell>
                 <TableCell align="center">Ess</TableCell>
                 <TableCell>Notes</TableCell>
               </TableRow>
@@ -23,7 +22,6 @@ const CyberwareTable = ({ cyberware }) => {
               {cyberware.map((item, index) => (
                 <TableRow key={item.Name + index}>
                   <TableCell component="th" scope="row">{item.Name}</TableCell>
-                  <TableCell align="center">{item.Rating ?? '—'}</TableCell>
                   <TableCell align="center">{item.EssCost != null ? parseFloat(item.EssCost).toFixed(2) : '—'}</TableCell>
                   <TableCell>{item.Notes ?? ''}</TableCell>
                 </TableRow>
