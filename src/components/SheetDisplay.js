@@ -27,6 +27,7 @@ import VehiclesTable from './Sheet/VehiclesTable';
 import DronesTable from './Sheet/DronesTable';
 import ConditionMonitorBlock from './Sheet/ConditionMonitorBlock';
 import CyberdeckTable from './Sheet/CyberdeckTable';
+import AllyTable from './Sheet/AllyTable';
 
 
 import Button from "@mui/material/Button";
@@ -136,6 +137,8 @@ function SheetDisplay(props) {
       <FociTable foci={props.currentCharacter.foci} />
 
       <SpellsTable spells={props.currentCharacter.spells} />
+
+      <AllyTable ally={props.currentCharacter.ally} />
 
       <VehiclesTable vehicles={props.currentCharacter.vehicles} />
 

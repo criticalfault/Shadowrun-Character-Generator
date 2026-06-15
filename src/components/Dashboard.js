@@ -209,6 +209,7 @@ export default function BasicTabs() {
     notes: "",
     edges: [],
     flaws: [],
+    ally: null,
   };
   const [Edition, setEdition] = React.useState("SR2");
   const [CGMethod, setCGMethod] = React.useState('priorities');
@@ -856,6 +857,10 @@ export default function BasicTabs() {
             onChangeMagicalGroup={(magicalGroup) =>
               setCharacter({ ...Character, magicalGroup })
             }
+            ally={Character.ally}
+            onChangeAlly={(ally) => setCharacter({ ...Character, ally })}
+            creatorIntelligence={Character.attributes.Intelligence}
+            creatorWillpower={Character.attributes.Willpower}
             onSpendKarma={(karma) => {
               let karmaSpentToSave = (Character.karmaSpent += karma);
               setCharacter({ ...Character, karmaSpent: karmaSpentToSave });
