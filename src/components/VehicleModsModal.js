@@ -62,12 +62,15 @@ export function applyVehicleMods(vehicle, vehicleMods = []) {
     const def = allMods.find((d) => d.id === applied.id);
     if (!def) continue;
 
-    // Cost — rated mods use their rating row; formula-mods use userCost
+    // Cost — rated mods use their rating row; vehicle-cost-% mods use $Cost; per-level mods multiply
     if (applied.rating != null && def.ratings) {
       const row = def.ratings.find((r) => r.rating === applied.rating);
       totalModCost += row?.costNuyen ?? applied.userCost ?? 0;
+    } else if (def.vehicleCostFactor != null) {
+      const baseCost = parseFloat(vehicle["$Cost"]) || 0;
+      totalModCost += baseCost * def.vehicleCostFactor * (applied.levelCount ?? 1);
     } else if (typeof def.costNuyen === "number") {
-      totalModCost += def.costNuyen;
+      totalModCost += def.costNuyen * (applied.levelCount ?? 1);
     } else {
       totalModCost += applied.userCost ?? 0;
     }
@@ -160,10 +163,11 @@ function isRatedMod(def) {
 // Does this mod benefit from a "levels" count (e.g. vehicle-armor, thermal-baffles)?
 function needsLevelCount(def) {
   if (!def) return false;
+  if (def.vehicleCostFactor != null) return true;
   const sm = def.statMods ?? {};
   return (
     (sm.armor && String(sm.armor).includes("/point")) ||
-    (sm.handling && String(sm.handling).includes("/level")) ||
+    (sm.handling && (String(sm.handling).includes("/level") || String(sm.handling).includes("/increment"))) ||
     (sm.sig && String(sm.sig).includes("/level"))
   );
 }
@@ -171,7 +175,9 @@ function needsLevelCount(def) {
 // Does this mod have a formula cost (string) that needs user input?
 function needsUserCost(def) {
   if (!def) return false;
-  return typeof def.costNuyen === "string" && !isRatedMod(def);
+  if (isRatedMod(def)) return false;
+  if (def.vehicleCostFactor != null) return false;
+  return typeof def.costNuyen === "string";
 }
 
 export default function VehicleModsModal({ open, vehicle, vehicleIndex, onClose, onSave }) {
@@ -223,7 +229,11 @@ export default function VehicleModsModal({ open, vehicle, vehicleIndex, onClose,
       label = `${pendingDef.name} (Rating ${pendingRating})`;
     } else if (pendingNeedsLevels) {
       label = `${pendingDef.name} (×${pendingLevelCount})`;
-      cost = typeof pendingDef.costNuyen === "number" ? pendingDef.costNuyen * pendingLevelCount : 0;
+      if (pendingDef.vehicleCostFactor != null) {
+        cost = (parseFloat(vehicle["$Cost"]) || 0) * pendingDef.vehicleCostFactor * pendingLevelCount;
+      } else if (typeof pendingDef.costNuyen === "number") {
+        cost = pendingDef.costNuyen * pendingLevelCount;
+      }
     } else if (pendingNeedsUserCost) {
       cost = parseInt(pendingUserCost) || 0;
     } else if (typeof pendingDef.costNuyen === "number") {
@@ -400,7 +410,7 @@ export default function VehicleModsModal({ open, vehicle, vehicleIndex, onClose,
             </FormControl>
           )}
 
-          {/* Level count for per-level mods like armor, thermal baffles */}
+          {/* Level count for per-level mods like armor, thermal baffles, % cost mods */}
           {!pendingIsRated && pendingNeedsLevels && (
             <TextField
               size="small"
@@ -410,6 +420,13 @@ export default function VehicleModsModal({ open, vehicle, vehicleIndex, onClose,
               value={pendingLevelCount}
               onChange={(e) => setPendingLevelCount(Math.max(1, parseInt(e.target.value) || 1))}
               sx={{ width: 130 }}
+              helperText={
+                pendingDef?.vehicleCostFactor != null
+                  ? `¥${((parseFloat(vehicle["$Cost"]) || 0) * pendingDef.vehicleCostFactor * pendingLevelCount).toLocaleString()} total`
+                  : typeof pendingDef?.costNuyen === "number"
+                  ? `¥${(pendingDef.costNuyen * pendingLevelCount).toLocaleString()} total`
+                  : ""
+              }
             />
           )}
 
