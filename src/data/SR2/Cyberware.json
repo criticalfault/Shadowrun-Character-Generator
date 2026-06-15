@@ -89,7 +89,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "fof.x",
+            "BookPage": "fof.19",
             "Name": "Smartlink II",
             "EssCost": 0.5,
             "Cost": 3200,
@@ -177,7 +177,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.37",
             "Name": "CyberSkull",
             "EssCost": 0.75,
             "Cost": 75000,
@@ -185,7 +185,7 @@
             "Mods": "+1BOD"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.41",
             "Name": "Induction DJ",
             "EssCost": 0.3,
             "Cost": 3000,
@@ -193,7 +193,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.41",
             "Name": "Induction Jack Lv1",
             "EssCost": 0.4,
             "Cost": 1500,
@@ -201,7 +201,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.41",
             "Name": "Induction Jack Lv2",
             "EssCost": 0.4,
             "Cost": 3000,
@@ -209,7 +209,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.41",
             "Name": "Induction Jack Lv3",
             "EssCost": 0.4,
             "Cost": 6000,
@@ -217,7 +217,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.41",
             "Name": "Induction Jack Lv4",
             "EssCost": 0.4,
             "Cost": 12000,
@@ -225,7 +225,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.35",
             "Name": "Tactical Comp Lv1",
             "EssCost": 3.5,
             "Cost": 350000,
@@ -233,7 +233,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.35",
             "Name": "Tactical Comp Lv2",
             "EssCost": 4,
             "Cost": 900000,
@@ -241,7 +241,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.26",
             "Name": "Tooth Compartment Break",
             "EssCost": 0,
             "Cost": 700,
@@ -249,7 +249,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.26",
             "Name": "Tooth Compartment Storage",
             "EssCost": 0,
             "Cost": 1500,
@@ -257,7 +257,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.27",
             "Name": "Cranial Bomb Kink",
             "EssCost": 0,
             "Cost": 28000,
@@ -265,7 +265,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.27",
             "Name": "Cranial Bomb Micro",
             "EssCost": 0,
             "Cost": 65500,
@@ -273,7 +273,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.27",
             "Name": "Cranial Bomb Area",
             "EssCost": 0,
             "Cost": 500000,
@@ -281,7 +281,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.23",
             "Name": "Laser Designator",
             "EssCost": 0.5,
             "Cost": 12000,
@@ -289,7 +289,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.23",
             "Name": "Laser Tracker",
             "EssCost": 0.2,
             "Cost": 3200,
@@ -297,7 +297,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.24",
             "Name": "Spatial Recognizer",
             "EssCost": 0.2,
             "Cost": 1200,
@@ -305,7 +305,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.24",
             "Name": "Balance Augmentor",
             "EssCost": 0.4,
             "Cost": 14000,
@@ -313,7 +313,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.33",
             "Name": "Direct NeuralInter",
             "EssCost": 0.1,
             "Cost": 4500,
@@ -494,7 +494,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.19",
             "Name": "Retinal Clock",
             "EssCost": 0.1,
             "Cost": 450,
@@ -502,7 +502,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.19",
             "Name": "Image Link",
             "EssCost": 0.2,
             "Cost": 1600,
@@ -510,7 +510,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.19",
             "Name": "Protective Covers",
             "EssCost": 0,
             "Cost": 500,
@@ -518,7 +518,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.20",
             "Name": "Eye Dataport",
             "EssCost": 0.25,
             "Cost": 2200,
@@ -526,7 +526,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.20",
             "Name": "Optical Scan DJ",
             "EssCost": 0.3,
             "Cost": 5500,
@@ -534,7 +534,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.21",
             "Name": "Eye Light Systems",
             "EssCost": 0.2,
             "Cost": 1200,
@@ -542,7 +542,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.21",
             "Name": "Eye Light Systems - BrightLight",
             "EssCost": 0.4,
             "Cost": 1200,
@@ -550,7 +550,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.21",
             "Name": "Eye Light Systems - Flash-pak",
             "EssCost": 0,
             "Cost": 1000,
@@ -558,7 +558,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.21",
             "Name": "Eye Light Systems - one shot FP",
             "EssCost": 0,
             "Cost": 500,
@@ -1184,7 +1184,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.37",
             "Name": "Body Plating S Lv1",
             "EssCost": 0,
             "Cost": 10000,
@@ -1192,7 +1192,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.37",
             "Name": "Body Plating S Lv2",
             "EssCost": 0,
             "Cost": 20000,
@@ -1200,7 +1200,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.37",
             "Name": "Body Plating S Lv3",
             "EssCost": 0,
             "Cost": 30000,
@@ -1208,7 +1208,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.37",
             "Name": "Body Plating S Lv4",
             "EssCost": 0,
             "Cost": 40000,
@@ -1216,7 +1216,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.37",
             "Name": "Body Plating S Lv5",
             "EssCost": 0,
             "Cost": 50000,
@@ -1224,7 +1224,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.37",
             "Name": "Body Plating S Lv6",
             "EssCost": 0,
             "Cost": 60000,
@@ -1232,7 +1232,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.37",
             "Name": "Body Plating H Lv1",
             "EssCost": 0,
             "Cost": 25000,
@@ -1240,7 +1240,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.37",
             "Name": "Body Plating H Lv2",
             "EssCost": 0,
             "Cost": 50000,
@@ -1248,7 +1248,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.37",
             "Name": "Body Plating H Lv3",
             "EssCost": 0,
             "Cost": 75000,
@@ -1256,7 +1256,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.37",
             "Name": "Body Plating H Lv4",
             "EssCost": 0,
             "Cost": 100000,
@@ -1264,7 +1264,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.37",
             "Name": "Body Plating H Lv5",
             "EssCost": 0,
             "Cost": 125000,
@@ -1272,7 +1272,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.37",
             "Name": "Body Plating H Lv6",
             "EssCost": 0,
             "Cost": 150000,
@@ -1280,7 +1280,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.38",
             "Name": "Reaction Enhan Lv1",
             "EssCost": 0.3,
             "Cost": 60000,
@@ -1288,7 +1288,7 @@
             "Mods": "+1RCT"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.38",
             "Name": "Reaction Enhan Lv2",
             "EssCost": 0.6,
             "Cost": 120000,
@@ -1296,7 +1296,7 @@
             "Mods": "+2RCT"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.38",
             "Name": "Reaction Enhan Lv3",
             "EssCost": 0.9,
             "Cost": 180000,
@@ -1304,7 +1304,7 @@
             "Mods": "+3RCT"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.38",
             "Name": "Reaction Enhan Lv4",
             "EssCost": 1.2,
             "Cost": 240000,
@@ -1312,7 +1312,7 @@
             "Mods": "+4RCT"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.38",
             "Name": "Reaction Enhan Lv5",
             "EssCost": 1.5,
             "Cost": 300000,
@@ -1320,7 +1320,7 @@
             "Mods": "+5RCT"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.38",
             "Name": "Reaction Enhan Lv6",
             "EssCost": 1.8,
             "Cost": 360000,
@@ -1328,7 +1328,7 @@
             "Mods": "+6RCT"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.38",
             "Name": "Reflex Trigger",
             "EssCost": 0.2,
             "Cost": 13000,
@@ -1336,7 +1336,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.39",
             "Name": "Move-by-Wire Lv1",
             "EssCost": 2.5,
             "Cost": 250000,
@@ -1344,7 +1344,7 @@
             "Mods": "+1QCK,+2RCT"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.39",
             "Name": "Move-by-Wire Lv2",
             "EssCost": 3.85,
             "Cost": 500000,
@@ -1352,7 +1352,7 @@
             "Mods": "+2QCK,+4RCT"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.39",
             "Name": "Move-by-Wire Lv3",
             "EssCost": 5.2,
             "Cost": 1250000,
@@ -1360,7 +1360,7 @@
             "Mods": "+3QCK,+6RCT"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.39",
             "Name": "Move-by-Wire Lv4",
             "EssCost": 6.45,
             "Cost": 3000000,
@@ -1368,7 +1368,7 @@
             "Mods": "+4QCK,+8RCT"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.37",
             "Name": "CyberTorso",
             "EssCost": 1.5,
             "Cost": 120000,
@@ -1376,7 +1376,7 @@
             "Mods": "+1BOD"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.41",
             "Name": "Internal Air Tank ",
             "EssCost": 0.25,
             "Cost": 1200,
@@ -1658,7 +1658,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.35",
             "Name": "Orientation System",
             "EssCost": 0.5,
             "Cost": 15000,
@@ -1669,7 +1669,7 @@
     "NANOWARE": [],
     "VARIOUS": [
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.28",
             "Name": "Dermal Sheath Lv1",
             "EssCost": 0.7,
             "Cost": 24000,
@@ -1677,7 +1677,7 @@
             "Mods": "+2BOD"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.28",
             "Name": "Dermal Sheath Lv2",
             "EssCost": 1.4,
             "Cost": 60000,
@@ -1685,7 +1685,7 @@
             "Mods": "+3BOD"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.28",
             "Name": "Dermal Sheath Lv3",
             "EssCost": 2.1,
             "Cost": 120000,
@@ -1693,7 +1693,7 @@
             "Mods": "+4BOD"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.28",
             "Name": "DS Coloration Lv1",
             "EssCost": 0,
             "Cost": 30000,
@@ -1701,7 +1701,7 @@
             "Mods": "+2BOD"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.28",
             "Name": "DS Coloration Lv2",
             "EssCost": 0,
             "Cost": 75000,
@@ -1709,7 +1709,7 @@
             "Mods": "+3BOD"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.28",
             "Name": "DS Coloration Lv3",
             "EssCost": 0,
             "Cost": 150000,
@@ -1717,7 +1717,7 @@
             "Mods": "+4BOD"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.28",
             "Name": "DS Cyber Control",
             "EssCost": 0.1,
             "Cost": 32000,
@@ -1725,7 +1725,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Strength Lv1",
             "EssCost": 0,
             "Cost": 150000,
@@ -1733,7 +1733,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Strength Lv2",
             "EssCost": 0,
             "Cost": 300000,
@@ -1741,7 +1741,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Strength Lv3",
             "EssCost": 0,
             "Cost": 450000,
@@ -1749,7 +1749,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Strength Lv4",
             "EssCost": 0.4,
             "Cost": 175000,
@@ -1757,7 +1757,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Strength Lv5",
             "EssCost": 0.8,
             "Cost": 350000,
@@ -1765,7 +1765,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Strength Lv6",
             "EssCost": 1.2,
             "Cost": 525000,
@@ -1773,7 +1773,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Quickness Lv1",
             "EssCost": 0,
             "Cost": 90000,
@@ -1781,7 +1781,7 @@
             "Mods": "+1QCK"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Quickness Lv2",
             "EssCost": 0,
             "Cost": 180000,
@@ -1789,7 +1789,7 @@
             "Mods": "+2QCK"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Quickness Lv3",
             "EssCost": 0,
             "Cost": 270000,
@@ -1797,7 +1797,7 @@
             "Mods": "+3QCK"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Quickness Lv4",
             "EssCost": 0.3,
             "Cost": 110000,
@@ -1805,7 +1805,7 @@
             "Mods": "+4QCK"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Quickness Lv5",
             "EssCost": 0.6,
             "Cost": 220000,
@@ -1813,7 +1813,7 @@
             "Mods": "+5QCK"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Quickness Lv6",
             "EssCost": 0.9,
             "Cost": 330000,
@@ -1821,7 +1821,7 @@
             "Mods": "+6QCK"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Body Enhance Lv1",
             "EssCost": 0,
             "Cost": 75000,
@@ -1829,7 +1829,7 @@
             "Mods": "+1BOD"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Body Enhance Lv2",
             "EssCost": 0,
             "Cost": 150000,
@@ -1837,7 +1837,7 @@
             "Mods": "+2BOD"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Body Enhance Lv3",
             "EssCost": 0,
             "Cost": 225000,
@@ -1845,7 +1845,7 @@
             "Mods": "+3BOD"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Body Enhance Lv4",
             "EssCost": 0,
             "Cost": 300000,
@@ -1853,7 +1853,7 @@
             "Mods": "+4BOD"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Body Enhance Lv5",
             "EssCost": 0,
             "Cost": 375000,
@@ -1861,7 +1861,7 @@
             "Mods": "+5BOD"
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.31",
             "Name": "Body Enhance Lv6",
             "EssCost": 0,
             "Cost": 450000,
@@ -1871,7 +1871,7 @@
     ],
     "FEET": [
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.34",
             "Name": "Foot Anchor",
             "EssCost": 0.4,
             "Cost": 14000,
@@ -1881,7 +1881,7 @@
     ],
     "HANDS": [
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.29",
             "Name": "Fingertip Picks",
             "EssCost": 0,
             "Cost": 18000,
@@ -1889,7 +1889,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.29",
             "Name": "Fingertip Needle",
             "EssCost": 0,
             "Cost": 800,
@@ -1897,7 +1897,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.34",
             "Name": "Replacement Hand",
             "EssCost": 0,
             "Cost": 28000,
@@ -1905,7 +1905,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.36",
             "Name": "Hand Blade",
             "EssCost": 0.1,
             "Cost": 7500,
@@ -1913,7 +1913,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.36",
             "Name": "Hand Blade Retractable",
             "EssCost": 0.25,
             "Cost": 10000,
@@ -1921,7 +1921,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.36",
             "Name": "Shock Hand",
             "EssCost": 0,
             "Cost": 1300,
@@ -2253,7 +2253,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.36",
             "Name": "CyberSquirt",
             "EssCost": 0,
             "Cost": 1400,
@@ -2261,7 +2261,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.22",
             "Name": "Eye Dart",
             "EssCost": 0.25,
             "Cost": 4200,
@@ -2269,7 +2269,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.22",
             "Name": "Eye Gun",
             "EssCost": 0.4,
             "Cost": 6400,
@@ -2277,7 +2277,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.25",
             "Name": "Oral Dart",
             "EssCost": 0.25,
             "Cost": 3600,
@@ -2285,7 +2285,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.25",
             "Name": "Oral Gun",
             "EssCost": 0.4,
             "Cost": 5600,
@@ -2293,7 +2293,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.25",
             "Name": "Oral Spur",
             "EssCost": 0.25,
             "Cost": 8200,
@@ -2301,7 +2301,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.25",
             "Name": "Oral Whip",
             "EssCost": 0.25,
             "Cost": 10500,
@@ -2311,7 +2311,7 @@
     ],
     "CYBERLIMBS": [
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.30",
             "Name": "Cyberarm/Leg",
             "EssCost": 1,
             "Cost": 100000,
@@ -2319,7 +2319,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.30",
             "Name": "Cyberhand/Foot",
             "EssCost": 0.35,
             "Cost": 45000,
@@ -2327,7 +2327,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.30",
             "Name": "Cyber Forearm/Leg",
             "EssCost": 0.65,
             "Cost": 70000,
@@ -2335,7 +2335,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.33",
             "Name": "Cyberarm Gyromount",
             "EssCost": 1.5,
             "Cost": 260000,
@@ -2343,7 +2343,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.40",
             "Name": "External Mount",
             "EssCost": 0,
             "Cost": 3200,
@@ -2351,7 +2351,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.40",
             "Name": "Tracking Mount",
             "EssCost": 0,
             "Cost": 24000,
@@ -2359,7 +2359,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.40",
             "Name": "Articulate Arm",
             "EssCost": 0.25,
             "Cost": 110000,
@@ -2417,7 +2417,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.32",
             "Name": "Magnetic Cyberlimb",
             "EssCost": 0,
             "Cost": 2800,
@@ -2425,7 +2425,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.36",
             "Name": "Cyberarm Taser",
             "EssCost": 0,
             "Cost": 2000,
@@ -2433,7 +2433,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.23",
             "Name": "Tool Laser",
             "EssCost": 0.25,
             "Cost": 5200,
@@ -2525,7 +2525,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.18",
             "Name": "Subvocal Mic Ext",
             "EssCost": 0,
             "Cost": 500,
@@ -2533,7 +2533,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.18",
             "Name": "Subvocal Mic Int",
             "EssCost": 0.1,
             "Cost": 850,
@@ -2541,7 +2541,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.18",
             "Name": "Sub Speakers",
             "EssCost": 0.1,
             "Cost": 650,
@@ -2549,7 +2549,7 @@
             "Mods": ""
         },
         {
-            "BookPage": "ct.???",
+            "BookPage": "ct.18",
             "Name": "Cybercomm Link",
             "EssCost": 0.4,
             "Cost": 62000,
