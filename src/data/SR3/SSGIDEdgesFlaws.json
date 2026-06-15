@@ -1,0 +1,73 @@
+{
+  "description": "ID Edges & Flaws from Sprawl Survival Guide pp.126-127. These apply to forged IDs and have no point values — the ID either has an Edge/Flaw or it doesn't. Use for the fake ID system.",
+  "source": "ssg.126",
+  "edges": [
+    {
+      "id": "id-aging-well",
+      "name": "Aging Well",
+      "description": "Over time, the data that backs up and corroborates the false identity becomes stronger and more invulnerable to inspection. Every (rating) months, increase the ID's rating by 1 point."
+    },
+    {
+      "id": "id-home-turf",
+      "name": "Home Turf",
+      "description": "The ID's rating is increased to rating × 1.5 (round up) for any verification tests in or by one specific locale or jurisdiction. The gamemaster chooses the area in advance: in Chicago, in Novatech systems, etc."
+    },
+    {
+      "id": "id-positive-confusion",
+      "name": "Positive Confusion",
+      "description": "Due to a similarity or computer glitch, the ID is often mixed up with the ID of someone else (usually in the character's favor). Adds +2 to the target number of any test involved in tracking the character by the use of this ID."
+    },
+    {
+      "id": "id-teflon-identity",
+      "name": "Teflon Identity",
+      "description": "Negative reports concerning this identity have a habit of getting lost or not being associated. Bad credit reports, traffic violations, license revocations, negative news stories and possibly even arrest warrants simply fail to show up on ID checks."
+    },
+    {
+      "id": "id-upstanding-citizen",
+      "name": "Upstanding Citizen",
+      "description": "Something about this ID tends to give the person checking it the impression that the owner is a well-respected citizen. Gives the character a –1 target number modifier on Social Skill tests for dealing with that person, provided the character does not do anything to disturb the charade."
+    },
+    {
+      "id": "id-watertight",
+      "name": "Watertight",
+      "description": "This ID was put together in such a way that it can stand up to a higher level of scrutiny than other IDs. In the Opposed Test between the ID and an ID scanner, the ID gets a –1 target number modifier."
+    }
+  ],
+  "flaws": [
+    {
+      "id": "id-dead-mans-shoes",
+      "name": "Dead Man's Shoes",
+      "description": "The ID's SIN used to belong to someone who is now dead — the data has just been altered for the new owner. The new owner sometimes has to deal with unresolved aspects of the dead person's life, from junk mail and subscriptions to long-lost relatives seeking to get back in touch."
+    },
+    {
+      "id": "id-deterioration",
+      "name": "Deterioration",
+      "description": "The flimsy corroborating material that holds the ID together is slowly unraveling. The ID's rating deteriorates at a rate of 1 point every (rating) months."
+    },
+    {
+      "id": "id-evil-twin",
+      "name": "Evil Twin",
+      "description": "This ID is occasionally linked to something another person does (in the other person's favor). Things another person does occasionally show up in the character's records — usually negative. The character may be harassed by confused collection agencies or may even have a warrant issued for the other person's crimes. Adds +2 TN to tests to track the character by this ID."
+    },
+    {
+      "id": "id-expiration-date",
+      "name": "Expiration Date",
+      "description": "This ID has a built-in expiration date. On this date — rating × 1D6 months from creation — the ID will be exposed or simply no longer function. At the gamemaster's discretion, this may be reversible with appropriate effort or expense."
+    },
+    {
+      "id": "id-limitation",
+      "name": "Limitation",
+      "description": "The ID operates at half its rating (round down; Rating 1 IDs automatically fail) when verified in or by one specific country or jurisdiction. The gamemaster chooses the area in advance: in Boston, in Ares systems, etc."
+    },
+    {
+      "id": "id-major-goof",
+      "name": "Major Goof",
+      "description": "A mistake has slipped into the ID that an automated reader will not notice but a metahuman might (e.g., obviously wrong age, wrong metatype). The ID suffers no modifiers on automated tests, but any metahuman looking at it may roll an Intelligence (4) Test to spot the mistake."
+    }
+  ],
+  "gm_notes": {
+    "random_chance": "Roll 1D6 when a new ID is bought or created. On a 1, the ID has one randomly chosen Flaw. On a 6, it has one randomly chosen Edge.",
+    "cheaper_ids": "Reduce cost by 20% per Flaw taken (player knows the work is shoddy, but not the exact Flaw). Pay +20% per Edge for higher quality. Recommended maximum: 3 Flaws or Edges.",
+    "revelation": "An ID's Edges and Flaws should generally not be revealed to the player. Even the ID's creator will not usually know about them."
+  }
+}
