@@ -3,21 +3,23 @@ import './ConditionMonitor.css';
 
 // Damage level section definitions
 const SECTIONS = [
-  { label: 'Light',    boxes: 1 },
-  { label: 'Moderate', boxes: 2 },
-  { label: 'Serious',  boxes: 3 },
-  { label: 'Deadly',   boxes: 4 },
+  { label: 'Light',    boxes: 2 },
+  { label: 'Moderate', boxes: 3 },
+  { label: 'Serious',  boxes: 5 },
 ];
 
-// Text shown inside the first box of each section
+// Text shown inside boxes; index 9 is the "dead" box, handled per type
 const BOX_LABELS = [
-  '+1 TN\n-1 Init.',   // box 0 — Light
-  '+2 TN\n-2 Init.',   // box 1 — Moderate start
-  '',                   // box 2
-  '+3 TN\n-3 Init.',   // box 3 — Serious start
-  '', '',               // boxes 4-5
-  '', '', '',           // boxes 6-8 — Deadly
-  null,                 // box 9 — last box, handled per type
+  '+1 TN\n-1 Init.',   // 0 — Light start
+  '',                   // 1
+  '+2 TN\n-2 Init.',   // 2 — Moderate start
+  '',                   // 3
+  '',                   // 4
+  '+3 TN\n-3 Init.',   // 5 — Serious start
+  '',                   // 6
+  '',                   // 7
+  '',                   // 8
+  null,                 // 9 — last box (Unc. / Unc. Maybe Dead)
 ];
 
 const ConditionMonitor = ({ type }) => {
@@ -38,8 +40,7 @@ const ConditionMonitor = ({ type }) => {
       <div className="cm-section-headers">
         {SECTIONS.map((s) => (
           <div key={s.label} className="cm-section-header" style={{ flex: s.boxes }}>
-            {s.label}<br />
-            {type === 'Stun' ? 'Stun' : 'Wound'}
+            {s.label}<br />{type === 'Stun' ? 'Stun' : 'Wound'}
           </div>
         ))}
       </div>
