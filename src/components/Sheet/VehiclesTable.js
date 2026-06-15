@@ -25,9 +25,8 @@ const DamageBox = ({ filled, onClick }) => (
   />
 );
 
-const VehicleConditionMonitor = ({ bodyStr }) => {
-  const body = parseInt(bodyStr) || 4;
-  const boxes = Math.max(body, 4);
+const VehicleConditionMonitor = () => {
+  const boxes = 10;
   const [filled, setFilled] = useState(0);
 
   const handleClick = (i) => setFilled(filled === i + 1 ? i : i + 1);
@@ -117,7 +116,7 @@ const VehicleCard = ({ vehicle, index }) => {
       )}
 
       {/* Condition Monitor */}
-      <VehicleConditionMonitor bodyStr={baseBody} />
+      <VehicleConditionMonitor />
 
       {/* Blank notes area */}
       <div style={{ padding: '4px 8px 8px 8px', borderTop: '1px solid #ddd' }}>

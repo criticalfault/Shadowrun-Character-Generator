@@ -16,7 +16,7 @@ const FLUX_RANGES = [
 
 const CHANNEL_CONFIG = {
   Command:  { boxes: 10 },
-  Simsense: { boxes: 6 },
+  Simsense: { boxes: 10 },
   System:   { boxes: 10 },
 };
 

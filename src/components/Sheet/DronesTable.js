@@ -25,9 +25,8 @@ const DamageBox = ({ filled, onClick }) => (
   />
 );
 
-const DroneConditionMonitor = ({ bodyStr }) => {
-  const body = parseInt(bodyStr) || 3;
-  const boxes = Math.max(body, 3);
+const DroneConditionMonitor = () => {
+  const boxes = 10;
   const [filled, setFilled] = useState(0);
 
   const handleClick = (i) => setFilled(filled === i + 1 ? i : i + 1);
@@ -117,7 +116,7 @@ const DroneCard = ({ drone }) => {
       )}
 
       {/* Condition Monitor */}
-      <DroneConditionMonitor bodyStr={baseBody} />
+      <DroneConditionMonitor />
 
       {/* Blank notes area */}
       <div style={{ padding: '4px 8px 8px 8px', borderTop: '1px solid #ddd' }}>
