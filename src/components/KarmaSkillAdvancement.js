@@ -21,9 +21,9 @@ const skillKarmaCost = (currentRating, type) => {
 
 const concentrationKarmaCost = (currentRating) => Math.ceil((currentRating + 1) * 1.5);
 
-// SR2: Magic × 1, SR3: Magic × 2
-const spellKarmaCost = (magicRating, edition) =>
-  magicRating * (edition === 'SR3' ? 2 : 1);
+// SR2 (confirmed, core p.132): karma = desired Force of the spell
+// SR3: TODO — confirm from SR3 core book; using Force as placeholder until verified
+const spellKarmaCost = (force, _edition) => force;
 
 const SPELL_CASTER_TYPES = [
   'Full Magician', 'Shaman', 'Mage', 'Hermetic Mage', 'Aspected Magician',
@@ -69,6 +69,7 @@ export default function KarmaSkillAdvancement({
   const [newSpellModal, setNewSpellModal] = useState(false);
   const [newSpellIndex, setNewSpellIndex] = useState(0);
   const [newSpellData, setNewSpellData]   = useState(null);
+  const [spellForce, setSpellForce]       = useState(1);
 
   if (step !== 'finalized') return null;
 
@@ -103,7 +104,7 @@ export default function KarmaSkillAdvancement({
   const availableNewSpells = rawSpells.filter(
     (s) => s && s.Name && !existingSpellNames.has(s.Name.trim())
   );
-  const spellCost = spellKarmaCost(magicRating ?? 1, Edition);
+  const spellCost = spellKarmaCost(spellForce, Edition);
 
   // ── Skill advancement confirm ────────────────────────────────────────
   const openConfirm = (skillIndex, concentrationIndex = null) => {
@@ -157,7 +158,7 @@ export default function KarmaSkillAdvancement({
     const spell = { ...newSpellData, Rating: magicRating ?? 1, Fetish: false, Exclusive: false };
     onChangeSpells([...(spells ?? []), spell]);
     onSpendKarma(spellCost);
-    onChangeLog([...Log, { Type: 'LearnSpell', Date: Date.now(), Amount: -spellCost, Notes: `Learned spell: ${newSpellData.Name?.trim()} for ${spellCost} Karma (Magic ${magicRating}).` }]);
+    onChangeLog([...Log, { Type: 'LearnSpell', Date: Date.now(), Amount: -spellCost, Notes: `Learned spell: ${newSpellData.Name?.trim()} at Force ${spellForce} for ${spellCost} Karma.` }]);
     setNewSpellModal(false);
     setNewSpellData(null);
     setNewSpellIndex(0);
@@ -245,7 +246,7 @@ export default function KarmaSkillAdvancement({
           <Divider sx={{ my: 2 }} />
           <Typography variant="h6" sx={{ mb: 1 }}>Learn New Spell</Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-            Cost: {spellCost} Karma (Magic {magicRating} × {Edition === 'SR3' ? 2 : 1})
+            Cost: Force karma (SR2 confirmed; SR3 TBD — same formula used as placeholder)
           </Typography>
           <Button
             variant="outlined"
@@ -303,12 +304,26 @@ export default function KarmaSkillAdvancement({
             getLabel={(s) => s.Name?.trim()}
           />
           {newSpellData && (
-            <Box sx={{ mt: 1, fontSize: '0.85rem', color: '#555' }}>
+            <Box sx={{ mt: 1, mb: 1, fontSize: '0.85rem', color: '#555' }}>
               <div>Type: {newSpellData.Type} | Class: {newSpellData.Class} | Duration: {newSpellData.Duration}</div>
               <div>Drain: {newSpellData.Drain}</div>
             </Box>
           )}
-          <Typography sx={{ mt: 2, mb: 2 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mt: 2, mb: 1 }}>
+            <Typography>Force:</Typography>
+            <input
+              type="number"
+              min={1}
+              max={magicRating ?? 12}
+              value={spellForce}
+              onChange={(e) => setSpellForce(Math.max(1, parseInt(e.target.value) || 1))}
+              style={{ width: 56, padding: '4px 6px' }}
+            />
+            <Typography variant="body2" color="text.secondary">
+              (max Magic {magicRating ?? '?'})
+            </Typography>
+          </Box>
+          <Typography sx={{ mb: 2 }}>
             Cost: <strong>{spellCost} Karma</strong>
           </Typography>
           <Button variant="contained" disabled={!newSpellData || karmaAvailable < spellCost} onClick={doLearnSpell} sx={{ mr: 1 }}>
