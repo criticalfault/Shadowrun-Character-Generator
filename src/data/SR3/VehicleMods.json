@@ -84,7 +84,14 @@
       "statMods": { "accel": "+(level) dice to Accel/Brake Tests" },
       "restrictions": "Diesel/gasoline engines only",
       "notes": null,
-      "bookPage": "r3.109"
+      "bookPage": "r3.109",
+      "ratings": [
+        { "rating": 1, "cfDesign": 1.5, "cfCustom": 2, "dpCost": 55,  "costNuyen": 3500,  "weightKg": 15, "availability": "4/48 hrs", "streetIndex": "1" },
+        { "rating": 2, "cfDesign": 1.5, "cfCustom": 2, "dpCost": 110, "costNuyen": 7000,  "weightKg": 15, "availability": "4/48 hrs", "streetIndex": "1" },
+        { "rating": 3, "cfDesign": 1.5, "cfCustom": 2, "dpCost": 165, "costNuyen": 10500, "weightKg": 15, "availability": "4/48 hrs", "streetIndex": "1" },
+        { "rating": 4, "cfDesign": 1.5, "cfCustom": 2, "dpCost": 220, "costNuyen": 28000, "weightKg": 15, "availability": "4/48 hrs", "streetIndex": "1" },
+        { "rating": 5, "cfDesign": 1.5, "cfCustom": 2, "dpCost": 275, "costNuyen": 35000, "weightKg": 15, "availability": "4/48 hrs", "streetIndex": "1" }
+      ]
     },
     {
       "id": "suncell-power",
