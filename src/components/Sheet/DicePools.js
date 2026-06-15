@@ -86,12 +86,14 @@ const DicePools = ({ character, edition, magicalChoice }) => {
     pools.push({ label: 'Task', value: parseInt(cyber.Task_Pool) });
   }
 
-  // Control Pool
+  // Control Pool — SR3 p.148: Reaction + VCR bonus dice. VCR required.
   if (cyber.Vehicle_Control_Rig_Level) {
-    const controlPool = Math.floor(
+    const reaction = Math.floor(
       (getAttr('Quickness') + getAttr('Intelligence')) / 2
-    ) + (cyber.Vehicle_Control_Reaction ?? 0);
-    pools.push({ label: 'Control', value: controlPool });
+    );
+    const vcrBonus = cyber.Vehicle_Control_Reaction ?? 0;
+    const controlPool = reaction + vcrBonus;
+    pools.push({ label: `Control (VCR ${cyber.Vehicle_Control_Rig_Level})`, value: controlPool });
   }
 
   // Karma Pool
