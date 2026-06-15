@@ -13318,7 +13318,8 @@
                 "I/O": "1",
                 "Availability": "4/7days",
                 "Cost": "6800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.90"
             },
             {
                 "Name": "Allegiance Alpha",
@@ -13330,7 +13331,8 @@
                 "I/O": "1",
                 "Availability": "4/7days",
                 "Cost": "12600",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.90"
             },
             {
                 "Name": "Sony CTY-360",
@@ -13342,7 +13344,8 @@
                 "I/O": "10",
                 "Availability": "4/7days",
                 "Cost": "99400",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.90"
             },
             {
                 "Name": "Fuchi Cyber-4",
@@ -13354,7 +13357,8 @@
                 "I/O": "20",
                 "Availability": "4/7days",
                 "Cost": "121400",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.90"
             },
             {
                 "Name": "Fuchi Cyber-6",
@@ -13366,7 +13370,8 @@
                 "I/O": "30",
                 "Availability": "6/7days",
                 "Cost": "334500",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.90"
             },
             {
                 "Name": "Fuchi Cyber-7",
@@ -13378,7 +13383,8 @@
                 "I/O": "40",
                 "Availability": "10/7days",
                 "Cost": "1112100",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.90"
             },
             {
                 "Name": "Fairlight Excalibur",
@@ -13390,7 +13396,8 @@
                 "I/O": "50",
                 "Availability": "22/7days",
                 "Cost": "5529600",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.90"
             }
         ]
     },
@@ -13407,1801 +13414,2101 @@
                 "Name": "Off-line Store 100 Mp",
                 "Availability": "2/24hrs",
                 "Cost": "100",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.89"
             },
             {
                 "Name": "Off-line Store 200 Mp",
                 "Availability": "2/24hrs",
                 "Cost": "200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.89"
             },
             {
                 "Name": "Off-line Store 300 Mp",
                 "Availability": "2/24hrs",
                 "Cost": "300",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.89"
             },
             {
                 "Name": "Off-line Store 400 Mp",
                 "Availability": "2/24hrs",
                 "Cost": "400",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.89"
             },
             {
                 "Name": "Off-line Store 500 Mp",
                 "Availability": "2/24hrs",
                 "Cost": "500",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.89"
             },
             {
                 "Name": "CybDeck",
                 "Availability": "6/48hrs",
                 "Cost": "25000",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.89"
             },
             {
                 "Name": "CybDeck",
                 "Availability": "8/72hrs",
                 "Cost": "100000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.89"
             },
             {
                 "Name": "CybDeck",
                 "Availability": "12/7days",
                 "Cost": "250000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.89"
             },
             {
                 "Name": "Hitcher Jack",
                 "Availability": "2/48hrs",
                 "Cost": "1000",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.89"
             },
             {
                 "Name": "Vidscreen Display",
                 "Availability": "2/24hrs",
                 "Cost": "500",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.89"
             },
             {
                 "Name": "Bod Rating 1",
                 "Availability": "3/7days",
                 "Cost": "300",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Bod Rating 2",
                 "Availability": "3/7days",
                 "Cost": "1200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Bod Rating 3",
                 "Availability": "3/7days",
                 "Cost": "2700",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Bod Rating 4",
                 "Availability": "6/7days",
                 "Cost": "24000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Bod Rating 5",
                 "Availability": "6/7days",
                 "Cost": "37500",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Bod Rating 6",
                 "Availability": "6/7days",
                 "Cost": "54000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Bod Rating 7",
                 "Availability": "12/14days",
                 "Cost": "147000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Bod Rating 8",
                 "Availability": "12/14days",
                 "Cost": "192000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Bod Rating 9",
                 "Availability": "12/14days",
                 "Cost": "243000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Bod Rating 10",
                 "Availability": "24/30days",
                 "Cost": "1500000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Evasion Rating 1",
                 "Availability": "3/7days",
                 "Cost": "300",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Evasion Rating 2",
                 "Availability": "3/7days",
                 "Cost": "1200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Evasion Rating 3",
                 "Availability": "3/7days",
                 "Cost": "2700",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Evasion Rating 4",
                 "Availability": "6/7days",
                 "Cost": "24000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Evasion Rating 5",
                 "Availability": "6/7days",
                 "Cost": "37500",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Evasion Rating 6",
                 "Availability": "6/7days",
                 "Cost": "54000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Evasion Rating 7",
                 "Availability": "12/14days",
                 "Cost": "147000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Evasion Rating 8",
                 "Availability": "12/14days",
                 "Cost": "192000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Evasion Rating 9",
                 "Availability": "12/14days",
                 "Cost": "243000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Evasion Rating 10",
                 "Availability": "24/30days",
                 "Cost": "1500000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Masking Rating 1",
                 "Availability": "3/7days",
                 "Cost": "200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Masking Rating 2",
                 "Availability": "3/7days",
                 "Cost": "800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Masking Rating 3",
                 "Availability": "3/7days",
                 "Cost": "1800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Masking Rating 4",
                 "Availability": "6/7days",
                 "Cost": "16000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Masking Rating 5",
                 "Availability": "6/7days",
                 "Cost": "25000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Masking Rating 6",
                 "Availability": "6/7days",
                 "Cost": "36000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Masking Rating 7",
                 "Availability": "12/14days",
                 "Cost": "98000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Masking Rating 8",
                 "Availability": "12/14days",
                 "Cost": "128000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Masking Rating 9",
                 "Availability": "12/14days",
                 "Cost": "162000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Masking Rating 10",
                 "Availability": "24/30days",
                 "Cost": "1000000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Sensors Rating 1",
                 "Availability": "3/7days",
                 "Cost": "200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Sensors Rating 2",
                 "Availability": "3/7days",
                 "Cost": "800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Sensors Rating 3",
                 "Availability": "3/7days",
                 "Cost": "1800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Sensors Rating 4",
                 "Availability": "6/7days",
                 "Cost": "16000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Sensors Rating 5",
                 "Availability": "6/7days",
                 "Cost": "25000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Sensors Rating 6",
                 "Availability": "6/7days",
                 "Cost": "36000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Sensors Rating 7",
                 "Availability": "12/14days",
                 "Cost": "98000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Sensors Rating 8",
                 "Availability": "12/14days",
                 "Cost": "128000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Sensors Rating 9",
                 "Availability": "12/14days",
                 "Cost": "162000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Sensors Rating 10",
                 "Availability": "24/30days",
                 "Cost": "1000000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.84"
             },
             {
                 "Name": "Analyse Rating 1",
                 "Availability": "2/7days",
                 "Cost": "300",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Analyse Rating 2",
                 "Availability": "2/7days",
                 "Cost": "1200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Analyse Rating 3",
                 "Availability": "2/7days",
                 "Cost": "2700",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Analyse Rating 4",
                 "Availability": "4/7days",
                 "Cost": "24000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Analyse Rating 5",
                 "Availability": "4/7days",
                 "Cost": "37500",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Analyse Rating 6",
                 "Availability": "4/7days",
                 "Cost": "54000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Analyse Rating 7",
                 "Availability": "8/14days",
                 "Cost": "147000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Analyse Rating 8",
                 "Availability": "8/14days",
                 "Cost": "192000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Analyse Rating 9",
                 "Availability": "8/14days",
                 "Cost": "243000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Analyse Rating 10",
                 "Availability": "16/100days",
                 "Cost": "1500000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Armor Rating 1",
                 "Availability": "2/7days",
                 "Cost": "300",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Armor Rating 2",
                 "Availability": "2/7days",
                 "Cost": "1200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Armor Rating 3",
                 "Availability": "2/7days",
                 "Cost": "2700",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Armor Rating 4",
                 "Availability": "4/7days",
                 "Cost": "24000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Armor Rating 5",
                 "Availability": "4/7days",
                 "Cost": "37500",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Armor Rating 6",
                 "Availability": "4/7days",
                 "Cost": "54000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Armor Rating 7",
                 "Availability": "8/14days",
                 "Cost": "147000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Armor Rating 8",
                 "Availability": "8/14days",
                 "Cost": "192000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Armor Rating 9",
                 "Availability": "8/14days",
                 "Cost": "243000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Armor Rating 10",
                 "Availability": "16/100days",
                 "Cost": "1500000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Attack Rating 1",
                 "Availability": "3/7days",
                 "Cost": "200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Attack Rating 2",
                 "Availability": "3/7days",
                 "Cost": "800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Attack Rating 3",
                 "Availability": "3/7days",
                 "Cost": "1800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Attack Rating 4",
                 "Availability": "6/7days",
                 "Cost": "16000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Attack Rating 5",
                 "Availability": "6/7days",
                 "Cost": "25000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Attack Rating 6",
                 "Availability": "6/7days",
                 "Cost": "36000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Attack Rating 7",
                 "Availability": "12/14days",
                 "Cost": "98000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Attack Rating 8",
                 "Availability": "12/14days",
                 "Cost": "128000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Attack Rating 9",
                 "Availability": "12/14days",
                 "Cost": "162000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Attack Rating 10",
                 "Availability": "24/30days",
                 "Cost": "1000000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Blind Rating 1",
                 "Availability": "2/7days",
                 "Cost": "300",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Blind Rating 2",
                 "Availability": "2/7days",
                 "Cost": "1200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Blind Rating 3",
                 "Availability": "2/7days",
                 "Cost": "2700",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Blind Rating 4",
                 "Availability": "4/7days",
                 "Cost": "24000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Blind Rating 5",
                 "Availability": "4/7days",
                 "Cost": "37500",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Blind Rating 6",
                 "Availability": "4/7days",
                 "Cost": "54000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Blind Rating 7",
                 "Availability": "8/14days",
                 "Cost": "147000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Blind Rating 8",
                 "Availability": "8/14days",
                 "Cost": "192000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Blind Rating 9",
                 "Availability": "8/14days",
                 "Cost": "243000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Blind Rating 10",
                 "Availability": "16/100days",
                 "Cost": "1500000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Browse Rating 1",
                 "Availability": "3/7days",
                 "Cost": "100",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Browse Rating 2",
                 "Availability": "3/7days",
                 "Cost": "400",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Browse Rating 3",
                 "Availability": "3/7days",
                 "Cost": "900",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Browse Rating 4",
                 "Availability": "6/7days",
                 "Cost": "8000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Browse Rating 5",
                 "Availability": "6/7days",
                 "Cost": "12500",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Browse Rating 6",
                 "Availability": "6/7days",
                 "Cost": "18000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Browse Rating 7",
                 "Availability": "12/14days",
                 "Cost": "49000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Browse Rating 8",
                 "Availability": "12/14days",
                 "Cost": "64000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Browse Rating 9",
                 "Availability": "12/14days",
                 "Cost": "81000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Browse Rating 10",
                 "Availability": "24/30days",
                 "Cost": "500000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Cloak Rating 1",
                 "Availability": "2/7days",
                 "Cost": "300",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Cloak Rating 2",
                 "Availability": "2/7days",
                 "Cost": "1200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Cloak Rating 3",
                 "Availability": "2/7days",
                 "Cost": "2700",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Cloak Rating 4",
                 "Availability": "4/7days",
                 "Cost": "24000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Cloak Rating 5",
                 "Availability": "4/7days",
                 "Cost": "37500",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Cloak Rating 6",
                 "Availability": "4/7days",
                 "Cost": "54000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Cloak Rating 7",
                 "Availability": "8/14days",
                 "Cost": "147000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Cloak Rating 8",
                 "Availability": "8/14days",
                 "Cost": "192000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Cloak Rating 9",
                 "Availability": "8/14days",
                 "Cost": "243000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Cloak Rating 10",
                 "Availability": "16/100days",
                 "Cost": "1500000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Compressor Rating 1",
                 "Availability": "3/7days",
                 "Cost": "200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Compressor Rating 2",
                 "Availability": "3/7days",
                 "Cost": "800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Compressor Rating 3",
                 "Availability": "3/7days",
                 "Cost": "1800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Compressor Rating 4",
                 "Availability": "6/7days",
                 "Cost": "16000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Compressor Rating 5",
                 "Availability": "6/7days",
                 "Cost": "25000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Compressor Rating 6",
                 "Availability": "6/7days",
                 "Cost": "36000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Compressor Rating 7",
                 "Availability": "12/14days",
                 "Cost": "98000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Compressor Rating 8",
                 "Availability": "12/14days",
                 "Cost": "128000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Compressor Rating 9",
                 "Availability": "12/14days",
                 "Cost": "162000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Compressor Rating 10",
                 "Availability": "24/30days",
                 "Cost": "1000000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Controller Rating 1",
                 "Availability": "3/7days",
                 "Cost": "400",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Controller Rating 2",
                 "Availability": "3/7days",
                 "Cost": "1600",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Controller Rating 3",
                 "Availability": "3/7days",
                 "Cost": "3600",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Controller Rating 4",
                 "Availability": "6/7days",
                 "Cost": "32000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Controller Rating 5",
                 "Availability": "6/7days",
                 "Cost": "50000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Controller Rating 6",
                 "Availability": "6/7days",
                 "Cost": "72000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Controller Rating 7",
                 "Availability": "12/14days",
                 "Cost": "196000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Controller Rating 8",
                 "Availability": "12/14days",
                 "Cost": "256000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Controller Rating 9",
                 "Availability": "12/14days",
                 "Cost": "324000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Controller Rating 10",
                 "Availability": "24/30days",
                 "Cost": "2000000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Deception Rating 1",
                 "Availability": "3/7days",
                 "Cost": "200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Deception Rating 2",
                 "Availability": "3/7days",
                 "Cost": "800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Deception Rating 3",
                 "Availability": "3/7days",
                 "Cost": "1800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Deception Rating 4",
                 "Availability": "6/7days",
                 "Cost": "16000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Deception Rating 5",
                 "Availability": "6/7days",
                 "Cost": "25000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Deception Rating 6",
                 "Availability": "6/7days",
                 "Cost": "36000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Deception Rating 7",
                 "Availability": "12/14days",
                 "Cost": "98000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Deception Rating 8",
                 "Availability": "12/14days",
                 "Cost": "128000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Deception Rating 9",
                 "Availability": "12/14days",
                 "Cost": "162000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Deception Rating 10",
                 "Availability": "24/30days",
                 "Cost": "1000000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Decrypt Rating 1",
                 "Availability": "3/7days",
                 "Cost": "200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Decrypt Rating 2",
                 "Availability": "3/7days",
                 "Cost": "800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Decrypt Rating 3",
                 "Availability": "3/7days",
                 "Cost": "1800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Decrypt Rating 4",
                 "Availability": "6/7days",
                 "Cost": "16000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Decrypt Rating 5",
                 "Availability": "6/7days",
                 "Cost": "25000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Decrypt Rating 6",
                 "Availability": "6/7days",
                 "Cost": "36000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Decrypt Rating 7",
                 "Availability": "12/14days",
                 "Cost": "98000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Decrypt Rating 8",
                 "Availability": "12/14days",
                 "Cost": "128000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Decrypt Rating 9",
                 "Availability": "12/14days",
                 "Cost": "162000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Decrypt Rating 10",
                 "Availability": "24/30days",
                 "Cost": "1000000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Evaluate Rating 1",
                 "Availability": "3/7days",
                 "Cost": "200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Evaluate Rating 2",
                 "Availability": "3/7days",
                 "Cost": "800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Evaluate Rating 3",
                 "Availability": "3/7days",
                 "Cost": "1800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Evaluate Rating 4",
                 "Availability": "6/7days",
                 "Cost": "16000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Evaluate Rating 5",
                 "Availability": "6/7days",
                 "Cost": "25000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Evaluate Rating 6",
                 "Availability": "6/7days",
                 "Cost": "36000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Evaluate Rating 7",
                 "Availability": "12/14days",
                 "Cost": "98000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Evaluate Rating 8",
                 "Availability": "12/14days",
                 "Cost": "128000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Evaluate Rating 9",
                 "Availability": "12/14days",
                 "Cost": "162000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Evaluate Rating 10",
                 "Availability": "24/30days",
                 "Cost": "1000000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Hog Rating 1",
                 "Availability": "2/7days",
                 "Cost": "300",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Hog Rating 2",
                 "Availability": "2/7days",
                 "Cost": "1200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Hog Rating 3",
                 "Availability": "2/7days",
                 "Cost": "2700",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Hog Rating 4",
                 "Availability": "4/7days",
                 "Cost": "24000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Hog Rating 5",
                 "Availability": "4/7days",
                 "Cost": "37500",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Hog Rating 6",
                 "Availability": "4/7days",
                 "Cost": "54000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Hog Rating 7",
                 "Availability": "8/14days",
                 "Cost": "147000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Hog Rating 8",
                 "Availability": "8/14days",
                 "Cost": "192000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Hog Rating 9",
                 "Availability": "8/14days",
                 "Cost": "243000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Hog Rating 10",
                 "Availability": "16/100days",
                 "Cost": "1500000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Medic Rating 1",
                 "Availability": "3/7days",
                 "Cost": "400",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Medic Rating 2",
                 "Availability": "3/7days",
                 "Cost": "1600",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Medic Rating 3",
                 "Availability": "3/7days",
                 "Cost": "3600",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Medic Rating 4",
                 "Availability": "6/7days",
                 "Cost": "32000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Medic Rating 5",
                 "Availability": "6/7days",
                 "Cost": "50000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Medic Rating 6",
                 "Availability": "6/7days",
                 "Cost": "72000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Medic Rating 7",
                 "Availability": "12/14days",
                 "Cost": "196000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Medic Rating 8",
                 "Availability": "12/14days",
                 "Cost": "256000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Medic Rating 9",
                 "Availability": "12/14days",
                 "Cost": "324000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Medic Rating 10",
                 "Availability": "24/30days",
                 "Cost": "2000000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Mirror Rating 1",
                 "Availability": "2/7days",
                 "Cost": "300",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Mirror Rating 2",
                 "Availability": "2/7days",
                 "Cost": "1200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Mirror Rating 3",
                 "Availability": "2/7days",
                 "Cost": "2700",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Mirror Rating 4",
                 "Availability": "4/7days",
                 "Cost": "24000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Mirror Rating 5",
                 "Availability": "4/7days",
                 "Cost": "37500",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Mirror Rating 6",
                 "Availability": "4/7days",
                 "Cost": "54000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Mirror Rating 7",
                 "Availability": "8/14days",
                 "Cost": "147000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Mirror Rating 8",
                 "Availability": "8/14days",
                 "Cost": "192000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Mirror Rating 9",
                 "Availability": "8/14days",
                 "Cost": "243000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Mirror Rating 10",
                 "Availability": "16/100days",
                 "Cost": "1500000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Poison Rating 1",
                 "Availability": "2/7days",
                 "Cost": "300",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Poison Rating 2",
                 "Availability": "2/7days",
                 "Cost": "1200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Poison Rating 3",
                 "Availability": "2/7days",
                 "Cost": "2700",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Poison Rating 4",
                 "Availability": "4/7days",
                 "Cost": "24000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Poison Rating 5",
                 "Availability": "4/7days",
                 "Cost": "37500",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Poison Rating 6",
                 "Availability": "4/7days",
                 "Cost": "54000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Poison Rating 7",
                 "Availability": "8/14days",
                 "Cost": "147000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Poison Rating 8",
                 "Availability": "8/14days",
                 "Cost": "192000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Poison Rating 9",
                 "Availability": "8/14days",
                 "Cost": "243000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Poison Rating 10",
                 "Availability": "16/100days",
                 "Cost": "1500000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Relocate Rating 1",
                 "Availability": "3/7days",
                 "Cost": "200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Relocate Rating 2",
                 "Availability": "3/7days",
                 "Cost": "800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Relocate Rating 3",
                 "Availability": "3/7days",
                 "Cost": "1800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Relocate Rating 4",
                 "Availability": "6/7days",
                 "Cost": "16000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Relocate Rating 5",
                 "Availability": "6/7days",
                 "Cost": "25000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Relocate Rating 6",
                 "Availability": "6/7days",
                 "Cost": "36000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Relocate Rating 7",
                 "Availability": "12/14days",
                 "Cost": "98000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Relocate Rating 8",
                 "Availability": "12/14days",
                 "Cost": "128000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Relocate Rating 9",
                 "Availability": "12/14days",
                 "Cost": "162000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Relocate Rating 10",
                 "Availability": "24/30days",
                 "Cost": "1000000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restore Rating 1",
                 "Availability": "2/7days",
                 "Cost": "300",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restore Rating 2",
                 "Availability": "2/7days",
                 "Cost": "1200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restore Rating 3",
                 "Availability": "2/7days",
                 "Cost": "2700",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restore Rating 4",
                 "Availability": "4/7days",
                 "Cost": "24000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restore Rating 5",
                 "Availability": "4/7days",
                 "Cost": "37500",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restore Rating 6",
                 "Availability": "4/7days",
                 "Cost": "54000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restore Rating 7",
                 "Availability": "8/14days",
                 "Cost": "147000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restore Rating 8",
                 "Availability": "8/14days",
                 "Cost": "192000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restore Rating 9",
                 "Availability": "8/14days",
                 "Cost": "243000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restore Rating 10",
                 "Availability": "16/100days",
                 "Cost": "1500000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restrict Rating 1",
                 "Availability": "2/7days",
                 "Cost": "300",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restrict Rating 2",
                 "Availability": "2/7days",
                 "Cost": "1200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restrict Rating 3",
                 "Availability": "2/7days",
                 "Cost": "2700",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restrict Rating 4",
                 "Availability": "4/7days",
                 "Cost": "24000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restrict Rating 5",
                 "Availability": "4/7days",
                 "Cost": "37500",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restrict Rating 6",
                 "Availability": "4/7days",
                 "Cost": "54000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restrict Rating 7",
                 "Availability": "8/14days",
                 "Cost": "147000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restrict Rating 8",
                 "Availability": "8/14days",
                 "Cost": "192000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restrict Rating 9",
                 "Availability": "8/14days",
                 "Cost": "243000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Restrict Rating 10",
                 "Availability": "16/100days",
                 "Cost": "1500000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Reveal Rating 1",
                 "Availability": "2/7days",
                 "Cost": "300",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Reveal Rating 2",
                 "Availability": "2/7days",
                 "Cost": "1200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Reveal Rating 3",
                 "Availability": "2/7days",
                 "Cost": "2700",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Reveal Rating 4",
                 "Availability": "4/7days",
                 "Cost": "24000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Reveal Rating 5",
                 "Availability": "4/7days",
                 "Cost": "37500",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Reveal Rating 6",
                 "Availability": "4/7days",
                 "Cost": "54000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Reveal Rating 7",
                 "Availability": "8/14days",
                 "Cost": "147000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Reveal Rating 8",
                 "Availability": "8/14days",
                 "Cost": "192000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Reveal Rating 9",
                 "Availability": "8/14days",
                 "Cost": "243000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Reveal Rating 10",
                 "Availability": "16/100days",
                 "Cost": "1500000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Scanner Rating 1",
                 "Availability": "2/7days",
                 "Cost": "300",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Scanner Rating 2",
                 "Availability": "2/7days",
                 "Cost": "1200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Scanner Rating 3",
                 "Availability": "2/7days",
                 "Cost": "2700",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Scanner Rating 4",
                 "Availability": "4/7days",
                 "Cost": "24000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Scanner Rating 5",
                 "Availability": "4/7days",
                 "Cost": "37500",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Scanner Rating 6",
                 "Availability": "4/7days",
                 "Cost": "54000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Scanner Rating 7",
                 "Availability": "8/14days",
                 "Cost": "147000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Scanner Rating 8",
                 "Availability": "8/14days",
                 "Cost": "192000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Scanner Rating 9",
                 "Availability": "8/14days",
                 "Cost": "243000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Scanner Rating 10",
                 "Availability": "16/100days",
                 "Cost": "1500000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Shield Rating 1",
                 "Availability": "3/7days",
                 "Cost": "400",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Shield Rating 2",
                 "Availability": "3/7days",
                 "Cost": "1600",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Shield Rating 3",
                 "Availability": "3/7days",
                 "Cost": "3600",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Shield Rating 4",
                 "Availability": "6/7days",
                 "Cost": "32000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Shield Rating 5",
                 "Availability": "6/7days",
                 "Cost": "50000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Shield Rating 6",
                 "Availability": "6/7days",
                 "Cost": "72000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Shield Rating 7",
                 "Availability": "12/14days",
                 "Cost": "196000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Shield Rating 8",
                 "Availability": "12/14days",
                 "Cost": "256000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Shield Rating 9",
                 "Availability": "12/14days",
                 "Cost": "324000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Shield Rating 10",
                 "Availability": "24/30days",
                 "Cost": "2000000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sift Rating 1",
                 "Availability": "3/7days",
                 "Cost": "100",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sift Rating 2",
                 "Availability": "3/7days",
                 "Cost": "400",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sift Rating 3",
                 "Availability": "3/7days",
                 "Cost": "900",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sift Rating 4",
                 "Availability": "6/7days",
                 "Cost": "8000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sift Rating 5",
                 "Availability": "6/7days",
                 "Cost": "12500",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sift Rating 6",
                 "Availability": "6/7days",
                 "Cost": "18000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sift Rating 7",
                 "Availability": "12/14days",
                 "Cost": "49000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sift Rating 8",
                 "Availability": "12/14days",
                 "Cost": "64000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sift Rating 9",
                 "Availability": "12/14days",
                 "Cost": "81000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sift Rating 10",
                 "Availability": "24/30days",
                 "Cost": "500000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sleaze Rating 1",
                 "Availability": "2/7days",
                 "Cost": "300",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sleaze Rating 2",
                 "Availability": "2/7days",
                 "Cost": "1200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sleaze Rating 3",
                 "Availability": "2/7days",
                 "Cost": "2700",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sleaze Rating 4",
                 "Availability": "4/7days",
                 "Cost": "24000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sleaze Rating 5",
                 "Availability": "4/7days",
                 "Cost": "37500",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sleaze Rating 6",
                 "Availability": "4/7days",
                 "Cost": "54000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sleaze Rating 7",
                 "Availability": "8/14days",
                 "Cost": "147000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sleaze Rating 8",
                 "Availability": "8/14days",
                 "Cost": "192000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sleaze Rating 9",
                 "Availability": "8/14days",
                 "Cost": "243000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Sleaze Rating 10",
                 "Availability": "16/100days",
                 "Cost": "1500000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Slow Rating 1",
                 "Availability": "3/7days",
                 "Cost": "400",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Slow Rating 2",
                 "Availability": "3/7days",
                 "Cost": "1600",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Slow Rating 3",
                 "Availability": "3/7days",
                 "Cost": "3600",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Slow Rating 4",
                 "Availability": "6/7days",
                 "Cost": "32000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Slow Rating 5",
                 "Availability": "6/7days",
                 "Cost": "50000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Slow Rating 6",
                 "Availability": "6/7days",
                 "Cost": "72000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Slow Rating 7",
                 "Availability": "12/14days",
                 "Cost": "196000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Slow Rating 8",
                 "Availability": "12/14days",
                 "Cost": "256000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Slow Rating 9",
                 "Availability": "12/14days",
                 "Cost": "324000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Slow Rating 10",
                 "Availability": "24/30days",
                 "Cost": "2000000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Smoke Rating 1",
                 "Availability": "3/7days",
                 "Cost": "200",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Smoke Rating 2",
                 "Availability": "3/7days",
                 "Cost": "800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Smoke Rating 3",
                 "Availability": "3/7days",
                 "Cost": "1800",
-                "Street Index": "1"
+                "Street Index": "1",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Smoke Rating 4",
                 "Availability": "6/7days",
                 "Cost": "16000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Smoke Rating 5",
                 "Availability": "6/7days",
                 "Cost": "25000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Smoke Rating 6",
                 "Availability": "6/7days",
                 "Cost": "36000",
-                "Street Index": "1.5"
+                "Street Index": "1.5",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Smoke Rating 7",
                 "Availability": "12/14days",
                 "Cost": "98000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Smoke Rating 8",
                 "Availability": "12/14days",
                 "Cost": "128000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Smoke Rating 9",
                 "Availability": "12/14days",
                 "Cost": "162000",
-                "Street Index": "2"
+                "Street Index": "2",
+                "BookPage": "vr2.107"
             },
             {
                 "Name": "Smoke Rating 10",
                 "Availability": "24/30days",
                 "Cost": "1000000",
-                "Street Index": "3"
+                "Street Index": "3",
+                "BookPage": "vr2.107"
             }
         ]
     },
