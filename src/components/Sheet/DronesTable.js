@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Grid } from '@mui/material';
 import SRSection from './SRSection';
 import { applyVehicleMods } from '../VehicleModsModal';
+import VehicleConditionMonitor from './VehicleConditionMonitor';
 
 const StatCell = ({ label, value }) => (
   <div style={{ flex: '1 1 110px', minWidth: 80, padding: '4px 8px', borderRight: '1px solid #ddd', borderBottom: '1px solid #ddd' }}>
@@ -10,41 +11,6 @@ const StatCell = ({ label, value }) => (
   </div>
 );
 
-const DamageBox = ({ filled, onClick }) => (
-  <div
-    onClick={onClick}
-    style={{
-      width: 20, height: 20,
-      border: '1px solid #000',
-      backgroundColor: filled ? '#333' : 'transparent',
-      cursor: 'pointer',
-      borderRadius: 2,
-      display: 'inline-block',
-      marginRight: 3,
-    }}
-  />
-);
-
-const DroneConditionMonitor = () => {
-  const boxes = 10;
-  const [filled, setFilled] = useState(0);
-
-  const handleClick = (i) => setFilled(filled === i + 1 ? i : i + 1);
-
-  return (
-    <div style={{ padding: '6px 8px', borderTop: '1px solid #ddd' }}>
-      <div style={{ fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', color: '#555', marginBottom: 4, letterSpacing: '0.04em' }}>
-        Condition Monitor
-      </div>
-      <div>
-        {Array.from({ length: boxes }).map((_, i) => (
-          <DamageBox key={i} filled={i < filled} onClick={() => handleClick(i)} />
-        ))}
-        <span style={{ fontSize: '0.7rem', color: '#888', marginLeft: 6 }}>{filled}/{boxes}</span>
-      </div>
-    </div>
-  );
-};
 
 const ModdedValue = ({ base, modified }) => {
   if (modified === null || modified === undefined || modified === base) return <span>{base}</span>;
