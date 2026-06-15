@@ -85,7 +85,7 @@ function SheetDisplay(props) {
       {/* ── 2-column core ─────────────────────────────────────────────── */}
       <div className="sheet-two-col">
 
-        {/* Left: Attributes · Condition Monitors · Dice Pools */}
+        {/* Left: Attributes · Dice Pools */}
         <div className="sheet-col">
           <AttributesBlock
             attributes={char.attributes}
@@ -94,7 +94,6 @@ function SheetDisplay(props) {
             magicBonuses={char.magicalAttributeBonuses}
             Cyberware={char.cyberware}
           />
-          <ConditionMonitorBlock onConditionSelect={handleConditionSelect} />
           <DicePools
             character={char}
             edition={props.Edition}
@@ -102,8 +101,9 @@ function SheetDisplay(props) {
           />
         </div>
 
-        {/* Right: Skills · Armor · Gear */}
+        {/* Right: Condition Monitor · Skills · Armor · Gear */}
         <div className="sheet-col">
+          <ConditionMonitorBlock onConditionSelect={handleConditionSelect} />
           <SkillsBlock character={char} edition={props.Edition} />
           <ArmorTable gear={char.gear} />
           <GearTable  gear={char.gear} />
