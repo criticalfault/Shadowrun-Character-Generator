@@ -39,19 +39,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Cavalier Scout (HOPist)",
-        "Concealability": "9",
-        "Ammunition": "7(c)",
-        "Mode": "SA",
-        "Damage": "4L",
-        "Weight": ".25",
-        "Availability": "10/72hrs",
-        "Cost": "600",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "cc.16"
-    },
-    {
         "Name": "Ceska Diplomat (HOPist)",
         "Concealability": "8",
         "Ammunition": "6(cy)",
@@ -143,19 +130,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Morrissey Elan (HOPist)",
-        "Concealability": "8",
-        "Ammunition": "5(c)",
-        "Mode": "SA",
-        "Damage": "5L",
-        "Weight": ".5",
-        "Availability": "8/7days",
-        "Cost": "500",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "cc.16"
-    },
-    {
         "Name": "N. Ind. Firing Knife (HOPist)",
         "Concealability": "6",
         "Ammunition": "5(cy)",
@@ -182,19 +156,6 @@
         "BookPage": "tss.5"
     },
     {
-        "Name": "Raecor Sting (HOPist)",
-        "Concealability": "9",
-        "Ammunition": "5(c)",
-        "Mode": "SS",
-        "Damage": "4M(f)",
-        "Weight": ".25",
-        "Availability": "10/7days",
-        "Cost": "375",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "cc.16"
-    },
-    {
         "Name": "Star Model DWT (HOPist)",
         "Concealability": "7",
         "Ammunition": "6(c)",
@@ -206,58 +167,6 @@
         "StreetIndex": ".8",
         "Accessories": "None",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Streetline Special (HOPist)",
-        "Concealability": "8",
-        "Ammunition": "6(c)",
-        "Mode": "SS",
-        "Damage": "4L",
-        "Weight": ".5",
-        "Availability": "2/12hrs",
-        "Cost": "100",
-        "StreetIndex": ".75",
-        "Accessories": "None",
-        "BookPage": "sr3.278"
-    },
-    {
-        "Name": "Tiffani Needler (HOPist)",
-        "Concealability": "8",
-        "Ammunition": "4(c)",
-        "Mode": "SA",
-        "Damage": "5M(f)",
-        "Weight": ".5",
-        "Availability": "7/48hrs",
-        "Cost": "650",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "cc.16"
-    },
-    {
-        "Name": "Tiffani Self-Defender (HOPist)",
-        "Concealability": "8",
-        "Ammunition": "4(c)",
-        "Mode": "SS",
-        "Damage": "4L",
-        "Weight": ".5",
-        "Availability": "2/12hrs",
-        "Cost": "450",
-        "StreetIndex": ".75",
-        "Accessories": "None",
-        "BookPage": "cc.16"
-    },
-    {
-        "Name": "Walther Palm Pistol (HOPist)",
-        "Concealability": "9",
-        "Ammunition": "2(b)",
-        "Mode": "SS",
-        "Damage": "4L",
-        "Weight": ".25",
-        "Availability": "3/12hrs",
-        "Cost": "200",
-        "StreetIndex": ".75",
-        "Accessories": "None",
-        "BookPage": "sr3.278"
     },
     {
         "Name": "Ares Hornet (LPist)",
@@ -273,19 +182,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Ares Light Fire 70 (LPist)",
-        "Concealability": "5",
-        "Ammunition": "16(c)",
-        "Mode": "SA",
-        "Damage": "6L",
-        "Weight": ".5",
-        "Availability": "3/12hrs",
-        "Cost": "475",
-        "StreetIndex": ".8",
-        "Accessories": "None",
-        "BookPage": "cc.18"
-    },
-    {
         "Name": "Ares Scorpion (LPist)",
         "Concealability": "8",
         "Ammunition": "7(cy)",
@@ -297,71 +193,6 @@
         "StreetIndex": "1",
         "Accessories": "Laser Sight",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Beretta Model 101T (LPist)",
-        "Concealability": "5",
-        "Ammunition": "12(c)",
-        "Mode": "SA",
-        "Damage": "6L",
-        "Weight": "1",
-        "Availability": "3/12hrs",
-        "Cost": "350",
-        "StreetIndex": ".8",
-        "Accessories": "None",
-        "BookPage": "sr3.278"
-    },
-    {
-        "Name": "Beretta Model 200ST (LPist)",
-        "Concealability": "4",
-        "Ammunition": "26(c)",
-        "Mode": "SA/BF",
-        "Damage": "6L",
-        "Weight": "2",
-        "Availability": "5/24hrs",
-        "Cost": "750",
-        "StreetIndex": "1.5",
-        "Accessories": "BF = Complex Action, Detach. Stock(1RC)",
-        "BookPage": "cc.18"
-    },
-    {
-        "Name": "Ceska vz/120 (LPist)",
-        "Concealability": "7",
-        "Ammunition": "18(c)",
-        "Mode": "SA",
-        "Damage": "6L",
-        "Weight": "1",
-        "Availability": "3/12hrs",
-        "Cost": "500",
-        "StreetIndex": ".8",
-        "Accessories": "None",
-        "BookPage": "cc.18"
-    },
-    {
-        "Name": "Colt American L36 (LPist)",
-        "Concealability": "6",
-        "Ammunition": "11(c)",
-        "Mode": "SA",
-        "Damage": "6L",
-        "Weight": "1",
-        "Availability": "3/12hrs",
-        "Cost": "350",
-        "StreetIndex": ".8",
-        "Accessories": "None",
-        "BookPage": "sr3.278"
-    },
-    {
-        "Name": "Colt Asp (LPist)",
-        "Concealability": "5",
-        "Ammunition": "6(cy)",
-        "Mode": "SA",
-        "Damage": "6L",
-        "Weight": "1",
-        "Availability": "3/12hrs",
-        "Cost": "200",
-        "StreetIndex": ".5",
-        "Accessories": "None",
-        "BookPage": "cc.18"
     },
     {
         "Name": "Dai Lung Streetmaster (LPist)",
@@ -390,19 +221,6 @@
         "BookPage": "cb1.27"
     },
     {
-        "Name": "Executive Action (LPist)",
-        "Concealability": "6",
-        "Ammunition": "24(c)",
-        "Mode": "SA/BF",
-        "Damage": "6L",
-        "Weight": "1.5",
-        "Availability": "14/7days",
-        "Cost": "1150",
-        "StreetIndex": "3",
-        "Accessories": "None",
-        "BookPage": "cc.18"
-    },
-    {
         "Name": "Federated Arms X-9mm (LPist)",
         "Concealability": "5",
         "Ammunition": "12(c)",
@@ -414,32 +232,6 @@
         "StreetIndex": ".75",
         "Accessories": "None",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Fichetti Security 500 (LPist)",
-        "Concealability": "7",
-        "Ammunition": "12(c)",
-        "Mode": "SA",
-        "Damage": "6L",
-        "Weight": "1",
-        "Availability": "3/12hrs",
-        "Cost": "400",
-        "StreetIndex": ".8",
-        "Accessories": "None",
-        "BookPage": "sr3.278"
-    },
-    {
-        "Name": "Fichetti Security 500a (LPist)",
-        "Concealability": "6",
-        "Ammunition": "25(c)",
-        "Mode": "SA",
-        "Damage": "6L",
-        "Weight": "1.25",
-        "Availability": "3/12hrs",
-        "Cost": "550",
-        "StreetIndex": ".8",
-        "Accessories": "Detach. Stock(1RC)",
-        "BookPage": "sr3.278"
     },
     {
         "Name": "Glock 19 Mk.IV (LPist)",
@@ -533,19 +325,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Hammerli Model 610S (HPist)",
-        "Concealability": "4",
-        "Ammunition": "6(c)",
-        "Mode": "SA",
-        "Damage": "6L",
-        "Weight": "2.5",
-        "Availability": "8/24hrs",
-        "Cost": "1300",
-        "StreetIndex": "2.5",
-        "Accessories": "LPist uses HPist ranges,Gas Vent I(1RC)",
-        "BookPage": "cc.18"
-    },
-    {
         "Name": "Mauser Ladyline (LPist)",
         "Concealability": "7",
         "Ammunition": "8(c)",
@@ -637,32 +416,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "SA Puzzler (LPist)",
-        "Concealability": "6",
-        "Ammunition": "12(c)",
-        "Mode": "SA",
-        "Damage": "6L",
-        "Weight": ".75",
-        "Availability": "9/1wk",
-        "Cost": "900",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "cc.18"
-    },
-    {
-        "Name": "Seco LD-120 (LPist)",
-        "Concealability": "5",
-        "Ammunition": "12(c)",
-        "Mode": "SA",
-        "Damage": "6L",
-        "Weight": "1",
-        "Availability": "3/12hrs",
-        "Cost": "400",
-        "StreetIndex": ".8",
-        "Accessories": "Laser Sight",
-        "BookPage": "cc.18"
-    },
-    {
         "Name": "S&W Model 6739 (LPist)",
         "Concealability": "8",
         "Ammunition": "5(cy)",
@@ -676,19 +429,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Taurus Multi-6 (LPist)",
-        "Concealability": "6",
-        "Ammunition": "6(cy)",
-        "Mode": "SA/SS",
-        "Damage": "6L/7M",
-        "Weight": "1",
-        "Availability": "5/24hrs",
-        "Cost": "500",
-        "StreetIndex": ".75",
-        "Accessories": "None",
-        "BookPage": "cc.18"
-    },
-    {
         "Name": "Thumper (LPist)",
         "Concealability": "6",
         "Ammunition": "10(c)",
@@ -700,19 +440,6 @@
         "StreetIndex": ".75",
         "Accessories": "None",
         "BookPage": "cp.22"
-    },
-    {
-        "Name": "Walther PB-120 (LPist)",
-        "Concealability": "8(6)",
-        "Ammunition": "10(15)(c)",
-        "Mode": "SA",
-        "Damage": "6L",
-        "Weight": ".75",
-        "Availability": "6/36hrs",
-        "Cost": "700",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "cc.18"
     },
     {
         "Name": "Ares Assault Machine (MaPist)",
@@ -741,19 +468,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Ares Crusader (MaPist)",
-        "Concealability": "6",
-        "Ammunition": "40(c)",
-        "Mode": "SA/BF",
-        "Damage": "6L",
-        "Weight": "3.25",
-        "Availability": "5/36hrs",
-        "Cost": "950",
-        "StreetIndex": "2",
-        "Accessories": "Gas Vent II(2RC)",
-        "BookPage": "cc.18"
-    },
-    {
         "Name": "Beretta Model 200ST (MaPist)",
         "Concealability": "4",
         "Ammunition": "26(c)",
@@ -778,32 +492,6 @@
         "StreetIndex": "1.2",
         "Accessories": "Caseless, Laser Sight",
         "BookPage": "cb1.30"
-    },
-    {
-        "Name": "Ceska Black Scorpion (MaPist)",
-        "Concealability": "5",
-        "Ammunition": "35(c)",
-        "Mode": "SA/BF",
-        "Damage": "6L",
-        "Weight": "3",
-        "Availability": "5/36hrs",
-        "Cost": "850",
-        "StreetIndex": "2",
-        "Accessories": "Fold. Stock(1RC)",
-        "BookPage": "sr3.278"
-    },
-    {
-        "Name": "FAM 95 (MaPist)",
-        "Concealability": "2",
-        "Ammunition": "40(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "8M",
-        "Weight": "3",
-        "Availability": "9/7 days",
-        "Cost": "5000",
-        "StreetIndex": "3",
-        "Accessories": "-",
-        "BookPage": "fra.141"
     },
     {
         "Name": "Fich. Exec. Action (MaPist)",
@@ -871,19 +559,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Steyr TMP (MaPist)",
-        "Concealability": "6",
-        "Ammunition": "30(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "6L",
-        "Weight": "2",
-        "Availability": "8/48hrs",
-        "Cost": "900",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "cc.18"
-    },
-    {
         "Name": "Altmayr SP (HPist)",
         "Concealability": "4",
         "Ammunition": "7(m)",
@@ -936,45 +611,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Ares Predator (HPist)",
-        "Concealability": "5",
-        "Ammunition": "15(c)",
-        "Mode": "SA",
-        "Damage": "9M",
-        "Weight": "2.25",
-        "Availability": "3/24hrs",
-        "Cost": "450",
-        "StreetIndex": ".5",
-        "Accessories": "None",
-        "BookPage": "sr3.278"
-    },
-    {
-        "Name": "Ares Predator II (HPist)",
-        "Concealability": "4",
-        "Ammunition": "15(c)",
-        "Mode": "SA",
-        "Damage": "9M",
-        "Weight": "2.5",
-        "Availability": "4/24hrs",
-        "Cost": "550",
-        "StreetIndex": ".5",
-        "Accessories": "Smartlink",
-        "BookPage": "cc.19"
-    },
-    {
-        "Name": "Ares Predator III (HPist)",
-        "Concealability": "4",
-        "Ammunition": "15(c)",
-        "Mode": "SA",
-        "Damage": "9M",
-        "Weight": "2.25",
-        "Availability": "5/24hrs",
-        "Cost": "650",
-        "StreetIndex": "1",
-        "Accessories": "Smartlink-2",
-        "BookPage": "cc.19"
-    },
-    {
         "Name": "Ares Stingray (HPist)",
         "Concealability": "4",
         "Ammunition": "6(cy)",
@@ -999,19 +635,6 @@
         "StreetIndex": "3",
         "Accessories": "Smartlink, RC:(1)",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Ares Viper Slivergun (HPist)",
-        "Concealability": "6",
-        "Ammunition": "30(c)",
-        "Mode": "SA/BF",
-        "Damage": "9S(f)",
-        "Weight": "2",
-        "Availability": "3/48hrs",
-        "Cost": "600",
-        "StreetIndex": "1",
-        "Accessories": "Silencer, Fires Flechettes Only",
-        "BookPage": "sr3.278"
     },
     {
         "Name": "Armalite 44 (HPist)",
@@ -1144,32 +767,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Browning Max-Power (HPist)",
-        "Concealability": "6",
-        "Ammunition": "10(c)",
-        "Mode": "SA",
-        "Damage": "9M",
-        "Weight": "2",
-        "Availability": "3/24hrs",
-        "Cost": "450",
-        "StreetIndex": "1",
-        "Accessories": "None",
-        "BookPage": "sr3.278"
-    },
-    {
-        "Name": "Browning Ultra-Power (HPist)",
-        "Concealability": "6",
-        "Ammunition": "10(c)",
-        "Mode": "SA",
-        "Damage": "9M",
-        "Weight": "2.25",
-        "Availability": "4/24hrs",
-        "Cost": "525",
-        "StreetIndex": "1.5",
-        "Accessories": "Laser Sight",
-        "BookPage": "cc.19"
-    },
-    {
         "Name": "BudgetArms Auto (HPist) 3",
         "Concealability": "5",
         "Ammunition": "8(c)",
@@ -1181,19 +778,6 @@
         "StreetIndex": ".7",
         "Accessories": "None",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Cavalier Deputy (HPist)",
-        "Concealability": "4",
-        "Ammunition": "7(cy)",
-        "Mode": "SA",
-        "Damage": "9M",
-        "Weight": "2.25",
-        "Availability": "3/24hrs",
-        "Cost": "300",
-        "StreetIndex": ".5",
-        "Accessories": "None",
-        "BookPage": "cc.19"
     },
     {
         "Name": "Colt 1911 (HPist)",
@@ -1233,19 +817,6 @@
         "StreetIndex": "1",
         "Accessories": "None",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Colt Manhunter (HPist)",
-        "Concealability": "5",
-        "Ammunition": "16(c)",
-        "Mode": "SA",
-        "Damage": "9M",
-        "Weight": "2.5",
-        "Availability": "4/24hrs",
-        "Cost": "425",
-        "StreetIndex": "1",
-        "Accessories": "Laser Sight",
-        "BookPage": "cc.19"
     },
     {
         "Name": "Colt Manhunter S (HPist)",
@@ -1326,19 +897,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Eichiro Hatamoto II (HPist)",
-        "Concealability": "6",
-        "Ammunition": "1(m)",
-        "Mode": "SS",
-        "Damage": "8S",
-        "Weight": "2.5",
-        "Availability": "12/7days",
-        "Cost": "1200",
-        "StreetIndex": "2",
-        "Accessories": "Fires as Shotgun",
-        "BookPage": "cc.19"
-    },
-    {
         "Name": "Federated Arms 454 DA (HPist)",
         "Concealability": "3",
         "Ammunition": "5(cy)",
@@ -1389,19 +947,6 @@
         "StreetIndex": "2",
         "Accessories": "Smartlink, RC:(1)",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "FN 5-7C (HPist)",
-        "Concealability": "5",
-        "Ammunition": "20(c)",
-        "Mode": "SA/BF",
-        "Damage": "6L",
-        "Weight": "2.5",
-        "Availability": "9/48hrs",
-        "Cost": "700",
-        "StreetIndex": "2",
-        "Accessories": "RC(1)",
-        "BookPage": "cc.19"
     },
     {
         "Name": "FN 5-7 [TSS version] (HPist)",
@@ -1651,32 +1196,6 @@
         "BookPage": "cb1.7"
     },
     {
-        "Name": "Morrissey Alta (HPist)",
-        "Concealability": "6",
-        "Ammunition": "12(c)",
-        "Mode": "SA",
-        "Damage": "9M",
-        "Weight": "1",
-        "Availability": "8/48hrs",
-        "Cost": "1200",
-        "StreetIndex": "2",
-        "Accessories": "Laser Sight",
-        "BookPage": "cc.19"
-    },
-    {
-        "Name": "Morrissey Elite (LPist)",
-        "Concealability": "7",
-        "Ammunition": "5(c)",
-        "Mode": "SA",
-        "Damage": "9M",
-        "Weight": "1",
-        "Availability": "6/48hrs",
-        "Cost": "550",
-        "StreetIndex": ".5",
-        "Accessories": "Laser Sight, HPist uses LPist Ranges",
-        "BookPage": "cc.19"
-    },
-    {
         "Name": "Nova .338 City Gun (HPist)",
         "Concealability": "5",
         "Ammunition": "7(c)",
@@ -1716,32 +1235,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Rmngton Roomsweeper ShG(HPist)",
-        "Concealability": "6",
-        "Ammunition": "8(m)",
-        "Mode": "SA",
-        "Damage": "9S(f)",
-        "Weight": "2.5",
-        "Availability": "3/24hrs",
-        "Cost": "300",
-        "StreetIndex": "1",
-        "Accessories": "None",
-        "BookPage": "sr3.278"
-    },
-    {
-        "Name": "Ruger Super Warhawk (HPist)",
-        "Concealability": "4",
-        "Ammunition": "6(cy)",
-        "Mode": "SS",
-        "Damage": "10M",
-        "Weight": "2.5",
-        "Availability": "3/24hrs",
-        "Cost": "300",
-        "StreetIndex": "1",
-        "Accessories": "None",
-        "BookPage": "sr3.278"
-    },
-    {
         "name": "Ruger Thunderbolt",
         "Concealability": "4",
         "Ammunition": "12(c)",
@@ -1753,8 +1246,8 @@
         "Street Index": "3",
         "Accessories": "None",
         "BookPage": "sr2.???"
-      },
-      {
+    },
+    {
         "name": "Ruger Thunderbolt - Laser Sight",
         "Concealability": "4",
         "Ammunition": "12(c)",
@@ -1766,8 +1259,8 @@
         "Street Index": "3",
         "Accessories": "Laser Sight",
         "BookPage": "sr2.???"
-      },
-      {
+    },
+    {
         "name": "Ruger Thunderbolt - Smartlinked",
         "Concealability": "4",
         "Ammunition": "12(c)",
@@ -1779,7 +1272,7 @@
         "Street Index": "3",
         "Accessories": "Smatlink",
         "BookPage": "sr2.???"
-      },
+    },
     {
         "Name": "Riot Gun (HPist)",
         "Concealability": "8",
@@ -1820,32 +1313,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Ruger Thunderbolt/Laser(HPist)",
-        "Concealability": "4",
-        "Ammunition": "12(c)",
-        "Mode": "BF",
-        "Damage": "12S",
-        "Weight": "2.75",
-        "Availability": "14/12days",
-        "Cost": "1250",
-        "StreetIndex": "6",
-        "Accessories": "Laser, special recoil, damage code is for Burst",
-        "BookPage": "cc.19"
-    },
-    {
-        "Name": "Ruger Thunderbolt/Smart(HPist)",
-        "Concealability": "4",
-        "Ammunition": "12(c)",
-        "Mode": "BF",
-        "Damage": "12S",
-        "Weight": "2.75",
-        "Availability": "14/12days",
-        "Cost": "1400",
-        "StreetIndex": "6",
-        "Accessories": "Smartlink, special recoil, damage code is for Burst",
-        "BookPage": "cc.19"
-    },
-    {
         "Name": "Ruger Warhawk (HPist)",
         "Concealability": "5",
         "Ammunition": "6(cy)",
@@ -1870,32 +1337,6 @@
         "StreetIndex": "1.5",
         "Accessories": "Laser Sight",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Savalette Guardian (HPist)",
-        "Concealability": "5",
-        "Ammunition": "12(c)",
-        "Mode": "SA/BF",
-        "Damage": "9M",
-        "Weight": "3.25",
-        "Availability": "6/36hrs",
-        "Cost": "900",
-        "StreetIndex": "2.5",
-        "Accessories": "RC(1), Smartlink, BF = Complex Action",
-        "BookPage": "cc.19"
-    },
-    {
-        "Name": "Savalette Guardian SL2 (HPist)",
-        "Concealability": "5",
-        "Ammunition": "12(c)",
-        "Mode": "SA/BF",
-        "Damage": "9M",
-        "Weight": "3.25",
-        "Availability": "6/36hrs",
-        "Cost": "2250",
-        "StreetIndex": "2.5",
-        "Accessories": "RC(1), Smartlink-2, BF = Complex Action",
-        "BookPage": "cc.19"
     },
     {
         "Name": "Sig Sauer P300 (HPist)",
@@ -1987,19 +1428,6 @@
         "StreetIndex": "1.5",
         "Accessories": "None",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "WW Infiltrator (HPist)",
-        "Concealability": "5",
-        "Ammunition": "15(c)",
-        "Mode": "SA",
-        "Damage": "9M",
-        "Weight": "2",
-        "Availability": "9/1wk",
-        "Cost": "1200",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "cc.19"
     },
     {
         "Name": "Zastava Mag. Mod.2054 (HPist)",
@@ -8385,19 +7813,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Defiance Super Shock (Tasr)",
-        "Concealability": "4",
-        "Ammunition": "4(m)",
-        "Mode": "SA",
-        "Damage": "10S Stun",
-        "Weight": "2",
-        "Availability": "5/24hrs",
-        "Cost": "1000",
-        "StreetIndex": "1",
-        "Accessories": "Low-light Scope",
-        "BookPage": "sr3.278"
-    },
-    {
         "Name": "Dynatech Industries HT (Tasr)",
         "Concealability": "7",
         "Ammunition": "1",
@@ -8435,19 +7850,6 @@
         "StreetIndex": "cb1.2",
         "Accessories": "",
         "BookPage": ""
-    },
-    {
-        "Name": "Jupiter Taser Club (Tasr)",
-        "Concealability": "4",
-        "Ammunition": "-/1",
-        "Mode": "-/SS",
-        "Damage": "10S stun/8S stun",
-        "Weight": "3",
-        "Availability": "12/14days",
-        "Cost": "1800",
-        "StreetIndex": "3",
-        "Accessories": "None",
-        "BookPage": "sta2.98"
     },
     {
         "Name": "Militech Electronics (Tasr)",
@@ -8541,19 +7943,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Yamaha Pulsar (Tasr)",
-        "Concealability": "5",
-        "Ammunition": "4(m)",
-        "Mode": "SA",
-        "Damage": "8D Stun",
-        "Weight": "2",
-        "Availability": "12/7days",
-        "Cost": "1350",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "cc.19"
-    },
-    {
         "Name": "9mm Flechette SMG (SMG)",
         "Concealability": "6",
         "Ammunition": "30(c)",
@@ -8565,19 +7954,6 @@
         "StreetIndex": "2",
         "Accessories": "6 round burst; uses flachette rules",
         "BookPage": "tss.7"
-    },
-    {
-        "Name": "AK-97 SMG/Carbine (SMG)",
-        "Concealability": "4",
-        "Ammunition": "30(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "6M",
-        "Weight": "4",
-        "Availability": "5/3days",
-        "Cost": "800",
-        "StreetIndex": "1",
-        "Accessories": "Fold. Stock(1RC)",
-        "BookPage": "sr3.278"
     },
     {
         "Name": "Arasaka Minami 10 (SMG)",
@@ -8645,19 +8021,6 @@
         "BookPage": "tss.3"
     },
     {
-        "Name": "Baretta Model 70 (SMG)",
-        "Concealability": "3",
-        "Ammunition": "35(c)",
-        "Mode": "BF/FA",
-        "Damage": "6M",
-        "Weight": "3.75",
-        "Availability": "5/72hrs",
-        "Cost": "900",
-        "StreetIndex": "1",
-        "Accessories": "Laser sight, Sound Suppressor",
-        "BookPage": "cc.21"
-    },
-    {
         "Name": "Beretta M-24 Advanced (SMG)",
         "Concealability": "4",
         "Ammunition": "50(c)",
@@ -8708,58 +8071,6 @@
         "StreetIndex": "3",
         "Accessories": "Smartlink",
         "BookPage": "cp.24"
-    },
-    {
-        "Name": "Colt Cobra TZ-110 (SMG)",
-        "Concealability": "4",
-        "Ammunition": "32(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "6M",
-        "Weight": "3",
-        "Availability": "6/36hrs",
-        "Cost": "800",
-        "StreetIndex": "2",
-        "Accessories": "Gas Vent II(2RC), Fold Stock(1RC)",
-        "BookPage": "cc.21"
-    },
-    {
-        "Name": "Colt Cobra TZ-115 (SMG)",
-        "Concealability": "4",
-        "Ammunition": "32(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "6M",
-        "Weight": "3",
-        "Availability": "6/36hrs",
-        "Cost": "750",
-        "StreetIndex": "2",
-        "Accessories": "Laser Sight",
-        "BookPage": "cc.21"
-    },
-    {
-        "Name": "Colt Cobra TZ-118 (SMG)",
-        "Concealability": "5",
-        "Ammunition": "32(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "6M",
-        "Weight": "3",
-        "Availability": "6/36hrs",
-        "Cost": "850",
-        "StreetIndex": "2",
-        "Accessories": "Smartlink",
-        "BookPage": "cc.21"
-    },
-    {
-        "Name": "Colt M24A3 Water Carbine (SMG)",
-        "Concealability": "5",
-        "Ammunition": "30(c)",
-        "Mode": "SA/BF",
-        "Damage": "6M",
-        "Weight": "3.5",
-        "Availability": "5/48hrs",
-        "Cost": "1000",
-        "StreetIndex": "2.5",
-        "Accessories": "None",
-        "BookPage": "cc.21"
     },
     {
         "Name": "DB45-A Double Barrel (SMG)",
@@ -8918,45 +8229,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Heckler & Koch HK227 (SMG)",
-        "Concealability": "4",
-        "Ammunition": "28(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "7M",
-        "Weight": "4",
-        "Availability": "4/24hrs",
-        "Cost": "1500",
-        "StreetIndex": ".75",
-        "Accessories": "Laser Sight, Gas Vent II(2RC), Retr. Stock(1RC)",
-        "BookPage": "sr3.278"
-    },
-    {
-        "Name": "Heckler & Koch HK227-S (SMG)",
-        "Concealability": "5",
-        "Ammunition": "28(c)",
-        "Mode": "SA/BF",
-        "Damage": "7M",
-        "Weight": "3",
-        "Availability": "10/7days",
-        "Cost": "1200",
-        "StreetIndex": "2",
-        "Accessories": "Laser Sight, Suppressor, Retr. Stock(1RC)",
-        "BookPage": "sr3.278"
-    },
-    {
-        "Name": "Heckler & Koch MP-5 TX (SMG)",
-        "Concealability": "5",
-        "Ammunition": "20(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "6M",
-        "Weight": "3.25",
-        "Availability": "5/36hrs",
-        "Cost": "850",
-        "StreetIndex": "1",
-        "Accessories": "Gas Vent II(2RC), Laser Sight",
-        "BookPage": "cc.21"
-    },
-    {
         "Name": "Ingram MAC-14 (SMG)",
         "Concealability": "6",
         "Ammunition": "20(c)",
@@ -8981,58 +8253,6 @@
         "StreetIndex": "1.5",
         "Accessories": "Sound Suppressor",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Ingram Smartgun Mod. 20t (SMG)",
-        "Concealability": "5",
-        "Ammunition": "32(c)",
-        "Mode": "BF/FA",
-        "Damage": "7M",
-        "Weight": "3",
-        "Availability": "4/24hrs",
-        "Cost": "950",
-        "StreetIndex": "1",
-        "Accessories": "Smartlink, Fold. Stock(1RC), Gas Vent II(2RC)",
-        "BookPage": "sr3.278"
-    },
-    {
-        "Name": "Ingram SuperMach 100 Std (SMG)",
-        "Concealability": "5",
-        "Ammunition": "40(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "6L",
-        "Weight": "3",
-        "Availability": "9/48hrs",
-        "Cost": "850",
-        "StreetIndex": "3",
-        "Accessories": "RC(3)",
-        "BookPage": "cc.21"
-    },
-    {
-        "Name": "Ingram SuperMach 100 Ext (SMG)",
-        "Concealability": "4",
-        "Ammunition": "60(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "6L",
-        "Weight": "3.25",
-        "Availability": "9/48hrs",
-        "Cost": "875",
-        "StreetIndex": "3",
-        "Accessories": "RC(3)",
-        "BookPage": "cc.21"
-    },
-    {
-        "Name": "Ingram Warrior-10 (SMG)",
-        "Concealability": "4",
-        "Ammunition": "30(c)",
-        "Mode": "SA/BF",
-        "Damage": "7M",
-        "Weight": "3",
-        "Availability": "3/24hrs",
-        "Cost": "650",
-        "StreetIndex": ".9",
-        "Accessories": "None",
-        "BookPage": "cc.21"
     },
     {
         "Name": "Mal. Arms SubFlechette (SMG)",
@@ -9100,32 +8320,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Sandler TMP (SMG)",
-        "Concealability": "4",
-        "Ammunition": "20(c)",
-        "Mode": "BF/FA",
-        "Damage": "6M",
-        "Weight": "3.25",
-        "Availability": "5/36hrs",
-        "Cost": "500",
-        "StreetIndex": "1",
-        "Accessories": "Laser sight, Fold Stock(1RC)",
-        "BookPage": "cc.21"
-    },
-    {
-        "Name": "SCK Model 100 (SMG)",
-        "Concealability": "4",
-        "Ammunition": "30(c)",
-        "Mode": "SA/BF",
-        "Damage": "7M",
-        "Weight": "4.5",
-        "Availability": "5/36hrs",
-        "Cost": "1000",
-        "StreetIndex": "1",
-        "Accessories": "Smartlink",
-        "BookPage": "cc.21"
-    },
-    {
         "Name": "Set.-Arasaka \"PMS\" Adv. (SMG)",
         "Concealability": "4",
         "Ammunition": "40(c)",
@@ -9189,19 +8383,6 @@
         "StreetIndex": "1",
         "Accessories": "Gas Vent (2), Smartlink",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Uzi III (SMG)",
-        "Concealability": "5",
-        "Ammunition": "24(c)",
-        "Mode": "BF",
-        "Damage": "6M",
-        "Weight": "2",
-        "Availability": "4/24hrs",
-        "Cost": "600",
-        "StreetIndex": ".75",
-        "Accessories": "Laser Sight, Fold Stock(1RC)",
-        "BookPage": "sr3.278"
     },
     {
         "Name": "UziS (SMG) 3",
@@ -9893,32 +9074,6 @@
         "BookPage": "ray.000"
     },
     {
-        "Name": "Ares Alpha (AsRf)",
-        "Concealability": "2",
-        "Ammunition": "42(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "8M",
-        "Weight": "5.25",
-        "Availability": "8/48hrs",
-        "Cost": "2000",
-        "StreetIndex": "4",
-        "Accessories": "Grenade Launcher 8(m), RC(2), Smartlink-2",
-        "BookPage": "cc.22"
-    },
-    {
-        "Name": "Ares HVAR (AsRf)",
-        "Concealability": "2",
-        "Ammunition": "50(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "6M",
-        "Weight": "5",
-        "Availability": "14/7days",
-        "Cost": "3200",
-        "StreetIndex": "4",
-        "Accessories": "RC(3), Smartlink-2, 6 rnd BF = 12D, See Rules",
-        "BookPage": "cc.22"
-    },
-    {
         "Name": "AK-47 (AsRf)",
         "Concealability": "4",
         "Ammunition": "30(c)",
@@ -9930,32 +9085,6 @@
         "StreetIndex": "2",
         "Accessories": "None",
         "BookPage": "tss.3"
-    },
-    {
-        "Name": "AK-97 (AsRf)",
-        "Concealability": "3",
-        "Ammunition": "38(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "8M",
-        "Weight": "4.5",
-        "Availability": "3/36hrs",
-        "Cost": "700",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "sr3.278"
-    },
-    {
-        "Name": "AK-98 (AsRf)",
-        "Concealability": "2",
-        "Ammunition": "38(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "8M",
-        "Weight": "6",
-        "Availability": "8/4days",
-        "Cost": "2500",
-        "StreetIndex": "4",
-        "Accessories": "Grenade Launcher (6-shot)",
-        "BookPage": "sr3.278"
     },
     {
         "Name": "AKR-20 (AsRf)",
@@ -9982,32 +9111,6 @@
         "StreetIndex": "3.2",
         "Accessories": "Mag:(2)",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Colt M22A2 (AsRf)",
-        "Concealability": "3",
-        "Ammunition": "40(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "8M",
-        "Weight": "4.75",
-        "Availability": "4/3days",
-        "Cost": "1600",
-        "StreetIndex": "2",
-        "Accessories": "Gas Vent I(1RC), Mag:(2), Grenade Launcher 6(m)",
-        "BookPage": "cc.22"
-    },
-    {
-        "Name": "Colt M-23 (AsRf)",
-        "Concealability": "3",
-        "Ammunition": "40(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "8M",
-        "Weight": "4.5",
-        "Availability": "6/36hrs",
-        "Cost": "950",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "cc.22"
     },
     {
         "Name": "Darra-Polytechnic M-9 (AsRf)",
@@ -10075,19 +9178,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "FN HAR (AsRf)",
-        "Concealability": "2",
-        "Ammunition": "35(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "8M",
-        "Weight": "4.5",
-        "Availability": "4/48hrs",
-        "Cost": "1200",
-        "StreetIndex": "2",
-        "Accessories": "Laser Sight, Gas Vent II(2RC), Fold Stock(1RC)",
-        "BookPage": "sr3.278"
-    },
-    {
         "Name": "FN RAL (AsRf)",
         "Concealability": "3",
         "Ammunition": "30(c)",
@@ -10112,19 +9202,6 @@
         "StreetIndex": "4",
         "Accessories": "None",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Heckler & Koch G12A3z (AsRf)",
-        "Concealability": "2",
-        "Ammunition": "32(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "8M",
-        "Weight": "5.25",
-        "Availability": "8/4days",
-        "Cost": "2200",
-        "StreetIndex": "3",
-        "Accessories": "Laser sight, Gas Vent II(2RC), Tele. Stock, Can have UB GrLn.(-1 Conc)",
-        "BookPage": "cc.22"
     },
     {
         "Name": "H&K G36A3C Compact (Carb)",
@@ -10333,19 +9410,6 @@
         "StreetIndex": "1",
         "Accessories": "Caseless, Gas Vent (2), RC:is halved",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Semopal vz/88V (AsRf)",
-        "Concealability": "2",
-        "Ammunition": "35(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "8M",
-        "Weight": "5.5",
-        "Availability": "5/36hrs",
-        "Cost": "1800",
-        "StreetIndex": "2",
-        "Accessories": "Laser sight, Gas Vent II(2RC), Fold Stock, Mag:(2)",
-        "BookPage": "cc.22"
     },
     {
         "Name": "S&W MdF \"Cyborg Assault\"(AsRf)",
@@ -11544,19 +10608,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Ares Thunderer (ShtG)",
-        "Concealability": "0",
-        "Ammunition": "10(c)/10(c)",
-        "Mode": "SA/BF",
-        "Damage": "10S",
-        "Weight": "6.1",
-        "Availability": "8/1month",
-        "Cost": "2925",
-        "StreetIndex": "3",
-        "Accessories": "Troll Designed, Heavy Barrel(1RC), Shock Pads(1RC), Foregrip(1RC)",
-        "BookPage": "cc.78"
-    },
-    {
         "Name": "Ares Wippet (ShtG)",
         "Concealability": "4",
         "Ammunition": "6(m)",
@@ -11581,45 +10632,6 @@
         "StreetIndex": "2",
         "Accessories": "None",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Benelli M1014 (ShtG)",
-        "Concealability": "2",
-        "Ammunition": "6(m)",
-        "Mode": "SA",
-        "Damage": "10S/10D(f)",
-        "Weight": "3.82",
-        "Availability": "6/48hours",
-        "Cost": "980",
-        "StreetIndex": "1",
-        "Accessories": "Low power \"less-than-lethal\" ammo can be manually cycled with the ext. bolt handle. Collapsible stock(1RC)",
-        "BookPage": "cc.0"
-    },
-    {
-        "Name": "Benelli M1 Entry (ShtG)",
-        "Concealability": "3",
-        "Ammunition": "5(m)",
-        "Mode": "SA",
-        "Damage": "9S",
-        "Weight": "3.22",
-        "Availability": "4/6 days",
-        "Cost": "750",
-        "StreetIndex": "1",
-        "Accessories": "Pistol Grip stock, -1 Recoil, Uses Lpist ranges",
-        "BookPage": "cc.0"
-    },
-    {
-        "Name": "Benelli M1 Tactical (ShtG)",
-        "Concealability": "2",
-        "Ammunition": "5(m)",
-        "Mode": "SA",
-        "Damage": "10S/10D(f)",
-        "Weight": "3.52",
-        "Availability": "4/24 hours",
-        "Cost": "800",
-        "StreetIndex": "1",
-        "Accessories": "Pistol Grip stock, -1 Recoil",
-        "BookPage": "cc.0"
     },
     {
         "Name": "Chandler Capture 100 (ShtG)",
@@ -11661,19 +10673,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Defiance T-250 (ShtG)",
-        "Concealability": "4",
-        "Ammunition": "5(m)",
-        "Mode": "SA",
-        "Damage": "10S",
-        "Weight": "3",
-        "Availability": "3/24hrs",
-        "Cost": "500",
-        "StreetIndex": "1",
-        "Accessories": "None",
-        "BookPage": "sr3.278"
-    },
-    {
         "Name": "Eichiro Hatamoto II (ShtG)",
         "Concealability": "6",
         "Ammunition": "1",
@@ -11687,19 +10686,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Enfield AS7 (ShtG)",
-        "Concealability": "3",
-        "Ammunition": "10(c)",
-        "Mode": "SA/BF",
-        "Damage": "8S",
-        "Weight": "4",
-        "Availability": "8/8days",
-        "Cost": "1000",
-        "StreetIndex": "1",
-        "Accessories": "Laser Sight",
-        "BookPage": "sr3.278"
-    },
-    {
         "Name": "Franchi SPAS-15 12G (ShtG)",
         "Concealability": "2",
         "Ammunition": "6(c)",
@@ -11711,19 +10697,6 @@
         "StreetIndex": "2",
         "Accessories": "folding stock (+1 conceal when folded), simple to change SS to SA",
         "BookPage": "ray.000"
-    },
-    {
-        "Name": "Franchi SPAS-22 (ShtG)",
-        "Concealability": "2(4)",
-        "Ammunition": "10(m)",
-        "Mode": "SA/BF",
-        "Damage": "10S",
-        "Weight": "4",
-        "Availability": "8/8days",
-        "Cost": "1000",
-        "StreetIndex": "2",
-        "Accessories": "Smartlink-2, Fold Stock(1RC,-2Conc)",
-        "BookPage": "cc.23"
     },
     {
         "Name": "Holland&Holland .600 NE (ShtG)",
@@ -11830,58 +10803,6 @@
         "BookPage": "cb1.33"
     },
     {
-        "Name": "Mossberg CMDT (ShtG)",
-        "Concealability": "2",
-        "Ammunition": "8(c)",
-        "Mode": "SA/BF",
-        "Damage": "9S",
-        "Weight": "4.25",
-        "Availability": "8/8days",
-        "Cost": "1000",
-        "StreetIndex": "1",
-        "Accessories": "Laser sight",
-        "BookPage": "cc.23"
-    },
-    {
-        "Name": "Mossberg CMDT (ShtG)",
-        "Concealability": "4",
-        "Ammunition": "8(c)",
-        "Mode": "SA/BF",
-        "Damage": "8S",
-        "Weight": "4.25",
-        "Availability": "8/8days",
-        "Cost": "1000",
-        "StreetIndex": "1",
-        "Accessories": "Laser sight, Heavy pistol ranges",
-        "BookPage": "cc.23"
-    },
-    {
-        "Name": "Mossberg SM-CMDT (ShtG)",
-        "Concealability": "2",
-        "Ammunition": "8(c)",
-        "Mode": "SA/BF",
-        "Damage": "9S",
-        "Weight": "4.5",
-        "Availability": "12/8days",
-        "Cost": "1500",
-        "StreetIndex": "2",
-        "Accessories": "Smartlink",
-        "BookPage": "cc.23"
-    },
-    {
-        "Name": "Mossberg SM-CMDT (ShtG)",
-        "Concealability": "4",
-        "Ammunition": "8(c)",
-        "Mode": "SA/BF",
-        "Damage": "8S",
-        "Weight": "4.5",
-        "Availability": "12/8days",
-        "Cost": "1500",
-        "StreetIndex": "2",
-        "Accessories": "Smartlink, Heavy pistol ranges",
-        "BookPage": "cc.23"
-    },
-    {
         "Name": "Neostead Home Defense (ShtG)",
         "Concealability": "8",
         "Ammunition": "6(c)",
@@ -11945,32 +10866,6 @@
         "StreetIndex": "2",
         "Accessories": "Gas Vent (2), Laser Sight",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Remington 990 (ShtG)",
-        "Concealability": "2",
-        "Ammunition": "8(m)",
-        "Mode": "SA",
-        "Damage": "8S/10D(f)",
-        "Weight": "4",
-        "Availability": "3/48hrs",
-        "Cost": "650",
-        "StreetIndex": "2",
-        "Accessories": "Slug(8S),Shot(10D(f))",
-        "BookPage": "cc.23"
-    },
-    {
-        "Name": "Remington 990 Sawed-Off (ShtG)",
-        "Concealability": "4",
-        "Ammunition": "8(m)",
-        "Mode": "SA",
-        "Damage": "6S/8D(f)",
-        "Weight": "3",
-        "Availability": "3/48hrs",
-        "Cost": "650",
-        "StreetIndex": "2",
-        "Accessories": "Slug(6S),Shot(8D(f)",
-        "BookPage": "cc.23"
     },
     {
         "Name": "Remington 1628 (ShtG)",
@@ -12062,19 +10957,6 @@
         "StreetIndex": "1",
         "Accessories": "None",
         "BookPage": "bjf.00"
-    },
-    {
-        "Name": "Street Sweeper ShtG (Tasr)",
-        "Concealability": "-",
-        "Ammunition": "1(b)",
-        "Mode": "SS",
-        "Damage": "10S(f)",
-        "Weight": "3",
-        "Availability": "5/24hrs",
-        "Cost": "200",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "cc.23"
     },
     {
         "Name": "VC Boxlock Hammerless (ShtG)",
@@ -12558,19 +11440,6 @@
         "BookPage": "fof.49"
     },
     {
-        "Name": "Barret Model 121 (Snip)",
-        "Concealability": "-",
-        "Ammunition": "14(c)",
-        "Mode": "SA",
-        "Damage": "14D",
-        "Weight": "10",
-        "Availability": "14/30days",
-        "Cost": "4800",
-        "StreetIndex": "5",
-        "Accessories": "Folding Bipod(2RC), Silencer, Smartlink, +2 Recoil/Rnd, Use ONLY 121 Rnds",
-        "BookPage": "cc.21"
-    },
-    {
         "Name": "H&K PSG-65 (Snip)",
         "Concealability": "-",
         "Ammunition": "20(m)",
@@ -12597,19 +11466,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Ranger Arms SM-3 (Snip)",
-        "Concealability": "-",
-        "Ammunition": "6(m)",
-        "Mode": "SA",
-        "Damage": "14S",
-        "Weight": "4",
-        "Availability": "12/7days",
-        "Cost": "4000",
-        "StreetIndex": "4",
-        "Accessories": "Low-Light or Thermo Mag:(3) Scope, Gas Vent II(2RC), Silencer",
-        "BookPage": "sr3.278"
-    },
-    {
         "Name": "SMF K6 (Snip)",
         "Concealability": "-",
         "Ammunition": "30(c)",
@@ -12634,19 +11490,6 @@
         "StreetIndex": "4",
         "Accessories": "Bipod, Mag:(3), RC:(1), Smartlink-2",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Walther MA-2100 (Snip)",
-        "Concealability": "-",
-        "Ammunition": "10(m)",
-        "Mode": "SA",
-        "Damage": "14S",
-        "Weight": "4.5",
-        "Availability": "12/7days",
-        "Cost": "6500",
-        "StreetIndex": "4",
-        "Accessories": "Smartlink",
-        "BookPage": "cc.21"
     },
     {
         "Name": "H&K G3 SG/1 7.62 NATO (Snip)",
@@ -13076,45 +11919,6 @@
         "StreetIndex": "2",
         "Accessories": "None",
         "BookPage": "tss.2"
-    },
-    {
-        "Name": "Remington 750 (SptR)",
-        "Concealability": "3",
-        "Ammunition": "5(m)",
-        "Mode": "SA",
-        "Damage": "7S",
-        "Weight": "3",
-        "Availability": "3/24hrs",
-        "Cost": "600",
-        "StreetIndex": "1",
-        "Accessories": "Mag:(1)",
-        "BookPage": "sr3.278"
-    },
-    {
-        "Name": "Remington 950 (SptR)",
-        "Concealability": "2",
-        "Ammunition": "5(m)",
-        "Mode": "SA",
-        "Damage": "9S",
-        "Weight": "4",
-        "Availability": "3/24hrs",
-        "Cost": "800",
-        "StreetIndex": "1",
-        "Accessories": "Mag:(1)",
-        "BookPage": "sr3.278"
-    },
-    {
-        "Name": "Ruger 100 (SptR)",
-        "Concealability": "2",
-        "Ammunition": "5(m)",
-        "Mode": "SA",
-        "Damage": "7S",
-        "Weight": "3.75",
-        "Availability": "3/24hrs",
-        "Cost": "1300",
-        "StreetIndex": "1",
-        "Accessories": "Mag:(3)",
-        "BookPage": "cc.21"
     },
     {
         "Name": "SIG 883 SP (SptR)",
@@ -14716,32 +13520,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Ares HV MP-LMG (LMG)",
-        "Concealability": "-",
-        "Ammunition": "80(c)/Belt",
-        "Mode": "SA/BF/FA",
-        "Damage": "6S",
-        "Weight": "8",
-        "Availability": "20/14days",
-        "Cost": "4500",
-        "StreetIndex": "4",
-        "Accessories": "RC(3), Smartlink-2, Fires LPist rnds, BF 6 rnds = 12D",
-        "BookPage": "cc.26"
-    },
-    {
-        "Name": "Ares MP-LMG (LMG)",
-        "Concealability": "-",
-        "Ammunition": "50(c)/Belt",
-        "Mode": "BF/FA",
-        "Damage": "7S",
-        "Weight": "7.5",
-        "Availability": "6/5days",
-        "Cost": "2200",
-        "StreetIndex": "2",
-        "Accessories": "Gas Vent II(2RC), Hip Pad Brace(1RC), Laser Sight",
-        "BookPage": "cc.26"
-    },
-    {
         "Name": "GE Vindicator Minigun (LMG)",
         "Concealability": "-",
         "Ammunition": "belt/50(c)",
@@ -14779,19 +13557,6 @@
         "StreetIndex": "4",
         "Accessories": "Laser Sight, Mag:(3), Shock Pads, Thermographic",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Ingram Valiant (LMG)",
-        "Concealability": "-",
-        "Ammunition": "belt/50(c)",
-        "Mode": "BF/FA",
-        "Damage": "7S",
-        "Weight": "9",
-        "Availability": "6/5days",
-        "Cost": "1500",
-        "StreetIndex": "2",
-        "Accessories": "Hip Brace(1RC), Gas Vent II(2RC)",
-        "BookPage": "sr3.279"
     },
     {
         "Name": "IWS Mini-5 (LMG)",
@@ -14937,32 +13702,6 @@
         "BookPage": "ray.000"
     },
     {
-        "Name": "FN MAG-5 MMG (MMG)",
-        "Concealability": "-",
-        "Ammunition": "50(box)/Belt",
-        "Mode": "FA",
-        "Damage": "9S",
-        "Weight": "9.5",
-        "Availability": "18/14days",
-        "Cost": "3200",
-        "StreetIndex": "3",
-        "Accessories": "Laser sight, Gas Vent II(2RC) Folding Tripod(6RC)",
-        "BookPage": "cc.26"
-    },
-    {
-        "Name": "Ultimax MMG (MMG)",
-        "Concealability": "-",
-        "Ammunition": "40(c)/Belt",
-        "Mode": "FA",
-        "Damage": "9S",
-        "Weight": "12",
-        "Availability": "14/14days",
-        "Cost": "2500",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "sr3.279"
-    },
-    {
         "Name": "Fab-Nat MAG (M240B) (MMG)",
         "Concealability": "-",
         "Ammunition": "Belt",
@@ -15067,32 +13806,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "RPK HMG (HMG)",
-        "Concealability": "-",
-        "Ammunition": "40(c)/Belt",
-        "Mode": "FA",
-        "Damage": "10S",
-        "Weight": "15",
-        "Availability": "18/18days",
-        "Cost": "4000",
-        "StreetIndex": "2",
-        "Accessories": "fold-out tripod(6RC)",
-        "BookPage": "sr3.279"
-    },
-    {
-        "Name": "Stoner-Ares M107 HMG (HMG)",
-        "Concealability": "-",
-        "Ammunition": "40(c)/Belt",
-        "Mode": "FA",
-        "Damage": "10S",
-        "Weight": "12.5",
-        "Availability": "18/14days",
-        "Cost": "5200",
-        "StreetIndex": "3",
-        "Accessories": "Laser sight,Gas Vent III(3RC) Tripod(6RC)",
-        "BookPage": "cc.26"
-    },
-    {
         "Name": "Ruhrmetall SF20 (HMG)",
         "Concealability": "-",
         "Ammunition": "belt/80(c)",
@@ -15104,45 +13817,6 @@
         "StreetIndex": "2",
         "Accessories": "Gas Vent (3), Shock Pads",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Panther Assault Cannon (ACan)",
-        "Concealability": "-",
-        "Ammunition": "22(c)/Belt",
-        "Mode": "SS",
-        "Damage": "18D",
-        "Weight": "18",
-        "Availability": "16/14days",
-        "Cost": "7200",
-        "StreetIndex": "2",
-        "Accessories": "Either: Folding Bipod(2RC) or Shoulder Strap & Hip Brace(1RC)",
-        "BookPage": "cc.26"
-    },
-    {
-        "Name": "Vindicator Minigun (MinG)",
-        "Concealability": "-",
-        "Ammunition": "50(c)/Belt",
-        "Mode": "FA",
-        "Damage": "7S",
-        "Weight": "15",
-        "Availability": "24/14days",
-        "Cost": "2500",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "cc.26"
-    },
-    {
-        "Name": "Vigorous Assault Cannon (ACan)",
-        "Concealability": "-",
-        "Ammunition": "20(c)/Belt",
-        "Mode": "SS",
-        "Damage": "18D",
-        "Weight": "20",
-        "Availability": "16/14days",
-        "Cost": "6500",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "sr3.279"
     },
     {
         "Name": "2-Barrel HMG Chaingun",
@@ -15353,19 +14027,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Ares Antioch (GrLn)",
-        "Concealability": "6(-3)",
-        "Ammunition": "6(m)",
-        "Mode": "SS",
-        "Damage": "(Grenade)",
-        "Weight": "+2",
-        "Availability": "8/4days",
-        "Cost": "1700",
-        "StreetIndex": "3",
-        "Accessories": "Standalone or Acc for Gun",
-        "BookPage": "sr3.279"
-    },
-    {
         "Name": "Ares Suppressor (Stan.) (GrLn)",
         "Concealability": "-",
         "Ammunition": "12(c)",
@@ -15416,32 +14077,6 @@
         "StreetIndex": "3",
         "Accessories": "Rangefinder, Smartlink",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "ArmTech MGL-6 (GrLn)",
-        "Concealability": "6",
-        "Ammunition": "6(c)",
-        "Mode": "SA",
-        "Damage": "(Grenade)",
-        "Weight": "2.5",
-        "Availability": "6/36hrs",
-        "Cost": "1600",
-        "StreetIndex": "3",
-        "Accessories": "None",
-        "BookPage": "cc.26"
-    },
-    {
-        "Name": "ArmTech MGL-12 (GrLn)",
-        "Concealability": "3",
-        "Ammunition": "12(c)",
-        "Mode": "SA",
-        "Damage": "(Grenade)",
-        "Weight": "5",
-        "Availability": "6/36hrs",
-        "Cost": "2200",
-        "StreetIndex": "3",
-        "Accessories": "None",
-        "BookPage": "cc.26"
     },
     {
         "Name": "Generic Under-Barrel (GrLn)",
@@ -15507,19 +14142,6 @@
         "StreetIndex": "5",
         "Accessories": "None",
         "BookPage": "cb1.31"
-    },
-    {
-        "Name": "M-12 Portable Mortar (MrTr)",
-        "Concealability": "-",
-        "Ammunition": "1",
-        "Mode": "SS",
-        "Damage": "(As Mortar)",
-        "Weight": "30",
-        "Availability": "12/14days",
-        "Cost": "3000",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "cc.26"
     },
     {
         "Name": "Rockwell AGL-113 (GrLn)",
@@ -15626,97 +14248,6 @@
         "BookPage": ""
     },
     {
-        "Name": "Arbelast II MAW (MisLn)",
-        "Concealability": "-",
-        "Ammunition": "1",
-        "Mode": "SS",
-        "Damage": "(As Arbelast II MAW Rocket)",
-        "Weight": "2.75",
-        "Availability": "8/48hrs",
-        "Cost": "1200",
-        "StreetIndex": "2",
-        "Accessories": "Imaging Scope(1)",
-        "BookPage": "cc.28"
-    },
-    {
-        "Name": "Aztechnology Lasher (MisLn)",
-        "Concealability": "4/-",
-        "Ammunition": "1(b)",
-        "Mode": "SS",
-        "Damage": "(As Rocket/Missle)",
-        "Weight": "3",
-        "Availability": "12/2wks",
-        "Cost": "4000",
-        "StreetIndex": "3",
-        "Accessories": "Low-light Mag:(2)",
-        "BookPage": "cc.27"
-    },
-    {
-        "Name": "Ballista Mis. Launcher (BlsTa)",
-        "Concealability": "-",
-        "Ammunition": "4(m)",
-        "Mode": "SS",
-        "Damage": "(As Ballista Missile)",
-        "Weight": "6.5",
-        "Availability": "18/30days",
-        "Cost": "10500",
-        "StreetIndex": "4",
-        "Accessories": "Laser Designator",
-        "BookPage": "cc.28"
-    },
-    {
-        "Name": "Briefcase Rocket (MisLn)",
-        "Concealability": "6",
-        "Ammunition": "1",
-        "Mode": "SS",
-        "Damage": "(As Briefcase Rocket)",
-        "Weight": "2.5",
-        "Availability": "8/96hrs",
-        "Cost": "1400",
-        "StreetIndex": "2",
-        "Accessories": "half ranges, resembles ordinary briefcase",
-        "BookPage": "sta2.35"
-    },
-    {
-        "Name": "Great Dragon ATGM (GATGM)",
-        "Concealability": "-",
-        "Ammunition": "1",
-        "Mode": "SS",
-        "Damage": "(As Great Dragon AGTM Missile)",
-        "Weight": "2.75",
-        "Availability": "8/48hrs",
-        "Cost": "1200",
-        "StreetIndex": "2",
-        "Accessories": "Optical Imaging Scope(2)",
-        "BookPage": "cc.28"
-    },
-    {
-        "Name": "IWS Multi-Launcher (MisLn)",
-        "Concealability": "-",
-        "Ammunition": "4(b)",
-        "Mode": "SS",
-        "Damage": "(Missile)",
-        "Weight": "8",
-        "Availability": "12/14days",
-        "Cost": "8000",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "sr3.279"
-    },
-    {
-        "Name": "M79B1 LAW (MisLn)",
-        "Concealability": "4/-",
-        "Ammunition": "1",
-        "Mode": "SS",
-        "Damage": "(As M79B1 LAW Rocket)",
-        "Weight": "2.5",
-        "Availability": "6/36hrs",
-        "Cost": "700",
-        "StreetIndex": "2",
-        "Accessories": "One use ONLY",
-        "BookPage": "cc.28"
-    },
-    {
         "Name": "Militech RPG-A (MisLn)",
         "Concealability": "-",
         "Ammunition": "1(m)",
@@ -15756,32 +14287,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Spike (MisLn)",
-        "Concealability": "-",
-        "Ammunition": "1(b)",
-        "Mode": "SS",
-        "Damage": "(As Rocket/Missle)",
-        "Weight": "1",
-        "Availability": "10/1wk",
-        "Cost": "800",
-        "StreetIndex": "2",
-        "Accessories": "One use ONLY",
-        "BookPage": "cc.27"
-    },
-    {
-        "Name": "Vogeljager Man Portable (VJMP)",
-        "Concealability": "-",
-        "Ammunition": "1",
-        "Mode": "SS",
-        "Damage": "(As Vogeljager Missle)",
-        "Weight": "8",
-        "Availability": "18/28days",
-        "Cost": "12500",
-        "StreetIndex": "4",
-        "Accessories": "Sensor Unit(2), Notes - Anti Air Missile Launcher:See Rules",
-        "BookPage": "cc.27"
-    },
-    {
         "Name": "M-12 Man-Portable Mortar",
         "Concealability": "-",
         "Ammunition": "1",
@@ -15808,19 +14313,6 @@
         "BookPage": "fof.42"
     },
     {
-        "Name": "Ares Cascade",
-        "Concealability": "4",
-        "Ammunition": "60",
-        "Mode": "SA",
-        "Damage": "(Special)",
-        "Weight": "5.5",
-        "Availability": "12/14days",
-        "Cost": "1800",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "mm.115"
-    },
-    {
         "Name": "Ares Squirt",
         "Concealability": "7",
         "Ammunition": "10/20",
@@ -15832,58 +14324,6 @@
         "StreetIndex": "2",
         "Accessories": "None",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Ares SuperSquirt II (LPist)",
-        "Concealability": "7",
-        "Ammunition": "20",
-        "Mode": "SA",
-        "Damage": "(Special)Gel Weapon use DMSO ammo",
-        "Weight": "2",
-        "Availability": "9/14days",
-        "Cost": "800",
-        "StreetIndex": "1.5",
-        "Accessories": "None",
-        "BookPage": "mm.115"
-    },
-    {
-        "Name": "Blowgun (BG)",
-        "Concealability": "7",
-        "Ammunition": "1(b)",
-        "Mode": "SS",
-        "Damage": "-",
-        "Weight": ".25",
-        "Availability": "4/12hrs",
-        "Cost": "10",
-        "StreetIndex": "1",
-        "Accessories": "2xImpact Armor for needles or darts",
-        "BookPage": "cc.31"
-    },
-    {
-        "Name": "Dart Pistol",
-        "Concealability": "7",
-        "Ammunition": "5(c)",
-        "Mode": "SA",
-        "Damage": "(As toxin)",
-        "Weight": "1.5",
-        "Availability": "6/2days",
-        "Cost": "600",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "mm.116"
-    },
-    {
-        "Name": "Dart Rifle",
-        "Concealability": "4",
-        "Ammunition": "10(c)",
-        "Mode": "SA",
-        "Damage": "(As toxin)",
-        "Weight": "3.25",
-        "Availability": "8/7days",
-        "Cost": "1700",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "mm.116"
     },
     {
         "Name": "Enerts AKM Power Squirt",
@@ -15925,19 +14365,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Spray Tank",
-        "Concealability": "4",
-        "Ammunition": "20",
-        "Mode": "SS",
-        "Damage": "(As chemical)",
-        "Weight": "5",
-        "Availability": "3/12days",
-        "Cost": "100",
-        "StreetIndex": "1",
-        "Accessories": "None",
-        "BookPage": "mm.116"
-    },
-    {
         "Name": "Arasaka Restraint Caster (Net)",
         "Concealability": "5",
         "Ammunition": "4(m)",
@@ -15977,32 +14404,6 @@
         "BookPage": "cs.70"
     },
     {
-        "Name": "Net Gun (Normal) (NtGn)",
-        "Concealability": "4",
-        "Ammunition": "4(b)",
-        "Mode": "SA",
-        "Damage": "Special",
-        "Weight": "4",
-        "Availability": "8/36hrs",
-        "Cost": "750",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "cc.31"
-    },
-    {
-        "Name": "Net Gun (Large) (NtGn)",
-        "Concealability": "3",
-        "Ammunition": "4(b)",
-        "Mode": "SA",
-        "Damage": "Special",
-        "Weight": "4.5",
-        "Availability": "8/36hrs",
-        "Cost": "1150",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "cc.31"
-    },
-    {
         "Name": "Pursuit Security Webgun",
         "Concealability": "3",
         "Ammunition": "1(m)",
@@ -16016,32 +14417,6 @@
         "BookPage": "sr2.???"
     },
     {
-        "Name": "Splat Gun",
-        "Concealability": "4",
-        "Ammunition": "2(m)",
-        "Mode": "SS",
-        "Damage": "(Special)",
-        "Weight": "3",
-        "Availability": "9/7days",
-        "Cost": "600",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "mm.116"
-    },
-    {
-        "Name": "Flame Thrower (Flthr)",
-        "Concealability": "-",
-        "Ammunition": "10",
-        "Mode": "SS",
-        "Damage": "8M",
-        "Weight": "21",
-        "Availability": "10/1wk",
-        "Cost": "1000",
-        "StreetIndex": "3",
-        "Accessories": "Accessory-Underbarrel Rifle Mod. + 200 nuyen (see rules)",
-        "BookPage": "cc.30"
-    },
-    {
         "Name": "Kendachi Dragon flamethrower",
         "Concealability": "3",
         "Ammunition": "4(m)",
@@ -16053,45 +14428,6 @@
         "StreetIndex": "4.5",
         "Accessories": "None",
         "BookPage": "cb1.33"
-    },
-    {
-        "Name": "Shiawase Blazer (SMG)",
-        "Concealability": "4",
-        "Ammunition": "4",
-        "Mode": "SS",
-        "Damage": "6M",
-        "Weight": "6",
-        "Availability": "12/2wks",
-        "Cost": "750",
-        "StreetIndex": "3",
-        "Accessories": "Uses light pistol ranges",
-        "BookPage": "cc.30"
-    },
-    {
-        "Name": "Ares Heavy Laser Plus (Snip)",
-        "Concealability": "-",
-        "Ammunition": "50",
-        "Mode": "SA",
-        "Damage": "18M",
-        "Weight": "30",
-        "Availability": "27/1month",
-        "Cost": "300000",
-        "StreetIndex": "3",
-        "Accessories": "Tripod, Backpack Battery Case",
-        "BookPage": "cc.30"
-    },
-    {
-        "Name": "+ Battery Pack",
-        "Concealability": "-",
-        "Ammunition": "-",
-        "Mode": "-",
-        "Damage": "-",
-        "Weight": "15",
-        "Availability": "10/1month",
-        "Cost": "2000",
-        "StreetIndex": "2",
-        "Accessories": "Accessory",
-        "BookPage": "cc.30"
     },
     {
         "Name": "Ares MP Laser (Las)",
@@ -16118,58 +14454,6 @@
         "StreetIndex": "3",
         "Accessories": "None",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Ares MP Laser III (SptR)",
-        "Concealability": "-",
-        "Ammunition": "20",
-        "Mode": "SA",
-        "Damage": "15M",
-        "Weight": "20",
-        "Availability": "24/3wks",
-        "Cost": "120000",
-        "StreetIndex": "3",
-        "Accessories": "None",
-        "BookPage": "cc.30"
-    },
-    {
-        "Name": "+ Hip Battery",
-        "Concealability": "4",
-        "Ammunition": "-",
-        "Mode": "-",
-        "Damage": "-",
-        "Weight": "2",
-        "Availability": "10/2wks",
-        "Cost": "500",
-        "StreetIndex": "2",
-        "Accessories": "Accessory",
-        "BookPage": "cc.30"
-    },
-    {
-        "Name": "Ares Redline (HPist)",
-        "Concealability": "3",
-        "Ammunition": "10",
-        "Mode": "SA",
-        "Damage": "12M",
-        "Weight": "5",
-        "Availability": "18/3wks",
-        "Cost": "75000",
-        "StreetIndex": "3",
-        "Accessories": "None",
-        "BookPage": "cc.30"
-    },
-    {
-        "Name": "+ Battery Clip",
-        "Concealability": "4",
-        "Ammunition": "-",
-        "Mode": "-",
-        "Damage": "-",
-        "Weight": "1",
-        "Availability": "10/2wks",
-        "Cost": "200",
-        "StreetIndex": "2",
-        "Accessories": "Accessory",
-        "BookPage": "cc.30"
     },
     {
         "Name": "Infrared Laser (Las)",
@@ -16224,19 +14508,6 @@
         "BookPage": "cb1.7"
     },
     {
-        "Name": "FN-AAL Gyrojet Pistol (GJPist)",
-        "Concealability": "5",
-        "Ammunition": "10(c)",
-        "Mode": "SA",
-        "Damage": "12M",
-        "Weight": "2",
-        "Availability": "4/48hrs",
-        "Cost": "1000",
-        "StreetIndex": "2",
-        "Accessories": "Fires underwater and on land",
-        "BookPage": "cc.31"
-    },
-    {
         "Name": "Micro-Missile Pod",
         "Concealability": "(-2)",
         "Ammunition": "1(m)",
@@ -16289,32 +14560,6 @@
         "BookPage": "cs.69"
     },
     {
-        "Name": "Ares Exec. Protector (SMG)",
-        "Concealability": "10/3",
-        "Ammunition": "35(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "6M",
-        "Weight": "5/3",
-        "Availability": "6/3days",
-        "Cost": "2000",
-        "StreetIndex": "1.5",
-        "Accessories": "Sound Suppressor, Fold Stock(1RC) -(Briefcase SMG)",
-        "BookPage": "cc.31"
-    },
-    {
-        "Name": "Ares Sonic Beam Rifle (LAS)",
-        "Concealability": "3",
-        "Ammunition": "15",
-        "Mode": "SS",
-        "Damage": "10S stun",
-        "Weight": "6",
-        "Availability": "24/3 wks",
-        "Cost": "120000",
-        "StreetIndex": "3",
-        "Accessories": "use battery back from MP Laser III, shotgun ranges - single target /choke 2-10, stun wears off @1 box/combat turn",
-        "BookPage": "sta2.35"
-    },
-    {
         "Name": "APEX Mobile Point Defense Sys. 27",
         "Concealability": "6",
         "Ammunition": "-",
@@ -16350,45 +14595,6 @@
         "StreetIndex": ".75",
         "Accessories": "None",
         "BookPage": "cb1.6"
-    },
-    {
-        "Name": "Bracer (HOPist)",
-        "Concealability": "7",
-        "Ammunition": "1(b)",
-        "Mode": "SS",
-        "Damage": "6L",
-        "Weight": ".3",
-        "Availability": "12/7days",
-        "Cost": "1300",
-        "StreetIndex": "3",
-        "Accessories": "+1 TN when firing",
-        "BookPage": "cc.31"
-    },
-    {
-        "Name": "Gun Cane (HOPist)",
-        "Concealability": "2/9",
-        "Ammunition": "1(b)",
-        "Mode": "SS",
-        "Damage": "6L",
-        "Weight": "1",
-        "Availability": "10/7days",
-        "Cost": "500",
-        "StreetIndex": "2",
-        "Accessories": "None",
-        "BookPage": "cc.31"
-    },
-    {
-        "Name": "Jupiter Taser Club (Tasr)",
-        "Concealability": "4",
-        "Ammunition": "-/1",
-        "Mode": "-/SS",
-        "Damage": "10S stun/8S stun",
-        "Weight": "3",
-        "Availability": "12/14days",
-        "Cost": "1800",
-        "StreetIndex": "3",
-        "Accessories": "None",
-        "BookPage": "sta2.98"
     },
     {
         "Name": "Nelspot \"Wombat\" Airpistol",
@@ -16427,19 +14633,6 @@
         "StreetIndex": "1.5",
         "Accessories": "None",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "Spear Gun (SpGn)",
-        "Concealability": "-",
-        "Ammunition": "-",
-        "Mode": "SS",
-        "Damage": "6M",
-        "Weight": "2",
-        "Availability": "3/24hrs",
-        "Cost": "800",
-        "StreetIndex": "1",
-        "Accessories": "None",
-        "BookPage": "cc.31"
     },
     {
         "Name": "Spetsdod",
@@ -16505,109 +14698,5 @@
         "StreetIndex": "3.5",
         "Accessories": "None",
         "BookPage": "sr2.???"
-    },
-    {
-        "Name": "HK G38 Assault (AsRf)",
-        "Concealability": "2",
-        "Ammunition": "30(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "8M",
-        "Weight": "3.25",
-        "Availability": "12/1wk",
-        "Cost": "4000",
-        "StreetIndex": "3",
-        "Accessories": "Dual Laser sight & Low Light Mag:(2) Scope, Gas Vent II(2RC) See Rules",
-        "BookPage": "cc.22"
-    },
-    {
-        "Name": "HK G38 Carbine (SptR)",
-        "Concealability": "2",
-        "Ammunition": "32(c)",
-        "Mode": "SA/BF",
-        "Damage": "7S",
-        "Weight": "3",
-        "Availability": "12/1wk",
-        "Cost": "-",
-        "StreetIndex": "3",
-        "Accessories": "-",
-        "BookPage": "cc.22"
-    },
-    {
-        "Name": "HK G38 LMG (LMG)",
-        "Concealability": "2",
-        "Ammunition": "32(c)",
-        "Mode": "BF/FA",
-        "Damage": "8M",
-        "Weight": "4",
-        "Availability": "12/1wk",
-        "Cost": "-",
-        "StreetIndex": "3",
-        "Accessories": "-",
-        "BookPage": "cc.22"
-    },
-    {
-        "Name": "HK G38 w/drum",
-        "Concealability": "-2",
-        "Ammunition": "100(c)",
-        "Mode": "-",
-        "Damage": "-",
-        "Weight": "+1",
-        "Availability": "-",
-        "Cost": "+50",
-        "StreetIndex": "3",
-        "Accessories": "-",
-        "BookPage": "cc.22"
-    },
-    {
-        "Name": "Steyr AUG-CSL Assault (AsRf)",
-        "Concealability": "2",
-        "Ammunition": "40(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "8M",
-        "Weight": "4",
-        "Availability": "10/4days",
-        "Cost": "4500",
-        "StreetIndex": "3",
-        "Accessories": "Laser sight, Gas Vent I(1RC), See Rules",
-        "BookPage": "cc.22"
-    },
-    {
-        "Name": "Steyr AUG-CSL Carbine (SptR)",
-        "Concealability": "2",
-        "Ammunition": "32(c)",
-        "Mode": "SA/BF",
-        "Damage": "7S",
-        "Weight": "3.75",
-        "Availability": "10/4days",
-        "Cost": "-",
-        "StreetIndex": "3",
-        "Accessories": "-",
-        "BookPage": "cc.22"
-    },
-    {
-        "Name": "Steyr AUG-CSL SMG (SMG)",
-        "Concealability": "2",
-        "Ammunition": "32(c)",
-        "Mode": "SA/BF",
-        "Damage": "6M",
-        "Weight": "3.5",
-        "Availability": "10/4days",
-        "Cost": "-",
-        "StreetIndex": "3",
-        "Accessories": "-",
-        "BookPage": "cc.22"
-    },
-    {
-        "Name": "Steyr AUG-CSL LMG (LMG)",
-        "Concealability": "2",
-        "Ammunition": "32(c)",
-        "Mode": "SA/BF/FA",
-        "Damage": "8M",
-        "Weight": "5.5",
-        "Availability": "10/4days",
-        "Cost": "-",
-        "StreetIndex": "3",
-        "Accessories": "-",
-        "BookPage": "cc.22"
     }
 ]
