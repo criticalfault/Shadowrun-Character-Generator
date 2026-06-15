@@ -1,27 +1,29 @@
 import React, { useState } from 'react';
 
 const SECTIONS = [
-  { label: 'Light\nDamage',    boxes: 1 },
-  { label: 'Moderate\nDamage', boxes: 2 },
-  { label: 'Serious\nDamage',  boxes: 3 },
-  { label: 'Destroyed',        boxes: 4 },
+  { label: 'Light\nDamage',    boxes: 2 },
+  { label: 'Moderate\nDamage', boxes: 3 },
+  { label: 'Serious\nDamage',  boxes: 5 },
 ];
 
 const BOX_LABELS = [
-  '+1TN #\n-1 Init.',  // 0 — Light
-  '+2TN #\n-2 Init.',  // 1 — Moderate start
-  '',                   // 2
-  '+3TN #\n-3 Init.',  // 3 — Serious start
-  '', '',               // 4-5
-  '', '', '',           // 6-8 — Destroyed
-  'Crash\nTest',        // 9
+  '+1TN #\n-1 Init.',  // 0 — Light start
+  '',                   // 1
+  '+2TN #\n-2 Init.',  // 2 — Moderate start
+  '',                   // 3
+  '',                   // 4
+  '+3TN #\n-3 Init.',  // 5 — Serious start
+  '',                   // 6
+  '',                   // 7
+  '',                   // 8
+  'Crash\nTest',        // 9 — last box
 ];
 
 // Speed reduction label that appears below certain boxes (by box index)
 const SPEED_LABELS = {
   0: 'NA',
-  1: '25%',
-  3: '50%',
+  2: '25%',
+  5: '50%',
 };
 
 const VehicleConditionMonitor = () => {
