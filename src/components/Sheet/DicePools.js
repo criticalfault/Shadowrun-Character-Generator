@@ -86,19 +86,14 @@ const DicePools = ({ character, edition, magicalChoice }) => {
     pools.push({ label: 'Task', value: parseInt(cyber.Task_Pool) });
   }
 
-  // Control Pool — SR3 p.148: ceil(Reaction / 2) + VCR bonus dice (VCT)
-  // Show whenever character has vehicles OR a VCR installed
-  const hasVehicles = (character.vehicles?.length > 0) || (character.drones?.length > 0);
-  if (cyber.Vehicle_Control_Rig_Level || hasVehicles) {
+  // Control Pool — SR3 p.148: Reaction + VCR bonus dice. VCR required.
+  if (cyber.Vehicle_Control_Rig_Level) {
     const reaction = Math.floor(
       (getAttr('Quickness') + getAttr('Intelligence')) / 2
     );
     const vcrBonus = cyber.Vehicle_Control_Reaction ?? 0;
-    const controlPool = Math.ceil(reaction / 2) + vcrBonus;
-    const label = cyber.Vehicle_Control_Rig_Level
-      ? `Control (VCR ${cyber.Vehicle_Control_Rig_Level})`
-      : 'Control';
-    pools.push({ label, value: controlPool });
+    const controlPool = reaction + vcrBonus;
+    pools.push({ label: `Control (VCR ${cyber.Vehicle_Control_Rig_Level})`, value: controlPool });
   }
 
   // Karma Pool

@@ -74,7 +74,7 @@ export default function IdentityPanel(props) {
         <hr/>
         <h5>Resolved Issues</h5>
         <ul>
-            <li>Control Pool now displayed in Dice Pools (SR3 p.148: ceil(Reaction÷2) + VCR bonus). Shows for any character with vehicles or drones; label includes VCR level when installed</li>
+            <li>Control Pool now displayed in Dice Pools (SR3 p.148: Reaction + VCR bonus dice). Only shown when a VCR is installed; label includes VCR level (e.g. "Control (VCR 1)")</li>
             <li>SR3 Rigger 3 skills added — Vehicle Tactics (Technical, INT), Semiballistic/Suborbital/Tracks/Walkers/Mechanical Arm Operation B/R skills, and all matching Background knowledge skills (r3.24)</li>
             <li>SR3 Rigger 3 drone audit — audited all 52 drone entries against Rigger 3; removed duplicate Dalmatian entry, corrected names/costs/availability/speed on ~20 entries</li>
             <li>SR3 Rigger 3 vehicle audit — corrected ~34 vehicle entries (costs, availability, handling, split stats); added 2 missing vehicles; Rigger 3 VehicleMods system with 81 mods across 8 categories; full mod picker UI on vehicle and drone cards; sheet display shows modified stats with strikethrough base values</li>
