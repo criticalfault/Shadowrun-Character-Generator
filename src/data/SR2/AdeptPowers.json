@@ -1,6 +1,6 @@
 [
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Astral Perception            ",
     "Cost": 2,
     "HasLevels": false,
@@ -8,7 +8,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Combat Sense +1              ",
     "Cost": 2,
     "HasLevels": false,
@@ -16,7 +16,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Combat Sense +2              ",
     "Cost": 3,
     "HasLevels": false,
@@ -24,7 +24,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Combat Sense +3              ",
     "Cost": 4,
     "HasLevels": false,
@@ -32,7 +32,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Improved Athletic Skills +1  ",
     "Cost": 0.25,
     "HasLevels": false,
@@ -40,7 +40,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Improved Stealth +1          ",
     "Cost": 0.25,
     "HasLevels": false,
@@ -48,7 +48,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Improved Armed Combat +1     ",
     "Cost": 0.5,
     "HasLevels": false,
@@ -56,7 +56,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Improved Unarmed Combat +1   ",
     "Cost": 0.5,
     "HasLevels": false,
@@ -64,7 +64,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Improved Throwing +1         ",
     "Cost": 0.5,
     "HasLevels": false,
@@ -72,7 +72,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Improved Project. weapons +1 ",
     "Cost": 0.5,
     "HasLevels": false,
@@ -80,7 +80,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Improved Firearms +1         ",
     "Cost": 1,
     "HasLevels": false,
@@ -88,7 +88,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Improved Gunnery +1          ",
     "Cost": 1,
     "HasLevels": false,
@@ -96,7 +96,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Improved Body +1             ",
     "Cost": 1,
     "HasLevels": true,
@@ -104,7 +104,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Improved Strength +1         ",
     "Cost": 1,
     "HasLevels": true,
@@ -112,7 +112,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Improved Quickness +1        ",
     "Cost": 1,
     "HasLevels": true,
@@ -120,7 +120,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Low-light vision             ",
     "Cost": 0.25,
     "HasLevels": false,
@@ -128,7 +128,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Thermographic vision         ",
     "Cost": 0.25,
     "HasLevels": false,
@@ -136,7 +136,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Magnification Vision 1       ",
     "Cost": 0.25,
     "HasLevels": false,
@@ -144,7 +144,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Magnification Vision 2       ",
     "Cost": 0.5,
     "HasLevels": false,
@@ -152,7 +152,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Magnification Vision 3       ",
     "Cost": 0.75,
     "HasLevels": false,
@@ -160,7 +160,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "High frequency hearing       ",
     "Cost": 0.25,
     "HasLevels": false,
@@ -168,7 +168,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Low frequency hearing        ",
     "Cost": 0.25,
     "HasLevels": false,
@@ -176,7 +176,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Enhanced smell               ",
     "Cost": 0.25,
     "HasLevels": false,
@@ -184,7 +184,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.124",
     "Name": "Enhanced taste               ",
     "Cost": 0.25,
     "HasLevels": false,
@@ -192,7 +192,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.125",
     "Name": "Increased Reaction +1        ",
     "Cost": 1,
     "HasLevels": true,
@@ -200,7 +200,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.125",
     "Name": "Increased Reflexes +1D6      ",
     "Cost": 1,
     "HasLevels": false,
@@ -208,7 +208,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.125",
     "Name": "Increased Reflexes +2D6      ",
     "Cost": 4,
     "HasLevels": false,
@@ -216,7 +216,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.125",
     "Name": "Increased Reflexes +3D6      ",
     "Cost": 6,
     "HasLevels": false,
@@ -224,7 +224,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.125",
     "Name": "Killing Hands (Str)L         ",
     "Cost": 0.5,
     "HasLevels": false,
@@ -232,7 +232,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.125",
     "Name": "Killing Hands (Str)M         ",
     "Cost": 1,
     "HasLevels": false,
@@ -240,7 +240,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.125",
     "Name": "Killing Hands (Str)S         ",
     "Cost": 2,
     "HasLevels": false,
@@ -248,7 +248,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.125",
     "Name": "Killing Hands (Str)D         ",
     "Cost": 4,
     "HasLevels": false,
@@ -256,7 +256,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "sr2.???",
+    "BookPage": "sr2.125",
     "Name": "Pain Resistance +1 level     ",
     "Cost": 0.5,
     "HasLevels": false,
@@ -288,7 +288,7 @@
     "Notes": ""
   },
   {
-    "BookPage": "gr2.???",
+    "BookPage": "grm.34",
     "Name": "Body control +1 level        ",
     "Cost": 0.5,
     "HasLevels": false,

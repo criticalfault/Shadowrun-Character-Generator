@@ -32,14 +32,6 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
-    "Name": "Fire Missle        ",
-    "Drain": "[(F/2)+1]S",
-    "Type": "P",
-    "Duration": "I",
-    "Class": "C"
-  },
-  {
     "BookPage": "grm.127",
     "Name": "Fireball           ",
     "Drain": "[(F/2)+3]D",
@@ -48,7 +40,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Flame Arrows       ",
     "Drain": "[(F/2)+1]D",
     "Type": "P",
@@ -56,7 +48,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Force Drain        ",
     "Drain": "(F/2)S    ",
     "Type": "M",
@@ -64,7 +56,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.151",
     "Name": "Hellblast          ",
     "Drain": "[(F/2)+6]D",
     "Type": "P",
@@ -72,7 +64,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Inferno            ",
     "Drain": "[(F/2)-1]D",
     "Type": "P",
@@ -80,7 +72,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.151",
     "Name": "Mana Bolt          ",
     "Drain": "(F/2)S    ",
     "Type": "M",
@@ -96,7 +88,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.151",
     "Name": "Mana Dart          ",
     "Drain": "(F/2)L    ",
     "Type": "M",
@@ -104,7 +96,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.151",
     "Name": "Mana Missile       ",
     "Drain": "(F/2)M    ",
     "Type": "M",
@@ -112,7 +104,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.151",
     "Name": "Manaball           ",
     "Drain": "(F/2)S    ",
     "Type": "P",
@@ -128,7 +120,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.151",
     "Name": "Power Bolt         ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -136,7 +128,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.151",
     "Name": "Power Dart         ",
     "Drain": "[(F/2)+1]L",
     "Type": "P",
@@ -144,7 +136,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.151",
     "Name": "Power Missile      ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -152,7 +144,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.151",
     "Name": "Powerball          ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -168,7 +160,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.151",
     "Name": "Ram                ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -184,7 +176,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Redirect           ",
     "Drain": "[special] ",
     "Type": "P",
@@ -192,7 +184,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Rot                ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -200,7 +192,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Shattershield      ",
     "Drain": "(F/2)S    ",
     "Type": "M",
@@ -216,7 +208,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.151",
     "Name": "Sleep              ",
     "Drain": "[(F/2)-1]S",
     "Type": "M",
@@ -312,7 +304,7 @@
     "Class": "C"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.152",
     "Name": "Analyze Device             ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -328,7 +320,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.152",
     "Name": "Analyze Truth              ",
     "Drain": "(F/2)S    ",
     "Type": "M",
@@ -336,7 +328,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Animal Spy                 ",
     "Drain": "(F/2)L    ",
     "Type": "M",
@@ -344,7 +336,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Astral Perception          ",
     "Drain": "(F/2)S    ",
     "Type": "M",
@@ -352,7 +344,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Astral Sense               ",
     "Drain": "(F/2)M    ",
     "Type": "M",
@@ -360,7 +352,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Catalogue                  ",
     "Drain": "[(F/2)-1]L",
     "Type": "P",
@@ -368,7 +360,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.152",
     "Name": "Clairaudience              ",
     "Drain": "(F/2)M    ",
     "Type": "M",
@@ -384,7 +376,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Clair Spell                ",
     "Drain": "[(F/2)+2]M",
     "Type": "M",
@@ -392,7 +384,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Clair Spell (Extended)     ",
     "Drain": "[(F/2)+1]S",
     "Type": "M",
@@ -400,7 +392,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.152",
     "Name": "Clairvoyance               ",
     "Drain": "(F/2)M    ",
     "Type": "M",
@@ -416,7 +408,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.152",
     "Name": "Combat Sense               ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -424,7 +416,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Detect Credstick Protection",
     "Drain": "(F/2)D    ",
     "Type": "M",
@@ -432,7 +424,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Detect Damage Level        ",
     "Drain": "[(F/2)-1]S",
     "Type": "P",
@@ -440,7 +432,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.152",
     "Name": "Detect Enemies             ",
     "Drain": "[(F/2)+1]M",
     "Type": "M",
@@ -456,7 +448,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.152",
     "Name": "Detect Individual          ",
     "Drain": "(F/2)L    ",
     "Type": "M",
@@ -464,7 +456,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.152",
     "Name": "Detect Life                ",
     "Drain": "(F/2)L    ",
     "Type": "M",
@@ -472,7 +464,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.152",
     "Name": "Detect (Life Form)         ",
     "Drain": "[(F/2)-1]L",
     "Type": "M",
@@ -496,7 +488,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.152",
     "Name": "Detect (Object)            ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -504,7 +496,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Detect Sentients           ",
     "Drain": "[(F/2)-1]M",
     "Type": "M",
@@ -512,7 +504,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Detect Traps               ",
     "Drain": "[(F/2)-1]M",
     "Type": "P",
@@ -520,7 +512,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Detect Traps (Extended)    ",
     "Drain": "[(F/2)-2]S",
     "Type": "P",
@@ -528,7 +520,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Detect Wound Level         ",
     "Drain": "(F/2)M    ",
     "Type": "M",
@@ -536,7 +528,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Diagnose                   ",
     "Drain": "[(F/2)-1]M",
     "Type": "M",
@@ -544,7 +536,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Enhance Aim                ",
     "Drain": "(F/2)S    ",
     "Type": "M",
@@ -552,7 +544,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Enhanced (Sense)           ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -560,7 +552,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Enhanced Sight             ",
     "Drain": "[(F/2)+4]D",
     "Type": "P",
@@ -568,7 +560,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Foresight                  ",
     "Drain": "(F/2)D    ",
     "Type": "M",
@@ -576,7 +568,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Foretelling                ",
     "Drain": "(F/2)D    ",
     "Type": "M",
@@ -584,7 +576,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Know Exit                  ",
     "Drain": "[(F/2)+3]S",
     "Type": "P",
@@ -592,7 +584,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Low-Light Vision           ",
     "Drain": "(F/2)L    ",
     "Type": "P",
@@ -600,7 +592,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Memory Probe               ",
     "Drain": "[(F/2)+3]D",
     "Type": "P",
@@ -616,7 +608,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.152",
     "Name": "Mind Probe                 ",
     "Drain": "[(F/2)+2]D",
     "Type": "M",
@@ -624,7 +616,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Night Vision               ",
     "Drain": "(F/2)L    ",
     "Type": "P",
@@ -632,7 +624,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.152",
     "Name": "Personal Combat Sense      ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -640,7 +632,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Sound Selection            ",
     "Drain": "(F/2)L    ",
     "Type": "M",
@@ -648,7 +640,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Telepathic Chat            ",
     "Drain": "[(F/2)-2]S",
     "Type": "M",
@@ -656,7 +648,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Thermographic Vision       ",
     "Drain": "(F/2)L    ",
     "Type": "P",
@@ -664,7 +656,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Translate                  ",
     "Drain": "[(F/2)+1]L",
     "Type": "M",
@@ -672,7 +664,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Truth Glow                 ",
     "Drain": "[(F/2)+2]S",
     "Type": "M",
@@ -680,7 +672,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "X-Ray Vision               ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -688,7 +680,7 @@
     "Class": "D"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Air Breathing                ",
     "Drain": "[(F/2)+2]L ",
     "Type": "P",
@@ -696,7 +688,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Allergy                      ",
     "Drain": "[(F/2)+2]S ",
     "Type": "P",
@@ -704,7 +696,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Alleviate Nuissance Allergy  ",
     "Drain": "(F/2)L     ",
     "Type": "P",
@@ -712,7 +704,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Alleviate Mild Allergy       ",
     "Drain": "(F/2)M     ",
     "Type": "P",
@@ -720,7 +712,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Alleviate Moderate Allergy   ",
     "Drain": "(F/2)S     ",
     "Type": "P",
@@ -728,7 +720,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Alleviate Severe Allergy     ",
     "Drain": "(F/2)D     ",
     "Type": "P",
@@ -736,7 +728,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Antidote L Toxin             ",
     "Drain": "(F/2)L     ",
     "Type": "P",
@@ -744,7 +736,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Antidote M Toxin             ",
     "Drain": "(F/2)M     ",
     "Type": "P",
@@ -752,7 +744,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Antidote S Toxin             ",
     "Drain": "(F/2)S     ",
     "Type": "P",
@@ -760,7 +752,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Antidote D Toxin             ",
     "Drain": "(F/2)D     ",
     "Type": "P",
@@ -768,7 +760,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Awaken                       ",
     "Drain": "[(F/2)-1]L ",
     "Type": "M",
@@ -776,7 +768,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Blindness                    ",
     "Drain": "[(F/2)+1]D ",
     "Type": "M",
@@ -784,7 +776,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Buzz                         ",
     "Drain": "(F/2)S     ",
     "Type": "P",
@@ -792,7 +784,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Cause Nuissance Allergy      ",
     "Drain": "[(F/2)+1]L ",
     "Type": "M",
@@ -800,7 +792,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Cause Mild Allergy           ",
     "Drain": "[(F/2)+1]M ",
     "Type": "M",
@@ -808,7 +800,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Cause Moderate Allergy       ",
     "Drain": "[(F/2)+1]S ",
     "Type": "M",
@@ -816,7 +808,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Cause Severe Allergy         ",
     "Drain": "[(F/2)+1]D ",
     "Type": "M",
@@ -824,7 +816,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Cripple Limb                 ",
     "Drain": "(F/2)S     ",
     "Type": "M",
@@ -832,7 +824,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Cure L Disease               ",
     "Drain": "(F/2)L     ",
     "Type": "P",
@@ -840,7 +832,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Cure M Disease               ",
     "Drain": "(F/2)M     ",
     "Type": "P",
@@ -848,7 +840,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Cure S Disease               ",
     "Drain": "(F/2)S     ",
     "Type": "P",
@@ -856,7 +848,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Cure D Disease               ",
     "Drain": "(F/2)D     ",
     "Type": "P",
@@ -864,7 +856,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Decrease -1 Attribute        ",
     "Drain": "[(F/2)+1]L ",
     "Type": "P",
@@ -872,7 +864,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Decrease -2 Attribute        ",
     "Drain": "[(F/2)+1]M ",
     "Type": "P",
@@ -880,7 +872,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Decrease -3 Attribute        ",
     "Drain": "[(F/2)+1]S ",
     "Type": "P",
@@ -888,7 +880,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Decrease -4 Attribute        ",
     "Drain": "[(F/2)+1]D ",
     "Type": "P",
@@ -896,7 +888,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Decrease -1 Cybered Attribute",
     "Drain": "[(F/2)+3]L ",
     "Type": "P",
@@ -904,7 +896,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Decrease -2 Cybered Attribute",
     "Drain": "[(F/2)+3]M ",
     "Type": "P",
@@ -912,7 +904,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Decrease -3 Cybered Attribute",
     "Drain": "[(F/2)+3]S ",
     "Type": "P",
@@ -920,7 +912,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Decrease -4 Cybered Attribute",
     "Drain": "[(F/2)+3]D ",
     "Type": "P",
@@ -928,7 +920,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Decrease Reflexes -1 die     ",
     "Drain": "[(F/2)+1]S ",
     "Type": "M",
@@ -936,7 +928,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Decrease Reflexes -2 dice    ",
     "Drain": "[(F/2)+1]D ",
     "Type": "M",
@@ -944,7 +936,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Decrease Reflexes -3 dice    ",
     "Drain": "[(F/2)+3]D ",
     "Type": "M",
@@ -952,7 +944,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Detox L Toxin                ",
     "Drain": "[(F/2)-2]L ",
     "Type": "P",
@@ -960,7 +952,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Detox M Toxin                ",
     "Drain": "[(F/2)-2]M ",
     "Type": "P",
@@ -968,7 +960,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Detox S Toxin                ",
     "Drain": "[(F/2)-2]S ",
     "Type": "P",
@@ -976,7 +968,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Detox D Toxin                ",
     "Drain": "[(F/2)-2]D ",
     "Type": "P",
@@ -984,7 +976,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Enhance Willpower            ",
     "Drain": "(F/2)S     ",
     "Type": "M",
@@ -992,7 +984,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Essence Drain                ",
     "Drain": "[(F/2)+2]D ",
     "Type": "P",
@@ -1000,7 +992,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Fast                         ",
     "Drain": "(F/2)L     ",
     "Type": "M",
@@ -1008,7 +1000,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Hair Growth                  ",
     "Drain": "[(F/2)+1]L ",
     "Type": "P",
@@ -1016,7 +1008,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Hair Loss                    ",
     "Drain": "(F/2)L     ",
     "Type": "P",
@@ -1024,7 +1016,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Heal                         ",
     "Drain": "(F/2)(Wound Level)",
     "Type": "M",
@@ -1032,7 +1024,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Heal L Wounds                ",
     "Drain": "[(F/2)-1]L",
     "Type": "M",
@@ -1040,7 +1032,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Heal M Wounds                ",
     "Drain": "[(F/2)-1]M",
     "Type": "M",
@@ -1048,7 +1040,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Heal S Wounds                ",
     "Drain": "[(F/2)-1]S",
     "Type": "M",
@@ -1056,7 +1048,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Heal D Wounds                ",
     "Drain": "[(F/2)-1]D",
     "Type": "M",
@@ -1072,7 +1064,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Increase +1 Attribute        ",
     "Drain": "[(F/2)+1]L",
     "Type": "M",
@@ -1080,7 +1072,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Increase +2 Attribute        ",
     "Drain": "[(F/2)+1]M",
     "Type": "M",
@@ -1088,7 +1080,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Increase +3 Attribute        ",
     "Drain": "[(F/2)+1]S",
     "Type": "M",
@@ -1096,7 +1088,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.153",
     "Name": "Increase +4 Attribute        ",
     "Drain": "[(F/2)+1]D",
     "Type": "M",
@@ -1104,7 +1096,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Increase +1 Cybered Attribute",
     "Drain": "[(F/2)+3]L",
     "Type": "P",
@@ -1112,7 +1104,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Increase +2 Cybered Attribute",
     "Drain": "[(F/2)+3]M",
     "Type": "P",
@@ -1120,7 +1112,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Increase +3 Cybered Attribute",
     "Drain": "[(F/2)+3]S",
     "Type": "P",
@@ -1128,7 +1120,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Increase +4 Cybered Attribute",
     "Drain": "[(F/2)+3]D",
     "Type": "P",
@@ -1136,7 +1128,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Increase Matrix Reaction +1  ",
     "Drain": "[(F/2)+1]M",
     "Type": "M",
@@ -1144,7 +1136,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Increase Matrix Reaction +2  ",
     "Drain": "[(F/2)+1]S",
     "Type": "M",
@@ -1152,7 +1144,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Increase Matrix Reaction +3  ",
     "Drain": "[(F/2)+1]D",
     "Type": "M",
@@ -1160,7 +1152,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Increase Reflexes +1 die     ",
     "Drain": "(F/2)M    ",
     "Type": "M",
@@ -1168,7 +1160,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Increase Reflexes +2 dice    ",
     "Drain": "(F/2)S    ",
     "Type": "M",
@@ -1176,7 +1168,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Increase Reflexes +3 dice    ",
     "Drain": "(F/2)D    ",
     "Type": "M",
@@ -1184,7 +1176,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Intoxication                 ",
     "Drain": "[(F/2)+2]M",
     "Type": "M",
@@ -1192,7 +1184,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Nutrition                    ",
     "Drain": "(F/2)L    ",
     "Type": "M",
@@ -1208,7 +1200,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Paralyze                     ",
     "Drain": "[(F/2)+1]D",
     "Type": "M",
@@ -1256,7 +1248,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Resist Nuissance Allergy     ",
     "Drain": "[(F/2)+1]L",
     "Type": "M",
@@ -1264,7 +1256,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Resist Mild Allergy          ",
     "Drain": "[(F/2)+1]M",
     "Type": "M",
@@ -1272,7 +1264,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Resist Moderate Allergy      ",
     "Drain": "[(F/2)+1]S",
     "Type": "M",
@@ -1280,7 +1272,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Resist Severe Allergy        ",
     "Drain": "[(F/2)+1]D",
     "Type": "M",
@@ -1320,7 +1312,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Treat                        ",
     "Drain": "(F/2)(Wound Level)",
     "Type": "M",
@@ -1328,7 +1320,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Treat L Wounds               ",
     "Drain": "[(F/2)-1]L",
     "Type": "M",
@@ -1336,7 +1328,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Treat M Wounds               ",
     "Drain": "[(F/2)-1]M",
     "Type": "M",
@@ -1344,7 +1336,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Treat S Wounds               ",
     "Drain": "[(F/2)-1]S",
     "Type": "M",
@@ -1352,7 +1344,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Treat D Wounds               ",
     "Drain": "[(F/2)-1]D",
     "Type": "M",
@@ -1360,7 +1352,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Water Breathing              ",
     "Drain": "[(F/2)+2]L",
     "Type": "P",
@@ -1368,7 +1360,7 @@
     "Class": "H"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Agonizing Pain               ",
     "Drain": "[(F/2)+1]M",
     "Type": "M",
@@ -1376,7 +1368,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Aural Entertainment          ",
     "Drain": "[(F/2)+2]L",
     "Type": "P",
@@ -1384,7 +1376,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Blackout                     ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -1392,7 +1384,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Black Wall                   ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -1400,7 +1392,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Camouflage                   ",
     "Drain": "[(F/2)+2]L",
     "Type": "P",
@@ -1408,7 +1400,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Chaff                        ",
     "Drain": "[(F/2)-1]S",
     "Type": "P",
@@ -1416,7 +1408,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Chaos                        ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -1424,7 +1416,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Chaotic World                ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -1432,7 +1424,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.154",
     "Name": "Confusion                    ",
     "Drain": "(F/2)S    ",
     "Type": "M",
@@ -1440,7 +1432,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Crowd Scene                  ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -1448,7 +1440,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Displacement                 ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -1456,7 +1448,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Disregard                    ",
     "Drain": "(F/2)M    ",
     "Type": "M",
@@ -1464,7 +1456,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Distant Invisibility         ",
     "Drain": "[(F/2)+1]M",
     "Type": "M",
@@ -1472,7 +1464,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Dream                        ",
     "Drain": "(F/2)L    ",
     "Type": "M",
@@ -1480,7 +1472,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.155",
     "Name": "Entertainment                ",
     "Drain": "[(F/2)+1]L",
     "Type": "M",
@@ -1488,7 +1480,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Fake Death                   ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -1496,7 +1488,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Flare                        ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -1504,7 +1496,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Flash                        ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -1512,7 +1504,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Hide Vehicle                 ",
     "Drain": "(F/2)M    ",
     "Type": "P",
@@ -1520,7 +1512,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Holograph                    ",
     "Drain": "[(F/2)+2]L",
     "Type": "P",
@@ -1528,7 +1520,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Illusionary Barrier          ",
     "Drain": "[(F/2)+2]L",
     "Type": "P",
@@ -1536,7 +1528,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.155",
     "Name": "Improved Invisibility        ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -1544,7 +1536,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.155",
     "Name": "Invisibility                 ",
     "Drain": "(F/2)M    ",
     "Type": "M",
@@ -1552,7 +1544,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.155",
     "Name": "Mask                         ",
     "Drain": "(F/2)L    ",
     "Type": "M",
@@ -1568,7 +1560,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Misinformation               ",
     "Drain": "[(F/2)+1]S",
     "Type": "M",
@@ -1584,7 +1576,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Peregrine's Magnificent Ill. ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -1592,7 +1584,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Phantasmal Force             ",
     "Drain": "[(F/2)+1]S",
     "Type": "M",
@@ -1600,7 +1592,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Phantom Bolt                 ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -1616,7 +1608,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Reflections                  ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -1624,7 +1616,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Silence                      ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -1640,7 +1632,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.155",
     "Name": "Stimulation                  ",
     "Drain": "[(F/2)+1]L",
     "Type": "M",
@@ -1648,7 +1640,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.155",
     "Name": "Stink                        ",
     "Drain": "[(F/2)+1]S",
     "Type": "M",
@@ -1672,7 +1664,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Undetectable Lie             ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -1688,7 +1680,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Video                        ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -1696,7 +1688,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Voicechange                  ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -1728,7 +1720,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Alter Temperature            ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -1744,7 +1736,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.157",
     "Name": "Armor                        ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -1752,7 +1744,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Arrow Barrier                ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -1768,7 +1760,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.157",
     "Name": "Barrier                      ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -1784,7 +1776,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Biophysical Armor            ",
     "Drain": "[(F/2)+1]M",
     "Type": "M",
@@ -1808,7 +1800,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Blindness                    ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -1816,7 +1808,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Blunder                      ",
     "Drain": "(F/2)D    ",
     "Type": "M",
@@ -1824,7 +1816,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Bug Barrier                  ",
     "Drain": "[(F/2)+2]D",
     "Type": "M",
@@ -1840,7 +1832,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Calm Animal                  ",
     "Drain": "[(F/2)+2]L",
     "Type": "M",
@@ -1848,7 +1840,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Catfall                      ",
     "Drain": "[(F/2)+2]L",
     "Type": "P",
@@ -1856,7 +1848,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Chained Lightning            ",
     "Drain": "[(F/2)+3]D",
     "Type": "P",
@@ -1864,7 +1856,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Clean Air                    ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -1872,7 +1864,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Clean Water                  ",
     "Drain": "(F/2)S    ",
     "Type": "P",
@@ -1888,7 +1880,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Compel Truth                 ",
     "Drain": "[(F/2)+2]L",
     "Type": "M",
@@ -1896,7 +1888,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.155",
     "Name": "Control Actions              ",
     "Drain": "[(F/2)+2]S",
     "Type": "M",
@@ -1912,7 +1904,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.155",
     "Name": "Control Emotion              ",
     "Drain": "[(F/2)+2]M",
     "Type": "M",
@@ -1920,7 +1912,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Control Fire                 ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -1928,7 +1920,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.156",
     "Name": "Control Thoughts             ",
     "Drain": "[(F/2)+2]D",
     "Type": "M",
@@ -1936,7 +1928,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Corpse Cadavre               ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -1952,7 +1944,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Deafness                     ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -1960,7 +1952,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Deflect                      ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -1968,7 +1960,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Existential Blues            ",
     "Drain": "[(F/2)+2]M",
     "Type": "M",
@@ -1976,7 +1968,7 @@
     "Class": "I"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Extinguish Fire              ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -1984,7 +1976,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "False Memory                 ",
     "Drain": "[(F/2)+2]S",
     "Type": "M",
@@ -2000,7 +1992,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "FireFlies                    ",
     "Drain": "[(F/2)+2]D",
     "Type": "P",
@@ -2016,7 +2008,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Firewall                     ",
     "Drain": "[(F/2)+2]D",
     "Type": "P",
@@ -2024,7 +2016,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Fix                          ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -2032,7 +2024,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Flame Aura                   ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -2040,7 +2032,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Flame Barrier                ",
     "Drain": "[(F/2)+3]M",
     "Type": "P",
@@ -2048,7 +2040,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.157",
     "Name": "Flame Bomb                   ",
     "Drain": "[(F/2)+1]D",
     "Type": "P",
@@ -2064,7 +2056,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.157",
     "Name": "Flamethrower                 ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -2072,7 +2064,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Flight                       ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -2080,7 +2072,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Fling                        ",
     "Drain": "(F/2)M    ",
     "Type": "P",
@@ -2088,7 +2080,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Flying Ball                  ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -2096,7 +2088,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Forced Truth                 ",
     "Drain": "(F/2)M    ",
     "Type": "M",
@@ -2104,7 +2096,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Freeze Water                 ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -2112,7 +2104,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Gecko Crawl                  ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -2120,7 +2112,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Glue                         ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -2128,7 +2120,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Gravity Restriction          ",
     "Drain": "[(F/2)+8]D",
     "Type": "P",
@@ -2136,7 +2128,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Heat Shield                  ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -2144,7 +2136,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.156",
     "Name": "Hibernate                    ",
     "Drain": "(F/2)S    ",
     "Type": "P",
@@ -2152,7 +2144,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.157",
     "Name": "Ice Sheet                    ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -2160,7 +2152,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.157",
     "Name": "Ignite                       ",
     "Drain": "[(F/2)+2]D",
     "Type": "P",
@@ -2168,7 +2160,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Improved Mauler v1.2         ",
     "Drain": "[(F/2)+4]D",
     "Type": "P",
@@ -2184,7 +2176,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Insect Barrier               ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -2192,7 +2184,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.156",
     "Name": "Levitate Item                ",
     "Drain": "[(F/2)+1]L",
     "Type": "P",
@@ -2200,7 +2192,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.156",
     "Name": "Levitate Person              ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -2208,7 +2200,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Lift & Push                  ",
     "Drain": "(F/2)M    ",
     "Type": "P",
@@ -2216,7 +2208,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.157",
     "Name": "Light                        ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -2224,7 +2216,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.157",
     "Name": "Lightning                    ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -2232,7 +2224,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.157",
     "Name": "Light Ray                    ",
     "Drain": "[(F/2)+1]D",
     "Type": "M",
@@ -2256,7 +2248,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Magesword                    ",
     "Drain": "[(F/2)+1]S",
     "Type": "M",
@@ -2264,7 +2256,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Magesword II                 ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -2272,7 +2264,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.156",
     "Name": "Magic Fingers                ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -2288,7 +2280,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.157",
     "Name": "Mana Barrier                 ",
     "Drain": "[(F/2)+1]S",
     "Type": "M",
@@ -2296,7 +2288,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Mental Armor                 ",
     "Drain": "[(F/2)+1]M",
     "Type": "M",
@@ -2304,7 +2296,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Mental Shield                ",
     "Drain": "[(F/2)+1]M",
     "Type": "M",
@@ -2312,7 +2304,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Mental Shields               ",
     "Drain": "[(F/2)+2]L",
     "Type": "M",
@@ -2320,7 +2312,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Meteor Strike                ",
     "Drain": "[(F/2)+6]D",
     "Type": "P",
@@ -2328,7 +2320,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Mist                         ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -2352,7 +2344,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Movement                     ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -2360,7 +2352,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Net                          ",
     "Drain": "[(F/2)+2]D",
     "Type": "P",
@@ -2368,7 +2360,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "One-Way Barrier              ",
     "Drain": "[(F/2)+3]M",
     "Type": "P",
@@ -2376,7 +2368,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Pathkeeper                   ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -2384,7 +2376,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Peregrine's Energy Web       ",
     "Drain": "(F/2)D    ",
     "Type": "M",
@@ -2392,7 +2384,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Personal Barrier             ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -2424,7 +2416,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Personal Heat Shield         ",
     "Drain": "[(F/2)+2]L",
     "Type": "P",
@@ -2432,7 +2424,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Personal Mana Barrier        ",
     "Drain": "[(F/2)+1]M",
     "Type": "M",
@@ -2448,7 +2440,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Petrify                      ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -2456,7 +2448,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.156",
     "Name": "Poltergeist                  ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -2464,7 +2456,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Possession                   ",
     "Drain": "[(F/2)+3]S",
     "Type": "M",
@@ -2472,7 +2464,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Protection From Cold         ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -2480,7 +2472,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Protection From Electricity  ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -2488,7 +2480,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Protection From Fire         ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -2496,7 +2488,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Protection From Heat         ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -2504,7 +2496,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Quickmove                    ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -2512,7 +2504,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Rain: Drizzle                ",
     "Drain": "(F/2)L    ",
     "Type": "P",
@@ -2520,7 +2512,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Rain: Steady                 ",
     "Drain": "(F/2)M    ",
     "Type": "P",
@@ -2528,7 +2520,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Rain: Heavy                  ",
     "Drain": "(F/2)S    ",
     "Type": "P",
@@ -2536,7 +2528,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Rain: Tropical Downpour      ",
     "Drain": "(F/2)D    ",
     "Type": "P",
@@ -2544,7 +2536,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Rebound Magic                ",
     "Drain": "[(F/2)+1]S",
     "Type": "M",
@@ -2552,7 +2544,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Rebound Melee                ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -2560,7 +2552,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Remote Control               ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -2568,7 +2560,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Rubber Skin                  ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -2576,7 +2568,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Sap Strength                 ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -2592,7 +2584,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.157",
     "Name": "Shadow                       ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
@@ -2608,7 +2600,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Shape Earth                  ",
     "Drain": "[(F/2)+2]D",
     "Type": "P",
@@ -2616,7 +2608,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Shape Water                  ",
     "Drain": "[(F/2)+2]D",
     "Type": "P",
@@ -2624,7 +2616,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Small Meteors                ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -2632,7 +2624,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Smoke Cloud                  ",
     "Drain": "[(F/2)+3]D",
     "Type": "P",
@@ -2640,7 +2632,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Sound Barrier                ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -2648,7 +2640,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.157",
     "Name": "Spark                        ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -2664,7 +2656,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Spirit Barrier               ",
     "Drain": "[(F/2)+2]M",
     "Type": "M",
@@ -2672,7 +2664,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Steel Skin                   ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -2680,7 +2672,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Stoplight Control            ",
     "Drain": "[(F/2)+2]L",
     "Type": "P",
@@ -2688,7 +2680,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Suffer                       ",
     "Drain": "[(F/2)+2]D",
     "Type": "P",
@@ -2696,7 +2688,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Teleportation                ",
     "Drain": "(F/2)S    ",
     "Type": "P",
@@ -2704,7 +2696,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Temper                       ",
     "Drain": "[(F/2)+1]M",
     "Type": "P",
@@ -2712,7 +2704,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Temporary L Insanity         ",
     "Drain": "[(F/2)+3]L",
     "Type": "M",
@@ -2720,7 +2712,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Temporary M Insanity         ",
     "Drain": "[(F/2)+3]M",
     "Type": "M",
@@ -2728,7 +2720,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Temporary S Insanity         ",
     "Drain": "[(F/2)+3]S",
     "Type": "M",
@@ -2736,7 +2728,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Temporary D Insanity         ",
     "Drain": "[(F/2)+3]D",
     "Type": "M",
@@ -2744,7 +2736,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Terrorize                    ",
     "Drain": "[(F/2)+2]S",
     "Type": "M",
@@ -2760,7 +2752,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Toxic Wave                   ",
     "Drain": "[(F/2)+3]D",
     "Type": "P",
@@ -2776,7 +2768,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Turn Marble To Bat           ",
     "Drain": "[(F/2)+2]L",
     "Type": "P",
@@ -2784,7 +2776,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Turn To Goo                  ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -2800,7 +2792,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Wall Of Fire                 ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -2808,7 +2800,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Warplight                    ",
     "Drain": "[(F/2)+3]M",
     "Type": "P",
@@ -2816,7 +2808,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Weather Guard                ",
     "Drain": "[(F/2)+2]S",
     "Type": "P",
@@ -2824,7 +2816,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "Wind                         ",
     "Drain": "[(F/2)+1]S",
     "Type": "P",
@@ -2832,7 +2824,7 @@
     "Class": "M"
   },
   {
-    "BookPage": "SR2.???",
+    "BookPage": "sr2.???",
     "Name": "X-Ray Specs                  ",
     "Drain": "[(F/2)+2]M",
     "Type": "P",
