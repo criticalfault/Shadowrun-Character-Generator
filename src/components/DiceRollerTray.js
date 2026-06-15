@@ -70,7 +70,7 @@ export default function DiceRollerTray(props) {
         }
     }
 
-    if(props.showDice === 11){
+    if(props.showDice === 12){
         return (
             <div>
                  {showRollerDisplay()}
