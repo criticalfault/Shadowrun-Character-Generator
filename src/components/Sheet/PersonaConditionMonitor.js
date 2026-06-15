@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 
 const SECTIONS = [
-  { label: 'Light',           boxes: 2 },
-  { label: 'Moderate',        boxes: 2 },
-  { label: 'Serious',         boxes: 2 },
-  { label: 'Persona\nCrashed', boxes: 4 },
+  { label: 'Light',    boxes: 2 },
+  { label: 'Moderate', boxes: 3 },
+  { label: 'Serious',  boxes: 5 },
 ];
 
 const BOX_LABELS = [
-  '+1 TN#\n-1 Init.',  // 0 — Light start
-  '',                   // 1 — Light (empty gap)
-  '+2 TN#\n-2 Init.',  // 2 — Moderate start
-  '',                   // 3 — Moderate (empty gap)
-  '+3 TN#\n-3 Init.',  // 4 — Serious start
-  '',                   // 5 — Serious (empty gap)
-  '', '', '', '',       // 6-9 — Persona Crashed
+  '+1 TN#\n-1 Init.',  // 0 — Light
+  '',                   // 1
+  '+2 TN#\n-2 Init.',  // 2 — Moderate
+  '',                   // 3
+  '',                   // 4
+  '+3 TN#\n-3 Init.',  // 5 — Serious
+  '',                   // 6
+  '',                   // 7
+  '',                   // 8
+  'Persona\nCrashed',  // 9 — last box
 ];
 
 const PersonaConditionMonitor = ({ iconRating }) => {
