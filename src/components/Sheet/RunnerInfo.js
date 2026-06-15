@@ -1,15 +1,15 @@
-import React from 'react';
+﻿import React from 'react';
 import { Grid, TextField } from '@mui/material';
 import SRSection from './SRSection';
 import { inputSx } from './sheetTheme';
 
 const RunnerInfo = ({ character, onChange }) => {
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <SRSection title="Runner Info">
         <div style={{ padding: '0 10px' }}>
           <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <TextField
                 label="Runner Name"
                 fullWidth
@@ -19,7 +19,7 @@ const RunnerInfo = ({ character, onChange }) => {
                 sx={inputSx}
               />
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <TextField
                 label="Race"
                 fullWidth
@@ -28,7 +28,7 @@ const RunnerInfo = ({ character, onChange }) => {
                 sx={inputSx}
               />
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <TextField
                 label="Age"
                 fullWidth
@@ -38,7 +38,7 @@ const RunnerInfo = ({ character, onChange }) => {
                 sx={inputSx}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <TextField
                 label="Description"
                 fullWidth
@@ -48,7 +48,7 @@ const RunnerInfo = ({ character, onChange }) => {
                 sx={inputSx}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <TextField
                 label="Notes"
                 fullWidth

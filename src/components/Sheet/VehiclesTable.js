@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import {
   Grid,
   Table,
@@ -30,7 +30,7 @@ const VehiclesTable = ({ vehicles }) => {
   if (!vehicles || vehicles.length === 0) return null;
 
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <SRSection title="Vehicles">
         <TableContainer component={Paper} sx={tablePaperSx}>
           <Table size="small" className="shadowrun-table">

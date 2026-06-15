@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import {
   Grid,
   Table,
@@ -69,7 +69,7 @@ const CyberdeckTable = (props) => {
   };
 
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <SRSection title="Cyberdecks">
         {props.Decks.map((deck, index) => {
           const mpcp = deck.Persona;
@@ -147,7 +147,7 @@ const CyberdeckTable = (props) => {
                 </TableBody>
               </Table>
 
-              <Grid item size={12}>
+              <Grid size={12}>
                 <ConditionMonitorBlockCyberDeck onConditionSelect={handleConditionSelect} />
               </Grid>
 

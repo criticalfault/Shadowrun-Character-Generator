@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Grid } from '@mui/material';
 import SRSection from './SRSection';
 
@@ -44,7 +44,7 @@ const SkillsBlock = ({ character, edition }) => {
     });
 
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <SRSection title="Skills">
         <table className="shadowrun-table" style={{ width: '100%' }}>
           <thead>

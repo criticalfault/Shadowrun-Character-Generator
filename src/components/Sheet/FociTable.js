@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Grid, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import SRSection from './SRSection';
 import { tablePaperSx } from './sheetTheme';
@@ -9,7 +9,7 @@ const FociTable = ({ foci }) => {
   const fmtNuyen = (n) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'JPY', maximumFractionDigits: 0 }).format(n);
 
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <SRSection title="Foci">
         <TableContainer component={Paper} sx={tablePaperSx}>
           <Table size="small" className="shadowrun-table">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import './AttributesPanel.css';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';

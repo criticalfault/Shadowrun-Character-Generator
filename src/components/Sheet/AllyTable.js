@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import {
   Grid,
   Table,
@@ -54,7 +54,7 @@ const AllyTable = ({ ally }) => {
   if (ally.senseLink) powers.push('Sense Link');
 
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <SRSection title="Ally Spirit">
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, mb: 2, px: 1 }}>
           {ally.name && (

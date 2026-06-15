@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Grid } from '@mui/material';
 import SRSection from './SRSection';
 
@@ -78,7 +78,7 @@ const DicePools = ({ character, edition, magicalChoice }) => {
   if (character.karmaPool > 0) pools.push({ label: 'Karma Pool', value: parseInt(character.karmaPool) });
 
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <SRSection title="Dice Pools">
         <table className="shadowrun-table" style={{ width: '100%' }}>
           <tbody>

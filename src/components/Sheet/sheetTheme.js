@@ -1,4 +1,4 @@
-// Shared MUI sx helpers for the clean B&W sheet display.
+﻿// Shared MUI sx helpers for the clean B&W sheet display.
 // Import these instead of hardcoding dark-theme colors in each component.
 
 export const inputSx = {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import FilteredMenuItem from './FilteredMenuItem';
 import SearchableSelect from './SearchableSelect';
 import Button from '@mui/material/Button';
@@ -169,29 +169,29 @@ export default function VehiclesPanel(props) {
         {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(drone['$Cost'])}
         </Typography>
         <Grid container spacing={2}>
-          <Grid item size={{ xs: 12, md:2 }}>
+          <Grid size={{ xs: 12, md:2 }}>
             <Item><strong>Handling</strong><br></br> {drone.Handling}</Item>
           </Grid>
-          <Grid item size={{ xs: 12, md:2 }}>
+          <Grid size={{ xs: 12, md:2 }}>
             <Item><strong>Speed/Accel</strong><br></br> {drone['Speed/Accel']}</Item>
           </Grid>
-          <Grid item size={{ xs: 12, md:2 }}>
+          <Grid size={{ xs: 12, md:2 }}>
             <Item><strong>Body/Armor</strong><br></br> {drone['Body/Armor']}</Item>
           </Grid>
-          <Grid item size={{ xs: 12, md:2 }}>
+          <Grid size={{ xs: 12, md:2 }}>
             <Item><strong>Sig/Autonav</strong><br></br> {drone['Sig/Autonav']}</Item>
           </Grid>
-          <Grid item size={{ xs: 12, md:2 }}>
+          <Grid size={{ xs: 12, md:2 }}>
             <Item><strong>Pilot/Sensor</strong><br></br> {drone['Pilot/Sensor']}</Item>
           </Grid>
           
-          <Grid item  size={{ xs: 12, md:2 }}>
+          <Grid  size={{ xs: 12, md:2 }}>
             <Item><strong>Cargo/Load</strong><br></br> {drone['Cargo/Load']}</Item>
           </Grid>
-          <Grid item size={{ xs: 12, md:2 }}>
+          <Grid size={{ xs: 12, md:2 }}>
             <Item><strong>Notes</strong><br></br> {drone.Notes}</Item>
           </Grid>
-          <Grid item size={{ xs: 12, md:12 }}>
+          <Grid size={{ xs: 12, md:12 }}>
             <Item><strong>Mods</strong>
             <ul>
               {(drone.vehicleMods || []).map((mod, index2) => (
@@ -220,32 +220,32 @@ export default function VehiclesPanel(props) {
         {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(vehicle['$Cost'])}
         </Typography>
         <Grid container spacing={2}>
-          <Grid item size={{ xs: 12, md:2 }}>
+          <Grid size={{ xs: 12, md:2 }}>
             <Item><strong>Handling</strong><br></br> {vehicle.Handling}</Item>
           </Grid>
-          <Grid item size={{ xs: 12, md:2 }}>
+          <Grid size={{ xs: 12, md:2 }}>
             <Item><strong>Speed/Accel</strong><br></br> {vehicle['Speed/Accel']}</Item>
           </Grid>
-          <Grid item size={{ xs: 12, md:2 }}>
+          <Grid size={{ xs: 12, md:2 }}>
             <Item><strong>Body/Armor</strong><br></br> {vehicle['Body/Armor']}</Item>
           </Grid>
-          <Grid item size={{ xs: 12, md:2 }}>
+          <Grid size={{ xs: 12, md:2 }}>
             <Item><strong>Sig/Autonav</strong><br></br> {vehicle['Sig/Autonav']}</Item>
           </Grid>
-          <Grid item size={{ xs: 12, md:2 }}>
+          <Grid size={{ xs: 12, md:2 }}>
             <Item><strong>Pilot/Sensor</strong><br></br> {vehicle['Pilot/Sensor']}</Item>
           </Grid>
           
-          <Grid item  size={{ xs: 12, md:2 }}>
+          <Grid  size={{ xs: 12, md:2 }}>
             <Item><strong>Cargo/Load</strong><br></br> {vehicle['Cargo/Load']}</Item>
           </Grid>
-          <Grid item size={{ xs: 12, md:2 }}>
+          <Grid size={{ xs: 12, md:2 }}>
             <Item><strong>Seating</strong><br></br> {vehicle['Seating']}</Item>
           </Grid>
-          <Grid item size={{ xs: 12, md:12 }}>
+          <Grid size={{ xs: 12, md:12 }}>
             <Item><strong>Notes</strong><br></br> {vehicle.Notes}</Item>
           </Grid>
-          <Grid item size={{ xs: 12, md:12 }}>
+          <Grid size={{ xs: 12, md:12 }}>
             <Item><strong>Mods</strong>
             <ul>
               {(vehicle.vehicleMods || []).map((mod, index2) => (

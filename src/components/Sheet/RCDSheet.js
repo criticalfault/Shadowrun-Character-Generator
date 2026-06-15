@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   Grid, Button, Table, TableBody, TableCell, TableContainer,
   TableHead, TableRow, Paper, TextField, Checkbox, FormControlLabel,
@@ -104,7 +104,7 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
 
   if (!visible) {
     return (
-      <Grid item xs={12} className="no-print">
+      <Grid size={12} className="no-print">
         <Button
           variant="outlined"
           onClick={() => setVisible(true)}
@@ -128,7 +128,7 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
   const damage = rcd.damage ?? {};
 
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <SRSection title="Remote Control Record Sheet">
         <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 8 }}>
           <Button
@@ -144,7 +144,7 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
         <Grid container spacing={2} sx={{ mb: 2 }}>
 
           {/* Signal Condition Monitor */}
-          <Grid item xs={12} md={5}>
+          <Grid size={{ xs: 12, md: 5 }}>
             <div style={panelStyle}>
               <div style={sectionLabel}>Signal Condition Monitor</div>
               <div style={{ display: 'flex', gap: 16, justifyContent: 'center' }}>
@@ -165,7 +165,7 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
           </Grid>
 
           {/* RCD Stats */}
-          <Grid item xs={12} md={7}>
+          <Grid size={{ xs: 12, md: 7 }}>
             <div style={panelStyle}>
               <div style={sectionLabel}>Remote Control Deck</div>
               <div style={{ display: 'flex', flexWrap: 'wrap' }}>
@@ -208,7 +208,7 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
 
         {/* ── Flux Ranges + Subscribed Drones ── */}
         <Grid container spacing={2} sx={{ mb: 2 }}>
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <div style={panelStyle}>
               <div style={sectionLabel}>Flux Ranges</div>
               <div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto auto', gap: '2px 16px' }}>
@@ -221,7 +221,7 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
               </div>
             </div>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <div style={panelStyle}>
               <div style={sectionLabel}>Subscribed Drones</div>
               <div style={{ display: 'flex', flexWrap: 'wrap' }}>
@@ -320,7 +320,7 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
               {drones.map((drone, i) => {
                 const extra = (rcd.droneExtras ?? [])[i] ?? {};
                 return (
-                  <Grid item xs={12} md={6} key={i}>
+                  <Grid size={{ xs: 12, md: 6 }} key={i}>
                     <div style={panelStyle}>
                       <div style={{ color: '#000', fontSize: '0.8em', fontWeight: 'bold', marginBottom: 6 }}>
                         {drone.name}

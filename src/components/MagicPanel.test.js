@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+﻿import { render } from '@testing-library/react';
 import MagicPanel from './MagicPanel';
 
 // Mock props for testing

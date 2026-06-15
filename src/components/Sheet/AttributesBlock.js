@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Grid } from '@mui/material';
 import SRSection from './SRSection';
 
@@ -28,7 +28,7 @@ const AttributesBlock = ({ attributes, raceBonuses = {}, cyberBonuses = {}, magi
   attributes['Reaction'] = (attributes['Quickness'] + attributes['Willpower']) / 2;
 
   return (
-    <Grid item xs={12} md={6}>
+    <Grid size={{ xs: 12, md: 6 }}>
       <SRSection title="Attributes">
         <table className="shadowrun-table" style={{ width: '100%' }}>
           <thead>

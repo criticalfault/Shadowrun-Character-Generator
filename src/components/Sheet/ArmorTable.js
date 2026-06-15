@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Grid, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import SRSection from './SRSection';
 import { tablePaperSx } from './sheetTheme';
@@ -9,7 +9,7 @@ const ArmorTable = ({ gear }) => {
   if (armorItems.length === 0) return null;
 
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <SRSection title="Armor">
         <TableContainer component={Paper} sx={tablePaperSx}>
           <Table size="small" className="shadowrun-table">

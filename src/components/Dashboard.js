@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+﻿import React, {useState} from "react";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -637,7 +637,7 @@ export default function BasicTabs() {
     <div className="dashboard">
       <div className="no-print">{displayBox()}</div>
        <Grid container spacing={2} style={{"width":"100%"}} className="no-print">
-        <Grid item size={{ sm: 12 }}>
+        <Grid size={{ sm: 12 }}>
           <LoadCharacter
             Character={Character}
             loadCharacter={handleLoadCharacter}

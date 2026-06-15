@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
 import { auth, provider, signInWithPopup, onAuthStateChanged, db, doc, setDoc, getDoc } from "./firebase";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
@@ -121,7 +121,7 @@ const SignInPopup = (props) => {
           </p>
 
           <Grid container spacing={2}>
-            <Grid item size={{ xs: 12, md: 6 }}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <strong>Save Character</strong>
               <hr />
               <Button fullWidth variant="outlined" sx={{ mb: 1 }}
@@ -133,7 +133,7 @@ const SignInPopup = (props) => {
                 Save to Slot 2{slotLabel(character2)}
               </Button>
             </Grid>
-            <Grid item size={{ xs: 12, md: 6 }}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <strong>Load Character</strong>
               <hr />
               <Button fullWidth variant="outlined" sx={{ mb: 1 }}
