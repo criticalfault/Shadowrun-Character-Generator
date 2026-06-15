@@ -121,8 +121,18 @@
         "name":"The Shadowrun Supplemental",
         "loadByDefault":false
     },
+    "r2":{
+        "name":"Rigger 2",
+        "loadByDefault":false,
+        "edition":"SR2"
+    },
     "rbb":{
         "name":"Rigger Black Box",
+        "loadByDefault":false,
+        "edition":"SR2"
+    },
+    "vr2":{
+        "name":"Virtual Realities 2.0",
         "loadByDefault":false,
         "edition":"SR2"
     },
