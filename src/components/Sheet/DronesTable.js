@@ -82,7 +82,7 @@ const DroneCard = ({ drone }) => {
       )}
 
       {/* Condition Monitor */}
-      <DroneConditionMonitor />
+      <VehicleConditionMonitor />
 
       {/* Blank notes area */}
       <div style={{ padding: '4px 8px 8px 8px', borderTop: '1px solid #ddd' }}>
