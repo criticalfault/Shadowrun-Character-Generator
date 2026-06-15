@@ -21,7 +21,12 @@ const CyberwareTable = ({ cyberware }) => {
             <TableBody>
               {cyberware.map((item, index) => (
                 <TableRow key={item.Name + index}>
-                  <TableCell component="th" scope="row">{item.Name}</TableCell>
+                  <TableCell component="th" scope="row">
+                    {item.Name}
+                    {item.Grade && item.Grade !== 'standard' && (
+                      <span style={{ fontSize: '0.75em', color: '#555', marginLeft: 5 }}>({item.Grade})</span>
+                    )}
+                  </TableCell>
                   <TableCell align="center">{item.EssCost != null ? parseFloat(item.EssCost).toFixed(2) : '—'}</TableCell>
                   <TableCell>{item.Notes ?? ''}</TableCell>
                 </TableRow>
