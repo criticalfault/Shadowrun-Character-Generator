@@ -210,6 +210,7 @@ export default function BasicTabs() {
     edges: [],
     flaws: [],
     ally: null,
+    rcd: { maxFlux: '', currentFlux: '', eccm: '', encryptionModule: '', decryptionModule: '', protocolEmulation: '', rating: '', flux: '', ivisMaster: false, fddmMaster: false, subscribedCurrent: '', maxActive: '', maxSubscribed: '', networkNotes: '', damage: {}, droneExtras: [] },
   };
   const [Edition, setEdition] = React.useState("SR2");
   const [CGMethod, setCGMethod] = React.useState('priorities');
@@ -925,6 +926,8 @@ export default function BasicTabs() {
             onChangeDrones={(drones) =>
               setCharacter({ ...Character, drones: drones })
             }
+            rcd={Character.rcd}
+            onChangeRCD={(rcd) => setCharacter({ ...Character, rcd })}
             BooksFilter={Character.allowedBooks}
           />
         </CustomTabPanel>
@@ -975,6 +978,7 @@ export default function BasicTabs() {
             onChangeDeck={(decks) =>
               setCharacter({ ...Character, decks: decks })
             }
+            onChangeRCD={(rcd) => setCharacter({ ...Character, rcd })}
           />
         </CustomTabPanel>
       </Box>

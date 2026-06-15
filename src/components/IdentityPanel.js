@@ -68,12 +68,12 @@ export default function IdentityPanel(props) {
                 <li>Still need to add "improvements" and tracking Nuyen post finalization.</li>
                 <li>All nesting of improvements (Weapon / Deck / Vehicle accessories and building). These will be handled in a completely different way, but I promise it will feel awesome to do!</li>
                 <li>Decker programming calculator (design and program your own utilities) not yet implemented</li>
-                <li>Remote Control Decks from Rigger 3 not yet implemented</li>
             </ul>
         </div>
         <hr/>
         <h5>Resolved Issues</h5>
         <ul>
+            <li>Remote Control Deck sheet added to Sheet Display — Signal Condition Monitor (3 clickable damage tracks), all RCD stats, Flux Ranges table, Subscribed Drones table auto-populated from character drones, per-drone Autosofts/Standing Orders, and Drone Weapons table. Toggle on/off with a button.</li>
             <li>Control Pool now displayed in Dice Pools (SR3 p.148: Reaction + VCR bonus dice). Only shown when a VCR is installed; label includes VCR level (e.g. "Control (VCR 1)")</li>
             <li>SR3 Rigger 3 skills added — Vehicle Tactics (Technical, INT), Semiballistic/Suborbital/Tracks/Walkers/Mechanical Arm Operation B/R skills, and all matching Background knowledge skills (r3.24)</li>
             <li>SR3 Rigger 3 drone audit — audited all 52 drone entries against Rigger 3; removed duplicate Dalmatian entry, corrected names/costs/availability/speed on ~20 entries</li>

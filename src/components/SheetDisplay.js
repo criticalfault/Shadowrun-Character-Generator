@@ -28,6 +28,7 @@ import DronesTable from './Sheet/DronesTable';
 import ConditionMonitorBlock from './Sheet/ConditionMonitorBlock';
 import CyberdeckTable from './Sheet/CyberdeckTable';
 import AllyTable from './Sheet/AllyTable';
+import RCDSheet from './Sheet/RCDSheet';
 
 
 import Button from "@mui/material/Button";
@@ -42,6 +43,7 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.primary,
 }));
 function SheetDisplay(props) {
+  const rcd = props.currentCharacter.rcd ?? {};
   const Ranges = rangesData;
   const getRangesFromName = (name) => {
     let RangeNames = Object.keys(Ranges);
@@ -143,6 +145,12 @@ function SheetDisplay(props) {
       <VehiclesTable vehicles={props.currentCharacter.vehicles} />
 
       <DronesTable drones={props.currentCharacter.drones} />
+
+      <RCDSheet
+        rcd={rcd}
+        drones={props.currentCharacter.drones}
+        onChangeRCD={props.onChangeRCD}
+      />
 
     </Grid>
   );
