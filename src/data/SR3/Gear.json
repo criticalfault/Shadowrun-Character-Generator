@@ -36689,6 +36689,24 @@
         "Street Index": "2",
         "Availability": "8/96hrs",
         "BookPage": "sta2.035"
+      },
+      {
+        "Name": "Electronic Paper (Standard, 20 Mp)",
+        "Concealability": "-",
+        "Weight": "-",
+        "Cost": "2",
+        "Street Index": "0.5",
+        "Availability": "Always",
+        "BookPage": "ssg.123"
+      },
+      {
+        "Name": "Electronic Paper (Tabloid, 50 Mp)",
+        "Concealability": "-",
+        "Weight": "-",
+        "Cost": "5",
+        "Street Index": "0.5",
+        "Availability": "Always",
+        "BookPage": "ssg.123"
       }
     ]
   },
@@ -41990,6 +42008,24 @@
         "Cost": "260",
         "Street Index": "3",
         "BookPage": "sr2.???"
+      },
+      {
+        "Name": "ColorChange Paint (per liter, ~10 m²)",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "4/3 days",
+        "Cost": "750",
+        "Street Index": "1.5",
+        "BookPage": "ssg.123"
+      },
+      {
+        "Name": "Paint Controller Unit",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "4/7 days",
+        "Cost": "2000",
+        "Street Index": "1",
+        "BookPage": "ssg.123"
       }
     ]
   },
@@ -60611,7 +60647,7 @@
         "Availability": "1/24hrs",
         "Cost": "0",
         "Street Index": "1",
-        "BookPage": "ssg.?"
+        "BookPage": "ssg.38"
       },
       {
         "Name": "Paper Money >>",
@@ -60621,7 +60657,7 @@
         "Availability": "1/24hrs",
         "Cost": "0",
         "Street Index": "1",
-        "BookPage": "ssg.?"
+        "BookPage": "ssg.39"
       },
       {
         "Name": "Standard Credstick[1]>>",

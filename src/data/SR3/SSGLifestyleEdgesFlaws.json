@@ -1,0 +1,536 @@
+{
+  "description": "Lifestyle Edges & Flaws from Sprawl Survival Guide pp.137-144. These modify the monthly cost of a lifestyle. Add up all Edge/Flaw values to get a modifier, then: monthly cost × (1 + modifier). Max 5 Edges and 5 Flaws per lifestyle. Total modifier cannot exceed ±0.50.",
+  "source": "ssg.137",
+  "cost_formula": "monthly_cost × (1 + sum_of_edge_flaw_values)",
+  "limits": {
+    "max_edges": 5,
+    "max_flaws": 5,
+    "max_total_modifier": 0.50,
+    "min_total_modifier": -0.50
+  },
+  "edges": [
+    {
+      "id": "ls-astral-repellent",
+      "name": "Astral Repellent",
+      "value": 0.20,
+      "description": "The astral feel of the home acts like a repellent to spirits and astrally active beings. Any astral being needs to succeed at a Willpower (5) Test to enter. Immediately after a conjuring succeeds within the home, the spirit must make the Willpower Test; failure means the conjuring fails.",
+      "incompatible_with": ["ls-astral-magnet"]
+    },
+    {
+      "id": "ls-bribed-security",
+      "name": "Bribed Security",
+      "value": 0.15,
+      "description": "The security providers for the home have been paid handsomely. All security response times are halved once the alarm is sounded.",
+      "incompatible_with": ["ls-underpaid-security"]
+    },
+    {
+      "id": "ls-concerned-neighbors",
+      "name": "Concerned Neighbors",
+      "value": 0.05,
+      "description": "Neighbors take their neighborhood's safety to heart. They notice strange sounds and peculiar people, and will either check on the character or call security. Treat them as having Intelligence 3 for noticing intruders. Can be taken multiple times, each pertaining to different neighbors.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-defensive-setup",
+      "name": "Defensive Setup",
+      "value": 0.10,
+      "description": "The home features corners and layout characteristics perfect for cover or advantageous positions. Characters familiar with the home can always move to gain the Partial Cover defensive bonus in ranged combat or the Superior Position bonus in melee combat.",
+      "incompatible_with": ["ls-ambush-friendly"]
+    },
+    {
+      "id": "ls-easygoing-landlord",
+      "name": "Easygoing Landlord",
+      "value": 0.05,
+      "description": "The landlord isn't overly concerned with late payments. Roll 3D6 instead of 2D6 when rolling to see if the lifestyle is reduced after insufficient payment (new system), or 2D6 instead of 1D6 (standard SR3 rules).",
+      "incompatible_with": ["ls-trigger-happy-landlord"]
+    },
+    {
+      "id": "ls-escape-tunnel",
+      "name": "Escape Tunnel",
+      "value": 0.10,
+      "description": "The home features a concealed portal that can be used to secretly enter and exit without external observers. May be a basement door to sewers, a secret stairway, or easy access to a neighbor's roof and out-of-sight fire escape.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-good-insulation",
+      "name": "Good Insulation",
+      "value": 0.05,
+      "description": "The home is perfectly protected against the elements thanks to space-age materials. Even during power outages, the home remains in top environmental shape.",
+      "incompatible_with": ["ls-bad-insulation"]
+    },
+    {
+      "id": "ls-good-reputation",
+      "name": "Good Reputation",
+      "value": 0.05,
+      "description": "The home is known to be a great place. Outside contractors and delivery services are eager to come on-site. Gives the character a –2 bonus to all target numbers when negotiating with service providers.",
+      "incompatible_with": ["ls-bad-reputation"]
+    },
+    {
+      "id": "ls-hasty-access",
+      "name": "Hasty Access",
+      "value": 0.05,
+      "description": "The home is configured for quick entry and exit. It takes a single Combat Turn to enter or exit the home at any time, from any room, barring unusual circumstances.",
+      "incompatible_with": ["ls-difficult-access"]
+    },
+    {
+      "id": "ls-helpful-neighbors",
+      "name": "Helpful Neighbors",
+      "value": 0.05,
+      "description": "Neighbors are both friendly and eager to please. They always react favorably to the character and whichever friends they are introduced to. Can be taken multiple times, each pertaining to different neighbors.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-inconspicuous-housing",
+      "name": "Inconspicuous Housing",
+      "value": 0.10,
+      "description": "The home is a nondescript place people can't easily find on a map or on foot. Increases the difficulty of all tests made to find or acquire information about the tenants by +1.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-insurance",
+      "name": "Insurance",
+      "value": 0.10,
+      "description": "An insurance company protects the character's real estate assets. Linked to a specific ID/SIN. When something bad happens to the home and insurance is invoked, the character gains a temporary equivalent lifestyle free of charge during repairs. Each use raises the Edge's value by +0.05 cumulatively.",
+      "incompatible_with": [],
+      "notes": "Requires a valid SIN. Value increases by +0.05 each time invoked. Affects all lifestyles under the same SIN."
+    },
+    {
+      "id": "ls-manaline-power-site",
+      "name": "Manaline/Power Site in the Basement",
+      "value": 0.20,
+      "value_awakened": 0.30,
+      "description": "The home is located directly on a rating 1 manaline or power site (see p.84, MITS). Confers all usual bonuses to magic users inside, but tends to attract unwanted attention due to obvious magical energies.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-masterful-engineering",
+      "name": "Masterful Engineering",
+      "value": 0.05,
+      "detailed_lifestyle_only": true,
+      "description": "The home was crafted using SOTA methods that make modifications easier. Base time for renovations is rolled with 1D6 days per point instead of 2D6 days.",
+      "incompatible_with": ["ls-patchwork-engineering"]
+    },
+    {
+      "id": "ls-motivated-service",
+      "name": "Motivated Service",
+      "value": 0.10,
+      "description": "Non-security home services are very motivated and efficient. They finish in half the time and always react nicely to the character and visitors.",
+      "incompatible_with": ["ls-disgruntled-service"]
+    },
+    {
+      "id": "ls-no-more-neighbors",
+      "name": "No More Neighbors",
+      "value": 0.15,
+      "description": "The homes next door (and above and below) are empty. No immediate help, but no distractions and no one to disturb. Cannot be taken in conjunction with any other 'Neighbors' Edge or Flaw.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-one-step-away",
+      "name": "One Step Away From Everything",
+      "value": 0.05,
+      "description": "The home is in the best possible location. Travel times to specialty outlets or services are halved thanks to little or no traffic and judicious shortcuts.",
+      "incompatible_with": ["ls-middle-of-nowhere"]
+    },
+    {
+      "id": "ls-pest-repellent",
+      "name": "Pest Repellent",
+      "value": 0.05,
+      "description": "Stray animals and pests know to stay away from this home. Any critter wanting to approach the home needs to succeed at a Willpower (6) test.",
+      "incompatible_with": ["ls-infestation"]
+    },
+    {
+      "id": "ls-privacy-screen-1",
+      "name": "Privacy Screen (Level 1)",
+      "value": 0.10,
+      "value_per_level": 0.10,
+      "max_levels": 3,
+      "description": "The home is designed for privacy through thick soundproof walls, strategic windows, or other features. External surveillance or spying suffers a +1 TN penalty per level. Max 3 levels.",
+      "incompatible_with": ["ls-no-privacy"]
+    },
+    {
+      "id": "ls-privacy-screen-2",
+      "name": "Privacy Screen (Level 2)",
+      "value": 0.20,
+      "description": "Privacy Screen at level 2. External surveillance suffers +2 TN penalty.",
+      "incompatible_with": ["ls-no-privacy"]
+    },
+    {
+      "id": "ls-privacy-screen-3",
+      "name": "Privacy Screen (Level 3)",
+      "value": 0.30,
+      "description": "Privacy Screen at level 3. External surveillance suffers +3 TN penalty.",
+      "incompatible_with": ["ls-no-privacy"]
+    },
+    {
+      "id": "ls-quiet-neighborhood",
+      "name": "Quiet Neighborhood",
+      "value": 0.15,
+      "description": "The character lives in a quiet, peaceful area. It's relatively safe to walk at night and crimes happen half as often as normal around the home.",
+      "incompatible_with": ["ls-rough-neighborhood"]
+    },
+    {
+      "id": "ls-reliable-utilities",
+      "name": "Reliable Utilities",
+      "value": 0.10,
+      "description": "The building is kept in good condition with technologies and services ensuring basic functions persist in extreme circumstances. Electricity and hot/cold water still function even in the worst conditions.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-roommate-from-heaven",
+      "name": "Roommate From Heaven",
+      "value": 0.10,
+      "description": "The character lives with a helpful, friendly soul who helps with the home's upkeep and takes care of things when the character is not home. Can be taken multiple times representing additional helpful roommates. Roommates do not contribute to rent.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-terrific-view",
+      "name": "Terrific View",
+      "value": 0.05,
+      "description": "The home offers an amazing view of a specific area, providing both pleasant feelings and observation opportunities. Can be taken multiple times, each applying to a specific area of the home's surroundings.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-vigilant-security",
+      "name": "Vigilant Security",
+      "value": 0.15,
+      "detailed_lifestyle_only": true,
+      "description": "The home's security is especially alert. The lifestyle's security rating is increased by 1 for the purposes of the quantity of dice rolled against intrusion attempts.",
+      "incompatible_with": ["ls-inattentive-security"]
+    },
+    {
+      "id": "ls-watertight",
+      "name": "Watertight",
+      "value": 0.05,
+      "description": "No matter how much it rains or pours, the home remains dry. Even flash floods and acid rain don't affect it.",
+      "incompatible_with": ["ls-waterlogged"]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "ls-ambush-friendly",
+      "name": "Ambush Friendly",
+      "value": -0.10,
+      "description": "The home was practically designed to be invaded. Anyone fighting indoors must succeed at a Perception (6) Test to locate a way to gain the Partial Cover defensive bonus in ranged combat or the Superior Position bonus in melee combat.",
+      "incompatible_with": ["ls-defensive-setup"]
+    },
+    {
+      "id": "ls-annoying-neighbors",
+      "name": "Annoying Neighbors",
+      "value": -0.05,
+      "description": "Neighbors hate the character or ignore them. They make noise at odd hours, disturb the character with requests, and generally make life troublesome. Can be taken multiple times, each pertaining to different neighbors.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-astral-magnet",
+      "name": "Astral Magnet",
+      "value": -0.20,
+      "description": "The home's astral feel is very appealing to astrally active beings. Unfortunate astral pests and wild spirits gravitate to the home, and few astrally projecting characters can fail to notice it.",
+      "incompatible_with": ["ls-astral-repellent"]
+    },
+    {
+      "id": "ls-background-count",
+      "name": "Background Count",
+      "value": -0.20,
+      "value_awakened": -0.30,
+      "description": "The home was witness to unfortunate prior events, radiating hate, anger, sorrow, or fear. It boasts a Background Count (p.83, MITS) of level 1 and all that this entails.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-bad-insulation",
+      "name": "Bad Insulation",
+      "value": -0.05,
+      "description": "Due to shoddy construction, the home's insulation is practically see-through. The elements rule over the home, preventing sleep and making life difficult in extreme temperatures.",
+      "incompatible_with": ["ls-good-insulation"]
+    },
+    {
+      "id": "ls-bad-reputation",
+      "name": "Bad Reputation",
+      "value": -0.05,
+      "description": "The home is thought to be cursed, jinxed, or notorious. Outside contractors and delivery services are very wary. Any negotiation with service providers is done at a +2 penalty to all target numbers.",
+      "incompatible_with": ["ls-good-reputation"]
+    },
+    {
+      "id": "ls-cacophonous-neighborhood",
+      "name": "Cacophonous Neighborhood",
+      "value": -0.05,
+      "description": "The home is unfortunately placed near a highway, railway, motor factory, or other noisy feature. The character has trouble sleeping and relaxing due to constant audio bombardment.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-crashpad",
+      "name": "Crashpad",
+      "value": -0.10,
+      "description": "This place is well known as a place to hang out, party, and crash. People the character knows (or doesn't know) are always showing up. Privacy and security are generally nonexistent in unlocked areas.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-cursed-amenities",
+      "name": "Cursed Amenities",
+      "value": -0.10,
+      "description": "Hot water turns to cold, blackouts are commonplace, and if it can go wrong, it usually has before the character wakes up. The home's basic services keep malfunctioning at the worst of times.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-difficult-access",
+      "name": "Difficult Access",
+      "value": -0.05,
+      "description": "Leaving or entering the home is excruciating and time-consuming due to faulty elevators, stairwells, or time-released door locks. Going in or out, even in a hurry, takes at least two minutes.",
+      "incompatible_with": ["ls-hasty-access"]
+    },
+    {
+      "id": "ls-disgruntled-service",
+      "name": "Disgruntled Service",
+      "value": -0.10,
+      "description": "The character's non-security home services deeply resent the character. They do their job when they want to and take their time, always making sure to 'forget' details or leave little presents to make life more unpleasant.",
+      "incompatible_with": ["ls-motivated-service"]
+    },
+    {
+      "id": "ls-disgusting-neighborhood",
+      "name": "Disgusting Neighborhood",
+      "value": -0.05,
+      "description": "The character's home is right next to a dump, toxic waste treatment plant, tannery, or other nauseating enterprise. Acts as an eyesore and detractor, driving off guests and visitors.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-gnomes-under-floorboards-1",
+      "name": "Gnomes Under the Floorboards (Level 1)",
+      "value": -0.10,
+      "description": "Small items left in the home have a 1 in 6 chance of becoming impossible to locate when searched for later (roll 1D6; on a 1, the item is lost). At level 1, the item eventually shows up (1D6 × 1D6 days later).",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-gnomes-under-floorboards-2",
+      "name": "Gnomes Under the Floorboards (Level 2)",
+      "value": -0.20,
+      "description": "Small items (Concealability 8+) left in the home have a 1 in 6 chance of being lost. At level 2, the item may be permanently lost.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-haunted-1",
+      "name": "Haunted (Level 1)",
+      "value": -0.10,
+      "description": "Apparitions, closets rumbling, doors slamming — something is going on at the home but no official sources can confirm it. The home is very difficult to sleep in as frightening events keep residents awake.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-haunted-2",
+      "name": "Haunted (Level 2)",
+      "value": -0.20,
+      "description": "A Force 1 Specter (p.121, MITS) inhabits the home and cannot be banished until the reason for its presence is unearthed and resolved. The home is very difficult to sleep in.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-horrible-view",
+      "name": "Horrible View",
+      "value": -0.05,
+      "description": "The home offers a fantastic view of a wall, treatment plant, or other vision-gouging sight. Can be taken multiple times, each applying to a specific area of the home's surroundings.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-inattentive-security",
+      "name": "Inattentive Security",
+      "value": -0.15,
+      "detailed_lifestyle_only": true,
+      "description": "Security is moderately aware of the home at best. The lifestyle's security rating is lowered by 1 for the purposes of dice rolled against intrusion attempts.",
+      "incompatible_with": ["ls-vigilant-security"]
+    },
+    {
+      "id": "ls-infestation-1",
+      "name": "Infestation (Level 1)",
+      "value": -0.10,
+      "description": "Local strays or small pests gravitate to the home, nibbling power cords, eating food, and scurrying around at night. Exterminators can help for a few days but the critters always come back.",
+      "incompatible_with": ["ls-pest-repellent"]
+    },
+    {
+      "id": "ls-infestation-2",
+      "name": "Infestation (Level 2)",
+      "value": -0.20,
+      "description": "As Infestation level 1, but extends to paracritters. Type and frequency of paracritter visits are up to the gamemaster.",
+      "incompatible_with": ["ls-pest-repellent"]
+    },
+    {
+      "id": "ls-intolerant-neighbors",
+      "name": "Intolerant Neighbors",
+      "value": -0.05,
+      "description": "Neighbors have extremely short tempers and will gladly report the character at the slightest noise late at night. They are leery of personal contact and other social interactions. Can be taken multiple times, each pertaining to different neighbors.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-living-by-committee",
+      "name": "Living By Committee",
+      "value": -0.10,
+      "description": "The character takes part in a community housing project, sharing most lifestyle particularities with others. Must regularly attend meetings to address housing issues and perform chores with regularity. Failure in duties can cause eviction.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-living-with-parents",
+      "name": "Living With Parents",
+      "value": -0.25,
+      "description": "The character pays less because they still live at home with parents (or a relative who owns the building). Must respect the rules of the house, including possible curfews or visitor restrictions. Can only be bought off by actually moving out.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-mail-leftovers",
+      "name": "Mail Leftovers",
+      "value": -0.05,
+      "description": "The previous tenant's legacy remains — the character receives mail, threats, pets, and angry debtors all meant for the former occupant. Cannot be bought off until resolved through roleplaying.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-middle-of-nowhere",
+      "name": "Middle of Nowhere",
+      "value": -0.05,
+      "description": "The home is as far from local services as metahumanly possible. All travel between the home and specialty services is doubled in length due to traffic and bad city planning.",
+      "incompatible_with": ["ls-one-step-away"]
+    },
+    {
+      "id": "ls-no-hazard-alarm",
+      "name": "No Hazard Alarm",
+      "value": -0.05,
+      "description": "Fire, electrical hazards, and other accidents are not reported to security or to the character, leaving them to discover the problem and take action themselves.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-no-privacy-1",
+      "name": "No Privacy (Level 1)",
+      "value": -0.05,
+      "value_per_level": -0.05,
+      "max_levels": 3,
+      "description": "It's amazingly easy to spy on the character, even when taking steps to hide. All external surveillance activities receive a –1 bonus per level to all target numbers. Max 3 levels.",
+      "incompatible_with": ["ls-privacy-screen-1", "ls-privacy-screen-2", "ls-privacy-screen-3"]
+    },
+    {
+      "id": "ls-no-privacy-2",
+      "name": "No Privacy (Level 2)",
+      "value": -0.10,
+      "description": "No Privacy at level 2. External surveillance receives –2 bonus.",
+      "incompatible_with": ["ls-privacy-screen-1", "ls-privacy-screen-2", "ls-privacy-screen-3"]
+    },
+    {
+      "id": "ls-no-privacy-3",
+      "name": "No Privacy (Level 3)",
+      "value": -0.15,
+      "description": "No Privacy at level 3. External surveillance receives –3 bonus.",
+      "incompatible_with": ["ls-privacy-screen-1", "ls-privacy-screen-2", "ls-privacy-screen-3"]
+    },
+    {
+      "id": "ls-patchwork-engineering",
+      "name": "Patchwork Engineering",
+      "value": -0.05,
+      "detailed_lifestyle_only": true,
+      "description": "The home was built using shoddy methods. Any renovation or modification task takes 3D6 days per point (instead of 2D6). Additionally, the Rule of Six applies to this roll.",
+      "incompatible_with": ["ls-masterful-engineering"]
+    },
+    {
+      "id": "ls-portal-in-closet",
+      "name": "Portal in the Closet",
+      "value": -0.05,
+      "value_max": -0.20,
+      "description": "Hidden somewhere in the home is a secret passage that leaks or spews out something bad. At –0.05, it may be undiscovered serial killer victims in a crawlspace. At –0.20, an underground ghoul hive periodically uses the old coal chute to come and go.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-roommate-from-hell",
+      "name": "Roommate From Hell",
+      "value": -0.05,
+      "description": "The character lives with a nosy, lazy freeloader who disturbs life more than anything else. Can be taken multiple times representing more problematic roommates. Roommates do not contribute to rent.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-rough-neighborhood",
+      "name": "Rough Neighborhood",
+      "value": -0.15,
+      "description": "Undesirables cluster around the home. Security violations happen more often and it's more dangerous to be outside at night. Crimes happen twice as often as normal around the home.",
+      "incompatible_with": ["ls-quiet-neighborhood"]
+    },
+    {
+      "id": "ls-this-isnt-sams-pizza",
+      "name": "This Isn't Sam's Pizza",
+      "value": -0.05,
+      "description": "The home's LTG is constantly misassociated with a popular service or business. Nothing the character can do will alleviate the constant wrong numbers.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-trigger-happy-landlord",
+      "name": "Trigger-Happy Landlord",
+      "value": -0.05,
+      "description": "The landlord despises the character or has a very structured way of running things. Roll 1D6 instead of 2D6 when rolling to see if the lifestyle is reduced after insufficient payment (new system), or divide the 1D6 roll by two when comparing to missed payments (standard SR3 rules).",
+      "incompatible_with": ["ls-easygoing-landlord"]
+    },
+    {
+      "id": "ls-underpaid-security",
+      "name": "Underpaid Security",
+      "value": -0.15,
+      "description": "In an effort to save money, far less lifestyle budget goes to security. All security response times are doubled once the alarm is sounded.",
+      "incompatible_with": ["ls-bribed-security"]
+    },
+    {
+      "id": "ls-unreliable-security-1",
+      "name": "Unreliable Security (Level 1)",
+      "value": -0.05,
+      "value_per_level": -0.05,
+      "max_levels": 5,
+      "description": "The cavalry doesn't always come. Whenever there's a call for security, roll 1D6. If the result is equal to or lower than the Flaw level, no help is coming. Level 1: fails on a 1.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-unreliable-security-2",
+      "name": "Unreliable Security (Level 2)",
+      "value": -0.10,
+      "description": "Unreliable Security level 2. Fails on 1-2.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-unreliable-security-3",
+      "name": "Unreliable Security (Level 3)",
+      "value": -0.15,
+      "description": "Unreliable Security level 3. Fails on 1-3.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-victory-gardens",
+      "name": "Victory Gardens",
+      "value": -0.20,
+      "description": "The home is used as a hydroponics farm. While this offsets part of the lifestyle cost, the equipment takes up large amounts of room with strict environmental demands. The home has effective living space equal to one lower lifestyle level than normal.",
+      "incompatible_with": []
+    },
+    {
+      "id": "ls-waterlogged",
+      "name": "Waterlogged",
+      "value": -0.05,
+      "description": "Even the slightest rain drops in through the roof or rises up through the floor, causing constant water damage and grief.",
+      "incompatible_with": ["ls-watertight"]
+    }
+  ],
+  "sample_packages": [
+    {
+      "name": "Co-op Housing",
+      "total_modifier": -0.50,
+      "edges": [],
+      "flaws": ["ls-roommate-from-heaven", "ls-roommate-from-heaven", "ls-cursed-amenities", "ls-intolerant-neighbors", "ls-living-by-committee", "ls-mail-leftovers", "ls-roommate-from-hell", "ls-roommate-from-hell", "ls-roommate-from-hell", "ls-roommate-from-hell", "ls-victory-gardens"],
+      "description": "Much cheaper than regular housing. Characters living in a co-op can rely on housemates for help, but spend much of their time dealing with less motivated members."
+    },
+    {
+      "name": "Community Beacon",
+      "total_modifier": 0.45,
+      "edges": ["ls-concerned-neighbors", "ls-good-reputation", "ls-helpful-neighbors", "ls-motivated-service", "ls-one-step-away", "ls-quiet-neighborhood"],
+      "flaws": [],
+      "description": "The shining house in the neighborhood — the home of a person who stands up for the community. Shadowrunners seeking to uphold a sterling public image are best served by this type of home."
+    },
+    {
+      "name": "House of the Dead",
+      "total_modifier": -0.80,
+      "total_modifier_awakened": -0.90,
+      "edges": ["ls-escape-tunnel", "ls-no-more-neighbors"],
+      "flaws": ["ls-astral-magnet", "ls-background-count", "ls-bad-reputation", "ls-difficult-access", "ls-haunted-2", "ls-infestation-2", "ls-middle-of-nowhere"],
+      "description": "Creepy, disquieting and certifiably horrifying. Note: this example is an exception to the usual 5-Flaw limit."
+    },
+    {
+      "name": "Safehouse",
+      "total_modifier": 0.50,
+      "edges": ["ls-defensive-setup", "ls-hasty-access", "ls-no-more-neighbors", "ls-privacy-screen-2"],
+      "flaws": [],
+      "description": "The perfect place of respite for any pro. Safehouses come in many shapes and sizes but share hidden defenses, emergency exits, and no witnesses."
+    }
+  ]
+}
