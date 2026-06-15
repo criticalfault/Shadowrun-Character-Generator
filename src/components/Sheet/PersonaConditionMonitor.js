@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 
 const SECTIONS = [
-  { label: 'Light',    boxes: 1 },
-  { label: 'Moderate', boxes: 2 },
-  { label: 'Serious',  boxes: 3 },
+  { label: 'Light',           boxes: 2 },
+  { label: 'Moderate',        boxes: 2 },
+  { label: 'Serious',         boxes: 2 },
   { label: 'Persona\nCrashed', boxes: 4 },
 ];
 
 const BOX_LABELS = [
-  '+1 TN#\n-1 Init.',  // 0 — Light
-  '+2 TN#\n-2 Init.',  // 1 — Moderate start
-  '',                   // 2
-  '+3 TN#\n-3 Init.',  // 3 — Serious start
-  '', '',               // 4-5
+  '+1 TN#\n-1 Init.',  // 0 — Light start
+  '',                   // 1 — Light (empty gap)
+  '+2 TN#\n-2 Init.',  // 2 — Moderate start
+  '',                   // 3 — Moderate (empty gap)
+  '+3 TN#\n-3 Init.',  // 4 — Serious start
+  '',                   // 5 — Serious (empty gap)
   '', '', '', '',       // 6-9 — Persona Crashed
 ];
 
