@@ -71,12 +71,12 @@ export default function IdentityPanel(props) {
                 <li>SR3 Drone audit not yet started — drone stats have not been verified against Rigger 3</li>
                 <li>Remote Control Decks from Rigger 3 not yet implemented</li>
                 <li>Control Pool (Reaction ÷ 2, modified by VCR) not yet displayed</li>
-                <li>New Rigger skills (Mechanical Arm Operation, Semiballistic, Suborbital, Tracks, Walkers, Vehicle Tactics) not yet added to the skills list</li>
             </ul>
         </div>
         <hr/>
         <h5>Resolved Issues</h5>
         <ul>
+            <li>SR3 Rigger 3 skills added — Vehicle Tactics (Technical, INT), Semiballistic/Suborbital/Tracks/Walkers/Mechanical Arm Operation B/R skills, and all matching Background knowledge skills (r3.24)</li>
             <li>SR3 Rigger 3 vehicle audit — corrected ~34 vehicle entries (costs, availability, handling, split stats); added 2 missing vehicles; Rigger 3 VehicleMods system with 81 mods across 8 categories; full mod picker UI on vehicle and drone cards; sheet display shows modified stats with strikethrough base values</li>
             <li>Ally Spirit section added (MitS pp.107–113) — force, physical/mental attributes, skills, powers, spells, Sense Link, Karma Pool, forms, and karma cost tracker. Displays on the sheet display tab with full stats summary</li>
             <li>Edges &amp; Flaws system (Shadowrun Companion) — full implementation with all ~65 Edges and Flaws, picker UI, variable-cost tiers, and balance enforcement (net-zero for Priority, ±6 BP cap for Point Buy)</li>
