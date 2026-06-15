@@ -1,7 +1,18 @@
-.damaged{
-    background-color:cyan;
-    border-color:white;
+.damaged {
+    background-color: #333;
+    border-color: #000;
     margin: 1px;
+}
+
+.conditionMonitor {
+    padding: 0 10px 6px 10px;
+}
+
+.conditionBoxes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px;
 }
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */

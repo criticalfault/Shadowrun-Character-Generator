@@ -29,9 +29,9 @@ const ConditionMonitor = (props) => {
           onClick={() => handleClick(index, props.targetID, isSelected)}
           style={{
             ...styles.rectangle,
-            borderColor: isSelected ? "#00ffc3" : "#00ffc3",
-            backgroundColor: isSelected ? "#1565c0" : "transparent",
-            color: isSelected ? "#00ffc3" : "#00ffc3",
+            borderColor: '#000',
+            backgroundColor: isSelected ? '#333' : 'transparent',
+            color: isSelected ? '#fff' : '#000',
           }}
         >
           <span className="noselect">{box}</span>
@@ -42,8 +42,8 @@ const ConditionMonitor = (props) => {
 
   return (
     <div className="conditionMonitor">
+      <span className="noselect" style={{ color: '#000', fontWeight: 700, fontSize: '0.8rem', display: 'block', marginBottom: 4 }}>{props.type}</span>
       <div className="conditionBoxes">
-        <span className="noselect" style={{"color":"#00ffc3"}}>{props.type}</span><br></br>
         {renderBoxes()}
       </div>
     </div>

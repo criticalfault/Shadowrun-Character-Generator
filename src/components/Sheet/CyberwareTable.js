@@ -24,7 +24,7 @@ const CyberwareTable = ({ cyberware }) => {
                 <TableRow key={item.Name + index}>
                   <TableCell component="th" scope="row">{item.Name}</TableCell>
                   <TableCell align="center">{item.Rating ?? '—'}</TableCell>
-                  <TableCell align="center">{item.EssCost ?? '—'}</TableCell>
+                  <TableCell align="center">{item.EssCost != null ? parseFloat(item.EssCost).toFixed(2) : '—'}</TableCell>
                   <TableCell>{item.Notes ?? ''}</TableCell>
                 </TableRow>
               ))}
