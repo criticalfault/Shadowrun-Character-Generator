@@ -862,6 +862,7 @@ export default function BasicTabs() {
             onChangeAlly={(ally) => setCharacter({ ...Character, ally })}
             creatorIntelligence={Character.attributes.Intelligence}
             creatorWillpower={Character.attributes.Willpower}
+            step={Character.step}
             onSpendKarma={(karma) => {
               let karmaSpentToSave = (Character.karmaSpent += karma);
               setCharacter({ ...Character, karmaSpent: karmaSpentToSave });

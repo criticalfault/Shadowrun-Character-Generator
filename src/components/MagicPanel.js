@@ -1648,9 +1648,11 @@ function MagicPanel(props) {
       editedFoci[index].Bound = "Yes";
       setSelectedFoci(editedFoci);
       props.onChangeFoci(editedFoci);
-      setSpellPointsSpent(
-        (prevSpells) => prevSpells + editedFoci[index].KarmaCost
-      );
+      if (props.step === 'finalized') {
+        props.onSpendKarma?.(editedFoci[index].KarmaCost);
+      } else {
+        setSpellPointsSpent((prev) => prev + editedFoci[index].KarmaCost);
+      }
     }
   };
 
@@ -1660,9 +1662,9 @@ function MagicPanel(props) {
       editedFoci[index].Bound = "No";
       setSelectedFoci(editedFoci);
       props.onChangeFoci(editedFoci);
-      setSpellPointsSpent(
-        (prevSpells) => prevSpells - editedFoci[index].KarmaCost
-      );
+      if (props.step !== 'finalized') {
+        setSpellPointsSpent((prev) => prev - editedFoci[index].KarmaCost);
+      }
     }
   };
 
