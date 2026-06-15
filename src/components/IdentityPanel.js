@@ -68,15 +68,15 @@ export default function IdentityPanel(props) {
                 <li>Still need to add "improvements" and tracking Nuyen post finalization.</li>
                 <li>All nesting of improvements (Weapon / Deck / Vehicle accessories and building). These will be handled in a completely different way, but I promise it will feel awesome to do!</li>
                 <li>Decker programming calculator (design and program your own utilities) not yet implemented</li>
-                <li>SR3 Drone audit not yet started — drone stats have not been verified against Rigger 3</li>
                 <li>Remote Control Decks from Rigger 3 not yet implemented</li>
-                <li>Control Pool (Reaction ÷ 2, modified by VCR) not yet displayed</li>
             </ul>
         </div>
         <hr/>
         <h5>Resolved Issues</h5>
         <ul>
+            <li>Control Pool now displayed in Dice Pools (SR3 p.148: ceil(Reaction÷2) + VCR bonus). Shows for any character with vehicles or drones; label includes VCR level when installed</li>
             <li>SR3 Rigger 3 skills added — Vehicle Tactics (Technical, INT), Semiballistic/Suborbital/Tracks/Walkers/Mechanical Arm Operation B/R skills, and all matching Background knowledge skills (r3.24)</li>
+            <li>SR3 Rigger 3 drone audit — audited all 52 drone entries against Rigger 3; removed duplicate Dalmatian entry, corrected names/costs/availability/speed on ~20 entries</li>
             <li>SR3 Rigger 3 vehicle audit — corrected ~34 vehicle entries (costs, availability, handling, split stats); added 2 missing vehicles; Rigger 3 VehicleMods system with 81 mods across 8 categories; full mod picker UI on vehicle and drone cards; sheet display shows modified stats with strikethrough base values</li>
             <li>Ally Spirit section added (MitS pp.107–113) — force, physical/mental attributes, skills, powers, spells, Sense Link, Karma Pool, forms, and karma cost tracker. Displays on the sheet display tab with full stats summary</li>
             <li>Edges &amp; Flaws system (Shadowrun Companion) — full implementation with all ~65 Edges and Flaws, picker UI, variable-cost tiers, and balance enforcement (net-zero for Priority, ±6 BP cap for Point Buy)</li>
