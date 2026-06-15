@@ -2,7 +2,6 @@
 import {
   Grid, Button, Table, TableBody, TableCell, TableContainer,
   TableHead, TableRow, Paper, TextField, Checkbox, FormControlLabel,
-  Tooltip,
 } from '@mui/material';
 import SRSection from './SRSection';
 import { tablePaperSx } from './sheetTheme';
@@ -14,11 +13,19 @@ const FLUX_RANGES = [
   { flux: 9, range: '25km' }, { flux: '10+', range: '(2×flux) +10km' },
 ];
 
-const CHANNEL_CONFIG = {
-  Command:  { boxes: 10 },
-  Simsense: { boxes: 10 },
-  System:   { boxes: 10 },
-};
+// 10 rows, index 0 = top (Channel Disengaged), index 9 = bottom (Light)
+const SIGNAL_ROWS = [
+  { label: 'Channel\nDisengaged', boxText: '' },
+  { label: null, boxText: '' },
+  { label: null, boxText: '' },
+  { label: null, boxText: '' },
+  { label: null, boxText: '' },
+  { label: 'Serious\nDegradation', boxText: '+3TN #' },
+  { label: null, boxText: '' },
+  { label: 'Moderate\nDegradation', boxText: '+2 TN #' },
+  { label: null, boxText: '' },
+  { label: 'Light\nDegradation', boxText: '+1TN #' },
+];
 
 const cellSx = { borderColor: '#ddd', padding: '4px 8px', fontSize: '0.8em' };
 const headSx = { ...cellSx, fontSize: '0.7em' };
@@ -34,42 +41,61 @@ const sectionLabel = {
 
 const panelStyle = { border: '1px solid #bbb', padding: 12, borderRadius: 2 };
 
-// ── Damage Track ─────────────────────────────────────────────────────────────
-function DamageTrack({ label, totalBoxes, filled, onChange }) {
-  const thresholds = {
-    Command:  { serious: 7, moderate: 4, light: 1 },
-    Simsense: { serious: 5, moderate: 3, light: 1 },
-    System:   { serious: 7, moderate: 4, light: 1 },
-  }[label] ?? { serious: Math.ceil(totalBoxes * 0.7), moderate: Math.ceil(totalBoxes * 0.4), light: 1 };
-
-  const getColor = (i) => {
-    const idx = totalBoxes - i;
-    if (idx >= thresholds.serious) return '#cc0000';
-    if (idx >= thresholds.moderate) return '#888';
-    return '#333';
+// ── Signal Damage Track ───────────────────────────────────────────────────────
+// filled = number of boxes marked from the bottom (0..10)
+// showLabels: 'left' | 'right' | false
+function DamageTrack({ label, filled, onChange, showLabels }) {
+  const handleClick = (i) => {
+    // i is 0=top, 9=bottom; fill level from bottom = 10 - i
+    const level = 10 - i;
+    onChange(filled === level ? level - 1 : level);
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: 80 }}>
-      <div style={{ color: '#555', fontSize: '0.7em', marginBottom: 4 }}>{label}</div>
-      <div style={{ display: 'flex', flexDirection: 'column-reverse', gap: 2 }}>
-        {Array.from({ length: totalBoxes }).map((_, i) => (
-          <Tooltip key={i} title={i < thresholds.serious ? 'Serious' : i < thresholds.moderate ? 'Moderate' : 'Light'} placement="left">
-            <div
-              onClick={() => onChange(i < filled ? i : i + 1)}
-              style={{
-                width: 18, height: 18,
-                border: `1px solid ${getColor(i)}`,
-                backgroundColor: i < filled ? getColor(i) : 'transparent',
-                cursor: 'pointer',
-                borderRadius: 2,
-              }}
-            />
-          </Tooltip>
-        ))}
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      {/* Channel label above */}
+      <div style={{ fontSize: '0.72rem', fontWeight: 700, textAlign: 'center', marginBottom: 6, lineHeight: 1.3 }}>
+        {label.split('\n').map((l, i) => <div key={i}>{l}</div>)}
       </div>
-      <div style={{ color: '#888', fontSize: '0.65em', marginTop: 4 }}>
-        {filled}/{totalBoxes}
+      {/* Box rows top-to-bottom */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        {SIGNAL_ROWS.map((row, i) => {
+          const isFilled = i >= (10 - filled);
+          return (
+            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              {/* Left label column */}
+              {showLabels === 'left' && (
+                <div style={{ width: 72, textAlign: 'right', fontSize: '0.6rem', lineHeight: 1.2, color: '#333' }}>
+                  {row.label?.split('\n').map((l, j) => <div key={j}>{l}</div>)}
+                </div>
+              )}
+              {/* Box */}
+              <div
+                onClick={() => handleClick(i)}
+                style={{
+                  width: 46, height: 22,
+                  border: '1px solid #000',
+                  backgroundColor: isFilled ? '#333' : 'transparent',
+                  cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  userSelect: 'none',
+                }}
+              >
+                {row.boxText && (
+                  <span style={{ fontSize: '0.55rem', color: isFilled ? '#fff' : '#000' }}>
+                    {row.boxText}
+                  </span>
+                )}
+              </div>
+              {/* Right label column */}
+              {showLabels === 'right' && (
+                <div style={{ width: 72, textAlign: 'left', fontSize: '0.6rem', lineHeight: 1.2, color: '#333' }}>
+                  {row.label?.split('\n').map((l, j) => <div key={j}>{l}</div>)}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -147,19 +173,10 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
           <Grid size={{ xs: 12, md: 5 }}>
             <div style={panelStyle}>
               <div style={sectionLabel}>Signal Condition Monitor</div>
-              <div style={{ display: 'flex', gap: 16, justifyContent: 'center' }}>
-                {Object.entries(CHANNEL_CONFIG).map(([ch, { boxes }]) => (
-                  <DamageTrack
-                    key={ch}
-                    label={ch}
-                    totalBoxes={boxes}
-                    filled={damage[ch] ?? 0}
-                    onChange={(val) => updateDamage(ch, val)}
-                  />
-                ))}
-              </div>
-              <div style={{ color: '#888', fontSize: '0.65em', marginTop: 8, textAlign: 'center' }}>
-                Click boxes to mark damage (top = worst)
+              <div style={{ display: 'flex', gap: 0, justifyContent: 'center', alignItems: 'flex-start' }}>
+                <DamageTrack label="Command\nChannel"  filled={damage.Command  ?? 0} onChange={(v) => updateDamage('Command',  v)} showLabels="left" />
+                <DamageTrack label="Simsense\nChannel" filled={damage.Simsense ?? 0} onChange={(v) => updateDamage('Simsense', v)} showLabels={false} />
+                <DamageTrack label="System\nChannel"   filled={damage.System   ?? 0} onChange={(v) => updateDamage('System',   v)} showLabels="right" />
               </div>
             </div>
           </Grid>
