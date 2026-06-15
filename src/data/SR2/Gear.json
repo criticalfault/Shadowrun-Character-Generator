@@ -22843,6 +22843,482 @@
         "Availability": "8/2weeks",
         "Cost": "7500",
         "Street Index": "2"
+      },
+      {
+        "BookPage": "r2.97",
+        "Name": "BattleTac IVIS (RC Deck)",
+        "Availability": "10/21days",
+        "Cost": "125000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.97",
+        "Name": "BattleTac FDDM (RC Deck)",
+        "Availability": "10/21days",
+        "Cost": "175000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Encryption Module (R1)",
+        "Availability": "1/1days",
+        "Cost": "5000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Encryption Module (R2)",
+        "Availability": "2/2days",
+        "Cost": "10000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Encryption Module (R3)",
+        "Availability": "3/3days",
+        "Cost": "15000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Encryption Module (R4)",
+        "Availability": "4/4days",
+        "Cost": "20000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Encryption Module (R5)",
+        "Availability": "5/5days",
+        "Cost": "25000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Encryption Module (R6)",
+        "Availability": "6/6days",
+        "Cost": "30000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Encryption Module (R7)",
+        "Availability": "7/7days",
+        "Cost": "35000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Encryption Module (R8)",
+        "Availability": "8/8days",
+        "Cost": "40000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Encryption Module (R9)",
+        "Availability": "9/9days",
+        "Cost": "45000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Encryption Module (R10)",
+        "Availability": "10/10days",
+        "Cost": "50000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Rigger Decryption Module (R1)",
+        "Availability": "3/1days",
+        "Cost": "7500",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Rigger Decryption Module (R2)",
+        "Availability": "4/2days",
+        "Cost": "15000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Rigger Decryption Module (R3)",
+        "Availability": "5/3days",
+        "Cost": "22500",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Rigger Decryption Module (R4)",
+        "Availability": "6/4days",
+        "Cost": "30000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Rigger Decryption Module (R5)",
+        "Availability": "7/5days",
+        "Cost": "37500",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Rigger Decryption Module (R6)",
+        "Availability": "8/6days",
+        "Cost": "45000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Rigger Decryption Module (R7)",
+        "Availability": "9/7days",
+        "Cost": "52500",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Rigger Decryption Module (R8)",
+        "Availability": "10/8days",
+        "Cost": "60000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC ECCM (R1)",
+        "Availability": "4/7days",
+        "Cost": "7500",
+        "Street Index": "2"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC ECCM (R2)",
+        "Availability": "4/7days",
+        "Cost": "15000",
+        "Street Index": "2"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC ECCM (R3)",
+        "Availability": "4/7days",
+        "Cost": "22500",
+        "Street Index": "2"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC ECCM (R4)",
+        "Availability": "6/14days",
+        "Cost": "60000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC ECCM (R5)",
+        "Availability": "6/14days",
+        "Cost": "75000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC ECCM (R6)",
+        "Availability": "6/14days",
+        "Cost": "90000",
+        "Street Index": "3"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC ECCM (R7)",
+        "Availability": "12/28days",
+        "Cost": "245000",
+        "Street Index": "4"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC ECCM (R8)",
+        "Availability": "12/28days",
+        "Cost": "280000",
+        "Street Index": "4"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC ECCM (R9)",
+        "Availability": "12/28days",
+        "Cost": "315000",
+        "Street Index": "4"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC ECCM (R10)",
+        "Availability": "18/45days",
+        "Cost": "500000",
+        "Street Index": "-"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Protocol Emulation Module (R1)",
+        "Availability": "3/1days",
+        "Cost": "5000",
+        "Street Index": "2"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Protocol Emulation Module (R2)",
+        "Availability": "4/2days",
+        "Cost": "10000",
+        "Street Index": "2"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Protocol Emulation Module (R3)",
+        "Availability": "5/3days",
+        "Cost": "15000",
+        "Street Index": "2"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Protocol Emulation Module (R4)",
+        "Availability": "6/4days",
+        "Cost": "20000",
+        "Street Index": "2"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Protocol Emulation Module (R5)",
+        "Availability": "7/5days",
+        "Cost": "25000",
+        "Street Index": "2"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Protocol Emulation Module (R6)",
+        "Availability": "8/6days",
+        "Cost": "30000",
+        "Street Index": "2"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Protocol Emulation Module (R7)",
+        "Availability": "9/7days",
+        "Cost": "35000",
+        "Street Index": "2"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Protocol Emulation Module (R8)",
+        "Availability": "10/8days",
+        "Cost": "40000",
+        "Street Index": "2"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Protocol Emulation Module (R9)",
+        "Availability": "11/9days",
+        "Cost": "45000",
+        "Street Index": "2"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "Protocol Emulation Module (R10)",
+        "Availability": "12/10days",
+        "Cost": "50000",
+        "Street Index": "2"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Signal Amplifier (R1)",
+        "Availability": "1/12hrs",
+        "Cost": "250",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Signal Amplifier (R2)",
+        "Availability": "2/24hrs",
+        "Cost": "500",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Signal Amplifier (R3)",
+        "Availability": "3/36hrs",
+        "Cost": "750",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Signal Amplifier (R4)",
+        "Availability": "4/48hrs",
+        "Cost": "1000",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Signal Amplifier (R5)",
+        "Availability": "5/60hrs",
+        "Cost": "1250",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Signal Amplifier (R6)",
+        "Availability": "6/72hrs",
+        "Cost": "1500",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Signal Amplifier (R7)",
+        "Availability": "7/84hrs",
+        "Cost": "1750",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Signal Amplifier (R8)",
+        "Availability": "8/96hrs",
+        "Cost": "2000",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Signal Amplifier (R9)",
+        "Availability": "9/108hrs",
+        "Cost": "2250",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Signal Amplifier (R10)",
+        "Availability": "10/120hrs",
+        "Cost": "2500",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Storage Memory (10Mp)",
+        "Availability": "2/24hrs",
+        "Cost": "50",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Storage Memory (50Mp)",
+        "Availability": "2/24hrs",
+        "Cost": "250",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Storage Memory (100Mp)",
+        "Availability": "2/24hrs",
+        "Cost": "500",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Storage Memory (250Mp)",
+        "Availability": "2/24hrs",
+        "Cost": "1250",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Storage Memory (500Mp)",
+        "Availability": "2/24hrs",
+        "Cost": "2500",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.98",
+        "Name": "RC Storage Memory (1000Mp)",
+        "Availability": "2/24hrs",
+        "Cost": "5000",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.99",
+        "Name": "Hitcher Jacks (R1)",
+        "Availability": "2/48hrs",
+        "Cost": "100",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.99",
+        "Name": "Hitcher Jacks (R2)",
+        "Availability": "2/48hrs",
+        "Cost": "200",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.99",
+        "Name": "Hitcher Jacks (R3)",
+        "Availability": "2/48hrs",
+        "Cost": "300",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.99",
+        "Name": "Hitcher Jacks (R4)",
+        "Availability": "2/48hrs",
+        "Cost": "400",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.99",
+        "Name": "Hitcher Jacks (R5)",
+        "Availability": "2/48hrs",
+        "Cost": "500",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.99",
+        "Name": "Hitcher Jacks (R6)",
+        "Availability": "2/48hrs",
+        "Cost": "600",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.99",
+        "Name": "Hitcher Jacks (R7)",
+        "Availability": "2/48hrs",
+        "Cost": "700",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.99",
+        "Name": "Hitcher Jacks (R8)",
+        "Availability": "2/48hrs",
+        "Cost": "800",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.99",
+        "Name": "Hitcher Jacks (R9)",
+        "Availability": "2/48hrs",
+        "Cost": "900",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.99",
+        "Name": "Hitcher Jacks (R10)",
+        "Availability": "2/48hrs",
+        "Cost": "1000",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.99",
+        "Name": "A/V Screen Display",
+        "Availability": "2/24hrs",
+        "Cost": "100",
+        "Street Index": "1"
+      },
+      {
+        "BookPage": "r2.99",
+        "Name": "RC Intercom Speaker",
+        "Availability": "2/24hrs",
+        "Cost": "25",
+        "Street Index": "1"
       }
     ]
   },
@@ -22957,7 +23433,8 @@
         "Weight": "45",
         "Availability": "GM",
         "Cost": "75000",
-        "Street Index": "GM"
+        "Street Index": "GM",
+        "BookPage": "r2.92"
       },
       {
         "Name": "Vangeance Minigun",
@@ -22968,7 +23445,8 @@
         "Weight": "30",
         "Availability": "GM",
         "Cost": "50000",
-        "Street Index": "GM"
+        "Street Index": "GM",
+        "BookPage": "r2.92"
       },
       {
         "Name": "Vehicular Shotgun",
@@ -22985,23 +23463,25 @@
         "Name": "Victory Rotary Assault Cannon",
         "Type": "Cannon",
         "Ammunition": "50",
-        "Mode": "FA",
-        "Damage": "18D",
+        "Mode": "SS/FA",
+        "Damage": "20D",
         "Weight": "90",
         "Availability": "GM",
         "Cost": "90000",
-        "Street Index": "GM"
+        "Street Index": "GM",
+        "BookPage": "r2.92"
       },
       {
         "Name": "Vigilant Rotary Autocannon",
         "Type": "Cannon",
         "Ammunition": "25",
-        "Mode": "FA",
-        "Damage": "20D",
+        "Mode": "SS/FA",
+        "Damage": "18D",
         "Weight": "60",
         "Availability": "GM",
         "Cost": "125000",
-        "Street Index": "GM"
+        "Street Index": "GM",
+        "BookPage": "r2.92"
       },
       {
         "Name": "Water Cannon",
@@ -27649,6 +28129,177 @@
         "Cost": "3000",
         "Equipment": "-",
         "CF": "1"
+      }
+    ]
+  },
+  "Drones": {
+    "Name": "Drones",
+    "attributes": [
+      "Availability",
+      "Cost",
+      "Street Index",
+      ""
+    ],
+    "entries": [
+      {
+        "BookPage": "r2.100",
+        "Name": "Aeroquip Redball Express (Resupply Drone)",
+        "Availability": "GM",
+        "Cost": "25000",
+        "Street Index": "4",
+        "Notes": "H:4 Spd:60/300 Accel:35 B:3 A:0 Sig:5 Pilot:2 Sensor:3 Cargo:16CF Load:150kg Fuel:Jet 250L VTOL"
+      },
+      {
+        "BookPage": "r2.100",
+        "Name": "Aerodesign Condor LDSD-23 (LTA Drone)",
+        "Availability": "GM",
+        "Cost": "3325",
+        "Street Index": "4",
+        "Notes": "H:4 Spd:60 Accel:3 B:2 A:0 Sig:10 Pilot:1 Sensor:1 Cargo:1CF Load:50kg Fuel:Electric 25PF VTOL SunCell"
+      },
+      {
+        "BookPage": "r2.100",
+        "Name": "Aerodesign Condor II LDSD-41 (LTA Drone)",
+        "Availability": "GM",
+        "Cost": "36000",
+        "Street Index": "4",
+        "Notes": "H:4 Spd:90 Accel:5 B:2 A:3 Sig:10 Pilot:3 Sensor:1 Cargo:3CF Load:50kg Fuel:Electric 25PF VTOL"
+      },
+      {
+        "BookPage": "r2.101",
+        "Name": "Ares Arms Sentry II (Weapon Drone)",
+        "Availability": "18/28days",
+        "Cost": "30000",
+        "Street Index": "4",
+        "Notes": "H:5 Spd:0 Accel:0 B:2 A:0 Sig:4 Pilot:4 Sensor:4 Cargo:1CF Load:250kg Fuel:Electric 12PF; immobile; BattleTac IVIS compatible"
+      },
+      {
+        "BookPage": "r2.101",
+        "Name": "Aztechnology Hedgehog (SIGINT Drone)",
+        "Availability": "GM",
+        "Cost": "55000",
+        "Street Index": "4",
+        "Notes": "H:4/4 Spd:15 Accel:3 B:1 A:0 Sig:8 Pilot:1 Sensor:4 Cargo:0CF Load:15kg Fuel:Electric 180PF; includes Decryption Unit(4) & Protocol Emulation(4)"
+      },
+      {
+        "BookPage": "r2.101",
+        "Name": "Aztechnology GCR-23C Crawler (Snooper Drone)",
+        "Availability": "8/14days",
+        "Cost": "1050",
+        "Street Index": "3",
+        "Notes": "H:4/4 Spd:15 Accel:3 B:1 A:0 Sig:8 Pilot:1 Sensor:1 Cargo:0.5CF Load:15kg Fuel:Electric 180PF"
+      },
+      {
+        "BookPage": "r2.102",
+        "Name": "IWS DLK Mk6 Utility Machine (Armed Variant)",
+        "Availability": "GM",
+        "Cost": "51000",
+        "Street Index": "4",
+        "Notes": "H:4/4 Spd:35 Accel:3 B:2 A:6 Sig:4 Pilot:2 Sensor:3 Cargo:1CF Load:880kg Fuel:Electric 100PF; fixed hardpoint (weapon not incl.); mech arm"
+      },
+      {
+        "BookPage": "r2.102",
+        "Name": "Citroën Brouillard Smoke Generator (Drone)",
+        "Availability": "12/21days",
+        "Cost": "12500",
+        "Street Index": "3",
+        "Notes": "H:4/4 Spd:50 Accel:5 B:2 A:0 Sig:4 Pilot:1 Sensor:1 Cargo:0CF Load:250kg Fuel:Diesel 100L; smoke gen 250L fog oil + 60L graphite smoke"
+      },
+      {
+        "BookPage": "r2.102",
+        "Name": "Cyberspace Designs Wolfhound (Recon UAV)",
+        "Availability": "GM",
+        "Cost": "31000",
+        "Street Index": "4",
+        "Notes": "H:3 Spd:210 Accel:12 B:2 A:0 Sig:5 Pilot:2 Sensor:1 Cargo:3CF Load:80kg Fuel:Jet 300L VTOL; Learning Pool 2 (Avoid Detection)"
+      },
+      {
+        "BookPage": "r2.103",
+        "Name": "FMC-Stonebrooke TADS Firebird (UAV)",
+        "Availability": "GM",
+        "Cost": "35000",
+        "Street Index": "4",
+        "Notes": "H:4 Spd:40/105 Accel:20 B:2 A:0 Sig:6 Pilot:2 Sensor:3 Cargo:0CF Load:10kg Fuel:Jet 230L STOL; BattleTac FDDM"
+      },
+      {
+        "BookPage": "r2.103",
+        "Name": "FMC-Stonebrooke TADS Salamander (Tracked Drone)",
+        "Availability": "GM",
+        "Cost": "11500",
+        "Street Index": "4",
+        "Notes": "H:4/4 Spd:60 Accel:6 B:1 A:0 Sig:5 Pilot:2 Sensor:3 Cargo:0CF Load:10kg Fuel:Gas 60L; BattleTac FDDM"
+      },
+      {
+        "BookPage": "r2.103",
+        "Name": "GTE-Ford Retrans Unit (Signal Relay Drone)",
+        "Availability": "12/28days",
+        "Cost": "30000",
+        "Street Index": "4",
+        "Notes": "H:4 Spd:40/105 Accel:15 B:2 A:0 Sig:6 Pilot:2 Sensor:1 Cargo:5CF Load:120kg Fuel:Jet 120L; Retrans Unit Flux:3"
+      },
+      {
+        "BookPage": "r2.104",
+        "Name": "MCT-Nissan Roto-Drone",
+        "Availability": "8/14days",
+        "Cost": "6600",
+        "Street Index": "3",
+        "Notes": "H:4 Spd:70 Accel:6 B:2 A:0 Sig:5 Pilot:1 Sensor:1 Cargo:4CF Load:150kg Fuel:Jet 150L VTOL"
+      },
+      {
+        "BookPage": "r2.104",
+        "Name": "Mesametric Kodiak Roadway Clearance Drone",
+        "Availability": "GM",
+        "Cost": "40000",
+        "Street Index": "4",
+        "Notes": "H:4/4 Spd:30 Accel:2 B:4 A:12 Sig:3 Pilot:2 Sensor:3 Cargo:0CF Load:1000kg Fuel:Diesel 120L; dozer blade, excavating shovel"
+      },
+      {
+        "BookPage": "r2.104",
+        "Name": "Pratt & Whitney Sundowner (Aerial Sprayer Drone)",
+        "Availability": "8/14days",
+        "Cost": "15500",
+        "Street Index": "3",
+        "Notes": "H:4 Spd:40/105 Accel:15 B:2 A:0 Sig:6 Pilot:2 Sensor:1 Cargo:0CF Load:120kg Fuel:Jet 120L; sprayer 50L tank"
+      },
+      {
+        "BookPage": "r2.104",
+        "Name": "Renraku Arachnoid Mini-Drone",
+        "Availability": "6/24hrs",
+        "Cost": "5000",
+        "Street Index": "3",
+        "Notes": "H:3/3 Spd:2 B:0 A:0 Sig:16 Pilot:1 Sensor:1 Cargo:0CF Load:0kg Fuel:Electric 7PF; Body 0 = any hit destroys it"
+      },
+      {
+        "BookPage": "r2.105",
+        "Name": "Saab-Thyssen Bloodhound (HAZMAT Drone)",
+        "Availability": "8/14days",
+        "Cost": "10000",
+        "Street Index": "3",
+        "Notes": "H:3/3 Spd:90 Accel:6 B:1 A:0 Sig:5 Pilot:2 Sensor:4 Cargo:1CF Load:10kg Fuel:Gas 40L; amphibious, CBR sensors, 10L sprayer"
+      },
+      {
+        "BookPage": "r2.105",
+        "Name": "Shiawase Kanmushi Mechanical Crawler (10cm)",
+        "Availability": "12/28days",
+        "Cost": "30000",
+        "Street Index": "4",
+        "Notes": "H:3/3 Spd:2 B:0 A:0 Sig:16 Pilot:1 Sensor:1 Cargo:0CF Load:0kg Fuel:Electric 4PF; smart materials; Body 0 = any hit destroys it"
+      },
+      {
+        "BookPage": "r2.105",
+        "Name": "Sikorsky-Bell Microskimmer II (ACV Drone)",
+        "Availability": "8/14days",
+        "Cost": "5500",
+        "Street Index": "3",
+        "Notes": "H:3 Spd:90 Accel:6 B:1 A:0 Sig:7/5 Pilot:1 Sensor:1 Cargo:5CF Load:50kg Fuel:Methane 150bars/Electric 75PF; amphibious VTOL"
+      },
+      {
+        "BookPage": "r2.106",
+        "Name": "Toyota MK-Guyver Search & Rescue Robot",
+        "Availability": "GM",
+        "Cost": "29000",
+        "Street Index": "4",
+        "Notes": "H:4/4 Spd:20/5 Accel:4/NA B:2 A:3 Sig:4 Pilot:3 Sensor:1 Cargo:5CF Load:1000kg Fuel:Diesel 20L; Learning Pool 2 (Search & Rescue); 2 mech arms"
       }
     ]
   }
