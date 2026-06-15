@@ -1,7 +1,7 @@
 {
   "HEADWEAR": [
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Chipjack",
       "EssCost": 0.2,
       "Cost": 1000,
@@ -9,7 +9,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Data Filter",
       "EssCost": 0.3,
       "Cost": 5000,
@@ -17,7 +17,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Data Lock",
       "EssCost": 0.2,
       "Cost": 1000,
@@ -25,7 +25,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Datajack",
       "EssCost": 0.2,
       "Cost": 1000,
@@ -33,7 +33,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Datajack Science",
       "EssCost": 0.35,
       "Cost": 4500,
@@ -41,7 +41,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Datajack Archive",
       "EssCost": 0.8,
       "Cost": 15000,
@@ -49,7 +49,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Datajack Business",
       "EssCost": 0.4,
       "Cost": 6500,
@@ -57,7 +57,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Datasoft Link",
       "EssCost": 0.1,
       "Cost": 1000,
@@ -65,7 +65,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Display Link",
       "EssCost": 0.1,
       "Cost": 1000,
@@ -73,7 +73,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Smartcam Link",
       "EssCost": 0.5,
       "Cost": 2500,
@@ -81,7 +81,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Smartlink I",
       "EssCost": 0.5,
       "Cost": 2500,
@@ -323,7 +323,7 @@
   ],
   "EARS": [
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Ear Cyber replac.",
       "EssCost": 0.3,
       "Cost": 4000,
@@ -331,7 +331,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Ear Modification",
       "EssCost": 0.1,
       "Cost": 2000,
@@ -339,7 +339,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Ear Cosmetic mod.",
       "EssCost": 0,
       "Cost": 1000,
@@ -347,7 +347,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Ear Damper",
       "EssCost": 0.1,
       "Cost": 3500,
@@ -355,7 +355,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Ear High freq.",
       "EssCost": 0.2,
       "Cost": 3000,
@@ -363,7 +363,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Ear Low freq.",
       "EssCost": 0.2,
       "Cost": 3000,
@@ -371,7 +371,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Ear Recorder",
       "EssCost": 0.3,
       "Cost": 7000,
@@ -381,7 +381,7 @@
   ],
   "EYES": [
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Eye Cyber Replacement",
       "EssCost": 0.2,
       "Cost": 5000,
@@ -390,7 +390,7 @@
       "Replacement": true
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Eye Camera",
       "EssCost": 0.4,
       "Cost": 5000,
@@ -398,7 +398,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Eye Cosmetic mod.",
       "EssCost": 0,
       "Cost": 1000,
@@ -406,7 +406,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Eye Flare comp.",
       "EssCost": 0.1,
       "Cost": 2000,
@@ -414,7 +414,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Eye Low-light",
       "EssCost": 0.2,
       "Cost": 3000,
@@ -422,7 +422,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Eye Retinal dupl.",
       "EssCost": 0.1,
       "Cost": 50000,
@@ -430,7 +430,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Eye Thermographic",
       "EssCost": 0.2,
       "Cost": 3000,
@@ -438,7 +438,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Zeiss Cybereyes 1",
       "EssCost": 0.15,
       "Cost": 31000,
@@ -446,7 +446,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Zeiss Cybereyes 2",
       "EssCost": 0.15,
       "Cost": 40000,
@@ -454,7 +454,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Zeiss Cybereyes 3",
       "EssCost": 0.3,
       "Cost": 79000,
@@ -462,7 +462,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Zeiss Cybereyes 4",
       "EssCost": 0.6,
       "Cost": 98000,
@@ -470,7 +470,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.259",
       "Name": "Zeiss Cybereyes 5",
       "EssCost": 1,
       "Cost": 169000,
@@ -592,7 +592,7 @@
       "Mods": "+2RCT,+2INI"
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Dermal Plating 1",
       "EssCost": 0.5,
       "Cost": 6000,
@@ -600,7 +600,7 @@
       "Mods": "+1BOD"
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Dermal Plating 2",
       "EssCost": 1,
       "Cost": 15000,
@@ -608,7 +608,7 @@
       "Mods": "+2BOD"
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Dermal Plating 3",
       "EssCost": 1.5,
       "Cost": 45000,
@@ -616,7 +616,7 @@
       "Mods": "+3BOD"
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Air 1",
       "EssCost": 0.1,
       "Cost": 15000,
@@ -624,7 +624,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Air 2",
       "EssCost": 0.2,
       "Cost": 30000,
@@ -632,7 +632,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Air 3",
       "EssCost": 0.3,
       "Cost": 45000,
@@ -640,7 +640,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Air 4",
       "EssCost": 0.4,
       "Cost": 60000,
@@ -648,7 +648,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Air 5",
       "EssCost": 0.5,
       "Cost": 75000,
@@ -656,7 +656,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Air 6",
       "EssCost": 0.6,
       "Cost": 90000,
@@ -664,7 +664,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Air 7",
       "EssCost": 0.7,
       "Cost": 105000,
@@ -672,7 +672,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Air 8",
       "EssCost": 0.8,
       "Cost": 120000,
@@ -680,7 +680,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Air 9",
       "EssCost": 0.9,
       "Cost": 135000,
@@ -688,7 +688,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Air 10",
       "EssCost": 1,
       "Cost": 150000,
@@ -696,7 +696,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Blood 1",
       "EssCost": 0.2,
       "Cost": 15000,
@@ -704,7 +704,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Blood 2",
       "EssCost": 0.4,
       "Cost": 30000,
@@ -712,7 +712,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Blood 3",
       "EssCost": 0.6,
       "Cost": 45000,
@@ -720,7 +720,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Blood 4",
       "EssCost": 0.8,
       "Cost": 60000,
@@ -728,7 +728,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Blood 5",
       "EssCost": 1,
       "Cost": 75000,
@@ -736,7 +736,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Blood 6",
       "EssCost": 1.2,
       "Cost": 90000,
@@ -744,7 +744,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Blood 7",
       "EssCost": 1.4,
       "Cost": 105000,
@@ -752,7 +752,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Blood 8",
       "EssCost": 1.6,
       "Cost": 120000,
@@ -760,7 +760,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Blood 9",
       "EssCost": 1.8,
       "Cost": 135000,
@@ -768,7 +768,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Blood 10",
       "EssCost": 2,
       "Cost": 150000,
@@ -776,7 +776,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Toxin 1",
       "EssCost": 0.2,
       "Cost": 15000,
@@ -784,7 +784,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Toxin 2",
       "EssCost": 0.4,
       "Cost": 30000,
@@ -792,7 +792,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Toxin 3",
       "EssCost": 0.6,
       "Cost": 45000,
@@ -800,7 +800,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Toxin 4",
       "EssCost": 0.8,
       "Cost": 60000,
@@ -808,7 +808,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Toxin 5",
       "EssCost": 1,
       "Cost": 75000,
@@ -816,7 +816,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Toxin 6",
       "EssCost": 1.2,
       "Cost": 90000,
@@ -824,7 +824,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Toxin 7",
       "EssCost": 1.4,
       "Cost": 105000,
@@ -832,7 +832,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Toxin 8",
       "EssCost": 1.6,
       "Cost": 120000,
@@ -840,7 +840,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Toxin 9",
       "EssCost": 1.8,
       "Cost": 135000,
@@ -848,7 +848,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Filter: Toxin 10",
       "EssCost": 2,
       "Cost": 150000,
@@ -856,7 +856,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Muscle Replac. 1",
       "EssCost": 1,
       "Cost": 20000,
@@ -864,7 +864,7 @@
       "Mods": "+1QCK,+1STR"
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Muscle Replac. 2",
       "EssCost": 2,
       "Cost": 40000,
@@ -872,7 +872,7 @@
       "Mods": "+2QCK,+2STR"
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Muscle Replac. 3",
       "EssCost": 3,
       "Cost": 60000,
@@ -880,7 +880,7 @@
       "Mods": "+3QCK,+3STR"
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Muscle Replac. 4",
       "EssCost": 4,
       "Cost": 80000,
@@ -888,7 +888,7 @@
       "Mods": "+4QCK,+4STR"
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Skillwires 1",
       "EssCost": 0.1,
       "Cost": 10000,
@@ -896,7 +896,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Skillwires 2",
       "EssCost": 0.2,
       "Cost": 20000,
@@ -904,7 +904,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Skillwires 3",
       "EssCost": 0.3,
       "Cost": 30000,
@@ -912,7 +912,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Skillwires 4",
       "EssCost": 0.4,
       "Cost": 40000,
@@ -920,7 +920,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Skillwires 5",
       "EssCost": 1,
       "Cost": 500000,
@@ -928,7 +928,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Skillwires 6",
       "EssCost": 1.2,
       "Cost": 600000,
@@ -936,7 +936,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Skillwires 7",
       "EssCost": 2.1,
       "Cost": 7000000,
@@ -944,7 +944,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Skillwires 8",
       "EssCost": 2.4,
       "Cost": 8000000,
@@ -952,7 +952,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Skillwires 9",
       "EssCost": 2.7,
       "Cost": 9000000,
@@ -960,7 +960,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Siemens Rigit!F1",
       "EssCost": 0.5,
       "Cost": 25000,
@@ -968,7 +968,7 @@
       "Mods": "+1INI"
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Wired Reflexes 1",
       "EssCost": 2,
       "Cost": 55000,
@@ -976,7 +976,7 @@
       "Mods": "+2RCT,+1INI"
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Wired Reflexes 2",
       "EssCost": 3,
       "Cost": 165000,
@@ -984,7 +984,7 @@
       "Mods": "+4RCT,+2INI"
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Wired Reflexes 3",
       "EssCost": 5,
       "Cost": 500000,
@@ -992,7 +992,7 @@
       "Mods": "+6RCT,+3INI"
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.260",
       "Name": "Spurs",
       "EssCost": 0.1,
       "Cost": 7000,
@@ -2443,7 +2443,7 @@
   ],
   "RIGGER": [
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.261",
       "Name": "Vehicle Ctrl Rig 1",
       "EssCost": 2,
       "Cost": 12000,
@@ -2451,7 +2451,7 @@
       "Mods": "+2RCT,+1INI"
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.261",
       "Name": "Vehicle Ctrl Rig 2",
       "EssCost": 3,
       "Cost": 60000,
@@ -2459,7 +2459,7 @@
       "Mods": "+4RCT,+2INI"
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.261",
       "Name": "Vehicle Ctrl Rig 3",
       "EssCost": 5,
       "Cost": 300000,
@@ -2645,7 +2645,7 @@
   ],
   "COMMUNICATIONS": [
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.261",
       "Name": "Radio",
       "EssCost": 0.75,
       "Cost": 4000,
@@ -2653,7 +2653,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.261",
       "Name": "Telephone",
       "EssCost": 0.5,
       "Cost": 3700,
@@ -2661,7 +2661,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "sr2.x",
+      "BookPage": "sr2.261",
       "Name": "Radio receiver",
       "EssCost": 0.4,
       "Cost": 2000,
