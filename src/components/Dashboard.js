@@ -646,8 +646,7 @@ export default function BasicTabs() {
             ChangeEdition={handleChangeEdition}
             CGMethod = {CGMethod}
           />
-          &nbsp;&nbsp;
-          <SignInPopup
+          <SignInPopup className={'mr-2'}
             user={user}
             onSignIn={handleSignIn}
             setUser={setUser}
