@@ -17,6 +17,7 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import WeaponModsModal, { applyWeaponMods } from './WeaponModsModal';
+import LifestyleBuilderModal from './LifestyleBuilderModal';
 
 // Pre-import all edition data so Vite can bundle them (no runtime require)
 const allGear = import.meta.glob('../data/*/Gear.json', { eager: true });
@@ -90,6 +91,14 @@ export default function GearPanel(props) {
     };
 
     const [modifyingWeaponIndex, setModifyingWeaponIndex] = useState(null);
+    const [lifestyleBuilderOpen, setLifestyleBuilderOpen] = useState(false);
+    const ssgEnabled = props.Edition === 'SR3' && props.BooksFilter?.includes('ssg');
+
+    const handleLifestylePurchase = (gearEntry) => {
+      const updated = [...SelectedGear, gearEntry];
+      setSelectedGear(updated);
+      props.onChangeGear(updated);
+    };
 
     const handleSaveWeaponMods = (index, newMods) => {
       const editedGear = SelectedGear.map((g, i) =>
@@ -193,6 +202,28 @@ export default function GearPanel(props) {
             <div>Notes:{NewGearDesc}</div>
         </>
     )}
+
+    {ssgEnabled && (
+      <div style={{ margin: '12px 0' }}>
+        <Button
+          variant="outlined"
+          color="secondary"
+          onClick={() => setLifestyleBuilderOpen(true)}
+        >
+          Build Custom Lifestyle (SSG)
+        </Button>
+        <span style={{ marginLeft: 10, fontSize: '0.8em', color: '#999' }}>
+          Sprawl Survival Guide detailed lifestyle system
+        </span>
+      </div>
+    )}
+
+    <LifestyleBuilderModal
+      open={lifestyleBuilderOpen}
+      onClose={() => setLifestyleBuilderOpen(false)}
+      onPurchase={handleLifestylePurchase}
+    />
+
     <br></br><br></br>
     <h3>Armor</h3>
     <TableContainer component={Paper}>
