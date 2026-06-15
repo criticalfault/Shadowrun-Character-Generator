@@ -109,18 +109,14 @@ export default function GearPanel(props) {
     };
 
     const renderGearItem = (gear, originalIndex) => {
-      if (props.Edition === 'SR3') {
-        const allowed = !gear.hasOwnProperty('BookPage') || props.BooksFilter.includes(gear.BookPage.split('.')[0]);
-        const bookCode = gear.BookPage?.split('.')[0];
-        return (
-          <FilteredMenuItem allowed={allowed} bookCode={bookCode} key={originalIndex} value={originalIndex}>{gear.Name}</FilteredMenuItem>
-        );
-      }
-      return <MenuItem key={originalIndex} value={originalIndex}>{gear.Name}</MenuItem>;
+      const allowed = !gear.hasOwnProperty('BookPage') || props.BooksFilter.includes(gear.BookPage.split('.')[0]);
+      const bookCode = gear.BookPage?.split('.')[0];
+      return (
+        <FilteredMenuItem allowed={allowed} bookCode={bookCode} key={originalIndex} value={originalIndex}>{gear.Name}</FilteredMenuItem>
+      );
     }
 
     return ( <>
-    <h3>Notice: SR2 Gear is currently missing data needing for filtering by book. So filtering is ignored.</h3>
     <Box sx={{ width: '250px' }}>
         Nuyen Spent: {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(CalcTotalNuyenSpent())} 
     </Box>
@@ -143,7 +139,7 @@ export default function GearPanel(props) {
         label="All Gear"
         getLabel={(item) => `${item.Name} (${item._category})`}
         renderItem={(item, originalIndex) => {
-          const allowed = props.Edition !== 'SR3' || !item.BookPage || props.BooksFilter.includes(item.BookPage.split('.')[0]);
+          const allowed = !item.BookPage || props.BooksFilter.includes(item.BookPage.split('.')[0]);
           const bookCode = item.BookPage?.split('.')[0];
           return (
             <FilteredMenuItem allowed={allowed} bookCode={bookCode} key={originalIndex} value={originalIndex}>

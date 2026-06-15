@@ -38,6 +38,11 @@
         "loadByDefault":false,
         "edition":"SR2"
     },
+    "grm":{
+        "name":"The Grimoire",
+        "loadByDefault":false,
+        "edition":"SR2"
+    },
     "mits":{
         "name":"Magic in the Shadows",
         "loadByDefault":true,
