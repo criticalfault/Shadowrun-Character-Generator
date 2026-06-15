@@ -62,12 +62,7 @@ function SheetDisplay(props) {
           variant="outlined"
           startIcon={<PrintIcon />}
           onClick={() => window.print()}
-          sx={{
-            color: '#00ffc3',
-            borderColor: '#00ffc3',
-            fontFamily: 'Share Tech Mono, monospace',
-            '&:hover': { borderColor: '#00ffc3', backgroundColor: 'rgba(0,255,195,0.1)' },
-          }}
+          className="sheet-print-btn"
         >
           Print Sheet
         </Button>

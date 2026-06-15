@@ -10,6 +10,7 @@ import {
   Paper,
 } from '@mui/material';
 import SRSection from './SRSection';
+import { tablePaperSx } from './sheetTheme';
 import { applyVehicleMods } from '../VehicleModsModal';
 
 const ModdedStat = ({ base, modified, lowerIsBetter = false }) => {
@@ -19,8 +20,8 @@ const ModdedStat = ({ base, modified, lowerIsBetter = false }) => {
   const improved = lowerIsBetter ? modified < base : modified > base;
   return (
     <span>
-      <span style={{ textDecoration: 'line-through', opacity: 0.5, marginRight: 4 }}>{base}</span>
-      <span style={{ color: improved ? '#00ffc3' : '#ff4444' }}>{modified}</span>
+      <span style={{ textDecoration: 'line-through', opacity: 0.4, marginRight: 4 }}>{base}</span>
+      <span style={{ color: improved ? '#000' : '#cc0000', fontWeight: improved ? 'bold' : 'normal' }}>{modified}</span>
     </span>
   );
 };
@@ -31,7 +32,7 @@ const VehiclesTable = ({ vehicles }) => {
   return (
     <Grid item xs={12}>
       <SRSection title="Vehicles">
-        <TableContainer component={Paper} sx={{ backgroundColor: '#1f1f1f' }}>
+        <TableContainer component={Paper} sx={tablePaperSx}>
           <Table size="small" className="shadowrun-table">
             <TableHead>
               <TableRow>
@@ -55,60 +56,41 @@ const VehiclesTable = ({ vehicles }) => {
                 const baseArmor = vehicle['Body/Armor']?.split('/')[1] ?? '';
                 const baseSig = vehicle['Sig/Autonav']?.split('/')[0] ?? '';
                 const baseAutonav = vehicle['Sig/Autonav']?.split('/')[1] ?? '';
-                const basePilot = vehicle['Pilot/Sensor']?.split('/')[0] ?? '';
                 const baseSensor = vehicle['Pilot/Sensor']?.split('/')[1] ?? '';
 
-                const newBody = baseBody;
                 const newArmor = applied.armorDelta !== 0 ? (parseFloat(baseArmor) || 0) + applied.armorDelta : null;
                 const newSig = applied.sigDelta !== 0 ? (parseFloat(baseSig) || 0) + applied.sigDelta : null;
                 const newAutonav = applied.autonavRating ?? null;
                 const newPilot = applied.pilotRating ?? null;
-                const newSensor = null;
 
-                const bodyArmor = newArmor !== null
-                  ? `${newBody}/${newArmor}`
-                  : vehicle['Body/Armor'];
-
+                const bodyArmor = newArmor !== null ? `${baseBody}/${newArmor}` : vehicle['Body/Armor'];
                 const sigAutonav = (newSig !== null || newAutonav !== null)
                   ? `${newSig !== null ? newSig : baseSig}/${newAutonav !== null ? newAutonav : baseAutonav}`
                   : vehicle['Sig/Autonav'];
-
-                const pilotSensor = newPilot !== null
-                  ? `${newPilot}/${baseSensor}`
-                  : vehicle['Pilot/Sensor'];
+                const pilotSensor = newPilot !== null ? `${newPilot}/${baseSensor}` : vehicle['Pilot/Sensor'];
 
                 const modNames = mods.map(m => m.label).join(', ');
 
                 return (
                   <TableRow key={vehicle.name + index}>
-                    <TableCell style={{ color: '#00ffc3' }}>{vehicle.name}</TableCell>
-                    <TableCell align="right" style={{ color: '#00ffc3' }}>
+                    <TableCell component="th" scope="row">{vehicle.name}</TableCell>
+                    <TableCell align="right">
                       <ModdedStat base={vehicle.Handling} modified={applied.handlingDelta !== 0 ? (parseFloat(vehicle.Handling) || 0) + applied.handlingDelta : null} lowerIsBetter />
                     </TableCell>
-                    <TableCell align="right" style={{ color: '#00ffc3' }}>
-                      {vehicle['Speed/Accel']}
-                    </TableCell>
-                    <TableCell align="right" style={{ color: '#00ffc3' }}>
+                    <TableCell align="right">{vehicle['Speed/Accel']}</TableCell>
+                    <TableCell align="right">
                       <ModdedStat base={vehicle['Body/Armor']} modified={newArmor !== null ? bodyArmor : null} />
                     </TableCell>
-                    <TableCell align="right" style={{ color: '#00ffc3' }}>
+                    <TableCell align="right">
                       <ModdedStat base={vehicle['Sig/Autonav']} modified={(newSig !== null || newAutonav !== null) ? sigAutonav : null} />
                     </TableCell>
-                    <TableCell align="right" style={{ color: '#00ffc3' }}>
+                    <TableCell align="right">
                       <ModdedStat base={vehicle['Pilot/Sensor']} modified={newPilot !== null ? pilotSensor : null} />
                     </TableCell>
-                    <TableCell align="right" style={{ color: '#00ffc3' }}>
-                      {vehicle['Cargo/Load']}
-                    </TableCell>
-                    <TableCell align="right" style={{ color: '#00ffc3' }}>
-                      {vehicle.Seating}
-                    </TableCell>
-                    <TableCell align="right" style={{ color: '#ccc', fontSize: '0.75em' }}>
-                      {modNames || '—'}
-                    </TableCell>
-                    <TableCell align="right" style={{ color: '#00ffc3' }}>
-                      {vehicle.Notes ?? ''}
-                    </TableCell>
+                    <TableCell align="right">{vehicle['Cargo/Load']}</TableCell>
+                    <TableCell align="right">{vehicle.Seating}</TableCell>
+                    <TableCell align="right" style={{ fontSize: '0.75em', color: '#555' }}>{modNames || '—'}</TableCell>
+                    <TableCell align="right">{vehicle.Notes ?? ''}</TableCell>
                   </TableRow>
                 );
               })}

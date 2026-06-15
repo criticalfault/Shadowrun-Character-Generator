@@ -10,6 +10,7 @@ import {
   Paper,
 } from '@mui/material';
 import SRSection from './SRSection';
+import { tablePaperSx } from './sheetTheme';
 import { applyVehicleMods } from '../VehicleModsModal';
 
 const ModdedStat = ({ base, modified, lowerIsBetter = false }) => {
@@ -19,8 +20,8 @@ const ModdedStat = ({ base, modified, lowerIsBetter = false }) => {
   const improved = lowerIsBetter ? modified < base : modified > base;
   return (
     <span>
-      <span style={{ textDecoration: 'line-through', opacity: 0.5, marginRight: 4 }}>{base}</span>
-      <span style={{ color: improved ? '#00ffc3' : '#ff4444' }}>{modified}</span>
+      <span style={{ textDecoration: 'line-through', opacity: 0.4, marginRight: 4 }}>{base}</span>
+      <span style={{ color: improved ? '#000' : '#cc0000', fontWeight: improved ? 'bold' : 'normal' }}>{modified}</span>
     </span>
   );
 };
@@ -31,7 +32,7 @@ const DronesTable = ({ drones }) => {
   return (
     <Grid item xs={12}>
       <SRSection title="Drones">
-        <TableContainer component={Paper} sx={{ backgroundColor: '#1f1f1f' }}>
+        <TableContainer component={Paper} sx={tablePaperSx}>
           <Table size="small" className="shadowrun-table">
             <TableHead>
               <TableRow>
@@ -72,34 +73,24 @@ const DronesTable = ({ drones }) => {
 
                 return (
                   <TableRow key={drone.name + index}>
-                    <TableCell style={{ color: '#00ffc3' }}>{drone.name}</TableCell>
-                    <TableCell align="right" style={{ color: '#00ffc3' }}>
+                    <TableCell component="th" scope="row">{drone.name}</TableCell>
+                    <TableCell align="right">
                       <ModdedStat base={drone.Handling} modified={applied.handlingDelta !== 0 ? (parseFloat(drone.Handling) || 0) + applied.handlingDelta : null} lowerIsBetter />
                     </TableCell>
-                    <TableCell align="right" style={{ color: '#00ffc3' }}>
-                      {drone['Speed/Accel']}
-                    </TableCell>
-                    <TableCell align="right" style={{ color: '#00ffc3' }}>
+                    <TableCell align="right">{drone['Speed/Accel']}</TableCell>
+                    <TableCell align="right">
                       <ModdedStat base={drone['Body/Armor']} modified={newArmor !== null ? bodyArmor : null} />
                     </TableCell>
-                    <TableCell align="right" style={{ color: '#00ffc3' }}>
+                    <TableCell align="right">
                       <ModdedStat base={drone['Sig/Autonav']} modified={(newSig !== null || newAutonav !== null) ? sigAutonav : null} />
                     </TableCell>
-                    <TableCell align="right" style={{ color: '#00ffc3' }}>
+                    <TableCell align="right">
                       <ModdedStat base={drone['Pilot/Sensor']} modified={newPilot !== null ? pilotSensor : null} />
                     </TableCell>
-                    <TableCell align="right" style={{ color: '#00ffc3' }}>
-                      {drone['Cargo/Load']}
-                    </TableCell>
-                    <TableCell align="right" style={{ color: '#00ffc3' }}>
-                      {drone.Seating}
-                    </TableCell>
-                    <TableCell align="right" style={{ color: '#ccc', fontSize: '0.75em' }}>
-                      {modNames || '—'}
-                    </TableCell>
-                    <TableCell align="right" style={{ color: '#00ffc3' }}>
-                      {drone.Notes ?? ''}
-                    </TableCell>
+                    <TableCell align="right">{drone['Cargo/Load']}</TableCell>
+                    <TableCell align="right">{drone.Seating}</TableCell>
+                    <TableCell align="right" style={{ fontSize: '0.75em', color: '#555' }}>{modNames || '—'}</TableCell>
+                    <TableCell align="right">{drone.Notes ?? ''}</TableCell>
                   </TableRow>
                 );
               })}
