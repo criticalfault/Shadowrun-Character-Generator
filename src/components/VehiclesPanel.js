@@ -268,9 +268,9 @@ export default function VehiclesPanel(props) {
 
 
     return ( <>
-    <Box sx={{ width: '250px' }}>
-        Nuyen Spent: {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(CalcTotalNuyenSpent())} 
-    </Box>
+    <div style={{ width: '250px' }}>
+        Nuyen Spent: {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(CalcTotalNuyenSpent())}
+    </div>
     <h3>Vehicles</h3>
     <SearchableSelect
       items={VehicleData}
