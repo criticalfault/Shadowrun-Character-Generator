@@ -12,12 +12,11 @@ import {
 } from '@mui/material';
 import SRSection from './SRSection';
 import { tablePaperSx } from './sheetTheme';
-import ConditionMonitorBlockCyberDeck from './ConditionMonitorBlockCyberDeck';
+import PersonaConditionMonitor from './PersonaConditionMonitor';
 
 
 const CyberdeckTable = (props) => {
   if (!props.Decks || props.Decks.length === 0) return null;
-  const handleConditionSelect = () => {};
 
   const character = props.character || {};
   const cyber = character.cyberAttributeBonuses || {};
@@ -148,7 +147,7 @@ const CyberdeckTable = (props) => {
               </Table>
 
               <Grid size={12}>
-                <ConditionMonitorBlockCyberDeck onConditionSelect={handleConditionSelect} />
+                <PersonaConditionMonitor iconRating={mpcp} />
               </Grid>
 
               {/* Programs */}
