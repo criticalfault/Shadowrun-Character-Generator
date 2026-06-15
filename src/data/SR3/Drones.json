@@ -180,16 +180,16 @@
         "Book.Page": "ssg.122"
       },
       {
-        "name": "Ares Sentinel",
+        "name": "Ares Sentinel 'P' Series Drone",
         "Handling": "4",
-        "Speed/Accel": "25/2",
+        "Speed/Accel": "25/6",
         "Body/Armor": "1/12",
         "Sig/Autonav": "7/0",
         "Pilot/Sensor": "3/4",
         "Cargo/Load": "1/25",
         "Seating": "-",
         "$Cost": "32000",
-        "Availability": "8/8 days",
+        "Availability": "2/48hrs",
         "Street Index": "2",
         "Notes": "Remote-Control Interface, Rigger Adaptation, Gridlink, Micro-turret(1 CF Ammo Bin)",
         "Book.Page": "r3.172"
@@ -219,8 +219,8 @@
         "Cargo/Load": "1/16",
         "Seating": "-",
         "$Cost": "200000",
-        "Availability": "16/16 days",
-        "Street Index": "2.00",
+        "Availability": "10/10 days",
+        "Street Index": "2",
         "Notes": "Remote-control interface, Rigger Adaption, 2 Electronics Ports (Rigger Decryption 4 Rigger Protocol Emulation 4 0.2 CF total), Autosoft Interpretation System, Autosoft: Electronic Warfare 5",
         "Book.Page": "r3.172"
       },
@@ -233,7 +233,7 @@
         "Pilot/Sensor": "1/1",
         "Cargo/Load": "0/250",
         "Seating": "-",
-        "$Cost": "10000",
+        "$Cost": "13000",
         "Availability": "2/24hrs",
         "Street Index": "1",
         "Notes": "Remote-Control Interface, Rigger Adaptation, Smoke Generator, Fog Oil(5 CF), Graphite Smoke(1 CF)",
@@ -242,14 +242,14 @@
       {
         "name": "Ferret RPD-VI Perimeter Drone",
         "Handling": "3/4",
-        "Speed/Accel": "30/2",
+        "Speed/Accel": "30/6",
         "Body/Armor": "1/0",
         "Sig/Autonav": "8/0",
         "Pilot/Sensor": "3/4",
         "Cargo/Load": "4/50",
         "Seating": "-",
         "$Cost": "18500",
-        "Availability": "9/9 days",
+        "Availability": "2/24hrs",
         "Street Index": "2",
         "Notes": "Remote-Control Interface, Rigger Adaptation, Spotlight(white light)",
         "Book.Page": "r3.172"
@@ -294,7 +294,7 @@
         "Cargo/Load": "2.5/50",
         "Seating": "-",
         "$Cost": "25000",
-        "Availability": "8/8 days",
+        "Availability": "2/48hrs",
         "Street Index": "2",
         "Notes": "Remote-Control Interface, Rigger Adaptation, External Fixed Firmpoint(0.4 CF Ammo Bin), Remote Micro-turret(1 CF Ammo Bin)",
         "Book.Page": "sr3.311,r3.173"
@@ -336,7 +336,7 @@
         "Body/Armor": "2/0",
         "Sig/Autonav": "4/0",
         "Pilot/Sensor": "2/4",
-        "Cargo/Load": "2/5",
+        "Cargo/Load": "2/10",
         "Seating": "-",
         "$Cost": "23500",
         "Availability": "2/48hrs",
@@ -354,7 +354,7 @@
         "Cargo/Load": "3/225",
         "Seating": "-",
         "$Cost": "34500",
-        "Availability": "8/8 days",
+        "Availability": "2/48hrs",
         "Street Index": "2",
         "Notes": "Remote-Control Interface, Rigger Adaptation, Remote Mini-Turret(1 CF Ammo Bin)",
         "Book.Page": "r3.173"
@@ -444,7 +444,7 @@
         "Cargo/Load": "1/145",
         "Seating": "-",
         "$Cost": "43500",
-        "Availability": "9/9 days",
+        "Availability": "3/72hrs",
         "Street Index": "2",
         "Notes": "Remote-Control Interface, Rigger Adaptation, Micro-Turret(Anti-Aircraft Capability; 1 CF Ammo Bin), Generator(12hrs of power)",
         "Book.Page": "r3.175"
@@ -458,8 +458,8 @@
         "Pilot/Sensor": "4/4",
         "Cargo/Load": "5/25",
         "Seating": "-",
-        "$Cost": "195000",
-        "Availability": "16/16days",
+        "$Cost": "193500",
+        "Availability": "10/10 days",
         "Street Index": "2",
         "Notes": "Remote-Control Interface, Rigger Adaptation, External Fixed Hardpoint, Vindicator Minigun",
         "Book.Page": "r3.175"
@@ -474,9 +474,9 @@
         "Cargo/Load": "1/325",
         "Seating": "-",
         "$Cost": "119000",
-        "Availability": "12/12days",
+        "Availability": "6/6 days",
         "Street Index": "2",
-        "Notes": "Remote-Control Interface, Rigger Adaptation, External Fixed Hardpoint, External Missle Mount",
+        "Notes": "Remote-Control Interface, Rigger Adaptation, External Fixed Hardpoint, External Missile Mount",
         "Book.Page": "r3.175"
       },
       {
@@ -489,7 +489,7 @@
         "Cargo/Load": "0/5",
         "Seating": "-",
         "$Cost": "52000",
-        "Availability": "9/9 days",
+        "Availability": "3/72hrs",
         "Street Index": "2",
         "Notes": "Remote-Control Interface, Rigger Adaptation, BattleTac FDDM",
         "Book.Page": "r3.175"
@@ -497,14 +497,14 @@
       {
         "name": "GM-Nissan Spotter",
         "Handling": "3",
-        "Speed/Accel": "40(200)/35",
+        "Speed/Accel": "40(200)/30",
         "Body/Armor": "2/0",
         "Sig/Autonav": "6/0",
         "Pilot/Sensor": "2/1",
         "Cargo/Load": "0/10",
         "Seating": "-",
-        "$Cost": "45250",
-        "Availability": "3/72hrs",
+        "$Cost": "33000",
+        "Availability": "2/48hrs",
         "Street Index": "1",
         "Notes": "Remote-Control Interface, Rigger Adaptation",
         "Book.Page": "r3.175"
@@ -540,7 +540,7 @@
         "Book.Page": "sta2.39"
       },
       {
-        "name": "P",
+        "name": "Pratt & Whitney Sundowner Aerial Sprayer",
         "Handling": "4",
         "Speed/Accel": "40(105)/30",
         "Body/Armor": "2/0",
@@ -553,21 +553,6 @@
         "Street Index": "1",
         "Notes": "Remote-Control Interface, Rigger Adaptation, Special Machinery(Sprayer)",
         "Book.Page": "r3.176"
-      },
-      {
-        "name": "Cyberspace Designs Dalmation",
-        "Handling": "3",
-        "Speed/Accel": "108/8",
-        "Body/Armor": "2/0",
-        "Sig/Autonav": "5/-",
-        "Pilot/Sensor": "2/1",
-        "Cargo/Load": "3/80",
-        "Seating": "-",
-        "$Cost": "15800",
-        "Availability": "2/24hrs",
-        "Street Index": ".75",
-        "Notes": "Remote-Control Interface, Rigger Adaptation",
-        "Book.Page": "sr3.312"
       },
       {
         "name": "Eireann-Tir Prospero",
@@ -593,8 +578,8 @@
         "Pilot/Sensor": "2/5",
         "Cargo/Load": "1/20",
         "Seating": "-",
-        "$Cost": "34500",
-        "Availability": "8/8 days",
+        "$Cost": "30000",
+        "Availability": "2/48hrs",
         "Street Index": "2",
         "Notes": "ECM 2, External Fixed Hardpoint w/MMG(w/GasVent-III and 500 rds. ammo), Remote-Control Interface, Rigger Adaptation",
         "Book.Page": "r3.176"
@@ -604,18 +589,18 @@
         "Handling": "4",
         "Speed/Accel": "70/6",
         "Body/Armor": "2/0",
-        "Sig/Autonav": "4/0",
+        "Sig/Autonav": "5/0",
         "Pilot/Sensor": "1/1",
         "Cargo/Load": "4/150",
         "Seating": "-",
-        "$Cost": "10500",
+        "$Cost": "9000",
         "Availability": "2/24hrs",
         "Street Index": "1",
         "Notes": "Remote-Control Interface, Rigger Adaptation",
         "Book.Page": "sr3.312,r3.176"
       },
       {
-        "name": "Aeroquip",
+        "name": "Aeroquip 'Redball Express' Long-Range Resupply Drone",
         "Handling": "4",
         "Speed/Accel": "300/35",
         "Body/Armor": "3/0",
@@ -623,7 +608,7 @@
         "Pilot/Sensor": "2/3",
         "Cargo/Load": "16/155",
         "Seating": "-",
-        "$Cost": "85000",
+        "$Cost": "80500",
         "Availability": "4/4days",
         "Street Index": "1",
         "Notes": "Remote-Control Interface, Rigger Adaptation",
@@ -639,7 +624,7 @@
         "Cargo/Load": "1/25",
         "Seating": "-",
         "$Cost": "99000",
-        "Availability": "11/11days",
+        "Availability": "5/5 days",
         "Street Index": "2",
         "Notes": "Remote-Control Interface, Rigger Adaptation, Remote Mini-turret(1 CF Ammo Bin)",
         "Book.Page": "r3.177"
@@ -737,7 +722,7 @@
       {
         "name": "Shiawase Kanmushi Crawler",
         "Handling": "3/3",
-        "Speed/Accel": "2/-",
+        "Speed/Accel": "6/-",
         "Body/Armor": "-/0",
         "Sig/Autonav": "12/0",
         "Pilot/Sensor": "1/1",
@@ -750,7 +735,7 @@
         "Book.Page": "r3.178"
       },
       {
-        "name": "Toyota MK-Guyver S",
+        "name": "Toyota MK-Guyver Search & Rescue Robot",
         "Handling": "4",
         "Speed/Accel": "10/-",
         "Body/Armor": "2/3",
@@ -759,9 +744,9 @@
         "Cargo/Load": "5/1025",
         "Seating": "-",
         "$Cost": "95375",
-        "Availability": "5/5days",
+        "Availability": "5/5 days",
         "Street Index": "2",
-        "Notes": "Remote-Control Interface, Rigger Adaptation, Robotic Pilot, Adaptation Pool 2, 2 Mechanical Arms(STR 10), Autosoft Interpretation System, Autosoft: Demolitions 3",
+        "Notes": "Remote-Control Interface, Rigger Adaptation, Robotic Pilot, Adaptation Pool 2, 2 Mechanical Arms(STR 10), Autosoft Interpretation System, Autosoft: Demolitions 6",
         "Book.Page": "r3.178"
       },
       {
