@@ -1,39 +1,29 @@
-import React from 'react';
-import {
-  Grid,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-} from '@mui/material';
+﻿import React from 'react';
+import { Grid, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import SRSection from './SRSection';
+import { tablePaperSx } from './sheetTheme';
 
 const PhysicalAdeptPowers = ({ powers }) => {
   if (!powers || powers.length === 0) return null;
 
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <SRSection title="Physical Adept Powers">
-        <TableContainer component={Paper} sx={{ backgroundColor: '#1f1f1f' }}>
+        <TableContainer component={Paper} sx={tablePaperSx}>
           <Table size="small" className="shadowrun-table">
             <TableHead>
               <TableRow>
                 <TableCell>Name</TableCell>
-                <TableCell align="right">Rating</TableCell>
+                <TableCell align="center">Rating</TableCell>
+                <TableCell align="center">Power Cost</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {powers.map((power, index) => (
                 <TableRow key={power.Name + index}>
-                  <TableCell style={{ color: '#00ffc3' }}>
-                    {power.Name}
-                  </TableCell>
-                  <TableCell align="right" style={{ color: '#00ffc3' }}>
-                    {power.HasLevels ? power.Rating : '—'}
-                  </TableCell>
+                  <TableCell component="th" scope="row">{power.Name}</TableCell>
+                  <TableCell align="center">{power.HasLevels ? power.Rating : '—'}</TableCell>
+                  <TableCell align="center">{power.PowerCost ?? '—'}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

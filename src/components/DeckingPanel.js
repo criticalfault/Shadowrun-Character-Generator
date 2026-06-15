@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import Paper from "@mui/material/Paper";
 import { Grid } from "@mui/material";
 import Button from "@mui/material/Button";
@@ -282,7 +282,7 @@ export default function DeckingPanel(props) {
             <Box className="cyberdeckCard" key={index}>
               <h3>{cyberdeck.Name}</h3>
               <Grid container spacing={2}>
-                <Grid item size={{ xs: 5}} className="cyberDeckTable">
+                <Grid size={{ xs: 5}} className="cyberDeckTable">
                   <div>
                     Persona Points Left:{" "}
                     {parseInt(cyberdeck.Persona) * 3 -
@@ -393,7 +393,7 @@ export default function DeckingPanel(props) {
                     </tbody>
                   </table>
                 </Grid>
-                <Grid item size={{ xs: 7}} className="">
+                <Grid size={{ xs: 7}} className="">
                   <h4>Programs</h4>
                   <div>
                     <Button
@@ -585,7 +585,7 @@ export default function DeckingPanel(props) {
             <Box className="cyberdeckCard" key={agentIndex} sx={{ mb: 3 }}>
               <h3>{agent.Name} <span style={{ fontSize: '0.7em', opacity: 0.7 }}>(Rating {r})</span></h3>
               <Grid container spacing={2}>
-                <Grid item size={{ xs: 4 }} className="cyberDeckTable">
+                <Grid size={{ xs: 4 }} className="cyberDeckTable">
                   <table>
                     <thead><tr><th>Attribute</th><th>Value</th></tr></thead>
                     <tbody>
@@ -601,7 +601,7 @@ export default function DeckingPanel(props) {
                     </tbody>
                   </table>
                 </Grid>
-                <Grid item size={{ xs: 8 }}>
+                <Grid size={{ xs: 8 }}>
                   <h4>Agent Programs</h4>
                   <Button
                     variant="contained"

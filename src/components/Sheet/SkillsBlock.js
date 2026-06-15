@@ -1,68 +1,62 @@
-import React from 'react';
-import { Grid, List, ListItem, ListItemText } from '@mui/material';
+﻿import React from 'react';
+import { Grid } from '@mui/material';
 import SRSection from './SRSection';
 
 const SkillsBlock = ({ character, edition }) => {
-  const renderSR3Skills = () => {
-    return character.skills.map((skill, index) => (
-      <ListItem key={index} disableGutters>
-        <ListItemText
-          primary={
-            skill.specialization
-              ? `${skill.name} (${skill.rating - 1}) → ${skill.specialization} (${skill.rating + 1})`
-              : `${skill.name} (${skill.rating})`
-          }
-          primaryTypographyProps={{
-            style: {
-              color: '#00ffc3',
-              fontFamily: 'Share Tech Mono, monospace',
-              fontSize: '0.95rem',
-            },
-          }}
-        />
-      </ListItem>
+  const renderSR3Skills = () =>
+    character.skills.map((skill, index) => (
+      <tr key={index}>
+        <td className="shadowrun-label">
+          {skill.specialization
+            ? `${skill.name} (${skill.rating - 1}) → ${skill.specialization}`
+            : skill.name}
+        </td>
+        <td style={{ textAlign: 'center', fontWeight: 700, width: 36 }}>
+          {skill.specialization ? skill.rating + 1 : skill.rating}
+        </td>
+      </tr>
     ));
-  };
 
-  const renderSR2Skills = () => {
-    return character.skills.map((skill, index) => (
-      <ListItem key={index} disableGutters>
-        <ListItemText
-          primary={
-            skill.selectedConcentrations.length === 0
-              ? `${skill.name} (${skill.rating})`
-              : `${skill.name} (${skill.rating}) → ` +
-                skill.selectedConcentrations
-                  .map((concen) => {
-                    if (
-                      concen.specializations &&
-                      concen.specializations.length > 0
-                    ) {
-                      return `${concen.name} (${concen.rating}) → ${concen.specializations[0].name} (${concen.rating + 2})`;
-                    } else {
-                      return `${concen.name} (${concen.rating})`;
-                    }
-                  })
-                  .join(', ')
-          }
-          primaryTypographyProps={{
-            style: {
-              color: '#00ffc3',
-              fontFamily: 'Share Tech Mono, monospace',
-              fontSize: '0.95rem',
-            },
-          }}
-        />
-      </ListItem>
-    ));
-  };
+  const renderSR2Skills = () =>
+    character.skills.map((skill, index) => {
+      const hasConcentrations = skill.selectedConcentrations?.length > 0;
+      return (
+        <React.Fragment key={index}>
+          <tr>
+            <td className="shadowrun-label">{skill.name}</td>
+            <td style={{ textAlign: 'center', fontWeight: 700, width: 36 }}>{skill.rating}</td>
+          </tr>
+          {hasConcentrations && skill.selectedConcentrations.map((c, ci) => {
+            const hasSpec = c.specializations?.length > 0;
+            return (
+              <tr key={ci}>
+                <td style={{ paddingLeft: 20, fontSize: '0.8rem', color: '#444' }}>
+                  {hasSpec ? `↳ ${c.name} → ${c.specializations[0].name}` : `↳ ${c.name}`}
+                </td>
+                <td style={{ textAlign: 'center', fontSize: '0.8rem', color: '#444', width: 36 }}>
+                  {hasSpec ? c.rating + 2 : c.rating}
+                </td>
+              </tr>
+            );
+          })}
+        </React.Fragment>
+      );
+    });
 
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <SRSection title="Skills">
-        <List dense disablePadding>
-          {edition === 'SR3' ? renderSR3Skills() : renderSR2Skills()}
-        </List>
+        <table className="shadowrun-table" style={{ width: '100%' }}>
+          <thead>
+            <tr>
+              <th style={{ textAlign: 'left' }}>Skill</th>
+              <th style={{ textAlign: 'center', width: 36 }}>Rtg</th>
+            </tr>
+          </thead>
+          <tbody>
+            {edition === 'SR3' ? renderSR3Skills() : renderSR2Skills()}
+          </tbody>
+        </table>
       </SRSection>
     </Grid>
   );

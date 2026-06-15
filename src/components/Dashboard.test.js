@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+﻿import { render } from '@testing-library/react';
 import Dashboard from './Dashboard';
 
 // Mock all the components that Dashboard uses

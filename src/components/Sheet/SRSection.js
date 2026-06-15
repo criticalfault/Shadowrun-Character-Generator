@@ -1,10 +1,10 @@
-import React from 'react';
+﻿import React from 'react';
 import { Paper } from '@mui/material';
-import '../SheetDisplay.css'; // Use existing styling
+import '../SheetDisplay.css';
 
 const SRSection = ({ title, children }) => (
   <Paper className="shadowrun-paper">
-    <div className="shadowrun-header">[ {title.toUpperCase()} ]</div>
+    <div className="shadowrun-header">{title}</div>
     {children}
   </Paper>
 );

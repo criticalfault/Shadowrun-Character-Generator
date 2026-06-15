@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+﻿import { render } from '@testing-library/react';
 import AttributesPanel from './AttributesPanel';
 
 // Mock character data for testing

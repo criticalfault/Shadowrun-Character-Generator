@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   Grid, Button, Table, TableBody, TableCell, TableContainer,
   TableHead, TableRow, Paper, TextField, Checkbox, FormControlLabel,
-  Tooltip,
 } from '@mui/material';
 import SRSection from './SRSection';
+import { tablePaperSx } from './sheetTheme';
 
 const FLUX_RANGES = [
   { flux: 0, range: '250M' }, { flux: 1, range: '1km' }, { flux: 2, range: '2km' },
@@ -13,59 +13,89 @@ const FLUX_RANGES = [
   { flux: 9, range: '25km' }, { flux: '10+', range: '(2×flux) +10km' },
 ];
 
-const CHANNEL_BOXES = [
-  { label: null, count: 1, threshold: null },         // top (Disengaged label handled separately)
-  { label: 'Serious', count: 3, threshold: '-35%' },
-  { label: 'Moderate', count: 3, threshold: '-15%' },  // actually -25% but let's use sheet values
-  { label: 'Light', count: 3, threshold: '-10%' },
+// 10 rows, index 0 = top (Channel Disengaged), index 9 = bottom (Light)
+const SIGNAL_ROWS = [
+  { label: 'Channel\nDisengaged', boxText: '' },
+  { label: null, boxText: '' },
+  { label: null, boxText: '' },
+  { label: null, boxText: '' },
+  { label: null, boxText: '' },
+  { label: 'Serious\nDegradation', boxText: '+3TN #' },
+  { label: null, boxText: '' },
+  { label: 'Moderate\nDegradation', boxText: '+2 TN #' },
+  { label: null, boxText: '' },
+  { label: 'Light\nDegradation', boxText: '+1TN #' },
 ];
 
-// SR3 r3 damage track: Command=10, Simsense=6, System=10 (roughly; sheet shows equal height)
-const CHANNEL_CONFIG = {
-  Command:  { boxes: 10 },
-  Simsense: { boxes: 6 },
-  System:   { boxes: 10 },
+const cellSx = { borderColor: '#ddd', padding: '4px 8px', fontSize: '0.8em' };
+const headSx = { ...cellSx, fontSize: '0.7em' };
+
+const sectionLabel = {
+  color: '#555',
+  fontSize: '0.75em',
+  marginBottom: 8,
+  textTransform: 'uppercase',
+  letterSpacing: 1,
+  fontWeight: 'bold',
 };
 
-const cellSx = { color: '#00ffc3', borderColor: '#333', padding: '4px 8px', fontFamily: 'Share Tech Mono, monospace', fontSize: '0.8em' };
-const headSx = { ...cellSx, color: '#aaa', fontSize: '0.7em' };
+const panelStyle = { border: '1px solid #bbb', padding: 12, borderRadius: 2 };
 
-// ── Damage Track ─────────────────────────────────────────────────────────────
-function DamageTrack({ label, totalBoxes, filled, onChange }) {
-  const thresholds = {
-    Command:  { serious: 7, moderate: 4, light: 1 },
-    Simsense: { serious: 5, moderate: 3, light: 1 },
-    System:   { serious: 7, moderate: 4, light: 1 },
-  }[label] ?? { serious: Math.ceil(totalBoxes * 0.7), moderate: Math.ceil(totalBoxes * 0.4), light: 1 };
-
-  const getColor = (i) => {
-    const idx = totalBoxes - i; // 1-indexed from bottom
-    if (idx >= thresholds.serious) return '#ff4444';
-    if (idx >= thresholds.moderate) return '#ffaa00';
-    return '#ffff00';
+// ── Signal Damage Track ───────────────────────────────────────────────────────
+// filled = number of boxes marked from the bottom (0..10)
+// showLabels: 'left' | 'right' | false
+function DamageTrack({ label, filled, onChange, showLabels }) {
+  const handleClick = (i) => {
+    // i is 0=top, 9=bottom; fill level from bottom = 10 - i
+    const level = 10 - i;
+    onChange(filled === level ? level - 1 : level);
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: 80 }}>
-      <div style={{ color: '#aaa', fontSize: '0.7em', marginBottom: 4, fontFamily: 'Share Tech Mono, monospace' }}>{label}</div>
-      <div style={{ display: 'flex', flexDirection: 'column-reverse', gap: 2 }}>
-        {Array.from({ length: totalBoxes }).map((_, i) => (
-          <Tooltip key={i} title={i < thresholds.serious ? 'Serious' : i < thresholds.moderate ? 'Moderate' : 'Light'} placement="left">
-            <div
-              onClick={() => onChange(i < filled ? i : i + 1)}
-              style={{
-                width: 18, height: 18,
-                border: `1px solid ${getColor(i)}`,
-                backgroundColor: i < filled ? getColor(i) : 'transparent',
-                cursor: 'pointer',
-                borderRadius: 2,
-              }}
-            />
-          </Tooltip>
-        ))}
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      {/* Channel label above */}
+      <div style={{ fontSize: '0.72rem', fontWeight: 700, textAlign: 'center', marginBottom: 6, lineHeight: 1.3 }}>
+        {label.split('\n').map((l, i) => <div key={i}>{l}</div>)}
       </div>
-      <div style={{ color: '#555', fontSize: '0.65em', marginTop: 4, fontFamily: 'Share Tech Mono, monospace' }}>
-        {filled}/{totalBoxes}
+      {/* Box rows top-to-bottom */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        {SIGNAL_ROWS.map((row, i) => {
+          const isFilled = i >= (10 - filled);
+          return (
+            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              {/* Left label column */}
+              {showLabels === 'left' && (
+                <div style={{ width: 72, textAlign: 'right', fontSize: '0.6rem', lineHeight: 1.2, color: '#333' }}>
+                  {row.label?.split('\n').map((l, j) => <div key={j}>{l}</div>)}
+                </div>
+              )}
+              {/* Box */}
+              <div
+                onClick={() => handleClick(i)}
+                style={{
+                  width: 46, height: 22,
+                  border: '1px solid #000',
+                  backgroundColor: isFilled ? '#333' : 'transparent',
+                  cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  userSelect: 'none',
+                }}
+              >
+                {row.boxText && (
+                  <span style={{ fontSize: '0.55rem', color: isFilled ? '#fff' : '#000' }}>
+                    {row.boxText}
+                  </span>
+                )}
+              </div>
+              {/* Right label column */}
+              {showLabels === 'right' && (
+                <div style={{ width: 72, textAlign: 'left', fontSize: '0.6rem', lineHeight: 1.2, color: '#333' }}>
+                  {row.label?.split('\n').map((l, j) => <div key={j}>{l}</div>)}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -82,9 +112,12 @@ function RCDField({ label, value, onChange, width = 120 }) {
       size="small"
       sx={{
         width,
-        '& label': { color: '#aaa', fontSize: '0.75em' },
-        '& input': { color: '#00ffc3', fontFamily: 'Share Tech Mono, monospace', fontSize: '0.85em' },
-        '& .MuiOutlinedInput-notchedOutline': { borderColor: '#333' },
+        '& label': { color: '#555', fontSize: '0.75em' },
+        '& label.Mui-focused': { color: '#000' },
+        '& input': { color: '#000', fontSize: '0.85em' },
+        '& .MuiOutlinedInput-notchedOutline': { borderColor: '#aaa' },
+        '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: '#000' },
+        '&.Mui-focused .MuiOutlinedInput-notchedOutline': { borderColor: '#000' },
         mb: 1, mr: 1,
       }}
     />
@@ -97,11 +130,11 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
 
   if (!visible) {
     return (
-      <Grid item xs={12} className="no-print">
+      <Grid size={12} className="no-print">
         <Button
           variant="outlined"
           onClick={() => setVisible(true)}
-          sx={{ color: '#00ffc3', borderColor: '#333', fontFamily: 'Share Tech Mono, monospace', mt: 1 }}
+          sx={{ color: '#000', borderColor: '#aaa', mt: 1 }}
         >
           Show Remote Control Record Sheet
         </Button>
@@ -121,13 +154,13 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
   const damage = rcd.damage ?? {};
 
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <SRSection title="Remote Control Record Sheet">
         <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 8 }}>
           <Button
             size="small"
             onClick={() => setVisible(false)}
-            sx={{ color: '#888', fontFamily: 'Share Tech Mono, monospace', fontSize: '0.75em' }}
+            sx={{ color: '#555', fontSize: '0.75em' }}
           >
             Hide
           </Button>
@@ -137,34 +170,21 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
         <Grid container spacing={2} sx={{ mb: 2 }}>
 
           {/* Signal Condition Monitor */}
-          <Grid item xs={12} md={5}>
-            <div style={{ border: '1px solid #333', padding: 12, borderRadius: 4 }}>
-              <div style={{ color: '#aaa', fontSize: '0.75em', fontFamily: 'Share Tech Mono, monospace', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>
-                Signal Condition Monitor
-              </div>
-              <div style={{ display: 'flex', gap: 16, justifyContent: 'center' }}>
-                {Object.entries(CHANNEL_CONFIG).map(([ch, { boxes }]) => (
-                  <DamageTrack
-                    key={ch}
-                    label={ch}
-                    totalBoxes={boxes}
-                    filled={damage[ch] ?? 0}
-                    onChange={(val) => updateDamage(ch, val)}
-                  />
-                ))}
-              </div>
-              <div style={{ color: '#555', fontSize: '0.65em', fontFamily: 'Share Tech Mono, monospace', marginTop: 8, textAlign: 'center' }}>
-                Click boxes to mark damage (top = worst)
+          <Grid size={{ xs: 12, md: 5 }}>
+            <div style={panelStyle}>
+              <div style={sectionLabel}>Signal Condition Monitor</div>
+              <div style={{ display: 'flex', gap: 0, justifyContent: 'center', alignItems: 'flex-start' }}>
+                <DamageTrack label="Command\nChannel"  filled={damage.Command  ?? 0} onChange={(v) => updateDamage('Command',  v)} showLabels="left" />
+                <DamageTrack label="Simsense\nChannel" filled={damage.Simsense ?? 0} onChange={(v) => updateDamage('Simsense', v)} showLabels={false} />
+                <DamageTrack label="System\nChannel"   filled={damage.System   ?? 0} onChange={(v) => updateDamage('System',   v)} showLabels="right" />
               </div>
             </div>
           </Grid>
 
           {/* RCD Stats */}
-          <Grid item xs={12} md={7}>
-            <div style={{ border: '1px solid #333', padding: 12, borderRadius: 4 }}>
-              <div style={{ color: '#aaa', fontSize: '0.75em', fontFamily: 'Share Tech Mono, monospace', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>
-                Remote Control Deck
-              </div>
+          <Grid size={{ xs: 12, md: 7 }}>
+            <div style={panelStyle}>
+              <div style={sectionLabel}>Remote Control Deck</div>
               <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                 <RCDField label="Max Flux" value={rcd.maxFlux} onChange={(v) => update('maxFlux', v)} width={100} />
                 <RCDField label="Current Modified Flux" value={rcd.currentFlux} onChange={(v) => update('currentFlux', v)} width={160} />
@@ -181,22 +201,22 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
                     <Checkbox
                       checked={rcd.ivisMaster ?? false}
                       onChange={(e) => update('ivisMaster', e.target.checked)}
-                      sx={{ color: '#333', '&.Mui-checked': { color: '#00ffc3' }, padding: '2px 4px' }}
+                      sx={{ color: '#aaa', '&.Mui-checked': { color: '#000' }, padding: '2px 4px' }}
                       size="small"
                     />
                   }
-                  label={<span style={{ color: '#aaa', fontSize: '0.8em', fontFamily: 'Share Tech Mono, monospace' }}>IVIS Master Unit</span>}
+                  label={<span style={{ color: '#333', fontSize: '0.8em' }}>IVIS Master Unit</span>}
                 />
                 <FormControlLabel
                   control={
                     <Checkbox
                       checked={rcd.fddmMaster ?? false}
                       onChange={(e) => update('fddmMaster', e.target.checked)}
-                      sx={{ color: '#333', '&.Mui-checked': { color: '#00ffc3' }, padding: '2px 4px' }}
+                      sx={{ color: '#aaa', '&.Mui-checked': { color: '#000' }, padding: '2px 4px' }}
                       size="small"
                     />
                   }
-                  label={<span style={{ color: '#aaa', fontSize: '0.8em', fontFamily: 'Share Tech Mono, monospace' }}>FDDM Master Unit</span>}
+                  label={<span style={{ color: '#333', fontSize: '0.8em' }}>FDDM Master Unit</span>}
                 />
               </div>
             </div>
@@ -205,26 +225,22 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
 
         {/* ── Flux Ranges + Subscribed Drones ── */}
         <Grid container spacing={2} sx={{ mb: 2 }}>
-          <Grid item xs={12} md={6}>
-            <div style={{ border: '1px solid #333', padding: 12, borderRadius: 4 }}>
-              <div style={{ color: '#aaa', fontSize: '0.75em', fontFamily: 'Share Tech Mono, monospace', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>
-                Flux Ranges
-              </div>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <div style={panelStyle}>
+              <div style={sectionLabel}>Flux Ranges</div>
               <div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto auto', gap: '2px 16px' }}>
                 {FLUX_RANGES.map(({ flux, range }) => (
                   <React.Fragment key={flux}>
-                    <span style={{ color: '#00ffc3', fontFamily: 'Share Tech Mono, monospace', fontSize: '0.8em' }}>{flux}</span>
-                    <span style={{ color: '#ccc', fontFamily: 'Share Tech Mono, monospace', fontSize: '0.8em' }}>{range}</span>
+                    <span style={{ color: '#000', fontSize: '0.8em', fontWeight: 'bold' }}>{flux}</span>
+                    <span style={{ color: '#333', fontSize: '0.8em' }}>{range}</span>
                   </React.Fragment>
                 ))}
               </div>
             </div>
           </Grid>
-          <Grid item xs={12} md={6}>
-            <div style={{ border: '1px solid #333', padding: 12, borderRadius: 4 }}>
-              <div style={{ color: '#aaa', fontSize: '0.75em', fontFamily: 'Share Tech Mono, monospace', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>
-                Subscribed Drones
-              </div>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <div style={panelStyle}>
+              <div style={sectionLabel}>Subscribed Drones</div>
               <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                 <RCDField label="Current" value={rcd.subscribedCurrent} onChange={(v) => update('subscribedCurrent', v)} width={90} />
                 <RCDField label="Max Active (Rating)" value={rcd.maxActive} onChange={(v) => update('maxActive', v)} width={140} />
@@ -242,11 +258,9 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
 
         {/* ── Drone table ── */}
         {drones && drones.length > 0 && (
-          <div style={{ mb: 2 }}>
-            <div style={{ color: '#aaa', fontSize: '0.75em', fontFamily: 'Share Tech Mono, monospace', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>
-              Subscribed Drones
-            </div>
-            <TableContainer component={Paper} sx={{ backgroundColor: '#1f1f1f', mb: 2 }}>
+          <div style={{ marginBottom: 16 }}>
+            <div style={sectionLabel}>Subscribed Drones</div>
+            <TableContainer component={Paper} sx={{ ...tablePaperSx, mb: 2 }}>
               <Table size="small" className="shadowrun-table">
                 <TableHead>
                   <TableRow>
@@ -279,7 +293,7 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
                             value={extra.type ?? ''}
                             onChange={(e) => updateDroneExtra(i, 'type', e.target.value)}
                             placeholder="—"
-                            style={{ background: 'transparent', border: 'none', color: '#00ffc3', fontFamily: 'Share Tech Mono, monospace', width: 90, fontSize: '0.8em' }}
+                            style={{ background: 'transparent', border: 'none', color: '#000', width: 90, fontSize: '0.8em' }}
                           />
                         </TableCell>
                         <TableCell sx={{ ...cellSx, textAlign: 'center' }}>{pilot}</TableCell>
@@ -292,7 +306,7 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
                             value={extra.adaptPool ?? ''}
                             onChange={(e) => updateDroneExtra(i, 'adaptPool', e.target.value)}
                             placeholder="—"
-                            style={{ background: 'transparent', border: 'none', color: '#00ffc3', fontFamily: 'Share Tech Mono, monospace', width: 50, textAlign: 'center', fontSize: '0.8em' }}
+                            style={{ background: 'transparent', border: 'none', color: '#000', width: 50, textAlign: 'center', fontSize: '0.8em' }}
                           />
                         </TableCell>
                         <TableCell sx={{ ...cellSx, textAlign: 'center' }}>
@@ -300,14 +314,14 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
                             value={extra.ivisPool ?? ''}
                             onChange={(e) => updateDroneExtra(i, 'ivisPool', e.target.value)}
                             placeholder="—"
-                            style={{ background: 'transparent', border: 'none', color: '#00ffc3', fontFamily: 'Share Tech Mono, monospace', width: 50, textAlign: 'center', fontSize: '0.8em' }}
+                            style={{ background: 'transparent', border: 'none', color: '#000', width: 50, textAlign: 'center', fontSize: '0.8em' }}
                           />
                         </TableCell>
                         <TableCell sx={{ ...cellSx, textAlign: 'center' }}>
                           <Checkbox
                             checked={extra.affiliated ?? false}
                             onChange={(e) => updateDroneExtra(i, 'affiliated', e.target.checked)}
-                            sx={{ color: '#333', '&.Mui-checked': { color: '#00ffc3' }, padding: '2px' }}
+                            sx={{ color: '#aaa', '&.Mui-checked': { color: '#000' }, padding: '2px' }}
                             size="small"
                           />
                         </TableCell>
@@ -323,9 +337,9 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
               {drones.map((drone, i) => {
                 const extra = (rcd.droneExtras ?? [])[i] ?? {};
                 return (
-                  <Grid item xs={12} md={6} key={i}>
-                    <div style={{ border: '1px solid #333', borderRadius: 4, padding: 10 }}>
-                      <div style={{ color: '#00ffc3', fontSize: '0.8em', fontFamily: 'Share Tech Mono, monospace', marginBottom: 6 }}>
+                  <Grid size={{ xs: 12, md: 6 }} key={i}>
+                    <div style={panelStyle}>
+                      <div style={{ color: '#000', fontSize: '0.8em', fontWeight: 'bold', marginBottom: 6 }}>
                         {drone.name}
                       </div>
                       <TextField
@@ -338,9 +352,10 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
                         size="small"
                         sx={{
                           mb: 1,
-                          '& label': { color: '#aaa', fontSize: '0.75em' },
-                          '& textarea': { color: '#ccc', fontFamily: 'Share Tech Mono, monospace', fontSize: '0.8em' },
-                          '& .MuiOutlinedInput-notchedOutline': { borderColor: '#333' },
+                          '& label': { color: '#555', fontSize: '0.75em' },
+                          '& label.Mui-focused': { color: '#000' },
+                          '& textarea': { color: '#000', fontSize: '0.8em' },
+                          '& .MuiOutlinedInput-notchedOutline': { borderColor: '#aaa' },
                         }}
                       />
                       <TextField
@@ -352,9 +367,10 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
                         fullWidth
                         size="small"
                         sx={{
-                          '& label': { color: '#aaa', fontSize: '0.75em' },
-                          '& textarea': { color: '#ccc', fontFamily: 'Share Tech Mono, monospace', fontSize: '0.8em' },
-                          '& .MuiOutlinedInput-notchedOutline': { borderColor: '#333' },
+                          '& label': { color: '#555', fontSize: '0.75em' },
+                          '& label.Mui-focused': { color: '#000' },
+                          '& textarea': { color: '#000', fontSize: '0.8em' },
+                          '& .MuiOutlinedInput-notchedOutline': { borderColor: '#aaa' },
                         }}
                       />
                     </div>
@@ -365,10 +381,8 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
 
             {/* Drone Weapons */}
             <div style={{ marginTop: 16 }}>
-              <div style={{ color: '#aaa', fontSize: '0.75em', fontFamily: 'Share Tech Mono, monospace', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>
-                Drone Weapons
-              </div>
-              <TableContainer component={Paper} sx={{ backgroundColor: '#1f1f1f' }}>
+              <div style={sectionLabel}>Drone Weapons</div>
+              <TableContainer component={Paper} sx={tablePaperSx}>
                 <Table size="small" className="shadowrun-table">
                   <TableHead>
                     <TableRow>
@@ -401,7 +415,7 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
                                   updateDroneExtra(i, 'weapons', newWeapons);
                                 }}
                                 placeholder="—"
-                                style={{ background: 'transparent', border: 'none', color: '#00ffc3', fontFamily: 'Share Tech Mono, monospace', width: field === 'ranges' ? 130 : 70, fontSize: '0.8em' }}
+                                style={{ background: 'transparent', border: 'none', color: '#000', width: field === 'ranges' ? 130 : 70, fontSize: '0.8em' }}
                               />
                             </TableCell>
                           ))}
@@ -423,7 +437,7 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
                                   const newWeapons = weapons.filter((_, idx) => idx !== wi);
                                   updateDroneExtra(i, 'weapons', newWeapons);
                                 }}
-                                sx={{ minWidth: 0, color: '#ff4444', fontSize: '0.7em', padding: '0 4px' }}
+                                sx={{ minWidth: 0, color: '#cc0000', fontSize: '0.7em', padding: '0 4px' }}
                               >
                                 ×
                               </Button>
@@ -440,7 +454,7 @@ const RCDSheet = ({ rcd, drones, onChangeRCD }) => {
         )}
 
         {(!drones || drones.length === 0) && (
-          <div style={{ color: '#555', fontFamily: 'Share Tech Mono, monospace', fontSize: '0.8em', textAlign: 'center', padding: 16 }}>
+          <div style={{ color: '#888', fontSize: '0.8em', textAlign: 'center', padding: 16 }}>
             No drones on character — add drones in the Vehicles tab to populate this section.
           </div>
         )}

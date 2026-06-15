@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import Paper from "@mui/material/Paper";
 import { Grid } from "@mui/material";
 import { MenuItem } from "@mui/material";
@@ -391,7 +391,7 @@ export default function OtakuPanel(props) {
       <h2>Otaku Living Persona</h2>
       <Box className="cyberdeckCard">
         <Grid container spacing={2}>
-          <Grid item size={{ xs: 3}} className="cyberDeckTable">
+          <Grid size={{ xs: 3}} className="cyberDeckTable">
             <table className="">
               <thead>
                 <tr>
@@ -451,7 +451,7 @@ export default function OtakuPanel(props) {
               </tbody>
             </table>
           </Grid>
-          <Grid item size={{ xs: 9}} className="">
+          <Grid size={{ xs: 9}} className="">
             <h3>Otaku Special Rules</h3>
             <div>
               <FormControl style={{ width: "200px" }}>
@@ -578,7 +578,7 @@ export default function OtakuPanel(props) {
                <Box key={si} className="cyberdeckCard" sx={{ mb: 2 }}>
                  <h4>{sprite.Name || 'Unnamed Sprite'} <span style={{ fontSize: '0.7em', opacity: 0.7 }}>(Core {core})</span></h4>
                  <Grid container spacing={2}>
-                   <Grid item size={{ xs: 4 }} className="cyberDeckTable">
+                   <Grid size={{ xs: 4 }} className="cyberDeckTable">
                      <table>
                        <thead><tr><th>Attribute</th><th>Value</th></tr></thead>
                        <tbody>
@@ -594,7 +594,7 @@ export default function OtakuPanel(props) {
                        </tbody>
                      </table>
                    </Grid>
-                   <Grid item size={{ xs: 8 }}>
+                   <Grid size={{ xs: 8 }}>
                      <h5>Complex Form Payload</h5>
                      <TableContainer component={Paper}>
                        <Table size="small">

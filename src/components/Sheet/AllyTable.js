@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import {
   Grid,
   Table,
@@ -13,6 +13,7 @@ import {
   Chip,
 } from '@mui/material';
 import SRSection from './SRSection';
+import { tablePaperSx } from './sheetTheme';
 
 const FREE_POWERS = [
   "Aid Power",
@@ -25,8 +26,6 @@ const FREE_POWERS = [
 
 const PHYSICAL_ATTRS = ["Body", "Quickness", "Strength", "Charisma"];
 const MENTAL_ATTRS = ["Intelligence", "Willpower"];
-
-const cell = { color: '#00ffc3' };
 
 const AllyTable = ({ ally }) => {
   if (!ally) return null;
@@ -55,45 +54,45 @@ const AllyTable = ({ ally }) => {
   if (ally.senseLink) powers.push('Sense Link');
 
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <SRSection title="Ally Spirit">
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, mb: 2, px: 1 }}>
           {ally.name && (
             <Box>
-              <Typography variant="caption" sx={{ color: '#888' }}>True Name</Typography>
-              <Typography sx={cell}>{ally.name}</Typography>
+              <Typography variant="caption" sx={{ color: '#666' }}>True Name</Typography>
+              <Typography sx={{ color: '#000' }}>{ally.name}</Typography>
             </Box>
           )}
           {ally.nativePlane && (
             <Box>
-              <Typography variant="caption" sx={{ color: '#888' }}>Native Plane</Typography>
-              <Typography sx={cell}>{ally.nativePlane}</Typography>
+              <Typography variant="caption" sx={{ color: '#666' }}>Native Plane</Typography>
+              <Typography sx={{ color: '#000' }}>{ally.nativePlane}</Typography>
             </Box>
           )}
           <Box>
-            <Typography variant="caption" sx={{ color: '#888' }}>Force</Typography>
-            <Typography sx={{ ...cell, fontWeight: 'bold' }}>{ally.force}</Typography>
+            <Typography variant="caption" sx={{ color: '#666' }}>Force</Typography>
+            <Typography sx={{ color: '#000', fontWeight: 'bold' }}>{ally.force}</Typography>
           </Box>
           <Box>
-            <Typography variant="caption" sx={{ color: '#888' }}>Karma Pool</Typography>
-            <Typography sx={cell}>{ally.karmaPool ?? 1}</Typography>
+            <Typography variant="caption" sx={{ color: '#666' }}>Karma Pool</Typography>
+            <Typography sx={{ color: '#000' }}>{ally.karmaPool ?? 1}</Typography>
           </Box>
           <Box>
-            <Typography variant="caption" sx={{ color: '#888' }}>Forms</Typography>
-            <Typography sx={cell}>{ally.forms ?? 1}</Typography>
+            <Typography variant="caption" sx={{ color: '#666' }}>Forms</Typography>
+            <Typography sx={{ color: '#000' }}>{ally.forms ?? 1}</Typography>
           </Box>
           <Box>
-            <Typography variant="caption" sx={{ color: '#888' }}>Total Karma</Typography>
-            <Typography sx={cell}>{totalKarma}</Typography>
+            <Typography variant="caption" sx={{ color: '#666' }}>Total Karma</Typography>
+            <Typography sx={{ color: '#000' }}>{totalKarma}</Typography>
           </Box>
         </Box>
 
         {/* Attributes */}
-        <TableContainer component={Paper} sx={{ backgroundColor: '#1f1f1f', mb: 2 }}>
+        <TableContainer component={Paper} sx={{ ...tablePaperSx, mb: 2 }}>
           <Table size="small" className="shadowrun-table">
             <TableHead>
               <TableRow>
-                <TableCell colSpan={PHYSICAL_ATTRS.length + MENTAL_ATTRS.length} sx={{ color: '#888', fontSize: '0.75rem' }}>
+                <TableCell colSpan={PHYSICAL_ATTRS.length + MENTAL_ATTRS.length} sx={{ fontSize: '0.75rem', color: '#555' }}>
                   Attributes
                 </TableCell>
               </TableRow>
@@ -105,12 +104,12 @@ const AllyTable = ({ ally }) => {
             <TableBody>
               <TableRow>
                 {PHYSICAL_ATTRS.map((a) => (
-                  <TableCell key={a} align="center" sx={cell}>
+                  <TableCell key={a} align="center">
                     {ally.physicalAttributes?.[a] ?? ally.force}
                   </TableCell>
                 ))}
                 {MENTAL_ATTRS.map((a) => (
-                  <TableCell key={a} align="center" sx={cell}>
+                  <TableCell key={a} align="center">
                     {ally.mentalAttributes?.[a] ?? '—'}
                   </TableCell>
                 ))}
@@ -121,7 +120,7 @@ const AllyTable = ({ ally }) => {
 
         {/* Skills */}
         {(ally.skills ?? []).length > 0 && (
-          <TableContainer component={Paper} sx={{ backgroundColor: '#1f1f1f', mb: 2 }}>
+          <TableContainer component={Paper} sx={{ ...tablePaperSx, mb: 2 }}>
             <Table size="small" className="shadowrun-table">
               <TableHead>
                 <TableRow>
@@ -132,8 +131,8 @@ const AllyTable = ({ ally }) => {
               <TableBody>
                 {ally.skills.map((sk, i) => (
                   <TableRow key={i}>
-                    <TableCell sx={cell}>{sk.name}</TableCell>
-                    <TableCell align="right" sx={cell}>{sk.rating}</TableCell>
+                    <TableCell>{sk.name}</TableCell>
+                    <TableCell align="right">{sk.rating}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -143,14 +142,14 @@ const AllyTable = ({ ally }) => {
 
         {/* Powers */}
         <Box sx={{ mb: 2, px: 1 }}>
-          <Typography variant="caption" sx={{ color: '#888', display: 'block', mb: 0.5 }}>Powers</Typography>
+          <Typography variant="caption" sx={{ color: '#555', display: 'block', mb: 0.5 }}>Powers</Typography>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
             {powers.map((p) => (
               <Chip
                 key={p}
                 label={p}
                 size="small"
-                sx={{ backgroundColor: '#1f3a2f', color: '#00ffc3', fontSize: '0.72rem' }}
+                sx={{ backgroundColor: '#eee', color: '#000', fontSize: '0.72rem', border: '1px solid #ccc' }}
               />
             ))}
           </Box>
@@ -158,7 +157,7 @@ const AllyTable = ({ ally }) => {
 
         {/* Spells */}
         {(ally.spells ?? []).length > 0 && (
-          <TableContainer component={Paper} sx={{ backgroundColor: '#1f1f1f' }}>
+          <TableContainer component={Paper} sx={tablePaperSx}>
             <Table size="small" className="shadowrun-table">
               <TableHead>
                 <TableRow>
@@ -169,8 +168,8 @@ const AllyTable = ({ ally }) => {
               <TableBody>
                 {ally.spells.map((sp, i) => (
                   <TableRow key={i}>
-                    <TableCell sx={cell}>{sp.name}</TableCell>
-                    <TableCell align="right" sx={cell}>{sp.force}</TableCell>
+                    <TableCell>{sp.name}</TableCell>
+                    <TableCell align="right">{sp.force}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

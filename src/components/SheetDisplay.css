@@ -1,104 +1,128 @@
-.boxHeader{
-    margin: 0;
-    margin-bottom: 10px;
-}
+/* ===================================================
+   SR CHARACTER SHEET — Clean B&W printable theme
+   =================================================== */
 
-.pool_display{
-    width: 110px;
-    margin-right: 10px
-}
-
+/* ── Page wrapper ──────────────────────────────────── */
 .sheetBody {
-    background: #1f1f1f;
-    width: 960px;
-    margin: 0 auto;
-    padding: 1.5rem;
+  background: #f4f4f4;
+  width: 980px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-family: 'Arial', 'Helvetica Neue', sans-serif;
+  color: #000;
 }
 
 .sheet-print-row {
-    text-align: right;
-    margin-bottom: 12px;
+  text-align: right;
+  margin-bottom: 14px;
 }
 
+/* ── Two-column layout ─────────────────────────────── */
 .sheet-two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 16px;
-    margin-bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 14px;
 }
 
 .sheet-col {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
-li{
-    list-style: none;
-}
-
+/* ── Section card ──────────────────────────────────── */
 .shadowrun-paper {
-  background-color: #1f1f1f !important;
-  color: #00ffc3;
-  border: 1px solid #00ffc3;
-  font-family: 'Share Tech Mono', monospace;
-  padding: 1rem;
-  margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 255, 195, 0.3);
+  background-color: #fff !important;
+  color: #000 !important;
+  border: 1px solid #bbb;
+  border-radius: 2px !important;
+  padding: 0 0 0.75rem 0;
+  margin-bottom: 12px;
+  box-shadow: none !important;
 }
 
+/* ── Section header — solid black bar like the PDF ─── */
 .shadowrun-header {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #00ffc3;
-  border-bottom: 1px solid #00ffc3;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+  background: #000;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  padding: 4px 10px;
+  margin-bottom: 0.6rem;
 }
 
-.shadowrun-table td,
+/* ── Tables ────────────────────────────────────────── */
+.shadowrun-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
 .shadowrun-table th {
-  padding: 6px 8px;
-  color: #ffffff;
-  font-size: 0.9rem;
-  border-bottom: 1px solid #333;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #333;
+  border-bottom: 2px solid #000;
+  padding: 4px 8px;
+  background: #f8f8f8;
 }
 
-.shadowrun-table td,
-.shadowrun-table th {
-  border-bottom: 1px solid #444;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 0.9rem;
-  color: #00ffc3;
+.shadowrun-table td {
+  font-size: 0.85rem;
+  color: #000;
+  border-bottom: 1px solid #ddd;
+  padding: 4px 8px;
 }
 
+.shadowrun-table tr:last-child td {
+  border-bottom: none;
+}
+
+.shadowrun-table tr:hover td {
+  background: #f5f5f5;
+}
+
+/* ── Attribute label / value ───────────────────────── */
 .shadowrun-label {
-  color: #ff3c3c;
-  font-weight: bold;
+  font-weight: 700;
+  color: #000;
+  font-size: 0.85rem;
 }
 
 .shadowrun-value {
-  color: #00ffc3;
+  color: #222;
+  font-size: 0.85rem;
 }
 
+/* ── Pool display ──────────────────────────────────── */
 .pool_display {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  width: 160px;
+  margin-right: 12px;
+  margin-bottom: 10px;
 }
 
-/* padding set on .sheetBody above */
+li {
+  list-style: none;
+}
 
-/* ===== PRINT STYLES ===== */
+/* ── Print button ──────────────────────────────────── */
+.sheet-print-btn {
+  color: #000 !important;
+  border-color: #000 !important;
+}
+
+/* ===================================================
+   PRINT STYLES
+   =================================================== */
 @media print {
-  /* Hide everything except the sheet */
   .no-print,
   .no-print-tabs > .MuiBox-root:first-child {
     display: none !important;
   }
 
-  /* Show only the sheet tab panel */
   .no-print-tabs [role="tabpanel"] {
     display: none !important;
   }
@@ -107,50 +131,40 @@ li{
     display: block !important;
   }
 
-  /* Reset page for print */
   body {
     background: #fff !important;
     color: #000 !important;
-    font-size: 11pt;
+    font-size: 10pt;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
-  /* Flip dark theme to light */
   .sheetBody {
     background: #fff !important;
     width: 100% !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0.25in !important;
   }
 
   .shadowrun-paper {
-    background-color: #fff !important;
-    color: #000 !important;
-    border: 1px solid #000 !important;
+    border: 1px solid #999 !important;
     box-shadow: none !important;
     page-break-inside: avoid;
-    margin-bottom: 12px !important;
+    margin-bottom: 8px !important;
   }
 
   .shadowrun-header {
-    color: #000 !important;
-    border-bottom: 2px solid #000 !important;
+    background: #000 !important;
+    color: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
-  .shadowrun-table td,
   .shadowrun-table th {
-    color: #000 !important;
-    border-bottom: 1px solid #ccc !important;
+    background: #f0f0f0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
-  .shadowrun-label {
-    color: #000 !important;
-  }
-
-  .shadowrun-value {
-    color: #000 !important;
-  }
-
-  /* MUI overrides for print */
   .MuiPaper-root {
     background-color: #fff !important;
     color: #000 !important;
@@ -161,20 +175,14 @@ li{
   .MuiOutlinedInput-root,
   .MuiInputBase-input {
     color: #000 !important;
-    font-family: 'Share Tech Mono', monospace !important;
     -webkit-text-fill-color: #000 !important;
   }
 
   .MuiOutlinedInput-notchedOutline {
-    border-color: #000 !important;
+    border-color: #999 !important;
   }
 
   .MuiInputLabel-root {
-    color: #000 !important;
-  }
-
-  /* Page break hints */
-  .MuiGrid-item {
-    page-break-inside: avoid;
+    color: #555 !important;
   }
 }
