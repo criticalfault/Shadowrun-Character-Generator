@@ -1,65 +1,77 @@
-﻿import React, { useState } from "react";
-import "./ConditionMonitor.css";
+import React, { useState } from 'react';
+import './ConditionMonitor.css';
 
-const ConditionMonitor = (props) => {
-  const [selectedCondition, setSelectedCondition] = useState(null);
+// Damage level section definitions
+const SECTIONS = [
+  { label: 'Light',    boxes: 1 },
+  { label: 'Moderate', boxes: 2 },
+  { label: 'Serious',  boxes: 3 },
+  { label: 'Deadly',   boxes: 4 },
+];
 
-  const handleClick = (number, key, selected) => {
-    setSelectedCondition((prevCondition) => {
-      if (prevCondition === number || selected === true) {
-        return null; // Unselect the condition if it was already selected
-      } else {
-        return number; // Select the condition if it was not previously selected
-      }
-    });
+// Text shown inside the first box of each section
+const BOX_LABELS = [
+  '+1 TN\n-1 Init.',   // box 0 — Light
+  '+2 TN\n-2 Init.',   // box 1 — Moderate start
+  '',                   // box 2
+  '+3 TN\n-3 Init.',   // box 3 — Serious start
+  '', '',               // boxes 4-5
+  '', '', '',           // boxes 6-8 — Deadly
+  null,                 // box 9 — last box, handled per type
+];
+
+const ConditionMonitor = ({ type }) => {
+  const [filled, setFilled] = useState(0);
+
+  const handleClick = (i) => {
+    // clicking a filled box unfills from that point; clicking empty fills up to it
+    setFilled(filled === i + 1 ? i : i + 1);
   };
 
-  const renderBoxes = () => {
-    const boxes = ["L", "_", "M", "_", "_", "S", "_", "_", "_", "D"];
-
-    return boxes.map((box, index) => {
-      const isSelected =
-        selectedCondition !== null && index <= selectedCondition;
-
-      return (
-        <div
-          className="conditionBox"
-          key={index}
-          data-number={index}
-          onClick={() => handleClick(index, props.targetID, isSelected)}
-          style={{
-            ...styles.rectangle,
-            borderColor: '#000',
-            backgroundColor: isSelected ? '#333' : 'transparent',
-            color: isSelected ? '#fff' : '#000',
-          }}
-        >
-          <span className="noselect">{box}</span>
-        </div>
-      );
-    });
-  };
+  const lastLabel = type === 'Stun' ? 'Unc.' : 'Unc.\nMaybe\nDead';
 
   return (
     <div className="conditionMonitor">
-      <span className="noselect" style={{ color: '#000', fontWeight: 700, fontSize: '0.8rem', display: 'block', marginBottom: 4 }}>{props.type}</span>
-      <div className="conditionBoxes">
-        {renderBoxes()}
+      <div className="cm-type-label">{type}</div>
+
+      {/* Section header labels */}
+      <div className="cm-section-headers">
+        {SECTIONS.map((s) => (
+          <div key={s.label} className="cm-section-header" style={{ flex: s.boxes }}>
+            {s.label}<br />
+            {type === 'Stun' ? 'Stun' : 'Wound'}
+          </div>
+        ))}
       </div>
+
+      {/* Box row */}
+      <div className="cm-boxes">
+        {BOX_LABELS.map((label, i) => {
+          const isFilled = i < filled;
+          const displayLabel = i === 9 ? lastLabel : label;
+          return (
+            <div
+              key={i}
+              className={`cm-box${isFilled ? ' cm-box-filled' : ''}`}
+              onClick={() => handleClick(i)}
+            >
+              {displayLabel && displayLabel.split('\n').map((line, j) => (
+                <span key={j} className="cm-box-line">{line}</span>
+              ))}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Physical overflow box */}
+      {type === 'Physical' && (
+        <div className="cm-overflow">
+          <span className="cm-overflow-label">Physical Damage Overflow</span>
+          <div className="cm-overflow-box" />
+        </div>
+      )}
     </div>
   );
-};
-
-const styles = {
-  rectangle: {
-    width: "40px",
-    height: "40px",
-    border: "solid 1px black",
-    display: "inline-block",
-    margin: "1px",
-    cursor: "pointer",
-    textAlign: "center",
-  },
 };
 
 export default ConditionMonitor;

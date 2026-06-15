@@ -8,18 +8,8 @@ const ConditionMonitorBlock = ({ onConditionSelect }) => {
     <Grid size={12}>
       <SRSection title="Condition Monitor">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-          <ConditionMonitor
-            type="Stun"
-            key="stun"
-            actor="S"
-            onConditionSelect={onConditionSelect}
-          />
-          <ConditionMonitor
-            type="Physical"
-            key="physical"
-            actor="P"
-            onConditionSelect={onConditionSelect}
-          />
+          <ConditionMonitor type="Stun" key="stun" />
+          <ConditionMonitor type="Physical" key="physical" />
         </div>
       </SRSection>
     </Grid>
