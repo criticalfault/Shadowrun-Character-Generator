@@ -821,33 +821,6 @@
       "bookPage": "r2.127"
     },
     {
-      "id": "personal-armor",
-      "name": "Armor (Personal-Scale)",
-      "category": "protective",
-      "description": "Ceramics and Kevlar panels. Ballistic only. Same effect as personal body armor vs. vehicle-scale weapons.",
-      "designOnly": false,
-      "rated": true,
-      "cfDesign": 0,
-      "cfCustom": 0,
-      "loadReductionKgDesign": "Body Ã— 2 kg per point",
-      "loadReductionKgCustom": "Body Ã— 3 kg per point",
-      "dpCost": "5 per point",
-      "costNuyen": 400,
-      "availability": "7/10 days",
-      "streetIndex": "1.5",
-      "equipment": "Vehicle facility",
-      "baseTimeHours": "Armor value Ã— 6",
-      "skill": "Appropriate Vehicle B/R",
-      "skillTN": "Desired Armor rating + 3",
-      "maxRating": "Body Ã— 2",
-      "statMods": {
-        "armor": "+1/point (personal scale)"
-      },
-      "restrictions": null,
-      "notes": null,
-      "bookPage": "r2.127"
-    },
-    {
       "id": "concealed-armor",
       "name": "Concealed Armor",
       "category": "protective",
