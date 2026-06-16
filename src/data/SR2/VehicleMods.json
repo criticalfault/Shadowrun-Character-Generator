@@ -1533,7 +1533,7 @@
       "loadReductionKgDesign": 0,
       "loadReductionKgCustom": 0,
       "dpCost": "250 (Level I); 350 (Level II)",
-      "costNuyen": "650Â¥ (Level I); 900Â¥ (Level II)",
+      "costNuyen": "650¥ (Level I); 900¥ (Level II)",
       "availability": "Level I: 4/48 hrs; Level II: 6/48 hrs",
       "streetIndex": "Level I: 1; Level II: 2",
       "equipment": "Vehicle kit",
@@ -1548,23 +1548,25 @@
       "ratings": [
         {
           "rating": 1,
-          "cfDesign": 1,
+          "label": "Level I",
+          "cfDesign": 0,
           "cfCustom": 1,
           "dpCost": 250,
           "costNuyen": 650,
           "weightKg": 0,
           "availability": "4/48 hrs",
-          "streetIndex": "1.5"
+          "streetIndex": 1
         },
         {
           "rating": 2,
-          "cfDesign": 2,
-          "cfCustom": 2,
+          "label": "Level II",
+          "cfDesign": 0,
+          "cfCustom": 1,
           "dpCost": 350,
           "costNuyen": 900,
           "weightKg": 0,
-          "availability": "5/1 week",
-          "streetIndex": "2"
+          "availability": "6/48 hrs",
+          "streetIndex": 2
         }
       ]
     },
