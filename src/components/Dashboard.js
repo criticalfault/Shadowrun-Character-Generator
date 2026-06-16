@@ -968,6 +968,8 @@ export default function BasicTabs() {
             karmaPool={Character.karmaPool}
             karmaPoolBurned={Character.karmaPoolBurned ?? 0}
             onChangeKarmaPoolBurned={(burned) => setCharacter({ ...Character, karmaPoolBurned: burned })}
+            characterAttributes={Character.attributes}
+            raceBonuses={Character.raceBonuses}
             magicalChoice={Character.magicalChoice}
             magicRating={
               (parseInt(Character.attributes?.Magic) || 0) +

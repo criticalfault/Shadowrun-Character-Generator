@@ -12,13 +12,31 @@ const allSkillsData   = import.meta.glob('../data/*/Skills.json',       { eager:
 const allActiveSkills = import.meta.glob('../data/*/ActiveSkills.json', { eager: true });
 const allSpellsData   = import.meta.glob('../data/*/Spells.json',       { eager: true });
 
-// SR2 & SR3: Active = ceil(newRating × 1.5), Knowledge/Language = ceil(newRating × 0.5)
-const skillKarmaCost = (currentRating, type) => {
-  const newRating = currentRating + 1;
-  if (type === 'Active') return Math.ceil(newRating * 1.5);
-  return Math.ceil(newRating * 0.5);
+const ATTR_ACRONYM = {
+  QCK: 'Quickness', STR: 'Strength', BOD: 'Body',
+  WIL: 'Willpower', INT: 'Intelligence', CHA: 'Charisma', RCT: 'Reaction',
 };
 
+// SR3 Skill Improvement Cost Table (multiplier × new rating, round up)
+// Base Skill:         ≤ attr → 1.5 / 1   |  ≤ 2×attr → 2 / 1.5   |  > 2×attr → 2.5 / 2
+// Specializations:   ≤ attr → 0.5 / 0.5  |  ≤ 2×attr → 1 / 1      |  > 2×attr → 1.5 / 1.5
+const sr3SkillMultiplier = (newRating, attrRating, isActive) => {
+  if (newRating <= attrRating)       return isActive ? 1.5 : 1;
+  if (newRating <= attrRating * 2)   return isActive ? 2   : 1.5;
+  return isActive ? 2.5 : 2;
+};
+
+const skillKarmaCost = (currentRating, type, edition, attrRating) => {
+  const newRating = currentRating + 1;
+  const isActive = type === 'Active';
+  if (edition === 'SR3' && attrRating) {
+    return Math.ceil(newRating * sr3SkillMultiplier(newRating, attrRating, isActive));
+  }
+  // SR2: flat 1.5 × new rating for active, 0.5 for knowledge/language (TODO: confirm from SR2 book)
+  return Math.ceil(newRating * (isActive ? 1.5 : 0.5));
+};
+
+// SR2 concentrations — same formula as SR2 active for now
 const concentrationKarmaCost = (currentRating) => Math.ceil((currentRating + 1) * 1.5);
 
 // SR2 (confirmed, core p.132): karma = desired Force of the spell
@@ -53,6 +71,8 @@ export default function KarmaSkillAdvancement({
   karmaPool,
   karmaPoolBurned,
   onChangeKarmaPoolBurned,
+  characterAttributes,
+  raceBonuses,
   magicalChoice,
   magicRating,
   allowedBooks,
@@ -75,6 +95,13 @@ export default function KarmaSkillAdvancement({
   const [spellForce, setSpellForce]       = useState(1);
 
   if (step !== 'finalized') return null;
+
+  const getAttrRating = (acronym) => {
+    if (!acronym || !characterAttributes) return null;
+    const name = ATTR_ACRONYM[acronym] ?? acronym;
+    return (parseInt(characterAttributes[name]) || 0) +
+           (parseInt(raceBonuses?.[name]) || 0);
+  };
 
   // ── Skill data for "add new skill" ──────────────────────────────────
   const rawSkills = Edition === 'SR3'
@@ -117,7 +144,7 @@ export default function KarmaSkillAdvancement({
       const conc = skill.selectedConcentrations[concentrationIndex];
       setConfirm({ skillIndex, concentrationIndex, label: `${skill.name} / ${conc.name}`, currentRating: conc.rating, cost: concentrationKarmaCost(conc.rating) });
     } else {
-      setConfirm({ skillIndex, concentrationIndex: null, label: skill.name, currentRating: skill.rating, cost: skillKarmaCost(skill.rating, skill.type) });
+      setConfirm({ skillIndex, concentrationIndex: null, label: skill.name, currentRating: skill.rating, cost: skillKarmaCost(skill.rating, skill.type, Edition, getAttrRating(skill.attribute)) });
     }
   };
 
@@ -145,6 +172,7 @@ export default function KarmaSkillAdvancement({
       rating: 1,
       totalCost: newSkillCost,
       type: 'Active',
+      attribute: newSkillData.attribute ?? null,
       selectedConcentrations: [],
     };
     onUpdateSkills([...skills, skill]);
@@ -227,7 +255,7 @@ export default function KarmaSkillAdvancement({
             <AccordionDetails sx={{ pt: 0 }}>
               <List dense disablePadding>
                 {group.map((skill) => {
-                  const cost = skillKarmaCost(skill.rating, skill.type);
+                  const cost = skillKarmaCost(skill.rating, skill.type, Edition, getAttrRating(skill.attribute));
                   return (
                     <React.Fragment key={skill._index}>
                       <ListItem secondaryAction={
