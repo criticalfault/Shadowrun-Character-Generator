@@ -39,8 +39,7 @@ const skillKarmaCost = (currentRating, type, edition, attrRating) => {
 // SR2 concentrations — same formula as SR2 active for now
 const concentrationKarmaCost = (currentRating) => Math.ceil((currentRating + 1) * 1.5);
 
-// SR2 (confirmed, core p.132): karma = desired Force of the spell
-// SR3: TODO — confirm from SR3 core book; using Force as placeholder until verified
+// SR2 core p.132 & SR3 core: karma cost = desired Force of the spell
 const spellKarmaCost = (force, _edition) => force;
 
 const SPELL_CASTER_TYPES = [
@@ -306,7 +305,7 @@ export default function KarmaSkillAdvancement({
           <Divider sx={{ my: 2 }} />
           <Typography variant="h6" sx={{ mb: 1 }}>Learn New Spell</Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-            Cost: Force karma (SR2 confirmed; SR3 TBD — same formula used as placeholder)
+            Cost: Force karma (SR2 p.132 / SR3 confirmed)
           </Typography>
           <Button
             variant="outlined"
