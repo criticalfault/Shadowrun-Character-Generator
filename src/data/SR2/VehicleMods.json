@@ -614,6 +614,33 @@
       "bookPage": "r2.125"
     },
     {
+      "id": "remote-control-interface",
+      "name": "Remote-Control Interface",
+      "category": "control",
+      "description": "Enables vehicle to receive/transmit data via remote-control network. Grants Pilot Rating 1. Does not apply to standard drones (already included).",
+      "designOnly": false,
+      "rated": false,
+      "cfDesign": 0,
+      "cfCustom": 0,
+      "loadReductionKgDesign": 0,
+      "loadReductionKgCustom": 0,
+      "dpCost": "25 × Body",
+      "costNuyen": "2,500¥ × Body",
+      "availability": "4/72 hrs",
+      "streetIndex": "2",
+      "equipment": "Vehicle facility",
+      "baseTimeHours": 16,
+      "skill": "Appropriate Vehicle B/R, Electronics B/R",
+      "skillTN": 4,
+      "maxRating": null,
+      "statMods": {
+        "pilot": "set to 1"
+      },
+      "restrictions": "Not applicable to standard drones",
+      "notes": null,
+      "bookPage": "r2.125"
+    },
+    {
       "id": "off-road-suspension",
       "name": "Off-Road Suspension",
       "category": "control",
