@@ -188,6 +188,7 @@ export default function BasicTabs() {
     karmaPool: 1,
     karmaSpent: 0,
     karmaPoolBurned: 0,
+    purchasedPowerPoints: 0,
     magical: true,
     initation: false,
     submerison: false,
@@ -462,6 +463,13 @@ export default function BasicTabs() {
     setCharacter((prevCharacter) => ({
       ...prevCharacter,
       purchasedSpellPoints: points,
+    }));
+  };
+
+  const handleChangePurchasedPowerPoints = (points) => {
+    setCharacter((prevCharacter) => ({
+      ...prevCharacter,
+      purchasedPowerPoints: points,
     }));
   };
 
@@ -864,6 +872,8 @@ export default function BasicTabs() {
             creatorIntelligence={Character.attributes.Intelligence}
             creatorWillpower={Character.attributes.Willpower}
             step={Character.step}
+            purchasedPowerPoints={Character.purchasedPowerPoints ?? 0}
+            onChangePurchasedPowerPoints={handleChangePurchasedPowerPoints}
             onSpendKarma={(karma) => {
               let karmaSpentToSave = (Character.karmaSpent += karma);
               setCharacter({ ...Character, karmaSpent: karmaSpentToSave });
@@ -986,6 +996,8 @@ export default function BasicTabs() {
             }
             onChangeLog={(log) => setCharacter({ ...Character, log: log })}
             Log={Character.log}
+            purchasedPowerPoints={Character.purchasedPowerPoints ?? 0}
+            onChangePurchasedPowerPoints={handleChangePurchasedPowerPoints}
           />
         </CustomTabPanel>
         <CustomTabPanel value={value} index={12}>

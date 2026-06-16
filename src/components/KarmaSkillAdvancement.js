@@ -83,6 +83,8 @@ export default function KarmaSkillAdvancement({
   onSpendKarma,
   onChangeLog,
   Log,
+  purchasedPowerPoints,
+  onChangePurchasedPowerPoints,
 }) {
   const [confirm, setConfirm]         = useState(null);
   const [newSkillModal, setNewSkillModal] = useState(false);
@@ -425,6 +427,47 @@ export default function KarmaSkillAdvancement({
           <Button onClick={() => setNewSpellModal(false)}>Cancel</Button>
         </Box>
       </Modal>
+
+      {/* ── SR3 Adept: Buy Power Points ── */}
+      {Edition === 'SR3' && magicalChoice && magicalChoice.toLowerCase().includes('adept') && (
+        <>
+          <Divider sx={{ my: 2 }} />
+          <Typography variant="h6" sx={{ mb: 0.5 }}>Adept Power Points</Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
+            Purchase additional Power Points at 20 karma each. (MitS)
+          </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+            <Typography>Purchased via karma: <strong>{purchasedPowerPoints ?? 0}</strong></Typography>
+            <Button
+              variant="outlined"
+              size="small"
+              disabled={karmaAvailable < 20}
+              onClick={() => {
+                const next = (purchasedPowerPoints ?? 0) + 1;
+                onChangePurchasedPowerPoints?.(next);
+                onSpendKarma?.(20);
+                onChangeLog?.([...(Log ?? []), { type: 'Power Point', cost: 20, note: `Purchased Power Point #${next}` }]);
+              }}
+            >
+              Buy Power Point (20 karma)
+            </Button>
+            {(purchasedPowerPoints ?? 0) > 0 && (
+              <Button
+                variant="text"
+                size="small"
+                color="warning"
+                onClick={() => {
+                  const next = (purchasedPowerPoints ?? 0) - 1;
+                  onChangePurchasedPowerPoints?.(next);
+                  onSpendKarma?.(-20);
+                }}
+              >
+                Undo Last
+              </Button>
+            )}
+          </Box>
+        </>
+      )}
 
       {/* ── Custom / one-off karma spend ── */}
       <Divider sx={{ my: 2 }} />

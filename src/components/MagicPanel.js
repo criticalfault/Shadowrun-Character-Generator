@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MenuItem } from "@mui/material";
 import SearchableSelect from "./SearchableSelect";
 import InputLabel from "@mui/material/InputLabel";
@@ -1105,7 +1105,11 @@ function MagicPanel(props) {
   const [AdeptPointsSpent, setAdeptPointsSpent] = useState(
     CalcTotalPowerRatings(props.powers)
   );
-  const [AdeptPointsMax, setAdeptPointsMax] = useState(6);
+  const [AdeptPointsMax, setAdeptPointsMax] = useState(
+    (parseInt(props.maxSpellPoints) || 0) +
+    (parseInt(props.initiateGrade) || 0) +
+    (parseInt(props.purchasedPowerPoints) || 0)
+  );
   const [newPower, setNewPower] = useState("");
   const [newPowerCost, setNewPowerCost] = useState(0.0);
   const [newPowerDesc, setNewPowerDesc] = useState("");
@@ -1123,6 +1127,14 @@ function MagicPanel(props) {
   const [useOrdeal, setUseOrdeal] = useState(false);
   const [pendingBenefit, setPendingBenefit] = useState('metamagic');
   const [pendingMetamagic, setPendingMetamagic] = useState('');
+
+  useEffect(() => {
+    setAdeptPointsMax(
+      (parseInt(props.maxSpellPoints) || 0) +
+      (parseInt(initiateGrade) || 0) +
+      (parseInt(props.purchasedPowerPoints) || 0)
+    );
+  }, [props.maxSpellPoints, initiateGrade, props.purchasedPowerPoints]);
 
   // ── Magical Group state ───────────────────────────────────────
   const blankGroup = { name: '', type: 'Initiatory', resources: 'Low', strictures: [], patron: '' };
