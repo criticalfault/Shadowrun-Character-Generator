@@ -22,6 +22,7 @@ import VehiclesPanel from "./VehiclesPanel";
 import ContactsPanel from "./ContactsPanel";
 import SheetDisplay from "./SheetDisplay";
 import KarmaDisplay from "./KarmaDisplay";
+import KarmaSkillAdvancement from "./KarmaSkillAdvancement";
 import "./SheetDisplay.css";
 import DiceRollerTray from "./DiceRollerTray";
 import SignInPopup from "./SignInPopup";
@@ -186,6 +187,8 @@ export default function BasicTabs() {
     karma: 0,
     karmaPool: 1,
     karmaSpent: 0,
+    karmaPoolBurned: 0,
+    purchasedPowerPoints: 0,
     magical: true,
     initation: false,
     submerison: false,
@@ -460,6 +463,13 @@ export default function BasicTabs() {
     setCharacter((prevCharacter) => ({
       ...prevCharacter,
       purchasedSpellPoints: points,
+    }));
+  };
+
+  const handleChangePurchasedPowerPoints = (points) => {
+    setCharacter((prevCharacter) => ({
+      ...prevCharacter,
+      purchasedPowerPoints: points,
     }));
   };
 
@@ -861,6 +871,9 @@ export default function BasicTabs() {
             onChangeAlly={(ally) => setCharacter({ ...Character, ally })}
             creatorIntelligence={Character.attributes.Intelligence}
             creatorWillpower={Character.attributes.Willpower}
+            step={Character.step}
+            purchasedPowerPoints={Character.purchasedPowerPoints ?? 0}
+            onChangePurchasedPowerPoints={handleChangePurchasedPowerPoints}
             onSpendKarma={(karma) => {
               let karmaSpentToSave = (Character.karmaSpent += karma);
               setCharacter({ ...Character, karmaSpent: karmaSpentToSave });
@@ -958,6 +971,33 @@ export default function BasicTabs() {
             }
             onChangeLog={(log) => setCharacter({ ...Character, log: log })}
             Log={Character.log}
+          />
+          <KarmaSkillAdvancement
+            skills={Character.skills}
+            spells={Character.spells}
+            karmaPool={Character.karmaPool}
+            karmaPoolBurned={Character.karmaPoolBurned ?? 0}
+            onChangeKarmaPoolBurned={(burned) => setCharacter({ ...Character, karmaPoolBurned: burned })}
+            characterAttributes={Character.attributes}
+            raceBonuses={Character.raceBonuses}
+            magicalChoice={Character.magicalChoice}
+            magicRating={
+              (parseInt(Character.attributes?.Magic) || 0) +
+              (parseInt(Character.magicalAttributeBonuses?.Magic) || 0)
+            }
+            allowedBooks={Character.allowedBooks}
+            Edition={Edition}
+            karmaAvailable={Character.karma}
+            step={Character.step}
+            onUpdateSkills={handleSkillsUpdate}
+            onChangeSpells={(spells) => setCharacter({ ...Character, spells })}
+            onSpendKarma={(karma) =>
+              setCharacter((prev) => ({ ...prev, karmaSpent: prev.karmaSpent + karma }))
+            }
+            onChangeLog={(log) => setCharacter({ ...Character, log: log })}
+            Log={Character.log}
+            purchasedPowerPoints={Character.purchasedPowerPoints ?? 0}
+            onChangePurchasedPowerPoints={handleChangePurchasedPowerPoints}
           />
         </CustomTabPanel>
         <CustomTabPanel value={value} index={12}>

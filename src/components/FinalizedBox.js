@@ -17,7 +17,7 @@ export default function finalizedBox(props) {
     <div style={style}>
         Edition: {props.Edition}<br></br>
         Karma: {props.currentCharacter.karma-props.currentCharacter.karmaSpent}/{props.currentCharacter.karma}<br></br>
-        Karma Pool: {props.currentCharacter.karmaPool}<br></br>
+        Karma Pool: {props.currentCharacter.karmaPool - (props.currentCharacter.karmaPoolBurned ?? 0)}/{props.currentCharacter.karmaPool}<br></br>
         Nuyen: {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(props.currentCharacter.cash)}<br></br>
         Character Stage: {props.currentCharacter.step}
     </div>

@@ -12,6 +12,7 @@ import TableRow from "@mui/material/TableRow";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Modal from "@mui/material/Modal";
 import SearchableSelect from "./SearchableSelect";
+import ProgramCalculatorModal from "./ProgramCalculatorModal";
 import "./DeckingPanel.css";
 
 // Pre-import all edition data so Vite can bundle them (no runtime require)
@@ -39,6 +40,8 @@ export default function DeckingPanel(props) {
   const [NewCyberdeckProgramIndex, setNewCyberdeckProgramIndex] = useState(0);
   const [openModal, setOpenModal] = React.useState(false);
   const [modalCurrentTarget, setModalCurrentTarget] = useState(0);
+  const [calcModalOpen, setCalcModalOpen] = useState(false);
+  const [calcModalDeck, setCalcModalDeck] = useState(null);
 
   // Agents state
   const [agents, setAgents] = useState(props.Agents ?? []);
@@ -395,15 +398,21 @@ export default function DeckingPanel(props) {
                 </Grid>
                 <Grid size={{ xs: 7}} className="">
                   <h4>Programs</h4>
-                  <div>
+                  <div style={{ display: 'flex', gap: 8, marginBottom: 10, flexWrap: 'wrap' }}>
                     <Button
-                      style={{ marginBottom: 10 }}
                       variant="contained"
                       color="primary"
                       data-index={index}
                       onClick={() => handleOpenModal(index)}
                     >
                       Add Program
+                    </Button>
+                    <Button
+                      variant="outlined"
+                      color="secondary"
+                      onClick={() => { setCalcModalDeck(cyberdeck); setCalcModalOpen(true); }}
+                    >
+                      Program Calculator
                     </Button>
                   </div>
 
@@ -694,6 +703,12 @@ export default function DeckingPanel(props) {
       <hr sx="mt-6"></hr>
       {RenderSelectedCyberdeck()}
       {RenderProgramSelectionModal()}
+      <ProgramCalculatorModal
+        open={calcModalOpen}
+        onClose={() => setCalcModalOpen(false)}
+        programs={rawPrograms}
+        deck={calcModalDeck}
+      />
       {RenderAgents()}
     </>
   );
