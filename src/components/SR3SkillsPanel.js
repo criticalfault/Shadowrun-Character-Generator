@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import NativeSelect from "@mui/material/NativeSelect";
@@ -464,7 +464,7 @@ function SR3SkillsPanel({
       </Box>
 
       <Grid container spacing={2}>
-        <Grid item size={12}>
+        <Grid size={12}>
           <Box sx={{ background: "#fafafa", padding: "20px" }}>
             <h3 style={{ paddingBottom: "20px" }}>Active Skills</h3>
             <FormControl>

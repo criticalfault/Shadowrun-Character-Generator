@@ -1,30 +1,100 @@
-.damaged{
-    background-color:cyan;
-    border-color:white;
-    margin: 1px;
-}
-.noselect {
-    -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-       -khtml-user-select: none; /* Konqueror HTML */
-         -moz-user-select: none; /* Old versions of Firefox */
-          -ms-user-select: none; /* Internet Explorer/Edge */
-              user-select: none; /* Non-prefixed version, currently
-                                    supported by Chrome, Edge, Opera and Firefox */
+.conditionMonitor {
+    padding: 0 9px 4px 9px;
 }
 
+.cm-type-label {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #000;
+    margin-bottom: 4px;
+}
 
-@media only screen and (max-width: 631px) {
-  .conditionBox{
-    width:23px !important;
-    height:23px !important;
-  }
+/* Section header row — same flex proportions as the boxes */
+.cm-section-headers {
+    display: flex;
+    margin-bottom: 2px;
+}
 
-  .noselect{
+.cm-section-header {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+    line-height: 1.2;
+    padding: 0 2px;
+}
+
+/* Box row */
+.cm-boxes {
+    display: flex;
+    gap: 2px;
+}
+
+.cm-box {
+    flex: 1;
+    min-height: 44px;
+    border: 1px solid #000;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 1px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.cm-box:hover {
+    background-color: #f0f0f0;
+}
+
+.cm-box-filled {
+    background-color: #333 !important;
+}
+
+.cm-box-line {
+    font-size: 0.58rem;
+    line-height: 1.3;
+    text-align: center;
+    color: #000;
     display: block;
-  }
+}
 
-  .conditionMonitor{
-    margin-bottom: 10px;
-  }
+.cm-box-filled .cm-box-line {
+    color: #fff;
+}
+
+/* Physical overflow */
+.cm-overflow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    padding-left: 2px;
+}
+
+.cm-overflow-label {
+    font-size: 0.7rem;
+    color: #333;
+}
+
+.cm-overflow-box {
+    width: 48px;
+    height: 28px;
+    border: 1px solid #000;
+    flex-shrink: 0;
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media only screen and (max-width: 631px) {
+    .cm-box {
+        min-height: 32px;
+    }
+    .cm-box-line {
+        font-size: 0.5rem;
+    }
+    .conditionMonitor {
+        margin-bottom: 10px;
+    }
 }

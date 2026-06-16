@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Button from "@mui/material/Button";
 import PrintIcon from "@mui/icons-material/Print";
 import "./SheetDisplay.css";
@@ -62,12 +62,7 @@ function SheetDisplay(props) {
           variant="outlined"
           startIcon={<PrintIcon />}
           onClick={() => window.print()}
-          sx={{
-            color: '#00ffc3',
-            borderColor: '#00ffc3',
-            fontFamily: 'Share Tech Mono, monospace',
-            '&:hover': { borderColor: '#00ffc3', backgroundColor: 'rgba(0,255,195,0.1)' },
-          }}
+          className="sheet-print-btn"
         >
           Print Sheet
         </Button>
@@ -90,7 +85,7 @@ function SheetDisplay(props) {
       {/* ── 2-column core ─────────────────────────────────────────────── */}
       <div className="sheet-two-col">
 
-        {/* Left: Attributes · Condition Monitors · Dice Pools */}
+        {/* Left: Attributes · Dice Pools */}
         <div className="sheet-col">
           <AttributesBlock
             attributes={char.attributes}
@@ -99,7 +94,6 @@ function SheetDisplay(props) {
             magicBonuses={char.magicalAttributeBonuses}
             Cyberware={char.cyberware}
           />
-          <ConditionMonitorBlock onConditionSelect={handleConditionSelect} />
           <DicePools
             character={char}
             edition={props.Edition}
@@ -107,8 +101,9 @@ function SheetDisplay(props) {
           />
         </div>
 
-        {/* Right: Skills · Armor · Gear */}
+        {/* Right: Condition Monitor · Skills · Armor · Gear */}
         <div className="sheet-col">
+          <ConditionMonitorBlock onConditionSelect={handleConditionSelect} />
           <SkillsBlock character={char} edition={props.Edition} />
           <ArmorTable gear={char.gear} />
           <GearTable  gear={char.gear} />

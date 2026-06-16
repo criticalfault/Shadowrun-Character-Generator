@@ -1,4 +1,4 @@
-import { MenuItem } from '@mui/material';
+﻿import { MenuItem } from '@mui/material';
 import React, { useState } from 'react';
 import FilteredMenuItem from './FilteredMenuItem';
 import SearchableSelect from './SearchableSelect';
@@ -108,19 +108,23 @@ export default function GearPanel(props) {
       props.onChangeGear(editedGear);
     };
 
+    // Cyberdeck categories use VR2 or SR2 base rules exclusively — not both.
+    // When VR2 is enabled, suppress SR2-base-tagged items in these categories.
+    const deckCategories = ['Cyberdecks', 'Cyberdeck Other'];
+    const vr2Active = props.BooksFilter?.includes('vr2');
+
     const renderGearItem = (gear, originalIndex) => {
-      if (props.Edition === 'SR3') {
-        const allowed = !gear.hasOwnProperty('BookPage') || props.BooksFilter.includes(gear.BookPage.split('.')[0]);
-        const bookCode = gear.BookPage?.split('.')[0];
-        return (
-          <FilteredMenuItem allowed={allowed} bookCode={bookCode} key={originalIndex} value={originalIndex}>{gear.Name}</FilteredMenuItem>
-        );
-      }
-      return <MenuItem key={originalIndex} value={originalIndex}>{gear.Name}</MenuItem>;
+      const bookCode = gear.BookPage?.split('.')[0];
+      const inDeckCategory = deckCategories.includes(SelectedGearCategory);
+      const suppressedByVr2 = inDeckCategory && vr2Active && bookCode === 'sr2';
+      const allowed = !suppressedByVr2 &&
+        (!gear.hasOwnProperty('BookPage') || props.BooksFilter.includes(bookCode));
+      return (
+        <FilteredMenuItem allowed={allowed} bookCode={bookCode} key={originalIndex} value={originalIndex}>{gear.Name}</FilteredMenuItem>
+      );
     }
 
     return ( <>
-    <h3>Notice: SR2 Gear is currently missing data needing for filtering by book. So filtering is ignored.</h3>
     <Box sx={{ width: '250px' }}>
         Nuyen Spent: {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(CalcTotalNuyenSpent())} 
     </Box>
@@ -143,8 +147,9 @@ export default function GearPanel(props) {
         label="All Gear"
         getLabel={(item) => `${item.Name} (${item._category})`}
         renderItem={(item, originalIndex) => {
-          const allowed = props.Edition !== 'SR3' || !item.BookPage || props.BooksFilter.includes(item.BookPage.split('.')[0]);
           const bookCode = item.BookPage?.split('.')[0];
+          const suppressedByVr2 = deckCategories.includes(item._category) && vr2Active && bookCode === 'sr2';
+          const allowed = !suppressedByVr2 && (!item.BookPage || props.BooksFilter.includes(bookCode));
           return (
             <FilteredMenuItem allowed={allowed} bookCode={bookCode} key={originalIndex} value={originalIndex}>
               {item.Name} <span style={{ opacity: 0.55, fontSize: '0.8em' }}>({item._category})</span>

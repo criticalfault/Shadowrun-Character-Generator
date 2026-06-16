@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+﻿import { render } from '@testing-library/react';
 import SR3SkillsPanel from './SR3SkillsPanel';
 
 // Mock character data for testing

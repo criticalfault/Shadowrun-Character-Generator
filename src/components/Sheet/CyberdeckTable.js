@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+﻿import React, { useState } from "react";
 import {
   Grid,
   Table,
@@ -11,12 +11,12 @@ import {
   Typography,
 } from '@mui/material';
 import SRSection from './SRSection';
-import ConditionMonitorBlockCyberDeck from './ConditionMonitorBlockCyberDeck';
+import { tablePaperSx } from './sheetTheme';
+import PersonaConditionMonitor from './PersonaConditionMonitor';
 
 
 const CyberdeckTable = (props) => {
   if (!props.Decks || props.Decks.length === 0) return null;
-  const handleConditionSelect = () => {};
 
   const character = props.character || {};
   const cyber = character.cyberAttributeBonuses || {};
@@ -68,7 +68,7 @@ const CyberdeckTable = (props) => {
   };
 
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <SRSection title="Cyberdecks">
         {props.Decks.map((deck, index) => {
           const mpcp = deck.Persona;
@@ -80,14 +80,17 @@ const CyberdeckTable = (props) => {
             <TableContainer
               component={Paper}
               key={deck.Name + index}
-              sx={{ backgroundColor: '#1f1f1f', mb: 4 }}
+              sx={{ ...tablePaperSx, mb: 4, border: '1px solid #bbb' }}
             >
               <Typography
                 variant="h6"
                 sx={{
-                  padding: '0.5rem 1rem',
-                  fontFamily: 'Share Tech Mono, monospace',
-                  color: '#00ffc3',
+                  padding: '0.4rem 1rem',
+                  fontFamily: 'inherit',
+                  color: '#000',
+                  fontWeight: 'bold',
+                  fontSize: '1rem',
+                  borderBottom: '1px solid #ddd',
                 }}
               >
                 {deck.Name}
@@ -143,8 +146,8 @@ const CyberdeckTable = (props) => {
                 </TableBody>
               </Table>
 
-              <Grid item size={12}>
-                <ConditionMonitorBlockCyberDeck onConditionSelect={handleConditionSelect} />
+              <Grid size={12}>
+                <PersonaConditionMonitor iconRating={mpcp} />
               </Grid>
 
               {/* Programs */}
@@ -154,13 +157,15 @@ const CyberdeckTable = (props) => {
                     variant="subtitle1"
                     sx={{
                       margin: '1rem 1rem 0 1rem',
-                      fontFamily: 'Share Tech Mono, monospace',
-                      color: '#00ffc3',
+                      fontFamily: 'inherit',
+                      color: '#000',
+                      fontWeight: 'bold',
+                      fontSize: '0.85rem',
                     }}
                   >
                     Programs
                   </Typography>
-                   <Table size="small" className="shadowrun-table">
+                  <Table size="small" className="shadowrun-table">
                     <TableHead>
                       <TableRow>
                         <TableCell>Loaded</TableCell>

@@ -1,4 +1,4 @@
-// A new React component panel for Shadowrun 3rd Edition point buy system
+﻿// A new React component panel for Shadowrun 3rd Edition point buy system
 import * as React from "react";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
