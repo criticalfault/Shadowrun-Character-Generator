@@ -92,6 +92,10 @@ export default function KarmaSkillAdvancement({
   const [newSpellIndex, setNewSpellIndex] = useState(0);
   const [newSpellData, setNewSpellData]   = useState(null);
   const [spellForce, setSpellForce]       = useState(1);
+  const [customType, setCustomType]       = useState('Quickening');
+  const [customNote, setCustomNote]       = useState('');
+  const [customAmount, setCustomAmount]   = useState(1);
+  const [customConfirm, setCustomConfirm] = useState(false);
 
   if (step !== 'finalized') return null;
 
@@ -192,6 +196,36 @@ export default function KarmaSkillAdvancement({
     setNewSpellModal(false);
     setNewSpellData(null);
     setNewSpellIndex(0);
+  };
+
+  // ── Custom karma spend ───────────────────────────────────────────────
+  const CUSTOM_TYPES = {
+    Quickening: {
+      label: 'Quickening (MitS)',
+      hint: 'Cost = spell Force to quicken; optionally spend up to 2× Force total to raise dispel resistance. Note which spell and Force.',
+    },
+    Anchoring: {
+      label: 'Anchoring (MitS)',
+      hint: 'Cost = Force of the anchoring focus being enchanted. Note focus type and Force.',
+    },
+    Other: {
+      label: 'Other / Custom',
+      hint: 'Free-form karma spend. Describe what it was in the note.',
+    },
+  };
+
+  const doCustomSpend = () => {
+    if (customAmount < 1 || !customNote.trim()) return;
+    onSpendKarma(customAmount);
+    onChangeLog([...Log, {
+      Type: customType,
+      Date: Date.now(),
+      Amount: -customAmount,
+      Notes: `${CUSTOM_TYPES[customType]?.label ?? customType}: ${customNote.trim()} (${customAmount} Karma)`,
+    }]);
+    setCustomConfirm(false);
+    setCustomNote('');
+    setCustomAmount(1);
   };
 
   // Group existing skills by type
@@ -389,6 +423,71 @@ export default function KarmaSkillAdvancement({
             Learn Spell
           </Button>
           <Button onClick={() => setNewSpellModal(false)}>Cancel</Button>
+        </Box>
+      </Modal>
+
+      {/* ── Custom / one-off karma spend ── */}
+      <Divider sx={{ my: 2 }} />
+      <Typography variant="h6" sx={{ mb: 0.5 }}>Other Karma Spends</Typography>
+      <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
+        For metamagic uses, ritual costs, and other one-off karma expenses.
+      </Typography>
+
+      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, maxWidth: 480 }}>
+        <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+          {Object.entries(CUSTOM_TYPES).map(([key, { label }]) => (
+            <Button
+              key={key}
+              size="small"
+              variant={customType === key ? 'contained' : 'outlined'}
+              onClick={() => setCustomType(key)}
+            >
+              {label}
+            </Button>
+          ))}
+        </Box>
+
+        <Typography variant="caption" color="text.secondary">
+          {CUSTOM_TYPES[customType]?.hint}
+        </Typography>
+
+        <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+          <input
+            type="text"
+            placeholder="Note (e.g. Fireball Force 6)"
+            value={customNote}
+            onChange={(e) => setCustomNote(e.target.value)}
+            style={{ flex: 1, padding: '6px 8px', fontSize: '0.9rem' }}
+          />
+          <input
+            type="number"
+            min={1}
+            value={customAmount}
+            onChange={(e) => setCustomAmount(Math.max(1, parseInt(e.target.value) || 1))}
+            style={{ width: 60, padding: '6px 8px', fontSize: '0.9rem' }}
+          />
+          <Typography variant="body2">karma</Typography>
+        </Box>
+
+        <Button
+          variant="outlined"
+          disabled={!customNote.trim() || customAmount < 1 || karmaAvailable < customAmount}
+          onClick={() => setCustomConfirm(true)}
+          sx={{ alignSelf: 'flex-start' }}
+        >
+          Spend {customAmount} Karma
+        </Button>
+      </Box>
+
+      {/* Custom spend confirm */}
+      <Modal open={customConfirm} onClose={() => setCustomConfirm(false)}>
+        <Box sx={modalSx}>
+          <Typography variant="h6" sx={{ mb: 1 }}>Confirm Karma Spend</Typography>
+          <Typography><strong>{CUSTOM_TYPES[customType]?.label ?? customType}</strong></Typography>
+          <Typography sx={{ mt: 0.5 }}>{customNote}</Typography>
+          <Typography sx={{ mt: 1, mb: 2 }}>Cost: <strong>{customAmount} Karma</strong></Typography>
+          <Button variant="contained" onClick={doCustomSpend} sx={{ mr: 1 }}>Confirm</Button>
+          <Button onClick={() => setCustomConfirm(false)}>Cancel</Button>
         </Box>
       </Modal>
     </Box>
