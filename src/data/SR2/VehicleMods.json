@@ -257,8 +257,8 @@
       "bookPage": "r2.122"
     },
     {
-      "id": "advanced-drone-pilot",
-      "name": "Advanced Drone Pilot",
+      "id": "remote-pilot-advanced-programming",
+      "name": "Remote Pilot Advanced Programming",
       "category": "control",
       "description": "Increases vehicle Pilot rating above the default 1. Rating 3 ≈ average metahuman; Rating 5 = 1,000+ hours flight equivalent.",
       "designOnly": false,
