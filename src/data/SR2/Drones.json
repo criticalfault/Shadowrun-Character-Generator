@@ -425,5 +425,44 @@
     "$Cost": "214000",
     "Notes": "STOL (large fixed-wing UAV). Setup: 8 min. Low speed 60km/h. Fuel: Jet (350L), 0.5km/L. External missile mounts (300kg ordnance), remote control interface, rigger adaptation.",
     "Book.Page": "rbb1.???"
+  },
+  {
+    "name": "Cyberspace Systems Wolfhound Advanced Recon Aircraft",
+    "Handling": "3",
+    "Speed/Accel": "210/12",
+    "Body/Armor": "2/0",
+    "Sig/Autonav": "5/-",
+    "Pilot/Sensor": "2/1",
+    "Cargo/Load": "3/80",
+    "Seating": "-",
+    "$Cost": "31000",
+    "Notes": "VTOL (sm. vectored-thrust UAV). Setup: 5 min. Fuel: Jet (300L), 0.72km/L (Idle: 5min/L). Remote control interface, rigger adaptation, Robotic Learning Pool 2 (Avoid Detection).",
+    "Book.Page": "r2.???"
+  },
+  {
+    "name": "Ferret RPD-VI Perimeter Drone",
+    "Handling": "3/5",
+    "Speed/Accel": "30/2",
+    "Body/Armor": "1/3",
+    "Sig/Autonav": "6/-",
+    "Pilot/Sensor": "3/4",
+    "Cargo/Load": "3/50",
+    "Seating": "-",
+    "$Cost": "65000",
+    "Notes": "Medium wheeled crawler. Setup: 3 min. Fuel: Electric (40 PF), 2km/PF (Idle: 1hr/PF). Remote control interface, rigger adaptation, spotlight (white light).",
+    "Book.Page": "ls.???"
+  },
+  {
+    "name": "Lone Star Strato-9 Surveillance Drone",
+    "Handling": "3",
+    "Speed/Accel": "100/9",
+    "Body/Armor": "2/0",
+    "Sig/Autonav": "5/-",
+    "Pilot/Sensor": "2/5",
+    "Cargo/Load": "1/25",
+    "Seating": "-",
+    "$Cost": "186000",
+    "Notes": "VTOL (lg. rotary-wing UAV). Setup: 5 min. Fuel: Jet (60L), 0.25km/L (Idle: 5min/L). External fixed hardpoint with MMG (Gas-Vent 3 Recoil Comp. + 500 rounds), remote control interface, rigger adaptation.",
+    "Book.Page": "ls.???"
   }
 ]
