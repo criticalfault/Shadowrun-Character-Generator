@@ -2172,103 +2172,113 @@
       "ratings": [
         {
           "rating": 1,
+          "label": "Standard",
           "cfDesign": 0,
           "cfCustom": 1,
           "dpCost": 100,
-          "costNuyen": 10000,
-          "weightKg": 3,
+          "costNuyen": 110000,
+          "weightKg": 12,
           "availability": "4/7 days",
-          "streetIndex": "2"
+          "streetIndex": 2
         },
         {
           "rating": 2,
+          "label": "Enhanced",
           "cfDesign": 1,
-          "cfCustom": 2,
-          "dpCost": 200,
-          "costNuyen": 20000,
-          "weightKg": 5,
-          "availability": "4/10 days",
-          "streetIndex": "2.5"
-        },
-        {
-          "rating": 3,
-          "cfDesign": 0,
           "cfCustom": 2,
           "dpCost": 300,
           "costNuyen": 30000,
-          "weightKg": 8,
+          "weightKg": 25,
+          "availability": "4/10 days",
+          "streetIndex": 2.5
+        },
+        {
+          "rating": 3,
+          "label": "Advanced",
+          "cfDesign": 2,
+          "cfCustom": 3,
+          "dpCost": 500,
+          "costNuyen": 350000,
+          "weightKg": 35,
           "availability": "5/14 days",
-          "streetIndex": "3"
+          "streetIndex": 3
         },
         {
           "rating": 4,
-          "cfDesign": 2,
-          "cfCustom": 3,
-          "dpCost": 400,
-          "costNuyen": 40000,
-          "weightKg": 12,
-          "availability": "6/21 days",
-          "streetIndex": "3.5"
-        },
-        {
-          "rating": 5,
+          "label": "Premium",
           "cfDesign": 3,
           "cfCustom": 6,
-          "dpCost": 500,
-          "costNuyen": 50000,
-          "weightKg": 18,
-          "availability": "8/30 days",
-          "streetIndex": "â€”"
-        },
-        {
-          "rating": 6,
-          "cfDesign": 4,
-          "cfCustom": 8,
-          "dpCost": 750,
-          "costNuyen": 75000,
-          "weightKg": 25,
-          "availability": "10/45 days",
-          "streetIndex": "â€”"
-        },
-        {
-          "rating": 7,
-          "cfDesign": 6,
-          "cfCustom": 9,
           "dpCost": 1000,
           "costNuyen": 100000,
           "weightKg": 50,
+          "availability": "6/21 days",
+          "streetIndex": 3.5
+        },
+        {
+          "rating": 5,
+          "label": "Security I",
+          "cfDesign": 2,
+          "cfCustom": 3,
+          "dpCost": 500,
+          "costNuyen": 150000,
+          "weightKg": 35,
+          "availability": "8/30 days",
+          "streetIndex": "Not available"
+        },
+        {
+          "rating": 6,
+          "label": "Security II",
+          "cfDesign": 4,
+          "cfCustom": 8,
+          "dpCost": 750,
+          "costNuyen": 250000,
+          "weightKg": 75,
+          "availability": "10/45 days",
+          "streetIndex": "Not available"
+        },
+        {
+          "rating": 7,
+          "label": "Security III",
+          "cfDesign": 6,
+          "cfCustom": 9,
+          "dpCost": 2000,
+          "costNuyen": 750000,
+          "weightKg": 110,
           "availability": "12/60 days",
-          "streetIndex": "â€”"
+          "streetIndex": "Not available"
         },
         {
           "rating": 8,
+          "label": "Military I",
           "cfDesign": 10,
           "cfCustom": 12,
-          "dpCost": 2000,
-          "costNuyen": 250000,
-          "weightKg": 75,
+          "dpCost": 3500,
+          "costNuyen": 2500000,
+          "weightKg": 150,
           "availability": "14/3 months",
-          "streetIndex": "â€”"
+          "streetIndex": "Not available"
         },
         {
           "rating": 9,
+          "label": "Military II",
           "cfDesign": 12,
           "cfCustom": 16,
-          "dpCost": 3000,
-          "costNuyen": 300000,
-          "weightKg": 100,
+          "dpCost": 5000,
+          "costNuyen": 6000000,
+          "weightKg": 200,
           "availability": "16/6 months",
-          "streetIndex": "â€”"
+          "streetIndex": "Not available"
         },
         {
           "rating": 10,
+          "label": "Military III",
           "cfDesign": 16,
           "cfCustom": 20,
-          "dpCost": 5000,
-          "costNuyen": 500000,
-          "weightKg": 150,
+          "dpCost": 10000,
+          "costNuyen": 12000000,
+          "weightKg": 250,
           "availability": "18/1 year",
-          "streetIndex": "â€”"
+          "streetIndex": "Not available"
         }
       ],
       "equipment": "Vehicle facility",
@@ -2279,9 +2289,9 @@
         "eccm": "set to rating"
       },
       "restrictions": "Ratings 5+ military-grade",
-      "notes": "See ECCM Systems Table: Standard (R1): CF 0/1, 110,000Â¥, 12kg, 4/7 days, SI 2 | Enhanced (R2): CF 1/2, 300,000Â¥, 25kg, 4/10 days, SI 2.5 | Advanced (R3): CF 2/3, 350,000Â¥, 35kg, 5/14 days, SI 4 | Premium (R4): CF 3/6, 100,000Â¥, 50kg, 6/21 days, SI 3.5 | Security I (R5): CF 2/3, 150,000Â¥, 35kg, 8/30 days | Security II (R6): CF 4/8, 250,000Â¥, 75kg, 10/45 days | Security III (R7): CF 6/9, 750,000Â¥, 110kg, 12/60 days | Military I (R8): CF 10/12, 2.5MÂ¥, 150kg, 14/3 months | Military II (R9): CF 12/16, 6MÂ¥, 200kg, 16/6 months | Military III (R10): CF 16/20, 12MÂ¥, 250kg, 18/1 year",
+      "notes": "See ECCM Systems Table r2.138. Classifications: Standard/Enhanced/Advanced/Premium (civilian), Security I-III, Military I-III.",
       "bookPage": "r2.138",
-      "costNuyen": "See ECCM table (r2.148)",
+      "costNuyen": "See ECCM table (r2.138)",
       "availability": "See ECCM table",
       "streetIndex": "See ECCM table"
     },
