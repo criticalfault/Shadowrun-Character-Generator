@@ -12,12 +12,13 @@ const StatCell = ({ label, value }) => (
 );
 
 
-const ModdedValue = ({ base, modified }) => {
+const ModdedValue = ({ base, modified, lowerIsBetter = false }) => {
   if (modified === null || modified === undefined || modified === base) return <span>{base}</span>;
+  const improved = lowerIsBetter ? modified < base : modified > base;
   return (
     <span>
       <span style={{ textDecoration: 'line-through', opacity: 0.4, marginRight: 4 }}>{base}</span>
-      <span style={{ fontWeight: 'bold' }}>{modified}</span>
+      <span style={{ fontWeight: 'bold', color: improved ? '#2e7d32' : '#c62828' }}>{modified}</span>
     </span>
   );
 };
@@ -26,23 +27,19 @@ const VehicleCard = ({ vehicle, index }) => {
   const mods = vehicle.vehicleMods || [];
   const applied = applyVehicleMods(vehicle, mods);
 
-  const baseBody   = vehicle['Body/Armor']?.split('/')[0] ?? '';
-  const baseArmor  = vehicle['Body/Armor']?.split('/')[1] ?? '';
-  const baseSig    = vehicle['Sig/Autonav']?.split('/')[0] ?? '';
-  const baseAutonav = vehicle['Sig/Autonav']?.split('/')[1] ?? '';
-  const baseSensor = vehicle['Pilot/Sensor']?.split('/')[1] ?? '';
+  const baseBody    = vehicle['Body/Armor']?.split('/')[0] ?? '';
+  const baseArmor   = parseFloat(vehicle['Body/Armor']?.split('/')[1]) || 0;
+  const baseSig     = parseFloat(vehicle['Sig/Autonav']?.split('/')[0]) || 0;
+  const baseAutonav = parseFloat(vehicle['Sig/Autonav']?.split('/')[1]) || 0;
+  const basePilot   = parseFloat(vehicle['Pilot/Sensor']?.split('/')[0]) || 0;
+  const baseSensor  = vehicle['Pilot/Sensor']?.split('/')[1] ?? '';
+  const baseHandling = parseFloat(vehicle.Handling) || 0;
 
-  const newArmor   = applied.armorDelta !== 0 ? (parseFloat(baseArmor) || 0) + applied.armorDelta : null;
-  const newSig     = applied.sigDelta !== 0 ? (parseFloat(baseSig) || 0) + applied.sigDelta : null;
-  const newAutonav = applied.autonavRating ?? null;
-  const newPilot   = applied.pilotRating ?? null;
-  const newHandling = applied.handlingDelta !== 0 ? (parseFloat(vehicle.Handling) || 0) + applied.handlingDelta : null;
-
-  const bodyArmor  = newArmor !== null ? `${baseBody}/${newArmor}` : vehicle['Body/Armor'];
-  const sigAutonav = (newSig !== null || newAutonav !== null)
-    ? `${newSig ?? baseSig}/${newAutonav ?? baseAutonav}`
-    : vehicle['Sig/Autonav'];
-  const pilotSensor = newPilot !== null ? `${newPilot}/${baseSensor}` : vehicle['Pilot/Sensor'];
+  const newArmor    = applied.armorDelta !== 0 ? baseArmor + applied.armorDelta : null;
+  const newSig      = applied.sigDelta !== 0 ? baseSig + applied.sigDelta : null;
+  const newAutonav  = applied.autonavRating !== baseAutonav ? applied.autonavRating : null;
+  const newPilot    = applied.pilotRating !== basePilot ? applied.pilotRating : null;
+  const newHandling = applied.handlingDelta !== 0 ? baseHandling + applied.handlingDelta : null;
 
   return (
     <div style={{ border: '1px solid #bbb', borderRadius: 2, marginBottom: 12, backgroundColor: '#fff', breakInside: 'avoid' }}>
@@ -56,13 +53,17 @@ const VehicleCard = ({ vehicle, index }) => {
 
       {/* Stats row */}
       <div style={{ display: 'flex', flexWrap: 'wrap', borderTop: '1px solid #ddd' }}>
-        <StatCell label="Handling" value={<ModdedValue base={vehicle.Handling} modified={newHandling} />} />
+        <StatCell label="Handling" value={<ModdedValue base={baseHandling} modified={newHandling} lowerIsBetter />} />
         <StatCell label="Speed/Accel" value={vehicle['Speed/Accel']} />
-        <StatCell label="Body/Armor" value={<ModdedValue base={vehicle['Body/Armor']} modified={newArmor !== null ? bodyArmor : null} />} />
-        <StatCell label="Sig/Autonav" value={<ModdedValue base={vehicle['Sig/Autonav']} modified={(newSig !== null || newAutonav !== null) ? sigAutonav : null} />} />
-        <StatCell label="Pilot/Sensor" value={<ModdedValue base={vehicle['Pilot/Sensor']} modified={newPilot !== null ? pilotSensor : null} />} />
+        <StatCell label="Body/Armor" value={<>{baseBody}/<ModdedValue base={baseArmor} modified={newArmor} /></>} />
+        <StatCell label="Sig/Autonav" value={<><ModdedValue base={baseSig} modified={newSig} lowerIsBetter />/<ModdedValue base={baseAutonav} modified={newAutonav} /></>} />
+        <StatCell label="Pilot/Sensor" value={<><ModdedValue base={basePilot} modified={newPilot} />/{baseSensor}</>} />
         <StatCell label="Cargo/Load" value={vehicle['Cargo/Load']} />
         <StatCell label="Seating" value={vehicle.Seating} />
+        {applied.ecmRating != null && <StatCell label="ECM" value={<span style={{ color: '#2e7d32', fontWeight: 'bold' }}>{applied.ecmRating}</span>} />}
+        {applied.eccmRating != null && <StatCell label="ECCM" value={<span style={{ color: '#2e7d32', fontWeight: 'bold' }}>{applied.eccmRating}</span>} />}
+        {applied.edRating != null && <StatCell label="ED" value={<span style={{ color: '#2e7d32', fontWeight: 'bold' }}>{applied.edRating}</span>} />}
+        {applied.ecdRating != null && <StatCell label="ECD" value={<span style={{ color: '#2e7d32', fontWeight: 'bold' }}>{applied.ecdRating}</span>} />}
       </div>
 
       {/* Mods list */}

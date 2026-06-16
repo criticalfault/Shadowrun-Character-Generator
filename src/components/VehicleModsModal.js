@@ -40,7 +40,7 @@ const modalStyle = {
 };
 
 // Parse "X/Y" stat strings like "4/0" into { a, b }
-function parseSplit(str) {
+export function parseSplit(str) {
   if (!str) return { a: null, b: null };
   const parts = String(str).split("/");
   return { a: parseFloat(parts[0]) || 0, b: parseFloat(parts[1]) || 0 };
@@ -158,7 +158,7 @@ function parseSigDelta(expr, levels, rating) {
   return parseInt(m[1]) * (String(expr).includes("level") ? levels : rating);
 }
 
-function StatDelta({ base, modified, label, lowerIsBetter = false }) {
+export function StatDelta({ base, modified, label, lowerIsBetter = false }) {
   if (base === modified) return <span>{base}</span>;
   const improved = lowerIsBetter ? modified < base : modified > base;
   return (

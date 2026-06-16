@@ -16,7 +16,7 @@ import Grid from '@mui/material/Grid';
 // Pre-import all edition data so Vite can bundle them (no runtime require)
 const allVehicles = import.meta.glob('../data/*/Vehicles.json', { eager: true });
 const allDrones = import.meta.glob('../data/*/Drones.json', { eager: true });
-import VehicleModsModal, { applyVehicleMods } from './VehicleModsModal';
+import VehicleModsModal, { applyVehicleMods, parseSplit, StatDelta } from './VehicleModsModal';
 
 export default function VehiclesPanel(props) {
   const VehicleData = allVehicles[`../data/${props.Edition}/Vehicles.json`]?.default;
@@ -158,6 +158,74 @@ export default function VehiclesPanel(props) {
     setDroneModsOpen(false);
   };
 
+  const renderVehicleStats = (v, edition) => {
+    const mods = v.vehicleMods || [];
+    const stats = mods.length > 0 ? applyVehicleMods(v, mods, edition) : null;
+
+    const baseHandling = parseFloat(v.Handling) || 0;
+    const ba = parseSplit(v['Body/Armor']);
+    const sa = parseSplit(v['Sig/Autonav']);
+    const ps = parseSplit(v['Pilot/Sensor']);
+
+    const modHandling = stats ? baseHandling + stats.handlingDelta : baseHandling;
+    const modArmor    = stats ? ba.b + stats.armorDelta : ba.b;
+    const modSig      = stats ? sa.a + stats.sigDelta : sa.a;
+    const modAutonav  = stats ? stats.autonavRating : sa.b;
+    const modPilot    = stats ? stats.pilotRating : ps.a;
+
+    return (
+      <>
+        <Grid size={{ xs: 12, md:2 }}>
+          <Item><strong>Handling</strong><br />
+            <StatDelta base={baseHandling} modified={modHandling} lowerIsBetter={true} />
+          </Item>
+        </Grid>
+        <Grid size={{ xs: 12, md:2 }}>
+          <Item><strong>Speed/Accel</strong><br />{v['Speed/Accel']}</Item>
+        </Grid>
+        <Grid size={{ xs: 12, md:2 }}>
+          <Item><strong>Body/Armor</strong><br />
+            {ba.a}/<StatDelta base={ba.b} modified={modArmor} />
+          </Item>
+        </Grid>
+        <Grid size={{ xs: 12, md:2 }}>
+          <Item><strong>Sig/Autonav</strong><br />
+            <StatDelta base={sa.a} modified={modSig} lowerIsBetter={true} />/
+            <StatDelta base={sa.b} modified={modAutonav} />
+          </Item>
+        </Grid>
+        <Grid size={{ xs: 12, md:2 }}>
+          <Item><strong>Pilot/Sensor</strong><br />
+            <StatDelta base={ps.a} modified={modPilot} />{ps.b !== null ? `/${ps.b}` : ''}
+          </Item>
+        </Grid>
+        <Grid size={{ xs: 12, md:2 }}>
+          <Item><strong>Cargo/Load</strong><br />{v['Cargo/Load']}</Item>
+        </Grid>
+        {stats && stats.ecmRating != null && (
+          <Grid size={{ xs: 12, md:2 }}>
+            <Item><strong>ECM</strong><br /><span style={{ color: '#4caf50', fontWeight: 'bold' }}>{stats.ecmRating}</span></Item>
+          </Grid>
+        )}
+        {stats && stats.eccmRating != null && (
+          <Grid size={{ xs: 12, md:2 }}>
+            <Item><strong>ECCM</strong><br /><span style={{ color: '#4caf50', fontWeight: 'bold' }}>{stats.eccmRating}</span></Item>
+          </Grid>
+        )}
+        {stats && stats.edRating != null && (
+          <Grid size={{ xs: 12, md:2 }}>
+            <Item><strong>ED</strong><br /><span style={{ color: '#4caf50', fontWeight: 'bold' }}>{stats.edRating}</span></Item>
+          </Grid>
+        )}
+        {stats && stats.ecdRating != null && (
+          <Grid size={{ xs: 12, md:2 }}>
+            <Item><strong>ECD</strong><br /><span style={{ color: '#4caf50', fontWeight: 'bold' }}>{stats.ecdRating}</span></Item>
+          </Grid>
+        )}
+      </>
+    );
+  };
+
   const renderDronesNew = () => {
     return props.Drones.map((drone, index) => (
       <Card sx={{ minWidth: 275, marginTop: 2 }} key={index}>
@@ -169,25 +237,7 @@ export default function VehiclesPanel(props) {
         {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(drone['$Cost'])}
         </Typography>
         <Grid container spacing={2}>
-          <Grid size={{ xs: 12, md:2 }}>
-            <Item><strong>Handling</strong><br></br> {drone.Handling}</Item>
-          </Grid>
-          <Grid size={{ xs: 12, md:2 }}>
-            <Item><strong>Speed/Accel</strong><br></br> {drone['Speed/Accel']}</Item>
-          </Grid>
-          <Grid size={{ xs: 12, md:2 }}>
-            <Item><strong>Body/Armor</strong><br></br> {drone['Body/Armor']}</Item>
-          </Grid>
-          <Grid size={{ xs: 12, md:2 }}>
-            <Item><strong>Sig/Autonav</strong><br></br> {drone['Sig/Autonav']}</Item>
-          </Grid>
-          <Grid size={{ xs: 12, md:2 }}>
-            <Item><strong>Pilot/Sensor</strong><br></br> {drone['Pilot/Sensor']}</Item>
-          </Grid>
-          
-          <Grid  size={{ xs: 12, md:2 }}>
-            <Item><strong>Cargo/Load</strong><br></br> {drone['Cargo/Load']}</Item>
-          </Grid>
+          {renderVehicleStats(drone, props.Edition)}
           <Grid size={{ xs: 12, md:2 }}>
             <Item><strong>Notes</strong><br></br> {drone.Notes}</Item>
           </Grid>
@@ -220,25 +270,7 @@ export default function VehiclesPanel(props) {
         {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(vehicle['$Cost'])}
         </Typography>
         <Grid container spacing={2}>
-          <Grid size={{ xs: 12, md:2 }}>
-            <Item><strong>Handling</strong><br></br> {vehicle.Handling}</Item>
-          </Grid>
-          <Grid size={{ xs: 12, md:2 }}>
-            <Item><strong>Speed/Accel</strong><br></br> {vehicle['Speed/Accel']}</Item>
-          </Grid>
-          <Grid size={{ xs: 12, md:2 }}>
-            <Item><strong>Body/Armor</strong><br></br> {vehicle['Body/Armor']}</Item>
-          </Grid>
-          <Grid size={{ xs: 12, md:2 }}>
-            <Item><strong>Sig/Autonav</strong><br></br> {vehicle['Sig/Autonav']}</Item>
-          </Grid>
-          <Grid size={{ xs: 12, md:2 }}>
-            <Item><strong>Pilot/Sensor</strong><br></br> {vehicle['Pilot/Sensor']}</Item>
-          </Grid>
-          
-          <Grid  size={{ xs: 12, md:2 }}>
-            <Item><strong>Cargo/Load</strong><br></br> {vehicle['Cargo/Load']}</Item>
-          </Grid>
+          {renderVehicleStats(vehicle, props.Edition)}
           <Grid size={{ xs: 12, md:2 }}>
             <Item><strong>Seating</strong><br></br> {vehicle['Seating']}</Item>
           </Grid>
