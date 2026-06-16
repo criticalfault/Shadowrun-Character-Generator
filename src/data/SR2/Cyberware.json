@@ -1927,6 +1927,16 @@
       "Cost": 1300,
       "StreetIndex": 2,
       "Mods": ""
+    },
+    {
+      "BookPage": "ssc.89",
+      "Name": "Improved Hand Razor",
+      "EssCost": 0,
+      "Cost": 8500,
+      "StreetIndex": 0,
+      "Mods": "",
+      "Damage": "(Str+2)L",
+      "Notes": "Wilkerson compression carbide blade replacement. Fits all existing cyber-razor units. Replaces standard Hand Razor blades only."
     }
   ],
   "MATRIXWARE": [
