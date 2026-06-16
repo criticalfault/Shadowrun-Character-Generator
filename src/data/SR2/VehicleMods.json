@@ -973,6 +973,65 @@
       "bookPage": "r2.129"
     },
     {
+      "id": "firearm-conversion-kit",
+      "name": "Firearm Conversion Kit",
+      "category": "weapon-mount",
+      "description": "Converts a personal weapon for vehicle mount use. CF consumed: 0. Required before mounting personal-scale weapons on a vehicle.",
+      "designOnly": false,
+      "rated": false,
+      "cfDesign": 0,
+      "cfCustom": 0,
+      "loadReductionKgDesign": 0,
+      "loadReductionKgCustom": "See table",
+      "dpCost": "See table",
+      "costNuyen": "See table",
+      "availability": "See table",
+      "streetIndex": "See table",
+      "equipment": "Vehicle facility",
+      "baseTimeHours": null,
+      "skill": "Appropriate Vehicle B/R",
+      "skillTN": null,
+      "maxRating": null,
+      "statMods": {},
+      "restrictions": null,
+      "notes": null,
+      "bookPage": "r2.131",
+      "variants": [
+        {
+          "type": "Pistol",
+          "dpCost": 1,
+          "costNuyen": 150,
+          "availability": "4/36 hours",
+          "streetIndex": 2,
+          "loadReductionKg": 0
+        },
+        {
+          "type": "Submachine Gun",
+          "dpCost": 1,
+          "costNuyen": 350,
+          "availability": "5/48 hours",
+          "streetIndex": 2,
+          "loadReductionKg": 0.25
+        },
+        {
+          "type": "Rifle/Shotgun/LMG",
+          "dpCost": 2,
+          "costNuyen": 750,
+          "availability": "6/72 hours",
+          "streetIndex": 2.5,
+          "loadReductionKg": 0.5
+        },
+        {
+          "type": "Heavy Weapons",
+          "dpCost": 3,
+          "costNuyen": 1000,
+          "availability": "16/14 days",
+          "streetIndex": 2.5,
+          "loadReductionKg": 1
+        }
+      ]
+    },
+    {
       "id": "active-thermal-masking",
       "name": "Active Thermal Masking",
       "category": "signature",
