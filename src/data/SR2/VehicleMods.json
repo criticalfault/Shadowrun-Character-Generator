@@ -3788,6 +3788,31 @@
       "restrictions": "Aircraft only; installed in pairs; requires 2 external mounts per pair",
       "notes": null,
       "bookPage": "r2.140"
+    },
+    {
+      "id": "hovercraft-water-seal",
+      "name": "Hovercraft Water Seal",
+      "category": "accessories",
+      "description": "Makes hovercraft chassis watertight so it floats if power is lost over water. Without this, a powerless hovercraft sinks within 30 minutes.",
+      "designOnly": false,
+      "rated": false,
+      "cfDesign": 0,
+      "cfCustom": 0,
+      "loadReductionKgDesign": 0,
+      "loadReductionKgCustom": 0,
+      "dpCost": "Body x 5",
+      "costNuyen": "Body x 500¥",
+      "availability": "4/96 hrs",
+      "streetIndex": "1",
+      "equipment": "Vehicle facility",
+      "baseTimeHours": 32,
+      "skill": "Appropriate Vehicle B/R",
+      "skillTN": 3,
+      "maxRating": null,
+      "statMods": {},
+      "restrictions": "Hovercraft only",
+      "notes": null,
+      "bookPage": "r2.145"
     }
   ]
 }
