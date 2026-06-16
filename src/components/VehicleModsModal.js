@@ -63,6 +63,8 @@ export function applyVehicleMods(vehicle, vehicleMods = [], edition = "SR3") {
   let autonavRating = sigAutonav.b;
   let ecmRating = null;
   let eccmRating = null;
+  let edRating = null;
+  let ecdRating = null;
   let totalModCost = 0;
 
   for (const applied of vehicleMods) {
@@ -105,6 +107,9 @@ export function applyVehicleMods(vehicle, vehicleMods = [], edition = "SR3") {
     // Pilot rating override
     if (sm.pilot === "set to rating" && applied.rating != null) {
       pilotRating = applied.rating;
+    } else if (typeof sm.pilot === "string" && sm.pilot.startsWith("set to ")) {
+      const fixed = parseInt(sm.pilot.replace("set to ", ""));
+      if (!isNaN(fixed)) pilotRating = fixed;
     }
 
     // Autonav rating override
@@ -112,9 +117,11 @@ export function applyVehicleMods(vehicle, vehicleMods = [], edition = "SR3") {
       autonavRating = applied.rating;
     }
 
-    // ECM / ECCM
+    // ECM / ECCM / ED / ECD
     if (sm.ecm === "set to rating" && applied.rating != null) ecmRating = applied.rating;
     if (sm.eccm === "set to rating" && applied.rating != null) eccmRating = applied.rating;
+    if (sm.ed === "set to rating" && applied.rating != null) edRating = applied.rating;
+    if (sm.ecd === "set to rating" && applied.rating != null) ecdRating = applied.rating;
   }
 
   return {
@@ -125,6 +132,8 @@ export function applyVehicleMods(vehicle, vehicleMods = [], edition = "SR3") {
     autonavRating,
     ecmRating,
     eccmRating,
+    edRating,
+    ecdRating,
     totalModCost,
   };
 }
@@ -213,7 +222,7 @@ export default function VehicleModsModal({ open, vehicle, vehicleIndex, onClose,
   const pendingNeedsLevels = needsLevelCount(pendingDef);
   const pendingNeedsUserCost = needsUserCost(pendingDef);
 
-  const stats = applyVehicleMods(vehicle, mods);
+  const stats = applyVehicleMods(vehicle, mods, Edition);
 
   // Parse base stat values for display
   const baseHandling = parseFloat(vehicle.Handling) || 0;
@@ -319,6 +328,18 @@ export default function VehicleModsModal({ open, vehicle, vehicleIndex, onClose,
             <Box>
               <Typography variant="caption" color="text.secondary">ECCM</Typography>
               <Typography variant="body1" fontWeight="bold" color="success.main">{stats.eccmRating}</Typography>
+            </Box>
+          )}
+          {stats.edRating != null && (
+            <Box>
+              <Typography variant="caption" color="text.secondary">ED</Typography>
+              <Typography variant="body1" fontWeight="bold" color="success.main">{stats.edRating}</Typography>
+            </Box>
+          )}
+          {stats.ecdRating != null && (
+            <Box>
+              <Typography variant="caption" color="text.secondary">ECD</Typography>
+              <Typography variant="body1" fontWeight="bold" color="success.main">{stats.ecdRating}</Typography>
             </Box>
           )}
           <Box>
