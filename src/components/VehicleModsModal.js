@@ -139,10 +139,13 @@ export function applyVehicleMods(vehicle, vehicleMods = [], edition = "SR3") {
 }
 
 function parseHandlingDelta(expr, levels) {
-  // e.g. "-1/level (on-road)", "+1 when loaded (penalty)"
-  const m = String(expr).match(/([+-]?\d+)/);
-  if (!m) return 0;
-  return parseInt(m[1]) * levels;
+  // e.g. "-1/level (on-road)", "+1 per 6 points (penalty)"
+  const s = String(expr);
+  const perN = s.match(/per\s+(\d+)/i);
+  const val = s.match(/([+-]?\d+)/);
+  if (!val) return 0;
+  if (perN) return parseInt(val[1]) * Math.floor(levels / parseInt(perN[1]));
+  return parseInt(val[1]) * levels;
 }
 
 function parseArmorDelta(expr, levels) {
