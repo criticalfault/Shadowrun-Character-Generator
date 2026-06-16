@@ -3813,6 +3813,31 @@
       "restrictions": "Hovercraft only",
       "notes": null,
       "bookPage": "r2.145"
+    },
+    {
+      "id": "convertible-top",
+      "name": "Convertible Top",
+      "category": "accessories",
+      "description": "Replaces hard-top roof with retractable folding canopy. Not for vehicles with gull-wing or canopy access. Without a roll bar, double TN for passenger Damage Resistance Tests after a crash. Does not protect passengers from side, rear, or top attacks.",
+      "designOnly": false,
+      "rated": false,
+      "cfDesign": 0,
+      "cfCustom": 0,
+      "loadReductionKgDesign": 0,
+      "loadReductionKgCustom": 0,
+      "dpCost": 0,
+      "costNuyen": "(Vehicle cost x 0.1) + 2,500¥",
+      "availability": "4/72 hrs",
+      "streetIndex": "1",
+      "equipment": "Vehicle shop",
+      "baseTimeHours": 24,
+      "skill": "Appropriate Vehicle B/R",
+      "skillTN": 3,
+      "maxRating": null,
+      "statMods": {},
+      "restrictions": "Not for vehicles with gull-wing or canopy access",
+      "notes": "Without roll bar, double TN for passenger Damage Resistance after crash",
+      "bookPage": "r2.144"
     }
   ]
 }
