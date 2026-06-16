@@ -1011,10 +1011,10 @@
       "cfCustom": 0,
       "loadReductionKgDesign": 0,
       "loadReductionKgCustom": 0,
-      "dpCost": "LevelsÂ² Ã— 50",
-      "costNuyen": "LevelsÂ³ Ã— 25,000Â¥",
+      "dpCost": "Levels³ × 50",
+      "costNuyen": "Levels³ × 25,000¥",
       "availability": "18/30 days",
-      "streetIndex": "â€”",
+      "streetIndex": "Military only",
       "equipment": "Vehicle facility",
       "baseTimeHours": 12,
       "skill": "Appropriate Vehicle B/R",
@@ -1029,33 +1029,33 @@
       "ratings": [
         {
           "rating": 1,
-          "cfDesign": 1,
-          "cfCustom": 2,
+          "cfDesign": 0,
+          "cfCustom": 0,
           "dpCost": 50,
           "costNuyen": 25000,
           "weightKg": 0,
-          "availability": "8/2 weeks",
-          "streetIndex": "3"
+          "availability": "18/30 days",
+          "streetIndex": "Military only"
         },
         {
           "rating": 2,
-          "cfDesign": 3,
-          "cfCustom": 5,
-          "dpCost": 200,
+          "cfDesign": 0,
+          "cfCustom": 0,
+          "dpCost": 400,
           "costNuyen": 200000,
           "weightKg": 0,
-          "availability": "10/1 month",
-          "streetIndex": "4"
+          "availability": "18/30 days",
+          "streetIndex": "Military only"
         },
         {
           "rating": 3,
-          "cfDesign": 6,
-          "cfCustom": 9,
-          "dpCost": 450,
+          "cfDesign": 0,
+          "cfCustom": 0,
+          "dpCost": 1350,
           "costNuyen": 675000,
           "weightKg": 0,
-          "availability": "14/3 months",
-          "streetIndex": "â€”"
+          "availability": "18/30 days",
+          "streetIndex": "Military only"
         }
       ]
     },
