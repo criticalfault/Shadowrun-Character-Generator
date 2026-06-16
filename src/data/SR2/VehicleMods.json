@@ -54,8 +54,8 @@
       "cfCustom": 0,
       "loadReductionKgDesign": null,
       "loadReductionKgCustom": null,
-      "dpCost": "25% of power plant DP (1st level); 50% per level (2nd+)",
-      "costNuyen": "5% of vehicle list cost per level",
+      "dpCost": "Power plant DP × 1.25 (1st level); increase multiplier by 0.25 each additional level",
+      "costNuyen": "Power plant cost × 1.25 (1st level); increase multiplier by 0.15 each additional level",
       "availability": "8/14 days",
       "streetIndex": "2",
       "equipment": "Vehicle facility",
@@ -72,6 +72,31 @@
       "notes": null,
       "bookPage": "r2.120",
       "vehicleCostFactor": 0.05
+    },
+    {
+      "id": "gridlink-power",
+      "name": "GridLink™ Power",
+      "category": "engine",
+      "description": "Allows electrical ground vehicles to draw power from magnetic induction coils in road surface. Ground vehicles only.",
+      "designOnly": false,
+      "rated": false,
+      "cfDesign": 0,
+      "cfCustom": 1,
+      "loadReductionKgDesign": 0,
+      "loadReductionKgCustom": 0,
+      "dpCost": 2,
+      "costNuyen": 600,
+      "availability": "3/96 hrs",
+      "streetIndex": "1",
+      "equipment": "Vehicle facility",
+      "baseTimeHours": 16,
+      "skill": "Appropriate Vehicle B/R",
+      "skillTN": 4,
+      "maxRating": null,
+      "statMods": {},
+      "restrictions": "Ground vehicles only; electrical engines only",
+      "notes": null,
+      "bookPage": "r2.122"
     },
     {
       "id": "nitrous-oxide-injectors",
@@ -2092,8 +2117,11 @@
         "ecm": "set to rating"
       },
       "restrictions": "Ratings 5+ military-grade",
-      "notes": null,
-      "bookPage": "r2.147"
+      "notes": "See ECM Systems Table: Standard (R1): CF 0/1, 25,000¥, 12kg, 5/7 days | Enhanced (R2): CF 1/2, 75,000¥, 25kg, 6/10 days | Advanced (R3): CF 2/3, 125,000¥, 35kg, 7/14 days | Premium (R4): CF 3/6, 250,000¥, 50kg, 8/21 days | Security I (R5): CF 2/3, 375,000¥, 35kg, 10/30 days | Security II (R6): CF 4/8, 750,000¥, 75kg, 12/45 days | Security III (R7): CF 6/9, 1.5M¥, 110kg, 14/60 days | Military I (R8): CF 10/12, 7.5M¥, 150kg, 16/3 months | Military II (R9): CF 12/16, 15M¥, 200kg, 18/6 months | Military III (R10): CF 16/20, 30M¥, 250kg, 20/1 year",
+      "bookPage": "r2.147",
+      "costNuyen": "See ECM table (r2.147)",
+      "availability": "See ECM table",
+      "streetIndex": "See ECM table"
     },
     {
       "id": "eccm",
@@ -2212,8 +2240,11 @@
         "eccm": "set to rating"
       },
       "restrictions": "Ratings 5+ military-grade",
-      "notes": "Rating 8 DP cost may be OCR artifact — verify against physical book",
-      "bookPage": "r2.148"
+      "notes": "See ECCM Systems Table: Standard (R1): CF 0/1, 110,000¥, 12kg, 4/7 days, SI 2 | Enhanced (R2): CF 1/2, 300,000¥, 25kg, 4/10 days, SI 2.5 | Advanced (R3): CF 2/3, 350,000¥, 35kg, 5/14 days, SI 4 | Premium (R4): CF 3/6, 100,000¥, 50kg, 6/21 days, SI 3.5 | Security I (R5): CF 2/3, 150,000¥, 35kg, 8/30 days | Security II (R6): CF 4/8, 250,000¥, 75kg, 10/45 days | Security III (R7): CF 6/9, 750,000¥, 110kg, 12/60 days | Military I (R8): CF 10/12, 2.5M¥, 150kg, 14/3 months | Military II (R9): CF 12/16, 6M¥, 200kg, 16/6 months | Military III (R10): CF 16/20, 12M¥, 250kg, 18/1 year",
+      "bookPage": "r2.148",
+      "costNuyen": "See ECCM table (r2.148)",
+      "availability": "See ECCM table",
+      "streetIndex": "See ECCM table"
     },
     {
       "id": "ed",
@@ -2290,8 +2321,11 @@
       "skillTN": 4,
       "statMods": {},
       "restrictions": "Military-grade",
-      "notes": null,
-      "bookPage": "r2.149"
+      "notes": "See ED Systems Table: Security I (L1): CF 2/3, 50,000¥, 35kg, 8/30 days, SI 3 | Security II (L2): CF 4/5, 150,000¥, 45kg, 8/45 days, SI 3.5 | Security III (L3): CF 6/7, 400,000¥, 60kg, 8/60 days, SI 4 | Military I (L4): CF 4/5, 1M¥, 45kg, 10/3 months, SI 4.5 | Military II (L5): CF 6/7, 4M¥, 60kg, 12/6 months, SI 5 | Military III (L6): CF 8/9, 8M¥, 110kg, 16/1 year",
+      "bookPage": "r2.149",
+      "costNuyen": "See ED table (r2.149)",
+      "availability": "See ED table",
+      "streetIndex": "See ED table"
     },
     {
       "id": "electronics-port",
