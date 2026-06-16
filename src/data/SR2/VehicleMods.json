@@ -692,7 +692,7 @@
       "maxRating": null,
       "statMods": {},
       "restrictions": null,
-      "notes": "Includes datajack port; required for VCR use",
+      "notes": "CF custom: 1 plus CF occupied by datajack port or remote-control adaptation. Vehicle must also have datajack link or remote-control adaptation and Sensor R1+.",
       "bookPage": "r2.126"
     },
     {
