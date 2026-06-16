@@ -306,6 +306,7 @@ export default function VehiclesPanel(props) {
       vehicleIndex={vehicleModsIndex}
       onClose={() => setVehicleModsOpen(false)}
       onSave={handleSaveVehicleMods}
+      Edition={props.Edition}
     />
     {renderVehiclesNew()}
     <hr style={{marginTop:30, marginBottom:30}}></hr>
@@ -351,6 +352,7 @@ export default function VehiclesPanel(props) {
       vehicleIndex={droneModsIndex}
       onClose={() => setDroneModsOpen(false)}
       onSave={handleSaveDroneMods}
+      Edition={props.Edition}
     />
     </>)
 

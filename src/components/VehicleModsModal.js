@@ -16,7 +16,13 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 
-import VehicleModsData from "../data/SR3/VehicleMods.json";
+import VehicleModsDataSR3 from "../data/SR3/VehicleMods.json";
+import VehicleModsDataSR2 from "../data/SR2/VehicleMods.json";
+
+const allVehicleModsData = {
+  SR3: VehicleModsDataSR3,
+  SR2: VehicleModsDataSR2,
+};
 
 const modalStyle = {
   position: "absolute",
@@ -41,7 +47,8 @@ function parseSplit(str) {
 }
 
 // Compute modified stats from applied vehicleMods
-export function applyVehicleMods(vehicle, vehicleMods = []) {
+export function applyVehicleMods(vehicle, vehicleMods = [], edition = "SR3") {
+  const VehicleModsData = allVehicleModsData[edition] || VehicleModsDataSR3;
   const allMods = VehicleModsData.mods;
 
   const bodyArmor = parseSplit(vehicle["Body/Armor"]);
@@ -180,7 +187,7 @@ function needsUserCost(def) {
   return typeof def.costNuyen === "string";
 }
 
-export default function VehicleModsModal({ open, vehicle, vehicleIndex, onClose, onSave }) {
+export default function VehicleModsModal({ open, vehicle, vehicleIndex, onClose, onSave, Edition = "SR3" }) {
   const [mods, setMods] = useState(vehicle?.vehicleMods ?? []);
   const [pendingId, setPendingId] = useState("");
   const [pendingRating, setPendingRating] = useState(1);
@@ -197,6 +204,7 @@ export default function VehicleModsModal({ open, vehicle, vehicleIndex, onClose,
 
   if (!vehicle) return null;
 
+  const VehicleModsData = allVehicleModsData[Edition] || VehicleModsDataSR3;
   const allMods = VehicleModsData.mods.filter((m) => !m.designOnly);
   const categories = VehicleModsData.categories;
 
