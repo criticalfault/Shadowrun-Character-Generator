@@ -2305,63 +2305,69 @@
       "ratings": [
         {
           "rating": 1,
-          "cfDesign": 1,
-          "cfCustom": 2,
+          "label": "Security I",
+          "cfDesign": 2,
+          "cfCustom": 3,
           "dpCost": 150,
-          "costNuyen": 15000,
-          "weightKg": 10,
+          "costNuyen": 50000,
+          "weightKg": 35,
           "availability": "8/30 days",
-          "streetIndex": "3"
+          "streetIndex": 3
         },
         {
           "rating": 2,
-          "cfDesign": 2,
-          "cfCustom": 3,
-          "dpCost": 300,
-          "costNuyen": 30000,
-          "weightKg": 20,
+          "label": "Security II",
+          "cfDesign": 4,
+          "cfCustom": 5,
+          "dpCost": 400,
+          "costNuyen": 150000,
+          "weightKg": 45,
           "availability": "8/45 days",
-          "streetIndex": "3.5"
+          "streetIndex": 3.5
         },
         {
           "rating": 3,
-          "cfDesign": 4,
-          "cfCustom": 5,
-          "dpCost": 500,
-          "costNuyen": 50000,
-          "weightKg": 30,
-          "availability": "8/60 days",
-          "streetIndex": "4"
-        },
-        {
-          "rating": 4,
-          "cfDesign": 5,
-          "cfCustom": 6,
-          "dpCost": 750,
-          "costNuyen": 75000,
-          "weightKg": 45,
-          "availability": "10/3 months",
-          "streetIndex": "4.5"
-        },
-        {
-          "rating": 5,
+          "label": "Security III",
           "cfDesign": 6,
           "cfCustom": 7,
           "dpCost": 1000,
-          "costNuyen": 100000,
-          "weightKg": 50,
+          "costNuyen": 400000,
+          "weightKg": 60,
+          "availability": "8/60 days",
+          "streetIndex": 4
+        },
+        {
+          "rating": 4,
+          "label": "Military I",
+          "cfDesign": 4,
+          "cfCustom": 5,
+          "dpCost": 2500,
+          "costNuyen": 1000000,
+          "weightKg": 45,
+          "availability": "10/3 months",
+          "streetIndex": 4.5
+        },
+        {
+          "rating": 5,
+          "label": "Military II",
+          "cfDesign": 6,
+          "cfCustom": 7,
+          "dpCost": 10000,
+          "costNuyen": 4000000,
+          "weightKg": 60,
           "availability": "12/6 months",
-          "streetIndex": "5"
+          "streetIndex": 5
         },
         {
           "rating": 6,
-          "cfDesign": 6,
+          "label": "Military III",
+          "cfDesign": 8,
           "cfCustom": 9,
-          "dpCost": 2500,
-          "costNuyen": 250000,
-          "weightKg": 75,
+          "dpCost": 20000,
+          "costNuyen": 8000000,
+          "weightKg": 110,
           "availability": "16/1 year",
-          "streetIndex": "â€”"
+          "streetIndex": "Not available"
         }
       ],
       "equipment": "Vehicle facility",
@@ -2370,9 +2376,9 @@
       "skillTN": 4,
       "statMods": {},
       "restrictions": "Military-grade",
-      "notes": "See ED Systems Table: Security I (L1): CF 2/3, 50,000Â¥, 35kg, 8/30 days, SI 3 | Security II (L2): CF 4/5, 150,000Â¥, 45kg, 8/45 days, SI 3.5 | Security III (L3): CF 6/7, 400,000Â¥, 60kg, 8/60 days, SI 4 | Military I (L4): CF 4/5, 1MÂ¥, 45kg, 10/3 months, SI 4.5 | Military II (L5): CF 6/7, 4MÂ¥, 60kg, 12/6 months, SI 5 | Military III (L6): CF 8/9, 8MÂ¥, 110kg, 16/1 year",
+      "notes": "See ED Systems Table r2.138. Security I-III (civilian SI 3-4), Military I-III (SI 4.5-5/not available). Starts at Security I — no civilian-grade ED.",
       "bookPage": "r2.138",
-      "costNuyen": "See ED table (r2.149)",
+      "costNuyen": "See ED table (r2.138)",
       "availability": "See ED table",
       "streetIndex": "See ED table"
     },
