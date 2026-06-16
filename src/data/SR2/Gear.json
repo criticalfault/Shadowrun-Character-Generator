@@ -5803,6 +5803,16 @@
         "Cost": "40",
         "Street Index": "2",
         "BookPage": "ssc.???"
+      },
+      {
+        "Name": "AFR-7 Flash Grenade",
+        "Concealability": "6",
+        "Damage": "5L",
+        "Effect": "30m flash",
+        "Weight": "2.5",
+        "Cost": "40",
+        "BookPage": "ssc.44",
+        "Notes": "Blast zone 1m (5L damage). Flash effective to 30m, target modifier +6 reduced by 1 per 5m. Flare Comp halves modifier. Lasts 5 combat turns."
       }
     ]
   },
