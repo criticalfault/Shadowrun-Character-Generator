@@ -1652,33 +1652,6 @@
       "bookPage": "r2.134"
     },
     {
-      "id": "turret-gunner-large",
-      "name": "Turret (Gunner) â€” Large",
-      "category": "weapon-mount",
-      "description": "Heavy armored gun turret with gunner. âˆ’1 Sig. 2 CF internal. 4 Hardpoints. Weapon Value 8. Military-grade.",
-      "designOnly": false,
-      "rated": false,
-      "cfDesign": 32,
-      "cfCustom": 36,
-      "loadReductionKgDesign": 6000,
-      "loadReductionKgCustom": 6000,
-      "dpCost": 1500,
-      "costNuyen": 300000,
-      "availability": "Military only",
-      "streetIndex": "â€”",
-      "equipment": "Vehicle facility",
-      "baseTimeHours": 72,
-      "skill": "Appropriate Vehicle B/R",
-      "skillTN": 4,
-      "maxRating": null,
-      "statMods": {
-        "sig": "-1"
-      },
-      "restrictions": "Military-grade only; no pop-up option",
-      "notes": null,
-      "bookPage": "r2.134"
-    },
-    {
       "id": "turret-remote-micro",
       "name": "Remote Turret â€” Micro",
       "category": "weapon-mount",
