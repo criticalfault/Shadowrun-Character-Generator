@@ -410,14 +410,14 @@
       "cfCustom": 2,
       "loadReductionKgDesign": 25,
       "loadReductionKgCustom": 30,
-      "dpCost": "35/rating (R1â€“3); 75/rating (R4â€“6); 150/rating (R7â€“9)",
-      "costNuyen": "2,500Â¥/rating (R1â€“3); 5,000Â¥/rating (R4â€“6); 10,000Â¥/rating (R7â€“9)",
+      "dpCost": "35/rating (R1-3); 75/rating (R4-6); 150/rating (R7-9)",
+      "costNuyen": "2,500¥/rating (R1-3); 5,000¥/rating (R4-6); 10,000¥/rating (R7-9)",
       "availability": "6/14 days",
       "streetIndex": "2",
       "equipment": "Vehicle facility",
       "baseTimeHours": 80,
       "skill": "Appropriate Vehicle B/R",
-      "skillTN": "10 âˆ’ Handling rating",
+      "skillTN": "10 - Handling rating (on-road)",
       "maxRating": 9,
       "statMods": {},
       "restrictions": null,
@@ -426,93 +426,84 @@
       "ratings": [
         {
           "rating": 1,
-          "cfDesign": 1,
+          "cfDesign": 0,
           "cfCustom": 2,
           "dpCost": 35,
           "costNuyen": 2500,
-          "weightKg": 0,
-          "availability": "6/1 week",
-          "streetIndex": "1.5"
+          "availability": "6/14 days",
+          "streetIndex": 2
         },
         {
           "rating": 2,
-          "cfDesign": 1,
+          "cfDesign": 0,
           "cfCustom": 2,
-          "dpCost": 70,
-          "costNuyen": 5000,
-          "weightKg": 0,
-          "availability": "6/1 week",
-          "streetIndex": "1.5"
+          "dpCost": 35,
+          "costNuyen": 2500,
+          "availability": "6/14 days",
+          "streetIndex": 2
         },
         {
           "rating": 3,
-          "cfDesign": 1,
+          "cfDesign": 0,
           "cfCustom": 2,
-          "dpCost": 105,
-          "costNuyen": 7500,
-          "weightKg": 0,
-          "availability": "6/1 week",
-          "streetIndex": "1.5"
+          "dpCost": 35,
+          "costNuyen": 2500,
+          "availability": "6/14 days",
+          "streetIndex": 2
         },
         {
           "rating": 4,
-          "cfDesign": 2,
-          "cfCustom": 3,
-          "dpCost": 300,
-          "costNuyen": 20000,
-          "weightKg": 0,
-          "availability": "6/1 week",
-          "streetIndex": "2"
+          "cfDesign": 0,
+          "cfCustom": 2,
+          "dpCost": 75,
+          "costNuyen": 5000,
+          "availability": "6/14 days",
+          "streetIndex": 2
         },
         {
           "rating": 5,
-          "cfDesign": 2,
-          "cfCustom": 3,
-          "dpCost": 375,
-          "costNuyen": 25000,
-          "weightKg": 0,
-          "availability": "6/1 week",
-          "streetIndex": "2"
+          "cfDesign": 0,
+          "cfCustom": 2,
+          "dpCost": 75,
+          "costNuyen": 5000,
+          "availability": "6/14 days",
+          "streetIndex": 2
         },
         {
           "rating": 6,
-          "cfDesign": 2,
-          "cfCustom": 3,
-          "dpCost": 450,
-          "costNuyen": 30000,
-          "weightKg": 0,
-          "availability": "6/1 week",
-          "streetIndex": "2"
+          "cfDesign": 0,
+          "cfCustom": 2,
+          "dpCost": 75,
+          "costNuyen": 5000,
+          "availability": "6/14 days",
+          "streetIndex": 2
         },
         {
           "rating": 7,
-          "cfDesign": 4,
-          "cfCustom": 6,
-          "dpCost": 1050,
-          "costNuyen": 70000,
-          "weightKg": 0,
-          "availability": "6/1 week",
-          "streetIndex": "3"
+          "cfDesign": 0,
+          "cfCustom": 2,
+          "dpCost": 150,
+          "costNuyen": 10000,
+          "availability": "6/14 days",
+          "streetIndex": 2
         },
         {
           "rating": 8,
-          "cfDesign": 4,
-          "cfCustom": 6,
-          "dpCost": 1200,
-          "costNuyen": 80000,
-          "weightKg": 0,
-          "availability": "6/1 week",
-          "streetIndex": "3"
+          "cfDesign": 0,
+          "cfCustom": 2,
+          "dpCost": 150,
+          "costNuyen": 10000,
+          "availability": "6/14 days",
+          "streetIndex": 2
         },
         {
           "rating": 9,
-          "cfDesign": 4,
-          "cfCustom": 6,
-          "dpCost": 1350,
-          "costNuyen": 90000,
-          "weightKg": 0,
-          "availability": "6/1 week",
-          "streetIndex": "3"
+          "cfDesign": 0,
+          "cfCustom": 2,
+          "dpCost": 150,
+          "costNuyen": 10000,
+          "availability": "6/14 days",
+          "streetIndex": 2
         }
       ]
     },
