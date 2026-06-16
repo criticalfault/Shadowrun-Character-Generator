@@ -97,7 +97,7 @@
         "Availability": "6/48hrs",
         "Cost": "3500",
         "Street Index": ".5",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.7"
       },
       {
         "Name": "Combat Axe",
@@ -119,7 +119,7 @@
         "Availability": "NA",
         "Cost": "0",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.12"
       },
       {
         "Name": "Decapitator battleaxe",
@@ -827,7 +827,7 @@
         "Availability": "3/36hrs",
         "Cost": "18",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.15"
       },
       {
         "Name": "Ranger-X Bow",
@@ -838,7 +838,7 @@
         "Availability": "5/36hrs",
         "Cost": "120xSTR Min.",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.14"
       },
       {
         "Name": "Bolts",
@@ -1129,7 +1129,7 @@
         "Cost": "450",
         "Street Index": ".75",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.25"
       },
       {
         "Name": "Walther Palm Pistol",
@@ -1168,7 +1168,7 @@
         "Cost": "475",
         "Street Index": ".8",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.17"
       },
       {
         "Name": "Ares Scorpion",
@@ -1207,7 +1207,7 @@
         "Cost": "500",
         "Street Index": ".8",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.22"
       },
       {
         "Name": "Colt American L36",
@@ -1454,7 +1454,7 @@
         "Cost": "400",
         "Street Index": ".8",
         "Accessories": "Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.24"
       },
       {
         "Name": "S&W Model 6739",
@@ -1532,7 +1532,7 @@
         "Cost": "950",
         "Street Index": "2",
         "Accessories": "Gas Vent (2)",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.16"
       },
       {
         "Name": "Beretta Model 200ST",
@@ -1545,7 +1545,7 @@
         "Cost": "750",
         "Street Index": "1.5",
         "Accessories": "Recoil Compensation (1)",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.19"
       },
       {
         "Name": "BudgetArms Laser-Niner",
@@ -1571,7 +1571,7 @@
         "Cost": "850",
         "Street Index": "2",
         "Accessories": "Recoil Compensation (1)",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.21"
       },
       {
         "Name": "Fichetti Executive Action",
@@ -1701,7 +1701,7 @@
         "Cost": "550",
         "Street Index": ".5",
         "Accessories": "Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.18"
       },
       {
         "Name": "Ares Predator III",
@@ -1714,7 +1714,7 @@
         "Cost": "700",
         "Street Index": "1",
         "Accessories": "Smartlink II",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.18"
       },
       {
         "Name": "Ares Stingray",
@@ -1909,7 +1909,7 @@
         "Cost": "525",
         "Street Index": "1.5",
         "Accessories": "Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.20"
       },
       {
         "Name": "BudgetArms Auto 3",
@@ -1961,7 +1961,7 @@
         "Cost": "425",
         "Street Index": "1",
         "Accessories": "Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.23"
       },
       {
         "Name": "Colt Manhunter S",
@@ -1974,7 +1974,7 @@
         "Cost": "600",
         "Street Index": "1",
         "Accessories": "Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.23"
       },
       {
         "Name": "Colt Manhunter S",
@@ -1987,7 +1987,7 @@
         "Cost": "800",
         "Street Index": "1",
         "Accessories": "Smartlink II",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.23"
       },
       {
         "Name": "Colt Peacemaker",
@@ -2819,7 +2819,7 @@
         "Cost": "750",
         "Street Index": "2",
         "Accessories": "Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.70"
       },
       {
         "Name": "Net Gun",
@@ -2832,7 +2832,7 @@
         "Cost": "1150",
         "Street Index": "2",
         "Accessories": "Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.70"
       },
       {
         "Name": "Pursuit Security Webgun",
@@ -3248,7 +3248,7 @@
         "Cost": "850",
         "Street Index": "1",
         "Accessories": "Gas Vent (2), Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.30"
       },
       {
         "Name": "Ingram MAC-14",
@@ -3287,7 +3287,7 @@
         "Cost": "950",
         "Street Index": "1",
         "Accessories": "Gas Vent (2), Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.31"
       },
       {
         "Name": "Ingram Super Mach 100",
@@ -3378,7 +3378,7 @@
         "Cost": "500",
         "Street Index": "1",
         "Accessories": "Laser Sight, Recoil Compensation (1)",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.32"
       },
       {
         "Name": "SCK Model 100",
@@ -3391,7 +3391,7 @@
         "Cost": "1000",
         "Street Index": "1",
         "Accessories": "Smatlink",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.33"
       },
       {
         "Name": "Setsuko-Arasaka",
@@ -3625,7 +3625,7 @@
         "Cost": "1600",
         "Street Index": "2",
         "Accessories": "Gas Vent (1), Grenade Launcher (6-shot), Magnification (2)",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.51"
       },
       {
         "Name": "Colt M-23",
@@ -3924,7 +3924,7 @@
         "Cost": "1800",
         "Street Index": "2",
         "Accessories": "Gas Vent (2), Laser Sight, Magnification(2), Shock Pads",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.53"
       },
       {
         "Name": "S&W Model F 'Cyborg Assault'",
@@ -4224,7 +4224,7 @@
         "Cost": "1400",
         "Street Index": "1",
         "Accessories": "Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.26"
       },
       {
         "Name": "Mossberg CMDT",
@@ -4237,7 +4237,7 @@
         "Cost": "1900",
         "Street Index": "2",
         "Accessories": "Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.26"
       },
       {
         "Name": "Ranger Arms Security 12",
@@ -4445,7 +4445,7 @@
         "Cost": "6500",
         "Street Index": "4",
         "Accessories": "Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.28"
       },
       {
         "Name": "Remington 750",
@@ -4484,7 +4484,7 @@
         "Cost": "1300",
         "Street Index": "1",
         "Accessories": "Magnification (3)",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.27"
       },
       {
         "Name": "SIG 883 SP",
@@ -4523,7 +4523,7 @@
         "Cost": "4500",
         "Street Index": "3",
         "Accessories": "Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.54"
       },
       {
         "Name": "Syrko Panther",
@@ -4549,7 +4549,7 @@
         "Cost": "2200",
         "Street Index": "2",
         "Accessories": "Gas Vent (2), Laser Sight, Shock Pads",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.56"
       },
       {
         "Name": "Ares HV MP-LMG",
@@ -4575,7 +4575,7 @@
         "Cost": "2500",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.58"
       },
       {
         "Name": "H&K G-6 Advanced Squad Auto.",
@@ -4679,7 +4679,7 @@
         "Cost": "2500000",
         "Street Index": "NA",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.55"
       },
       {
         "Name": "Ares MP Laser III",
@@ -4692,7 +4692,7 @@
         "Cost": "120000",
         "Street Index": "3",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.55"
       },
       {
         "Name": "Infrared Laser",
@@ -4874,7 +4874,7 @@
         "Cost": "3200",
         "Street Index": "3",
         "Accessories": "Gas Vent (2), Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.57"
       },
       {
         "Name": "Generic MMG",
@@ -4991,7 +4991,7 @@
         "Cost": "5200",
         "Street Index": "3",
         "Accessories": "Gas Vent (3), Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.61"
       },
       {
         "Name": "Panther Assault Cannon",
@@ -5004,7 +5004,7 @@
         "Cost": "6500",
         "Street Index": "2",
         "Accessories": "Shock Pads",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.60"
       },
       {
         "Name": "Panther Heavy Recoilless Rifle",
@@ -5082,7 +5082,7 @@
         "Cost": "4300",
         "Street Index": "3",
         "Accessories": "Rangefinder",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.35"
       },
       {
         "Name": "Ares Suprpessor (Smart)",
@@ -5375,7 +5375,7 @@
         "Cost": "50",
         "Street Index": "1.5",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.44"
       }
     ]
   },
@@ -9951,7 +9951,7 @@
         "Availability": "2/24hrs",
         "Cost": "150",
         "Street Index": ".8",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.35"
       },
       {
         "Name": "Rangefinder Grenade Link",
@@ -9962,7 +9962,7 @@
         "Availability": "8/48hrs",
         "Cost": "750",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.66"
       },
       {
         "Name": "Security Chipping",
@@ -10292,7 +10292,7 @@
         "Availability": "8/4days",
         "Cost": "1300",
         "Street Index": ".8",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.34"
       },
       {
         "Name": "Ultrasound Goggles",
@@ -10303,7 +10303,7 @@
         "Availability": "3/36hrs",
         "Cost": "1100",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.34"
       },
       {
         "Name": "DUD Smartgun Controller",
@@ -10707,7 +10707,7 @@
         "Availability": "5/36hrs",
         "Cost": "250",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.37"
       },
       {
         "Name": "Kevlar Armor Jacket",
@@ -10806,7 +10806,7 @@
         "Availability": "3/36hrs",
         "Cost": "350",
         "Street Index": ".9",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.39"
       },
       {
         "Name": "Secure Long Coat",
@@ -11939,7 +11939,7 @@
         "Availability": "12/10days",
         "Cost": "7500",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.68"
       },
       {
         "Name": "Medium Security Armor",
@@ -11950,7 +11950,7 @@
         "Availability": "14/10days",
         "Cost": "9000",
         "Street Index": "2.5",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.68"
       },
       {
         "Name": "Heavy Security Armor",
@@ -11961,7 +11961,7 @@
         "Availability": "16/14days",
         "Cost": "12000",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.68"
       },
       {
         "Name": "Security Helmet",
@@ -11972,7 +11972,7 @@
         "Availability": "12/14days",
         "Cost": "250",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.68"
       },
       {
         "Name": "Riot Shield",
@@ -11983,7 +11983,7 @@
         "Availability": "8/14hrs",
         "Cost": "1500",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.67"
       },
       {
         "Name": "Riot Shield",
@@ -11994,7 +11994,7 @@
         "Availability": "-",
         "Cost": "3200",
         "Street Index": "-",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.67"
       },
       {
         "Name": "Light Military Armor",

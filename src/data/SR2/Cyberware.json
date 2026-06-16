@@ -478,7 +478,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.84",
       "Name": "Video Link",
       "EssCost": 0.5,
       "Cost": 22000,
@@ -486,7 +486,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.84",
       "Name": "Video Link (Trans)",
       "EssCost": 0.4,
       "Cost": 4500,
@@ -568,7 +568,7 @@
   ],
   "BODYWARE": [
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.87",
       "Name": "Boosted Reflexes 1",
       "EssCost": 0.5,
       "Cost": 15000,
@@ -576,7 +576,7 @@
       "Mods": "+1INI"
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.87",
       "Name": "Boosted Reflexes 2",
       "EssCost": 1.25,
       "Cost": 40000,
@@ -584,7 +584,7 @@
       "Mods": "+1RCT,+1INI"
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.87",
       "Name": "Boosted Reflexes 3",
       "EssCost": 2.8,
       "Cost": 90000,
@@ -1000,7 +1000,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.79",
       "Name": "Int. Voice Mask",
       "EssCost": 0.1,
       "Cost": 7000,
@@ -1008,7 +1008,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.88",
       "Name": "Skill Hardwires  1",
       "EssCost": 0.2,
       "Cost": 5000,
@@ -1016,7 +1016,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.88",
       "Name": "Skill Hardwires  2",
       "EssCost": 0.4,
       "Cost": 10000,
@@ -1024,7 +1024,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.88",
       "Name": "Skill Hardwires  3",
       "EssCost": 0.6,
       "Cost": 15000,
@@ -1032,7 +1032,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.88",
       "Name": "Skill Hardwires  4",
       "EssCost": 0.8,
       "Cost": 20000,
@@ -1040,7 +1040,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.88",
       "Name": "Skill Hardwires  5",
       "EssCost": 1.25,
       "Cost": 250000,
@@ -1048,7 +1048,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.88",
       "Name": "Skill Hardwires  6",
       "EssCost": 1.5,
       "Cost": 300000,
@@ -1056,7 +1056,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.88",
       "Name": "Skill Hardwires  7",
       "EssCost": 1.75,
       "Cost": 350000,
@@ -1064,7 +1064,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.88",
       "Name": "Skill Hardwires  8",
       "EssCost": 2,
       "Cost": 400000,
@@ -1072,7 +1072,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.88",
       "Name": "Skill Hardwires  9",
       "EssCost": 2.7,
       "Cost": 4500000,
@@ -1080,7 +1080,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.88",
       "Name": "Skill Hardwires 10",
       "EssCost": 3,
       "Cost": 5000000,
@@ -1386,7 +1386,7 @@
   ],
   "SENSEWARE": [
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.78",
       "Name": "Ear Hearing Amp",
       "EssCost": 0.2,
       "Cost": 3500,
@@ -1394,7 +1394,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.82",
       "Name": "Ear Sound Filter 1",
       "EssCost": 0.2,
       "Cost": 10000,
@@ -1402,7 +1402,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.82",
       "Name": "Ear Sound Filter 2",
       "EssCost": 0.2,
       "Cost": 20000,
@@ -1410,7 +1410,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.82",
       "Name": "Ear Sound Filter 3",
       "EssCost": 0.2,
       "Cost": 30000,
@@ -1418,7 +1418,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.82",
       "Name": "Ear Sound Filter 4",
       "EssCost": 0.2,
       "Cost": 40000,
@@ -1426,7 +1426,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.82",
       "Name": "Ear Sound Filter 5",
       "EssCost": 0.2,
       "Cost": 50000,
@@ -1434,7 +1434,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.85",
       "Name": "Eye Optical Mag 1",
       "EssCost": 0.2,
       "Cost": 2500,
@@ -1442,7 +1442,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.85",
       "Name": "Eye Optical Mag 2",
       "EssCost": 0.2,
       "Cost": 4000,
@@ -1450,7 +1450,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.85",
       "Name": "Eye Optical Mag 3",
       "EssCost": 0.2,
       "Cost": 6000,
@@ -1458,7 +1458,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.85",
       "Name": "Eye Electric Mag 1",
       "EssCost": 0.1,
       "Cost": 3500,
@@ -1466,7 +1466,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.85",
       "Name": "Eye Electric Mag 2",
       "EssCost": 0.1,
       "Cost": 7500,
@@ -1474,7 +1474,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.85",
       "Name": "Eye Electric Mag 3",
       "EssCost": 0.1,
       "Cost": 11000,
@@ -1482,7 +1482,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.80",
       "Name": "Eye Rangefinder",
       "EssCost": 0.1,
       "Cost": 2000,
@@ -1490,7 +1490,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.83",
       "Name": "Sense Link",
       "EssCost": 2,
       "Cost": 300000,
@@ -1498,7 +1498,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.83",
       "Name": "Sense Link (Trans)",
       "EssCost": 0.6,
       "Cost": 80000,
@@ -1931,7 +1931,7 @@
   ],
   "MATRIXWARE": [
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.77",
       "Name": "Crypto Circuit  1",
       "EssCost": 0.1,
       "Cost": 10000,
@@ -1939,7 +1939,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.77",
       "Name": "Crypto Circuit  2",
       "EssCost": 0.1,
       "Cost": 20000,
@@ -1947,7 +1947,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.77",
       "Name": "Crypto Circuit  3",
       "EssCost": 0.1,
       "Cost": 30000,
@@ -1955,7 +1955,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.77",
       "Name": "Crypto Circuit  4",
       "EssCost": 0.1,
       "Cost": 40000,
@@ -1963,7 +1963,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.77",
       "Name": "Crypto Circuit  5",
       "EssCost": 0.1,
       "Cost": 100000,
@@ -1971,7 +1971,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.77",
       "Name": "Crypto Circuit  6",
       "EssCost": 0.1,
       "Cost": 120000,
@@ -1979,7 +1979,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.77",
       "Name": "Crypto Circuit  7",
       "EssCost": 0.1,
       "Cost": 140000,
@@ -1987,7 +1987,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.77",
       "Name": "Crypto Circuit  8",
       "EssCost": 0.1,
       "Cost": 240000,
@@ -1995,7 +1995,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.77",
       "Name": "Crypto Circuit  9",
       "EssCost": 0.1,
       "Cost": 270000,
@@ -2003,7 +2003,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.77",
       "Name": "Crypto Circuit 10",
       "EssCost": 0.1,
       "Cost": 500000,
@@ -2011,7 +2011,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.81",
       "Name": "Scramble Breaker 1",
       "EssCost": 0.2,
       "Cost": 20000,
@@ -2019,7 +2019,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.81",
       "Name": "Scramble Breaker 2",
       "EssCost": 0.2,
       "Cost": 40000,
@@ -2027,7 +2027,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.81",
       "Name": "Scramble Breaker 3",
       "EssCost": 0.2,
       "Cost": 60000,
@@ -2035,7 +2035,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.81",
       "Name": "Scramble Breaker 4",
       "EssCost": 0.2,
       "Cost": 80000,
@@ -2043,7 +2043,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.81",
       "Name": "Scramble Breaker 5",
       "EssCost": 0.2,
       "Cost": 200000,
@@ -2051,7 +2051,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.81",
       "Name": "Scramble Breaker 6",
       "EssCost": 0.2,
       "Cost": 240000,
@@ -2059,7 +2059,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.81",
       "Name": "Scramble Breaker 7",
       "EssCost": 0.2,
       "Cost": 280000,
@@ -2067,7 +2067,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.81",
       "Name": "Scramble Breaker 8",
       "EssCost": 0.2,
       "Cost": 600000,
@@ -2205,7 +2205,7 @@
   ],
   "CYBERWEAPONS": [
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.86",
       "Name": "Cybergun Hold-Out",
       "EssCost": 0,
       "Cost": 250,
@@ -2213,7 +2213,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.86",
       "Name": "Cybergun Light",
       "EssCost": 0,
       "Cost": 650,
@@ -2221,7 +2221,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.86",
       "Name": "Cybergun Mach. Gun",
       "EssCost": 0,
       "Cost": 900,
@@ -2229,7 +2229,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.86",
       "Name": "Cybergun SMG",
       "EssCost": 0,
       "Cost": 1800,
@@ -2237,7 +2237,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.86",
       "Name": "Cybergun Heavy",
       "EssCost": 0,
       "Cost": 800,
@@ -2245,7 +2245,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.86",
       "Name": "Cybergun Shotgun",
       "EssCost": 0,
       "Cost": 1200,
@@ -2669,7 +2669,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.76",
       "Name": "Commlink 2",
       "EssCost": 0.3,
       "Cost": 8000,
@@ -2677,7 +2677,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.76",
       "Name": "Commlink 4",
       "EssCost": 0.3,
       "Cost": 18000,
@@ -2685,7 +2685,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.76",
       "Name": "Commlink 8",
       "EssCost": 0.3,
       "Cost": 40000,
@@ -2693,7 +2693,7 @@
       "Mods": ""
     },
     {
-      "BookPage": "ssc.???",
+      "BookPage": "ssc.76",
       "Name": "Commlink 10",
       "EssCost": 0.3,
       "Cost": 60000,
