@@ -95,7 +95,7 @@
       "statMods": {},
       "restrictions": "Ground vehicles only; electrical engines only",
       "notes": null,
-      "bookPage": "r2.122"
+      "bookPage": "r2.121"
     },
     {
       "id": "nitrous-oxide-injectors",
@@ -199,7 +199,7 @@
       "statMods": {},
       "restrictions": "Electric engines only; not motorcycles",
       "notes": null,
-      "bookPage": "r2.122"
+      "bookPage": "r2.121"
     },
     {
       "id": "turbocharging",
@@ -229,7 +229,7 @@
       },
       "restrictions": "Non-electric aircraft cannot be turbocharged",
       "notes": null,
-      "bookPage": "r2.123"
+      "bookPage": "r2.122"
     },
     {
       "id": "adjusted-controls",
@@ -254,7 +254,7 @@
       "statMods": {},
       "restrictions": null,
       "notes": "Wrong-sized controls impose +3 TN to all driving tests",
-      "bookPage": "r2.127"
+      "bookPage": "r2.122"
     },
     {
       "id": "advanced-drone-pilot",
@@ -281,7 +281,7 @@
       },
       "restrictions": null,
       "notes": null,
-      "bookPage": "r2.128",
+      "bookPage": "r2.126",
       "ratings": [
         {
           "rating": 1,
@@ -355,7 +355,7 @@
       },
       "restrictions": "R2 off-road doubles TNs without R3",
       "notes": null,
-      "bookPage": "r2.128",
+      "bookPage": "r2.123",
       "ratings": [
         {
           "rating": 1,
@@ -422,7 +422,7 @@
       "statMods": {},
       "restrictions": null,
       "notes": "Ignores damage modifiers for (rating) damage boxes",
-      "bookPage": "r2.129",
+      "bookPage": "r2.124",
       "ratings": [
         {
           "rating": 1,
@@ -530,7 +530,7 @@
       "statMods": {},
       "restrictions": null,
       "notes": null,
-      "bookPage": "r2.129"
+      "bookPage": "r2.124"
     },
     {
       "id": "drive-by-wire",
@@ -557,7 +557,7 @@
       },
       "restrictions": null,
       "notes": null,
-      "bookPage": "r2.130"
+      "bookPage": "r2.124"
     },
     {
       "id": "improved-control-surfaces",
@@ -584,7 +584,7 @@
       },
       "restrictions": "Watercraft only; not compatible with drive-by-wire",
       "notes": null,
-      "bookPage": "r2.130"
+      "bookPage": "r2.125"
     },
     {
       "id": "improved-suspension",
@@ -611,32 +611,7 @@
       },
       "restrictions": "Ground vehicles only; not compatible with drive-by-wire",
       "notes": null,
-      "bookPage": "r2.130"
-    },
-    {
-      "id": "motorbike-gyro",
-      "name": "Motorbike Gyro-Stabilization Gear",
-      "category": "control",
-      "description": "Allows motorbike to self-balance. Required for Autonav Rating 2+ and remote-control adaptation on motorbikes.",
-      "designOnly": false,
-      "rated": false,
-      "cfDesign": 0,
-      "cfCustom": 0,
-      "loadReductionKgDesign": 5,
-      "loadReductionKgCustom": 5,
-      "dpCost": "Chassis DP cost Ã— 1.25",
-      "costNuyen": "Vehicle original cost Ã— 1.25",
-      "availability": "6/10 days",
-      "streetIndex": "1.5",
-      "equipment": "Vehicle facility",
-      "baseTimeHours": 48,
-      "skill": "Bike B/R",
-      "skillTN": 5,
-      "maxRating": null,
-      "statMods": {},
-      "restrictions": "Motorcycles only",
-      "notes": null,
-      "bookPage": "r2.131"
+      "bookPage": "r2.125"
     },
     {
       "id": "off-road-suspension",
@@ -693,7 +668,7 @@
       },
       "restrictions": "Requires Sensor 1+",
       "notes": null,
-      "bookPage": "r2.131"
+      "bookPage": "r2.126"
     },
     {
       "id": "rigger-adaptation",
@@ -718,7 +693,7 @@
       "statMods": {},
       "restrictions": null,
       "notes": "Includes datajack port; required for VCR use",
-      "bookPage": "r2.132"
+      "bookPage": "r2.126"
     },
     {
       "id": "secondary-controls",
@@ -743,7 +718,7 @@
       "statMods": {},
       "restrictions": "Not for motorcycles",
       "notes": null,
-      "bookPage": "r2.133"
+      "bookPage": "r2.127"
     },
     {
       "id": "ablative-armor",
@@ -770,7 +745,7 @@
       },
       "restrictions": "Not for aircraft; not concealable; vehicle becomes security/military grade; not a design option",
       "notes": "Not available as a design option. No Skill Test to install/replace.",
-      "bookPage": "r2.133",
+      "bookPage": "r2.128",
       "ratings": [
         {
           "rating": 1,
@@ -815,7 +790,7 @@
       "statMods": {},
       "restrictions": "Not for motorcycles",
       "notes": null,
-      "bookPage": "r2.134"
+      "bookPage": "r2.128"
     },
     {
       "id": "vehicle-armor",
@@ -843,7 +818,7 @@
       },
       "restrictions": "Not for Body 0 vehicles",
       "notes": null,
-      "bookPage": "r2.134"
+      "bookPage": "r2.127"
     },
     {
       "id": "personal-armor",
@@ -870,7 +845,7 @@
       },
       "restrictions": null,
       "notes": null,
-      "bookPage": "r2.134"
+      "bookPage": "r2.127"
     },
     {
       "id": "concealed-armor",
@@ -897,7 +872,7 @@
       },
       "restrictions": "Not compatible with standard vehicle armor",
       "notes": "Detection TN = 9 - (Armor Rating ÷ 3, round up)",
-      "bookPage": "r2.135"
+      "bookPage": "r2.127"
     },
     {
       "id": "crash-cages",
@@ -922,7 +897,7 @@
       "statMods": {},
       "restrictions": "Not for motorcycles",
       "notes": null,
-      "bookPage": "r2.135"
+      "bookPage": "r2.128"
     },
     {
       "id": "enviroseal",
@@ -947,7 +922,7 @@
       "statMods": {},
       "restrictions": "Not for motorcycles or vehicles with open entry points",
       "notes": "Light damage breaches seal (5¥ slap-patches). Moderate+ requires vehicle work to re-seal.",
-      "bookPage": "r2.135"
+      "bookPage": "r2.128"
     },
     {
       "id": "life-support",
@@ -972,7 +947,7 @@
       "statMods": {},
       "restrictions": "Requires EnviroSeal",
       "notes": null,
-      "bookPage": "r2.135"
+      "bookPage": "r2.129"
     },
     {
       "id": "roll-bars",
@@ -997,7 +972,7 @@
       "statMods": {},
       "restrictions": null,
       "notes": "Required for ring mounts and certain civilian weapon mounts",
-      "bookPage": "r2.136"
+      "bookPage": "r2.129"
     },
     {
       "id": "smart-armor-systems",
@@ -1022,7 +997,7 @@
       "statMods": {},
       "restrictions": "Requires Armor 1+; not for Body < 4 vehicles; military-grade",
       "notes": "Cells replaceable (8 hrs, Vehicle B/R TN 2). Replacement: Body × 500¥",
-      "bookPage": "r2.136"
+      "bookPage": "r2.129"
     },
     {
       "id": "active-thermal-masking",
@@ -1050,7 +1025,7 @@
       },
       "restrictions": "Requires Engine Customization; gas/methane/diesel/jet engines only",
       "notes": null,
-      "bookPage": "r2.136"
+      "bookPage": "r2.130"
     },
     {
       "id": "radar-absorbent-materials",
@@ -1077,7 +1052,7 @@
       },
       "restrictions": "Military-grade",
       "notes": null,
-      "bookPage": "r2.138",
+      "bookPage": "r2.131",
       "ratings": [
         {
           "rating": 1,
@@ -1136,7 +1111,7 @@
       },
       "restrictions": "Gasoline/methane/diesel/jet engines only",
       "notes": null,
-      "bookPage": "r2.139"
+      "bookPage": "r2.130"
     },
     {
       "id": "ammo-bins",
@@ -1188,7 +1163,7 @@
       },
       "restrictions": "Security/military-grade; hardpoint = 2 pts; MMG and larger only",
       "notes": "Total hardpoints+firmpoints â‰¤ vehicle Body",
-      "bookPage": "r2.140"
+      "bookPage": "r2.131"
     },
     {
       "id": "fixed-mount-ext-firmpoint",
@@ -1215,7 +1190,7 @@
       },
       "restrictions": "Security/military-grade; firmpoint = 1 pt; LMG and smaller",
       "notes": null,
-      "bookPage": "r2.140"
+      "bookPage": "r2.131"
     },
     {
       "id": "fixed-mount-int-hardpoint",
@@ -1240,7 +1215,7 @@
       "statMods": {},
       "restrictions": "Security/military-grade",
       "notes": "Hidden while stowed (Perception TN 4). âˆ’1 Sig while armed/extended.",
-      "bookPage": "r2.141"
+      "bookPage": "r2.131"
     },
     {
       "id": "fixed-mount-int-firmpoint",
@@ -1265,7 +1240,7 @@
       "statMods": {},
       "restrictions": "Security/military-grade; LMG and smaller",
       "notes": null,
-      "bookPage": "r2.141"
+      "bookPage": "r2.131"
     },
     {
       "id": "gunnery-recoil-adjusters",
@@ -1290,7 +1265,7 @@
       "statMods": {},
       "restrictions": "Fixed mounts and turrets only; incompatible with vehicle gyro-stabilization",
       "notes": null,
-      "bookPage": "r2.142",
+      "bookPage": "r2.133",
       "ratings": [
         {
           "rating": 1,
@@ -1437,7 +1412,7 @@
       "statMods": {},
       "restrictions": "Consumes 1 firmpoint",
       "notes": null,
-      "bookPage": "r2.143"
+      "bookPage": "r2.133"
     },
     {
       "id": "launch-control-heavy",
@@ -1462,7 +1437,7 @@
       "statMods": {},
       "restrictions": "Consumes 1 hardpoint",
       "notes": null,
-      "bookPage": "r2.143"
+      "bookPage": "r2.133"
     },
     {
       "id": "pintle-mount",
@@ -1487,7 +1462,7 @@
       "statMods": {},
       "restrictions": "Firmpoint weapons only; cannot be remotely controlled",
       "notes": "2 points recoil compensation. Mount/dismount: Complex Action.",
-      "bookPage": "r2.143"
+      "bookPage": "r2.134"
     },
     {
       "id": "ring-mount",
@@ -1512,7 +1487,7 @@
       "statMods": {},
       "restrictions": "Hardtop only (or roll bars); cannot be remotely controlled; man-portable heavy or LMG only",
       "notes": "6 points recoil compensation. Mount/dismount: Complex Action + Quickness (4) if moving.",
-      "bookPage": "r2.144"
+      "bookPage": "r2.134"
     },
     {
       "id": "smartlink-integration-kit",
@@ -1537,7 +1512,7 @@
       "statMods": {},
       "restrictions": "Not needed for pintle/ring mounts; no effect on Sensor-Enhanced Gunnery or Missile Attack Tests",
       "notes": null,
-      "bookPage": "r2.144",
+      "bookPage": "r2.134",
       "ratings": [
         {
           "rating": 1,
@@ -1586,7 +1561,7 @@
       },
       "restrictions": "Requires roll bars on civilian vehicles",
       "notes": "Anti-aircraft option: Ã—1.5 cost, +1 CF. Pop-up: doubled CF, âˆ’1 WV concealed, Complex Action to deploy.",
-      "bookPage": "r2.145"
+      "bookPage": "r2.134"
     },
     {
       "id": "turret-gunner-small",
@@ -1613,7 +1588,7 @@
       },
       "restrictions": "Security/military-grade",
       "notes": "Includes 2 CF internal ammo space.",
-      "bookPage": "r2.145"
+      "bookPage": "r2.134"
     },
     {
       "id": "turret-gunner-medium",
@@ -1640,7 +1615,7 @@
       },
       "restrictions": "Military-grade only",
       "notes": "Includes 2 CF internal space.",
-      "bookPage": "r2.145"
+      "bookPage": "r2.134"
     },
     {
       "id": "turret-gunner-large",
@@ -1667,7 +1642,7 @@
       },
       "restrictions": "Military-grade only; no pop-up option",
       "notes": null,
-      "bookPage": "r2.145"
+      "bookPage": "r2.134"
     },
     {
       "id": "turret-remote-micro",
@@ -1694,7 +1669,7 @@
       },
       "restrictions": null,
       "notes": null,
-      "bookPage": "r2.146"
+      "bookPage": "r2.134"
     },
     {
       "id": "turret-remote-mini",
@@ -1721,7 +1696,7 @@
       },
       "restrictions": null,
       "notes": null,
-      "bookPage": "r2.146"
+      "bookPage": "r2.134"
     },
     {
       "id": "turret-remote-small",
@@ -1748,7 +1723,7 @@
       },
       "restrictions": "Security/military-grade",
       "notes": null,
-      "bookPage": "r2.146"
+      "bookPage": "r2.134"
     },
     {
       "id": "turret-remote-medium",
@@ -1775,7 +1750,7 @@
       },
       "restrictions": "Military-grade only",
       "notes": null,
-      "bookPage": "r2.146"
+      "bookPage": "r2.134"
     },
     {
       "id": "vehicle-gyro-stabilizers",
@@ -2122,7 +2097,7 @@
       },
       "restrictions": "Ratings 5+ military-grade",
       "notes": "See ECM Systems Table: Standard (R1): CF 0/1, 25,000Â¥, 12kg, 5/7 days | Enhanced (R2): CF 1/2, 75,000Â¥, 25kg, 6/10 days | Advanced (R3): CF 2/3, 125,000Â¥, 35kg, 7/14 days | Premium (R4): CF 3/6, 250,000Â¥, 50kg, 8/21 days | Security I (R5): CF 2/3, 375,000Â¥, 35kg, 10/30 days | Security II (R6): CF 4/8, 750,000Â¥, 75kg, 12/45 days | Security III (R7): CF 6/9, 1.5MÂ¥, 110kg, 14/60 days | Military I (R8): CF 10/12, 7.5MÂ¥, 150kg, 16/3 months | Military II (R9): CF 12/16, 15MÂ¥, 200kg, 18/6 months | Military III (R10): CF 16/20, 30MÂ¥, 250kg, 20/1 year",
-      "bookPage": "r2.147",
+      "bookPage": "r2.137",
       "costNuyen": "See ECM table (r2.147)",
       "availability": "See ECM table",
       "streetIndex": "See ECM table"
@@ -2245,7 +2220,7 @@
       },
       "restrictions": "Ratings 5+ military-grade",
       "notes": "See ECCM Systems Table: Standard (R1): CF 0/1, 110,000Â¥, 12kg, 4/7 days, SI 2 | Enhanced (R2): CF 1/2, 300,000Â¥, 25kg, 4/10 days, SI 2.5 | Advanced (R3): CF 2/3, 350,000Â¥, 35kg, 5/14 days, SI 4 | Premium (R4): CF 3/6, 100,000Â¥, 50kg, 6/21 days, SI 3.5 | Security I (R5): CF 2/3, 150,000Â¥, 35kg, 8/30 days | Security II (R6): CF 4/8, 250,000Â¥, 75kg, 10/45 days | Security III (R7): CF 6/9, 750,000Â¥, 110kg, 12/60 days | Military I (R8): CF 10/12, 2.5MÂ¥, 150kg, 14/3 months | Military II (R9): CF 12/16, 6MÂ¥, 200kg, 16/6 months | Military III (R10): CF 16/20, 12MÂ¥, 250kg, 18/1 year",
-      "bookPage": "r2.148",
+      "bookPage": "r2.138",
       "costNuyen": "See ECCM table (r2.148)",
       "availability": "See ECCM table",
       "streetIndex": "See ECCM table"
@@ -2326,7 +2301,7 @@
       "statMods": {},
       "restrictions": "Military-grade",
       "notes": "See ED Systems Table: Security I (L1): CF 2/3, 50,000Â¥, 35kg, 8/30 days, SI 3 | Security II (L2): CF 4/5, 150,000Â¥, 45kg, 8/45 days, SI 3.5 | Security III (L3): CF 6/7, 400,000Â¥, 60kg, 8/60 days, SI 4 | Military I (L4): CF 4/5, 1MÂ¥, 45kg, 10/3 months, SI 4.5 | Military II (L5): CF 6/7, 4MÂ¥, 60kg, 12/6 months, SI 5 | Military III (L6): CF 8/9, 8MÂ¥, 110kg, 16/1 year",
-      "bookPage": "r2.149",
+      "bookPage": "r2.138",
       "costNuyen": "See ED table (r2.149)",
       "availability": "See ED table",
       "streetIndex": "See ED table"
@@ -2354,7 +2329,7 @@
       "statMods": {},
       "restrictions": null,
       "notes": null,
-      "bookPage": "r2.150"
+      "bookPage": "r2.139"
     },
     {
       "id": "power-amplifiers",
@@ -2379,7 +2354,7 @@
       "statMods": {},
       "restrictions": null,
       "notes": null,
-      "bookPage": "r2.150",
+      "bookPage": "r2.139",
       "ratings": [
         {
           "rating": 1,
@@ -2683,7 +2658,7 @@
       "statMods": {},
       "restrictions": "Explosion option not street-legal",
       "notes": "Default vehicle maglock is Rating 2. Explosion: âˆ’1 Power per meter from vehicle.",
-      "bookPage": "r2.152",
+      "bookPage": "r2.141",
       "ratings": [
         {
           "rating": 3,
@@ -2790,7 +2765,7 @@
       "statMods": {},
       "restrictions": "Ground vehicles only",
       "notes": null,
-      "bookPage": "r2.153",
+      "bookPage": "r2.140",
       "ratings": [
         {
           "rating": 1,
@@ -2844,7 +2819,7 @@
       "statMods": {},
       "restrictions": null,
       "notes": "Recovery requires simultaneous Handling Tests by driver and drone controller.",
-      "bookPage": "r2.153"
+      "bookPage": "r2.144"
     },
     {
       "id": "ejection-seat",
@@ -2869,7 +2844,7 @@
       "statMods": {},
       "restrictions": null,
       "notes": null,
-      "bookPage": "r2.154"
+      "bookPage": "r2.143"
     },
     {
       "id": "external-cargo-mounts",
@@ -2896,7 +2871,7 @@
       },
       "restrictions": "Customization only",
       "notes": null,
-      "bookPage": "r2.154"
+      "bookPage": "r2.145"
     },
     {
       "id": "mechanical-arm",
@@ -2921,7 +2896,7 @@
       "statMods": {},
       "restrictions": "Not for Body 0 vehicles",
       "notes": "Cyberarm accessories at half cost (same Avail/SI)",
-      "bookPage": "r2.155"
+      "bookPage": "r2.145"
     },
     {
       "id": "medical-clinic",
@@ -3058,7 +3033,7 @@
       "statMods": {},
       "restrictions": null,
       "notes": null,
-      "bookPage": "r2.156"
+      "bookPage": "r2.142"
     },
     {
       "id": "seat-folding-bench",
@@ -3083,7 +3058,7 @@
       "statMods": {},
       "restrictions": null,
       "notes": null,
-      "bookPage": "r2.156"
+      "bookPage": "r2.142"
     },
     {
       "id": "seat-standard-bucket",
@@ -3108,7 +3083,7 @@
       "statMods": {},
       "restrictions": null,
       "notes": null,
-      "bookPage": "r2.156"
+      "bookPage": "r2.142"
     },
     {
       "id": "seat-reinforced-bench",
@@ -3133,7 +3108,7 @@
       "statMods": {},
       "restrictions": null,
       "notes": null,
-      "bookPage": "r2.156"
+      "bookPage": "r2.142"
     },
     {
       "id": "spotlight",
@@ -3158,7 +3133,7 @@
       "statMods": {},
       "restrictions": null,
       "notes": null,
-      "bookPage": "r2.157"
+      "bookPage": "r2.146"
     },
     {
       "id": "valkyrie-module",
@@ -3208,7 +3183,7 @@
       "statMods": {},
       "restrictions": null,
       "notes": null,
-      "bookPage": "r2.158"
+      "bookPage": "r2.146"
     },
     {
       "id": "smoke-projector-small",
