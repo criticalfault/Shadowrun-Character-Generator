@@ -1283,10 +1283,10 @@
       "rated": true,
       "cfDesign": 0,
       "cfCustom": 1,
-      "loadReductionKgDesign": "Rating + 24",
+      "loadReductionKgDesign": 0,
       "loadReductionKgCustom": "Rating + 24",
       "dpCost": "10 per level",
-      "costNuyen": "500Â¥ per level",
+      "costNuyen": "500¥ per level",
       "availability": "6/48 hrs",
       "streetIndex": "1.5",
       "equipment": "Vehicle kit",
@@ -1297,127 +1297,127 @@
       "statMods": {},
       "restrictions": "Fixed mounts and turrets only; incompatible with vehicle gyro-stabilization",
       "notes": null,
-      "bookPage": "r2.133",
+      "bookPage": "r2.132",
       "ratings": [
         {
           "rating": 1,
           "cfDesign": 0,
-          "cfCustom": 0,
+          "cfCustom": 1,
           "dpCost": 10,
           "costNuyen": 500,
-          "weightKg": 0,
-          "availability": "3/48 hrs",
-          "streetIndex": "1"
+          "loadReductionKg": 25,
+          "availability": "6/48 hrs",
+          "streetIndex": 1.5
         },
         {
           "rating": 2,
           "cfDesign": 0,
-          "cfCustom": 0,
+          "cfCustom": 1,
           "dpCost": 20,
           "costNuyen": 1000,
-          "weightKg": 0,
-          "availability": "3/48 hrs",
-          "streetIndex": "1"
+          "loadReductionKg": 26,
+          "availability": "6/48 hrs",
+          "streetIndex": 1.5
         },
         {
           "rating": 3,
           "cfDesign": 0,
-          "cfCustom": 0,
+          "cfCustom": 1,
           "dpCost": 30,
           "costNuyen": 1500,
-          "weightKg": 0,
-          "availability": "3/48 hrs",
-          "streetIndex": "1"
+          "loadReductionKg": 27,
+          "availability": "6/48 hrs",
+          "streetIndex": 1.5
         },
         {
           "rating": 4,
           "cfDesign": 0,
-          "cfCustom": 0,
+          "cfCustom": 1,
           "dpCost": 40,
           "costNuyen": 2000,
-          "weightKg": 0,
-          "availability": "3/48 hrs",
-          "streetIndex": "1"
+          "loadReductionKg": 28,
+          "availability": "6/48 hrs",
+          "streetIndex": 1.5
         },
         {
           "rating": 5,
           "cfDesign": 0,
-          "cfCustom": 0,
+          "cfCustom": 1,
           "dpCost": 50,
           "costNuyen": 2500,
-          "weightKg": 0,
-          "availability": "3/48 hrs",
-          "streetIndex": "1"
+          "loadReductionKg": 29,
+          "availability": "6/48 hrs",
+          "streetIndex": 1.5
         },
         {
           "rating": 6,
           "cfDesign": 0,
-          "cfCustom": 0,
+          "cfCustom": 1,
           "dpCost": 60,
           "costNuyen": 3000,
-          "weightKg": 0,
-          "availability": "3/48 hrs",
-          "streetIndex": "1"
+          "loadReductionKg": 30,
+          "availability": "6/48 hrs",
+          "streetIndex": 1.5
         },
         {
           "rating": 7,
           "cfDesign": 0,
-          "cfCustom": 0,
+          "cfCustom": 1,
           "dpCost": 70,
           "costNuyen": 3500,
-          "weightKg": 0,
-          "availability": "3/48 hrs",
-          "streetIndex": "1"
+          "loadReductionKg": 31,
+          "availability": "6/48 hrs",
+          "streetIndex": 1.5
         },
         {
           "rating": 8,
           "cfDesign": 0,
-          "cfCustom": 0,
+          "cfCustom": 1,
           "dpCost": 80,
           "costNuyen": 4000,
-          "weightKg": 0,
-          "availability": "3/48 hrs",
-          "streetIndex": "1"
+          "loadReductionKg": 32,
+          "availability": "6/48 hrs",
+          "streetIndex": 1.5
         },
         {
           "rating": 9,
           "cfDesign": 0,
-          "cfCustom": 0,
+          "cfCustom": 1,
           "dpCost": 90,
           "costNuyen": 4500,
-          "weightKg": 0,
-          "availability": "3/48 hrs",
-          "streetIndex": "1"
+          "loadReductionKg": 33,
+          "availability": "6/48 hrs",
+          "streetIndex": 1.5
         },
         {
           "rating": 10,
           "cfDesign": 0,
-          "cfCustom": 0,
+          "cfCustom": 1,
           "dpCost": 100,
           "costNuyen": 5000,
-          "weightKg": 0,
-          "availability": "3/48 hrs",
-          "streetIndex": "1"
+          "loadReductionKg": 34,
+          "availability": "6/48 hrs",
+          "streetIndex": 1.5
         },
         {
           "rating": 11,
           "cfDesign": 0,
-          "cfCustom": 0,
+          "cfCustom": 1,
           "dpCost": 110,
           "costNuyen": 5500,
-          "weightKg": 0,
-          "availability": "3/48 hrs",
-          "streetIndex": "1"
+          "loadReductionKg": 35,
+          "availability": "6/48 hrs",
+          "streetIndex": 1.5
         },
         {
           "rating": 12,
           "cfDesign": 0,
-          "cfCustom": 0,
+          "cfCustom": 1,
           "dpCost": 120,
           "costNuyen": 6000,
-          "weightKg": 0,
-          "availability": "3/48 hrs",
-          "streetIndex": "1"
+          "loadReductionKg": 36,
+          "availability": "6/48 hrs",
+          "streetIndex": 1.5
         }
       ]
     },
