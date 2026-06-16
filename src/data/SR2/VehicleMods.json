@@ -3759,6 +3759,35 @@
       "restrictions": null,
       "notes": "Cost is per tire",
       "bookPage": "r2.146"
+    },
+    {
+      "id": "aircraft-drop-tank",
+      "name": "Aircraft Drop Tanks",
+      "category": "accessories",
+      "description": "Installed in pairs in lieu of external missile/rocket mounts (2 mounts per pair). Each tank holds 1,000L fuel; pair adds 2,000L. Each pair: Signature -1, Speed -15 per additional pair, Handling +1 per two pairs. Install time 10 min. Pilot may jettison (Complex Action) to instantly restore standard flight characteristics. Body 1, 3 Armor Points.",
+      "designOnly": false,
+      "rated": false,
+      "cfDesign": null,
+      "cfCustom": null,
+      "loadReductionKgDesign": null,
+      "loadReductionKgCustom": null,
+      "dpCost": null,
+      "costNuyen": "8,000¥ per pair",
+      "availability": null,
+      "streetIndex": null,
+      "equipment": null,
+      "baseTimeHours": null,
+      "skill": null,
+      "skillTN": null,
+      "maxRating": null,
+      "statMods": {
+        "signature": "-1 per pair",
+        "speed": "-15 per additional pair",
+        "handling": "+1 per two pairs (penalty)"
+      },
+      "restrictions": "Aircraft only; installed in pairs; requires 2 external mounts per pair",
+      "notes": null,
+      "bookPage": "r2.140"
     }
   ]
 }
