@@ -644,33 +644,6 @@
       "bookPage": "r2.125"
     },
     {
-      "id": "remote-control-interface",
-      "name": "Remote-Control Interface",
-      "category": "control",
-      "description": "Allows rigger to control vehicle via RC network. Provides base Pilot 1. Requires Sensor 1+.",
-      "designOnly": false,
-      "rated": false,
-      "cfDesign": 0,
-      "cfCustom": 0,
-      "loadReductionKgDesign": 0,
-      "loadReductionKgCustom": 0,
-      "dpCost": "25 Ã— Body",
-      "costNuyen": "2,500Â¥ Ã— Body",
-      "availability": "4/72 days",
-      "streetIndex": "2",
-      "equipment": "Vehicle facility",
-      "baseTimeHours": 16,
-      "skill": "Appropriate Vehicle B/R (TN 4), Electronics B/R (TN 4)",
-      "skillTN": 4,
-      "maxRating": null,
-      "statMods": {
-        "pilot": "1 (base)"
-      },
-      "restrictions": "Requires Sensor 1+",
-      "notes": null,
-      "bookPage": "r2.126"
-    },
-    {
       "id": "rigger-adaptation",
       "name": "Rigger Adaptation",
       "category": "control",
