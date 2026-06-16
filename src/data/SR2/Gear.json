@@ -22584,6 +22584,96 @@
         "Availability": "2/24hrs",
         "Cost": "25",
         "Street Index": "1"
+      },
+      {
+        "Name": "TAPS Sharpshooter Autosoft R1",
+        "Rating": "1",
+        "Cost": "250000",
+        "Availability": "8/14 days",
+        "Street Index": "3",
+        "BookPage": "r2.99",
+        "Notes": "Adds Rating to drone Pilot for Gunnery Tests. Cannot be used while rigger directly controls drone."
+      },
+      {
+        "Name": "IPA ClearSight Autosoft R1",
+        "Rating": "1",
+        "Cost": "250000",
+        "Availability": "8/14 days",
+        "Street Index": "3",
+        "BookPage": "r2.99",
+        "Notes": "Adds Rating to drone Pilot for Perception Tests. Can combine with rigger Intelligence (Rating cannot exceed Intelligence). Not usable for combat tests."
+      },
+      {
+        "Name": "TAPS Sharpshooter Autosoft R2",
+        "Rating": "2",
+        "Cost": "500000",
+        "Availability": "8/14 days",
+        "Street Index": "3",
+        "BookPage": "r2.99",
+        "Notes": "Adds Rating to drone Pilot for Gunnery Tests. Cannot be used while rigger directly controls drone."
+      },
+      {
+        "Name": "IPA ClearSight Autosoft R2",
+        "Rating": "2",
+        "Cost": "500000",
+        "Availability": "8/14 days",
+        "Street Index": "3",
+        "BookPage": "r2.99",
+        "Notes": "Adds Rating to drone Pilot for Perception Tests. Can combine with rigger Intelligence (Rating cannot exceed Intelligence). Not usable for combat tests."
+      },
+      {
+        "Name": "TAPS Sharpshooter Autosoft R3",
+        "Rating": "3",
+        "Cost": "750000",
+        "Availability": "8/14 days",
+        "Street Index": "3",
+        "BookPage": "r2.99",
+        "Notes": "Adds Rating to drone Pilot for Gunnery Tests. Cannot be used while rigger directly controls drone."
+      },
+      {
+        "Name": "IPA ClearSight Autosoft R3",
+        "Rating": "3",
+        "Cost": "750000",
+        "Availability": "8/14 days",
+        "Street Index": "3",
+        "BookPage": "r2.99",
+        "Notes": "Adds Rating to drone Pilot for Perception Tests. Can combine with rigger Intelligence (Rating cannot exceed Intelligence). Not usable for combat tests."
+      },
+      {
+        "Name": "TAPS Sharpshooter Autosoft R4",
+        "Rating": "4",
+        "Cost": "GM's discretion",
+        "Availability": "GM's discretion",
+        "Street Index": "GM",
+        "BookPage": "r2.99",
+        "Notes": "Adds Rating to drone Pilot for Gunnery Tests. Cannot be used while rigger directly controls drone."
+      },
+      {
+        "Name": "IPA ClearSight Autosoft R4",
+        "Rating": "4",
+        "Cost": "GM's discretion",
+        "Availability": "GM's discretion",
+        "Street Index": "GM",
+        "BookPage": "r2.99",
+        "Notes": "Adds Rating to drone Pilot for Perception Tests. Can combine with rigger Intelligence (Rating cannot exceed Intelligence). Not usable for combat tests."
+      },
+      {
+        "Name": "TAPS Sharpshooter Autosoft R5",
+        "Rating": "5",
+        "Cost": "GM's discretion",
+        "Availability": "GM's discretion",
+        "Street Index": "GM",
+        "BookPage": "r2.99",
+        "Notes": "Adds Rating to drone Pilot for Gunnery Tests. Cannot be used while rigger directly controls drone."
+      },
+      {
+        "Name": "IPA ClearSight Autosoft R5",
+        "Rating": "5",
+        "Cost": "GM's discretion",
+        "Availability": "GM's discretion",
+        "Street Index": "GM",
+        "BookPage": "r2.99",
+        "Notes": "Adds Rating to drone Pilot for Perception Tests. Can combine with rigger Intelligence (Rating cannot exceed Intelligence). Not usable for combat tests."
       }
     ]
   },
