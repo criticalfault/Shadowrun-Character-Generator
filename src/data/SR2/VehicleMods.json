@@ -180,7 +180,7 @@
       "id": "suncell-power",
       "name": "SunCell Power",
       "category": "engine",
-      "description": "Solar cells produce (Body Ã— 25) PF/hr under clear skies; half in cloud; zero at night. Electric engines only. Not for motorcycles.",
+      "description": "Solar cells produce (Body × 25) PF/hr under clear skies; half in cloud; zero at night. Electric engines only. Not for motorcycles.",
       "designOnly": false,
       "rated": false,
       "cfDesign": 0,
