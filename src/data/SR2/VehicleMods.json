@@ -260,7 +260,7 @@
       "id": "advanced-drone-pilot",
       "name": "Advanced Drone Pilot",
       "category": "control",
-      "description": "Increases vehicle Pilot rating above the default 1. Rating 3 â‰ˆ average metahuman; Rating 5 = 1,000+ hours flight equivalent.",
+      "description": "Increases vehicle Pilot rating above the default 1. Rating 3 ≈ average metahuman; Rating 5 = 1,000+ hours flight equivalent.",
       "designOnly": false,
       "rated": true,
       "cfDesign": 0,
@@ -268,13 +268,13 @@
       "loadReductionKgDesign": 0,
       "loadReductionKgCustom": 0,
       "dpCost": "P1: 0; P2: 50; P3: 250; P4: 1,250; P5: 5,000",
-      "costNuyen": "P1: 0; P2: 5,000Â¥; P3: 25,000Â¥; P4: 500,000Â¥; P5: 2,500,000Â¥",
-      "availability": "P2â€“3: 6/14 days; P4: 10/35 days; P5: 14/70 days",
-      "streetIndex": "P2â€“3: 2; P4: 4; P5: â€”",
+      "costNuyen": "P1: 0; P2: 5,000¥; P3: 25,000¥; P4: 500,000¥; P5: 2,500,000¥",
+      "availability": "P2-3: 6/14 days; P4: 10/35 days; P5: 14/70 days",
+      "streetIndex": "P2-3: 2; P4: 4; P5: Not available",
       "equipment": "Vehicle facility",
       "baseTimeHours": 64,
       "skill": "Computer B/R",
-      "skillTN": "8 âˆ’ Handling rating (on-road)",
+      "skillTN": "8 - Handling rating (on-road)",
       "maxRating": 5,
       "statMods": {
         "pilot": "set to rating"
@@ -289,49 +289,44 @@
           "cfCustom": 0,
           "dpCost": 0,
           "costNuyen": 0,
-          "weightKg": 0,
-          "availability": "â€”",
-          "streetIndex": "â€”"
+          "availability": "default",
+          "streetIndex": "default"
         },
         {
           "rating": 2,
-          "cfDesign": 1,
-          "cfCustom": 2,
+          "cfDesign": 0,
+          "cfCustom": 0,
           "dpCost": 50,
           "costNuyen": 5000,
-          "weightKg": 0,
-          "availability": "4/48 hrs",
-          "streetIndex": "1.5"
+          "availability": "6/14 days",
+          "streetIndex": 2
         },
         {
           "rating": 3,
-          "cfDesign": 3,
-          "cfCustom": 5,
+          "cfDesign": 0,
+          "cfCustom": 0,
           "dpCost": 250,
           "costNuyen": 25000,
-          "weightKg": 0,
-          "availability": "6/1 week",
-          "streetIndex": "2.5"
+          "availability": "6/14 days",
+          "streetIndex": 2
         },
         {
           "rating": 4,
-          "cfDesign": 5,
-          "cfCustom": 10,
+          "cfDesign": 0,
+          "cfCustom": 0,
           "dpCost": 1250,
           "costNuyen": 500000,
-          "weightKg": 0,
-          "availability": "10/1 month",
-          "streetIndex": "4"
+          "availability": "10/35 days",
+          "streetIndex": 4
         },
         {
           "rating": 5,
-          "cfDesign": 10,
-          "cfCustom": 20,
+          "cfDesign": 0,
+          "cfCustom": 0,
           "dpCost": 5000,
           "costNuyen": 2500000,
-          "weightKg": 0,
-          "availability": "14/6 months",
-          "streetIndex": "â€”"
+          "availability": "14/70 days",
+          "streetIndex": "Not available"
         }
       ]
     },
