@@ -54,24 +54,23 @@
       "cfCustom": 0,
       "loadReductionKgDesign": null,
       "loadReductionKgCustom": null,
-      "dpCost": "Power plant DP Ã— 1.25 (1st level); increase multiplier by 0.25 each additional level",
-      "costNuyen": "Power plant cost Ã— 1.25 (1st level); increase multiplier by 0.15 each additional level",
+      "dpCost": "Power plant DP × 1.25 (1st level); increase multiplier by 0.5 each additional level",
+      "costNuyen": "Power plant cost × 1.25 (1st level); increase multiplier by 0.15 each additional level",
       "availability": "8/14 days",
       "streetIndex": "2",
       "equipment": "Vehicle facility",
       "baseTimeHours": "40 per level",
       "skill": "Appropriate Vehicle B/R",
       "skillTN": "Ground/Water: levels+3; Drones/Hovercraft: levels+4; Aircraft: levels+5",
-      "maxRating": "Speed/Accel/Load Ã— 1.5 (custom); Ã— 1.75 (design); one full level per category",
+      "maxRating": "Speed/Accel/Load × 1.5 (custom); × 1.75 (design); one full level per category",
       "statMods": {
         "speed": "+30/level",
         "accel": "+2/level",
-        "load": "+(BodyÃ—50 kg)/level"
+        "load": "+(Body×50 kg)/level"
       },
       "restrictions": "Each stat category raised separately",
       "notes": null,
-      "bookPage": "r2.120",
-      "vehicleCostFactor": 0.05
+      "bookPage": "r2.120"
     },
     {
       "id": "gridlink-power",
