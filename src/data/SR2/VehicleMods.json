@@ -347,13 +347,13 @@
       "loadReductionKgDesign": 0,
       "loadReductionKgCustom": 0,
       "dpCost": "R1: 5; R2: 10; R3: 50; R4: 150",
-      "costNuyen": "R1: 500Â¥; R2: 1,000Â¥; R3: 5,000Â¥; R4: 15,000Â¥",
+      "costNuyen": "R1: 500¥; R2: 1,000¥; R3: 5,000¥; R4: 15,000¥",
       "availability": "R1: 2/96 hrs; R2: 3/6 days; R3: 4/8 days; R4: 6/14 days",
       "streetIndex": "R1: 1; R2: 1; R3: 1.5; R4: 2",
       "equipment": "Vehicle facility",
-      "baseTimeHours": "R1: 16; R2: 32; R3: 40; R4: 48",
+      "baseTimeHours": "R1: 16; R2: 32; R3: 96 (4 days); R4: 48",
       "skill": "Appropriate Vehicle B/R",
-      "skillTN": "8 âˆ’ Handling rating (on-road)",
+      "skillTN": "8 - Handling rating (use on-road Handling for ground vehicles)",
       "maxRating": 4,
       "statMods": {
         "autonav": "set to rating"
@@ -365,42 +365,42 @@
         {
           "rating": 1,
           "cfDesign": 0,
-          "cfCustom": 1,
+          "cfCustom": 0,
           "dpCost": 5,
           "costNuyen": 500,
-          "weightKg": 0,
-          "availability": "2/24 hrs",
-          "streetIndex": "1"
+          "availability": "2/96 hrs",
+          "streetIndex": 1,
+          "baseTimeHours": 16
         },
         {
           "rating": 2,
           "cfDesign": 0,
-          "cfCustom": 1,
+          "cfCustom": 0,
           "dpCost": 10,
           "costNuyen": 1000,
-          "weightKg": 0,
-          "availability": "3/24 hrs",
-          "streetIndex": "1.5"
+          "availability": "3/6 days",
+          "streetIndex": 1,
+          "baseTimeHours": 32
         },
         {
           "rating": 3,
-          "cfDesign": 1,
-          "cfCustom": 2,
+          "cfDesign": 0,
+          "cfCustom": 0,
           "dpCost": 50,
           "costNuyen": 5000,
-          "weightKg": 0,
-          "availability": "5/48 hrs",
-          "streetIndex": "2"
+          "availability": "4/8 days",
+          "streetIndex": 1.5,
+          "baseTimeHours": 96
         },
         {
           "rating": 4,
-          "cfDesign": 2,
-          "cfCustom": 3,
+          "cfDesign": 0,
+          "cfCustom": 0,
           "dpCost": 150,
           "costNuyen": 15000,
-          "weightKg": 0,
-          "availability": "8/1 week",
-          "streetIndex": "3"
+          "availability": "6/14 days",
+          "streetIndex": 2,
+          "baseTimeHours": 48
         }
       ]
     },
