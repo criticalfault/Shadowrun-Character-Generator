@@ -2085,7 +2085,7 @@
           "costNuyen": 75000,
           "weightKg": 25,
           "availability": "10/30 days",
-          "streetIndex": "â€”"
+          "streetIndex": "Not available"
         },
         {
           "rating": 6,
@@ -2095,7 +2095,7 @@
           "costNuyen": 100000,
           "weightKg": 50,
           "availability": "12/45 days",
-          "streetIndex": "â€”"
+          "streetIndex": "Not available"
         },
         {
           "rating": 7,
@@ -2105,7 +2105,7 @@
           "costNuyen": 200000,
           "weightKg": 75,
           "availability": "14/60 days",
-          "streetIndex": "â€”"
+          "streetIndex": "Not available"
         },
         {
           "rating": 8,
@@ -2115,7 +2115,7 @@
           "costNuyen": 300000,
           "weightKg": 100,
           "availability": "16/3 months",
-          "streetIndex": "â€”"
+          "streetIndex": "Not available"
         },
         {
           "rating": 9,
@@ -2125,7 +2125,7 @@
           "costNuyen": 500000,
           "weightKg": 150,
           "availability": "18/6 months",
-          "streetIndex": "â€”"
+          "streetIndex": "Not available"
         },
         {
           "rating": 10,
@@ -2135,7 +2135,7 @@
           "costNuyen": 1000000,
           "weightKg": 250,
           "availability": "20/1 year",
-          "streetIndex": "â€”"
+          "streetIndex": "Not available"
         }
       ],
       "equipment": "Vehicle facility",
@@ -2146,9 +2146,9 @@
         "ecm": "set to rating"
       },
       "restrictions": "Ratings 5+ military-grade",
-      "notes": "See ECM Systems Table: Standard (R1): CF 0/1, 25,000Â¥, 12kg, 5/7 days | Enhanced (R2): CF 1/2, 75,000Â¥, 25kg, 6/10 days | Advanced (R3): CF 2/3, 125,000Â¥, 35kg, 7/14 days | Premium (R4): CF 3/6, 250,000Â¥, 50kg, 8/21 days | Security I (R5): CF 2/3, 375,000Â¥, 35kg, 10/30 days | Security II (R6): CF 4/8, 750,000Â¥, 75kg, 12/45 days | Security III (R7): CF 6/9, 1.5MÂ¥, 110kg, 14/60 days | Military I (R8): CF 10/12, 7.5MÂ¥, 150kg, 16/3 months | Military II (R9): CF 12/16, 15MÂ¥, 200kg, 18/6 months | Military III (R10): CF 16/20, 30MÂ¥, 250kg, 20/1 year",
+      "notes": "See ECM Systems Table: Standard (R1): CF 0/1, 25,000¥, 12kg, 5/7 days | Enhanced (R2): CF 1/2, 75,000¥, 25kg, 6/10 days | Advanced (R3): CF 2/3, 125,000¥, 35kg, 7/14 days | Premium (R4): CF 3/6, 250,000¥, 50kg, 8/21 days | Security I (R5): CF 2/3, 375,000¥, 35kg, 10/30 days | Security II (R6): CF 4/8, 750,000¥, 75kg, 12/45 days | Security III (R7): CF 6/9, 1.5M¥, 110kg, 14/60 days | Military I (R8): CF 10/12, 7.5M¥, 150kg, 16/3 months | Military II (R9): CF 12/16, 15M¥, 200kg, 18/6 months | Military III (R10): CF 16/20, 30M¥, 250kg, 20/1 year",
       "bookPage": "r2.137",
-      "costNuyen": "See ECM table (r2.147)",
+      "costNuyen": "See ECM table (r2.137)",
       "availability": "See ECM table",
       "streetIndex": "See ECM table"
     },
