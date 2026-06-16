@@ -942,7 +942,7 @@
     },
     {
       "id": "enviroseal",
-      "name": "EnviroSealâ„¢ System",
+      "name": "EnviroSeal™ System",
       "category": "protective",
       "description": "Gas-tight or watertight seals. Opening doors/hatches breaks seal. Optional cabin over-pressurization maintains seal even when doors open (doesn't work underwater or at Moderate+ damage).",
       "designOnly": false,
@@ -951,8 +951,8 @@
       "cfCustom": "1 (2 with cabin over-pressurization)",
       "loadReductionKgDesign": "0 (10 with cabin over-pressurization)",
       "loadReductionKgCustom": "0 (15 with cabin over-pressurization)",
-      "dpCost": "Gas Seal: BodyÃ—3; Water Seal: BodyÃ—10; Engine Seal: BodyÃ—15; Cabin Over-pres: BodyÃ—75",
-      "costNuyen": "Gas Seal: BodyÃ—250Â¥; Water Seal: BodyÃ—750Â¥; Engine Seal: BodyÃ—1,000Â¥; Cabin Over-pres: BodyÃ—5,000Â¥",
+      "dpCost": "Gas Seal: Body×3; Water Seal: Body×10; Engine Seal: Body×15; Cabin Over-pres: Body×75",
+      "costNuyen": "Gas Seal: Body×250¥; Water Seal: Body×750¥; Engine Seal: Body×1,000¥; Cabin Over-pres: Body×5,000¥",
       "availability": "8/14 days",
       "streetIndex": "2.5",
       "equipment": "Vehicle facility",
@@ -962,7 +962,7 @@
       "maxRating": null,
       "statMods": {},
       "restrictions": "Not for motorcycles or vehicles with open entry points",
-      "notes": "Light damage breaches seal (5Â¥ slap-patches). Moderate+ requires vehicle work to re-seal.",
+      "notes": "Light damage breaches seal (5¥ slap-patches). Moderate+ requires vehicle work to re-seal.",
       "bookPage": "r2.135"
     },
     {
