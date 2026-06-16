@@ -5376,6 +5376,20 @@
         "Street Index": "1.5",
         "Accessories": "None",
         "BookPage": "ssc.44"
+      },
+      {
+        "Name": "H&K G12A3z",
+        "Concealability": "2",
+        "Ammunition": "32(c)",
+        "Mode": "SA/BF/FA",
+        "Damage": "8M",
+        "Weight": "5.25",
+        "Availability": "",
+        "Cost": "2200",
+        "Street Index": "",
+        "Accessories": "Integral laser sight, Gas-Vent 2 recoil reduction, telescoping stock",
+        "BookPage": "ssc.51",
+        "Notes": "Can mount under-barrel grenade launcher at minimal concealability loss."
       }
     ]
   },
