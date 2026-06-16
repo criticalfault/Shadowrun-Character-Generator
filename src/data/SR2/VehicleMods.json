@@ -2478,6 +2478,145 @@
       ]
     },
     {
+      "id": "sensors",
+      "name": "Sensors",
+      "category": "electronics",
+      "description": "Audio/video, thermal, radar, and ultrasound sensors plus ID/recognition/tracking software. Security I+ restricted to security/military.",
+      "designOnly": false,
+      "rated": true,
+      "cfDesign": "See Sensor table",
+      "cfCustom": "See Sensor table",
+      "loadReductionKgDesign": null,
+      "loadReductionKgCustom": null,
+      "dpCost": "See Sensor table",
+      "costNuyen": "See Sensor table (r2.140)",
+      "availability": "See Sensor table",
+      "streetIndex": "See Sensor table",
+      "equipment": "Vehicle facility",
+      "baseTimeHours": "16 per level",
+      "skill": "Electronics B/R",
+      "skillTN": 4,
+      "maxRating": 10,
+      "statMods": {
+        "sensor": "set to rating"
+      },
+      "restrictions": "Security I+ restricted",
+      "notes": null,
+      "bookPage": "r2.140",
+      "ratings": [
+        {
+          "rating": 1,
+          "label": "Standard",
+          "cfDesign": 0,
+          "cfCustom": 1,
+          "dpCost": 50,
+          "costNuyen": 5000,
+          "weightKg": 12,
+          "availability": "4/7 days",
+          "streetIndex": 2
+        },
+        {
+          "rating": 2,
+          "label": "Enhanced",
+          "cfDesign": 1,
+          "cfCustom": 2,
+          "dpCost": 150,
+          "costNuyen": 15000,
+          "weightKg": 25,
+          "availability": "4/10 days",
+          "streetIndex": 2.5
+        },
+        {
+          "rating": 3,
+          "label": "Advanced",
+          "cfDesign": 2,
+          "cfCustom": 3,
+          "dpCost": 250,
+          "costNuyen": 25000,
+          "weightKg": 35,
+          "availability": "5/14 days",
+          "streetIndex": 3
+        },
+        {
+          "rating": 4,
+          "label": "Premium",
+          "cfDesign": 3,
+          "cfCustom": 6,
+          "dpCost": 500,
+          "costNuyen": 50000,
+          "weightKg": 50,
+          "availability": "6/21 days",
+          "streetIndex": 3.5
+        },
+        {
+          "rating": 5,
+          "label": "Security I",
+          "cfDesign": 2,
+          "cfCustom": 3,
+          "dpCost": 250,
+          "costNuyen": 75000,
+          "weightKg": 35,
+          "availability": "8/30 days",
+          "streetIndex": "Not available"
+        },
+        {
+          "rating": 6,
+          "label": "Security II",
+          "cfDesign": 4,
+          "cfCustom": 8,
+          "dpCost": 300,
+          "costNuyen": 125000,
+          "weightKg": 75,
+          "availability": "10/45 days",
+          "streetIndex": "Not available"
+        },
+        {
+          "rating": 7,
+          "label": "Security III",
+          "cfDesign": 6,
+          "cfCustom": 9,
+          "dpCost": 1000,
+          "costNuyen": 375000,
+          "weightKg": 110,
+          "availability": "12/60 days",
+          "streetIndex": "Not available"
+        },
+        {
+          "rating": 8,
+          "label": "Military I",
+          "cfDesign": 10,
+          "cfCustom": 12,
+          "dpCost": 1500,
+          "costNuyen": 1250000,
+          "weightKg": 150,
+          "availability": "14/3 months",
+          "streetIndex": "Not available"
+        },
+        {
+          "rating": 9,
+          "label": "Military II",
+          "cfDesign": 12,
+          "cfCustom": 16,
+          "dpCost": 2500,
+          "costNuyen": 3000000,
+          "weightKg": 200,
+          "availability": "16/6 months",
+          "streetIndex": "Not available"
+        },
+        {
+          "rating": 10,
+          "label": "Military III",
+          "cfDesign": 16,
+          "cfCustom": 20,
+          "dpCost": 5000,
+          "costNuyen": 6000000,
+          "weightKg": 250,
+          "availability": "18/1 year",
+          "streetIndex": "Not available"
+        }
+      ]
+    },
+    {
       "id": "electronics-port",
       "name": "Electronics Port",
       "category": "electronics",
