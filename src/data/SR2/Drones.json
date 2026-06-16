@@ -464,5 +464,57 @@
     "$Cost": "186000",
     "Notes": "VTOL (lg. rotary-wing UAV). Setup: 5 min. Fuel: Jet (60L), 0.25km/L (Idle: 5min/L). External fixed hardpoint with MMG (Gas-Vent 3 Recoil Comp. + 500 rounds), remote control interface, rigger adaptation.",
     "Book.Page": "ls.???"
+  },
+  {
+    "name": "Saab-Thyssen Bloodhound",
+    "Handling": "3/3",
+    "Speed/Accel": "90/6",
+    "Body/Armor": "1/0",
+    "Sig/Autonav": "5/-",
+    "Pilot/Sensor": "2/4",
+    "Cargo/Load": "1/10",
+    "Seating": "None",
+    "$Cost": 10000,
+    "Notes": "Amphibious Operation (2), chemical/biological/radiation sensors, liquid sprayer (10-liter tank); Template: Med. wheeled drone",
+    "Book.Page": "r2.???"
+  },
+  {
+    "name": "Shiawase Kanmushi Mechanical Crawler",
+    "Handling": "3/3",
+    "Speed/Accel": "2/NA",
+    "Body/Armor": "0/0",
+    "Sig/Autonav": "16/-",
+    "Pilot/Sensor": "1/1",
+    "Cargo/Load": "0/0",
+    "Seating": "None",
+    "$Cost": 30000,
+    "Notes": "Remote control interface, rigger adaptation, smart materials; Template: Micro-walker",
+    "Book.Page": "r2.???"
+  },
+  {
+    "name": "Steel Lynx Ground Combat Drone",
+    "Handling": "4/6",
+    "Speed/Accel": "80/6",
+    "Body/Armor": "2/2",
+    "Sig/Autonav": "6/-",
+    "Pilot/Sensor": "2/1",
+    "Cargo/Load": "3/200",
+    "Seating": "None",
+    "$Cost": 39700,
+    "Notes": "Mini-turret (weapon not included), remote control interface, rigger adaptation; Template: Lg. wheeled drone",
+    "Book.Page": "ff.???"
+  },
+  {
+    "name": "Toyota MK-Guyver Search and Rescue Robot",
+    "Handling": "4/4",
+    "Speed/Accel": "20/NA",
+    "Body/Armor": "2/3",
+    "Sig/Autonav": "4/3",
+    "Pilot/Sensor": "3/1",
+    "Cargo/Load": "5/1,000",
+    "Seating": "None",
+    "$Cost": 29000,
+    "Notes": "Learning Pool 2 (for Search & Rescue), 2 mechanical arms; Template: Large walker",
+    "Book.Page": "r2.???"
   }
 ]
