@@ -1500,7 +1500,7 @@
       "id": "ring-mount",
       "name": "Ring Mount",
       "category": "weapon-mount",
-      "description": "Freely rotating ring on top of vehicle. Full 360Â° rotation, Â±30Â° vertical. Hardtop only (convertibles need roll bars). Counts as 1 hardpoint. 6 points recoil compensation. Cannot be remotely controlled.",
+      "description": "Freely rotating ring on top of vehicle. Full 360° rotation, ±30° vertical. Hardtop only (convertibles need roll bars). Counts as 1 hardpoint. 6 points recoil compensation. Cannot be remotely controlled.",
       "designOnly": false,
       "rated": false,
       "cfDesign": "1 (+ 16 CF People Space for door gun)",
