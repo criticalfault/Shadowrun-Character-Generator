@@ -11,29 +11,48 @@ const pipPositions = {
   6: [[25, 22], [75, 22], [25, 50], [75, 50], [25, 78], [75, 78]],
 };
 
-function DieFace({ value, success, allOne, size = 44 }) {
-  const pips = pipPositions[value] ?? [];
-  const borderColor = success ? '#2e7d32' : allOne ? '#c62828' : '#555';
-  const bg = success ? '#e8f5e9' : allOne ? '#ffebee' : '#1e1e1e';
-  const pipFill = success ? '#2e7d32' : allOne ? '#c62828' : '#fff';
+// A single die face. Shows pip dots for 1-6; shows accumulated number for > 6.
+function DieFace({ initial, total, tn, allOne, size = 44 }) {
+  const success = total >= tn;
+  const isAllOne = allOne && initial === 1;
+  const wasRerolled = total > initial;
+
+  const borderColor = success ? '#2e7d32' : isAllOne ? '#c62828' : '#555';
+  const bg = success ? '#e8f5e9' : isAllOne ? '#ffebee' : '#1e1e1e';
+  const pipFill = success ? '#2e7d32' : isAllOne ? '#c62828' : '#fff';
+  const fontSize = size * 0.28;
 
   return (
-    <svg width={size} height={size} viewBox="0 0 100 100" style={{ margin: '2px' }}>
-      <rect x="4" y="4" width="92" height="92" rx="16" ry="16"
-        fill={bg} stroke={borderColor} strokeWidth="6" />
-      {pips.map(([cx, cy], i) => (
-        <circle key={i} cx={cx} cy={cy} r="10" fill={pipFill} />
-      ))}
-    </svg>
-  );
-}
-
-function DiceRow({ values, tn, allOne, size }) {
-  return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-      {values.map((v, i) => (
-        <DieFace key={i} value={v} success={v >= tn} allOne={allOne} size={size} />
-      ))}
+    <Box sx={{ position: 'relative', display: 'inline-block', m: '2px' }}>
+      <svg width={size} height={size} viewBox="0 0 100 100">
+        <rect x="4" y="4" width="92" height="92" rx="16" ry="16"
+          fill={bg} stroke={borderColor} strokeWidth="6" />
+        {total <= 6
+          ? (pipPositions[total] ?? []).map(([cx, cy], i) => (
+              <circle key={i} cx={cx} cy={cy} r="10" fill={pipFill} />
+            ))
+          : (
+              <text x="50" y="62" textAnchor="middle"
+                fontSize="38" fontWeight="bold"
+                fill={success ? '#2e7d32' : '#fff'}>
+                {total}
+              </text>
+            )
+        }
+      </svg>
+      {/* Small badge on rerolled dice to show the initial 6 */}
+      {wasRerolled && (
+        <Box sx={{
+          position: 'absolute', top: -4, right: -4,
+          background: '#ffa726', color: '#000',
+          borderRadius: '50%', width: 16, height: 16,
+          fontSize: 10, fontWeight: 700,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          lineHeight: 1,
+        }}>
+          6
+        </Box>
+      )}
     </Box>
   );
 }
@@ -41,13 +60,13 @@ function DiceRow({ values, tn, allOne, size }) {
 export default function DiceResultOverlay({ result, rolling, onClose }) {
   useEffect(() => {
     if (!result) return;
-    const t = setTimeout(onClose, 12000);
+    const t = setTimeout(onClose, 15000);
     return () => clearTimeout(t);
   }, [result, onClose]);
 
   if (!result && !rolling) return null;
 
-  const hasRerolls = result?.rerollGroups?.length > 0;
+  const hasRule6 = result?.dice?.some((d) => d.total > d.initial);
 
   return (
     <Box
@@ -63,7 +82,7 @@ export default function DiceResultOverlay({ result, rolling, onClose }) {
         borderRadius: 3,
         p: 2,
         minWidth: 280,
-        maxWidth: 480,
+        maxWidth: 520,
         boxShadow: '0 8px 32px rgba(0,0,0,0.6)',
         cursor: 'pointer',
       }}
@@ -86,21 +105,28 @@ export default function DiceResultOverlay({ result, rolling, onClose }) {
             </IconButton>
           </Box>
 
-          {/* Initial dice */}
-          <DiceRow values={result.values} tn={result.tn} allOne={result.allOnes} size={44} />
+          {/* Dice faces */}
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', mb: 1.5 }}>
+            {result.dice.map((d, i) => (
+              <DieFace
+                key={i}
+                initial={d.initial}
+                total={d.total}
+                tn={result.tn}
+                allOne={result.allOnes}
+                size={44}
+              />
+            ))}
+          </Box>
 
-          {/* Rule of 6 reroll groups */}
-          {hasRerolls && result.rerollGroups.map((group, gi) => (
-            <Box key={gi} sx={{ mt: 0.5, pl: 1, borderLeft: '2px solid #ffa726' }}>
-              <Typography variant="caption" sx={{ color: '#ffa726', display: 'block', mb: 0.25 }}>
-                Rule of 6 — reroll {gi + 1}
-              </Typography>
-              <DiceRow values={group} tn={result.tn} allOne={false} size={36} />
-            </Box>
-          ))}
+          {hasRule6 && (
+            <Typography variant="caption" sx={{ color: '#ffa726', display: 'block', mb: 1 }}>
+              Orange badge = die was rerolled (Rule of 6). Number shown is accumulated total.
+            </Typography>
+          )}
 
           {/* Summary */}
-          <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', alignItems: 'center', mt: 1.5 }}>
+          <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', alignItems: 'center' }}>
             {result.allOnes ? (
               <Chip label="RULE OF ONES" size="small" sx={{ background: '#c62828', color: '#fff', fontWeight: 700 }} />
             ) : result.successes === 0 ? (
@@ -112,10 +138,8 @@ export default function DiceResultOverlay({ result, rolling, onClose }) {
                 sx={{ background: '#2e7d32', color: '#fff', fontWeight: 700 }}
               />
             )}
-            {hasRerolls && (
-              <Typography variant="caption" sx={{ color: '#ffa726' }}>
-                (incl. Rule of 6)
-              </Typography>
+            {hasRule6 && (
+              <Typography variant="caption" sx={{ color: '#ffa726' }}>(incl. Rule of 6)</Typography>
             )}
             <Typography variant="caption" sx={{ color: '#666', ml: 'auto' }}>
               click to dismiss

@@ -1,42 +1,29 @@
-// SR2/SR3 dice resolution helpers.
-// Roll a pool of d6s against a target number; count dice >= TN as successes.
-// Rule of 6: any die showing 6 is rerolled and extra successes added (recursively).
+// SR2/SR3 dice resolution.
+// Rule of 6: a die showing 6 is rerolled and the new value added to its total.
+// Keeps going as long as 6s appear. Each original die still counts as 1 success
+// if its accumulated total >= TN.
 
-function applyRule6(values, tn) {
-  let successes = 0;
-  let rerollGroups = []; // each entry is an array of reroll values at that depth
-
-  const process = (vals) => {
-    const sixes = [];
-    for (const v of vals) {
-      if (v >= tn) successes++;
-      if (v === 6) sixes.push(v);
-    }
-    if (sixes.length > 0) {
-      const rerolled = sixes.map(() => Math.ceil(Math.random() * 6));
-      rerollGroups.push(rerolled);
-      process(rerolled);
-    }
-  };
-
-  process(values);
-  return { successes, rerollGroups };
+function rollOneDieWithRule6() {
+  let total = 0;
+  let initial = null;
+  let v;
+  do {
+    v = Math.ceil(Math.random() * 6);
+    if (initial === null) initial = v;
+    total += v;
+  } while (v === 6);
+  return { initial, total };
 }
 
-export function resolveResults(rollResults, tn) {
-  const dice = rollResults.flatMap((group) =>
-    group.rolls ? group.rolls : [group]
-  );
-  const values = dice.map((d) => d.value);
-  const allOnes = values.length > 0 && values.every((v) => v === 1);
-  const { successes, rerollGroups } = applyRule6(values, tn);
-  return { values, successes, allOnes, rerollGroups, tn };
-}
-
-// Simple local roll (no 3D) — returns same shape
+// Simple (non-3D) roll — returns dice array, each with { initial, total }
 export function rollSimple(pool, tn) {
-  const values = Array.from({ length: pool }, () => Math.ceil(Math.random() * 6));
-  const allOnes = values.length > 0 && values.every((v) => v === 1);
-  const { successes, rerollGroups } = applyRule6(values, tn);
-  return { values, successes, allOnes, rerollGroups, tn };
+  const dice = Array.from({ length: pool }, rollOneDieWithRule6);
+  const successes = dice.filter((d) => d.total >= tn).length;
+  const allOnes = dice.every((d) => d.initial === 1);
+  return { dice, successes, allOnes, tn };
+}
+
+// Helper for the 3D path: extract flat value array from dice-box result objects
+export function extractValues(rollResults) {
+  return rollResults.flatMap((g) => (g.rolls ?? [g])).map((d) => d.value);
 }

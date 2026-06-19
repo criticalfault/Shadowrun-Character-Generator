@@ -4,7 +4,7 @@ import RollDialog from '../components/RollDialog';
 import DiceResultOverlay from '../components/DiceResultOverlay';
 import { getDicePreference, setDicePreference, isMobile } from '../hooks/useDicePreference';
 import { initDiceBox, clearDiceBox } from './diceBoxManager';
-import { resolveResults, rollSimple } from './rollSR';
+import { extractValues, rollSimple } from './rollSR';
 
 const DiceContext = createContext(null);
 
@@ -26,31 +26,27 @@ export function DiceProvider({ children }) {
         const box = await initDiceBox('dice-box-container');
         clearDiceBox();
 
-        const extractValues = (results) =>
-          results.flatMap((g) => g.rolls ?? [g]).map((d) => d.value);
-
-        // Initial roll
+        // Initial roll — build a dice[] array tracking accumulated totals
         const initialResults = await box.roll(`${pool}d6`);
         const initialValues = extractValues(initialResults);
+        const dice = initialValues.map((v) => ({ initial: v, total: v }));
 
-        // Visual Rule of 6: add more dice to the screen for each wave of 6s
-        const rerollGroups = [];
-        let toReroll = initialValues.filter((v) => v === 6);
-        while (toReroll.length > 0) {
-          const rerollResults = await box.add(`${toReroll.length}d6`);
+        // Rule of 6: for dice showing 6, add more physical dice and accumulate
+        let sixIndices = dice.map((_, i) => i).filter((i) => dice[i].total % 6 === 0);
+        while (sixIndices.length > 0) {
+          const rerollResults = await box.add(`${sixIndices.length}d6`);
           const rerollValues = extractValues(rerollResults);
-          rerollGroups.push(rerollValues);
-          toReroll = rerollValues.filter((v) => v === 6);
+          // Add each reroll value to its parent die's running total
+          sixIndices.forEach((dieIdx, i) => {
+            dice[dieIdx].total += rerollValues[i];
+          });
+          // Keep going for any die whose last roll was also a 6
+          sixIndices = sixIndices.filter((_, i) => rerollValues[i] === 6);
         }
 
-        // Count successes across all dice
-        const allValues = [
-          ...initialValues,
-          ...rerollGroups.flat(),
-        ];
-        const successes = allValues.filter((v) => v >= tn).length;
-        const allOnes = initialValues.length > 0 && initialValues.every((v) => v === 1);
-        setResult({ values: initialValues, rerollGroups, successes, allOnes, tn, label, pool });
+        const successes = dice.filter((d) => d.total >= tn).length;
+        const allOnes = dice.every((d) => d.initial === 1);
+        setResult({ dice, successes, allOnes, tn, label, pool });
       } catch {
         const resolved = rollSimple(pool, tn);
         setResult({ ...resolved, label, pool });
