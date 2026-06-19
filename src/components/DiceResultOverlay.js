@@ -15,7 +15,7 @@ function DieFace({ value, success, allOne, size = 44 }) {
   const pips = pipPositions[value] ?? [];
   const borderColor = success ? '#2e7d32' : allOne ? '#c62828' : '#555';
   const bg = success ? '#e8f5e9' : allOne ? '#ffebee' : '#1e1e1e';
-  const pipFill = success ? '#2e7d32' : allOne ? '#c62828' : '#ccc';
+  const pipFill = success ? '#2e7d32' : allOne ? '#c62828' : '#fff';
 
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" style={{ margin: '2px' }}>
