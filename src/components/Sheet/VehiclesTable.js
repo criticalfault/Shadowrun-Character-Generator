@@ -23,7 +23,7 @@ const ModdedValue = ({ base, modified, lowerIsBetter = false }) => {
   );
 };
 
-const VehicleCard = ({ vehicle, index }) => {
+const VehicleCard = ({ vehicle, index, onChange }) => {
   const mods = vehicle.vehicleMods || [];
   const applied = applyVehicleMods(vehicle, mods);
 
@@ -83,7 +83,10 @@ const VehicleCard = ({ vehicle, index }) => {
       )}
 
       {/* Condition Monitor */}
-      <VehicleConditionMonitor />
+      <VehicleConditionMonitor
+        filled={vehicle.conditionDamage ?? 0}
+        onChange={(val) => onChange && onChange(index, val)}
+      />
 
       {/* Blank notes area */}
       <div style={{ padding: '4px 8px 8px 8px', borderTop: '1px solid #ddd' }}>
@@ -95,8 +98,14 @@ const VehicleCard = ({ vehicle, index }) => {
   );
 };
 
-const VehiclesTable = ({ vehicles }) => {
+const VehiclesTable = ({ vehicles, onChangeVehicles }) => {
   if (!vehicles || vehicles.length === 0) return null;
+
+  const handleDamageChange = (index, val) => {
+    if (!onChangeVehicles) return;
+    const updated = vehicles.map((v, i) => i === index ? { ...v, conditionDamage: val } : v);
+    onChangeVehicles(updated);
+  };
 
   return (
     <Grid size={12}>
@@ -104,7 +113,7 @@ const VehiclesTable = ({ vehicles }) => {
         <div style={{ padding: '0 0 4px 0' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(440px, 1fr))', gap: 12, padding: '0 0 4px 0' }}>
             {vehicles.map((vehicle, index) => (
-              <VehicleCard key={vehicle.name + index} vehicle={vehicle} index={index} />
+              <VehicleCard key={vehicle.name + index} vehicle={vehicle} index={index} onChange={handleDamageChange} />
             ))}
           </div>
         </div>

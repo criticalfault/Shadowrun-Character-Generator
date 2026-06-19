@@ -19,10 +19,16 @@ const BOX_LABELS = [
   'Persona\nCrashed',  // 9 — last box
 ];
 
-const PersonaConditionMonitor = ({ iconRating }) => {
-  const [filled, setFilled] = useState(0);
+const PersonaConditionMonitor = ({ iconRating, filled: filledProp, onChange }) => {
+  const [localFilled, setLocalFilled] = useState(0);
+  const isControlled = filledProp !== undefined && onChange !== undefined;
+  const filled = isControlled ? filledProp : localFilled;
 
-  const handleClick = (i) => setFilled(filled === i + 1 ? i : i + 1);
+  const handleClick = (i) => {
+    const next = filled === i + 1 ? i : i + 1;
+    if (isControlled) onChange(next);
+    else setLocalFilled(next);
+  };
 
   return (
     <div style={{ padding: '8px 0 4px 0' }}>

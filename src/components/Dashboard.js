@@ -184,6 +184,8 @@ export default function BasicTabs() {
     otakuPath:"Technoshaman",
     complexForms:[],
     sprites:[],
+    stunDamage: 0,
+    physicalDamage: 0,
     karma: 0,
     karmaPool: 1,
     karmaSpent: 0,
@@ -1018,6 +1020,11 @@ export default function BasicTabs() {
               setCharacter({ ...Character, decks: decks })
             }
             onChangeRCD={(rcd) => setCharacter({ ...Character, rcd })}
+            onChangeConditionMonitor={({ stunDamage, physicalDamage }) =>
+              setCharacter({ ...Character, stunDamage, physicalDamage })
+            }
+            onChangeVehicles={(vehicles) => setCharacter({ ...Character, vehicles })}
+            onChangeDrones={(drones) => setCharacter({ ...Character, drones })}
           />
         </CustomTabPanel>
       </Box>

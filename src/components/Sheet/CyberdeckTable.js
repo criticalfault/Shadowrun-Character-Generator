@@ -67,6 +67,12 @@ const CyberdeckTable = (props) => {
     props.onChangeDeck(editedcyberdecks);
   };
 
+  const handleIconDamage = (index, val) => {
+    const edited = props.Decks.map((d, i) => i === index ? { ...d, iconDamage: val } : d);
+    setSelectedCyberdecks(edited);
+    props.onChangeDeck(edited);
+  };
+
   return (
     <Grid size={12}>
       <SRSection title="Cyberdecks">
@@ -147,7 +153,11 @@ const CyberdeckTable = (props) => {
               </Table>
 
               <Grid size={12}>
-                <PersonaConditionMonitor iconRating={mpcp} />
+                <PersonaConditionMonitor
+                  iconRating={mpcp}
+                  filled={deck.iconDamage ?? 0}
+                  onChange={(val) => handleIconDamage(index, val)}
+                />
               </Grid>
 
               {/* Programs */}

@@ -23,7 +23,7 @@ const ModdedValue = ({ base, modified, lowerIsBetter = false }) => {
   );
 };
 
-const DroneCard = ({ drone }) => {
+const DroneCard = ({ drone, index, onChange }) => {
   const mods = drone.vehicleMods || [];
   const applied = applyVehicleMods(drone, mods);
 
@@ -83,7 +83,10 @@ const DroneCard = ({ drone }) => {
       )}
 
       {/* Condition Monitor */}
-      <VehicleConditionMonitor />
+      <VehicleConditionMonitor
+        filled={drone.conditionDamage ?? 0}
+        onChange={(val) => onChange && onChange(index, val)}
+      />
 
       {/* Blank notes area */}
       <div style={{ padding: '4px 8px 8px 8px', borderTop: '1px solid #ddd' }}>
@@ -95,8 +98,14 @@ const DroneCard = ({ drone }) => {
   );
 };
 
-const DronesTable = ({ drones }) => {
+const DronesTable = ({ drones, onChangeDrones }) => {
   if (!drones || drones.length === 0) return null;
+
+  const handleDamageChange = (index, val) => {
+    if (!onChangeDrones) return;
+    const updated = drones.map((d, i) => i === index ? { ...d, conditionDamage: val } : d);
+    onChangeDrones(updated);
+  };
 
   return (
     <Grid size={12}>
@@ -104,7 +113,7 @@ const DronesTable = ({ drones }) => {
         <div style={{ padding: '0 0 4px 0' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))', gap: 12, padding: '0 0 4px 0' }}>
             {drones.map((drone, index) => (
-              <DroneCard key={drone.name + index} drone={drone} />
+              <DroneCard key={drone.name + index} drone={drone} index={index} onChange={handleDamageChange} />
             ))}
           </div>
         </div>

@@ -44,6 +44,8 @@ function SheetDisplay(props) {
                         && typeof v !== 'object');
 
   const handleConditionSelect = () => {};
+  const handleChangeStun     = (val) => props.onChangeConditionMonitor?.({ stunDamage: val, physicalDamage: char.physicalDamage ?? 0 });
+  const handleChangePhysical = (val) => props.onChangeConditionMonitor?.({ stunDamage: char.stunDamage ?? 0, physicalDamage: val });
 
   const getRangesFromName = (name) => {
     const Ranges = rangesData;
@@ -103,7 +105,12 @@ function SheetDisplay(props) {
 
         {/* Right: Condition Monitor · Skills · Armor · Gear */}
         <div className="sheet-col">
-          <ConditionMonitorBlock onConditionSelect={handleConditionSelect} />
+          <ConditionMonitorBlock
+            stunDamage={char.stunDamage ?? 0}
+            physicalDamage={char.physicalDamage ?? 0}
+            onChangeStun={handleChangeStun}
+            onChangePhysical={handleChangePhysical}
+          />
           <SkillsBlock character={char} edition={props.Edition} />
           <ArmorTable gear={char.gear} />
           <GearTable  gear={char.gear} />
@@ -143,8 +150,8 @@ function SheetDisplay(props) {
 
       {hasRigging && (
         <>
-          <VehiclesTable vehicles={char.vehicles} />
-          <DronesTable drones={char.drones} />
+          <VehiclesTable vehicles={char.vehicles} onChangeVehicles={props.onChangeVehicles} />
+          <DronesTable drones={char.drones} onChangeDrones={props.onChangeDrones} />
           <RCDSheet
             rcd={rcd}
             drones={char.drones}

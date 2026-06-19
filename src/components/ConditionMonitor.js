@@ -22,12 +22,15 @@ const BOX_LABELS = [
   null,                 // 9 — last box (Unc. / Unc. Maybe Dead)
 ];
 
-const ConditionMonitor = ({ type }) => {
-  const [filled, setFilled] = useState(0);
+const ConditionMonitor = ({ type, filled: filledProp, onChange }) => {
+  const [localFilled, setLocalFilled] = useState(0);
+  const isControlled = filledProp !== undefined && onChange !== undefined;
+  const filled = isControlled ? filledProp : localFilled;
 
   const handleClick = (i) => {
-    // clicking a filled box unfills from that point; clicking empty fills up to it
-    setFilled(filled === i + 1 ? i : i + 1);
+    const next = filled === i + 1 ? i : i + 1;
+    if (isControlled) onChange(next);
+    else setLocalFilled(next);
   };
 
   const lastLabel = type === 'Stun' ? 'Unc.' : 'Unc.\nMaybe\nDead';
