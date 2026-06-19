@@ -3,7 +3,7 @@ import { Box, Typography, IconButton, Chip } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
 // Die face rendered as an SVG pip-dot d6
-function DieFace({ value, success, tn }) {
+function DieFace({ value, success }) {
   const pipPositions = {
     1: [[50, 50]],
     2: [[25, 25], [75, 75]],
@@ -13,8 +13,8 @@ function DieFace({ value, success, tn }) {
     6: [[25, 22], [75, 22], [25, 50], [75, 50], [25, 78], [75, 78]],
   };
   const pips = pipPositions[value] ?? [];
-  const borderColor = success ? '#2e7d32' : value === 1 ? '#c62828' : '#555';
-  const bg = success ? '#e8f5e9' : value === 1 ? '#ffebee' : '#1e1e1e';
+  const borderColor = success ? '#2e7d32' : '#555';
+  const bg = success ? '#e8f5e9' : '#1e1e1e';
 
   return (
     <svg width="44" height="44" viewBox="0 0 100 100" style={{ margin: '3px' }}>
@@ -22,7 +22,7 @@ function DieFace({ value, success, tn }) {
         fill={bg} stroke={borderColor} strokeWidth="6" />
       {pips.map(([cx, cy], i) => (
         <circle key={i} cx={cx} cy={cy} r="10"
-          fill={success ? '#2e7d32' : value === 1 ? '#c62828' : '#ccc'} />
+          fill={success ? '#2e7d32' : '#ccc'} />
       ))}
     </svg>
   );
@@ -78,15 +78,13 @@ export default function DiceResultOverlay({ result, rolling, onClose }) {
           {/* Dice faces */}
           <Box sx={{ display: 'flex', flexWrap: 'wrap', mb: 1.5 }}>
             {result.values.map((v, i) => (
-              <DieFace key={i} value={v} success={v >= result.tn} tn={result.tn} />
+              <DieFace key={i} value={v} success={v >= result.tn} />
             ))}
           </Box>
 
           {/* Summary */}
           <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', alignItems: 'center' }}>
-            {result.botch ? (
-              <Chip label="BOTCH" size="small" sx={{ background: '#c62828', color: '#fff', fontWeight: 700 }} />
-            ) : result.successes === 0 ? (
+            {result.successes === 0 ? (
               <Chip label="No successes" size="small" sx={{ background: '#555', color: '#fff' }} />
             ) : (
               <Chip
@@ -94,11 +92,6 @@ export default function DiceResultOverlay({ result, rolling, onClose }) {
                 size="small"
                 sx={{ background: '#2e7d32', color: '#fff', fontWeight: 700 }}
               />
-            )}
-            {result.ones > 0 && (
-              <Typography variant="caption" sx={{ color: '#c62828' }}>
-                {result.ones} one{result.ones !== 1 ? 's' : ''}
-              </Typography>
             )}
             <Typography variant="caption" sx={{ color: '#666', ml: 'auto' }}>
               click to dismiss
