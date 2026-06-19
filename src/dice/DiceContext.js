@@ -77,7 +77,7 @@ export function DiceProvider({ children }) {
           position: 'fixed', top: 0, left: 0,
           width: '100vw', height: '100vh',
           pointerEvents: rolling ? 'auto' : 'none',
-          zIndex: 1300,
+          zIndex: 1500,
         }}
       />
 
