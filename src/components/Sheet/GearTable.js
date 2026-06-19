@@ -5,7 +5,7 @@ import { tablePaperSx } from './sheetTheme';
 
 const GearTable = ({ gear }) => {
   if (!gear || gear.length === 0) return null;
-  const nonWeaponGear = gear.filter((item) => !item.Damage && !item.Ballistic);
+  const nonWeaponGear = gear.filter((item) => !item.Damage && !item.Ballistic && item.Type !== 'Lifestyles');
   if (nonWeaponGear.length === 0) return null;
 
   return (

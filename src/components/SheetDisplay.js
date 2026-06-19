@@ -10,6 +10,7 @@ import SkillsBlock from './Sheet/SkillsBlock';
 import CyberwareTable from './Sheet/CyberwareTable';
 import BiowareTable from './Sheet/BiowareTable';
 import GearTable from './Sheet/GearTable';
+import LifestylesTable from './Sheet/LifestylesTable';
 import ArmorTable from './Sheet/ArmorTable';
 import WeaponsTable from './Sheet/WeaponsTable';
 import PhysicalAdeptPowers from './Sheet/PhysicalAdeptPowers';
@@ -114,6 +115,7 @@ function SheetDisplay(props) {
           <SkillsBlock character={char} edition={props.Edition} />
           <ArmorTable gear={char.gear} />
           <GearTable  gear={char.gear} />
+          <LifestylesTable gear={char.gear} />
         </div>
 
       </div>
