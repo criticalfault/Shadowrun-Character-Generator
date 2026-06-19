@@ -74,7 +74,8 @@ export function DiceProvider({ children }) {
       <div
         id="dice-box-container"
         style={{
-          position: 'fixed', inset: 0,
+          position: 'fixed', top: 0, left: 0,
+          width: '100vw', height: '100vh',
           pointerEvents: rolling ? 'auto' : 'none',
           zIndex: 1300,
         }}
