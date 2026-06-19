@@ -64,6 +64,10 @@ const modalSx = {
 
 const TYPES = ['Active', 'Knowledge', 'Language'];
 
+const RAISEABLE_ATTRS = ['Body', 'Quickness', 'Strength', 'Charisma', 'Willpower', 'Intelligence', 'Reaction'];
+
+const attrKarmaCost = (currentRating) => Math.ceil((currentRating + 1) * 1.5);
+
 export default function KarmaSkillAdvancement({
   skills,
   spells,
@@ -72,6 +76,8 @@ export default function KarmaSkillAdvancement({
   onChangeKarmaPoolBurned,
   characterAttributes,
   raceBonuses,
+  cyberAttributeBonuses,
+  magicalAttributeBonuses,
   magicalChoice,
   magicRating,
   allowedBooks,
@@ -79,6 +85,7 @@ export default function KarmaSkillAdvancement({
   karmaAvailable,
   step,
   onUpdateSkills,
+  onUpdateAttributes,
   onChangeSpells,
   onSpendKarma,
   onChangeLog,
@@ -87,6 +94,7 @@ export default function KarmaSkillAdvancement({
   onChangePurchasedPowerPoints,
 }) {
   const [confirm, setConfirm]         = useState(null);
+  const [attrConfirm, setAttrConfirm] = useState(null);
   const [newSkillModal, setNewSkillModal] = useState(false);
   const [newSkillIndex, setNewSkillIndex] = useState(0);
   const [newSkillData, setNewSkillData]   = useState(null);
@@ -167,6 +175,26 @@ export default function KarmaSkillAdvancement({
     onSpendKarma(cost);
     onChangeLog([...Log, { Type: 'IncreaseSkill', Date: Date.now(), Amount: -cost, Notes: `Increased ${label} from ${currentRating} to ${currentRating + 1} for ${cost} Karma.` }]);
     setConfirm(null);
+  };
+
+  // ── Attribute advancement ────────────────────────────────────────────
+  const openAttrConfirm = (attr) => {
+    const current = parseInt(characterAttributes?.[attr]) || 0;
+    const cost = attrKarmaCost(current);
+    const racialMax = 6 + (parseInt(raceBonuses?.[attr]) || 0);
+    const cyberBonus = parseInt(cyberAttributeBonuses?.[attr]) || 0;
+    const magicBonus = parseInt(magicalAttributeBonuses?.[attr]) || 0;
+    setAttrConfirm({ attr, current, cost, racialMax, cyberBonus, magicBonus });
+  };
+
+  const doAdvanceAttr = () => {
+    if (!attrConfirm) return;
+    const { attr, current, cost } = attrConfirm;
+    const updated = { ...characterAttributes, [attr]: current + 1 };
+    onUpdateAttributes?.(updated);
+    onSpendKarma(cost);
+    onChangeLog([...Log, { Type: 'IncreaseAttribute', Date: Date.now(), Amount: -cost, Notes: `Raised ${attr} from ${current} to ${current + 1} for ${cost} Karma.` }]);
+    setAttrConfirm(null);
   };
 
   // ── New skill ────────────────────────────────────────────────────────
@@ -276,6 +304,38 @@ export default function KarmaSkillAdvancement({
         </Button>
       </Box>
       <Divider sx={{ my: 2 }} />
+
+      {/* ── Raise Attributes ── */}
+      <Divider sx={{ my: 2 }} />
+      <Typography variant="h6" sx={{ mb: 1 }}>Raise Attributes</Typography>
+      <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
+        Cost: ceil(new rating × 1.5) karma. Racial max = 6 + racial bonus. Cyberware bonuses are not counted toward the base rating.
+      </Typography>
+      <List dense disablePadding>
+        {RAISEABLE_ATTRS.map((attr) => {
+          const base = parseInt(characterAttributes?.[attr]) || 0;
+          const racialMax = 6 + (parseInt(raceBonuses?.[attr]) || 0);
+          const cost = attrKarmaCost(base);
+          const atCap = base >= racialMax;
+          return (
+            <ListItem key={attr} secondaryAction={
+              <Button
+                size="small"
+                variant="outlined"
+                disabled={karmaAvailable < cost || atCap}
+                onClick={() => openAttrConfirm(attr)}
+              >
+                {atCap ? 'At max' : `+1 (${cost} karma)`}
+              </Button>
+            }>
+              <ListItemText
+                primary={attr}
+                secondary={`${base} / ${racialMax}`}
+              />
+            </ListItem>
+          );
+        })}
+      </List>
 
       {/* ── Existing skills ── */}
       <Typography variant="h6" sx={{ mt: 2, mb: 1 }}>Improve Skills</Typography>
@@ -521,6 +581,24 @@ export default function KarmaSkillAdvancement({
           Spend {customAmount} Karma
         </Button>
       </Box>
+
+      {/* ── Attribute advance confirm ── */}
+      <Modal open={!!attrConfirm} onClose={() => setAttrConfirm(null)}>
+        <Box sx={modalSx}>
+          {attrConfirm && <>
+            <Typography variant="h6" sx={{ mb: 1 }}>Raise Attribute</Typography>
+            <Typography>Increase <strong>{attrConfirm.attr}</strong> from <strong>{attrConfirm.current}</strong> to <strong>{attrConfirm.current + 1}</strong>?</Typography>
+            {(attrConfirm.cyberBonus > 0 || attrConfirm.magicBonus > 0) && (
+              <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
+                Note: cyber/magic bonuses (+{attrConfirm.cyberBonus + attrConfirm.magicBonus}) are on top of this base rating.
+              </Typography>
+            )}
+            <Typography sx={{ mt: 1, mb: 2 }}>Cost: <strong>{attrConfirm.cost} Karma</strong></Typography>
+            <Button variant="contained" disabled={karmaAvailable < attrConfirm.cost} onClick={doAdvanceAttr} sx={{ mr: 1 }}>Confirm</Button>
+            <Button onClick={() => setAttrConfirm(null)}>Cancel</Button>
+          </>}
+        </Box>
+      </Modal>
 
       {/* Custom spend confirm */}
       <Modal open={customConfirm} onClose={() => setCustomConfirm(false)}>

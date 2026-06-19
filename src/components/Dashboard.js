@@ -1000,6 +1000,9 @@ export default function BasicTabs() {
             Log={Character.log}
             purchasedPowerPoints={Character.purchasedPowerPoints ?? 0}
             onChangePurchasedPowerPoints={handleChangePurchasedPowerPoints}
+            cyberAttributeBonuses={Character.cyberAttributeBonuses}
+            magicalAttributeBonuses={Character.magicalAttributeBonuses}
+            onUpdateAttributes={(attrs) => setCharacter({ ...Character, attributes: attrs })}
           />
         </CustomTabPanel>
         <CustomTabPanel value={value} index={12}>
