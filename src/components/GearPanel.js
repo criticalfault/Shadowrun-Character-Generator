@@ -92,7 +92,7 @@ export default function GearPanel(props) {
 
     const [modifyingWeaponIndex, setModifyingWeaponIndex] = useState(null);
     const [lifestyleBuilderOpen, setLifestyleBuilderOpen] = useState(false);
-    const ssgEnabled = props.Edition === 'SR3' && props.BooksFilter?.includes('ssg');
+    const ssgEnabled = props.Edition === 'SR3';
 
     const handleLifestylePurchase = (gearEntry) => {
       const updated = [...SelectedGear, gearEntry];
