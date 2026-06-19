@@ -7,12 +7,14 @@ export function resolveResults(rollResults, tn) {
   );
   const values = dice.map((d) => d.value);
   const successes = values.filter((v) => v >= tn).length;
-  return { values, successes, tn };
+  const allOnes = values.length > 0 && values.every((v) => v === 1);
+  return { values, successes, allOnes, tn };
 }
 
 // Simple local roll (no 3D) — returns same shape
 export function rollSimple(pool, tn) {
   const values = Array.from({ length: pool }, () => Math.ceil(Math.random() * 6));
   const successes = values.filter((v) => v >= tn).length;
-  return { values, successes, tn };
+  const allOnes = values.length > 0 && values.every((v) => v === 1);
+  return { values, successes, allOnes, tn };
 }
