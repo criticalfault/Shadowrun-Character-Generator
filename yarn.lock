@@ -2,6 +2,17 @@
 # yarn lockfile v1
 
 
+"@3d-dice/dice-box@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.npmjs.org/@3d-dice/dice-box/-/dice-box-1.1.4.tgz"
+  integrity sha512-W8evh0LlCx/sorPS00cGZJO+/3I8g5eMfDqFAKAIUXF+/XVTP06bhgHSNFOCvLzWbdbEJX5za9QxB0ulDvfxyA==
+  dependencies:
+    "@babylonjs/core" "5.57.1"
+    "@babylonjs/loaders" "5.57.1"
+    "@babylonjs/materials" "5.57.1"
+    copy-dir "^1.3.0"
+    node-abort-controller "^3.1.1"
+
 "@adobe/css-tools@^4.0.1":
   version "4.4.3"
   resolved "https://registry.npmjs.org/@adobe/css-tools/-/css-tools-4.4.3.tgz"
@@ -977,6 +988,21 @@
   dependencies:
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.28.5"
+
+"@babylonjs/core@5.57.1":
+  version "5.57.1"
+  resolved "https://registry.npmjs.org/@babylonjs/core/-/core-5.57.1.tgz"
+  integrity sha512-k8U+SFPVGvHgeNr651nxZL26iVCmTzjmRrdbQa0BGas+lg8PIV/tfhN4uTeWWQeRFLvjbkcHA5qD8x/Xk3EpMQ==
+
+"@babylonjs/loaders@5.57.1":
+  version "5.57.1"
+  resolved "https://registry.npmjs.org/@babylonjs/loaders/-/loaders-5.57.1.tgz"
+  integrity sha512-DHk0iOwJgnTcj8vI+cQVzpiUvWGJvYqWyZxsf7nzhbeND+ZwNWSG0AelaGbGHpWTaDSd/DjUcoWVZuT4Cg6/Xg==
+
+"@babylonjs/materials@5.57.1":
+  version "5.57.1"
+  resolved "https://registry.npmjs.org/@babylonjs/materials/-/materials-5.57.1.tgz"
+  integrity sha512-NLdR6eGUr+wFqie937HRWsnaWPeECpjOrYDGvjjYDg08VAcIC3YyctAuQxv8rId7BoDttkUd8Ey/IZ5d/9H7GA==
 
 "@bcoe/v8-coverage@^0.2.3":
   version "0.2.3"
@@ -2667,6 +2693,11 @@ convert-source-map@^2.0.0:
   resolved "https://registry.npmjs.org/convert-source-map/-/convert-source-map-2.0.0.tgz"
   integrity sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==
 
+copy-dir@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.npmjs.org/copy-dir/-/copy-dir-1.3.0.tgz"
+  integrity sha512-Q4+qBFnN4bwGwvtXXzbp4P/4iNk0MaiGAzvQ8OiMtlLjkIKjmNN689uVzShSM0908q7GoFHXIPx4zi75ocoaHw==
+
 core-js-compat@^3.48.0:
   version "3.49.0"
   resolved "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.49.0.tgz"
@@ -3916,6 +3947,11 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
+
+node-abort-controller@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.npmjs.org/node-abort-controller/-/node-abort-controller-3.1.1.tgz"
+  integrity sha512-AGK2yQKIjRuqnc6VkX2Xj5d+QW8xZ87pa1UK6yA6ouUyuxfHuMP6umE5QK7UmTeOAymo+Zx1Fxiuw9rVx8taHQ==
 
 node-int64@^0.4.0:
   version "0.4.0"

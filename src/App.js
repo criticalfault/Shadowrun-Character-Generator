@@ -3,6 +3,7 @@ import * as Sentry from "@sentry/react";
 import Dashboard from "./components/Dashboard";
 import { Container } from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { DiceProvider } from './dice/DiceContext';
 const theme = createTheme();
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
   // });
   return (
     <ThemeProvider theme={theme}>
+    <DiceProvider>
     <div className="App">
       <Container maxWidth="2xl">
         <h1
@@ -45,6 +47,7 @@ function App() {
         <Dashboard className="dashboard" />
       </Container>
     </div>
+    </DiceProvider>
     </ThemeProvider>
   );
 }
