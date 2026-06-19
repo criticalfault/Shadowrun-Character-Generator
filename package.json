@@ -15,7 +15,8 @@
     "firebaseui": "^6.1.0",
     "react": "^18.0.0",
     "react-beautiful-dnd": "^13.1.1",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^7.18.0"
   },
   "scripts": {
     "start": "vite",

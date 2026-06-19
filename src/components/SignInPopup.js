@@ -1,9 +1,9 @@
 ﻿import React, { useState, useEffect } from "react";
-import { auth, provider, signInWithPopup, onAuthStateChanged, db, doc, setDoc, getDoc } from "./firebase";
+import { auth, provider, signInWithPopup, onAuthStateChanged, db, doc, setDoc, getDoc, publishCharacter } from "./firebase";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
-import { Grid } from "@mui/material";
+import { Grid, CircularProgress, TextField } from "@mui/material";
 
 const modalStyle = {
   position: "absolute",
@@ -21,6 +21,8 @@ const SignInPopup = (props) => {
   const [open, setOpen] = useState(false);
   const [character1, setCharacter1] = useState([]);
   const [character2, setCharacter2] = useState([]);
+  const [shareUrl, setShareUrl] = useState(null);
+  const [sharing, setSharing] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -96,6 +98,20 @@ const SignInPopup = (props) => {
     }
   }
 
+  const handleShareSheet = async () => {
+    setSharing(true);
+    setShareUrl(null);
+    try {
+      let char = props.Character;
+      char.edition = props.Edition;
+      const id = await publishCharacter(JSON.stringify(char), props.user.uid);
+      setShareUrl(`${window.location.origin}/sheet/${id}`);
+    } catch (err) {
+      console.error("Error sharing character:", err);
+    }
+    setSharing(false);
+  };
+
   const slotLabel = (char) =>
     char?.street_name ? ` — ${char.street_name}` : " (empty)";
 
@@ -148,6 +164,39 @@ const SignInPopup = (props) => {
               </Button>
             </Grid>
           </Grid>
+
+          <Box sx={{ mt: 3, borderTop: "1px solid #ccc", pt: 2 }}>
+            <strong>Share Sheet</strong>
+            <p style={{ fontSize: "0.85em", margin: "4px 0 8px" }}>
+              Publishes a read-only snapshot anyone can view via link.
+            </p>
+            <Button
+              variant="outlined"
+              onClick={handleShareSheet}
+              disabled={sharing}
+              startIcon={sharing ? <CircularProgress size={14} /> : null}
+            >
+              {sharing ? "Publishing…" : "Generate Share Link"}
+            </Button>
+            {shareUrl && (
+              <Box sx={{ mt: 1, display: "flex", gap: 1, alignItems: "center" }}>
+                <TextField
+                  size="small"
+                  value={shareUrl}
+                  inputProps={{ readOnly: true }}
+                  fullWidth
+                  onFocus={(e) => e.target.select()}
+                />
+                <Button
+                  size="small"
+                  variant="contained"
+                  onClick={() => navigator.clipboard.writeText(shareUrl)}
+                >
+                  Copy
+                </Button>
+              </Box>
+            )}
+          </Box>
 
           <Box sx={{ mt: 2, display: "flex", justifyContent: "space-between" }}>
             <Button size="small" color="secondary" onClick={handleSignOut}>
