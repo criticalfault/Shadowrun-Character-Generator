@@ -25,9 +25,32 @@ export function DiceProvider({ children }) {
       try {
         const box = await initDiceBox('dice-box-container');
         clearDiceBox();
-        const rollResults = await box.roll(`${pool}d6`);
-        const resolved = resolveResults(rollResults, tn);
-        setResult({ ...resolved, label, pool });
+
+        const extractValues = (results) =>
+          results.flatMap((g) => g.rolls ?? [g]).map((d) => d.value);
+
+        // Initial roll
+        const initialResults = await box.roll(`${pool}d6`);
+        const initialValues = extractValues(initialResults);
+
+        // Visual Rule of 6: add more dice to the screen for each wave of 6s
+        const rerollGroups = [];
+        let toReroll = initialValues.filter((v) => v === 6);
+        while (toReroll.length > 0) {
+          const rerollResults = await box.add(`${toReroll.length}d6`);
+          const rerollValues = extractValues(rerollResults);
+          rerollGroups.push(rerollValues);
+          toReroll = rerollValues.filter((v) => v === 6);
+        }
+
+        // Count successes across all dice
+        const allValues = [
+          ...initialValues,
+          ...rerollGroups.flat(),
+        ];
+        const successes = allValues.filter((v) => v >= tn).length;
+        const allOnes = initialValues.length > 0 && initialValues.every((v) => v === 1);
+        setResult({ values: initialValues, rerollGroups, successes, allOnes, tn, label, pool });
       } catch {
         const resolved = rollSimple(pool, tn);
         setResult({ ...resolved, label, pool });
