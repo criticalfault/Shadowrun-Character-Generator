@@ -2310,6 +2310,7 @@ function MagicPanel(props) {
           onChangeAlly={props.onChangeAlly}
           creatorIntelligence={props.creatorIntelligence}
           creatorWillpower={props.creatorWillpower}
+          creatorSorcery={props.creatorSorcery}
           onSpendKarma={props.onSpendKarma}
         />
       )}

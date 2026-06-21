@@ -12,10 +12,6 @@ import Paper from "@mui/material/Paper";
 import Chip from "@mui/material/Chip";
 import Divider from "@mui/material/Divider";
 import Alert from "@mui/material/Alert";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
 
 // ── Ally Spirit rules from MitS pp.107–113 ──────────────────────────────────
 // Force costs 5 × currentForce Karma per +1 (first Force: 1 Magic Point free)
@@ -26,7 +22,7 @@ import InputLabel from "@mui/material/InputLabel";
 // Sense Link: 5 Karma (one-time)
 // Additional spells: Force × Karma each
 // Additional Karma Pool: 1 Karma/point (max = 2 × Force)
-// Additional forms: 1 Karma each
+// Forms: first is free; additional = 1 Karma each (inhabiting spirits have no forms)
 // ─────────────────────────────────────────────────────────────────────────────
 
 const FREE_POWERS = [
@@ -49,7 +45,7 @@ function karmaCostAttr(currentRating) {
   return currentRating;
 }
 
-function calcTotalKarma(ally, creatorIntelligence, creatorWillpower) {
+function calcTotalKarma(ally) {
   if (!ally) return 0;
   let k = 0;
 
@@ -58,7 +54,7 @@ function calcTotalKarma(ally, creatorIntelligence, creatorWillpower) {
     k += karmaCostForce(f);
   }
 
-  // Physical attribute upgrades (free up to Force)
+  // Physical attribute upgrades (free up to baseForce)
   const baseAttr = ally.baseForce ?? 1;
   for (const attr of PHYSICAL_ATTRS) {
     const rating = ally.physicalAttributes[attr] ?? baseAttr;
@@ -67,39 +63,35 @@ function calcTotalKarma(ally, creatorIntelligence, creatorWillpower) {
     }
   }
 
-  // Extra skills (beyond free Sorcery)
+  // Extra skills (beyond free Sorcery): costPaid stored at time of purchase
   for (const sk of ally.skills) {
     if (!sk.free) {
-      for (let r = 0; r < sk.rating; r++) {
-        k += 1; // 1 Karma per point at creation
-      }
+      k += sk.costPaid ?? sk.rating;
     }
-    // Raises: tracked separately via sk.raises
-    for (let r = sk.baseRating ?? sk.rating; r < sk.rating; r++) {
-      k += karmaCostAttr(r);
-    }
+    // Post-creation raises stored as raiseCost
+    if (sk.raiseCost) k += sk.raiseCost;
   }
 
   // Sense Link
   if (ally.senseLink) k += 5;
 
-  // Extra spells (first is free)
+  // Extra spells (first is free); costPaid = ally.force at time of adding
   for (let i = 1; i < ally.spells.length; i++) {
-    k += ally.spells[i].force ?? ally.force;
+    k += ally.spells[i].costPaid ?? ally.force;
   }
 
   // Extra Karma Pool (1 free)
   const extraKP = (ally.karmaPool ?? 1) - 1;
   if (extraKP > 0) k += extraKP;
 
-  // Extra forms (1 free)
+  // Extra forms (1 free; each additional = 1 Karma)
   const extraForms = (ally.forms ?? 1) - 1;
   if (extraForms > 0) k += extraForms;
 
   return k;
 }
 
-function defaultAlly(creatorIntelligence, creatorWillpower, force = 1) {
+function defaultAlly(creatorIntelligence, creatorWillpower, creatorSorcery = 0, force = 1) {
   return {
     name: "",
     nativePlane: "",
@@ -115,21 +107,21 @@ function defaultAlly(creatorIntelligence, creatorWillpower, force = 1) {
       Intelligence: creatorIntelligence,
       Willpower: creatorWillpower,
     },
-    skills: [{ name: "Sorcery", rating: 0, free: true, baseRating: 0 }],
+    skills: [{ name: "Sorcery", rating: creatorSorcery, free: true }],
     senseLink: false,
     spells: [],
     karmaPool: 1,
     forms: 1,
-    sorcerySkillRating: 0,
   };
 }
 
-export default function AllySection({ ally, onChangeAlly, creatorIntelligence, creatorWillpower, onSpendKarma }) {
+export default function AllySection({ ally, onChangeAlly, creatorIntelligence, creatorWillpower, creatorSorcery = 0, onSpendKarma }) {
   const [newSkillName, setNewSkillName] = useState("");
+  const [newSkillRating, setNewSkillRating] = useState(1);
   const [newSpellName, setNewSpellName] = useState("");
-  const [newSpellForce, setNewSpellForce] = useState(1);
+  const [creationForce, setCreationForce] = useState(1);
 
-  const totalKarma = calcTotalKarma(ally, creatorIntelligence, creatorWillpower);
+  const totalKarma = calcTotalKarma(ally);
   const formulaComplexity = ally ? Math.round(totalKarma / 5) : 0;
 
   const update = (patch) => onChangeAlly({ ...ally, ...patch });
@@ -141,11 +133,20 @@ export default function AllySection({ ally, onChangeAlly, creatorIntelligence, c
         <Typography variant="h6" gutterBottom>Ally Spirit</Typography>
         <Alert severity="info" sx={{ mb: 2 }}>
           An ally spirit costs 1 permanent Magic Point to create. Only one ally spirit may be bound per magician.
-          The ritual requires Force × 1,000 nuyen in materials.
+          The ritual requires Force × 1,000 nuyen in materials. Physical attributes begin at the chosen Force for free.
         </Alert>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}>
+          <Typography variant="subtitle2">Starting Force:</Typography>
+          <Button size="small" variant="outlined" onClick={() => setCreationForce(f => Math.max(1, f - 1))} disabled={creationForce <= 1}>−</Button>
+          <Typography variant="h6" sx={{ minWidth: 24, textAlign: "center" }}>{creationForce}</Typography>
+          <Button size="small" variant="outlined" onClick={() => setCreationForce(f => f + 1)}>+</Button>
+          <Typography variant="caption" color="text.secondary">
+            Material cost: ¥{(creationForce * 1000).toLocaleString()}
+          </Typography>
+        </Box>
         <Button
           variant="outlined"
-          onClick={() => onChangeAlly(defaultAlly(creatorIntelligence ?? 3, creatorWillpower ?? 3))}
+          onClick={() => onChangeAlly(defaultAlly(creatorIntelligence ?? 3, creatorWillpower ?? 3, creatorSorcery, creationForce))}
         >
           Create Ally Spirit (costs 1 Magic Point)
         </Button>
@@ -161,7 +162,6 @@ export default function AllySection({ ally, onChangeAlly, creatorIntelligence, c
       const cost = karmaCostForce(ally.force);
       onSpendKarma?.(cost);
     }
-    // When force increases, raise any physical attrs that are below new force (they were at old base)
     const newPhys = { ...ally.physicalAttributes };
     update({ force: newForce, physicalAttributes: newPhys });
   };
@@ -175,18 +175,21 @@ export default function AllySection({ ally, onChangeAlly, creatorIntelligence, c
 
   const handleAddSkill = () => {
     if (!newSkillName.trim()) return;
-    const skill = { name: newSkillName.trim(), rating: 1, free: false, baseRating: 1 };
+    const rating = Math.max(1, newSkillRating);
+    const cost = rating; // 1 Karma per point at creation
+    const skill = { name: newSkillName.trim(), rating, free: false, costPaid: cost };
     update({ skills: [...ally.skills, skill] });
-    onSpendKarma?.(1);
+    onSpendKarma?.(cost);
     setNewSkillName("");
+    setNewSkillRating(1);
   };
 
   const handleRaiseSkill = (i) => {
     const sk = ally.skills[i];
-    const cost = karmaCostAttr(sk.rating);
+    const cost = karmaCostAttr(sk.rating); // current rating Karma per +1 post-creation
     onSpendKarma?.(cost);
     const updated = ally.skills.map((s, idx) =>
-      idx === i ? { ...s, rating: s.rating + 1 } : s
+      idx === i ? { ...s, rating: s.rating + 1, raiseCost: (s.raiseCost ?? 0) + cost } : s
     );
     update({ skills: updated });
   };
@@ -203,10 +206,10 @@ export default function AllySection({ ally, onChangeAlly, creatorIntelligence, c
   const handleAddSpell = () => {
     if (!newSpellName.trim()) return;
     const isFirst = ally.spells.length === 0;
-    if (!isFirst) onSpendKarma?.(newSpellForce);
-    update({ spells: [...ally.spells, { name: newSpellName.trim(), force: newSpellForce }] });
+    const costPaid = ally.force;
+    if (!isFirst) onSpendKarma?.(costPaid);
+    update({ spells: [...ally.spells, { name: newSpellName.trim(), costPaid }] });
     setNewSpellName("");
-    setNewSpellForce(1);
   };
 
   const handleRemoveSpell = (i) => {
@@ -224,6 +227,7 @@ export default function AllySection({ ally, onChangeAlly, creatorIntelligence, c
     if (delta > 0) onSpendKarma?.(1);
     update({ forms: next });
   };
+
 
   return (
     <Box sx={{ mt: 3 }}>
@@ -344,21 +348,7 @@ export default function AllySection({ ally, onChangeAlly, creatorIntelligence, c
                   {sk.name}
                   {sk.free && <Chip label="free" size="small" sx={{ ml: 1, height: 16, fontSize: "0.65rem" }} />}
                 </TableCell>
-                <TableCell align="center">
-                  {sk.free ? (
-                    <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 1 }}>
-                      <Button size="small" onClick={() => {
-                        const updated = ally.skills.map((s, idx) => idx === i ? { ...s, rating: Math.max(0, s.rating - 1) } : s);
-                        update({ skills: updated });
-                      }}>−</Button>
-                      <strong>{sk.rating}</strong>
-                      <Button size="small" onClick={() => {
-                        const updated = ally.skills.map((s, idx) => idx === i ? { ...s, rating: s.rating + 1 } : s);
-                        update({ skills: updated });
-                      }}>+</Button>
-                    </Box>
-                  ) : <strong>{sk.rating}</strong>}
-                </TableCell>
+                <TableCell align="center"><strong>{sk.rating}</strong></TableCell>
                 <TableCell align="center">
                   {!sk.free && (
                     <>
@@ -376,7 +366,7 @@ export default function AllySection({ ally, onChangeAlly, creatorIntelligence, c
             ))}
           </TableBody>
         </Table>
-        <Box sx={{ display: "flex", gap: 1, mt: 1, alignItems: "center" }}>
+        <Box sx={{ display: "flex", gap: 1, mt: 1, alignItems: "center", flexWrap: "wrap" }}>
           <TextField
             size="small"
             label="New skill name"
@@ -384,8 +374,16 @@ export default function AllySection({ ally, onChangeAlly, creatorIntelligence, c
             onChange={(e) => setNewSkillName(e.target.value)}
             sx={{ minWidth: 180 }}
           />
+          <TextField
+            size="small"
+            label="Rating"
+            type="number"
+            value={newSkillRating}
+            onChange={(e) => setNewSkillRating(Math.max(1, parseInt(e.target.value) || 1))}
+            sx={{ width: 70 }}
+          />
           <Button size="small" variant="outlined" onClick={handleAddSkill} disabled={!newSkillName.trim()}>
-            Add (1 Karma/pt)
+            Add ({Math.max(1, newSkillRating)} Karma)
           </Button>
         </Box>
       </Paper>
@@ -423,7 +421,7 @@ export default function AllySection({ ally, onChangeAlly, creatorIntelligence, c
             <TableHead>
               <TableRow>
                 <TableCell>Spell</TableCell>
-                <TableCell align="center">Force</TableCell>
+                <TableCell align="center">Cost</TableCell>
                 <TableCell />
               </TableRow>
             </TableHead>
@@ -434,7 +432,9 @@ export default function AllySection({ ally, onChangeAlly, creatorIntelligence, c
                     {sp.name}
                     {i === 0 && <Chip label="free" size="small" sx={{ ml: 1, height: 16, fontSize: "0.65rem" }} />}
                   </TableCell>
-                  <TableCell align="center">{sp.force}</TableCell>
+                  <TableCell align="center" sx={{ fontSize: "0.78rem", color: "text.secondary" }}>
+                    {i === 0 ? "—" : `${sp.costPaid ?? ally.force} K`}
+                  </TableCell>
                   <TableCell align="right">
                     <Button size="small" color="error" onClick={() => handleRemoveSpell(i)}>✕</Button>
                   </TableCell>
@@ -451,18 +451,13 @@ export default function AllySection({ ally, onChangeAlly, creatorIntelligence, c
             onChange={(e) => setNewSpellName(e.target.value)}
             sx={{ minWidth: 180 }}
           />
-          <TextField
-            size="small"
-            label="Force"
-            type="number"
-            value={newSpellForce}
-            onChange={(e) => setNewSpellForce(Math.max(1, parseInt(e.target.value) || 1))}
-            sx={{ width: 70 }}
-          />
           <Button size="small" variant="outlined" onClick={handleAddSpell} disabled={!newSpellName.trim()}>
-            Add {ally.spells.length > 0 ? `(${newSpellForce} Karma)` : "(free)"}
+            Add {ally.spells.length > 0 ? `(${ally.force} Karma)` : "(free)"}
           </Button>
         </Box>
+        <Typography variant="caption" color="text.secondary">
+          Additional spells cost Karma equal to the ally's current Force. Spells are cast at the ally's Force.
+        </Typography>
       </Paper>
 
       {/* Karma Pool & Forms */}
@@ -482,8 +477,11 @@ export default function AllySection({ ally, onChangeAlly, creatorIntelligence, c
             <Button size="small" variant="outlined" onClick={() => handleFormsChange(-1)} disabled={(ally.forms ?? 1) <= 1}>−</Button>
             <Typography><strong>{ally.forms ?? 1}</strong></Typography>
             <Button size="small" variant="outlined" onClick={() => handleFormsChange(1)}>+</Button>
-            <Typography variant="caption" color="text.secondary">(1 Karma each beyond 1)</Typography>
+            <Typography variant="caption" color="text.secondary">(first free; 1 Karma each additional)</Typography>
           </Box>
+          <Typography variant="caption" color="text.secondary" sx={{ display: "block", mt: 0.5 }}>
+            Allies with Inhabiting have no physical form.
+          </Typography>
         </Box>
       </Box>
 
