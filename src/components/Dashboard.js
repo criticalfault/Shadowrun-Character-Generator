@@ -19,6 +19,7 @@ import FinalizedBox from "./FinalizedBox";
 import CyberwarePanel from "./CyberwarePanel";
 import DeckingPanel from "./DeckingPanel";
 import VehiclesPanel from "./VehiclesPanel";
+import VehicleDesigner from "./VehicleDesigner";
 import ContactsPanel from "./ContactsPanel";
 import SheetDisplay from "./SheetDisplay";
 import KarmaDisplay from "./KarmaDisplay";
@@ -928,6 +929,12 @@ export default function BasicTabs() {
           />
         </CustomTabPanel>
         <CustomTabPanel value={value} index={9}>
+          <VehicleDesigner
+            onSave={(design) => {
+              const customVehicles = [...(Character.customVehicles ?? []), design];
+              setCharacter({ ...Character, customVehicles });
+            }}
+          />
           <VehiclesPanel
             Vehicles={Character.vehicles}
             Drones={Character.drones}
