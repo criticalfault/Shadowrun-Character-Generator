@@ -1,12 +1,6 @@
-import { parseDat } from './parseDat';
-import rigger2Dat from '../data/SR2/Rigger2.dat?raw';
+import sr2 from '../data/SR2/Rigger2.json';
 
-// SR2 data — parsed once at module load
-const sr2 = parseDat(rigger2Dat);
-
-// SR3 data — will be added when Rigger3.dat is sourced
-// import rigger3Dat from '../data/SR3/Rigger3.dat?raw';
-// const sr3 = parseDat(rigger3Dat);
+// SR3 data — will be added when Rigger3 data is sourced
 const sr3 = null;
 
 export function getVehicleData(edition = 'SR2') {
