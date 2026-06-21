@@ -35,6 +35,7 @@ export default function IdentityPanel(props) {
     }
 
     const [Tabs, setTabs] = React.useState(props.characterTabs);
+    const [showFanBooks, setShowFanBooks] = React.useState(false);
     const [bookStates, setBookStates] = React.useState((props.Edition === 'SR3'?props.characterBooks3:props.characterBooks2));
     const handleBookCheckboxChange = (event) => {
             const { name, checked } = event.target;
@@ -114,6 +115,37 @@ export default function IdentityPanel(props) {
                         ))
                     }
                 </FormGroup>
+                <div style={{ marginTop: 8 }}>
+                    <span
+                        onClick={() => setShowFanBooks(v => !v)}
+                        style={{ cursor: 'pointer', fontSize: '0.85em', color: '#aaa', userSelect: 'none' }}
+                    >
+                        {showFanBooks ? '▾' : '▸'} Fan / Conversion Books
+                    </span>
+                    {showFanBooks && (
+                        <FormGroup aria-label="fan books" row style={{ marginTop: 4 }}>
+                            {Object.keys(AllBooks)
+                                .filter((book) => !AllBooks[book].edition)
+                                .map((book) => (
+                                    <div key={book}>
+                                    <FormControlLabel
+                                        value="top"
+                                        control={
+                                            <Checkbox
+                                                name={book}
+                                                onChange={handleBookCheckboxChange}
+                                                checked={bookStates[book] || false}
+                                            />
+                                        }
+                                        label={AllBooks[book].name+" ("+book+")"}
+                                        labelPlacement="end"
+                                    />
+                                    </div>
+                                ))
+                            }
+                        </FormGroup>
+                    )}
+                </div>
             </FormControl>
         </div>
 
