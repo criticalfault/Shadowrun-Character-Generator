@@ -21,6 +21,8 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import DownloadIcon from '@mui/icons-material/Download';
+import UploadIcon from '@mui/icons-material/Upload';
 import Alert from '@mui/material/Alert';
 import Tooltip from '@mui/material/Tooltip';
 
@@ -372,6 +374,40 @@ export default function VehicleDesigner({ edition = 'SR2', onSave }) {
     onSave?.(design);
   };
 
+  const handleExport = () => {
+    if (!selectedChassis || !selectedEngine || !stats) return;
+    const design = {
+      name: vehicleName || `Custom ${selectedChassis.name}`,
+      chassis: selectedChassis,
+      engine: selectedEngine,
+      mods: chosenMods,
+      finalStats: stats,
+    };
+    const blob = new Blob([JSON.stringify({ type: 'sr-custom-vehicle', version: 1, design }, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${design.name}.srvehicle.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleImport = (e) => {
+    const file = e.target.files?.[0];
+    if (!file || !onSave) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try {
+        const parsed = JSON.parse(ev.target.result);
+        if (parsed.type === 'sr-custom-vehicle' && parsed.design) {
+          onSave(parsed.design);
+        }
+      } catch {}
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  };
+
   return (
     <Box>
       <Typography variant="h5" gutterBottom>
@@ -527,6 +563,13 @@ export default function VehicleDesigner({ edition = 'SR2', onSave }) {
               />
               <Button variant="contained" fullWidth onClick={handleSave}>
                 Save to Character
+              </Button>
+              <Button variant="outlined" fullWidth startIcon={<DownloadIcon />} sx={{ mt: 1 }} onClick={handleExport} disabled={!selectedChassis || !selectedEngine}>
+                Export Design
+              </Button>
+              <Button variant="outlined" fullWidth startIcon={<UploadIcon />} sx={{ mt: 1 }} component="label" disabled={!onSave}>
+                Import Design
+                <input type="file" accept=".json,.srvehicle.json" hidden onChange={handleImport} />
               </Button>
             </Paper>
           </Box>

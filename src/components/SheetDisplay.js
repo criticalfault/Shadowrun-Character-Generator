@@ -22,6 +22,8 @@ import ConditionMonitorBlock from './Sheet/ConditionMonitorBlock';
 import CyberdeckTable from './Sheet/CyberdeckTable';
 import AllyTable from './Sheet/AllyTable';
 import RCDSheet from './Sheet/RCDSheet';
+import CustomWeaponsTable from './Sheet/CustomWeaponsTable';
+import CustomVehiclesTable from './Sheet/CustomVehiclesTable';
 
 import rangesData from "../data/ranges.json";
 
@@ -122,6 +124,8 @@ function SheetDisplay(props) {
 
       {/* ── Weapons — full width ──────────────────────────────────────── */}
       <WeaponsTable gear={char.gear} />
+      <CustomWeaponsTable customWeapons={char.customWeapons} />
+      <CustomVehiclesTable customVehicles={char.customVehicles} />
 
       {/* ── Optional sections — full width, auto-hidden ───────────────── */}
 
