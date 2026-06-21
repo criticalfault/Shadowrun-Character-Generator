@@ -2098,6 +2098,88 @@ function MagicPanel(props) {
     setGroupDraft({ ...groupDraft, strictures: next });
   };
 
+  const RenderMagicalGroup = () => (
+    <>
+      {!magicalGroup && !editingGroup && (
+        <Button variant="outlined" size="small" onClick={() => { setGroupDraft(blankGroup); setEditingGroup(true); }}>
+          Join / Found a Group
+        </Button>
+      )}
+      {magicalGroup && !editingGroup && (
+        <Box sx={{ border: '1px solid #666', borderRadius: 1, p: 2 }}>
+          <strong>{magicalGroup.name}</strong>
+          <Box sx={{ fontSize: '0.85em', mt: 0.5 }}>
+            <div>Type: {magicalGroup.type}</div>
+            <div>Resources: {magicalGroup.resources}</div>
+            {magicalGroup.patron && <div>Patron: {magicalGroup.patron}</div>}
+            {magicalGroup.strictures?.length > 0 && (
+              <div>Strictures: {magicalGroup.strictures.join(', ')}</div>
+            )}
+            <div style={{ color: '#888', fontSize: '0.9em', marginTop: 4 }}>
+              Group initiation: base × 2 (× 1.5 with ordeal)
+            </div>
+          </Box>
+          <Box sx={{ mt: 1 }}>
+            <Button size="small" onClick={() => { setGroupDraft({ ...magicalGroup }); setEditingGroup(true); }}>
+              Edit
+            </Button>
+            <Button size="small" color="secondary" sx={{ ml: 1 }} onClick={removeGroup}>
+              Leave Group
+            </Button>
+          </Box>
+        </Box>
+      )}
+      {editingGroup && (
+        <Box sx={{ border: '1px solid #666', borderRadius: 1, p: 2 }}>
+          <TextField size="small" fullWidth label="Group Name" value={groupDraft.name}
+            onChange={e => setGroupDraft({ ...groupDraft, name: e.target.value })}
+            sx={{ mb: 1 }} />
+          <Box sx={{ display: 'flex', gap: 2, mb: 1 }}>
+            <FormControl size="small" style={{ minWidth: 140 }}>
+              <InputLabel>Type</InputLabel>
+              <Select value={groupDraft.type} label="Type"
+                onChange={e => setGroupDraft({ ...groupDraft, type: e.target.value })}>
+                <MenuItem value="Initiatory">Initiatory</MenuItem>
+                <MenuItem value="Dedicated">Dedicated</MenuItem>
+                <MenuItem value="Conspiratorial">Conspiratorial</MenuItem>
+              </Select>
+            </FormControl>
+            <FormControl size="small" style={{ minWidth: 140 }}>
+              <InputLabel>Resources</InputLabel>
+              <Select value={groupDraft.resources} label="Resources"
+                onChange={e => setGroupDraft({ ...groupDraft, resources: e.target.value })}>
+                {['Street','Squatter','Low','Middle','High','Luxury'].map(r => (
+                  <MenuItem key={r} value={r}>{r}</MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </Box>
+          <TextField size="small" fullWidth label="Patron (optional)" value={groupDraft.patron}
+            onChange={e => setGroupDraft({ ...groupDraft, patron: e.target.value })}
+            sx={{ mb: 1 }} />
+          <Box sx={{ mb: 1 }}>
+            <strong style={{ fontSize: '0.85em' }}>Strictures:</strong>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0 }}>
+              {ALL_STRICTURES.map(s => (
+                <FormControlLabel key={s} label={s} sx={{ width: '48%' }}
+                  control={
+                    <Checkbox size="small"
+                      checked={(groupDraft.strictures ?? []).includes(s)}
+                      onChange={() => toggleStricture(s)} />
+                  } />
+              ))}
+            </Box>
+          </Box>
+          <Box>
+            <Button variant="contained" size="small" onClick={saveGroup}
+              disabled={!groupDraft.name.trim()}>Save Group</Button>
+            <Button size="small" sx={{ ml: 1 }} onClick={() => setEditingGroup(false)}>Cancel</Button>
+          </Box>
+        </Box>
+      )}
+    </>
+  );
+
   const RenderInitiationSection = () => {
     const nextGrade = initiateGrade + 1;
     const inGroup = useGroup && !!magicalGroup;
@@ -2109,173 +2191,108 @@ function MagicPanel(props) {
     return (
       <>
         <hr />
-        <h3>Initiation</h3>
 
-        {/* Current grade summary */}
-        <Box sx={{ mb: 2 }}>
-          <strong>Grade:</strong> {initiateGrade}&nbsp;&nbsp;
-          <strong>Astral Pool:</strong> {initiateGrade} dice&nbsp;&nbsp;
-          {isAdept
-            ? <strong>Bonus Power Points: {initiateGrade}</strong>
-            : <strong>Magic bonus from initiation: +{initiateGrade}</strong>
-          }
-        </Box>
+        {/* Initiation + Magical Group side by side */}
+        <Box sx={{ display: 'flex', gap: 3, alignItems: 'flex-start', flexWrap: 'wrap' }}>
 
-        {/* Earned initiations list */}
-        {initiations.length > 0 && (
-          <TableContainer component={Paper} sx={{ mb: 2, maxWidth: 550 }}>
-            <Table size="small">
-              <TableHead>
-                <TableRow>
-                  <TableCell>Grade</TableCell>
-                  <TableCell>Benefit</TableCell>
-                  <TableCell>Detail</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {initiations.map((row, i) => (
-                  <TableRow key={i}>
-                    <TableCell>{row.grade}</TableCell>
-                    <TableCell style={{ textTransform: 'capitalize' }}>{row.benefit}</TableCell>
-                    <TableCell>{row.metamagicName || '—'}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        )}
+          {/* Left: Initiation */}
+          <Box sx={{ flex: '1 1 400px', minWidth: 320 }}>
+            <h3 style={{ marginTop: 0 }}>Initiation</h3>
 
-        {/* Buy next initiation */}
-        <Box sx={{ border: '1px solid #444', borderRadius: 1, p: 2, maxWidth: 500, mb: 2 }}>
-          <strong>Next Initiation — Grade {nextGrade}</strong>
-          <Box sx={{ mt: 1 }}>
-            <FormControlLabel
-              control={<Checkbox checked={inGroup} onChange={e => setUseGroup(e.target.checked)} disabled={!magicalGroup} />}
-              label={magicalGroup ? `Group initiation (${magicalGroup.name})` : 'Group initiation (no group set)'}
-            />
-            <FormControlLabel
-              control={<Checkbox checked={useOrdeal} onChange={e => setUseOrdeal(e.target.checked)} />}
-              label="Ordeal (reduces cost by ×0.5)"
-            />
-          </Box>
-          <Box sx={{ mt: 1, mb: 1 }}>
-            <strong>Karma cost: {cost}</strong>
-            {useOrdeal && <span style={{ fontSize: '0.8em', color: '#888' }}> (with ordeal)</span>}
-          </Box>
-          <Box sx={{ mt: 1 }}>
-            <strong>Benefit:</strong>{' '}
-            <select value={pendingBenefit} onChange={e => setPendingBenefit(e.target.value)}
-              style={{ marginLeft: 8 }}>
-              <option value="metamagic">Learn Metamagic</option>
-              <option value="geas">Shed a Geas</option>
-              <option value="signature">Alter Astral Signature</option>
-            </select>
-          </Box>
-          {pendingBenefit === 'metamagic' && (
-            <Box sx={{ mt: 1 }}>
-              <FormControl size="small" style={{ minWidth: 220 }}>
-                <InputLabel>Metamagic Technique</InputLabel>
-                <Select value={pendingMetamagic} onChange={e => setPendingMetamagic(e.target.value)}
-                  label="Metamagic Technique">
-                  {availableMeta.map(m => (
-                    <MenuItem key={m.Name} value={m.Name}>{m.Name}</MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
+            {/* Current grade summary */}
+            <Box sx={{ mb: 2 }}>
+              <strong>Grade:</strong> {initiateGrade}&nbsp;&nbsp;
+              <strong>Astral Pool:</strong> {initiateGrade} dice&nbsp;&nbsp;
+              {isAdept
+                ? <strong>Bonus Power Points: {initiateGrade}</strong>
+                : <strong>Magic bonus from initiation: +{initiateGrade}</strong>
+              }
             </Box>
-          )}
-          <Box sx={{ mt: 2 }}>
-            <Button variant="contained" color="primary" onClick={handleInitiate}
-              disabled={pendingBenefit === 'metamagic' && !pendingMetamagic}>
-              Spend {cost} Karma &amp; Initiate to Grade {nextGrade}
-            </Button>
+
+            {/* Earned initiations list */}
             {initiations.length > 0 && (
-              <Button color="secondary" sx={{ ml: 2 }} onClick={handleRemoveLastInitiation}>
-                Undo Last Initiation
-              </Button>
+              <TableContainer component={Paper} sx={{ mb: 2 }}>
+                <Table size="small">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>Grade</TableCell>
+                      <TableCell>Benefit</TableCell>
+                      <TableCell>Detail</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {initiations.map((row, i) => (
+                      <TableRow key={i}>
+                        <TableCell>{row.grade}</TableCell>
+                        <TableCell style={{ textTransform: 'capitalize' }}>{row.benefit}</TableCell>
+                        <TableCell>{row.metamagicName || '—'}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
             )}
-          </Box>
-        </Box>
 
-        {/* Magical Group */}
-        <h3>Magical Group</h3>
-        {!magicalGroup && !editingGroup && (
-          <Button variant="outlined" onClick={() => { setGroupDraft(blankGroup); setEditingGroup(true); }}>
-            Join / Found a Group
-          </Button>
-        )}
-        {magicalGroup && !editingGroup && (
-          <Box sx={{ border: '1px solid #666', borderRadius: 1, p: 2, maxWidth: 500 }}>
-            <strong>{magicalGroup.name}</strong>
-            <Box sx={{ fontSize: '0.85em', mt: 0.5 }}>
-              <div>Type: {magicalGroup.type}</div>
-              <div>Resources: {magicalGroup.resources}</div>
-              {magicalGroup.patron && <div>Patron: {magicalGroup.patron}</div>}
-              {magicalGroup.strictures?.length > 0 && (
-                <div>Strictures: {magicalGroup.strictures.join(', ')}</div>
+            {/* Buy next initiation */}
+            <Box sx={{ border: '1px solid #444', borderRadius: 1, p: 2, mb: 2 }}>
+              <strong>Next Initiation — Grade {nextGrade}</strong>
+              <Box sx={{ mt: 1 }}>
+                <FormControlLabel
+                  control={<Checkbox checked={inGroup} onChange={e => setUseGroup(e.target.checked)} disabled={!magicalGroup} />}
+                  label={magicalGroup ? `Group initiation (${magicalGroup.name})` : 'Group initiation (no group set)'}
+                />
+                <FormControlLabel
+                  control={<Checkbox checked={useOrdeal} onChange={e => setUseOrdeal(e.target.checked)} />}
+                  label="Ordeal (reduces cost by ×0.5)"
+                />
+              </Box>
+              <Box sx={{ mt: 1, mb: 1 }}>
+                <strong>Karma cost: {cost}</strong>
+                {useOrdeal && <span style={{ fontSize: '0.8em', color: '#888' }}> (with ordeal)</span>}
+              </Box>
+              <Box sx={{ mt: 1 }}>
+                <strong>Benefit:</strong>{' '}
+                <select value={pendingBenefit} onChange={e => setPendingBenefit(e.target.value)}
+                  style={{ marginLeft: 8 }}>
+                  <option value="metamagic">Learn Metamagic</option>
+                  <option value="geas">Shed a Geas</option>
+                  <option value="signature">Alter Astral Signature</option>
+                </select>
+              </Box>
+              {pendingBenefit === 'metamagic' && (
+                <Box sx={{ mt: 1 }}>
+                  <FormControl size="small" style={{ minWidth: 220 }}>
+                    <InputLabel>Metamagic Technique</InputLabel>
+                    <Select value={pendingMetamagic} onChange={e => setPendingMetamagic(e.target.value)}
+                      label="Metamagic Technique">
+                      {availableMeta.map(m => (
+                        <MenuItem key={m.Name} value={m.Name}>{m.Name}</MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                </Box>
               )}
-              <div style={{ color: '#888', fontSize: '0.9em', marginTop: 4 }}>
-                Group initiation: base × 2 (× 1.5 with ordeal)
-              </div>
-            </Box>
-            <Box sx={{ mt: 1 }}>
-              <Button size="small" onClick={() => { setGroupDraft({ ...magicalGroup }); setEditingGroup(true); }}>
-                Edit
-              </Button>
-              <Button size="small" color="secondary" sx={{ ml: 1 }} onClick={removeGroup}>
-                Leave Group
-              </Button>
-            </Box>
-          </Box>
-        )}
-        {editingGroup && (
-          <Box sx={{ border: '1px solid #666', borderRadius: 1, p: 2, maxWidth: 500 }}>
-            <TextField size="small" fullWidth label="Group Name" value={groupDraft.name}
-              onChange={e => setGroupDraft({ ...groupDraft, name: e.target.value })}
-              sx={{ mb: 1 }} />
-            <Box sx={{ display: 'flex', gap: 2, mb: 1 }}>
-              <FormControl size="small" style={{ minWidth: 160 }}>
-                <InputLabel>Type</InputLabel>
-                <Select value={groupDraft.type} label="Type"
-                  onChange={e => setGroupDraft({ ...groupDraft, type: e.target.value })}>
-                  <MenuItem value="Initiatory">Initiatory</MenuItem>
-                  <MenuItem value="Dedicated">Dedicated</MenuItem>
-                  <MenuItem value="Conspiratorial">Conspiratorial</MenuItem>
-                </Select>
-              </FormControl>
-              <FormControl size="small" style={{ minWidth: 160 }}>
-                <InputLabel>Resources</InputLabel>
-                <Select value={groupDraft.resources} label="Resources"
-                  onChange={e => setGroupDraft({ ...groupDraft, resources: e.target.value })}>
-                  {['Street','Squatter','Low','Middle','High','Luxury'].map(r => (
-                    <MenuItem key={r} value={r}>{r}</MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
-            </Box>
-            <TextField size="small" fullWidth label="Patron (optional)" value={groupDraft.patron}
-              onChange={e => setGroupDraft({ ...groupDraft, patron: e.target.value })}
-              sx={{ mb: 1 }} />
-            <Box sx={{ mb: 1 }}>
-              <strong style={{ fontSize: '0.85em' }}>Strictures:</strong>
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0 }}>
-                {ALL_STRICTURES.map(s => (
-                  <FormControlLabel key={s} label={s} sx={{ width: '48%' }}
-                    control={
-                      <Checkbox size="small"
-                        checked={(groupDraft.strictures ?? []).includes(s)}
-                        onChange={() => toggleStricture(s)} />
-                    } />
-                ))}
+              <Box sx={{ mt: 2 }}>
+                <Button variant="contained" color="primary" onClick={handleInitiate}
+                  disabled={pendingBenefit === 'metamagic' && !pendingMetamagic}>
+                  Spend {cost} Karma &amp; Initiate to Grade {nextGrade}
+                </Button>
+                {initiations.length > 0 && (
+                  <Button color="secondary" sx={{ ml: 2 }} onClick={handleRemoveLastInitiation}>
+                    Undo Last Initiation
+                  </Button>
+                )}
               </Box>
             </Box>
-            <Box>
-              <Button variant="contained" size="small" onClick={saveGroup}
-                disabled={!groupDraft.name.trim()}>Save Group</Button>
-              <Button size="small" sx={{ ml: 1 }} onClick={() => setEditingGroup(false)}>Cancel</Button>
-            </Box>
           </Box>
-        )}
+
+          {/* Right: Magical Group */}
+          <Box sx={{ flex: '1 1 340px', minWidth: 280 }}>
+            <h3 style={{ marginTop: 0 }}>Magical Group</h3>
+            {RenderMagicalGroup()}
+          </Box>
+
+        </Box>
       </>
     );
   };
