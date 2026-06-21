@@ -19,6 +19,8 @@ import FinalizedBox from "./FinalizedBox";
 import CyberwarePanel from "./CyberwarePanel";
 import DeckingPanel from "./DeckingPanel";
 import VehiclesPanel from "./VehiclesPanel";
+import VehicleDesigner from "./VehicleDesigner";
+import WeaponDesigner from "./WeaponDesigner";
 import ContactsPanel from "./ContactsPanel";
 import SheetDisplay from "./SheetDisplay";
 import KarmaDisplay from "./KarmaDisplay";
@@ -148,6 +150,8 @@ export default function BasicTabs() {
       Decking: false,
       Otaku: false,
       Rigger: false,
+      VehicleDesigner: false,
+      WeaponDesigner: false,
     },
     inventory: [],
     weapons: [],
@@ -440,7 +444,7 @@ export default function BasicTabs() {
     }
   };
 
-  const tabNames = ['Identity','Priorities','Edges & Flaws','Attributes','Skills','Magic/Otaku','Cyberware','Gear','Decking','Vehicles','Contacts','Karma','Sheet'];
+  const tabNames = ['Identity','Priorities','Edges & Flaws','Attributes','Skills','Magic/Otaku','Cyberware','Gear','Decking','Vehicles','Contacts','Karma','Sheet','Vehicle Designer','Weapon Designer'];
   const handleChange = (event, newValue) => {
     setValue(newValue);
     trackTabChanged(tabNames[newValue] ?? `Tab ${newValue}`);
@@ -704,6 +708,8 @@ export default function BasicTabs() {
             <Tab label="Contacts" {...a11yProps(10)} />
             <Tab label="Karma" {...a11yProps(11)} />
             <Tab label="Sheet Display" {...a11yProps(12)} />
+            {Character.characterTabs?.VehicleDesigner && <Tab label="Vehicle Designer" value={13} {...a11yProps(13)} />}
+            {Character.characterTabs?.WeaponDesigner && <Tab label="Weapon Designer" value={14} {...a11yProps(14)} />}
           </Tabs>
 
         </Box>
@@ -1029,6 +1035,24 @@ export default function BasicTabs() {
             }
             onChangeVehicles={(vehicles) => setCharacter({ ...Character, vehicles })}
             onChangeDrones={(drones) => setCharacter({ ...Character, drones })}
+          />
+        </CustomTabPanel>
+        <CustomTabPanel value={value} index={13}>
+          <VehicleDesigner
+            edition={Edition}
+            onSave={(design) => {
+              const customVehicles = [...(Character.customVehicles ?? []), design];
+              setCharacter({ ...Character, customVehicles });
+            }}
+          />
+        </CustomTabPanel>
+        <CustomTabPanel value={value} index={14}>
+          <WeaponDesigner
+            edition={Edition}
+            onSave={(design) => {
+              const customWeapons = [...(Character.customWeapons ?? []), design];
+              setCharacter({ ...Character, customWeapons });
+            }}
           />
         </CustomTabPanel>
       </Box>

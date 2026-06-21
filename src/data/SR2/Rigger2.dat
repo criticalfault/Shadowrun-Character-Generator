@@ -1,0 +1,691 @@
+# Rigger 2 standard definitions file
+
+# Welcome to The Shop's Rigger2 data file!
+# Each section (Chassis, Engine, Modification) has a description of its contents...
+
+# Many thanks to David Taylor (Harvester@btinternet.com) for typing in
+# most of the chasses and engines, leaving me to make a mess of the
+# expression-handling :-)
+
+# Changes to Shop file format:
+# 1. All the data types are now in the same file
+# 2. In case you haven't noticed, a hash (#) is now a comment char
+# 3. Blank lines are ignored (they probably were before, but they definitely are now)
+# 4. Each record has a new field prepended - the record type (1=chassis, 2=engine, 3=mod)
+# 5. A clarification - for something that has only one value for handling, double it (ie 4 => 4/4)
+# 6. Changes to expressions - I've added +=, -=, *=, /=, <=, >= and ; (statement separator)
+# 7. Major revamp of Modifications format.
+#
+# 8. Add Local and Global variables
+# 9. Added conditionals (?, >>, <<)
+#
+# 10. Added array lookups (:)
+# 11. Added logic (&&, ||)
+# 12. Added !=
+# 13. Added Security/Military checkboxes (have to go back and reedit data)
+# 14. Added bitwise operators (&, |)
+# 15. Added vehicle descriptor
+# 16. Added modification descriptor
+# (gee, that's a lot of changes this time!)
+#
+# But wait!  There's more!
+# 17. Added Mod label descriptor ("Level", "Seats", etc.)
+# 18. Added reverse lookup operator (:=) (so "a = 'foo'; a := 'bar' 'baz' 'foo'" would
+#	return 3)
+
+# In the future...
+# Changes to fields:
+# I dunno...  a page ref might be handy.
+
+# Conditionals work kinda funny (I took the lazy way out)
+# Economy < EconomyMax;Economy = Economy ? EconomyMax;
+# is the same as
+# Economy = Economy << EconomyMax;
+
+# The comparison operators (<, >, ==, etc) all implicitly set Global.test
+# the ? operator returns the first operand if Global.test is true, the
+# second operand if Global.test is false.
+# x << y returns min(x,y) and x >> y returns max(x,y)
+# x : y1 y2 y3 y4; returns the xth element of the list (y1 y2 y3 y4)
+#	the list extends until the next statement - so make sure you've got a ';'
+#	if x < 1, returns y(1).  if x > max, returns y(max)
+
+# Order of operations
+# :
+# ^
+# *,/
+# +,-, &, |
+# ?, <<, >>
+# <, <=, ==, >=, >, !=
+# &&, ||
+# =, +=, -=, *=, /=
+
+
+## Chassis Types ##
+# Format:
+# Name		string	- name of chassis
+# Handling	int		- onroad handling
+# OffRoad	int		- offroad handling
+# Body		int
+# Armour	int
+# CF		int
+# CFMax		int
+# Autonav	int
+# Pilot		int
+# Sensor	int
+# Seating	string
+# Entry		string
+# SetupTime	int
+# TOL		string
+# Other		string
+# Cost		int
+
+# Chassis types:
+# cars, vans, pickups, light trucks, bikes, transports
+# watercraft, aircraft, ground vehicles
+# Use descriptor int for vehicle type (makes filtering easier)
+# 1 = ground
+# 2 = water
+# 4 = hover
+# 8 = air
+# 16 = bike
+# 32 = transport
+# 64 = helicopter (rotor)
+# 128 = vector thrust
+
+# bikes, cars, hovercraft, motorboats, fixed wing aircraft, rotor craft, special
+# vector thrust, sailboats
+
+# Bikes
+1,17,"Scooter",3,6,2,0,0,1,0,-1,0,"1b","o",0,"N","",30
+1,17,"Racing Cycle",3,6,2,0,1,2,0,-1,0,"ab","o",0,"N","",10
+1,17,"Off-Road",3,6,2,0,1,8,0,-1,0,"1b","o",0,"N","",15
+1,17,"Chopper",4,6,2,0,2,6,0,-1,0,"1b+1b","o",0,"N","",15
+1,17,"All-terrain Vehicle",4,4,2,0,2,15,0,-1,0,"1b+1b","o",0,"N","",445
+
+# Cars
+1,1,"Commuter/Subcomp.",4,8,3,0,1,16,0,-1,0,"1b","1",0,"N","",30
+1,1,"Sedan",4,8,3,0,6,30,0,-1,0,"2b + 2b","2+1t",0,"N","",50
+1,1,"Sports Car",4,8,3,0,3,18,0,-1,0,"2b","2+1t",0,"N","",50
+1,1,"Limousine",4,8,4,0,6,250,2,-1,0,"2b+2b+2B","2+2+1t",0,"N","",625
+1,1,"Pickup",4,6,4,0,18,42,0,-1,0,"2b","2+1t",0,"N","",60
+1,1,"Van",4,10,4,0,48,250,0,-1,0,"2b","2+1d+1g",0,"N","",60
+1,1,"RV",4,4,4,0,48,250,0,-1,0,"2b","2+1",0,"N","Living Amenities (Basic)",250
+
+# Other
+1,1,"Sand Buggy",4,4,3,0,4,15,0,-1,0,"2b + 2b","o",0,"N","",20
+1,33,"Medium Transport",5,12,5,0,80,400,0,-1,0,"2b","2+1T",0,"N","",300
+1,33,"Heavy Transport",5,12,6,0,120,800,0,-1,0,"2b","2+1T",0,"N","",385
+1,33,"Tractor",5,12,5,0,6,52,2,-1,0,"2b","2",0,"N","",175
+1,33,"APC, tracked",5,5,7,6,18,98,0,-1,0,"1b","1h+1H+1r",0,"N","",750
+1,33,"APC, wheeled",4,6,7,6,18,98,0,-1,0,"1b","1h+1H+1r",0,"N","",750
+
+# Drones
+1,1,"Crawler, Micro",4,4,0,0,0,0,-1,1,1,"0","",0,"N","Remote Control Interface,Rigger Adaptation",220
+1,1,"Crawler, Small",4,4,1,0,0,6,-1,1,1,"0","",3,"N","Remote Control Interface,Rigger Adaptation",115
+1,1,"Crawler, Large",4,4,2,0,2,12,-1,1,1,"0","",5,"N","Remote Control Interface,Rigger Adaptation",215
+1,1,"Remote Patrol Vehicle",3,6,2,0,1,6,-1,2,1,"0","",0,"N","Remote Control Interface,Rigger Adaptation",215
+1,72,"Rotary UAV, Micro",4,4,0,0,0,0,-1,1,1,"0","",0,"VTOL","Remote Control Interface,Rigger Adaptation",310
+1,72,"Rotary UAV, Small",4,4,1,0,0,1,-1,1,1,"0","",3,"VTOL","Remote Control Interface,Rigger Adaptation",710
+1,72,"Rotary UAV, Medium",4,4,2,0,1,12,-1,1,1,"0","",5,"VTOL","Remote Control Interface,Rigger Adaptation",1210
+1,72,"Tilt-wing UAV, Medium",4,4,2,0,1,12,-1,1,1,"0","",0,"VTOL","Remote Control Interface,Rigger Adaptation",1460
+1,72,"Tilt-wing UAV, Large",4,4,3,0,2,25,-1,1,1,"0","",0,"VTOL","Remote Control Interface,Rigger Adaptation",2210
+1,8,"Fixed-Wing UAV, Small",3,3,1,0,0,0,-1,1,1,"0","",3,"Standard","Remote Control Interface,Rigger Adaptation",710
+1,8,"Fixed-Wing UAV, Medium",4,4,2,0,1,12,-1,1,1,"0","",5,"Standard","Remote Control Interface,Rigger Adaptation",1460
+1,8,"Fixed-Wing UAV, Large",4,4,3,0,2,25,-1,1,2,"0","",10,"Standard","Remote Control Interface,Rigger Adaptation",2210
+1,136,"Vectored UAV, Small",4,4,2,0,1,12,-1,1,1,"0","",0,"VTOL","Remote Control Interface,Rigger Adaptation",1460
+1,136,"Vectored UAV, Large",4,4,3,0,2,25,-1,1,1,"0","",0,"VTOL","Remote Control Interface,Rigger Adaptation",2210
+1,8,"Mini-Blimp",4,4,2,0,1,6,-1,1,1,"0","",0,"VTOL","Remote Control Interface,Rigger Adaptation",240
+1,1,"Anthroform",3,3,2,0,0,1,-1,1,1,"0","",0,"N","Remote Control Interface,Rigger Adaptation,Mechanical Arms(2)",400
+1,1,"Walker, Micro",4,4,0,0,0,0,-1,1,1,"0","",0,"N","Remote Control Interface,Rigger Adaptation",265
+1,1,"Walker, Small",4,4,1,0,0,4,-1,1,1,"0","",5,"N","Remote Control Interface,Rigger Adaptation",165
+1,1,"Walker, Large",4,4,2,0,1,10,-1,1,1,"0","",8,"N","Remote Control Interface,Rigger Adaptation",240
+
+# Hovercraft
+1,4,"Hovercraft, Small",3,3,3,0,12,30,0,-1,0,"2b","2+1t",0,"N","",70
+1,4,"Hovercraft, Medium",4,4,4,0,60,240,0,-1,0,"2b","2+1T",0,"N","",70
+1,4,"Hovercraft, Large",5,5,5,0,100,480,0,-1,0,"2b","2+1T",0,"N","",250
+1,4,"Skimmer, Small",3,3,1,0,0,0,-1,1,1,"0","",0,"N","Remote Control Interface,Rigger Adaptation",250
+1,4,"Skimmer, Large",3,3,2,0,0,8,-1,1,1,"0","",0,"N","Remote Control Interface,Rigger Adaptation",350
+
+# Motorboats/Sailboats
+1,2,"Skiff",3,3,3,0,6,25,0,-1,1,"2b","o",0,"N","",75
+1,2,"Water Scooter",3,3,2,0,0,1,0,-1,0,"1b","o",0,"N","",100
+1,2,"Speedboat",3,3,3,0,0,30,0,-1,0,"1b","1",0,"N","",110
+1,2,"Sport Cruiser",4,4,5,0,36,84,1,-1,1,"2b","o",0,"N","",125
+1,2,"Yacht",5,5,7,0,80,108,2,-1,1,"2b",1,0,"N","Living Amenities (Basic)",200
+1,2,"Minisub",4,4,4,0,0,84,2,-1,1,"1b","1h",0,"N","",200
+
+# Rotor Craft
+1,72,"Autogyro",4,4,3,0,0,8,0,-1,0,"1b","o",0,"VTOL","",20
+1,72,"Utility Helicopter",5,5,4,0,50,75,1,-1,1,"2b","2+2d",0,"VTOL","",500
+1,72,"Cargo Helicopter",5,5,7,0,80,600,1,-1,1,"2b","2+2d",0,"VTOL","",1000
+1,72,"Tilt-wing",6,6,5,0,48,96,1,-1,1,"2b","1+1",0,"VTOL","",600
+1,72,"Attack Helicopter",5,5,5,0,4,64,2,-1,3,"1b","1",0,"VTOL","",1000
+
+# Fixed Wing Aircraft
+1,8,"Ultralight",4,4,2,0,0,8,0,-1,0,"1b","o",0,"Standard","",20
+1,8,"Single Engine",5,5,4,0,21,63,1,-1,1,"2b","1+1",0,"Standard","",75
+1,8,"Twin Engine",5,5,6,0,48,600,1,-1,1,"2b","1+1",0,"Standard","",125
+1,8,"Airliner",6,6,9,0,500,7500,3,-1,1,"2b","2+2+1",0,"Standard","",2000
+1,8,"Jet Fighter",6,6,7,0,6,64,3,-1,5,"1e","1",0,"Standard","EnviroSeal (gas)",2000
+
+# Vector Thrust
+1,136,"Thunderbird",5,5,6,0,16,96,2,-1,3,"1e","1h+1d+1r",0,"VSTOL","EnviroSeal (gas)",2500
+1,136,"Jump Jet Fighter",6,6,7,0,6,64,3,-1,5,"1e","1",0,"VTOL","EnviroSeal (gas)",2000
+
+# Special
+1,8,"Zeppelin",5,5,8,0,48,96,1,-1,1,"2b","2",0,"VTOL","",1600
+
+## Engines ##
+# Format:
+# Chassis	string
+# Name		string
+# Speed		int
+# SpeedMax	int
+# Accel		int
+# AccelMax	int
+# Load		int
+# LoadMax	int
+# Sig		int
+# Economy	int
+# EconomyMax int
+# Fuel		int
+# Cost		int
+
+# Engine Types:
+# Gasoline, Methane, Electric, Diesel, Jet Propeller, Turbine, Sail
+
+# Bikes
+2,"Scooter","Gasoline",60,150,4,10,80,140,2,10,14,20,5
+2,"Racing Cycle","Gasoline",120,240,10,18,50,100,2,8,16,15,5
+2,"Off-Road","Gasoline",60,150,4,10,80,140,2,10,14,20,5
+2,"Chopper","Gasoline",60,150,4,10,80,140,2,10,14,20,5
+2,"All-terrain Vehicle","Gasoline",60,150,4,10,80,140,2,10,14,20,5
+2,"Scooter","Electric",60,90,3,6,15,40,5,0.5,2,75,5
+2,"Racing Cycle","Electric",60,90,3,6,15,40,5,0.5,2,75,5
+2,"Off-Road","Electric",60,90,3,6,15,40,5,0.5,2,75,5
+2,"Chopper","Electric",60,90,3,6,15,40,5,0.5,2,75,5
+2,"All-terrain Vehicle","Electric",60,90,3,6,15,40,5,0.5,2,75,5
+2,"Scooter","Methane",40,90,4,9,60,120,4,1.25,2,300,5
+2,"Racing Cycle","Methane",40,90,4,9,60,120,4,1.25,2,300,5
+2,"Off-Road","Methane",40,90,4,9,60,120,4,1.25,2,300,5
+2,"Chopper","Methane",40,90,4,9,60,120,4,1.25,2,300,5
+2,"All-terrain Vehicle","Methane",40,90,4,9,60,120,4,1.25,2,300,5
+
+# Cars
+2,"Commuter/Subcomp.","Gasoline",90,100,6,10,40,160,2,8,12,40,25
+2,"Sedan","Gasoline",100,160,8,14,60,300,2,8,14,60,25
+2,"Sports Car","Gasoline",160,270,10,18,40,200,2,6,10,60,65
+2,"Limousine","Gasoline",100,160,8,14,60,400,2,8,14,60,50
+2,"Pickup","Gasoline",100,140,7,12,250,1600,2,6,10,80,30
+2,"Van","Gasoline",80,120,5,8,350,2500,2,5,9,95,40
+2,"RV","Gasoline",80,120,5,8,350,2500,2,5,9,95,40
+2,"Commuter/Subcomp.","Electric",75,100,4,9,40,160,5,0.5,2.5,150,10
+2,"Sedan","Electric",75,100,4,9,40,160,5,0.5,2.5,150,10
+2,"Limousine","Electric",75,100,4,9,40,160,5,0.5,2.5,150,10
+2,"Pickup","Electric",40,80,2,5,350,1250,5,0.25,1,200,15
+2,"Van","Electric",40,80,2,5,350,1250,5,0.25,1,200,15
+2,"RV","Electric",40,80,2,5,350,1250,5,0.25,1,200,15
+2,"Commuter/Subcomp.","Methane",90,100,6,10,40,160,4,1.25,2.5,450,20
+2,"Sedan","Methane",100,140,6,10,60,200,4,1,2.25,500,20
+2,"Limousine","Methane",100,140,6,10,60,200,4,1,2.25,500,20
+2,"Pickup","Methane",80,120,2,5,350,1600,3,0.5,1.5,1000,20
+2,"Van","Methane",80,120,2,5,350,1600,3,0.5,1.5,1000,20
+2,"RV","Methane",80,120,2,5,350,1600,3,0.5,1.5,1000,20
+2,"Limousine","Diesel",80,140,8,12,180,800,2,6,10,60,65
+2,"Pickup","Diesel",120,200,7,12,1000,2000,2,5,9,80,35
+2,"Van","Diesel",80,150,4,9,1000,3000,2,4,8,250,35
+2,"RV","Diesel",80,150,4,9,1000,3000,2,4,8,250,35
+
+# Other
+2,"Sand Buggy","Gasoline",90,100,6,10,40,160,2,8,12,40,25
+2,"Sand Buggy","Electric",75,100,4,9,40,160,5,0.5,2.5,150,10
+2,"Sand Buggy","Methane",90,100,6,10,40,160,4,1.25,2.5,450,20
+2,"Medium Transport","Diesel",65,130,3,6,2000,5000,2,4,8,250,35
+2,"Heavy Transport","Diesel",60,120,3,5,6000,12000,2,3,6,500,35
+2,"Tractor","Diesel",60,120,3,4,7500,18000,2,3,6,750,35
+
+## I gave the APCs load ratings of 3000/6000 instead of 3/6, which is just silly
+2,"APC, Tracked","Diesel",40,70,5,8,3000,6000,2,2,4,800,35
+2,"APC, Wheeled","Diesel",40,70,5,8,3000,6000,2,2,4,800,35
+# Transports, Tractors and APCs don't have Gasoline,Electric or Methane engines
+
+# Drones
+# I gave the Micro a LoadMax of +10
+2,"Crawler, Micro","Gasoline, Tracked",25,55,3,9,10,10,6,1.5,5,5,25
+2,"Crawler, Micro","Gasoline, Wheeled",35,100,3,12,10,10,6,4,8,5,25
+2,"Crawler, Small","Gasoline, Tracked",25,55,3,9,10,550,5,1.5,5,5,25
+2,"Crawler, Small","Gasoline, Wheeled",35,100,3,12,10,450,5,4,8,5,25
+2,"Crawler, Large","Gasoline, Tracked",25,55,3,9,10,1100,4,1.5,5,5,25
+2,"Crawler, Large","Gasoline, Wheeled",35,100,3,12,10,900,4,4,8,5,25
+2,"Remote Patrol Vehicle","Gasoline, Tracked",25,55,3,9,10,1100,4,1.5,5,5,25
+2,"Remote Patrol Vehicle","Gasoline, Wheeled",35,100,3,12,10,900,4,4,8,5,25
+2,"Crawler, Micro","Electric, Tracked",1,5,0,0,0,10,16,0.1,0.5,1,10
+2,"Crawler, Micro","Electric, Wheeled",1,5,0,0,0,10,16,0.1,0.5,1,10
+2,"Crawler, Small","Electric, Tracked",10,40,2,4,5,500,8,0.75,1.5,40,5
+2,"Crawler, Small","Electric, Wheeled",10,50,2,5,5,400,8,1,2,40,5
+2,"Crawler, Large","Electric, Tracked",10,40,2,4,10,1000,7,0.75,1.5,70,10
+2,"Crawler, Large","Electric, Wheeled",10,50,2,5,10,800,7,1,2,70,10
+2,"Remote Patrol Vehicle","Electric, Tracked",10,40,2,4,10,1000,7,0.75,1.5,70,10
+2,"Remote Patrol Vehicle","Electric, Wheeled",10,50,2,5,10,800,7,1,2,70,10
+2,"Crawler, Micro","Methane, Tracked",20,35,2,6,0,10,8,0.75,1.25,150,20
+2,"Crawler, Micro","Methane, Wheeled",30,70,2,7,0,10,8,1,2,150,20
+2,"Crawler, Small","Methane, Tracked",20,35,2,6,10,500,7,0.75,1.25,150,20
+2,"Crawler, Small","Methane, Wheeled",30,70,2,7,10,400,7,1,2,150,20
+2,"Crawler, Large","Methane, Tracked",20,35,2,6,20,1000,6,0.75,1.25,150,20
+2,"Crawler, Large","Methane, Wheeled",30,70,2,7,20,800,6,1,2,150,20
+2,"Remote Patrol Vehicle","Methane, Tracked",20,35,2,6,20,1000,6,0.75,1.25,150,20
+2,"Remote Patrol Vehicle","Methane, Wheeled",30,70,2,7,20,800,6,1,2,150,20
+2,"Crawler, Micro","Diesel, Tracked",25,50,3,7,10,10,6,1,4,5,25
+2,"Crawler, Micro","Diesel, Wheeled",35,90,3,10,10,10,6,2,6,5,25
+2,"Crawler, Small","Diesel, Tracked",25,50,3,7,10,750,5,1,4,5,35
+2,"Crawler, Small","Diesel, Wheeled",35,90,3,10,10,600,5,2,6,5,35
+2,"Crawler, Large","Diesel, Tracked",25,50,3,7,10,1500,4,1,4,5,45
+2,"Crawler, Large","Diesel, Wheeled",35,90,3,10,10,1200,4,2,6,5,45
+2,"Remote Patrol Vehicle","Diesel, Tracked",25,50,3,7,10,1500,4,1,4,5,45
+2,"Remote Patrol Vehicle","Diesel, Wheeled",35,90,3,10,10,1200,4,2,6,5,45
+2,"Rotary UAV, Small","Gasoline",40,90,4,8,4,10,4,0.25,0.4,60,25
+2,"Fixed-Wing UAV, Small","Gasoline",90,200,7,10,4,10,4,0.5,0.75,60,25
+2,"Walker, Micro","Gasoline",5,12,1,1,6,18,6,0.25,1,5,25
+2,"Walker, Small","Gasoline",5,12,1,1,6,18,5,0.25,1,5,25
+2,"Walker, Large","Gasoline",5,12,1,1,6,18,4,0.25,1,5,25
+2,"Rotary UAV, Micro","Electric",10,25,3,8,0,10,16,0.005,0.01,10,10
+2,"Rotary UAV, Small","Electric",35,90,3,12,5,75,7,1,2.5,150,5
+2,"Rotary UAV, Medium","Electric",35,90,3,12,5,75,6,1,2.5,150,10
+2,"Fixed-Wing UAV, Small","Electric",60,125,5,8,2,8,10,5,10,40,10
+2,"Mini-Blimp","Electric",40,75,1,5,2,75,9,5,10,10,10
+2,"Walker, Micro","Electric",2,15,1,1,5,15,8,0.5,1,40,10
+2,"Walker, Small","Electric",2,15,1,1,5,15,8,0.5,1,40,10
+2,"Walker, Large","Electric",2,15,1,1,5,15,8,0.5,1,40,10
+2,"Rotary UAV, Small","Methane",50,100,3,7,10,500,6,0.05,0.25,400,20
+2,"Fixed-Wing UAV, Small","Methane",80,150,11,14,10,500,5,0.75,1.25,400,20
+2,"Walker, Micro","Methane",3,9,1,1,5,15,8,0.5,1,150,20
+2,"Walker, Small","Methane",3,9,1,1,5,15,7,0.5,1,150,20
+2,"Walker, Large","Methane",3,9,1,1,5,15,6,0.5,1,150,20
+2,"Walker, Micro","Diesel",5,12,1,1,10,30,4,0.1,0.75,5,35
+2,"Walker, Small","Diesel",5,12,1,1,10,30,4,0.1,0.75,5,35
+2,"Walker, Large","Diesel",5,12,1,1,10,30,4,0.1,0.75,5,35
+2,"Fixed-Wing UAV, Small","Jet Propeller",45,175,30,75,10,225,6,1,3,60,40
+2,"Fixed-Wing UAV, Medium","Jet Propeller",90,350,30,75,10,225,6,1,3,60,40
+2,"Fixed-Wing UAV, Large","Jet Propeller",135,525,30,75,10,225,6,1,3,60,40
+2,"Tilt-wing UAV, Medium","Jet Propeller",90,350,6,18,10,450,4,0.6,1,60,50
+2,"Tilt-wing UAV, Large","Jet Propeller",135,525,6,18,10,450,4,0.6,1,60,50
+2,"Rotary UAV, Micro","Turbine",60,200,6,18,0,10,6,0.25,0.4,120,30
+2,"Rotary UAV, Small","Turbine",60,200,6,18,10,450,5,0.25,0.4,120,40
+2,"Rotary UAV, Medium","Turbine",60,200,6,18,20,900,4,0.25,0.4,120,50
+2,"Fixed-Wing UAV, Medium","Turbine",200,480,30,270,10,2000,6,0.5,0.75,120,80
+2,"Fixed-Wing UAV, Large","Turbine",300,1620,40,570,10,4500,6,0.5,0.75,120,80
+2,"Vectored UAV, Small","Turbine",120,400,10,25,10,500,4,0.25,0.4,120,60
+2,"Vectored UAV, Large","Turbine",180,600,10,25,10,500,3,0.25,0.4,120,75
+
+## Jon Szeto says that Anthroforms use the same power plants as Walkers - he
+# means Large Walkers, I assume (same Body)
+2,"Anthroform","Gasoline",5,12,1,1,6,18,4,0.25,1,5,25
+2,"Anthroform","Electric",2,15,1,1,5,15,8,0.5,1,40,10
+2,"Anthroform","Methane",3,9,1,1,5,15,6,0.5,1,150,20
+2,"Anthroform","Diesel",5,12,1,1,10,30,4,0.1,0.75,5,35
+
+# Hovercraft
+# Only Hover,Small and Skimmers have Gasoline engines
+2,"Hovercraft, Small","Gasoline",90,130,5,10,600,1500,2,0.5,3,400,50
+2,"Skimmer, Small","Gasoline",90,180,5,20,10,300,6,0.5,1,25,20
+2,"Skimmer, Large","Gasoline",90,180,5,20,20,600,5,0.5,1,25,40
+2,"Skimmer, Small","Electric",90,180,4,10,5,300,7,0.4,1.6,50,5
+2,"Skimmer, Large","Electric",90,180,4,10,10,600,6,0.4,1.6,50,10
+2,"Hovercraft, Small","Methane",100,240,2,9,400,1400,3,0.25,1,2500,20
+2,"Skimmer, Small","Methane",90,180,5,20,10,300,6,0.25,1,2500,10
+2,"Skimmer, Large","Methane",90,180,5,20,20,600,5,0.25,1,2500,20
+2,"Hovercraft, Medium","Diesel",90,150,5,10,750,2500,2,0.5,2.5,400,75
+2,"Hovercraft, Large","Diesel",90,150,5,10,1000,5000,2,0.5,2.5,400,75
+2,"Skimmer, Small","Diesel",90,180,5,20,10,500,6,0.25,1,25,30
+2,"Skimmer, Large","Diesel",90,180,5,20,20,1000,5,0.25,1,25,40
+
+# Motorboats/Sailboats
+2,"Skiff","Gasoline",45,90,6,10,50,250,3,7,10,20,25
+2,"Water Scooter","Gasoline",45,90,6,10,50,250,3,7,10,20,25
+2,"Speedboat","Gasoline",75,240,10,18,40,400,2,3,6,100,30
+2,"Sport Cruiser","Gasoline",30,100,5,9,350,1500,3,4,8,200,35
+2,"Yacht","Gasoline",30,100,5,9,350,2500,3,4,8,200,35
+2,"Minisub","Gasoline",5,30,2,5,250,1000,6,1,4,300,25
+2,"Skiff","Electric",30,60,3,6,15,40,5,1,5,75,20
+2,"Water Scooter","Electric",30,60,3,6,15,40,5,1,5,75,20
+2,"Minisub","Electric",5,15,2,5,40,160,8,1,5,250,10
+2,"Skiff","Methane",20,50,3,10,50,250,4,1,2.25,250,20
+2,"Water Scooter","Methane",20,50,3,10,50,250,4,1,2.25,250,20
+2,"Sport Cruiser","Methane",20,40,3,10,300,1000,4,0.75,1.5,1000,20
+2,"Yacht","Methane",20,40,3,10,300,1000,4,0.75,1.5,1000,20
+2,"Minisub","Methane",5,20,1,7,250,800,7,0.25,1,2000,20
+2,"Sport Cruiser","Diesel",30,100,4,6,500,2500,2,2,6,200,35
+2,"Yacht","Diesel",30,100,4,6,600,3500,2,2,6,200,40
+2,"Minisub","Diesel",10,70,2,4,400,2000,6,1,4,300,35
+2,"Skiff","Sail",30,60,3,7,150,750,6,0,0,0,10
+2,"Sport Cruiser","Sail",30,50,3,6,250,1000,6,0,0,0,10
+2,"Yacht","Sail",30,45,3,6,350,2500,6,0,0,0,10
+
+# Rotor Craft
+2,"Tilt-wing","Jet Propeller",280,500,10,20,350,2500,4,0.6,1,750,75
+2,"Autogyro","Turbine",60,200,10,20,15,155,4,0.25,0.4,250,25
+2,"Utility Helicopter","Turbine, Standard",120,350,10,25,850,3600,3,0.2,0.35,1000,50
+2,"Utility Helicopter","Turbine, Supercharged",360,500,15,40,400,900,2,0.1,0.3,1500,100
+2,"Cargo Helicopter","Turbine",120,350,10,25,850,12000,3,0.2,0.35,1000,150
+2,"Attack Helicopter","Turbine",250,350,20,35,1500,5000,4,0.1,0.3,3000,1500
+
+# Fixed Wing Aircraft
+2,"Ultralight","Electric",45,75,3,6,0,200,9,0.25,1,50,100
+2,"Ultralight","Jet Propeller",120,250,17,20,15,150,6,1,3,60,20
+2,"Single Engine","Jet Propeller",130,450,20,25,175,750,4,1,3,250,50
+2,"Twin Engine","Jet Propeller",280,500,20,28,350,2500,4,1,3,500,75
+2,"Airliner","Jet Propeller",320,500,22,35,5000,15000,3,0.75,1.5,5000,500
+2,"Single Engine","Turbine",320,400,20,35,250,2000,3,0.5,0.75,750,100
+2,"Twin Engine","Turbine",500,800,30,42,500,5000,3,0.5,0.75,1500,150
+2,"Airliner","Turbine",600,1000,35,60,10000,75000,2,0.4,0.6,5000,1000
+2,"Jet Fighter","Turbine",2000,5000,80,250,7500,12500,5,0.1,0.3,7500,2000
+
+# Vector Thrust
+2,"Thunderbird","Turbine",400,750,25,60,10000,20000,3,0.05,0.3,7500,2500
+2,"Jump Jet Fighter","Turbine",700,2000,50,150,2000,9600,5,0.1,0.3,2500,2000
+
+# Special
+2,"Zeppelin","Electric",40,125,1,9,1000,4000,4,0.25,1,1000,500
+2,"Zeppelin","Jet Propeller",70,250,8,26,1000,4000,2,1,3,2000,300
+2,"Zeppelin","Turbine",120,400,12,26,1250,4500,1,0.5,0.75,2000,450
+
+## Modifications ##
+
+# Format:
+# Name		string	- name of the modification
+# Priority	int		- 1 = low (to force certain things to eval before others)
+# Markup	float	- markup multiplier (usually 1)
+# Level		int		- default level (usually 0)
+# Limit		expr	- a statement that evaluates to True if the mod is within limits
+# Expr		expr	- an expression that modifies all appropriate values
+
+# Design options
+
+# Comments:
+# Max Rating for SigImp at GM discretion - sugg 1=civil,2=sec,3+=milspec
+# Design Cost for SigImp is listed as: "Design Cost (Levels of improvement): 4 x 200 points"!?
+
+3,1,"Acceleration Increase",1,1,0,"Level","Accel <= AccelMax","Accel += Level;Cost += 2 * Level"
+# Fixed-wing aircraft only
+3,1,"Add STOL",1,1,0,"","Level == 0 && Chassis.ChassisType & 200 == 8","TOL = 'S';Cost = Cost + 250"
+3,1,"Add VSTOL",1,1,0,"","Level <= 1 && Chassis.ChassisType & 200 == 8","TOL = 'VS';Cost = Cost + 400"
+
+# Fuel tank is based on fuel type...  Haven't defined this yet.
+# Going to be a huge IF list...
+3,1,"Increase Fuel Tank Capacity",1,1,0,"Level","-1","Local.FuelType = Engine.EngineName := 'Sail*' 'Electric*' 'Methane*' 'Gasoline*' 'Diesel*' 'Jet Propeller*' 'Turbine*';Cost += Level * Local.FuelType : 0 2 2 2 2 1 1;Fuel += Level * Local.FuelType : 0 5 5 1 1 10 10;CFUsed += Level * Local.FuelType : 0 0 0.5 0.02 0.02 0.2 0.2"
+3,1,"Handling Improvement",1,1,0,"Level","Level <= Chassis.Handling / 2","Handling -= Level;Cost += 25 * Level"
+3,1,"Handling Improvement (OffRoad)",1,1,0,"Level","Level <= Chassis.OffRoad / 2","OffRoad -= Level;Cost += 25 * Level"
+
+# Hydrofoil only works on boats.  Use conditionals?  Or just common sense?
+3,1,"Hydrofoil",1,1,0,"","Level == 0 && Chassis.ChassisType & 2","Cost += 50;CFUsed += 8"
+3,1,"Improved Economy",1,1,0,"Level","Economy <= EconomyMax","Economy += Economy * Level * 0.05;Cost = Cost + 5 * Level"
+3,1,"Increased Cargo Space",1,1,0,"CF","CF <= CFMax","CF += Level;Cost += 5 * Level"
+
+# There are 3 levels of living amenities, but I need Level for the # of passengers...
+3,1,"Living Amenities (Basic)",1,1,0,"People","-1","Cost += 40 * Level;CFUsed += 200;LoadUsed += 100"
+3,1,"Living Amenities (Improved)",1,1,0,"People","-1","Cost += 50 + 40 * Level;CFUsed += 200;LoadUsed += 100"
+3,1,"Living Amenities (High)",1,1,0,"People","-1","Cost += 100 + 40 * Level;CFUsed += 200;LoadUsed += 100"
+3,1,"Load Increase",1,1,0,"Level","Load <= LoadMax","Cost += Level;Load += 10 * Level"
+3,1,"Medical-Treatment Gear",1,1,0,"Patients","-1","Cost += 400 + 80 * Level;CFUsed += 225;LoadUsed += 500;Markup += 1"
+
+# Design Cost and Max Rating for IRLP are both at GM discretion...
+#	3,1,"Improve Robot's Learning Pool",1,1,0,"??","Cost += ??"
+3,1,"Signature Improvement",1,1,0,"Level","Level <= 3","Cost += Level ^ 4 * 200; Sig += Level; Security = Security >> Level : 0 1 0; Military = Military >> Level : 0 0 1"
+3,1,"Smart Materials",1,1,0,"","Level == 0","Cost += 100;Markup += 0.5;Handling -= 1; OffRoad -= 1;SpeedMax *= 1.15;AccelMax *= 1.15;LoadMax *= 1.15; Chassis.ChassisType & 64; Sig += 1 ? 0"
+3,1,"Speed Increase",1,1,0,"Level","Speed <= SpeedMax","Cost += 2 * Level;Speed += Level"
+
+# Limit on SA is # of levels purchased for DBW
+3,1,"Structural Agility",2,1,0,"Level","Level <= Global.DBW","Cost += 150 * Level"
+
+
+## DESIGN-TIME OPTIONS VERIFIED!
+
+
+# Customization
+
+# Engine customization
+
+# Max for EC is (max Speed, Accel or Load) * 1.75
+# Cost for EC is based on Engine's DP Cost
+# EC can increase Speed, Accel or Load
+# Have separate entries after EC, check to see if EC is installed
+#3,2,"Engine Customization",1,1,1,"Level","-1","Global.EC = Level; Global.ECLevel = Level; Level > 0;Local.lev = 1.25 ? 0.5;Local.base = Local.lev + 0.5 * Level - 0.5;Global.ECCost = Engine.Cost * Local.base; Cost += Global.ECCost"
+3,2,"Engine Customization",1,1,1,"Level","-1","Global.EC = Level; Global.ECLevel = Level; Local.base = 0.75 + 0.5 * Level;Global.ECCost = Engine.Cost * Local.base; Cost += Global.ECCost"
+3,2,"Engine Customization: Speed",2,1,1,"Level","Global.EC >= 0","Global.EC -= Level;Speed += 30 * Level; Local.Max = Speed >> SpeedMax; SpeedMax = Local.Max << SpeedMax * 1.75"
+3,2,"Engine Customization: Acceleration",2,1,1,"Level","Global.EC >= 0","Global.EC -= Level;Accel += 2 * Level; Local.Max = Accel >> AccelMax; AccelMax = Local.Max << AccelMax * 1.75"
+3,2,"Engine Customization: Load",2,1,1,"Level","Global.EC >= 0","Global.EC -= Level;Load += 50 * Body * Level; Local.Max = Load >> LoadMax; LoadMax = Local.Max << LoadMax * 1.75"
+
+# GridLink Power doesn't cost anything at design-time
+3,2,"Gridlink Power",1,1,0,"","Engine.EngineName == 'Electric*' && Chassis.ChassisType & 1 == 1 && Pilot == -1 && Level == 0",""
+
+# NOI only works with Gasoline or Diesel engines
+3,2,"Nitrous Oxide Injectors",1,1,0,"Level","Engine.EngineName == 'Gasoline*' || Engine.EngineName == 'Diesel*' && Level <= 6","Cost += 55 * Level;CFUsed += 1.5;LoadUsed += 15"
+
+# SunCell only works with Electric engines, and not Bikes
+3,2,"SunCell Power",1,1,0,"","Engine.EngineName == 'Electric*' && Chassis.ChassisType & 17 != 17 && Level == 0","Cost += 5"
+
+# The Economy bit is supposed to be calculated after all other Economy modifications...
+# Turbo for aircraft only if electric engine
+# I've set Turbo to +1 accel per level, as per the errata that should be
+3,2,"Turbocharging",100,1,0,"Level","Engine.EngineName == 'Gasoline*' || Engine.EngineName == 'Diesel*' || Engine.EngineName == 'Methane*' && Chassis.ChassisType & 8 == 0 || Engine.EngineName == 'Electric*'","Cost += Engine.Cost * 1.75 ^ Level;Speed += 15 * Level; Accel += Level;Sig -= 1 * Level;Economy *= 0.95 ^ Level;Engine.SpeedMax * 0.25 < 15; SpeedMax += 15 ? Engine.SpeedMax * 0.25"
+
+# Control System Modifications
+# pg122
+
+3,3,"Adjusted Controls (Dwarf)",1,1,0,"","Level == 0","Cost += 25"
+3,3,"Adjusted Controls (Troll)",1,1,0,"","Level == 0","Cost += 35"
+3,3,"Adjusted Controls (Other)",1,1,0,"","Level == 0","Cost += 30"
+
+3,3,"Autonav",1,1,0,"Level","Chassis.ChassisType != 17 || Level <= 2 || Global.Rigged && Level <= 4","Cost -= Autonav : 5 10 50 150; Autonav = Level; Cost += Level : 5 10 50 150"
+3,3,"Contingency Maneuver Controls",1,1,0,"Rating","Level < 10","Cost += Level : 35 70 105 300 375 450 1050 1200 1350; LoadUsed += 25"
+3,3,"Datajack port",1,1,0,"","Level == 0","Cost += 25;LoadUsed += 10"
+
+# DBW is kind of odd...  But it works!
+3,3,"Drive-by-Wire",1,1,0,"Level","Level <= 3","Level > 0;Global.DBW = 10 ? 0; Global.DBWLevel = Level; Handling -= Level; Cost += Chassis.Cost * 1.75 ^ Level - Chassis.Cost"
+3,3,"Drive-by-Wire: Accel",3,1,0,"Level","Global.DBW >= 0","Global.DBWLevel -= Level;Accel += Level / 100 * Accel"
+3,3,"Drive-by-Wire: Speed",3,1,0,"Level","Global.DBW >= 0","Global.DBWLevel -= Level;Speed += Level / 100 * Speed"
+3,3,"Drive-by-Wire: Load",3,1,0,"Level","Global.DBW >= 0","Global.DBWLevel -= Level;Load += Level / 100 * Load"
+
+# ICS is incompatible with DBW
+# ICS is for boats only
+3,3,"Improved Control Surfaces",2,1,0,"Level","Chassis.ChassisType & 2 && Global.DBW == 0 && Level <= 2","Handling -= Level; Cost += Chassis.Cost * 1.40 ^ Level - Chassis.Cost"
+# IS is incompatible with DBW
+# IS is only for wheeled ground vehicles
+3,3,"Improved Suspension",2,1,0,"Level","Chassis.ChassisName != '*Tracked' && Chassis.ChassisType & 1 && Global.DBW == 0 && Level <= 2","Handling -= Level; Chassis.ChassisType & 17 == 17; OffRoad -= Level ? 0; Cost += Chassis.Cost * 1.25 ^ Level - Chassis.Cost"
+
+# ORS modifies economy based on vehicle type
+# ORS is only avail to wheeled ground vehicles
+3,3,"Off-Road Suspension",1,1,0,"Level","Chassis.ChassisName != '*Tracked' && Chassis.ChassisType & 1 && Level <= 2","Handling += Level; OffRoad -= Level; Speed -= 15; Local.foo = Chassis.ChassisType / 8; Economy *= Local.foo : 1.15 1.3 1.3 1.4; Cost += Chassis.Cost * 1.50 ^ Level - Chassis.Cost"
+
+3,3,"Remote-Control Interfaces",1,1,0,"","Level == 0","Pilot = 1; Cost += 25 * Body"
+#Pilot > 0; Pilot = Level ? Pilot; Level > 1; Local.m = 2 ? 0; Local.Cost = 5 ^ Level * Local.m; Level < 5; Cost += Local.Cost ? 5000;
+3,3,"Remote Pilot Advanced Programming",2,1,0,"Rating","Pilot >= 0 && Level <= 5","Cost -= Pilot : 0 50 250 1250 5000; Pilot = Level; Cost += Level : 0 50 250 1250 5000; Security = Security >> Level : 0 0 0 1 0; Military = Military >> Level : 0 0 0 0 1"
+
+3,3,"Rigger Adaptation",1,1,0,"","Level == 0","Cost += 35; Global.Rigged = 1"
+# SC not available for Bikes
+3,3,"Secondary Controls",1,1,0,"","Chassis.ChassisType != 17 && Level == 0","CFUsed += 1; Cost += 5"
+
+## VERIFIED
+
+# Protective System Modifications (pg 127)
+
+3,4,"Standard Armour",1,1,0,"Armour","-1","Armour += Level; LoadUsed += Body * Body * 5 * Level; Handling += Level / 6; Cost += 50 * Level"
+# CA is supposed to be incompatible with SA, but I think that's silly.
+3,4,"Concealed Armour",1,1,0,"Armour","-1","Armour += Level; LoadUsed += Body * Body * 5 * Level; CFUsed += 2 * Level; Cost += 50 * Level"
+# Ablative isn't available at design-time!  Why not?
+#	3,4,"Ablative Armour",1,1,1,"Armour","Level <= 3","LoadUsed += Body * 100; Armour += 2 * Level; Local.lev = Level + 2; Local.cost = Local.lev * Local.lev * 100; Level > 1; Cost += Local.cost ? 700"
+
+# APPS not available for Bikes
+3,4,"Advanced Passenger Protection Systems",1,1,0,"Seats","Chassis.ChassisType & 17 != 17","Cost += 30 * Level"
+# CC not avail for Bikes
+3,4,"Crash Cages",1,1,0,"","Chassis.ChassisType & 17 != 17 && Level == 0","LoadUsed += 10; Cost += 40"
+
+# I think ES:OP should probably only be avail if you've bought ES:G (otherwise
+# where are you getting this gas that keeps leaking out?), but...
+3,4,"EnviroSeal (gas)",1,1,0,"","Level == 0 && Chassis.ChassisType != 17","Global.ES = -1; Cost += Body * 3"
+3,4,"EnviroSeal (water)",1,1,0,"","Level == 0 && Chassis.ChassisType != 17","Global.ES = -1; Cost += Body * 10"
+3,4,"EnviroSeal (engine)",1,1,0,"","Level == 0 && Chassis.ChassisType != 17","Global.ES = -1; Cost += Body * 15"
+3,4,"EnviroSeal: overpressurization",2,1,0,"","Global.ES && Level == 0 && Chassis.ChassisType != 17","LoadUsed += 10; CFUsed += 1; Cost += Body * 75"
+
+# LSS should probably require ES:G as well...
+3,4,"Life Support Systems",1,1,0,"Man-hours","Global.ES","LoadUsed += Level / 10 * 25; CFUsed += Level / 10; Cost += 5 + Level"
+
+3,4,"Roll Bars",1,1,0,"","Level == 0","Global.RollBars = 1"
+
+# SAS makes *current* armour "smart"
+3,4,"Smart Armour Systems (SAS)",1,1,0,"","Level == 0","Military = 1; LoadUsed += Body * 50 * Armour; CFUsed += 2; Cost += 250"
+
+
+## VERIFIED
+
+# Signature Modifications
+
+3,5,"Thermal Baffles",1,1,0,"Level","Engine.EngineName != 'Sail*' && Engine.EngineName != 'Electric*'; Level <= 2","LoadUsed += Level * Body * 50;Sig += Level;Cost += 75 * Level"
+# ATM only avail for customized gas, methane, diesel & jet engines
+# except Bikes
+# ATM cost is based on cost of EC...
+3,5,"Active Thermal Masking",2,1,0,"Level","Chassis.ChassisType != 17 && Engine.EngineName != 'Sail*' && Engine.EngineName != 'Electric*' && Level <= 2 << Global.ECLevel","Sig += Level; CFUsed += 3; LoadUsed += 100; Cost += Global.ECCost * Level : 0 0.2 0.45"
+3,5,"Radar-Absorbent Materials (RAM)",1,1,0,"Level","Level <= 3","Military = 1; Sig += Level; Cost += Level ^ 3 * 50"
+
+
+## VERIFIED
+
+# Vehicle Weapon Mounts
+
+# hardpoints = 2
+# firmpoints = 1
+# total <= body
+# bike must have sidecar for hardpoint
+
+3,6,"Fixed mount, ext Firmpoint",1,1,0,"Quantity","Body >= Global.Points","Global.Points += Level; LoadUsed += 10 * Level; CFUsed += 0.5 * Level; Cost += 10 * Level; Sig -= Level; Security = 1 - Military"
+3,6,"Fixed mount, int Firmpoint",1,1,0,"Quantity","Body >= Global.Points","Global.Points += Level; LoadUsed += 10 * Level; CFUsed += 3 * Level; Cost += 20 * Level; Security = 1 - Military"
+3,6,"Fixed mount, ext Hardpoint",2,1,0,"Quantity","Chassis.ChassisType & 17 != 17 || Global.SideCar > 0 && Body >= Global.Points","Global.SideCar -= 1; Global.Points += 2 * Level; LoadUsed += 10 * Level; CFUsed += 1 * Level; Cost += 25 * Level;  Sig -= Level; Security = 1 - Military"
+3,6,"Fixed mount, int Hardpoint",2,1,0,"Quantity","Chassis.ChassisType & 17 != 17 || Global.SideCar > 0 && Body >= Global.Points","Global.SideCar -= 1; Global.Points += 2 * Level; LoadUsed += 10 * Level; CFUsed += 4 * Level; Cost += 35 * Level; Security = 1 - Military"
+
+# Include firearm conversion kits?
+
+# gyro-stabilizers are incompatible with this
+# max rating of GRA is based on what kind of 'point it's on...
+3,6,"Gunnery Recoil Adjusters (fixed firm)",1,1,0,"Level","Level <= 4","Global.GRA = -1; Cost += 10 * Level"
+3,6,"Gunnery Recoil Adjusters (micro turret)",1,1,0,"Level","Level <= 4","Global.GRA = -1; Cost += 10 * Level"
+3,6,"Gunnery Recoil Adjusters (mini turret)",1,1,0,"Level","Level <= 6","Global.GRA = -1; Cost += 10 * Level"
+3,6,"Gunnery Recoil Adjusters (small turret)",1,1,0,"Level","Level <= 9","Global.GRA = -1; Cost += 10 * Level"
+3,6,"Gunnery Recoil Adjusters (fixed hard)",1,1,0,"Level","Level <= 9","Global.GRA = -1; Cost += 10 * Level"
+3,6,"Gunnery Recoil Adjusters (medium turret)",1,1,0,"Level","Level <= 12","Global.GRA = -1; Cost += 10 * Level"
+3,6,"Gunnery Recoil Adjusters (large turret)",1,1,0,"Level","Level <= 12","Global.GRA = -1; Cost += 10 * Level"
+
+# I don't see costs for Rocket Mounts...
+# civilian vehicles need roll bars for ext rocket mounts
+# aircraft can carry up to Body mounts, every 2 mounts is -1 sig, each mount can carry 300kg
+# civilian vehicles need RollBars
+3,6,"External Rocket Mounts",2,1,0,"Quantity","Security >> Military == 1 || Global.RollBars != 0 && Body >= Global.Points","Global.Points += Level; Chassis.ChassisType & 8; Sig -= Level / 2 ? 1; Security = 1 - Military"
+# Each 3 CF allows 2 rockets
+# aircraft can have up to Body/2 int mounts
+3,6,"Internal Rocket Mounts",2,1,0,"Quantity","Chassis.ChassisType & 8; Level ? 0 <= Body / 2 && Body >= Global.Points","Global.Points += Level; CFUsed += Level + Level * 1.5; Security = 1 - Military"
+
+3,6,"Pintle Mounts",1,1,0,"Quantity","Body >= Global.Points","Global.Points += Level; Cost += Level; Security = 1 - Military"
+# RM must be in a vehicle with a hard top or roll bars
+# in helis, CFUsed is 16
+# open-top vehicles need rollbars - don't know what's open-topped, though!
+3,6,"Ring Mounts",2,1,0,"Quantity","Global.RagTop == 0 || Global.RollBars != 0 && Body >= Global.Points","Global.Points += 2 * Level; Chassis.ChassisType == 72; CFUsed += 16 ? 1; LoadUsed += 25; Cost += 10; Security = 1 - Military"
+3,6,"Smartlink Integration Kits",1,1,1,"Level","Level <= 2","Cost += Level : 250 350"
+
+# Turrets
+# Can't handle turret options very well, yet...
+# OK.  I'm storing #, CF and Cost - so you can convert all or none of the same type
+
+# Normal turrets
+3,6,"Turrets (mini)",1,1,0,"Quantity","Body >= Global.Points","Global.Points += 2 * Level; Sig -= Level; Global.TMini += Level; Global.TMiniCF += 6 * Level; CFUsed += 6 * Level; LoadUsed += 25 * Level; Global.TMiniCost += 125 * Level; Cost += 125 * Level; Security = 1 - Military"
+3,6,"Turrets (small)",1,1,0,"Quantity","Body >= Global.Points","Global.Points += 2 * 2 * Level; Sig -= Level; Global.TSmall += Level; Global.TSmall += 7 * Level; CFUsed += 7 * Level; LoadUsed += 100 * Level; Global.TSmallCost += 250 * Level; Cost += 250 * Level; Security = 1 - Military"
+3,6,"Turrets (medium)",1,1,0,"Quantity","Body >= Global.Points","Global.Points += 3 * 2 * Level; Sig -= Level; Global.TMedium += Level; Global.TMediumCF += 16 * Level; CFUsed += 16 * Level; LoadUsed += 1000 * Level; Global.TMediumCost += 500 * Level; Cost += 500 * Level; Security = 1 - Military"
+
+# Remote turrets
+3,6,"Turrets, Remote (micro)",1,1,0,"Quantity","Body >= Global.Points","Global.Points += Level; Sig -= Level; Global.TMicro += Level; Global.TMicroCF += 0 * Level; LoadUsed += 10 * Level; Global.TMicroCost += 100 * Level; Cost += 100 * Level; Security = 1 - Military"
+3,6,"Turrets, Remote (mini)",1,1,0,"Quantity","Body >= Global.Points","Global.Points += 2 * Level; Sig -= Level; Global.TMini += Level; Global.TMiniCF += 3 * Level; CFUsed += 3 * Level; LoadUsed += 25 * Level; Global.TMiniCost += 175 * Level; Cost += 175 * Level; Security = 1 - Military"
+3,6,"Turrets, Remote (small)",1,1,0,"Quantity","Body >= Global.Points","Global.Points += 2 * 2 * Level; Sig -= Level; Global.TSmall += Level; Global.TSmallCF += 4 * Level; CFUsed += 4 * Level; LoadUsed += 100 * Level; Global.TSmallCost += 350 * Level; Cost += 350 * Level; Security = 1 - Military"
+3,6,"Turrets, Remote (medium)",1,1,0,"Quantity","Body >= Global.Points","Global.Points += 3 * 2 * Level; Sig -= Level; Global.TMedium += Level; Global.TMediumCF += 4 * Level; CFUsed += 4 * Level; LoadUsed += 1000 * Level; Global.TMediumCost += 600 * Level; Cost += 600 * Level; Security = 1 - Military"
+
+# AA is an option available for all turrets, with 1.5x cost and cf+1
+3,6,"Turrets: Anti-Aircraft (micro)",2,1,0,"","Body >= Global.Points","CFUsed += Global.TMicro; Cost += Global.TMicroCost * 1.5"
+3,6,"Turrets: Anti-Aircraft (mini)",2,1,0,"","Body >= Global.Points","CFUsed += Global.TMini; Cost += Global.TMiniCost * 1.5"
+3,6,"Turrets: Anti-Aircraft (small)",2,1,0,"","Body >= Global.Points","CFUsed += Global.TSmall; Cost += Global.TSmallCost * 1.5"
+3,6,"Turrets: Anti-Aircraft (medium)",2,1,0,"","Body >= Global.Points","CFUsed += Global.TMedium; Cost += Global.TMediumCost * 1.5"
+
+# Pop-Up is an option available for all turrets, for cf*2, with max weapon values at -1
+3,6,"Turrets: Pop-Up (micro)",3,1,0,"","Body >= Global.Points","CFUsed += Global.TMini"
+3,6,"Turrets: Pop-Up (mini)",3,1,0,"","Body >= Global.Points","CFUsed += Global.TMiniCF"
+3,6,"Turrets: Pop-Up (small)",3,1,0,"","Body >= Global.Points","CFUsed += Global.TSmallCF"
+3,6,"Turrets: Pop-Up (medium)",3,1,0,"","Body >= Global.Points","CFUsed += Global.TMediumCF"
+
+# incompatible with GRA
+# I assume that "Handling" applies to both onroad and offroad...
+3,6,"Vehicle Gyroscopic Stabilizers",2,1,0,"Level","Global.GRA == 0 && Level <= 2 * Body","CFUsed += 1; LoadUsed += 24 + Level; Cost += 15 * Level; Level > Body; Local.Handling = Level ? Body; Local.Handling -= Body; Handling += Local.Handling; OffRoad += Local.Handling"
+
+## VERIFIED
+
+# Electronic Systems pg 136
+
+3,7,"BattleTac FDDM Receiver Module",2,1,0,"Level","Pilot >= 0 && Level == 0","Pilot >= 0; Cost += Pilot * 350 ? 0"
+3,7,"BattleTac IVIS Receiver Module",2,1,0,"Level","Pilot >= 0 && Level == 0","Pilot >= 0; Cost += Pilot * 250 ? 0"
+3,7,"ECM",1,1,0,"Level","Level <= 10","Security = Security >> Level : 0 0 0 0 1 1 1 0 0 0; Military = Military >> Level : 0 0 0 0 0 0 0 1 1 1; CFUsed += Level : 0 1 2 3 2 4 6 10 12 16; LoadUsed += Level : 12 25 35 50 35 75 110 150 200 250; Cost += Level : 250 750 1250 2500 1250 1500 5000 7500 12500 25000"
+3,7,"ECCM",1,1,0,"Level","Level <= 10","Security = Security >> Level : 0 0 0 0 1 1 1 0 0 0; Military = Military >> Level : 0 0 0 0 0 0 0 1 1 1; CFUsed += Level : 0 1 2 3 2 4 6 10 12 16; LoadUsed += Level : 12 25 36 50 35 75 110 150 200 250; Cost += Level : 100 300 500 1000 500 750 2000 3500 5000 10000"
+3,7,"ED",1,1,0,"Level","Level <= 6","Security = 1; Military = Military >> Level : 0 0 0 1 1 1; CFUSed += Level : 2 4 6 4 6 8; LoadUsed += Level : 35 45 60 45 60 110; Cost += Level : 150 400 1000 2500 10000 20000"
+3,7,"ECD",1,1,0,"Level","Level <= 6","Security = 1; Military = Military >> Level : 0 0 0 1 1 1; CFUSed += Level : 2 4 6 4 6 8; LoadUsed += Level : 35 45 60 45 60 110; Cost += Level : 100 300 800 3000 8000 20000"
+# Electronic Ports get accessories...
+3,7,"Electronic Ports",1,1,0,"Level","-1","Global.Ports = Level; Cost += 10"
+3,7,"Power Amplifiers",1,1,0,"Level","Level <= 10","CFUsed += Level / 4; LoadUsed += Level; Cost +=  5 * Level"
+# This is a little off - if you buy sensors on a vehicle that already
+# has them, you'll pay as if it didn't.  Usually, this shouldn't matter.
+# OK - I've changed this so that it deducts the cost of your previous sensors...
+3,7,"Sensors",1,1,1,"Level","Level <= 10 - Chassis.Sensor","Sensor < 1; Cost -= 0 ? Sensor : 50 150 250 500 250 300 1000 1500 2500 5000; CFUsed -= 0 ? Sensor : 0 1 2 3 2 4 6 10 12 16; LoadUsed -= 0 ? Sensor : 12 25 35 50 35 75 110 150 200 250; Sensor += Level; Security = Security >> Sensor : 0 0 0 0 1 1 1 0 0 0; Military = Military >> Sensor : 0 0 0 0 0 0 0 1 1 1; CFUsed += Sensor : 0 1 2 3 2 4 6 10 12 16; LoadUsed += Sensor : 12 25 35 50 35 75 110 150 200 250; Cost += Sensor : 50 150 250 500 250 300 1000 1500 2500 5000"
+
+
+# Accessories
+
+# ADT are installed in lieu of 2 rocket mounts
+3,8,"Aircraft Drop Tanks",2,1,0,"Pairs","Chassis.ChassisType & 8 && Body >= Global.Points","Global.Points += 2 * Level; Fuel += 2000 * Level; Sig -= Level; Speed -= Level; Handling += Level; Cost += 32 * Level"
+3,8,"Amphibious Operation Package",1,1,0,"Level","Chassis.ChassisType & 1 && Level <= 3","CFUsed += Level : 0 0 2; Cost += Level : 25 80 200"
+3,8,"Anti-Theft System",1,1,0,"Level","Level <= 10","Global.AntiTheft = -1; Cost += Level : 1 2 3 16 20 24 70 80 90 500"
+3,8,"Anti-Theft System: Shock option",2,1,0,"Level","Global.AntiTheft && Level == 0","Cost += 20"
+3,8,"Bench Seats",1,1,0,"Level","-1","Global.Benches += Level; CFUsed += 6 * Level; LoadUsed += 150 * Level"
+3,8,"Bench Seats: Armour",2,1,0,"Level","Level <= 2 * Global.Benches","Cost += 12 * Level"
+3,8,"Bench Seats (Folding)",1,1,0,"Level","-1","Global.Benches += Level; CFUsed += 6 * Level; LoadUsed += 150 * Level"
+3,8,"Bench Seats (Reinforced)",1,1,0,"Level","-1","Global.Benches += Level; CFUsed += 8 * Level; LoadUsed += 300 * Level; Cost += 5 * Level"
+3,8,"Bucket Seats",1,1,0,"Level","-1","Global.Buckets += Level; CFUsed += 6 * Level; LoadUsed += 150 * Level"
+3,8,"Bucket Seats: Armour",2,1,0,"Level","Level <= 2 * Global.Buckets","Cost += 12 * Level"
+# Reinforced Bucket Seats can get extra reinforcing...
+3,8,"Bucket Seats (Reinforced)",1,1,0,"Level","-1","Global.Buckets += Level; Global.RBuckets += Level; CFUsed += 8 * Level; LoadUsed += 250 * Level; Cost += 5 * Level"
+# The modifier method wasn't too clear...
+#3,8,"Bucket Seats (Reinforced): Extra Big",2,1,0,"Level","Global.RBuckets > 0","LoadUsed += 100"
+3,8,"Bucket Seats (Extra Big Reinforced)",1,1,0,"Level","-1","Global.Buckets += Level; Global.RBuckets += Level; CFUsed += 8 * Level; LoadUsed += 350 * Level; Cost += 5 * Level"
+
+3,8,"Convertible Top",1,1,0,"Level","Level == 0","Global.RagTop = -1"
+# Should have more flexibility in Crane capacity...
+3,8,"Crane",1,1,0,"Level","Level <= Body","CFUsed += 15; LoadUsed += Body * 80; Cost += 2 * Level : 25 200 750 2000 5000 20000 30000 45000 60000 75000"
+# Level is the CF storage avail
+3,8,"Drone Rack",1,1,0,"Level","-1","Cost += Body * 12; CFUsed += Level; LoadUsed += 45"
+# Ext Cargo Mounts can't be added during design! :-P
+#	3,8,"External Cargo Mounts",1,1,0,"Level","?","?"
+# FP(A) should eval before any other economy mods?
+3,8,"Floatation Packages (Aircraft)",1,1,0,"Level","Level == 0 && Chassis.ChassisType & 8","Economy += Engine.Economy * 0.2; Chassis.ChassisType & 64; Speed *= 0.9 ? 0.5; Cost += Chassis.Cost * 1.2"
+3,8,"Hovercraft Water Seals",1,1,0,"Level","Level == 0 && Chassis.ChassisType & 4","Cost += Body * 5"
+# HACK!  This is bad, but it could be worse.  Just make sure they're all the same
+3,8,"Mechanical Arm #1",1,1,0,"Level","-1","Cost += Body * 250; CFUsed += 2; Level < 4; Cost += Level * 8000 ? 10000; Local.Strength = Body * Body + Level; LoadUsed += Local.Strength * 25"
+3,8,"Mechanical Arm #2",1,1,0,"Level","-1","Cost += Body * 250; CFUsed += 2; Level < 4; Cost += Level * 8000 ? 10000; Local.Strength = Body * Body + Level; LoadUsed += Local.Strength * 25"
+3,8,"Mechanical Arm #3",1,1,0,"Level","-1","Cost += Body * 250; CFUsed += 2; Level < 4; Cost += Level * 8000 ? 10000; Local.Strength = Body * Body + Level; LoadUsed += Local.Strength * 25"
+3,8,"Mechanical Arm #4",1,1,0,"Level","-1","Cost += Body * 250; CFUsed += 2; Level < 4; Cost += Level * 8000 ? 10000; Local.Strength = Body * Body + Level; LoadUsed += Local.Strength * 25"
+3,8,"Sidecar",1,1,0,"Level","Level <= 3 && Chassis.ChassisType == 17","Global.SideCar = 2; Local.CF = Level : 4 8 12; CF += Local.CF; CFMax += Local.CF; Handling += Level : 1 1 2; Cost += Level : 10 20 35; Speed -= 15; Economy *= 0.9"
+# Hey!  An easy one!  :-)
+3,8,"Spotlights",1,1,0,"Level","Level == 0","Cost += 6"
+
+# Various tires
+3,8,"Tires (Standard)",1,1,0,"Level","-1","Cost += Body * Level * 50"
+3,8,"Tires (Performance)",1,1,0,"Level","-1","Cost += Body * Level * 75"
+3,8,"Tires (Off-road)",1,1,0,"Level","-1","Cost += Body * Level * 125"
+3,8,"Tires (Dual-Purpose)",1,1,0,"Level","-1","Cost += Body * Level * 250"
+3,8,"Tires Option: Runflat",1,1,0,"Level","-1","Cost += Level * 200"
+3,8,"Tires Option: Spare",1,1,0,"Level","-1","CFUsed += Body / 2 * Level"
+
+3,8,"Winches",1,1,0,"Level","Level <= Body","LoadUsed += Body * 2.5; Level < 1; Cost += 5 ? Level : 25 200 750 2000 5000 20000 30000 45000 60000 75000"
