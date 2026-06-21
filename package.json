@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@3d-dice/dice-box": "^1.1.4",
     "@dice-roller/rpg-dice-roller": "^5.5.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -14,7 +15,8 @@
     "firebaseui": "^6.1.0",
     "react": "^18.0.0",
     "react-beautiful-dnd": "^13.1.1",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^7.18.0"
   },
   "scripts": {
     "start": "vite",

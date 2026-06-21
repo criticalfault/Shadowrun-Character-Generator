@@ -1,8 +1,11 @@
 import "./App.css";
 import * as Sentry from "@sentry/react";
 import Dashboard from "./components/Dashboard";
+import PublicSheetPage from "./components/PublicSheetPage";
 import { Container } from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { DiceProvider } from './dice/DiceContext';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 const theme = createTheme();
 
 function App() {
@@ -30,21 +33,30 @@ function App() {
   // });
   return (
     <ThemeProvider theme={theme}>
-    <div className="App">
-      <Container maxWidth="2xl">
-        <h1
-          className="mainHeader"
-          style={{
-            paddingLeft: "48px",
-            paddingTop: "20px",
-            paddingBottom: "20px",
-          }}
-        >
-          Shadowrun Character Generator
-        </h1>
-        <Dashboard className="dashboard" />
-      </Container>
-    </div>
+    <DiceProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/sheet/:id" element={<PublicSheetPage />} />
+        <Route path="*" element={
+          <div className="App">
+            <Container maxWidth="2xl">
+              <h1
+                className="mainHeader"
+                style={{
+                  paddingLeft: "48px",
+                  paddingTop: "20px",
+                  paddingBottom: "20px",
+                }}
+              >
+                Shadowrun Character Generator
+              </h1>
+              <Dashboard className="dashboard" />
+            </Container>
+          </div>
+        } />
+      </Routes>
+    </BrowserRouter>
+    </DiceProvider>
     </ThemeProvider>
   );
 }

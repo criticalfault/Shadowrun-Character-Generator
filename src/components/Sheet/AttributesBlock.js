@@ -1,8 +1,14 @@
 ﻿import React from 'react';
 import { Grid } from '@mui/material';
 import SRSection from './SRSection';
+import { useDice } from '../../dice/DiceContext';
+
+const rollableTr = { cursor: 'pointer', transition: 'background 0.15s' };
+const onEnter = (e) => { e.currentTarget.style.background = 'rgba(25,118,210,0.08)'; };
+const onLeave = (e) => { e.currentTarget.style.background = ''; };
 
 const AttributesBlock = ({ attributes, raceBonuses = {}, cyberBonuses = {}, magicBonuses = {}, Cyberware = [] }) => {
+  const dice = useDice();
   const CalcEssenceSpent = () => {
     let EssenceSpent = 0;
     let EyeEssenceSpent = 0;
@@ -48,7 +54,11 @@ const AttributesBlock = ({ attributes, raceBonuses = {}, cyberBonuses = {}, magi
               const magic = parseInt(magicBonuses[attr] ?? 0);
               const total = base + race + cyber + magic;
               return (
-                <tr key={attr}>
+                <tr key={attr} style={rollableTr}
+                  onMouseEnter={onEnter} onMouseLeave={onLeave}
+                  onClick={() => dice?.openRoll({ label: attr, pool: total, tn: 4 })}
+                  title={`Click to roll ${total}d6`}
+                >
                   <td className="shadowrun-label">{attr}</td>
                   <td style={{ textAlign: 'center' }}>{base}</td>
                   <td style={{ textAlign: 'center', fontWeight: 700 }}>{total}</td>

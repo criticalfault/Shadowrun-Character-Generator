@@ -11,3 +11,12 @@ body{
     padding-left:0;
   }
 }
+
+/* dice-box: make the injected canvas fill its fixed container */
+#dice-box-container canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
