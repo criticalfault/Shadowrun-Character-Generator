@@ -1148,6 +1148,8 @@ function MagicPanel(props) {
     .reduce((sum, p) => sum + (parseInt(p.Rating) || 1), 0);
   const magicianSpellBudget = magicalPowerLevel * 6;
 
+  const sortedSpells = (spellsData ?? []).slice().sort((a, b) => (a.Name ?? '').localeCompare(b.Name ?? ''));
+
   const label = { inputProps: { "aria-label": "Edition Switch" } };
 
   const findTotemID = (totem) => {
@@ -1524,12 +1526,7 @@ function MagicPanel(props) {
                 value={newSpellIndex}
                 onChange={handleSpellChange}
               >
-                {(spellsData ?? [])
-                  .sort((a, b) => {
-                    if (a.hasOwnProperty("Name")) return a.Name.localeCompare(b.Name);
-                    return a > b;
-                  })
-                  .map((spell, index) => (
+                {sortedSpells.map((spell, index) => (
                     <MenuItem key={index} value={index}>
                       {spell.Name}
                     </MenuItem>
@@ -1587,7 +1584,7 @@ function MagicPanel(props) {
   };
 
   const handleSpellChange = (event) => {
-    const TempSpell = spellsData[event.target.value];
+    const TempSpell = sortedSpells[event.target.value];
     setNewSpell(TempSpell);
     setNewSpellIndex(event.target.value);
   };
@@ -1769,7 +1766,7 @@ function MagicPanel(props) {
         <br></br>
         {RenderSpellPointPurchase()}
         <SearchableSelect
-          items={(spellsData ?? []).slice().sort((a, b) => (a.Name ?? '').localeCompare(b.Name ?? ''))}
+          items={sortedSpells}
           value={newSpellIndex}
           onChange={handleSpellChange}
           label="Spells"
