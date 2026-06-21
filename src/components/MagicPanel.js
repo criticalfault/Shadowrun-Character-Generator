@@ -2302,9 +2302,9 @@ function MagicPanel(props) {
       {RenderWindow()}
       {RenderFociList()}
       {props.magicalChoice !== 'Not Magical' && RenderInitiationSection()}
-      {(props.magicalChoice === 'Full Magician' ||
-        props.magicalChoice === 'Human Full Magician' ||
-        props.magicalChoice === 'Metahuman Full Magician') && (
+      {props.magicalChoice !== 'Not Magical' &&
+        !['Physical Adept','Human Physical Adept','Metahuman Physical Adept'].includes(props.magicalChoice) &&
+        props.chosenTradition?.conjures !== 'none' && (
         <AllySection
           ally={props.ally}
           onChangeAlly={props.onChangeAlly}
