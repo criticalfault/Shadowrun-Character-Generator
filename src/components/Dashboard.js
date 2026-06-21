@@ -65,7 +65,6 @@ function a11yProps(index) {
 
 export default function BasicTabs() {
   const baseCharacter = {
-    allowedBooks: ["cc", "mits", "sr2", "sr3", "mm", "mat", "r3"],
     age: 18,
     bookTogglesSR3: {
       cc: true,
@@ -76,6 +75,7 @@ export default function BasicTabs() {
       r3: true,
     },
     bookTogglesSR2: { sr2: true },
+    allowedBooks: ["sr2"],
     edition: "SR2",
     cgmethod:"priorities",
     step: "chargen",
@@ -723,7 +723,7 @@ export default function BasicTabs() {
             ChangeAllowedBooks={handleChangeAllowedBooks}
             ChangeEdition={handleChangeEdition}
             ChangeCGMethod={handleChangeCGMethod}
-            Edition={Character.Edition}
+            Edition={Edition}
             CGMethod={Character.cgmethod}
             ChangePowerLevel={handleChangePowerLevel}
           />

@@ -75,27 +75,6 @@ export default function IdentityPanel(props) {
                 <FormGroup aria-label="position" row>
                     <FormControlLabel
                         value="top"
-                        control={<Checkbox {...label} name="Decking" color="secondary" onChange={handleChangeCharacterTabs} checked={Tabs.Decking} />}
-                        label="Decking Tab"
-                        labelPlacement="end"
-                        disabled={true}
-                    />
-                    <FormControlLabel
-                        value="top"
-                        control={<Checkbox {...label} name="Otaku" color="success" onChange={handleChangeCharacterTabs} checked={Tabs.Otaku} />}
-                        label="Otaku Tab"
-                        labelPlacement="end"
-                        disabled={false}
-                    />
-                    <FormControlLabel
-                        value="top"
-                        control={<Checkbox {...label} name="Rigger" color="default" onChange={handleChangeCharacterTabs} checked={Tabs.Rigger} />}
-                        label="Rigger / Vehicles Tab"
-                        labelPlacement="end"
-                        disabled={false}
-                    />
-                    <FormControlLabel
-                        value="top"
                         control={<Checkbox {...label} name="VehicleDesigner" color="default" onChange={handleChangeCharacterTabs} checked={Tabs.VehicleDesigner ?? false} />}
                         label="Vehicle Designer Tab"
                         labelPlacement="end"
