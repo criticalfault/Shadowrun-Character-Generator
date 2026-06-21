@@ -94,6 +94,13 @@ export default function IdentityPanel(props) {
                         labelPlacement="end"
                         disabled={false}
                     />
+                    <FormControlLabel
+                        value="top"
+                        control={<Checkbox {...label} name="VehicleDesigner" color="default" onChange={handleChangeCharacterTabs} checked={Tabs.VehicleDesigner ?? false} />}
+                        label="Vehicle Designer Tab"
+                        labelPlacement="end"
+                        disabled={false}
+                    />
                 </FormGroup>
             </FormControl>
 

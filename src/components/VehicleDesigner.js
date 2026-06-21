@@ -26,6 +26,7 @@ import Tooltip from '@mui/material/Tooltip';
 
 import {
   CHASSIS, ENGINES_BY_CHASSIS, MODS, VEHICLE_CATEGORIES, MOD_CATEGORIES,
+  getVehicleData, hasEditionData,
 } from '../vehicle/vehicleData';
 import { buildVehicleStats, checkLimit, applyMod } from '../vehicle/evalExpr';
 
@@ -164,15 +165,15 @@ function StatPanel({ stats }) {
 
 // ── mod picker ────────────────────────────────────────────────────────────────
 
-function ModPicker({ chassis, engine, stats, globals, chosenMods, onAdd }) {
+function ModPicker({ chassis, engine, stats, globals, chosenMods, onAdd, mods }) {
   const [search, setSearch] = useState('');
 
   const available = useMemo(() => {
-    return MODS.filter(mod => {
+    return mods.filter(mod => {
       if (search && !mod.name.toLowerCase().includes(search.toLowerCase())) return false;
       return true;
     });
-  }, [search]);
+  }, [search, mods]);
 
   const byCategory = useMemo(() => {
     return MOD_CATEGORIES.map(cat => ({
@@ -293,7 +294,30 @@ function ChosenMods({ chosenMods, onChange }) {
 
 // ── main designer ─────────────────────────────────────────────────────────────
 
-export default function VehicleDesigner({ onSave }) {
+export default function VehicleDesigner({ edition = 'SR2', onSave }) {
+  if (!hasEditionData(edition)) {
+    return (
+      <Box sx={{ mt: 3 }}>
+        <Typography variant="h5" gutterBottom>Vehicle Designer</Typography>
+        <Alert severity="info">
+          <strong>Rigger 3 vehicle design data is not yet available.</strong><br />
+          The SR3 vehicle designer requires a Rigger3.dat data file. Once sourced,
+          it will appear here automatically. In the meantime, the SR2 designer (Rigger 2 rules) is
+          available by switching to SR2 edition.
+        </Alert>
+      </Box>
+    );
+  }
+
+  // Resolve data for this edition
+  const editionData = getVehicleData(edition);
+  const chassis_list = editionData.chassis;
+  const enginesByChassisMap = editionData.engines.reduce((acc, eng) => {
+    if (!acc[eng.chassisName]) acc[eng.chassisName] = [];
+    acc[eng.chassisName].push(eng);
+    return acc;
+  }, {});
+  const mods_list = editionData.mods;
   const [categoryIdx, setCategoryIdx] = useState(0);
   const [selectedChassis, setSelectedChassis] = useState(null);
   const [selectedEngine, setSelectedEngine] = useState(null);
@@ -302,8 +326,8 @@ export default function VehicleDesigner({ onSave }) {
   const [tab, setTab] = useState(0);
 
   const category = VEHICLE_CATEGORIES[categoryIdx];
-  const filteredChassis = CHASSIS.filter(category.filter);
-  const availableEngines = selectedChassis ? (ENGINES_BY_CHASSIS[selectedChassis.name] ?? []) : [];
+  const filteredChassis = chassis_list.filter(category.filter);
+  const availableEngines = selectedChassis ? (enginesByChassisMap[selectedChassis.name] ?? []) : [];
 
   const stats = useMemo(() => {
     if (!selectedChassis || !selectedEngine) return null;
@@ -350,10 +374,13 @@ export default function VehicleDesigner({ onSave }) {
 
   return (
     <Box>
-      <Typography variant="h5" gutterBottom>Vehicle Designer</Typography>
+      <Typography variant="h5" gutterBottom>
+        Vehicle Designer
+        <Chip label={edition === 'SR3' ? 'Rigger 3' : 'Rigger 2'} size="small" color="primary" variant="outlined" sx={{ ml: 1, verticalAlign: 'middle' }} />
+      </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-        Design a custom vehicle using SR2 Rigger 2 rules. Choose a chassis, engine, and modifications.
-        Stats update live as you build.
+        Design a custom vehicle using {edition === 'SR3' ? 'Rigger 3' : 'Rigger 2'} rules.
+        Choose a chassis, engine, and modifications — stats update live as you build.
       </Typography>
 
       {/* Step 1 — Chassis */}
@@ -470,6 +497,7 @@ export default function VehicleDesigner({ onSave }) {
                   globals={globals}
                   chosenMods={chosenMods}
                   onAdd={handleAddMod}
+                  mods={mods_list}
                 />
               )}
               {tab === 1 && (

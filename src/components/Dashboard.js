@@ -149,6 +149,7 @@ export default function BasicTabs() {
       Decking: false,
       Otaku: false,
       Rigger: false,
+      VehicleDesigner: false,
     },
     inventory: [],
     weapons: [],
@@ -441,7 +442,7 @@ export default function BasicTabs() {
     }
   };
 
-  const tabNames = ['Identity','Priorities','Edges & Flaws','Attributes','Skills','Magic/Otaku','Cyberware','Gear','Decking','Vehicles','Contacts','Karma','Sheet'];
+  const tabNames = ['Identity','Priorities','Edges & Flaws','Attributes','Skills','Magic/Otaku','Cyberware','Gear','Decking','Vehicles','Contacts','Karma','Sheet','Vehicle Designer'];
   const handleChange = (event, newValue) => {
     setValue(newValue);
     trackTabChanged(tabNames[newValue] ?? `Tab ${newValue}`);
@@ -705,6 +706,7 @@ export default function BasicTabs() {
             <Tab label="Contacts" {...a11yProps(10)} />
             <Tab label="Karma" {...a11yProps(11)} />
             <Tab label="Sheet Display" {...a11yProps(12)} />
+            {Character.characterTabs?.VehicleDesigner && <Tab label="Vehicle Designer" {...a11yProps(13)} />}
           </Tabs>
 
         </Box>
@@ -929,12 +931,6 @@ export default function BasicTabs() {
           />
         </CustomTabPanel>
         <CustomTabPanel value={value} index={9}>
-          <VehicleDesigner
-            onSave={(design) => {
-              const customVehicles = [...(Character.customVehicles ?? []), design];
-              setCharacter({ ...Character, customVehicles });
-            }}
-          />
           <VehiclesPanel
             Vehicles={Character.vehicles}
             Drones={Character.drones}
@@ -1035,6 +1031,15 @@ export default function BasicTabs() {
             }
             onChangeVehicles={(vehicles) => setCharacter({ ...Character, vehicles })}
             onChangeDrones={(drones) => setCharacter({ ...Character, drones })}
+          />
+        </CustomTabPanel>
+        <CustomTabPanel value={value} index={13}>
+          <VehicleDesigner
+            edition={Edition}
+            onSave={(design) => {
+              const customVehicles = [...(Character.customVehicles ?? []), design];
+              setCharacter({ ...Character, customVehicles });
+            }}
           />
         </CustomTabPanel>
       </Box>
