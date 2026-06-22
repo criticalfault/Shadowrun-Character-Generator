@@ -331,7 +331,7 @@ function PPStatPanel({ pp, fuelLabel }) {
     ['Sig',       fmt(pp.sig)],
     ...(pp.fuel != null ? [['Fuel Code', fmt(pp.fuel)]] : []),
     ...(pp.econStart != null ? [['Economy', range(pp.econStart, pp.econMax)]] : []),
-    ['DP Budget', pp.dp],
+    ['DP Cost', pp.dp],
     ...(pp.peopleSpace ? [['People Space', pp.peopleSpace]] : []),
   ];
 
@@ -355,39 +355,44 @@ function PPStatPanel({ pp, fuelLabel }) {
   );
 }
 
-// ── DPBudgetBar ───────────────────────────────────────────────────────────────
+// ── DPValuePanel ──────────────────────────────────────────────────────────────
+// Design Point Value = chassis DP + power plant DP + all mod DPs.
+// Final price = Design Point Value × MUF × 100¥.
 
-function DPBudgetBar({ ppDp, chassisDp, modsDpNum, hasFormulaMods }) {
-  const ppNum      = typeof ppDp      === 'number' ? ppDp      : null;
-  const chassisNum = typeof chassisDp === 'number' ? chassisDp : null;
-  const afterChassis = ppNum != null && chassisNum != null ? ppNum - chassisNum : null;
-  const afterMods    = afterChassis != null ? afterChassis - modsDpNum : null;
-
-  const chipColor = (val) => {
-    if (val == null) return 'default';
-    if (val < 0) return 'error';
-    if (val < 100) return 'warning';
-    return 'success';
-  };
+function DPValuePanel({ chassisDp, chassisMuf, ppDp, modsDpNum, hasFormulaMods, cfAvailable, cfUsed }) {
+  const baseDp  = (chassisDp ?? 0) + (ppDp ?? 0);
+  const totalDp = baseDp + modsDpNum;
+  const hasBase = chassisDp != null && ppDp != null;
+  const muf     = chassisMuf ?? null;
+  const price   = hasBase && muf != null ? totalDp * muf * 100 : null;
+  const cfLeft  = cfAvailable != null ? cfAvailable - cfUsed : null;
 
   return (
     <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap', alignItems: 'center', mb: 2 }}>
-      <Chip size="small" variant="outlined" label={`PP Budget: ${fmt(ppDp)} DP`} />
-      <Typography variant="body2" color="text.secondary">−</Typography>
-      <Chip size="small" variant="outlined" label={`Chassis: ${fmt(chassisDp)} DP`} />
-      {modsDpNum > 0 && <>
-        <Typography variant="body2" color="text.secondary">−</Typography>
+      <Tooltip title="Chassis DP + Power Plant DP" arrow>
         <Chip size="small" variant="outlined"
-          label={`Mods: ${modsDpNum}${hasFormulaMods ? '+?' : ''} DP`} />
+          label={`Base DP: ${hasBase ? baseDp : '—'}`} />
+      </Tooltip>
+      {modsDpNum > 0 && <>
+        <Typography variant="body2" color="text.secondary">+</Typography>
+        <Chip size="small" variant="outlined"
+          label={`Mods: ${modsDpNum}${hasFormulaMods ? '+?' : ''}`} />
       </>}
       <Typography variant="body2" color="text.secondary">=</Typography>
-      <Chip
-        size="small"
-        label={afterMods != null
-          ? `${afterMods}${hasFormulaMods ? '−?' : ''} DP remaining`
-          : 'Select chassis + PP'}
-        color={chipColor(afterMods)}
-      />
+      <Chip size="small" color="primary"
+        label={hasBase
+          ? `${totalDp}${hasFormulaMods ? '+?' : ''} DP total`
+          : 'Select chassis + PP'} />
+      {price != null && (
+        <Chip size="small" color="success" variant="outlined"
+          label={`Est. price: ¥${price.toLocaleString()}${hasFormulaMods ? '+' : ''}`} />
+      )}
+      {cfLeft != null && (
+        <Chip size="small"
+          color={cfLeft < 0 ? 'error' : cfLeft < 5 ? 'warning' : 'default'}
+          variant="outlined"
+          label={`CF: ${cfUsed} used / ${cfAvailable} available`} />
+      )}
     </Box>
   );
 }
@@ -591,8 +596,8 @@ export default function SR3VehicleDesigner({ onSave }) {
   const currentFuelKey = availableFuels[safeFuelTabIdx] ?? null;
   const ppRows = useMemo(() => getPPRows(ppKey, currentFuelKey), [ppKey, currentFuelKey]);
 
-  // DP calculations
-  const dpBudget = useMemo(() => {
+  // DP calculations — Total DP Value = chassis.dp + pp.dp + all mods DP
+  const ppDp = useMemo(() => {
     if (typeof selectedPP?.dp !== 'number') return null;
     return selectedPP.dp;
   }, [selectedPP]);
@@ -602,13 +607,26 @@ export default function SR3VehicleDesigner({ onSave }) {
     return selectedChassis.dp;
   }, [selectedChassis]);
 
-  const dpAfterChassis = dpBudget != null && chassisDp != null ? dpBudget - chassisDp : null;
-
   const modsDpNum = useMemo(() =>
     chosenMods.reduce((sum, cm) => sum + (cm.dpCostNum != null ? cm.dpCostNum * cm.qty : 0), 0),
     [chosenMods]
   );
   const hasFormulaMods = chosenMods.some(cm => cm.dpCostNum == null && cm.dpCostRaw != null);
+
+  const totalDpValue = (chassisDp ?? 0) + (ppDp ?? 0) + modsDpNum;
+  const estimatedCost = chassisDp != null && ppDp != null && selectedChassis?.muf != null
+    ? totalDpValue * selectedChassis.muf * 100
+    : null;
+
+  // CF tracking — mods consume CF from chassis
+  const cfAvailable = selectedChassis?.cf ?? null;
+  const cfUsed = useMemo(() =>
+    chosenMods.reduce((sum, cm) => {
+      const cf = parseInt(cm.cfRaw, 10);
+      return sum + (isNaN(cf) ? 0 : cf * cm.qty);
+    }, 0),
+    [chosenMods]
+  );
 
   // Flat mod items for the picker
   const modItems = useMemo(() => buildModItems(currentFuelKey), [currentFuelKey]);
@@ -662,7 +680,8 @@ export default function SR3VehicleDesigner({ onSave }) {
     chassis: selectedChassis,
     powerPlant: { ...selectedPP, fuelType: currentFuelKey },
     chosenMods,
-    dpAfterChassis,
+    totalDpValue,
+    estimatedCost,
     modsDpNum,
     hasFormulaMods,
     notes,
@@ -798,7 +817,7 @@ export default function SR3VehicleDesigner({ onSave }) {
                     <TableCell align="center">Sig</TableCell>
                     <TableCell align="center">Fuel</TableCell>
                     <TableCell align="center">Economy</TableCell>
-                    <TableCell align="center">DP Budget</TableCell>
+                    <TableCell align="center">DP Cost</TableCell>
                     <TableCell />
                   </TableRow>
                 </TableHead>
@@ -848,11 +867,14 @@ export default function SR3VehicleDesigner({ onSave }) {
         <Paper variant="outlined" sx={{ p: 2, mb: 2 }}>
           <Typography variant="h6" gutterBottom>3. Add Modifications (Design Phase)</Typography>
 
-          <DPBudgetBar
-            ppDp={dpBudget}
+          <DPValuePanel
             chassisDp={chassisDp}
+            chassisMuf={selectedChassis?.muf}
+            ppDp={ppDp}
             modsDpNum={modsDpNum}
             hasFormulaMods={hasFormulaMods}
+            cfAvailable={cfAvailable}
+            cfUsed={cfUsed}
           />
 
           <ModPickerAccordion
@@ -884,6 +906,17 @@ export default function SR3VehicleDesigner({ onSave }) {
               </Box>
 
               <Divider sx={{ my: 1.5 }} />
+
+              {/* DP Value summary */}
+              <DPValuePanel
+                chassisDp={chassisDp}
+                chassisMuf={selectedChassis?.muf}
+                ppDp={ppDp}
+                modsDpNum={modsDpNum}
+                hasFormulaMods={hasFormulaMods}
+                cfAvailable={cfAvailable}
+                cfUsed={cfUsed}
+              />
 
               <Typography variant="subtitle2" gutterBottom>Chosen Modifications</Typography>
               <ChosenModsPanel
