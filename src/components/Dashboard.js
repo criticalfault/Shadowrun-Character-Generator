@@ -21,6 +21,7 @@ import DeckingPanel from "./DeckingPanel";
 import VehiclesPanel from "./VehiclesPanel";
 import VehicleDesigner from "./VehicleDesigner";
 import WeaponDesigner from "./WeaponDesigner";
+import CyberdeckDesigner from "./CyberdeckDesigner";
 import ContactsPanel from "./ContactsPanel";
 import SheetDisplay from "./SheetDisplay";
 import KarmaDisplay from "./KarmaDisplay";
@@ -152,6 +153,7 @@ export default function BasicTabs() {
       Rigger: false,
       VehicleDesigner: false,
       WeaponDesigner: false,
+      CyberdeckDesigner: false,
     },
     inventory: [],
     weapons: [],
@@ -386,6 +388,11 @@ export default function BasicTabs() {
     // Custom designed weapons
     (Character.customWeapons ?? []).forEach(function (w) {
       tempCashSpent += w.estimatedCost ?? w.finalCost ?? 0;
+    });
+
+    // Custom designed cyberdecks (VR2)
+    (Character.customDecks ?? []).forEach(function (d) {
+      tempCashSpent += d.estimatedCost ?? 0;
     });
 
     setNuyenSpent(tempCashSpent);
@@ -729,6 +736,7 @@ export default function BasicTabs() {
             <Tab label="Sheet Display" {...a11yProps(12)} />
             {Character.characterTabs?.VehicleDesigner && <Tab label="Vehicle Designer" value={13} {...a11yProps(13)} />}
             {Character.characterTabs?.WeaponDesigner && <Tab label="Weapon Designer" value={14} {...a11yProps(14)} />}
+            {Character.characterTabs?.CyberdeckDesigner && <Tab label="Cyberdeck Designer" value={15} {...a11yProps(15)} />}
           </Tabs>
 
         </Box>
@@ -1071,6 +1079,15 @@ export default function BasicTabs() {
             onSave={(design) => {
               const customWeapons = [...(Character.customWeapons ?? []), design];
               setCharacter({ ...Character, customWeapons });
+            }}
+          />
+        </CustomTabPanel>
+        <CustomTabPanel value={value} index={15}>
+          <CyberdeckDesigner
+            edition={Edition}
+            onSave={(design) => {
+              const customDecks = [...(Character.customDecks ?? []), design];
+              setCharacter({ ...Character, customDecks });
             }}
           />
         </CustomTabPanel>

@@ -88,6 +88,13 @@ export default function IdentityPanel(props) {
                         labelPlacement="end"
                         disabled={false}
                     />
+                    <FormControlLabel
+                        value="top"
+                        control={<Checkbox {...label} name="CyberdeckDesigner" color="default" onChange={handleChangeCharacterTabs} checked={Tabs.CyberdeckDesigner ?? false} />}
+                        label="Cyberdeck Designer Tab"
+                        labelPlacement="end"
+                        disabled={false}
+                    />
                 </FormGroup>
             </FormControl>
 

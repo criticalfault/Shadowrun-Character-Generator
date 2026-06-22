@@ -24,6 +24,7 @@ import AllyTable from './Sheet/AllyTable';
 import RCDSheet from './Sheet/RCDSheet';
 import CustomWeaponsTable from './Sheet/CustomWeaponsTable';
 import CustomVehiclesTable from './Sheet/CustomVehiclesTable';
+import CustomDecksTable from './Sheet/CustomDecksTable';
 
 import rangesData from "../data/ranges.json";
 
@@ -126,6 +127,7 @@ function SheetDisplay(props) {
       <WeaponsTable gear={char.gear} />
       <CustomWeaponsTable customWeapons={char.customWeapons} />
       <CustomVehiclesTable customVehicles={char.customVehicles} />
+      <CustomDecksTable customDecks={char.customDecks} />
 
       {/* ── Optional sections — full width, auto-hidden ───────────────── */}
 
