@@ -1947,6 +1947,371 @@ export const CommonElectronicEquipmentCF = [
   { item: 'Satellite Dish — Fixed Base',        cfRequired: '20' },
 ];
 
+// ── ACCESSORIES ───────────────────────────────────────────────────────────────
+// Custom accessories for rigger vehicles (Rigger 3, pp.148-153).
+// Note: Aircraft Drop Tank design specs were not captured in available pages;
+// inline costs from text (8,000¥ per pair) and effects are noted below.
+
+export const Accessories = [
+
+  {
+    name: 'Aircraft Drop Tanks',
+    category: 'Accessories',
+    design: {
+      dpCost: null, // specs not captured in available page images
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: null,
+    },
+    customization: {
+      partsCost: '8,000¥ per pair',
+      partsAvailability: null,
+      equipmentRequired: null,
+      baseTime: '10 minutes (mounting)',
+      skillTest: null,
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: null,
+    },
+    note: 'Aircraft only. Attached under wings or fuselage in lieu of rocket/missile mounts. For every 2 external mounts sacrificed, 1 pair of drop tanks may be added (always in pairs for aerodynamic balance). Each pair holds 1,000 liters of fuel (+2,000 liters aircraft fuel supply). Each additional pair beyond the first: Speed −15, Signature −1, Handling −1. Drop tanks have Body 1 and 3 Armor Points. Pilot may jettison via Complex Action; aircraft immediately returns to standard values.',
+  },
+
+  {
+    name: 'Amphibious Operation Packages',
+    category: 'Accessories',
+    design: {
+      dpCost: '25 (Level 1), 80 (Level 2), 200 (Level 3)',
+      cfConsumed: '0 CF (Levels 1 and 2), 2 CF (Level 3)',
+      loadReduction: null,
+      maxImprovement: '3',
+    },
+    customization: {
+      partsCost: '2,500¥ (Level 1), 7,500¥ (Level 2), 15,000¥ (Level 3)',
+      partsAvailability: 'Level 1: 3/6 days (1) | Level 2: 5/10 days (1.25) | Level 3: 6/12 days (1.5)',
+      equipmentRequired: 'Vehicle facility',
+      baseTime: 'Level 1: 32 hrs | Level 2: 40 hrs | Level 3: 80 hrs',
+      skillTest: 'Level 1: Appropriate Vehicle B/R (4) | Level 2: Appropriate Vehicle B/R (5) | Level 3: Appropriate Vehicle B/R (6)',
+      cfConsumed: '0 CF (Level 1), 2 CF (Level 2), 4 CF (Level 3)',
+      loadReduction: null,
+      maxImprovement: '3',
+    },
+    note: 'Ground vehicles only. Level 1: uses vehicle\'s wheels as motive power; Speed 15 m/turn on water, +2 Handling modifier. Level 2: propeller or drive system linked to vehicle\'s drive; Speed 30 on water, no Handling modifier. Level 3: water-jet units and impellers linked to drive system; Speed 45 on water, no Handling modifier. Speeds apply only when afloat and treading water — if touching ground, travel at Off-Road speed. Submarine operations require sealed power plant (EnviroSeal, p.132).',
+  },
+
+  {
+    name: 'Anti-Theft Systems (Improved Security)',
+    category: 'Accessories',
+    design: {
+      dpCost: 'Ratings 3–6: 4 points per rating | Ratings 7–9: 10 points per rating | Ratings 10+: 50 points per rating | Electric Shock System: +20 points | Proximity Alert: +2 points',
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: '10',
+    },
+    customization: {
+      partsCost: 'Ratings 3–6: 400¥/rating | Ratings 7–9: 1,000¥/rating | Ratings 10+: 5,000¥/rating | Electric Shock System: +2,000¥ | Proximity Alert: +250¥',
+      partsAvailability: 'Ratings 3–6: 4/7 days (1.25) | Ratings 7–9: 5/10 days (1.5) | Ratings 10+: 6/14 days (2)',
+      equipmentRequired: 'Vehicle facility',
+      baseTime: '40 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: '10',
+    },
+    note: 'All vehicles come with built-in maglocks (Rating 2, keypad/cardreader/fingerprint scanner). This mod improves rating to 3–10, used as rating for all vehicle maglocks and other security features. Optional add-ons: Electric Shock System (ripples electrical current through outer shell — same damage as Defiance Super Shock Taser, 10S Stun); Proximity Alert (sensors scan for approaching persons without a proper identifier — audible warning, then linked alarm/electric shock). Explosion: can set anti-theft system to destroy vehicle with plastic explosives (Compound IV or XII) when triggered — damage Power = square of Body or Armor (whichever higher); reduce damage by half Body/Armor for passengers/cargo/bystanders; +1 per meter distance.',
+  },
+
+  {
+    name: 'Ejection Bucket Seats',
+    category: 'Accessories',
+    design: {
+      dpCost: '35 (Standard), 70 (Reinforced)',
+      cfConsumed: '6',
+      loadReduction: '100 kg (Standard), 250 kg (Reinforced)',
+      maxImprovement: null,
+    },
+    customization: {
+      partsCost: '3,000¥ (Standard), 6,000¥ (Reinforced)',
+      partsAvailability: '5/10 days (2)',
+      equipmentRequired: 'Vehicle facility',
+      baseTime: '16 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: '7',
+      loadReduction: '110 kg (Standard), 250 kg (Reinforced)',
+      maxImprovement: null,
+    },
+    note: 'Standard or armored bucket seat (see Seats, p.153) with small solid-fuel rocket and rudimentary stabilization systems. Ejection-activation controls may be included on or near the seat (or elsewhere) at time of installation. Includes a parasail that deploys on ejection and brings chair and occupant safely to the ground, assuming the occupant is securely strapped in. Reinforced ejection bucket seats also available for large orks, trolls and other large metahumans — double costs.',
+  },
+
+  {
+    name: 'Convertible Tops',
+    category: 'Accessories',
+    design: {
+      dpCost: '0',
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: null,
+    },
+    customization: {
+      partsCost: '(Vehicle cost × 0.1) + 2,500¥',
+      partsAvailability: '4/72 hrs (1)',
+      equipmentRequired: 'Vehicle shop',
+      baseTime: '24 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: null,
+    },
+    note: 'Vehicles with hard tops that do not have gull-wing or canopy access only. Replaces hard-top roof with a folding canopy that can be extended or retracted on command. If a roll bar is not installed, double the target number for any passenger Damage Resistance Test following a crash. Rag-tops do not provide vehicle protection to passengers from side, rear, or top attacks.',
+  },
+
+  {
+    name: 'Cranes',
+    category: 'Accessories',
+    cranCapacityTable: [
+      { bodyRating: 1,   maxLoadKg:       25 },
+      { bodyRating: 2,   maxLoadKg:      200 },
+      { bodyRating: 3,   maxLoadKg:      750 },
+      { bodyRating: 4,   maxLoadKg:    2_000 },
+      { bodyRating: 5,   maxLoadKg:    5_000 },
+      { bodyRating: 6,   maxLoadKg:   20_000 },
+      { bodyRating: 7,   maxLoadKg:   30_000 },
+      { bodyRating: 8,   maxLoadKg:   45_000 },
+      { bodyRating: 9,   maxLoadKg:   60_000 },
+      { bodyRating: '10+', maxLoadKg: 'Body × Body × 750 kg' },
+    ],
+    design: {
+      dpCost: "Crane's Load rating ÷ 50",
+      cfConsumed: '15',
+      loadReduction: 'Body × 80 kg',
+      maxImprovement: 'See Crane Capacity Table',
+    },
+    customization: {
+      partsCost: "Crane's Load rating × 2¥",
+      partsAvailability: '6/14 days (2)',
+      equipmentRequired: 'Vehicle facility',
+      baseTime: 'Body × 16 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: '35',
+      loadReduction: 'Body × 80 kg',
+      maxImprovement: 'See Crane Capacity Table',
+    },
+    note: 'Hydraulic-powered mechanical boom. Vehicle must be stationary and immobilized with supplied chocks. Not available for Body 0 vehicles. Crane has its own Load rating (max per Crane Capacity Table). When used to pull or tow while moving, towing maximum is the lower of vehicle\'s or crane\'s Load rating. See Lifting and Pulling Objects, p.64.',
+  },
+
+  {
+    name: 'Drone Racks',
+    category: 'Accessories',
+    design: {
+      dpCost: 'Body × 12',
+      cfConsumed: 'Amount needed to store drones (see p.62)',
+      loadReduction: '45 kg',
+      maxImprovement: null,
+    },
+    customization: {
+      partsCost: '(Vehicle cost × 0.1) + 2,500¥',
+      partsAvailability: '4/96 hrs (2)',
+      equipmentRequired: 'Vehicle facility',
+      baseTime: '8 hrs per Body point',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: 'Amount needed to store drones + 2 CF',
+      loadReduction: '45 kg',
+      maxImprovement: null,
+    },
+    note: 'Hardware cradle that holds drone, moves it into launch position, and releases it. Can launch airborne drones from moving vehicles and recover launched drones while vehicle is moving. Launching from rack: two separate actions (first to activate rack, second to launch drone). Drone considered to be moving at current vehicle speed or drone\'s stall speed, whichever is greater. Rotorcraft drones from stationary vehicles launch in hover mode. Recovery: driver Handling Test + controller Free Action; if either fails, drone has not been recovered — if both fail, drone crashes into vehicle. Also serves as enclosed mini-hangar protecting drones inside. Same Armor rating as vehicle, but only one-half vehicle\'s Body (round down).',
+  },
+
+  {
+    name: 'External Cargo Mounts',
+    category: 'Accessories',
+    design: {
+      dpCost: null,
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: null,
+      note: 'May NOT be added during the design process.',
+    },
+    customization: {
+      partsCost: '250¥ per CF that the mount will hold',
+      partsAvailability: '3/24 hrs (1)',
+      equipmentRequired: 'Vehicle shop',
+      baseTime: '8 hrs',
+      skillTest: 'Appropriate Vehicle B/R (3)',
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: 'Original internal cargo space',
+    },
+    note: 'Roof racks, externally mounted side cargo-boxes on motorcycles, etc. Require no CF allocation. When loaded, vehicle Handling increases by 1. Maximum cargo capacity of external mounts = vehicle\'s original internal cargo capacity. Cannot be added during vehicle design.',
+  },
+
+  {
+    name: 'Flotation Packages (Aircraft)',
+    category: 'Accessories',
+    design: {
+      dpCost: 'Chassis point value × 1.2',
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: null,
+    },
+    customization: {
+      partsCost: '(Vehicle cost × 0.1) + 2,500¥',
+      partsAvailability: '4/7 days (2)',
+      equipmentRequired: 'Vehicle facility',
+      baseTime: '32 hrs',
+      skillTest: 'Appropriate Vehicle B/R (3)',
+      cfConsumed: null,
+      loadReduction: '100 kg',
+      maxImprovement: null,
+    },
+    note: 'Any aircraft or helicopter may be fitted with floats for amphibious operations. Adding floats increases aircraft\'s Economy (multiply initial Economy × 1.2) and reduces Speed by half. For helicopters: multiply initial Speed rating by 0.9, round down. Float-equipped helicopters can still touch down on land. Float-equipped aircraft cannot touch down on land.',
+  },
+
+  {
+    name: 'Generator',
+    category: 'Accessories',
+    design: {
+      dpCost: 'Chassis cost ÷ 4',
+      cfConsumed: 'Starting CF ÷ 3',
+      loadReduction: 'Starting Load ÷ 2',
+      maxImprovement: null,
+    },
+    customization: {
+      partsCost: 'Chassis cost ÷ 4',
+      partsAvailability: '5/7 days (1)',
+      equipmentRequired: 'Vehicle shop',
+      baseTime: '16 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: 'Starting CF ÷ 3',
+      loadReduction: 'Starting Load ÷ 2',
+      maxImprovement: null,
+    },
+    note: 'Trailers, barges, and rail cars only. Provides power for design options or modifications that require power. GM should exercise common sense in determining which modifications require power.',
+  },
+
+  {
+    name: 'Hovercraft Water Seals',
+    category: 'Accessories',
+    design: {
+      dpCost: 'Body × 5',
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: null,
+    },
+    customization: {
+      partsCost: 'Body × 500¥',
+      partsAvailability: '4/96 hrs (1)',
+      equipmentRequired: 'Vehicle facility',
+      baseTime: '32 hrs',
+      skillTest: 'Appropriate Vehicle B/R (3)',
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: null,
+    },
+    note: 'Hovercraft only. Makes hovercraft chassis watertight, enabling craft to float if engine fails or is deliberately turned off while moving over water. Without this, a hovercraft that loses power on a body of water sinks within 30 minutes.',
+  },
+
+  {
+    name: 'Mechanical Arms',
+    category: 'Accessories',
+    design: {
+      dpCost: 'Body × 100; Strength Enhancement (1–3 pts): 60 × Body per point; Strength Enhancement (4+ pts): 75 × Body per point',
+      cfConsumed: '2',
+      loadReduction: 'Strength × 10 kg',
+      maxImprovement: null,
+    },
+    customization: {
+      partsCost: 'Body × 10,000¥; Strength Enhancement (1–3 pts): 5,000 × Body per point; Strength Enhancement (4+ pts): 6,000 × Body per point',
+      partsAvailability: '4/4 days (1)',
+      equipmentRequired: 'Vehicle facility',
+      baseTime: '40 hrs',
+      skillTest: 'Cybertechnology B/R (6)',
+      cfConsumed: '4',
+      loadReduction: 'Strength × 10 kg',
+      maxImprovement: null,
+    },
+    note: 'Articulated mechanical arms — not as strong as cranes but superior dexterity. Strength rating = vehicle\'s Body rating × 2 (squared). Can lift weight equal to Strength rating × 20 kg. Strength may be increased with Strength Enhancement option (max never exceeds Body × 10). Increasing Strength also increases Load reduction, limiting maximum Strength enhancement. Can use any accessory or feature available on cyberarms except Strength or Quickness enhancements (pp.33–34, M&M). Limb accessory for mechanical arm costs half as much as standard cyberarm version, same Availability and Street Index. GM has final say on type and number of modifications.',
+  },
+
+  {
+    name: 'Medical Clinic',
+    category: 'Accessories',
+    design: {
+      dpCost: '(Rating + 4)³ × 3',
+      cfConsumed: 'Rating × 2',
+      loadReduction: 'Rating × 75 kg',
+      maxImprovement: '6',
+    },
+    customization: {
+      partsCost: '(Rating + 4)³ × 800¥',
+      partsAvailability: '(Rating + 3)/(Rating × 2) days (3)',
+      equipmentRequired: 'Vehicle shop, Electronics shop',
+      baseTime: 'Rating days',
+      skillTest: 'Appropriate Vehicle B/R; Electronics B/R',
+      targetNumber: 'Rating',
+      cfConsumed: 'Rating × 3',
+      loadReduction: 'Rating × 100 kg',
+      maxImprovement: '6',
+    },
+    note: 'Complete assortment of medical gear: emergency diagnostic electronics, biomonitors, pressurized oxygen tanks, breathing masks, stabilization unit (p.305, SR3), and controlled drugs and compounds. Equivalent of a medical shop (p.138, SR3). Number of patients dictated by amount of People Space in vehicle (p.120). Primarily used by ambulances and other emergency medical vehicles.',
+  },
+
+  {
+    name: 'Photovoltaic Chameleon Paint',
+    category: 'Accessories',
+    design: {
+      dpCost: '50',
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: null,
+    },
+    customization: {
+      partsCost: '5,000¥',
+      partsAvailability: '6/14 days (1.5)',
+      equipmentRequired: 'Vehicle shop',
+      baseTime: '72 hrs',
+      skillTest: 'Electronics (6)',
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: null,
+    },
+    note: 'Allows pigmentation and pattern of vehicle\'s paint to be altered via onboard computer program. User can select a particular color and pattern for each segment of the mesh grid. Changing color: minimum one Complex Action (may take significantly longer for detailed patterns or color combinations). Does NOT allow vehicle to blend into surroundings like ruthenium polymers — incompatible with ruthenium, smart armor systems, ablative armor, and radar-absorbing materials.',
+  },
+
+  {
+    name: 'Seats — Bench Seat',
+    category: 'Accessories',
+    design: { dpCost: null, cfConsumed: null, loadReduction: null, maxImprovement: null },
+    customization: {
+      partsCost: null,
+      partsAvailability: null,
+      equipmentRequired: null,
+      baseTime: null,
+      skillTest: null,
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: null,
+    },
+    note: 'Popular in compact vehicles and space-premium vehicles. Seats 2 human-sized passengers (3 if cramped) or 200 kg. Not available for motorcycles. Removing a bench seat frees up 6 CF and increases available Load by 200 kg (reflects vehicle now carrying fewer passengers, so more power free for hauling cargo). Folding bench seats common in limousines — freed CF can be used for cargo (weighing up to 150 kg) when folded bench seat is folded.',
+  },
+
+  {
+    name: 'Seats — Bucket Seat',
+    category: 'Accessories',
+    design: { dpCost: null, cfConsumed: null, loadReduction: null, maxImprovement: null },
+    customization: {
+      partsCost: null,
+      partsAvailability: null,
+      equipmentRequired: null,
+      baseTime: null,
+      skillTest: null,
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: null,
+    },
+    note: 'Holds a single person in greater comfort than a standard bench seat. Removing a bucket seat frees up 6 CF and increases available Load by 100 kg (vehicle now carries one less 100-kg passenger). Options: Armored Seats (bench or bucket may be armored to protect against incoming fire that penetrates the vehicle — armoring on bench seats protects against attacks from rear only; up to 2 points of Armor may be installed on a bench seat). Reinforced Seats (support larger orks, trolls, large metahumans — reinforced bench seat: up to 300 kg; reinforced bucket seat: up to 250 kg; cost an additional 100¥ for every additional 25 kg of support capacity).',
+  },
+
+];
+
 // ── COMBINED EXPORT ───────────────────────────────────────────────────────────
 
 const Rigger3Mods = {
@@ -1971,6 +2336,7 @@ const Rigger3Mods = {
   sensorSystemsTable: SensorSystemsTable,
   sonarSystemsTable: SonarSystemsTable,
   commonElectronicEquipmentCF: CommonElectronicEquipmentCF,
+  accessories: Accessories,
 };
 
 export default Rigger3Mods;
