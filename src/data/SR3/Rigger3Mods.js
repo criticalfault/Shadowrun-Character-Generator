@@ -1361,11 +1361,590 @@ export const VehicleWeaponMounts = [
   {
     name: 'Ring Mount',
     category: 'Vehicle Weapon Mounts',
-    design: { dpCost: null, cfConsumed: null, loadReduction: null, maxImprovement: null }, // specs continue on next page
-    customization: { partsCost: null, partsAvailability: null, equipmentRequired: null, baseTime: null, skillTest: null, cfConsumed: null, loadReduction: null, maxImprovement: null },
-    note: 'Freely rotating ring set on top of vehicle with tripod assembly. Full 360° rotation; vertical traverse ±30°. Mounting/dismounting: Complex Action + Quickness (4) Test if vehicle moving. Helicopters: door must be open (exposes interior). Hardtop/convertible vehicles need roll bars.',
+    design: { dpCost: '10', cfConsumed: '1 (16 CF People Space required for door-gun configuration)', loadReduction: '25 kg', maxImprovement: null },
+    customization: { partsCost: '3,000¥', partsAvailability: '8/14 days (2)', equipmentRequired: 'Vehicle shop', baseTime: '8 hrs', skillTest: 'Appropriate Vehicle B/R (3)', cfConsumed: '1 (16 CF People Space required for door-gun configuration)', loadReduction: '25 kg', maxImprovement: null },
+    note: 'Freely rotating ring set on top of vehicle with tripod assembly. Full 360° rotation; vertical traverse ±30°. Mounting/dismounting: Complex Action + Quickness (4) Test if vehicle moving. Helicopters: door must be open (exposes interior). Hardtop/convertible vehicles need roll bars. Counts as hardpoint; can mount man-portable heavy weapons and LMGs. Cannot be remotely controlled by drone pilot or rigger. Weapons receive 6 points of recoil compensation.',
   },
 
+  {
+    name: 'Smartlink Integration Kit — Level I',
+    category: 'Vehicle Weapon Mounts',
+    design: { dpCost: '250', cfConsumed: '1', loadReduction: null, maxImprovement: null },
+    customization: { partsCost: '650¥', partsAvailability: '4/48 hrs (1)', equipmentRequired: 'Vehicle kit', baseTime: '24 hrs', skillTest: 'Appropriate Vehicle B/R (4)', cfConsumed: '1', loadReduction: null, maxImprovement: null },
+    note: 'Interface connecting smartgun-equipped weapons in fixed mounts or turrets with smartlink cyberware gunners. Without kit, smartgun weapons in mounts/turrets do not grant smartlink benefit during Manual Gunnery Tests. Smartlink modifiers do not apply to Sensor-Enhanced Gunnery or Missile Attack Tests. Not required for pintle or ring mounts.',
+  },
+
+  {
+    name: 'Smartlink Integration Kit — Level II',
+    category: 'Vehicle Weapon Mounts',
+    design: { dpCost: '350', cfConsumed: '1', loadReduction: null, maxImprovement: null },
+    customization: { partsCost: '900¥', partsAvailability: '6/48 hrs (2)', equipmentRequired: 'Vehicle kit', baseTime: '24 hrs', skillTest: 'Appropriate Vehicle B/R (4)', cfConsumed: '1', loadReduction: null, maxImprovement: null },
+    note: 'Level II smartlink integration kit. See Level I note. Also contains palm-induction links for weapon controls.',
+  },
+
+  {
+    name: 'Torpedo Tubes',
+    category: 'Vehicle Weapon Mounts',
+    design: {
+      dpCost: '250 points per tube; Autoloader: +250 per tube',
+      cfConsumed: '128 CF per tube; Storage Racks: 32 CF per torpedo; Manual Loading: 720 CF; Autoloader: 360 CF',
+      loadReduction: '500 kg per tube; Storage Racks: weight of torpedoes stored; Autoloader: 50,000 kg',
+      maxImprovement: null,
+    },
+    customization: {
+      partsCost: '100,000¥ per tube; Autoloader: 50,000¥',
+      partsAvailability: '25/6 months (—)',
+      equipmentRequired: 'Ship Facility',
+      baseTime: '300 hrs',
+      skillTest: 'Submarine B/R (6)',
+      cfConsumed: '50 CF + 150 per tube; Storage Racks: 32 CF per torpedo; Manual Loading: 720 CF; Autoloader: 400 CF',
+      loadReduction: '750 kg per tube; Storage Racks: weight of torpedoes stored; Autoloader: 60,000 kg',
+      maxImprovement: null,
+    },
+    note: 'Submarines only (surface ships launch torpedoes from internal missile mounts). Fixed direction — fore or aft. Fore and aft tubes require separate storage. Each torpedo requires 32 CF storage on ammunition rack. Autoloaders use machinery instead of crew. Manual loading: Complex Action + Strength 30 to load one; Autoloader: 15 seconds per torpedo.',
+  },
+
+  {
+    name: 'Vehicle Gyroscopic Stabilizers',
+    category: 'Vehicle Weapon Mounts',
+    design: {
+      dpCost: '15 per level of gyro-stabilization',
+      cfConsumed: '1',
+      loadReduction: 'Rating + 24 kg',
+      maxImprovement: 'Body × 2',
+    },
+    customization: {
+      partsCost: '1,000¥ per level of gyro-stabilization',
+      partsAvailability: '8/72 hrs (1.5)',
+      equipmentRequired: 'Vehicle kit',
+      baseTime: '24 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: '1',
+      loadReduction: 'Rating + 24 kg',
+      maxImprovement: 'Body × 2',
+    },
+    note: 'For weapons mounted in fixed mounts and turrets. Reduces combined recoil + movement modifiers by half (movement reduction only applies to vehicles using mechanical legs). If total active gyroscopic stabilization rating > vehicle Body: vehicle receives +1 to Handling for each gyro-stabilization point > Body. Not compatible with Gunnery Recoil Adjusters.',
+  },
+
+];
+
+// ── TURRETS ───────────────────────────────────────────────────────────────────
+// Standard (gunner-operated) turrets. Weapon value of all weapons on turret
+// may not exceed turret's Weapon Value (see Weapon Values Table, p.140).
+// Anti-aircraft turrets: multiply design/parts cost × 1.5, CF +1.
+// Pop-up turrets: weapon value −1; CF consumption doubled; design cost as listed.
+
+export const TurretsTable = [
+  {
+    size: 'Mini',
+    weaponValue: 2,
+    hardpointRequirement: 1,
+    internalSpace: { cf: 1, seating: 'None' },
+    design: { dpCost: 125, cfConsumed: 6, loadReduction: '25 kg' },
+    customization: {
+      partsCost: '5,000¥',
+      partsAvailability: '(Vehicle Cost ÷ 25) ÷ 6 = Target Number; (Vehicle Cost ÷ 25) × 14 = days',
+      streetIndex: 2,
+      equipmentRequired: 'Vehicle facility',
+      baseTime: '72 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: 7,
+      loadReduction: '25 kg',
+    },
+  },
+  {
+    size: 'Small',
+    weaponValue: 3,
+    hardpointRequirement: 2,
+    internalSpace: { cf: 2, seating: 'None' },
+    design: { dpCost: 250, cfConsumed: 7, loadReduction: '100 kg' },
+    customization: {
+      partsCost: '7,500¥',
+      partsAvailability: '(Vehicle Cost ÷ 25) ÷ 6 = Target Number; (Vehicle Cost ÷ 25) × 14 = days',
+      streetIndex: 3,
+      equipmentRequired: 'Vehicle facility',
+      baseTime: '72 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: 8,
+      loadReduction: '100 kg',
+    },
+  },
+  {
+    size: 'Medium',
+    weaponValue: 6,
+    hardpointRequirement: 3,
+    internalSpace: { cf: 4, seating: 2 },
+    design: { dpCost: 500, cfConsumed: 16, loadReduction: '1,000 kg' },
+    customization: {
+      partsCost: '15,000¥',
+      partsAvailability: 'Military only',
+      streetIndex: null,
+      equipmentRequired: 'Vehicle facility',
+      baseTime: '72 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: 24,
+      loadReduction: '1,000 kg',
+    },
+  },
+  {
+    size: 'Large',
+    weaponValue: 8,
+    hardpointRequirement: 4,
+    internalSpace: { cf: 8, seating: 2 },
+    design: { dpCost: 1500, cfConsumed: 32, loadReduction: '6,000 kg' },
+    customization: {
+      partsCost: '300,000¥',
+      partsAvailability: 'Military only',
+      streetIndex: null,
+      equipmentRequired: 'Vehicle facility',
+      baseTime: '72 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: 36,
+      loadReduction: '6,000 kg',
+    },
+  },
+  {
+    size: 'Extra-Large',
+    weaponValue: 10,
+    hardpointRequirement: 6,
+    internalSpace: { cf: 16, seating: 3 },
+    design: { dpCost: 3000, cfConsumed: 64, loadReduction: '30,000 kg' },
+    customization: {
+      partsCost: '1,000,000¥',
+      partsAvailability: 'Military only',
+      streetIndex: null,
+      equipmentRequired: 'Vehicle facility',
+      baseTime: '72 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: 72,
+      loadReduction: '30,000 kg',
+    },
+  },
+];
+
+// Remote turrets: operator controls from passenger compartment via remote sensors.
+// A gunner or rigger may operate; military vehicles often use two riggers.
+// Available in micro, mini, small, medium, large, and extra-large sizes.
+// Micro turrets normally on large drones: 1 firmpoint, Weapon Value 1.
+// Large and extra-large remote turrets exist on destroyers/cruisers only.
+// Pop-up micro-turrets have Weapon Value 1 and take up 1 CF.
+
+export const RemoteTurretsTable = [
+  {
+    size: 'Micro',
+    weaponValue: 1,
+    hardpointRequirement: 1,
+    design: { dpCost: 100, cfConsumed: 0, loadReduction: '10 kg' },
+    customization: {
+      partsCost: '2,500¥',
+      partsAvailability: '(Vehicle Cost ÷ 25) ÷ 6 = Target Number; (Vehicle Cost ÷ 25) × 14 = days',
+      streetIndex: 2,
+      equipmentRequired: 'Vehicle facility',
+      baseTime: '72 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: 1,
+      loadReduction: '10 kg',
+    },
+  },
+  {
+    size: 'Mini',
+    weaponValue: 2,
+    hardpointRequirement: 1,
+    design: { dpCost: 175, cfConsumed: 3, loadReduction: '25 kg' },
+    customization: {
+      partsCost: '6,000¥',
+      partsAvailability: '(Vehicle Cost ÷ 25) ÷ 6 = Target Number; (Vehicle Cost ÷ 25) × 14 = days',
+      streetIndex: 2,
+      equipmentRequired: 'Vehicle facility',
+      baseTime: '72 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: 4,
+      loadReduction: '25 kg',
+    },
+  },
+  {
+    size: 'Small',
+    weaponValue: 3,
+    hardpointRequirement: 2,
+    design: { dpCost: 350, cfConsumed: 4, loadReduction: '100 kg' },
+    customization: {
+      partsCost: '9,000¥',
+      partsAvailability: '3',
+      streetIndex: 3,
+      equipmentRequired: 'Vehicle facility',
+      baseTime: '72 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: 5,
+      loadReduction: '100 kg',
+    },
+  },
+  {
+    size: 'Medium',
+    weaponValue: 6,
+    hardpointRequirement: 3,
+    design: { dpCost: 600, cfConsumed: 8, loadReduction: '1,000 kg' },
+    customization: {
+      partsCost: '17,500¥',
+      partsAvailability: 'Military only',
+      streetIndex: null,
+      equipmentRequired: 'Vehicle facility',
+      baseTime: '72 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: 8,
+      loadReduction: '1,000 kg',
+    },
+  },
+  {
+    size: 'Large',
+    weaponValue: 8,
+    hardpointRequirement: 4,
+    design: { dpCost: 2500, cfConsumed: 60, loadReduction: '8,000 kg' },
+    customization: {
+      partsCost: '600,000¥',
+      partsAvailability: 'Military only',
+      streetIndex: null,
+      equipmentRequired: 'Vehicle facility',
+      baseTime: '72 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: 60,
+      loadReduction: '8,000 kg',
+    },
+  },
+  {
+    size: 'Extra-Large',
+    weaponValue: 10,
+    hardpointRequirement: 6,
+    design: { dpCost: 5000, cfConsumed: 120, loadReduction: '75,000 kg' },
+    customization: {
+      partsCost: '2,000,000¥',
+      partsAvailability: 'Military only',
+      streetIndex: null,
+      equipmentRequired: 'Vehicle facility',
+      baseTime: '72 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: 120,
+      loadReduction: '75,000 kg',
+    },
+  },
+];
+
+// ── ELECTRONIC SYSTEMS ────────────────────────────────────────────────────────
+// Computers and electronic devices that regulate/control vehicles, plus sensor
+// and electronic warfare systems. CF values: design CF / customization CF where noted.
+
+export const ElectronicSystems = [
+
+  {
+    name: 'Autosoft Interpretation System',
+    category: 'Electronic Systems',
+    design: {
+      dpCost: 'Pilot rating × 50',
+      cfConsumed: '1',
+      loadReduction: null,
+      maxImprovement: null,
+    },
+    customization: {
+      partsCost: 'Pilot rating × 1,000¥',
+      partsAvailability: '8/14 days (2)',
+      equipmentRequired: 'Electronics shop',
+      baseTime: '72 hrs',
+      skillTest: 'Electronics B/R (4)',
+      cfConsumed: '1',
+      loadReduction: '2 kg',
+      maxImprovement: null,
+    },
+    note: 'Drones only. Essentially a "skillwire" system — allows a drone to interpret autosoft or knowsoft programming on either an autosoft (p.44) or a knowsoft (p.295, SR3). Processing power and memory equal to Pilot rating × 2. Combined ratings of simultaneously used programs may not exceed this figure. Autosofts and knowsofts must have ratings ≤ drone\'s Pilot rating. Autosofts/knowsofts may not use any programming options available to skillsofts. Does not inhibit IVIS Pool or Adaptation Pool.',
+  },
+
+  {
+    name: 'BattleTac FDDM Receiver Module',
+    category: 'Electronic Systems',
+    design: {
+      dpCost: '350',
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: null,
+    },
+    customization: {
+      partsCost: '35,000¥',
+      partsAvailability: '10/21 days (3)',
+      equipmentRequired: 'Microtronics shop',
+      baseTime: '64 × Pilot hrs',
+      skillTest: 'Computer B/R (4)',
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: null,
+    },
+    note: 'Fire-Direction Data Manager spin-off of BattleTac. Allows vehicle to transmit and receive targeting information among other drones via a remote-control network. Enables drones to fire on targets outside their lines of sight. See Indirect Fire, p.99, CC.',
+  },
+
+  {
+    name: 'BattleTac IVIS Receiver Module',
+    category: 'Electronic Systems',
+    design: {
+      dpCost: '250',
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: null,
+    },
+    customization: {
+      partsCost: '25,000¥',
+      partsAvailability: '8/14 days (3)',
+      equipmentRequired: 'Microtronics shop',
+      baseTime: '64 × Pilot hrs',
+      skillTest: 'Computer B/R (4)',
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: null,
+    },
+    note: 'Intra-Vehicle Information System spin-off of BattleTac. Enhances data-sharing between remote-control deck and drones in its network. Only remotely controlled vehicles/drones with pilots modified to interact with BattleTac IVIS receive benefits. See The BattleTac IVIS System, p.43.',
+  },
+
+  {
+    name: 'Closed-Circuit Simsense System Integration',
+    category: 'Electronic Systems',
+    design: {
+      dpCost: 'Technical rating × 5,000',
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: '10',
+    },
+    customization: {
+      partsCost: 'Technical rating × 400,000¥',
+      partsAvailability: '6/21 days (4)',
+      equipmentRequired: 'Ship Facility',
+      baseTime: '120 hrs',
+      skillTest: 'Computer B/R (6); Electronics B/R (6)',
+      cfConsumed: null,
+      loadReduction: null,
+      maxImprovement: '10',
+    },
+    note: 'Ships only. Allows rigger to monitor a ship the same way she monitors a building\'s security system (see CCSS, p.45). Concerned with internal activities only — no piloting/maneuvering capabilities. If ship is wired for both CCSS and rigger control, rigger can "jump" from direct helm control to CCSS monitoring. Useful for engineering functions (damage control), commanding maintenance drone groups. Rigger can command up to Intelligence attribute drones via CCSS network.',
+  },
+
+  {
+    name: 'Dipping Sonar',
+    category: 'Electronic Systems',
+    design: {
+      dpCost: 'Sonar rating × 250',
+      cfConsumed: '12',
+      loadReduction: '50 kg',
+      maxImprovement: '6',
+    },
+    customization: {
+      partsCost: 'Sonar rating × 15,000¥',
+      partsAvailability: '8/21 days (4.5)',
+      equipmentRequired: 'Vehicle Facility',
+      baseTime: '16 hrs',
+      skillTest: 'Appropriate Vehicle B/R (4)',
+      cfConsumed: '16',
+      loadReduction: '50 kg',
+      maxImprovement: '6',
+    },
+    note: 'Helicopters and aircraft capable of hovering. Array of active and passive sonar sensors on long cable, lowered into water while hovering ≤30m altitude at ≤7m/s speed. Detects underwater contacts (submarines). Processes data and transmits to aircraft via cable.',
+  },
+
+  {
+    name: 'Electronic Countermeasures (ECM)',
+    category: 'Electronic Systems',
+    design: { dpCost: 'See ECM Systems Table', cfConsumed: 'See ECM Systems Table', loadReduction: 'See ECM Systems Table', maxImprovement: '10' },
+    customization: { partsCost: 'See ECM Systems Table', partsAvailability: 'See ECM Systems Table', equipmentRequired: 'Vehicle facility', baseTime: '16 hrs per level', skillTest: 'Electronics B/R (4)', cfConsumed: 'See ECM Systems Table', loadReduction: 'See ECM Systems Table', maxImprovement: '10' },
+    note: 'Barrage radio jammers, infrared jammers, chaff/flare dispensers, wave harmonic disrupters. Jam communications of opposing remote-control operations. See ECM, p.138, SR3.',
+  },
+
+  {
+    name: 'Electronic Counter-Countermeasures (ECCM)',
+    category: 'Electronic Systems',
+    design: { dpCost: 'See ECCM Systems Table', cfConsumed: 'See ECCM Systems Table', loadReduction: 'See ECCM Systems Table', maxImprovement: '10' },
+    customization: { partsCost: 'See ECCM Systems Table', partsAvailability: 'See ECCM Systems Table', equipmentRequired: 'Vehicle facility', baseTime: '16 hrs per level', skillTest: 'Electronics B/R (4)', cfConsumed: 'See ECCM Systems Table', loadReduction: 'See ECCM Systems Table', maxImprovement: '10' },
+    note: 'Signal amplifiers and noise filters that nullify ECM effects. More readily available than ECM. Higher-level ECCM available only through licensed security firms or military organizations. See Electronic Countermeasures, p.138, SR3.',
+  },
+
+  {
+    name: 'Electronic Deception (ED)',
+    category: 'Electronic Systems',
+    design: { dpCost: 'See ED Systems Table', cfConsumed: 'See ED Systems Table', loadReduction: 'See ED Systems Table', maxImprovement: '6' },
+    customization: { partsCost: 'See ED Systems Table', partsAvailability: 'See ED Systems Table', equipmentRequired: 'Vehicle facility', baseTime: '16 hrs per level', skillTest: 'Electronics B/R (4)', cfConsumed: 'See ED Systems Table', loadReduction: 'See ED Systems Table', maxImprovement: '6' },
+    note: 'Reality-checking electronic components (inertial navigation, flux density monitors) that negate effects of ECD. Generally restricted to security/military — almost impossible on streets. See Electronic Deception, p.32.',
+  },
+
+  {
+    name: 'Electronic Counter-Deception (ECD)',
+    category: 'Electronic Systems',
+    design: { dpCost: 'See ECD Systems Table', cfConsumed: 'See ECD Systems Table', loadReduction: 'See ECD Systems Table', maxImprovement: '6' },
+    customization: { partsCost: 'See ECD Systems Table', partsAvailability: 'See ECD Systems Table', equipmentRequired: 'Vehicle facility', baseTime: '16 hrs per level', skillTest: 'Electronics B/R (4)', cfConsumed: 'See ECD Systems Table', loadReduction: 'See ECD Systems Table', maxImprovement: '6' },
+    note: 'Devices that feed sensors false information about target\'s range, position, and direction. More insidious than ECM; a sensor won\'t know it\'s being deceived. Restricted to security/military — almost impossible on streets. See Electronic Deception, p.32.',
+  },
+
+  {
+    name: 'Electronics Ports',
+    category: 'Electronic Systems',
+    design: { dpCost: '10', cfConsumed: null, loadReduction: null, maxImprovement: null },
+    customization: { partsCost: '1,000¥', partsAvailability: '3/6 days (1)', equipmentRequired: 'Vehicle shop', baseTime: '8 hrs', skillTest: 'Electronics B/R (3)', cfConsumed: null, loadReduction: null, maxImprovement: null },
+    note: 'Required for electronic items unrelated to vehicle operations (radios, video cameras, surveillance measures, remote control decks). Allows these items to draw electrical power from the vehicle\'s power plant. Applicable devices may increase Flux ratings by half the vehicle\'s Body (round up). Automatically linked to vehicle\'s computer which acts as router. Does not consume CF or reduce Load; attached equipment might (see CF Requirements for Common Electronic Equipment table, p.146).',
+  },
+
+  {
+    name: 'Magnetic-Anomaly Detector (MAD)',
+    category: 'Electronic Systems',
+    design: { dpCost: 'Sensor rating × 250', cfConsumed: '12', loadReduction: '50 kg', maxImprovement: null },
+    customization: { partsCost: 'Sensor rating × 20,000¥', partsAvailability: '8/21 days (4.5)', equipmentRequired: 'Vehicle Facility', baseTime: '16 hrs', skillTest: 'Electronics (B/R) (8)', cfConsumed: '16', loadReduction: '50 kg', maxImprovement: null },
+    note: 'Aircraft only (ships have too much iron). Detects underwater submarines by monitoring natural magnetic field effects of large iron-bearing boats. Only method other than sonar for detecting submerged submarines. To detect via MAD: make Sensor Perception Test (p.135, SR3) rolling dice equal to aircraft\'s Sensor rating against target number equal to sub\'s normal (not Sonar) Signature rating.',
+  },
+
+  {
+    name: 'Over-the-Horizon Sensors (OTHS)',
+    category: 'Electronic Systems',
+    design: { dpCost: 'Sensor rating × 1,000', cfConsumed: '216', loadReduction: '2,500 kg', maxImprovement: null },
+    customization: { partsCost: 'Sensor rating × 100,000¥', partsAvailability: '10/60 days (—)', equipmentRequired: 'Ship facility', baseTime: '40 hrs', skillTest: 'Electronics B/R (6)', cfConsumed: '216', loadReduction: '2,500 kg', maxImprovement: null },
+    note: 'Ships only. Normal ship surface-scanning sensors limited to 35 km (earth\'s curvature). OTHS uses reflective/refractive optics to extend range of ship surface sensors to absolute maximum of 35 km. Ship with OTHS ignores the 35 km limitation for detecting surface contacts using onboard ship sensors. However, ship receives +3 modifier when making Detection Tests against surface targets beyond 35 km range (ray-bending technology degrades image quality).',
+  },
+
+  {
+    name: 'Power Amplifiers',
+    category: 'Electronic Systems',
+    design: { dpCost: '5 per rating', cfConsumed: '0.25 per rating (round down)', loadReduction: '1 kg per rating', maxImprovement: '10' },
+    customization: { partsCost: '250¥ per rating', partsAvailability: 'Rating ÷ (rating × 12) hrs (1.5)', equipmentRequired: null, baseTime: null, skillTest: null, cfConsumed: '0.25 per rating (round down)', loadReduction: '1 kg per rating', maxImprovement: '10' },
+    note: 'Increase Flux ratings of sensors, ECM, ECCM, hardwired remote control decks, and other electronic transmission devices. Increased Flux rating increases effective range of remote-control deck and makes it more resistant to electronic warfare. See Electronic Warfare, p.35.',
+  },
+
+  {
+    name: 'Remote-Control Encryption Module',
+    category: 'Electronic Systems',
+    design: { dpCost: 'Rating × 50', cfConsumed: null, loadReduction: null, maxImprovement: null },
+    customization: { partsCost: 'Rating × 5,000¥', partsAvailability: 'Rating/rating days (3)', equipmentRequired: 'Electronics kit', baseTime: '1 hr', skillTest: 'Electronics B/R (4)', cfConsumed: null, loadReduction: null, maxImprovement: null },
+    note: 'Works like the encryption module for remote-control decks (p.97): allows remotely controlled drones to decrypt signals from the rigger and scramble their own transmissions against signal interception. If a vehicle/drone is part of a remote-control network using an encryption module, the vehicle/drone must have a module to scramble its signals. A remote-control network always operates with an encryption rating equal to the rating of the lowest encryption module.',
+  },
+
+  {
+    name: 'Retransmission Units',
+    category: 'Electronic Systems',
+    design: { dpCost: '250', cfConsumed: '1', loadReduction: '5 kg', maxImprovement: null },
+    customization: { partsCost: '25,000¥', partsAvailability: '8/14 days (3)', equipmentRequired: 'Microtronics shop', baseTime: '64 hrs', skillTest: 'Electronics B/R (4)', cfConsumed: '1.5', loadReduction: '5 kg', maxImprovement: null },
+    note: 'Receiver-transmitter that intercepts signals from a remote-control deck and relays them to other drones on a separate frequency. Two purposes: (1) increase effective range of remote-control deck; (2) provide extra defense against electronic warfare. A retrans unit has its own Flux rating. Any drone inside the retrans unit\'s range can receive commands from the main remote-control deck even if outside the deck\'s range. Additionally, a retrans unit can use its Flux as complementary dice to any MIlJ Tests made against the remote-control deck, applying only to drones within range of both the deck and the retrans unit. A retrans unit may be targeted for electronic warfare; any MIlJ results apply only to drones within the retrans unit\'s range. Base Flux: 0; additional Flux can be purchased by adding Power Amplifiers.',
+  },
+
+  {
+    name: 'Sensors',
+    category: 'Electronic Systems',
+    design: { dpCost: 'See Sensor Systems Table', cfConsumed: '0.5 per rating (round up)', loadReduction: '1 kg per rating', maxImprovement: '10' },
+    customization: { partsCost: 'See Sensor Systems Table', partsAvailability: 'See Sensor Systems Table', equipmentRequired: 'Vehicle shop', baseTime: '8 hrs', skillTest: 'Electronics B/R (4)', cfConsumed: '0.5 per rating (round up)', loadReduction: '1 kg per rating', maxImprovement: '10' },
+    note: 'Standard and enhanced audio/video sensors, thermal and radar sensors, ultrasound sensors, identification, recognition, tracking software. See Sensor-Enhanced Gunnery (p.152, SR3) and Sensors (p.135, SR3). Higher-level sensors restricted to security/military — not available on street except from very well-connected fixers.',
+  },
+
+  {
+    name: 'Sonar Systems',
+    category: 'Electronic Systems',
+    design: { dpCost: 'See Sonar Systems Table', cfConsumed: 'See Sonar Systems Table', loadReduction: 'See Sonar Systems Table', maxImprovement: null },
+    customization: { partsCost: 'See Sonar Systems Table', partsAvailability: 'See Sonar Systems Table', equipmentRequired: 'Vehicle facility', baseTime: '40 hrs per level', skillTest: 'Electronics B/R (6)', cfConsumed: 'See Sonar Systems Table', loadReduction: 'See Sonar Systems Table', maxImprovement: null },
+    note: 'Primary means for submarines to navigate underwater. Surface ships can also carry sonar to detect underwater hazards (reefs, sandbars, mines, submarines).',
+  },
+
+  {
+    name: 'Towed-Array Sonar',
+    category: 'Electronic Systems',
+    design: { dpCost: 'Sonar rating × 1,000', cfConsumed: '125', loadReduction: '1,500 kg', maxImprovement: '6' },
+    customization: { partsCost: 'Sonar rating × 100,000¥', partsAvailability: '10/45 days (4.5)', equipmentRequired: 'Ship facility', baseTime: '16 hrs', skillTest: 'Ship or Submarine B/R (6)', cfConsumed: '175', loadReduction: '1,500 kg', maxImprovement: '6' },
+    note: 'Long cable with sophisticated microphones at strategic lengths. Allows ship to overcome sonar "blind spot" in the stern caused by propeller turbulence baffles. Additional benefit: improves passive sonar contact detection at medium/long ranges. Ship with towed-array sonar deployed gains an additional die when making Passive Sonar Detection Tests against contacts more than 15 km distant. Vulnerable to cable breaks during ship combat maneuvers: roll 2D6 each time a maneuver is made (GM discretion); on result of two 1s, the cable is cut.',
+  },
+
+];
+
+// ── ECM / ECCM / ED / ECD SYSTEMS TABLES ─────────────────────────────────────
+// CF Consumed*: first value = design; second value = customization.
+// All specs refer to these tables for design/customization points and costs.
+
+export const ECMTable = [
+  { level: 1,  cfDesign:  0, cfCustom:  1, dpCost:     100, customCost:     '10,000¥', weightKg:   5, availability: '5/7 days',    streetIndex: 2.5 },
+  { level: 2,  cfDesign:  1, cfCustom:  2, dpCost:     200, customCost:     '20,000¥', weightKg:  10, availability: '6/10 days',   streetIndex: 3   },
+  { level: 3,  cfDesign:  2, cfCustom:  3, dpCost:     300, customCost:     '30,000¥', weightKg:  15, availability: '7/14 days',   streetIndex: 3.5 },
+  { level: 4,  cfDesign:  2, cfCustom:  3, dpCost:     500, customCost:     '50,000¥', weightKg:  20, availability: '8/21 days',   streetIndex: 4   },
+  { level: 5,  cfDesign:  3, cfCustom:  6, dpCost:     750, customCost:     '75,000¥', weightKg:  25, availability: '10/30 days',  streetIndex: null },
+  { level: 6,  cfDesign:  4, cfCustom:  8, dpCost:   1_000, customCost:    '100,000¥', weightKg:  50, availability: '12/45 days',  streetIndex: null },
+  { level: 7,  cfDesign:  6, cfCustom:  9, dpCost:   2_000, customCost:    '200,000¥', weightKg:  75, availability: '14/60 days',  streetIndex: null },
+  { level: 8,  cfDesign: 10, cfCustom: 12, dpCost:   3_000, customCost:    '300,000¥', weightKg: 100, availability: '18/6 months', streetIndex: null },
+  { level: 9,  cfDesign: 12, cfCustom: 16, dpCost:   5_000, customCost:    '500,000¥', weightKg: 150, availability: '18/6 months', streetIndex: null },
+  { level: 10, cfDesign: 16, cfCustom: 20, dpCost:  10_000, customCost:  '1,000,000¥', weightKg: 250, availability: '20/1 year',   streetIndex: null },
+];
+
+export const ECCMTable = [
+  { level: 1,  cfDesign:  0, cfCustom:  1, dpCost:    100, customCost:    '10,000¥', weightKg:   3, availability: '4/7 days',    streetIndex: 2   },
+  { level: 2,  cfDesign:  1, cfCustom:  2, dpCost:    200, customCost:    '20,000¥', weightKg:   5, availability: '4/10 days',   streetIndex: 2.5 },
+  { level: 3,  cfDesign:  2, cfCustom:  3, dpCost:    300, customCost:    '30,000¥', weightKg:   8, availability: '5/14 days',   streetIndex: 3   },
+  { level: 4,  cfDesign:  2, cfCustom:  3, dpCost:    400, customCost:    '40,000¥', weightKg:  12, availability: '6/21 days',   streetIndex: 3.5 },
+  { level: 5,  cfDesign:  3, cfCustom:  6, dpCost:    500, customCost:    '50,000¥', weightKg:  18, availability: '8/30 days',   streetIndex: null },
+  { level: 6,  cfDesign:  4, cfCustom:  8, dpCost:    750, customCost:    '75,000¥', weightKg:  25, availability: '10/45 days',  streetIndex: null },
+  { level: 7,  cfDesign:  6, cfCustom:  9, dpCost:  1_000, customCost:   '100,000¥', weightKg:  50, availability: '12/60 days',  streetIndex: null },
+  { level: 8,  cfDesign: 10, cfCustom: 12, dpCost:  2_500, customCost:   '250,000¥', weightKg:  75, availability: '14/3 months', streetIndex: null },
+  { level: 9,  cfDesign: 12, cfCustom: 16, dpCost:  3_000, customCost:   '300,000¥', weightKg: 150, availability: '16/6 months', streetIndex: null },
+  { level: 10, cfDesign: 16, cfCustom: 20, dpCost:  5_000, customCost:   '500,000¥', weightKg: 150, availability: '18/1 year',   streetIndex: null },
+];
+
+export const EDTable = [
+  { level: 1, cfDesign: 1, cfCustom: 2, dpCost:   150, customCost:   '15,000¥', weightKg: 10, availability: '8/30 days',   streetIndex: 3   },
+  { level: 2, cfDesign: 2, cfCustom: 3, dpCost:   300, customCost:   '30,000¥', weightKg: 20, availability: '8/45 days',   streetIndex: 3.5 },
+  { level: 3, cfDesign: 4, cfCustom: 5, dpCost:   500, customCost:   '50,000¥', weightKg: 30, availability: '8/60 days',   streetIndex: 4   },
+  { level: 4, cfDesign: 5, cfCustom: 6, dpCost:   750, customCost:   '75,000¥', weightKg: 45, availability: '10/3 months', streetIndex: 4.5 },
+  { level: 5, cfDesign: 6, cfCustom: 7, dpCost: 1_000, customCost:  '100,000¥', weightKg: 50, availability: '12/6 months', streetIndex: 5   },
+  { level: 6, cfDesign: 8, cfCustom: 9, dpCost: 2_500, customCost:  '250,000¥', weightKg: 75, availability: '16/1 year',   streetIndex: null },
+];
+
+export const ECDTable = [
+  { level: 1, cfDesign: 1, cfCustom: 2, dpCost:   100, customCost:   '10,000¥', weightKg: 25, availability: '8/30 days',   streetIndex: 3   },
+  { level: 2, cfDesign: 2, cfCustom: 3, dpCost:   300, customCost:   '30,000¥', weightKg: 30, availability: '8/45 days',   streetIndex: 3.5 },
+  { level: 3, cfDesign: 3, cfCustom: 4, dpCost:   500, customCost:   '50,000¥', weightKg: 35, availability: '8/60 days',   streetIndex: 4   },
+  { level: 4, cfDesign: 4, cfCustom: 5, dpCost:   750, customCost:   '75,000¥', weightKg: 45, availability: '10/3 months', streetIndex: 4.5 },
+  { level: 5, cfDesign: 5, cfCustom: 6, dpCost: 1_500, customCost:  '150,000¥', weightKg: 60, availability: '12/6 months', streetIndex: 5   },
+  { level: 6, cfDesign: 6, cfCustom: 8, dpCost: 3_000, customCost:  '300,000¥', weightKg: 75, availability: '16/1 year',   streetIndex: null },
+];
+
+// ── SENSOR / SONAR SYSTEMS TABLES ─────────────────────────────────────────────
+// CF Consumed*: first value = design; second value = customization.
+
+export const SensorSystemsTable = [
+  { level: 1,  cfDesign:  0, cfCustom:  1, dpCost:    50, customCost:    '5,000¥', weightKg:  12, availability: '4/7 days',    streetIndex: 2   },
+  { level: 2,  cfDesign:  1, cfCustom:  2, dpCost:    75, customCost:    '7,500¥', weightKg:  20, availability: '4/10 days',   streetIndex: 2.5 },
+  { level: 3,  cfDesign:  2, cfCustom:  3, dpCost:   100, customCost:   '10,000¥', weightKg:  25, availability: '5/14 days',   streetIndex: 3   },
+  { level: 4,  cfDesign:  2, cfCustom:  3, dpCost:   125, customCost:   '12,500¥', weightKg:  35, availability: '6/21 days',   streetIndex: 3.5 },
+  { level: 5,  cfDesign:  3, cfCustom:  6, dpCost:   150, customCost:   '15,000¥', weightKg:  50, availability: '8/30 days',   streetIndex: null },
+  { level: 6,  cfDesign:  4, cfCustom:  8, dpCost:   200, customCost:   '20,000¥', weightKg:  75, availability: '10/45 days',  streetIndex: null },
+  { level: 7,  cfDesign:  6, cfCustom:  9, dpCost:   300, customCost:   '30,000¥', weightKg: 110, availability: '12/60 days',  streetIndex: null },
+  { level: 8,  cfDesign: 10, cfCustom: 12, dpCost:   500, customCost:   '50,000¥', weightKg: 150, availability: '14/3 months', streetIndex: null },
+  { level: 9,  cfDesign: 12, cfCustom: 16, dpCost: 1_000, customCost:  '100,000¥', weightKg: 200, availability: '16/6 months', streetIndex: null },
+  { level: 10, cfDesign: 16, cfCustom: 20, dpCost: 5_000, customCost:  '500,000¥', weightKg: 250, availability: '18/1 year',   streetIndex: null },
+];
+
+export const SonarSystemsTable = [
+  { level: 1,  cfDesign:   4, cfCustom:   6, dpCost:     50, customCost:      '5,000¥', weightKg:    120, availability: '4/7 days',    streetIndex: 2   },
+  { level: 2,  cfDesign:   6, cfCustom:   8, dpCost:    500, customCost:     '25,000¥', weightKg:    250, availability: '4/10 days',   streetIndex: 2.5 },
+  { level: 3,  cfDesign:  10, cfCustom:  14, dpCost:  2_500, customCost:    '125,000¥', weightKg:    350, availability: '5/14 days',   streetIndex: 3   },
+  { level: 4,  cfDesign:  16, cfCustom:  25, dpCost:  5_000, customCost:    '625,000¥', weightKg:    500, availability: '6/21 days',   streetIndex: 3.5 },
+  { level: 5,  cfDesign:  50, cfCustom:  75, dpCost:  2_500, customCost:  '2,000,000¥', weightKg:    750, availability: '8/30 days',   streetIndex: null },
+  { level: 6,  cfDesign:  75, cfCustom: 100, dpCost:  3_000, customCost:  '5,000,000¥', weightKg:  1_000, availability: '10/45 days',  streetIndex: null },
+  { level: 7,  cfDesign: 100, cfCustom: 150, dpCost: 10_000, customCost: '15,000,000¥', weightKg:  1_250, availability: '12/60 days',  streetIndex: null },
+  { level: 8,  cfDesign: 200, cfCustom: 300, dpCost: 15_000, customCost: '20,000,000¥', weightKg:  1_500, availability: '14/3 months', streetIndex: null },
+  { level: 9,  cfDesign: 300, cfCustom: 500, dpCost: 25_000, customCost: '30,000,000¥', weightKg:  2_000, availability: '16/6 months', streetIndex: null },
+  { level: 10, cfDesign: 500, cfCustom: 750, dpCost: 50_000, customCost: '50,000,000¥', weightKg:  2_500, availability: '18/1 year',   streetIndex: null },
+];
+
+// CF Requirements for Common Electronic Equipment (p.146)
+export const CommonElectronicEquipmentCF = [
+  { item: 'Video/Trideo Display',          cfRequired: '0.15 per 20 cm of screen size' },
+  { item: 'Simsense Player',               cfRequired: '0.1'  },
+  { item: 'Cellular Phone',               cfRequired: '0.05' },
+  { item: 'Table Top Personal Computer (not including monitor)', cfRequired: '0.5' },
+  { item: 'Computer Printer',             cfRequired: '0.25' },
+  { item: 'Radio',                         cfRequired: '0.3 × Flux rating' },
+  { item: 'Audio/Video/Trideo Recorder',  cfRequired: '0.25' },
+  { item: 'Cyberdeck',                     cfRequired: '0.15' },
+  { item: 'Remote Control Deck',          cfRequired: '0.25' },
+  { item: 'BattleTac Master Component',   cfRequired: '0.6'  },
+  { item: 'Tactical Communications Gear — Master Unit',      cfRequired: '2'   },
+  { item: 'Tactical Communications Gear — Personal Comm Unit', cfRequired: '0.3 × Flux rating' },
+  { item: 'Tactical Communications Gear — Microwave/Laser Link', cfRequired: '1' },
+  { item: 'Satellite Dish — Standard Portable', cfRequired: '2'  },
+  { item: 'Satellite Dish — Large Portable',    cfRequired: '6'  },
+  { item: 'Satellite Dish — Fixed Base',        cfRequired: '20' },
 ];
 
 // ── COMBINED EXPORT ───────────────────────────────────────────────────────────
@@ -1382,6 +1961,16 @@ const Rigger3Mods = {
   protectiveSystemModifications: ProtectiveSystemModifications,
   signatureModifications: SignatureModifications,
   vehicleWeaponMounts: VehicleWeaponMounts,
+  turretsTable: TurretsTable,
+  remoteTurretsTable: RemoteTurretsTable,
+  electronicSystems: ElectronicSystems,
+  ecmTable: ECMTable,
+  eccmTable: ECCMTable,
+  edTable: EDTable,
+  ecdTable: ECDTable,
+  sensorSystemsTable: SensorSystemsTable,
+  sonarSystemsTable: SonarSystemsTable,
+  commonElectronicEquipmentCF: CommonElectronicEquipmentCF,
 };
 
 export default Rigger3Mods;
