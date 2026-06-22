@@ -31,6 +31,7 @@ import {
   getVehicleData, hasEditionData,
 } from '../vehicle/vehicleData';
 import { buildVehicleStats, checkLimit, applyMod } from '../vehicle/evalExpr';
+import SR3VehicleDesigner from './SR3VehicleDesigner';
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 
@@ -167,7 +168,7 @@ function StatPanel({ stats }) {
 
 // ── mod picker ────────────────────────────────────────────────────────────────
 
-function ModPicker({ chassis, engine, stats, globals, chosenMods, onAdd, mods }) {
+function ModPicker({ chassis, engine, stats, globals, chosenMods, onAdd, onRemove, mods }) {
   const [search, setSearch] = useState('');
 
   const available = useMemo(() => {
@@ -213,24 +214,23 @@ function ModPicker({ chassis, engine, stats, globals, chosenMods, onAdd, mods })
                   const inLimit = checkLimit(mod, stats, chassis, engine, globals, 1);
                   const alreadyAdded = chosenMods.some(c => c.mod.name === mod.name);
                   return (
-                    <TableRow key={mod.name} sx={{ opacity: inLimit ? 1 : 0.4 }}>
+                    <TableRow key={mod.name} sx={{ opacity: (!alreadyAdded && !inLimit) ? 0.4 : 1 }}>
                       <TableCell sx={{ fontSize: '0.82rem' }}>
                         <Tooltip title={mod.effectExpr || ''} arrow placement="top">
                           <span>{mod.name}</span>
                         </Tooltip>
                       </TableCell>
-                      <TableCell align="center">
-                        {alreadyAdded && <Chip size="small" label="added" color="primary" sx={{ fontSize: '0.65rem' }} />}
-                      </TableCell>
+                      <TableCell />
                       <TableCell align="right">
-                        <Button
-                          size="small"
-                          variant="outlined"
-                          disabled={!inLimit}
-                          onClick={() => onAdd(mod)}
-                        >
-                          Add
-                        </Button>
+                        {alreadyAdded ? (
+                          <Button size="small" variant="outlined" color="error" onClick={() => onRemove(mod)}>
+                            Remove
+                          </Button>
+                        ) : (
+                          <Button size="small" variant="outlined" disabled={!inLimit} onClick={() => onAdd(mod)}>
+                            Add
+                          </Button>
+                        )}
                       </TableCell>
                     </TableRow>
                   );
@@ -297,15 +297,24 @@ function ChosenMods({ chosenMods, onChange }) {
 // ── main designer ─────────────────────────────────────────────────────────────
 
 export default function VehicleDesigner({ edition = 'SR2', onSave }) {
+  if (edition === 'SR3') {
+    return (
+      <Box sx={{ mt: 3 }}>
+        <Typography variant="h5" gutterBottom>
+          Vehicle Designer
+          <Chip label="Rigger 3" size="small" color="primary" variant="outlined" sx={{ ml: 1, verticalAlign: 'middle' }} />
+        </Typography>
+        <SR3VehicleDesigner onSave={onSave} />
+      </Box>
+    );
+  }
+
   if (!hasEditionData(edition)) {
     return (
       <Box sx={{ mt: 3 }}>
         <Typography variant="h5" gutterBottom>Vehicle Designer</Typography>
         <Alert severity="info">
-          <strong>Rigger 3 vehicle design data is not yet available.</strong><br />
-          The SR3 vehicle designer requires a Rigger3.dat data file. Once sourced,
-          it will appear here automatically. In the meantime, the SR2 designer (Rigger 2 rules) is
-          available by switching to SR2 edition.
+          Vehicle design data is not available for this edition.
         </Alert>
       </Box>
     );
@@ -360,6 +369,10 @@ export default function VehicleDesigner({ edition = 'SR2', onSave }) {
 
   const handleAddMod = (mod) => {
     setChosenMods(prev => [...prev, { mod, level: mod.defaultLevel > 0 ? mod.defaultLevel : 1 }]);
+  };
+
+  const handleRemoveMod = (mod) => {
+    setChosenMods(prev => prev.filter(cm => cm.mod.name !== mod.name));
   };
 
   const handleSave = () => {
@@ -533,6 +546,7 @@ export default function VehicleDesigner({ edition = 'SR2', onSave }) {
                   globals={globals}
                   chosenMods={chosenMods}
                   onAdd={handleAddMod}
+                  onRemove={handleRemoveMod}
                   mods={mods_list}
                 />
               )}
