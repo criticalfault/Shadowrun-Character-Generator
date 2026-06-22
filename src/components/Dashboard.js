@@ -65,7 +65,6 @@ function a11yProps(index) {
 
 export default function BasicTabs() {
   const baseCharacter = {
-    allowedBooks: ["cc", "mits", "sr2", "sr3", "mm", "mat", "r3"],
     age: 18,
     bookTogglesSR3: {
       cc: true,
@@ -76,6 +75,7 @@ export default function BasicTabs() {
       r3: true,
     },
     bookTogglesSR2: { sr2: true },
+    allowedBooks: ["sr2"],
     edition: "SR2",
     cgmethod:"priorities",
     step: "chargen",
@@ -371,6 +371,23 @@ export default function BasicTabs() {
       }
     });
     tempCashSpent += (Character.purchasedSpellPoints ?? 0) * 25000;
+
+    // Custom designed vehicles/drones
+    (Character.customVehicles ?? []).forEach(function (v) {
+      if (v.edition === 'SR3') {
+        // SR3: estimatedCost = totalDpValue × MUF × 100
+        tempCashSpent += v.estimatedCost ?? 0;
+      } else {
+        // SR2: finalStats.Cost is in thousands (chassis.cost + engine.cost × 1000)
+        tempCashSpent += (v.finalStats?.Cost ?? 0) * 1000;
+      }
+    });
+
+    // Custom designed weapons
+    (Character.customWeapons ?? []).forEach(function (w) {
+      tempCashSpent += w.estimatedCost ?? w.finalCost ?? 0;
+    });
+
     setNuyenSpent(tempCashSpent);
   }, [Character]);
 
@@ -654,25 +671,27 @@ export default function BasicTabs() {
       <div className="no-print">{displayBox()}</div>
        <Grid container spacing={2} style={{"width":"100%"}} className="no-print">
         <Grid size={{ sm: 12 }}>
-          <LoadCharacter
-            Character={Character}
-            loadCharacter={handleLoadCharacter}
-            BaseCharacter={baseCharacter}
-            Edition={Edition}
-            ChangeEdition={handleChangeEdition}
-            CGMethod = {CGMethod}
-          />
-          <SignInPopup className={'mr-2'}
-            user={user}
-            onSignIn={handleSignIn}
-            setUser={setUser}
-            Character={Character}
-            loadCharacter={handleLoadCharacter}
-            BaseCharacter={baseCharacter}
-            Edition={Edition}
-            ChangeEdition={handleChangeEdition}
-            CGMethod = {CGMethod}
-          />
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, alignItems: 'center' }}>
+            <LoadCharacter
+              Character={Character}
+              loadCharacter={handleLoadCharacter}
+              BaseCharacter={baseCharacter}
+              Edition={Edition}
+              ChangeEdition={handleChangeEdition}
+              CGMethod = {CGMethod}
+            />
+            <SignInPopup className={'mr-2'}
+              user={user}
+              onSignIn={handleSignIn}
+              setUser={setUser}
+              Character={Character}
+              loadCharacter={handleLoadCharacter}
+              BaseCharacter={baseCharacter}
+              Edition={Edition}
+              ChangeEdition={handleChangeEdition}
+              CGMethod = {CGMethod}
+            />
+          </Box>
         </Grid>
       </Grid>
       <DiceRollerTray showDice={value} className="no-print" />
@@ -723,7 +742,7 @@ export default function BasicTabs() {
             ChangeAllowedBooks={handleChangeAllowedBooks}
             ChangeEdition={handleChangeEdition}
             ChangeCGMethod={handleChangeCGMethod}
-            Edition={Character.Edition}
+            Edition={Edition}
             CGMethod={Character.cgmethod}
             ChangePowerLevel={handleChangePowerLevel}
           />

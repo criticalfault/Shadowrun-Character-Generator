@@ -8,6 +8,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import SaveIcon from '@mui/icons-material/Save';
+import DownloadIcon from '@mui/icons-material/Download';
+import UploadIcon from '@mui/icons-material/Upload';
 import weaponFrames from '../data/SR3/WeaponFrames';
 import WeaponModifications from '../data/SR3/WeaponModifications';
 import WeaponOptions from '../data/SR3/WeaponOptions';
@@ -126,6 +128,33 @@ export default function WeaponDesigner({ edition = 'SR3', onSave }) {
     if (!onSave) return;
     const design = { weaponName, frameKey, chosenOptions, installedMods, stats };
     onSave(design);
+  };
+
+  const handleExport = () => {
+    const design = { weaponName, frameKey, chosenOptions, installedMods, stats };
+    const blob = new Blob([JSON.stringify({ type: 'sr-custom-weapon', version: 1, design }, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${weaponName}.srweapon.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleImport = (e) => {
+    const file = e.target.files?.[0];
+    if (!file || !onSave) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try {
+        const parsed = JSON.parse(ev.target.result);
+        if (parsed.type === 'sr-custom-weapon' && parsed.design) {
+          onSave(parsed.design);
+        }
+      } catch {}
+    };
+    reader.readAsText(file);
+    e.target.value = '';
   };
 
   const filteredMods = (frame.Modifications || []).filter(m =>
@@ -379,6 +408,20 @@ export default function WeaponDesigner({ edition = 'SR3', onSave }) {
               disabled={!onSave}
             >
               Save to Character
+            </Button>
+            <Button
+              fullWidth variant="outlined" startIcon={<DownloadIcon />}
+              sx={{ mt: 1 }} onClick={handleExport}
+            >
+              Export Design
+            </Button>
+            <Button
+              fullWidth variant="outlined" startIcon={<UploadIcon />}
+              sx={{ mt: 1 }} component="label"
+              disabled={!onSave}
+            >
+              Import Design
+              <input type="file" accept=".json,.srweapon.json" hidden onChange={handleImport} />
             </Button>
           </Paper>
 

@@ -1,13 +1,14 @@
-@media (min-width: 769px) { 
+@media (min-width: 769px) {
     #chargenBoxMain{
         float: right;
         border: Solid 1px black;
-        padding: 5px; 
-        width:250px; 
+        padding: 5px;
+        width:250px;
         border-radius: 10px;
-        margin-top: -50px;
+        margin-top: 8px;
         margin-right: 10px;
-    }    
+        margin-bottom: 8px;
+    }
 }
 
 @media (max-width: 768px) { 

@@ -35,6 +35,7 @@ export default function IdentityPanel(props) {
     }
 
     const [Tabs, setTabs] = React.useState(props.characterTabs);
+    const [showFanBooks, setShowFanBooks] = React.useState(false);
     const [bookStates, setBookStates] = React.useState((props.Edition === 'SR3'?props.characterBooks3:props.characterBooks2));
     const handleBookCheckboxChange = (event) => {
             const { name, checked } = event.target;
@@ -73,27 +74,6 @@ export default function IdentityPanel(props) {
             <FormControl component="fieldset" style={{ marginBottom: 12 }}>
                 <FormLabel component="legend">Optional Tabs</FormLabel>
                 <FormGroup aria-label="position" row>
-                    <FormControlLabel
-                        value="top"
-                        control={<Checkbox {...label} name="Decking" color="secondary" onChange={handleChangeCharacterTabs} checked={Tabs.Decking} />}
-                        label="Decking Tab"
-                        labelPlacement="end"
-                        disabled={true}
-                    />
-                    <FormControlLabel
-                        value="top"
-                        control={<Checkbox {...label} name="Otaku" color="success" onChange={handleChangeCharacterTabs} checked={Tabs.Otaku} />}
-                        label="Otaku Tab"
-                        labelPlacement="end"
-                        disabled={false}
-                    />
-                    <FormControlLabel
-                        value="top"
-                        control={<Checkbox {...label} name="Rigger" color="default" onChange={handleChangeCharacterTabs} checked={Tabs.Rigger} />}
-                        label="Rigger / Vehicles Tab"
-                        labelPlacement="end"
-                        disabled={false}
-                    />
                     <FormControlLabel
                         value="top"
                         control={<Checkbox {...label} name="VehicleDesigner" color="default" onChange={handleChangeCharacterTabs} checked={Tabs.VehicleDesigner ?? false} />}
@@ -135,6 +115,37 @@ export default function IdentityPanel(props) {
                         ))
                     }
                 </FormGroup>
+                <div style={{ marginTop: 8 }}>
+                    <span
+                        onClick={() => setShowFanBooks(v => !v)}
+                        style={{ cursor: 'pointer', fontSize: '0.85em', color: '#aaa', userSelect: 'none' }}
+                    >
+                        {showFanBooks ? '▾' : '▸'} Fan / Conversion Books
+                    </span>
+                    {showFanBooks && (
+                        <FormGroup aria-label="fan books" row style={{ marginTop: 4 }}>
+                            {Object.keys(AllBooks)
+                                .filter((book) => !AllBooks[book].edition)
+                                .map((book) => (
+                                    <div key={book}>
+                                    <FormControlLabel
+                                        value="top"
+                                        control={
+                                            <Checkbox
+                                                name={book}
+                                                onChange={handleBookCheckboxChange}
+                                                checked={bookStates[book] || false}
+                                            />
+                                        }
+                                        label={AllBooks[book].name+" ("+book+")"}
+                                        labelPlacement="end"
+                                    />
+                                    </div>
+                                ))
+                            }
+                        </FormGroup>
+                    )}
+                </div>
             </FormControl>
         </div>
 
