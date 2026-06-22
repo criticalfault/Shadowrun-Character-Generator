@@ -371,6 +371,23 @@ export default function BasicTabs() {
       }
     });
     tempCashSpent += (Character.purchasedSpellPoints ?? 0) * 25000;
+
+    // Custom designed vehicles/drones
+    (Character.customVehicles ?? []).forEach(function (v) {
+      if (v.edition === 'SR3') {
+        // SR3: estimatedCost = totalDpValue × MUF × 100
+        tempCashSpent += v.estimatedCost ?? 0;
+      } else {
+        // SR2: finalStats.Cost is in thousands (chassis.cost + engine.cost × 1000)
+        tempCashSpent += (v.finalStats?.Cost ?? 0) * 1000;
+      }
+    });
+
+    // Custom designed weapons
+    (Character.customWeapons ?? []).forEach(function (w) {
+      tempCashSpent += w.estimatedCost ?? w.finalCost ?? 0;
+    });
+
     setNuyenSpent(tempCashSpent);
   }, [Character]);
 
