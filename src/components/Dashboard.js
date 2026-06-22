@@ -671,25 +671,27 @@ export default function BasicTabs() {
       <div className="no-print">{displayBox()}</div>
        <Grid container spacing={2} style={{"width":"100%"}} className="no-print">
         <Grid size={{ sm: 12 }}>
-          <LoadCharacter
-            Character={Character}
-            loadCharacter={handleLoadCharacter}
-            BaseCharacter={baseCharacter}
-            Edition={Edition}
-            ChangeEdition={handleChangeEdition}
-            CGMethod = {CGMethod}
-          />
-          <SignInPopup className={'mr-2'}
-            user={user}
-            onSignIn={handleSignIn}
-            setUser={setUser}
-            Character={Character}
-            loadCharacter={handleLoadCharacter}
-            BaseCharacter={baseCharacter}
-            Edition={Edition}
-            ChangeEdition={handleChangeEdition}
-            CGMethod = {CGMethod}
-          />
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, alignItems: 'center' }}>
+            <LoadCharacter
+              Character={Character}
+              loadCharacter={handleLoadCharacter}
+              BaseCharacter={baseCharacter}
+              Edition={Edition}
+              ChangeEdition={handleChangeEdition}
+              CGMethod = {CGMethod}
+            />
+            <SignInPopup className={'mr-2'}
+              user={user}
+              onSignIn={handleSignIn}
+              setUser={setUser}
+              Character={Character}
+              loadCharacter={handleLoadCharacter}
+              BaseCharacter={baseCharacter}
+              Edition={Edition}
+              ChangeEdition={handleChangeEdition}
+              CGMethod = {CGMethod}
+            />
+          </Box>
         </Grid>
       </Grid>
       <DiceRollerTray showDice={value} className="no-print" />
