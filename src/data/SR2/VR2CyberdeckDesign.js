@@ -152,6 +152,214 @@ export function getProgramPrice(rating) {
 export const PACKAGE_DISCOUNT = 0.10;
 
 // ── Satlink Dish Prices ───────────────────────────────────────────────────────
+// ── Design Rules / Constraints ────────────────────────────────────────────────
+
+// Combined persona program ratings (Bod + Evasion + Masking + Sensor) ≤ MPCP × 3
+export function personaRatingLimit(mpcp) { return mpcp * 3; }
+
+// Response Increase max = floor(MPCP / 4), absolute cap of 5
+export function responseIncreaseMax(mpcp) { return Math.min(Math.floor(mpcp / 4), 5); }
+
+// I/O Speed must be multiples of 10; max = Sensor × MPCP × 10 Mp
+export function ioSpeedMax(mpcp, sensor) { return sensor > 0 ? sensor * mpcp * 10 : null; }
+export function roundIoSpeed(v) { return Math.round(v / 10) * 10; }
+
+// ── Construction Tasks ────────────────────────────────────────────────────────
+// For each component: softwareTask, cookTask, installationTask.
+// programSize = Rating × Multiplier (used to calculate OCC cost at build time).
+// Tasks are used at the table, not at purchase — for reference only in designer.
+
+export const ConstructionTasks = {
+  mpcp: {
+    label: 'MPCP',
+    software: { ratingBasis: 'MPCP Rating', multiplier: 8 },
+    cook: {
+      time: 'MPCP Rating × 3 days',
+      test: 'Computer B/R (MPCP Rating)',
+      parts: ['OCC @ program size'],
+      tools: ['Personal Computer (Memory: MPCP program size)', 'Microtronics Shop', 'Optical-Chip Encoder'],
+    },
+    install: {
+      time: 'MPCP Rating × 2 days',
+      test: 'Computer B/R (MPCP Rating)',
+      parts: ['PLC @ MPCP Rating²', 'DTC @ MPCP Rating²'],
+      tools: ['Microtronics Shop'],
+    },
+  },
+
+  bodOrEvasion: {
+    label: 'Bod / Evasion',
+    software: { ratingBasis: 'Program Rating', multiplier: 3 },
+    cook: {
+      time: 'Program Rating × 3 days',
+      test: 'Computer B/R (Program Rating)',
+      parts: ['OCC @ program size'],
+      tools: ['Personal Computer (Memory: persona program size)', 'Microtronics Shop', 'Optical-Chip Encoder'],
+    },
+    install: {
+      time: 'Program Rating × 2 days',
+      test: 'Computer B/R (Program Rating)',
+      parts: ['PLC @ Program Rating²', 'DTC @ Program Rating²'],
+      tools: ['Microtronics Kit'],
+    },
+  },
+
+  maskingOrSensor: {
+    label: 'Masking / Sensor',
+    software: { ratingBasis: 'Program Rating', multiplier: 2 },
+    cook: {
+      time: 'Program Rating × 3 days',
+      test: 'Computer B/R (Program Rating)',
+      parts: ['OCC @ program size'],
+      tools: ['Personal Computer (Memory: persona program size)', 'Microtronics Shop', 'Optical-Chip Encoder'],
+    },
+    install: {
+      time: 'Program Rating × 2 days',
+      test: 'Computer B/R (Program Rating)',
+      parts: ['PLC @ Program Rating²', 'DTC @ Program Rating²'],
+      tools: ['Microtronics Kit'],
+    },
+  },
+
+  asistHot: {
+    label: 'ASIST Interface (Hot Deck)',
+    software: { ratingBasis: 'MPCP Rating', multiplier: 2 },
+    cook: {
+      time: 'MPCP Rating × 1 day',
+      test: 'Computer B/R (MPCP Rating)',
+      parts: ['OCC @ program size'],
+      tools: ['Personal Computer (Memory: MPCP program size)', 'Microtronics Kit', 'Optical-Chip Encoder'],
+    },
+    install: {
+      time: 'MPCP Rating × 1 day',
+      test: 'Computer B/R (MPCP Rating)',
+      parts: ['PLC @ MPCP Rating × 2', 'ASIST Processor Unit (1,250¥)'],
+      tools: ['Microtronics Kit'],
+    },
+  },
+
+  asistCool: {
+    label: 'ASIST Interface (Cool Deck)',
+    software: { ratingBasis: 'MPCP Rating', multiplier: 1 },
+    cook: {
+      time: 'MPCP Rating × 1 day',
+      test: 'Computer B/R (MPCP Rating)',
+      parts: ['OCC @ program size'],
+      tools: ['Personal Computer (Memory: MPCP program size)', 'Microtronics Kit', 'Optical-Chip Encoder'],
+    },
+    install: {
+      time: 'MPCP Rating × 1 day',
+      test: 'Computer B/R (MPCP Rating)',
+      parts: ['PLC @ MPCP Rating × 1', 'ASIST Processor Unit (1,250¥)'],
+      tools: ['Microtronics Kit'],
+    },
+  },
+
+  activeMemory: {
+    label: 'Active Memory',
+    software: null,
+    cook: null,
+    install: {
+      time: 'Memory Size ÷ 100 days (round up)',
+      test: 'Computer B/R (Memory Size ÷ 100, round up)',
+      parts: ['OMC @ memory size (Mp)', 'PLC @ memory size ÷ 10 (round up)'],
+      tools: ['Microtronics Kit'],
+    },
+  },
+
+  storageMemory: {
+    label: 'Storage Memory',
+    software: null,
+    cook: null,
+    install: {
+      time: 'Memory Size ÷ 100 days (round up)',
+      test: 'Computer B/R (Memory Size ÷ 100, round up)',
+      parts: ['OMC @ memory size (Mp)', 'DTC @ memory size ÷ 10 (round up)'],
+      tools: ['Microtronics Kit'],
+    },
+  },
+
+  hardening: {
+    label: 'Hardening',
+    software: { ratingBasis: 'Hardening Rating', multiplier: 8 },
+    cook: {
+      time: 'MPCP × Hardening Rating × 1 day',
+      test: 'Computer B/R (MPCP Rating)',
+      parts: ['OCC @ Hardening program size'],
+      tools: ['Personal Computer (Memory: Hardening program size)', 'Microtronics Shop', 'Optical-Chip Encoder'],
+    },
+    install: {
+      time: 'MPCP Rating × Hardening Rating × 2 days',
+      test: 'Computer B/R (MPCP Rating)',
+      parts: ['PLC @ Hardening Rating × 2', 'DTC @ Hardening Rating × 2'],
+      tools: ['Microtronics Shop'],
+    },
+  },
+
+  iccmFilter: {
+    label: 'ICCM Biofeedback Filter',
+    software: { ratingBasis: 'MPCP Rating', multiplier: 4 },
+    cook: {
+      time: 'MPCP Rating × 2 days',
+      test: 'Avg. Computer B/R and Biotech (MPCP Rating)',
+      parts: ['OCC @ ICCM program size'],
+      tools: ['Personal Computer (Memory: ICCM program size)', 'Microtronics Shop', 'Optical-Chip Encoder'],
+    },
+    install: {
+      time: 'MPCP Rating × 2 days',
+      test: 'Avg. Computer B/R and Biotech (MPCP Rating)',
+      parts: ['PLC @ MPCP Rating²', 'DTC @ MPCP Rating²', 'Bioscanner (5,000¥)'],
+      tools: ['Microtronics Shop'],
+    },
+  },
+
+  ioSpeed: {
+    label: 'I/O Speed',
+    software: null,
+    cook: null,
+    install: {
+      time: 'I/O Speed ÷ 20 days (round up)',
+      test: 'Computer B/R (I/O Speed ÷ 100, round up)',
+      parts: ['PLC @ I/O Speed ÷ 20 (round up)', 'DTC @ I/O Speed ÷ 10 (round up)'],
+      tools: ['Microtronics Kit'],
+    },
+  },
+
+  responseIncrease: {
+    label: 'Response Increase',
+    software: { ratingBasis: 'MPCP Rating', multiplier: 'Response Increase × 2' },
+    cook: {
+      time: 'MPCP Rating × Response Increase × 1 day',
+      test: 'Computer B/R (Response Increase × 2)',
+      parts: ['OCC @ program size'],
+      tools: ['Personal Computer (Memory: Response Increase program size)', 'Microtronics Shop', 'Optical-Chip Encoder'],
+    },
+    install: {
+      time: '(MPCP Rating + Response Increase) × 1 day',
+      test: 'Computer B/R (Response Increase × 2)',
+      parts: ['PLC @ Response Rating × 3', 'DTC @ Response Rating × 3'],
+      tools: ['Microtronics Shop'],
+    },
+  },
+
+  satlinkInterface: {
+    label: 'Satlink Interface',
+    software: { ratingBasis: 'MPCP Rating', multiplier: 2 },
+    cook: {
+      time: 'MPCP Rating × 1 day',
+      test: 'Computer B/R (MPCP Rating)',
+      parts: ['OCC @ MPCP'],
+      tools: ['Personal Computer (Memory: MPCP program size)', 'Microtronics Shop', 'Optical-Chip Encoder'],
+    },
+    install: {
+      time: 'MPCP Rating × 1 day',
+      test: 'Computer B/R (MPCP Rating)',
+      parts: ['PLC @ MPCP', 'DTC @ MPCP'],
+      tools: ['Microtronics Shop'],
+    },
+  },
+};
+
 export const SatlinkDishes = [
   { name: '50-cm portable',   cost: 800  },
   { name: '1 meter portable', cost: 1200 },

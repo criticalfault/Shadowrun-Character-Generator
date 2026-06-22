@@ -9,8 +9,12 @@ import SaveIcon from '@mui/icons-material/Save';
 import DownloadIcon from '@mui/icons-material/Download';
 import UploadIcon from '@mui/icons-material/Upload';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import {
-  ComponentFormulas, calcDeckCost, Casings, getPF, PFTable, PACKAGE_DISCOUNT
+  ComponentFormulas, calcDeckCost, Casings, getPF, PFTable, PACKAGE_DISCOUNT,
+  personaRatingLimit, responseIncreaseMax, ioSpeedMax, roundIoSpeed,
+  ConstructionTasks
 } from '../data/SR2/VR2CyberdeckDesign';
 
 const MPCP_MAX = 12;
@@ -56,6 +60,87 @@ function PFChip({ rating, label }) {
       color={pf >= 1000 ? 'error' : pf >= 500 ? 'warning' : pf >= 200 ? 'primary' : 'default'}
       sx={{ fontSize: '0.7rem' }}
     />
+  );
+}
+
+// ── Construction Tasks Panel ──────────────────────────────────────────────────
+
+function TaskBlock({ label, task }) {
+  if (!task) return <Typography variant="caption" color="text.secondary">None required.</Typography>;
+  return (
+    <Box sx={{ mb: 0.5 }}>
+      {task.time  && <Typography variant="caption" display="block"><strong>Time:</strong> {task.time}</Typography>}
+      {task.test  && <Typography variant="caption" display="block"><strong>Test:</strong> {task.test}</Typography>}
+      {task.parts?.length > 0 && (
+        <Typography variant="caption" display="block">
+          <strong>Parts:</strong> {task.parts.join(', ')}
+        </Typography>
+      )}
+      {task.tools?.length > 0 && (
+        <Typography variant="caption" display="block">
+          <strong>Tools:</strong> {task.tools.join(', ')}
+        </Typography>
+      )}
+    </Box>
+  );
+}
+
+function ConstructionPanel({ design }) {
+  const activeComponents = [];
+
+  if (design.mpcp > 0) activeComponents.push('mpcp');
+  if (design.bod > 0)  activeComponents.push('bodOrEvasion');
+  if (design.evasion > 0 && !activeComponents.includes('bodOrEvasion')) activeComponents.push('bodOrEvasion');
+  if (design.masking > 0) activeComponents.push('maskingOrSensor');
+  if (design.sensor > 0 && !activeComponents.includes('maskingOrSensor')) activeComponents.push('maskingOrSensor');
+  if (design.asistType === 'hot')  activeComponents.push('asistHot');
+  if (design.asistType === 'cool') activeComponents.push('asistCool');
+  if (design.activeMemoryMp > 0)   activeComponents.push('activeMemory');
+  if (design.storageMemoryMp > 0)  activeComponents.push('storageMemory');
+  if (design.hardening > 0)        activeComponents.push('hardening');
+  if (design.iccmFilter)           activeComponents.push('iccmFilter');
+  if (design.ioSpeedMePS > 0)      activeComponents.push('ioSpeed');
+  if (design.responseIncrease > 0) activeComponents.push('responseIncrease');
+  if (design.satlinkInterface)     activeComponents.push('satlinkInterface');
+
+  return (
+    <Accordion variant="outlined" sx={{ mt: 2 }}>
+      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+        <Typography variant="subtitle2">Construction Tasks</Typography>
+        <Typography variant="caption" color="text.secondary" sx={{ ml: 1, mt: 0.3 }}>
+          (build times, parts &amp; tests for DIY construction)
+        </Typography>
+      </AccordionSummary>
+      <AccordionDetails sx={{ p: 1 }}>
+        {activeComponents.map((key) => {
+          const ct = ConstructionTasks[key];
+          if (!ct) return null;
+          return (
+            <Box key={key} sx={{ mb: 2 }}>
+              <Typography variant="caption" sx={{ fontWeight: 'bold', display: 'block', mb: 0.5 }}>
+                {ct.label}
+              </Typography>
+              {ct.software && (
+                <Typography variant="caption" display="block" sx={{ color: 'text.secondary' }}>
+                  <em>Software:</em> Rating {ct.software.ratingBasis}, Multiplier {ct.software.multiplier}
+                </Typography>
+              )}
+              {ct.cook && (
+                <>
+                  <Typography variant="caption" display="block" sx={{ color: 'text.secondary', mt: 0.5 }}><em>Cook Task:</em></Typography>
+                  <TaskBlock label="Cook" task={ct.cook} />
+                </>
+              )}
+              <Typography variant="caption" display="block" sx={{ color: 'text.secondary', mt: 0.5 }}><em>Installation Task:</em></Typography>
+              <TaskBlock label="Install" task={ct.install} />
+            </Box>
+          );
+        })}
+        {activeComponents.length === 0 && (
+          <Typography variant="caption" color="text.secondary">Select components to see construction tasks.</Typography>
+        )}
+      </AccordionDetails>
+    </Accordion>
   );
 }
 
@@ -150,6 +235,11 @@ export default function CyberdeckDesigner({ edition, onSave }) {
   }, [design]);
 
   const programMax = Math.min(design.mpcp, PROGRAM_MAX);
+  const personaTotal = design.bod + design.evasion + design.masking + design.sensor;
+  const personaLimit = personaRatingLimit(design.mpcp);
+  const personaOver  = personaTotal > personaLimit;
+  const riMax        = responseIncreaseMax(design.mpcp);
+  const ioMax        = ioSpeedMax(design.mpcp, design.sensor);
 
   function handleSave() {
     if (!design.name.trim()) return;
@@ -291,10 +381,18 @@ export default function CyberdeckDesigner({ edition, onSave }) {
                 );
               })}
             </Box>
-            <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
-              Bod &amp; Evasion: Rating² × (3×PF + 95) &nbsp;|&nbsp;
-              Masking &amp; Sensor: Rating² × (2×PF + 75) &nbsp; PF based on program rating.
-            </Typography>
+            {personaOver && (
+              <Alert severity="error" sx={{ mt: 1 }}>
+                Combined persona ratings ({personaTotal}) exceed MPCP×3 limit ({personaLimit}). Reduce one or more programs.
+              </Alert>
+            )}
+            {!personaOver && (
+              <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
+                Combined: {personaTotal} / {personaLimit} allowed (MPCP×3) &nbsp;|&nbsp;
+                Bod &amp; Evasion: Rating² × (3×PF + 95) &nbsp;|&nbsp;
+                Masking &amp; Sensor: Rating² × (2×PF + 75)
+              </Typography>
+            )}
           </Paper>
 
           {/* ── ASIST Interface ────────────────────────────────────────── */}
@@ -361,17 +459,23 @@ export default function CyberdeckDesigner({ edition, onSave }) {
                   label="I/O Speed (MePS)"
                   value={design.ioSpeedMePS}
                   min={0}
-                  max={9999}
-                  onChange={(v) => set('ioSpeedMePS', v)}
-                  tooltip="30¥ per MePS"
+                  max={ioMax ?? 9990}
+                  onChange={(v) => set('ioSpeedMePS', roundIoSpeed(v))}
+                  tooltip={`Must be multiples of 10.${ioMax ? ` Max = Sensor × MPCP × 10 = ${ioMax} MePS.` : ' Set Sensor rating to unlock max.'}`}
                 />
                 {design.ioSpeedMePS > 0 && (
-                  <Chip size="small" label={fmt(ComponentFormulas.ioSpeed(design.ioSpeedMePS))} sx={{ mt: 0.5 }} />
+                  <Box sx={{ display: 'flex', gap: 0.5, mt: 0.5, flexWrap: 'wrap' }}>
+                    <Chip size="small" label={fmt(ComponentFormulas.ioSpeed(design.ioSpeedMePS))} />
+                    {ioMax != null && design.ioSpeedMePS > ioMax && (
+                      <Chip size="small" color="error" label={`Over max (${ioMax} MePS)`} />
+                    )}
+                  </Box>
                 )}
               </Box>
             </Box>
             <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
-              Active Memory: Mp × 7.5¥ &nbsp;|&nbsp; Storage Memory: Mp × 6¥ &nbsp;|&nbsp; I/O Speed: MePS × 30¥
+              Active Memory: Mp × 7.5¥ &nbsp;|&nbsp; Storage Memory: Mp × 6¥ &nbsp;|&nbsp;
+              I/O Speed: MePS × 30¥ (multiples of 10; max = Sensor × MPCP × 10)
             </Typography>
           </Paper>
 
@@ -404,9 +508,9 @@ export default function CyberdeckDesigner({ edition, onSave }) {
                   label="Response Increase"
                   value={design.responseIncrease}
                   min={0}
-                  max={3}
-                  onChange={(v) => set('responseIncrease', v)}
-                  tooltip="PF based on MPCP: (MPCP² × Response) × (PF + 80) + Response × 105"
+                  max={riMax}
+                  onChange={(v) => set('responseIncrease', Math.min(v, riMax))}
+                  tooltip={`Max = floor(MPCP÷4) = ${riMax} for MPCP ${design.mpcp}. Absolute max 5. PF based on MPCP.`}
                 />
                 {design.responseIncrease > 0 && design.mpcp > 0 && (
                   <Box sx={{ display: 'flex', gap: 0.5, mt: 0.5, flexWrap: 'wrap' }}>
@@ -414,6 +518,9 @@ export default function CyberdeckDesigner({ edition, onSave }) {
                     <Chip size="small" label={fmt(ComponentFormulas.responseIncrease(design.mpcp, design.responseIncrease))} />
                   </Box>
                 )}
+                <Typography variant="caption" color="text.secondary" display="block">
+                  Max {riMax} for MPCP {design.mpcp} (floor(MPCP÷4))
+                </Typography>
               </Box>
             </Box>
 
@@ -624,6 +731,10 @@ export default function CyberdeckDesigner({ edition, onSave }) {
         </Grid>
 
       </Grid>
+
+      {/* ── Construction Tasks (full width) ──────────────────────────── */}
+      <ConstructionPanel design={design} />
+
     </Box>
   );
 }
