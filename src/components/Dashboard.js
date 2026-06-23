@@ -22,6 +22,7 @@ import VehiclesPanel from "./VehiclesPanel";
 import VehicleDesigner from "./VehicleDesigner";
 import WeaponDesigner from "./WeaponDesigner";
 import CyberdeckDesigner from "./CyberdeckDesigner";
+import ProgrammingCalculator from "./ProgrammingCalculator";
 import ContactsPanel from "./ContactsPanel";
 import SheetDisplay from "./SheetDisplay";
 import KarmaDisplay from "./KarmaDisplay";
@@ -154,6 +155,7 @@ export default function BasicTabs() {
       VehicleDesigner: false,
       WeaponDesigner: false,
       CyberdeckDesigner: false,
+      ProgrammingCalculator: false,
     },
     inventory: [],
     weapons: [],
@@ -737,6 +739,7 @@ export default function BasicTabs() {
             {Character.characterTabs?.VehicleDesigner && <Tab label="Vehicle Designer" value={13} {...a11yProps(13)} />}
             {Character.characterTabs?.WeaponDesigner && <Tab label="Weapon Designer" value={14} {...a11yProps(14)} />}
             {Character.characterTabs?.CyberdeckDesigner && <Tab label="Cyberdeck Designer" value={15} {...a11yProps(15)} />}
+            {Character.characterTabs?.ProgrammingCalculator && <Tab label="Programming" value={16} {...a11yProps(16)} />}
           </Tabs>
 
         </Box>
@@ -1090,6 +1093,9 @@ export default function BasicTabs() {
               setCharacter({ ...Character, customDecks });
             }}
           />
+        </CustomTabPanel>
+        <CustomTabPanel value={value} index={16}>
+          <ProgrammingCalculator />
         </CustomTabPanel>
       </Box>
     </div>
