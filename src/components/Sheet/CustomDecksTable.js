@@ -57,7 +57,7 @@ const CustomDecksTable = ({ customDecks }) => {
                   <TableCell align="center">{d.masking > 0 ? d.masking : '—'}</TableCell>
                   <TableCell align="center">{d.sensor > 0 ? d.sensor : '—'}</TableCell>
                   <TableCell align="center">
-                    {d.asistType === 'hot' ? 'Hot' : d.asistType === 'cool' ? 'Cool' : '—'}
+                    {d.asistType === 'hot' ? 'Hot' : (d.asistType === 'cool' || d.asistType === 'cold') ? 'Cold' : '—'}
                   </TableCell>
                   <TableCell align="center">{d.activeMemoryMp > 0 ? `${d.activeMemoryMp} Mp` : '—'}</TableCell>
                   <TableCell align="center">{d.storageMemoryMp > 0 ? `${d.storageMemoryMp} Mp` : '—'}</TableCell>

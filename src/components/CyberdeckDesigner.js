@@ -224,7 +224,7 @@ const defaultDesign = {
   packageDiscount: false,
 };
 
-export default function CyberdeckDesigner({ edition, onSave }) {
+function VR2CyberdeckDesigner({ edition, onSave }) {
   const [design, setDesign] = useState(defaultDesign);
 
   const set = (key, val) => setDesign(d => ({ ...d, [key]: val }));
@@ -737,4 +737,14 @@ export default function CyberdeckDesigner({ edition, onSave }) {
 
     </Box>
   );
+}
+
+// ── Edition-aware wrapper ─────────────────────────────────────────────────────
+import MatrixCyberdeckDesigner from './MatrixCyberdeckDesigner';
+
+export default function CyberdeckDesigner({ edition, onSave }) {
+  if (edition === 'SR3') {
+    return <MatrixCyberdeckDesigner onSave={onSave} />;
+  }
+  return <VR2CyberdeckDesigner edition={edition} onSave={onSave} />;
 }
