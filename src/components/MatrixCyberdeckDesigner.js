@@ -14,7 +14,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
   ComponentCosts, calcDeckCost, Casings,
   personaRatingLimit, responseIncreaseMax, ioSpeedMax, roundIoSpeed, realityFilterMax,
-  ConstructionTasks, calcC2Essence
+  ConstructionTasks, calcC2Essence, CyberwareGrades
 } from '../data/SR3/MatrixCyberdeckDesign';
 
 const MPCP_MAX = 10;
@@ -161,6 +161,7 @@ function ConstructionPanel({ design }) {
 const defaultDesign = {
   name: '',
   cranial: false,
+  c2Grade: 'standard',
   mpcp: 4,
   bod: 0, evasion: 0, masking: 0, sensor: 0,
   asistType: 'hot',
@@ -305,11 +306,35 @@ export default function MatrixCyberdeckDesigner({ onSave }) {
               <ToggleButton value="cranial">C² Cranial Cyberterminal</ToggleButton>
             </ToggleButtonGroup>
             {design.cranial && (
-              <Alert severity="info" sx={{ mt: 1 }} icon={false}>
-                <strong>C² Rules (Matrix p.65):</strong> Installed as cyberware. No casing, no storage memory.
-                ASIST includes RAS Override. Active memory = 200¥/Mp. Most components ×1.2 cost.
-                External Jackpoint required.
-              </Alert>
+              <>
+                <Alert severity="info" sx={{ mt: 1 }} icon={false}>
+                  <strong>C² Rules (Matrix p.65):</strong> Installed as cyberware. No casing, no storage memory.
+                  ASIST includes RAS Override. Active memory = 200¥/Mp. Most components ×1.2 cost.
+                  External Jackpoint required.
+                </Alert>
+                <Box sx={{ mt: 2 }}>
+                  <Typography variant="subtitle2" gutterBottom>
+                    Cyberware Grade
+                    <Typography component="span" variant="caption" color="text.secondary" sx={{ ml: 1 }}>
+                      (SR3 p.297 — affects Essence and cost)
+                    </Typography>
+                  </Typography>
+                  <ToggleButtonGroup
+                    value={design.c2Grade} exclusive size="small"
+                    onChange={(_, v) => { if (v) set('c2Grade', v); }}
+                    sx={{ flexWrap: 'wrap' }}
+                  >
+                    {CyberwareGrades.map(g => (
+                      <ToggleButton key={g.id} value={g.id}>
+                        {g.label}
+                        <Typography variant="caption" display="block" sx={{ fontSize: '0.6rem', lineHeight: 1 }}>
+                          Ess ×{g.essMultiplier} · Cost ×{g.costMultiplier}
+                        </Typography>
+                      </ToggleButton>
+                    ))}
+                  </ToggleButtonGroup>
+                </Box>
+              </>
             )}
           </Paper>
 
@@ -654,7 +679,7 @@ export default function MatrixCyberdeckDesigner({ onSave }) {
                 )}
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                   <Chip size="small" label={`MPCP ${design.mpcp}`} color="primary" />
-                  {design.cranial && <Chip size="small" label="C² Cranial" color="secondary" />}
+                  {design.cranial && <Chip size="small" label={`C² ${CyberwareGrades.find(g=>g.id===design.c2Grade)?.label ?? 'Standard'}`} color="secondary" />}
                   {design.bod > 0         && <Chip size="small" label={`Bod ${design.bod}`} />}
                   {design.evasion > 0     && <Chip size="small" label={`Evasion ${design.evasion}`} />}
                   {design.masking > 0     && <Chip size="small" label={`Masking ${design.masking}`} />}

@@ -322,6 +322,22 @@ export const ConstructionTasks = {
   },
 };
 
+// ── Cyberware Grades (SR3 p.297) ─────────────────────────────────────────────
+// Grades apply to C² cranial cyberterminals (and cyberlimb terminals).
+// Essence multiplier applied to total Essence cost; cost multiplier to total nuyen cost.
+
+export const CyberwareGrades = [
+  { id: 'standard', label: 'Standard',   essMultiplier: 1.0,  costMultiplier: 1.0  },
+  { id: 'used',     label: 'Used',        essMultiplier: 1.25, costMultiplier: 0.75 },
+  { id: 'alpha',    label: 'Alpha',       essMultiplier: 0.8,  costMultiplier: 2.0  },
+  { id: 'beta',     label: 'Beta',        essMultiplier: 0.6,  costMultiplier: 3.0  },
+  { id: 'delta',    label: 'Delta',       essMultiplier: 0.4,  costMultiplier: 5.0  },
+];
+
+export function getCyberwareGrade(id) {
+  return CyberwareGrades.find(g => g.id === id) ?? CyberwareGrades[0];
+}
+
 // ── Cranial Cyberterminal (C²) Rules ─────────────────────────────────────────
 // Source: Matrix p.65
 // C² decks are installed cyberware — no casing, no storage memory.
@@ -352,6 +368,7 @@ export const C2EssenceCosts = {
 
 export function calcC2Essence(design) {
   const e = C2EssenceCosts;
+  const grade = getCyberwareGrade(design.c2Grade ?? 'standard');
   let total = 0;
   total += e.mpcp(design.mpcp ?? 0);
   const chips = ['bod', 'evasion', 'masking', 'sensor'].filter(k => (design[k] ?? 0) > 0).length;
@@ -366,7 +383,7 @@ export function calcC2Essence(design) {
   if ((design.activeMemoryMp ?? 0) > 0)   total += e.activeMemory();
   if (design.realityFilter)               total += e.realityFilter();
   if ((design.responseIncrease ?? 0) > 0) total += e.responseIncrease();
-  return Math.round(total * 100) / 100;
+  return Math.round(total * grade.essMultiplier * 100) / 100;
 }
 
 // ── Full Design Cost Calculator ───────────────────────────────────────────────
@@ -446,6 +463,17 @@ export function calcDeckCost(design) {
     if (displayScreen)    add('Display Screen / Vidscreen', 100);
     if (vrKit)            add('VR Kit', 250);
     if (keyboard)         add('Keyboard', 50);
+  }
+
+  const subtotal = items.reduce((s, i) => s + i.cost, 0);
+
+  if (cranial) {
+    const grade = getCyberwareGrade(design.c2Grade ?? 'standard');
+    if (grade.costMultiplier !== 1.0) {
+      const gradeAdj = Math.round(subtotal * grade.costMultiplier) - subtotal;
+      const sign = gradeAdj >= 0 ? '+' : '−';
+      items.push({ label: `${grade.label} grade adjustment (×${grade.costMultiplier})`, cost: gradeAdj });
+    }
   }
 
   const total = items.reduce((s, i) => s + i.cost, 0);

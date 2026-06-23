@@ -50,7 +50,7 @@ const CustomDecksTable = ({ customDecks }) => {
                   <TableCell component="th" scope="row">{d.name}</TableCell>
                   <TableCell align="center">
                     <Chip label={d.source ?? d.edition ?? 'VR2'} size="small" variant="outlined" color="primary" />
-                    {d.cranial && <Chip label="C²" size="small" color="secondary" sx={{ ml: 0.5 }} />}
+                    {d.cranial && <Chip label={`C² ${d.c2Grade && d.c2Grade !== 'standard' ? d.c2Grade.charAt(0).toUpperCase() + d.c2Grade.slice(1) : ''}`} size="small" color="secondary" sx={{ ml: 0.5 }} />}
                   </TableCell>
                   <TableCell align="center">{fmt(d.mpcp)}</TableCell>
                   <TableCell align="center">{d.bod > 0 ? d.bod : '—'}</TableCell>
