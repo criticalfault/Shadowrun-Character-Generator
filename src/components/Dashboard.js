@@ -23,6 +23,7 @@ import VehicleDesigner from "./VehicleDesigner";
 import WeaponDesigner from "./WeaponDesigner";
 import CyberdeckDesigner from "./CyberdeckDesigner";
 import ProgrammingCalculator from "./ProgrammingCalculator";
+import SR2ProgrammingCalculator from "./SR2ProgrammingCalculator";
 import ContactsPanel from "./ContactsPanel";
 import SheetDisplay from "./SheetDisplay";
 import KarmaDisplay from "./KarmaDisplay";
@@ -1095,7 +1096,7 @@ export default function BasicTabs() {
           />
         </CustomTabPanel>
         <CustomTabPanel value={value} index={16}>
-          <ProgrammingCalculator />
+          {Edition === 'SR2' ? <SR2ProgrammingCalculator /> : <ProgrammingCalculator />}
         </CustomTabPanel>
       </Box>
     </div>
