@@ -61440,5 +61440,57 @@
         "BookPage": "sr3.239"
       }
     ]
+  },
+  "Miscellaneous Components": {
+    "Name": "Miscellaneous Components",
+    "attributes": [
+      "Cost",
+      "Availability",
+      "Street Index",
+      "Legal",
+      "BookPage"
+    ],
+    "entries": [
+      { "Name": "Audio Speakers", "Cost": "25-2500", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Battery Pack", "Cost": "25", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Camera — Trideo", "Cost": "200-2000", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Camera — Video", "Cost": "100-1000", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Casing (Rating 3)", "Cost": "100", "Availability": "2/12 hrs", "Street Index": ".5", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Casing (Higher Barrier rating)", "Cost": "500 per point", "Availability": "Rating/(12×rating) hrs", "Street Index": ".5", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Chip Reader", "Cost": "200", "Availability": "Always", "Street Index": ".75", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Credstick Reader Rating 1", "Cost": "12000", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Credstick Reader Rating 2-3", "Cost": "60000", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Credstick Reader Rating 4-5", "Cost": "100000", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Credstick Reader Rating 6+", "Cost": "Restricted", "Availability": "Restricted", "Street Index": "NA", "Legal": "Restricted", "BookPage": "sr3.302" },
+      { "Name": "Credstick Slot", "Cost": "50", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Disk Drive", "Cost": "200", "Availability": "Always", "Street Index": ".75", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Display Screen", "Cost": "100", "Availability": "2/24 hrs", "Street Index": "2", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Fiberoptic Cable (per meter)", "Cost": "1", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Hitcher Jack", "Cost": "250", "Availability": "2/48 hrs", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Keyboard", "Cost": "50", "Availability": "Always", "Street Index": ".5", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Microphone (basic)", "Cost": "50", "Availability": "Always", "Street Index": ".5", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Microwave Dish — Standard Portable", "Cost": "5000", "Availability": "6/1 wk", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Microwave Dish — Large Portable", "Cost": "10000", "Availability": "8/2 wks", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Microwave Dish — Fixed Base", "Cost": "2500", "Availability": "8/1 mo", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Monitor", "Cost": "100-25000", "Availability": "2/12 hrs", "Street Index": ".5", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Off-Line Storage (per Mp)", "Cost": "50+(5×Mp)", "Availability": "2/24 hrs", "Street Index": "2", "Legal": "9P-V", "BookPage": "sr3.302" },
+      { "Name": "Passkey Reader (Blank)", "Cost": "250", "Availability": "2/24 hrs", "Street Index": "2", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Power Cord", "Cost": "15", "Availability": "4/48 hrs", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Printer", "Cost": "100", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Scanner — Finger/Thumbprint (per Rating)", "Cost": "Rating×200", "Availability": "Rating/72 hrs", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Scanner — Palmprint (per Rating)", "Cost": "Rating×300", "Availability": "(Rating+1)/72 hrs", "Street Index": "2", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Scanner — Retinal (per Rating)", "Cost": "Rating×1000", "Availability": "(Rating+1)/72 hrs", "Street Index": "2", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Scanner — Text/Picture", "Cost": "100", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Signal Locator — Simlink (per Rating)", "Cost": "25000+(Rating×5000)", "Availability": "8/2 wks", "Street Index": "2", "Legal": "8P-L", "BookPage": "sr3.302" },
+      { "Name": "Temp. Satellite Dish — Electronics", "Cost": "1000", "Availability": "4/24 hrs", "Street Index": ".5", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Temp. Satellite Dish — Plastic Webbing", "Cost": "5", "Availability": "4/24 hrs", "Street Index": ".5", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Temp. Satellite Dish — Spray Polymer (1 use)", "Cost": "1", "Availability": "4/24 hrs", "Street Index": ".5", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Touchpad", "Cost": "50", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Touchpad w/Mouse Adapter", "Cost": "60", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Touchpad w/Trackball Adapter", "Cost": "60", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Trode Jack", "Cost": "500", "Availability": "Always", "Street Index": "NA", "Legal": "Legal", "BookPage": "sr3.302" },
+      { "Name": "Vid-link Transmitter (per Rating)", "Cost": "Rating×2000", "Availability": "4/1 wk", "Street Index": "2", "Legal": "8P-L", "BookPage": "sr3.302" },
+      { "Name": "VR Kit", "Cost": "250", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" }
+    ]
   }
 }
