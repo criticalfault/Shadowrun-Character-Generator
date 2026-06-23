@@ -50,6 +50,7 @@ const CustomDecksTable = ({ customDecks }) => {
                   <TableCell component="th" scope="row">{d.name}</TableCell>
                   <TableCell align="center">
                     <Chip label={d.source ?? d.edition ?? 'VR2'} size="small" variant="outlined" color="primary" />
+                    {d.cranial && <Chip label="C²" size="small" color="secondary" sx={{ ml: 0.5 }} />}
                   </TableCell>
                   <TableCell align="center">{fmt(d.mpcp)}</TableCell>
                   <TableCell align="center">{d.bod > 0 ? d.bod : '—'}</TableCell>
@@ -67,6 +68,9 @@ const CustomDecksTable = ({ customDecks }) => {
                     {d.estimatedCost != null ? `¥${Math.round(d.estimatedCost).toLocaleString()}` : '—'}
                     {d.breakdown?.discount > 0 && (
                       <><br /><small style={{ color: 'green' }}>−¥{d.breakdown.discount.toLocaleString()} pkg</small></>
+                    )}
+                    {d.cranial && d.essenceCost != null && (
+                      <><br /><small style={{ color: '#9c27b0' }}>Ess: {d.essenceCost}</small></>
                     )}
                   </TableCell>
                   <TableCell align="center">

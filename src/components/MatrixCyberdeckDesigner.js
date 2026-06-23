@@ -14,7 +14,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
   ComponentCosts, calcDeckCost, Casings,
   personaRatingLimit, responseIncreaseMax, ioSpeedMax, roundIoSpeed, realityFilterMax,
-  ConstructionTasks
+  ConstructionTasks, calcC2Essence
 } from '../data/SR3/MatrixCyberdeckDesign';
 
 const MPCP_MAX = 10;
@@ -160,6 +160,7 @@ function ConstructionPanel({ design }) {
 
 const defaultDesign = {
   name: '',
+  cranial: false,
   mpcp: 4,
   bod: 0, evasion: 0, masking: 0, sensor: 0,
   asistType: 'hot',
@@ -191,6 +192,11 @@ export default function MatrixCyberdeckDesigner({ onSave }) {
     return calcDeckCost(design);
   }, [design]);
 
+  const c2Essence = useMemo(() => {
+    if (!design.cranial || !design.mpcp) return null;
+    return calcC2Essence(design);
+  }, [design]);
+
   const programMax      = design.mpcp;
   const personaTotal    = design.bod + design.evasion + design.masking + design.sensor;
   const personaLimit    = personaRatingLimit(design.mpcp);
@@ -207,6 +213,7 @@ export default function MatrixCyberdeckDesigner({ onSave }) {
       ...design,
       breakdown,
       estimatedCost: breakdown?.total ?? 0,
+      ...(design.cranial ? { essenceCost: c2Essence } : {}),
     };
     onSave(saved);
     setDesign(defaultDesign);
@@ -244,6 +251,7 @@ export default function MatrixCyberdeckDesigner({ onSave }) {
       <Typography variant="h5" gutterBottom>
         Cyberdeck Designer
         <Chip label="SR3 Matrix Rules" size="small" variant="outlined" sx={{ ml: 1, fontSize: '0.7rem' }} color="primary" />
+        {design.cranial && <Chip label="C² Cranial" size="small" sx={{ ml: 1, fontSize: '0.7rem' }} color="secondary" />}
       </Typography>
       <Typography variant="body2" color="text.secondary" gutterBottom>
         Custom cyberdeck construction using <em>Matrix</em> (SR3) rules.
@@ -256,7 +264,7 @@ export default function MatrixCyberdeckDesigner({ onSave }) {
         {/* ── Left column ───────────────────────────────────────────── */}
         <Grid item xs={12} md={7}>
 
-          {/* Name */}
+          {/* Name + Deck Type */}
           <Paper variant="outlined" sx={{ p: 2, mb: 2 }}>
             <TextField
               label="Deck Name"
@@ -264,7 +272,45 @@ export default function MatrixCyberdeckDesigner({ onSave }) {
               value={design.name}
               onChange={(e) => set('name', e.target.value)}
               placeholder="e.g. Fuchi Cyber-6, Custom Shadowdancer…"
+              sx={{ mb: 2 }}
             />
+            <Typography variant="subtitle2" gutterBottom>Deck Type</Typography>
+            <ToggleButtonGroup
+              value={design.cranial ? 'cranial' : 'standard'} exclusive size="small"
+              onChange={(_, v) => {
+                if (!v) return;
+                setDesign(d => ({
+                  ...d,
+                  cranial: v === 'cranial',
+                  // Clear C²-incompatible fields when switching to cranial
+                  ...(v === 'cranial' ? {
+                    storageMemoryMp: 0,
+                    rasOverride: false,
+                    matrixInterface: false,
+                    maserInterface: false,
+                    additionalPorts: 0,
+                    casing: 0,
+                    hitcherJacks: 0,
+                    displayScreen: false,
+                    vrKit: false,
+                    keyboard: false,
+                  } : {
+                    matrixInterface: true,
+                    casing: 1,
+                  }),
+                }));
+              }}
+            >
+              <ToggleButton value="standard">Standard Cyberterminal</ToggleButton>
+              <ToggleButton value="cranial">C² Cranial Cyberterminal</ToggleButton>
+            </ToggleButtonGroup>
+            {design.cranial && (
+              <Alert severity="info" sx={{ mt: 1 }} icon={false}>
+                <strong>C² Rules (Matrix p.65):</strong> Installed as cyberware. No casing, no storage memory.
+                ASIST includes RAS Override. Active memory = 200¥/Mp. Most components ×1.2 cost.
+                External Jackpoint required.
+              </Alert>
+            )}
           </Paper>
 
           {/* ── MPCP ──────────────────────────────────────────────────── */}
@@ -340,22 +386,29 @@ export default function MatrixCyberdeckDesigner({ onSave }) {
 
           {/* ── ASIST ────────────────────────────────────────────────── */}
           <Paper variant="outlined" sx={{ p: 2, mb: 2 }}>
-            <Typography variant="subtitle2" gutterBottom>ASIST Interface</Typography>
+            <Typography variant="subtitle2" gutterBottom>
+              ASIST Interface
+              {design.cranial && <Typography component="span" variant="caption" color="text.secondary" sx={{ ml: 1 }}>(includes RAS Override)</Typography>}
+            </Typography>
             <ToggleButtonGroup
               value={design.asistType} exclusive size="small"
               onChange={(_, v) => { if (v) set('asistType', v); }}
             >
-              <ToggleButton value="none">None (Tortoise)</ToggleButton>
+              {!design.cranial && <ToggleButton value="none">None (Tortoise)</ToggleButton>}
               <ToggleButton value="hot">Hot Deck</ToggleButton>
               <ToggleButton value="cold">Cold Deck</ToggleButton>
             </ToggleButtonGroup>
             {design.asistType !== 'none' && design.mpcp > 0 && (
-              <Box sx={{ mt: 1 }}>
+              <Box sx={{ mt: 1, display: 'flex', gap: 1, alignItems: 'center' }}>
                 <Chip size="small" color="primary"
                   label={`Cost: ${fmt(design.asistType === 'hot'
-                    ? ComponentCosts.asistHot(design.mpcp)
+                    ? (design.cranial ? Math.round(ComponentCosts.asistHot(design.mpcp) * 1.2) : ComponentCosts.asistHot(design.mpcp))
                     : ComponentCosts.asistCool(design.mpcp))}`}
                 />
+                {design.cranial && design.asistType === 'hot' && (
+                  <Typography variant="caption" color="text.secondary">×1.2 C² modifier</Typography>
+                )}
+                {design.cranial && <Chip size="small" label={`Ess: ${design.asistType === 'hot' ? '0.4' : '0.2'}`} color="secondary" />}
               </Box>
             )}
             <Typography variant="caption" color="text.secondary" sx={{ mt: 0.5, display: 'block' }}>
@@ -372,36 +425,46 @@ export default function MatrixCyberdeckDesigner({ onSave }) {
                   label="Active Memory (Mp)" value={design.activeMemoryMp}
                   min={0} max={9999}
                   onChange={(v) => set('activeMemoryMp', v)}
-                  tooltip="Retail: 7.5¥/Mp (mat.170)"
+                  tooltip={design.cranial ? 'C²: 200¥/Mp (implanted chip, Matrix p.65)' : 'Retail: 7.5¥/Mp (mat.170)'}
                 />
-                {design.activeMemoryMp > 0 && <Chip size="small" label={fmt(ComponentCosts.activeMemory(design.activeMemoryMp))} sx={{ mt: 0.5 }} />}
+                {design.activeMemoryMp > 0 && (
+                  <Box sx={{ display: 'flex', gap: 0.5, mt: 0.5, flexWrap: 'wrap' }}>
+                    <Chip size="small" label={fmt(design.cranial ? design.activeMemoryMp * 200 : ComponentCosts.activeMemory(design.activeMemoryMp))} />
+                    {design.cranial && <Chip size="small" label="Ess: 0.2" color="secondary" />}
+                  </Box>
+                )}
               </Box>
-              <Box>
-                <RatingInput
-                  label="Storage Memory (Mp)" value={design.storageMemoryMp}
-                  min={0} max={99999}
-                  onChange={(v) => set('storageMemoryMp', v)}
-                  tooltip="Retail: 6¥/Mp (mat.170)"
-                />
-                {design.storageMemoryMp > 0 && <Chip size="small" label={fmt(ComponentCosts.storageMemory(design.storageMemoryMp))} sx={{ mt: 0.5 }} />}
-              </Box>
+              {!design.cranial && (
+                <Box>
+                  <RatingInput
+                    label="Storage Memory (Mp)" value={design.storageMemoryMp}
+                    min={0} max={99999}
+                    onChange={(v) => set('storageMemoryMp', v)}
+                    tooltip="Retail: 6¥/Mp (mat.170)"
+                  />
+                  {design.storageMemoryMp > 0 && <Chip size="small" label={fmt(ComponentCosts.storageMemory(design.storageMemoryMp))} sx={{ mt: 0.5 }} />}
+                </Box>
+              )}
               <Box>
                 <RatingInput
                   label="I/O Speed (MePS)" value={design.ioSpeedMePS}
                   min={0} max={ioMax}
                   onChange={(v) => set('ioSpeedMePS', roundIoSpeed(v))}
-                  tooltip={`Multiples of 10. Max = MPCP × 100 = ${ioMax} MePS. Retail: 35¥/MePS.`}
+                  tooltip={`Multiples of 10. Max = MPCP × 100 = ${ioMax} MePS. 35¥/MePS.`}
                 />
                 {design.ioSpeedMePS > 0 && (
                   <Box sx={{ display: 'flex', gap: 0.5, mt: 0.5, flexWrap: 'wrap' }}>
                     <Chip size="small" label={fmt(ComponentCosts.ioSpeedRetail(design.ioSpeedMePS))} />
+                    {design.cranial && <Chip size="small" label="Ess: 0.1" color="secondary" />}
                     {design.ioSpeedMePS > ioMax && <Chip size="small" color="error" label={`Over max (${ioMax} MePS)`} />}
                   </Box>
                 )}
               </Box>
             </Box>
             <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
-              Active: 7.5¥/Mp retail &nbsp;|&nbsp; Storage: 6¥/Mp retail &nbsp;|&nbsp; I/O: 35¥/MePS (max {ioMax} MePS)
+              {design.cranial
+                ? 'Active Memory: 200¥/Mp (implanted) · no storage memory · I/O: 35¥/MePS'
+                : `Active: 7.5¥/Mp retail · Storage: 6¥/Mp retail · I/O: 35¥/MePS (max ${ioMax} MePS)`}
             </Typography>
           </Paper>
 
@@ -465,18 +528,20 @@ export default function MatrixCyberdeckDesigner({ onSave }) {
                   35¥ × MPCP + 1,000¥ (bio-monitor). Needs Biotech.
                 </Typography>
               </Box>
-              <Box>
-                <FormControlLabel
-                  control={<Checkbox checked={design.rasOverride} onChange={(e) => set('rasOverride', e.target.checked)} />}
-                  label="RAS Override"
-                />
-                {design.rasOverride && design.mpcp > 0 && (
-                  <Chip size="small" label={fmt(ComponentCosts.rasOverride(design.mpcp))} />
-                )}
-                <Typography variant="caption" color="text.secondary" display="block">
-                  1,000¥ unit + 35¥ × MPCP (connections)
-                </Typography>
-              </Box>
+              {!design.cranial && (
+                <Box>
+                  <FormControlLabel
+                    control={<Checkbox checked={design.rasOverride} onChange={(e) => set('rasOverride', e.target.checked)} />}
+                    label="RAS Override"
+                  />
+                  {design.rasOverride && design.mpcp > 0 && (
+                    <Chip size="small" label={fmt(ComponentCosts.rasOverride(design.mpcp))} />
+                  )}
+                  <Typography variant="caption" color="text.secondary" display="block">
+                    1,000¥ unit + 35¥ × MPCP (connections)
+                  </Typography>
+                </Box>
+              )}
               <Box>
                 <FormControlLabel
                   control={<Checkbox checked={design.realityFilter} onChange={(e) => set('realityFilter', e.target.checked)} />}
@@ -489,63 +554,76 @@ export default function MatrixCyberdeckDesigner({ onSave }) {
                   70¥ × MPCP. Needs Computer (Cybernetics) + Biotech kit.
                 </Typography>
               </Box>
-              <Box>
-                <FormControlLabel
-                  control={<Checkbox checked={design.matrixInterface} onChange={(e) => set('matrixInterface', e.target.checked)} />}
-                  label="Matrix Interface (5m cable)"
-                />
-                {design.matrixInterface && <Chip size="small" label={fmt(ComponentCosts.matrixInterface())} />}
-              </Box>
-              <Box>
-                <FormControlLabel
-                  control={<Checkbox checked={design.maserInterface} onChange={(e) => set('maserInterface', e.target.checked)} />}
-                  label="Maser Interface"
-                />
-                {design.maserInterface && <Chip size="small" label={fmt(ComponentCosts.maserInterface())} />}
-              </Box>
+              {!design.cranial && (
+                <Box>
+                  <FormControlLabel
+                    control={<Checkbox checked={design.matrixInterface} onChange={(e) => set('matrixInterface', e.target.checked)} />}
+                    label="Matrix Interface (5m cable)"
+                  />
+                  {design.matrixInterface && <Chip size="small" label={fmt(ComponentCosts.matrixInterface())} />}
+                </Box>
+              )}
+              {!design.cranial && (
+                <Box>
+                  <FormControlLabel
+                    control={<Checkbox checked={design.maserInterface} onChange={(e) => set('maserInterface', e.target.checked)} />}
+                    label="Maser Interface"
+                  />
+                  {design.maserInterface && <Chip size="small" label={fmt(ComponentCosts.maserInterface())} />}
+                </Box>
+              )}
+              {design.cranial && (
+                <Box>
+                  <Typography variant="caption" color="text.secondary">
+                    <strong>External Jackpoint</strong> (required for C²) — 1,000¥ fixed, Ess 0.2 — included in cost.
+                  </Typography>
+                </Box>
+              )}
             </Box>
           </Paper>
 
           {/* ── Hardware / Peripherals ────────────────────────────────── */}
-          <Paper variant="outlined" sx={{ p: 2, mb: 2 }}>
-            <Typography variant="subtitle2" gutterBottom>Hardware &amp; Peripherals</Typography>
-            <FormControl size="small" sx={{ minWidth: 240, mb: 2 }}>
-              <InputLabel>Casing</InputLabel>
-              <Select value={design.casing} label="Casing"
-                onChange={(e) => set('casing', e.target.value)}>
-                {Casings.map((c, i) => (
-                  <MenuItem key={i} value={i}>
-                    {c.name} {c.cost != null ? `— ${fmt(c.cost)}` : `— ${c.costNote}`}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
-              <Box>
-                <RatingInput
-                  label="Additional Ports (FUPs)" value={design.additionalPorts}
-                  min={0} max={design.mpcp}
-                  onChange={(v) => set('additionalPorts', v)}
-                  tooltip={`MPCP comes with ${design.mpcp} ports free; can add up to ${design.mpcp} more. 235¥ each.`}
-                />
-                {design.additionalPorts > 0 && <Chip size="small" label={fmt(ComponentCosts.ports(design.additionalPorts))} sx={{ mt: 0.5 }} />}
+          {!design.cranial && (
+            <Paper variant="outlined" sx={{ p: 2, mb: 2 }}>
+              <Typography variant="subtitle2" gutterBottom>Hardware &amp; Peripherals</Typography>
+              <FormControl size="small" sx={{ minWidth: 240, mb: 2 }}>
+                <InputLabel>Casing</InputLabel>
+                <Select value={design.casing} label="Casing"
+                  onChange={(e) => set('casing', e.target.value)}>
+                  {Casings.map((c, i) => (
+                    <MenuItem key={i} value={i}>
+                      {c.name} {c.cost != null ? `— ${fmt(c.cost)}` : `— ${c.costNote}`}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+                <Box>
+                  <RatingInput
+                    label="Additional Ports (FUPs)" value={design.additionalPorts}
+                    min={0} max={design.mpcp}
+                    onChange={(v) => set('additionalPorts', v)}
+                    tooltip={`MPCP comes with ${design.mpcp} ports free; can add up to ${design.mpcp} more. 235¥ each.`}
+                  />
+                  {design.additionalPorts > 0 && <Chip size="small" label={fmt(ComponentCosts.ports(design.additionalPorts))} sx={{ mt: 0.5 }} />}
+                </Box>
+                <Box>
+                  <RatingInput
+                    label="Hitcher Jacks" value={design.hitcherJacks}
+                    min={0} max={10}
+                    onChange={(v) => set('hitcherJacks', v)}
+                    tooltip="250¥ each"
+                  />
+                  {design.hitcherJacks > 0 && <Chip size="small" label={fmt(250 * design.hitcherJacks)} sx={{ mt: 0.5 }} />}
+                </Box>
               </Box>
-              <Box>
-                <RatingInput
-                  label="Hitcher Jacks" value={design.hitcherJacks}
-                  min={0} max={10}
-                  onChange={(v) => set('hitcherJacks', v)}
-                  tooltip="250¥ each"
-                />
-                {design.hitcherJacks > 0 && <Chip size="small" label={fmt(250 * design.hitcherJacks)} sx={{ mt: 0.5 }} />}
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', mt: 1 }}>
+                <FormControlLabel control={<Checkbox checked={design.displayScreen} onChange={(e) => set('displayScreen', e.target.checked)} />} label="Display Screen (100¥)" />
+                <FormControlLabel control={<Checkbox checked={design.vrKit} onChange={(e) => set('vrKit', e.target.checked)} />} label="VR Kit (250¥)" />
+                <FormControlLabel control={<Checkbox checked={design.keyboard} onChange={(e) => set('keyboard', e.target.checked)} />} label="Keyboard (50¥)" />
               </Box>
-            </Box>
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', mt: 1 }}>
-              <FormControlLabel control={<Checkbox checked={design.displayScreen} onChange={(e) => set('displayScreen', e.target.checked)} />} label="Display Screen (100¥)" />
-              <FormControlLabel control={<Checkbox checked={design.vrKit} onChange={(e) => set('vrKit', e.target.checked)} />} label="VR Kit (250¥)" />
-              <FormControlLabel control={<Checkbox checked={design.keyboard} onChange={(e) => set('keyboard', e.target.checked)} />} label="Keyboard (50¥)" />
-            </Box>
-          </Paper>
+            </Paper>
+          )}
 
         </Grid>
 
@@ -566,8 +644,17 @@ export default function MatrixCyberdeckDesigner({ onSave }) {
             {design.mpcp > 0 && (
               <Paper variant="outlined" sx={{ p: 2, mb: 2 }}>
                 <Typography variant="subtitle2" gutterBottom>Deck Stats Summary</Typography>
+                {design.cranial && c2Essence != null && (
+                  <Alert severity="info" sx={{ mb: 1, py: 0.5 }} icon={false}>
+                    <strong>Total Essence Cost: {c2Essence}</strong>
+                    <Typography variant="caption" display="block" color="text.secondary">
+                      See Matrix p.65 for per-component breakdown.
+                    </Typography>
+                  </Alert>
+                )}
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                   <Chip size="small" label={`MPCP ${design.mpcp}`} color="primary" />
+                  {design.cranial && <Chip size="small" label="C² Cranial" color="secondary" />}
                   {design.bod > 0         && <Chip size="small" label={`Bod ${design.bod}`} />}
                   {design.evasion > 0     && <Chip size="small" label={`Evasion ${design.evasion}`} />}
                   {design.masking > 0     && <Chip size="small" label={`Masking ${design.masking}`} />}

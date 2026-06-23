@@ -322,11 +322,59 @@ export const ConstructionTasks = {
   },
 };
 
+// ── Cranial Cyberterminal (C²) Rules ─────────────────────────────────────────
+// Source: Matrix p.65
+// C² decks are installed cyberware — no casing, no storage memory.
+// Active memory costs 200¥/Mp (implanted chip, not retail RAM).
+// External Jackpoint required: 1,000¥, 0.2 Essence.
+// ASIST includes RAS Override. Cold ASIST = same cost; Hot ASIST = ×1.2.
+// Most components apply ×1.2 cost multiplier vs standard construction.
+// I/O Speed Module = ×1.0 (no extra multiplier).
+
+export const C2_COST_MULTIPLIER = 1.2;
+
+// Essence costs from Matrix p.65 table
+// MPCP and Hardening: Essence = Rating ÷ 10
+export const C2EssenceCosts = {
+  mpcp:              (rating) => rating / 10,
+  persona:           ()       => 0.2,   // per chip
+  asistCold:         ()       => 0.2,
+  asistHot:          ()       => 0.4,
+  externalJackpoint: ()       => 0.2,
+  hardening:         (rating) => rating / 10,
+  iccmFilter:        ()       => 0.2,
+  iconChip:          ()       => 0.1,
+  ioSpeedModule:     ()       => 0.1,
+  activeMemory:      ()       => 0.2,
+  realityFilter:     ()       => 0.2,
+  responseIncrease:  ()       => 0.2,
+};
+
+export function calcC2Essence(design) {
+  const e = C2EssenceCosts;
+  let total = 0;
+  total += e.mpcp(design.mpcp ?? 0);
+  const chips = ['bod', 'evasion', 'masking', 'sensor'].filter(k => (design[k] ?? 0) > 0).length;
+  total += chips * e.persona();
+  if (design.asistType === 'cold') total += e.asistCold();
+  if (design.asistType === 'hot')  total += e.asistHot();
+  total += e.externalJackpoint(); // always required
+  if ((design.hardening ?? 0) > 0)       total += e.hardening(design.hardening);
+  if (design.iccmFilter)                  total += e.iccmFilter();
+  if ((design.iconRating ?? 1) > 0)       total += e.iconChip();
+  if ((design.ioSpeedMePS ?? 0) > 0)      total += e.ioSpeedModule();
+  if ((design.activeMemoryMp ?? 0) > 0)   total += e.activeMemory();
+  if (design.realityFilter)               total += e.realityFilter();
+  if ((design.responseIncrease ?? 0) > 0) total += e.responseIncrease();
+  return Math.round(total * 100) / 100;
+}
+
 // ── Full Design Cost Calculator ───────────────────────────────────────────────
 
 export function calcDeckCost(design) {
   const {
     mpcp = 0,
+    cranial = false,
     bod = 0, evasion = 0, masking = 0, sensor = 0,
     asistType = 'hot',
     activeMemoryMp = 0,
@@ -352,36 +400,53 @@ export function calcDeckCost(design) {
   const items = [];
   const add = (label, cost) => { if (cost > 0) items.push({ label, cost }); };
 
-  add('MPCP', c.mpcp(mpcp));
+  // C² applies a ×1.2 cost multiplier to most components (Matrix p.65)
+  const x = cranial ? C2_COST_MULTIPLIER : 1;
 
-  if (bod > 0)     add(`Bod (${bod})`,         c.persona(bod));
-  if (evasion > 0) add(`Evasion (${evasion})`, c.persona(evasion));
-  if (masking > 0) add(`Masking (${masking})`, c.persona(masking));
-  if (sensor > 0)  add(`Sensor (${sensor})`,   c.persona(sensor));
-  // Icon rating 1 is included free with MPCP
-  if (iconRating > 1) add(`Icon Chip (${iconRating})`, c.iconChip(iconRating));
+  add('MPCP', Math.round(c.mpcp(mpcp) * x));
 
-  if (asistType === 'hot')  add('ASIST Interface (Hot)',  c.asistHot(mpcp));
-  if (asistType === 'cold') add('ASIST Interface (Cold)', c.asistCool(mpcp));
+  if (bod > 0)     add(`Bod (${bod})`,         Math.round(c.persona(bod) * x));
+  if (evasion > 0) add(`Evasion (${evasion})`, Math.round(c.persona(evasion) * x));
+  if (masking > 0) add(`Masking (${masking})`, Math.round(c.persona(masking) * x));
+  if (sensor > 0)  add(`Sensor (${sensor})`,   Math.round(c.persona(sensor) * x));
+  // Icon rating 1 is included free with MPCP; C² applies ×1.2 to upgrade chips
+  if (iconRating > 1) add(`Icon Chip (${iconRating})`, Math.round(c.iconChip(iconRating) * x));
 
-  if (activeMemoryMp > 0)    add(`Active Memory (${activeMemoryMp} Mp)`,  c.activeMemory(activeMemoryMp));
-  if (storageMemoryMp > 0)   add(`Storage Memory (${storageMemoryMp} Mp)`, c.storageMemory(storageMemoryMp));
-  if (hardening > 0)         add(`Hardening (${hardening})`,               c.hardening(hardening));
-  if (iccmFilter)            add('ICCM Biofeedback Filter',                c.iccmFilter(mpcp));
-  if (ioSpeedMePS > 0)       add(`I/O Speed (${ioSpeedMePS} MePS)`,       c.ioSpeedRetail(ioSpeedMePS));
-  if (rasOverride)           add('RAS Override',                            c.rasOverride(mpcp));
-  if (realityFilter)         add('Reality Filter',                          c.realityFilter(mpcp));
-  if (responseIncrease > 0)  add(`Response Increase (${responseIncrease})`, c.responseIncrease(responseIncrease));
-  if (matrixInterface)       add('Matrix Interface (5m cable)',              c.matrixInterface());
-  if (maserInterface)        add('Maser Interface',                          c.maserInterface());
-  if (additionalPorts > 0)   add(`Additional Ports (×${additionalPorts})`,  c.ports(additionalPorts));
+  if (asistType === 'hot')  add('Hot ASIST (incl. RAS Override)',  cranial ? Math.round(c.asistHot(mpcp) * x) : c.asistHot(mpcp));
+  if (asistType === 'cold') add('Cold ASIST (incl. RAS Override)', c.asistCool(mpcp)); // C² cold ASIST = same cost (×1)
 
-  const casingEntry = Casings[casing];
-  if (casingEntry?.cost > 0) add(`Casing (${casingEntry.name})`, casingEntry.cost);
-  if (hitcherJacks > 0)  add(`Hitcher Jacks (×${hitcherJacks})`, 250 * hitcherJacks);
-  if (displayScreen)     add('Display Screen / Vidscreen', 100);
-  if (vrKit)             add('VR Kit', 250);
-  if (keyboard)          add('Keyboard', 50);
+  // C² active memory: 200¥/Mp implanted chip, not retail RAM
+  if (activeMemoryMp > 0) add(
+    `Active Memory (${activeMemoryMp} Mp)`,
+    cranial ? activeMemoryMp * 200 : c.activeMemory(activeMemoryMp)
+  );
+  // C² has no storage memory
+  if (!cranial && storageMemoryMp > 0) add(`Storage Memory (${storageMemoryMp} Mp)`, c.storageMemory(storageMemoryMp));
+
+  if (hardening > 0)        add(`Hardening (${hardening})`,                Math.round(c.hardening(hardening) * x));
+  if (iccmFilter)           add('ICCM Biofeedback Filter',                 Math.round(c.iccmFilter(mpcp) * x));
+  // I/O Speed Module in C²: ×1 multiplier (no extra cost)
+  if (ioSpeedMePS > 0)      add(`I/O Speed (${ioSpeedMePS} MePS)`,        c.ioSpeedRetail(ioSpeedMePS));
+  // RAS Override included in C² ASIST; only add for standard decks
+  if (!cranial && rasOverride) add('RAS Override', c.rasOverride(mpcp));
+  if (realityFilter)        add('Reality Filter',                           Math.round(c.realityFilter(mpcp) * x));
+  if (responseIncrease > 0) add(`Response Increase (${responseIncrease})`, Math.round(c.responseIncrease(responseIncrease) * x));
+
+  if (!cranial && matrixInterface) add('Matrix Interface (5m cable)', c.matrixInterface());
+  if (!cranial && maserInterface)  add('Maser Interface',              c.maserInterface());
+  if (!cranial && additionalPorts > 0) add(`Additional Ports (×${additionalPorts})`, c.ports(additionalPorts));
+
+  // C² required: External Jackpoint
+  if (cranial) add('External Jackpoint (required)', 1000);
+
+  if (!cranial) {
+    const casingEntry = Casings[casing];
+    if (casingEntry?.cost > 0) add(`Casing (${casingEntry.name})`, casingEntry.cost);
+    if (hitcherJacks > 0) add(`Hitcher Jacks (×${hitcherJacks})`, 250 * hitcherJacks);
+    if (displayScreen)    add('Display Screen / Vidscreen', 100);
+    if (vrKit)            add('VR Kit', 250);
+    if (keyboard)         add('Keyboard', 50);
+  }
 
   const total = items.reduce((s, i) => s + i.cost, 0);
   return { items, total };
