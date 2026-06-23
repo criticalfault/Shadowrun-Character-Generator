@@ -295,3 +295,113 @@ export function sr2TeamTaskBonus(toolBonuses) {
   const total = toolBonuses.reduce((a, b) => a + b, 0);
   return Math.floor(total / toolBonuses.length);
 }
+
+// ── Command Sets (VR2 p.105) ──────────────────────────────────────────────────
+// Design size: 1D6 × 20 Mp
+// Upload: decker must perform a successful Control Test to load the program
+// Host scores successes against Subsystem Tests; sum ÷ 24 = hours the command
+// set will continue running undetected. If host scores no successes: 48 hrs.
+export const SR2_COMMAND_SET_DESIGN_SIZES = [20, 40, 60, 80, 100, 120]; // 1D6 × 20 Mp
+
+export function sr2CommandSetBaseTime(designSizeMp) {
+  return designSizeMp * 2; // days, same formula as other programs
+}
+
+// ── Frames (VR2 pp.105–106) ──────────────────────────────────────────────────
+// Frame Core: Rating² × Frame Core Multiplier
+// Dumb frame multiplier: 2  |  Smart frame multiplier: 3
+// Max Core Rating: Computer Skill × 1.5 (round down) — same as deck/frame rule
+// Options available: DINAB, Optimization, Squeeze only
+// Attributes (Bod, Evasion, Masking, Sensor): combined may not exceed Core Rating; any can be 0
+// Core Rating used in place of MPCP for any test requiring MPCP
+// Smart Frame Reaction = Core Rating
+
+export const SR2FrameTypes = [
+  {
+    id: 'dumb',
+    label: 'Dumb Frame',
+    coreMult: 2,
+    hasDINABRequired: false,
+    hasInitiative: false,
+    notes: 'Linked to decker\'s persona; only exists as long as controlling decker is active on the host. Executes programs on a Simple Action command. Cannot repeat an action — a second attack requires a second command. Logs off if decker logs off. May include DINAB option (optional), which can trigger one program per given action.',
+  },
+  {
+    id: 'smart',
+    label: 'Smart Frame',
+    coreMult: 3,
+    hasDINABRequired: true,
+    hasInitiative: true,
+    notes: 'Capable of independent existence in the Matrix. Must be programmed with DINAB option (rating = Computer Skill). Decker gives a Free Action order, then frame acts on its own. Has own Reaction (= Core Rating) and Initiative (1D6 + Init dice from Core Rating Points). DINAB rating cannot exceed programmer\'s Computer Skill.',
+  },
+];
+
+// Frame Core actual size (always dumb or smart multiplier, no options change this directly)
+export function sr2FrameCoreSize(coreRating, frameType) {
+  const ft = SR2FrameTypes.find(t => t.id === frameType) ?? SR2FrameTypes[0];
+  return coreRating * coreRating * ft.coreMult;
+}
+
+// Smart Frame Initiative allocation
+// Programmer allocates Core Rating Points at programming time; each point = +1 Init die
+// Unmodified smart frame rolls 1D6 for Initiative; remaining Core Rating Points go to attributes
+export function sr2FrameInitDice(initPoints) {
+  return 1 + initPoints; // base 1D6 + allocated points
+}
+
+// Frame Loading (VR2 p.106)
+// Loading Rating = combined program ratings ÷ 2 (round down)
+// Loading size = Loading Rating² (Mp)
+// Loading base time = Loading size × 2 (days)
+// Computer Test vs average rating of programs being loaded
+export function sr2LoadingRating(programRatings) {
+  const total = programRatings.reduce((a, b) => a + b, 0);
+  return Math.floor(total / 2);
+}
+export function sr2LoadingSize(loadingRating) {
+  return loadingRating * loadingRating;
+}
+export function sr2LoadingBaseTime(loadingRating) {
+  return sr2LoadingSize(loadingRating) * 2;
+}
+export function sr2AvgProgramRating(programRatings) {
+  if (!programRatings.length) return 0;
+  return Math.ceil(programRatings.reduce((a, b) => a + b, 0) / programRatings.length);
+}
+
+// Actual size of a frame = frame core size + actual size of all loaded programs + options
+export function sr2FrameTotalSize(coreSizeMp, programSizes) {
+  return coreSizeMp + programSizes.reduce((a, b) => a + b, 0);
+}
+
+// ── Upgrading Programs (VR2 p.107) ───────────────────────────────────────────
+// Can upgrade any program except command sets (must have source code)
+// Base time = base time for new rating from scratch − base time for current rating from scratch
+// TN = rating of upgraded program
+// Task period = upgrade base time ÷ Computer Test successes
+export function sr2UpgradeBaseTime(newRating, oldRating, multiplier) {
+  const newSize  = sr2ProgramSize(newRating, multiplier);
+  const oldSize  = sr2ProgramSize(oldRating, multiplier);
+  const newBase  = sr2BaseTimeDays(newSize);
+  const oldBase  = sr2BaseTimeDays(oldSize);
+  return Math.max(1, newBase - oldBase);
+}
+
+// ── Buying Programs — Program Prices Table (VR2 p.107) ───────────────────────
+// Price = size × price multiplier; option ratings do not affect price
+// Availability: Etiquette (Matrix) skill test
+export const SR2ProgramPriceTiers = [
+  { ratingMin: 1,  ratingMax: 3,        priceMult: 100,   avail: '2/7 days',   streetIndex: 1   },
+  { ratingMin: 4,  ratingMax: 6,        priceMult: 200,   avail: '4/7 days',   streetIndex: 1.5 },
+  { ratingMin: 7,  ratingMax: 9,        priceMult: 500,   avail: '8/14 days',  streetIndex: 2   },
+  { ratingMin: 10, ratingMax: Infinity, priceMult: 1000,  avail: '16/30 days', streetIndex: 3   },
+];
+
+export function sr2ProgramPrice(rating, sizeMp) {
+  const tier = SR2ProgramPriceTiers.find(t => rating >= t.ratingMin && rating <= t.ratingMax);
+  if (!tier) return null;
+  return { price: sizeMp * tier.priceMult, avail: tier.avail, streetIndex: tier.streetIndex };
+}
+
+export function sr2ProgramPriceTier(rating) {
+  return SR2ProgramPriceTiers.find(t => rating >= t.ratingMin && rating <= t.ratingMax);
+}
