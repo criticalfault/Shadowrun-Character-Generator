@@ -85,14 +85,14 @@ export function planTN(rating, options) {
 
 // ── Programming Languages (optional rule, Matrix p.81) ────────────────────────
 export const ProgrammingLanguages = [
-  { id: 'none',        label: 'None (default)',     bugMod: 0,   otherEffect: null },
-  { id: 'hololisp',   label: 'HoloLISP',            bugMod: 0,   otherEffect: null },
-  { id: 'machodev',   label: 'MachoDev',            bugMod: +4,  otherEffect: '−1 to program\'s effective rating' },
-  { id: 'mct_iconix', label: 'MCT Iconix 7',        bugMod: +2,  otherEffect: '−1 to Computer (Programming) Test TN' },
-  { id: 'metacomm',   label: 'Metacomm',            bugMod: 0,   otherEffect: null },
-  { id: 'novatech',   label: 'Novatech VRDrive 3',  bugMod: -1,  bugModNote: '−1 per option', otherEffect: null },
-  { id: 'oblong',     label: 'Oblong',              bugMod: -3,  otherEffect: '−2 to Computer (Programming) Test TN' },
-  { id: 'renraku',    label: 'Renraku Teng',        bugMod: -5,  otherEffect: 'Base time ×2' },
+  { id: 'none',        label: 'None (default)',     bugMod: 0,   otherEffect: null,                                          description: null },
+  { id: 'hololisp',   label: 'HoloLISP',            bugMod: 0,   otherEffect: null,                                          description: 'No mechanical effects.' },
+  { id: 'machodev',   label: 'MachoDev',            bugMod: +4,  otherEffect: '−1 to program\'s effective rating',           description: 'Bug TN +4 · Effective program rating −1' },
+  { id: 'mct_iconix', label: 'MCT Iconix 7',        bugMod: +2,  otherEffect: '−1 to Computer (Programming) Test TN',       description: 'Bug TN +2 · Programming TN −1' },
+  { id: 'metacomm',   label: 'Metacomm',            bugMod: 0,   otherEffect: null,                                          description: 'No mechanical effects.' },
+  { id: 'novatech',   label: 'Novatech VRDrive 3',  bugMod: -1,  bugModNote: '−1 per option', otherEffect: null,             description: 'Bug TN −1 per program option' },
+  { id: 'oblong',     label: 'Oblong',              bugMod: -3,  otherEffect: '−2 to Computer (Programming) Test TN',       description: 'Bug TN −3 · Programming TN −2' },
+  { id: 'renraku',    label: 'Renraku Teng',        bugMod: -5,  otherEffect: 'Base time ×2',                               description: 'Bug TN −5 · Base programming time ×2' },
 ];
 
 // ── Bug Test (optional rule, Matrix p.81) ────────────────────────────────────

@@ -297,12 +297,15 @@ function FrameAgentCalculator({ skill, compDice: suiteComp }) {
             )}
           </Box>
 
-          <FormControl size="small" sx={{ minWidth: 220, mb: 2 }}>
-            <InputLabel>Programming Language</InputLabel>
-            <Select value={f.language} label="Programming Language" onChange={e => ff('language', e.target.value)}>
-              {ProgrammingLanguages.map(l => <MenuItem key={l.id} value={l.id}>{l.label}</MenuItem>)}
-            </Select>
-          </FormControl>
+          <Box sx={{ mb: 2 }}>
+            <FormControl size="small" sx={{ minWidth: 220 }}>
+              <InputLabel>Programming Language</InputLabel>
+              <Select value={f.language} label="Programming Language" onChange={e => ff('language', e.target.value)}>
+                {ProgrammingLanguages.map(l => <MenuItem key={l.id} value={l.id}>{l.label}</MenuItem>)}
+              </Select>
+            </FormControl>
+            {(() => { const l = ProgrammingLanguages.find(x => x.id === f.language); return l?.description ? <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 0.5 }}>{l.description}</Typography> : null; })()}
+          </Box>
 
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
             <Chip color="primary" label={`Actual size: ${fmt(actualSizeMp)} Mp (memory)`} />
@@ -454,12 +457,15 @@ function WormsCalculator({ skill, compDice: suiteComp }) {
             )}
           </Box>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mb: 2 }}>
-            <FormControl size="small" sx={{ minWidth: 220 }}>
-              <InputLabel>Programming Language</InputLabel>
-              <Select value={w.language} label="Programming Language" onChange={e => wf('language', e.target.value)}>
-                {ProgrammingLanguages.map(l => <MenuItem key={l.id} value={l.id}>{l.label}</MenuItem>)}
-              </Select>
-            </FormControl>
+            <Box>
+              <FormControl size="small" sx={{ minWidth: 220 }}>
+                <InputLabel>Programming Language</InputLabel>
+                <Select value={w.language} label="Programming Language" onChange={e => wf('language', e.target.value)}>
+                  {ProgrammingLanguages.map(l => <MenuItem key={l.id} value={l.id}>{l.label}</MenuItem>)}
+                </Select>
+              </FormControl>
+              {(() => { const l = ProgrammingLanguages.find(x => x.id === w.language); return l?.description ? <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 0.5 }}>{l.description}</Typography> : null; })()}
+            </Box>
             <FormControl size="small" sx={{ minWidth: 200 }}>
               <InputLabel>Mainframe Host</InputLabel>
               <Select value={w.hostColor} label="Mainframe Host" onChange={e => wf('hostColor', e.target.value)}>
@@ -909,16 +915,19 @@ export default function ProgrammingCalculator() {
                     ))}
                   </Select>
                 </FormControl>
-                <FormControl size="small" sx={{ minWidth: 220 }}>
-                  <InputLabel>Programming Language</InputLabel>
-                  <Select value={s.language} label="Programming Language" onChange={e => set('language', e.target.value)}>
-                    {ProgrammingLanguages.map(l => (
-                      <MenuItem key={l.id} value={l.id}>
-                        {l.label}{l.bugMod ? ` (Bug: ${l.bugMod > 0 ? '+' : ''}${l.id === 'novatech' ? l.bugMod + '/option' : l.bugMod})` : ''}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
+                <Box>
+                  <FormControl size="small" sx={{ minWidth: 220 }}>
+                    <InputLabel>Programming Language</InputLabel>
+                    <Select value={s.language} label="Programming Language" onChange={e => set('language', e.target.value)}>
+                      {ProgrammingLanguages.map(l => (
+                        <MenuItem key={l.id} value={l.id}>
+                          {l.label}{l.bugMod ? ` (Bug: ${l.bugMod > 0 ? '+' : ''}${l.id === 'novatech' ? l.bugMod + '/option' : l.bugMod})` : ''}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                  {lang?.description && <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 0.5 }}>{lang.description}</Typography>}
+                </Box>
               </Box>
               <Box>
                 <FormControlLabel
@@ -930,11 +939,6 @@ export default function ProgrammingCalculator() {
                   label={<>Used optional rule to reduce base time <InfoTip text="Adds +3 to Bug Test TN." /></>}
                 />
               </Box>
-              {lang && lang.id !== 'none' && lang.otherEffect && (
-                <Alert severity="info" sx={{ mt: 1 }} icon={false}>
-                  <strong>{lang.label}:</strong> {lang.otherEffect}
-                </Alert>
-              )}
             </Paper>
 
             <Accordion variant="outlined" sx={{ mb: 2 }}>
