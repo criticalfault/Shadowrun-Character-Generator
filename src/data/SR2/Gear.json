@@ -31,7 +31,7 @@
         "Availability": "2/8hrs",
         "Cost": "35",
         "Street Index": ".8",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.9"
       },
       {
         "Name": "Bear-Knife",
@@ -141,7 +141,7 @@
         "Availability": "5/72hrs",
         "Cost": "800",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.88"
       },
       {
         "Name": "Fineblade Knife (long)",
@@ -152,7 +152,7 @@
         "Availability": "8/72hrs",
         "Cost": "1500",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.88"
       },
       {
         "Name": "Gasher battleaxe",
@@ -196,7 +196,7 @@
         "Availability": "8/14days",
         "Cost": "1860",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.9"
       },
       {
         "Name": "Kendachi Monokatana",
@@ -207,7 +207,7 @@
         "Availability": "8/5days",
         "Cost": "1200",
         "Street Index": "2.5",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.9"
       },
       {
         "Name": "Kendachi Monoknife",
@@ -218,7 +218,7 @@
         "Availability": "6/60hrs",
         "Cost": "200",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.9"
       },
       {
         "Name": "Kendachi Mononaginata",
@@ -273,7 +273,7 @@
         "Availability": "4/12hrs",
         "Cost": "125",
         "Street Index": "1.2",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.9"
       },
       {
         "Name": "Rapier",
@@ -284,7 +284,7 @@
         "Availability": "6/48hrs",
         "Cost": "1000",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.81"
       },
       {
         "Name": "Scimitar",
@@ -317,7 +317,7 @@
         "Availability": "4/72hrs",
         "Cost": "100",
         "Street Index": "1.1",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.10"
       },
       {
         "Name": "Stiletto",
@@ -581,7 +581,7 @@
         "Availability": "6/48hrs",
         "Cost": "100",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.88"
       },
       {
         "Name": "Cat With Nine Tails",
@@ -614,7 +614,7 @@
         "Availability": "6/48hrs",
         "Cost": "500",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.88"
       },
       {
         "Name": "Kendachi Monowhip",
@@ -625,7 +625,7 @@
         "Availability": "26/14 days",
         "Cost": "3500",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.9"
       },
       {
         "Name": "Monofilament Whip",
@@ -647,7 +647,7 @@
         "Availability": "5/24hrs",
         "Cost": "200",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.88"
       },
       {
         "Name": "Bio-Injector",
@@ -691,7 +691,7 @@
         "Availability": "10/14 days",
         "Cost": "350",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.15"
       },
       {
         "Name": "Drug-A-Thug",
@@ -702,7 +702,7 @@
         "Availability": "3/8hrs",
         "Cost": "150",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       },
       {
         "Name": "Fashion Gloves",
@@ -779,7 +779,7 @@
         "Availability": "6/48hrs",
         "Cost": "1200",
         "Street Index": "2.2",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       }
     ]
   },
@@ -934,7 +934,7 @@
         "Cost": "1300",
         "Street Index": "3",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.20"
       },
       {
         "Name": "Barton Arms Gun Cane",
@@ -947,7 +947,7 @@
         "Cost": "500",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.20"
       },
       {
         "Name": "BudgetArms C13",
@@ -960,7 +960,7 @@
         "Cost": "150",
         "Street Index": ".75",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.14"
       },
       {
         "Name": "Ceska Diplomat",
@@ -973,7 +973,7 @@
         "Cost": "250",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.14"
       },
       {
         "Name": "Colt Take-Down",
@@ -986,7 +986,7 @@
         "Cost": "150",
         "Street Index": ".8",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.14"
       },
       {
         "Name": "Dai Lung Cybermag 15",
@@ -999,7 +999,7 @@
         "Cost": "100",
         "Street Index": ".7",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.14"
       },
       {
         "Name": "Federated Arms X-22",
@@ -1012,7 +1012,7 @@
         "Cost": "300",
         "Street Index": ".8",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.14"
       },
       {
         "Name": "Fichetti Tiffani Needler",
@@ -1038,7 +1038,7 @@
         "Cost": "1000",
         "Street Index": "1",
         "Accessories": "Recoil Compensation (1)",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.14"
       },
       {
         "Name": "H&K P48",
@@ -1051,7 +1051,7 @@
         "Cost": "300",
         "Street Index": "1.5",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.20"
       },
       {
         "Name": "Morrissey",
@@ -1064,7 +1064,7 @@
         "Cost": "500",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.89"
       },
       {
         "Name": "North Industries Firing Knife",
@@ -1090,7 +1090,7 @@
         "Cost": "375",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.89"
       },
       {
         "Name": "Star Model DWT",
@@ -1103,7 +1103,7 @@
         "Cost": "300",
         "Street Index": ".8",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.14"
       },
       {
         "Name": "Streetline Special",
@@ -1246,7 +1246,7 @@
         "Cost": "325",
         "Street Index": ".8",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.15"
       },
       {
         "Name": "Federated Arms X-9mm",
@@ -1259,7 +1259,7 @@
         "Cost": "450",
         "Street Index": ".75",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.16"
       },
       {
         "Name": "Fichetti Security 500",
@@ -1337,7 +1337,7 @@
         "Cost": "500",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.16"
       },
       {
         "Name": "H&K P7S15",
@@ -1350,7 +1350,7 @@
         "Cost": "400",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.16"
       },
       {
         "Name": "H&K P11M8",
@@ -1363,7 +1363,7 @@
         "Cost": "600",
         "Street Index": "1.25",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.22"
       },
       {
         "Name": "H&K P11M13",
@@ -1376,7 +1376,7 @@
         "Cost": "650",
         "Street Index": "1.25",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.22"
       },
       {
         "Name": "Hammerli 610S",
@@ -1389,7 +1389,7 @@
         "Cost": "1295",
         "Street Index": "2.5",
         "Accessories": "Customized",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.14"
       },
       {
         "Name": "Mauser Ladyline",
@@ -1402,7 +1402,7 @@
         "Cost": "350",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.14"
       },
       {
         "Name": "Militech Arms Avenger",
@@ -1428,7 +1428,7 @@
         "Cost": "250",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.9"
       },
       {
         "Name": "Ruger P-8",
@@ -1441,7 +1441,7 @@
         "Cost": "395",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.16"
       },
       {
         "Name": "Seco LD-120",
@@ -1467,7 +1467,7 @@
         "Cost": "250",
         "Street Index": ".9",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.16"
       },
       {
         "Name": "Thumper",
@@ -1493,7 +1493,7 @@
         "Cost": "700",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.89"
       },
       {
         "Name": "Ares Assault Machine Pistol",
@@ -1506,7 +1506,7 @@
         "Cost": "1000",
         "Street Index": "2",
         "Accessories": "Improved Gas Vent (2)",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.17"
       },
       {
         "Name": "Ares Black Widow",
@@ -1558,7 +1558,7 @@
         "Cost": "675",
         "Street Index": "1.2",
         "Accessories": "Caseless, Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.15"
       },
       {
         "Name": "Ceska Black Scorpion",
@@ -1597,7 +1597,7 @@
         "Cost": "1200",
         "Street Index": "3",
         "Accessories": "Recoil Compensation (1)",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.23"
       },
       {
         "Name": "Micro Uzi III",
@@ -1610,7 +1610,7 @@
         "Cost": "750",
         "Street Index": "1",
         "Accessories": "Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.22"
       },
       {
         "Name": "Ruger P-4",
@@ -1636,7 +1636,7 @@
         "Cost": "750",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.17"
       },
       {
         "Name": "Altmayr SP",
@@ -1649,7 +1649,7 @@
         "Cost": "900",
         "Street Index": "1.5",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.15"
       },
       {
         "Name": "Ares Constrictor",
@@ -1766,7 +1766,7 @@
         "Cost": "450",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.21"
       },
       {
         "Name": "Beretta Model 95S",
@@ -1792,7 +1792,7 @@
         "Cost": "750",
         "Street Index": "1.75",
         "Accessories": "Smartlink II",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.15"
       },
       {
         "Name": "Beretta 100S",
@@ -1818,7 +1818,7 @@
         "Cost": "1300",
         "Street Index": "1.5",
         "Accessories": "Smartlink, Silencer",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.15"
       },
       {
         "Name": "Beretta Model 110-T",
@@ -1831,7 +1831,7 @@
         "Cost": "400",
         "Street Index": "1",
         "Accessories": "Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.15"
       },
       {
         "Name": "Bond & Carrington MP-11",
@@ -1857,7 +1857,7 @@
         "Cost": "2000",
         "Street Index": "2",
         "Accessories": "Gas Vent (2), Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.15"
       },
       {
         "Name": "Browning Defender 10",
@@ -1870,7 +1870,7 @@
         "Cost": "900",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.15"
       },
       {
         "Name": "Browning Defender 10 Smart",
@@ -1883,7 +1883,7 @@
         "Cost": "1800",
         "Street Index": "2",
         "Accessories": "Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.15"
       },
       {
         "Name": "Browning Max-Power",
@@ -1922,7 +1922,7 @@
         "Cost": "350",
         "Street Index": ".7",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.19"
       },
       {
         "Name": "Colt Alpha-Omega",
@@ -1935,7 +1935,7 @@
         "Cost": "500",
         "Street Index": "1",
         "Accessories": "Gas Vent (1), Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.15"
       },
       {
         "Name": "Colt AMT Model 2000",
@@ -1948,7 +1948,7 @@
         "Cost": "500",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.21"
       },
       {
         "Name": "Colt Manhunter",
@@ -2000,7 +2000,7 @@
         "Cost": "350",
         "Street Index": ".9",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.17"
       },
       {
         "Name": "Colt Penetrator",
@@ -2013,7 +2013,7 @@
         "Cost": "600",
         "Street Index": "1.5",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.21"
       },
       {
         "Name": "DinaTech F5A",
@@ -2026,7 +2026,7 @@
         "Cost": "500",
         "Street Index": "3",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.15"
       },
       {
         "Name": "DinaTech F5B",
@@ -2039,7 +2039,7 @@
         "Cost": "700",
         "Street Index": "3",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.15"
       },
       {
         "Name": "Federated Arms 454 DA",
@@ -2052,7 +2052,7 @@
         "Cost": "1,375",
         "Street Index": "1.25",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.21"
       },
       {
         "Name": "Fichetti Hurricane",
@@ -2065,7 +2065,7 @@
         "Cost": "600",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.17"
       },
       {
         "Name": "Fichetti Military XI",
@@ -2143,7 +2143,7 @@
         "Cost": "705",
         "Street Index": "2",
         "Accessories": "Gas Vent (2)",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.16"
       },
       {
         "Name": "Goncz-Taurus Pistol",
@@ -2156,7 +2156,7 @@
         "Cost": "500",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.16"
       },
       {
         "Name": "Goncz-Taurus Pistol(Selective)",
@@ -2169,7 +2169,7 @@
         "Cost": "700",
         "Street Index": "1.75",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.16"
       },
       {
         "Name": "H&K 'Blaster'",
@@ -2195,7 +2195,7 @@
         "Cost": "2,500",
         "Street Index": "2",
         "Accessories": "Flashlight, Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.22"
       },
       {
         "Name": "Ingram Mk IV",
@@ -2208,7 +2208,7 @@
         "Cost": "2500",
         "Street Index": "3",
         "Accessories": "Gas Vent (3), Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.15"
       },
       {
         "Name": "Malorian Arms 3516",
@@ -2221,7 +2221,7 @@
         "Cost": "4,525",
         "Street Index": "-",
         "Accessories": "Smartlink II, Strength 4 required to shoot",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.21"
       },
       {
         "Name": "Malorian Arms Heavy Flechette",
@@ -2234,7 +2234,7 @@
         "Cost": "1595",
         "Street Index": "2",
         "Accessories": "Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.20"
       },
       {
         "Name": "Malorian Arms Sliver Gun",
@@ -2247,7 +2247,7 @@
         "Cost": "1375",
         "Street Index": "3",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.12"
       },
       {
         "Name": "Morrissey Alta",
@@ -2260,7 +2260,7 @@
         "Cost": "1200",
         "Street Index": "2",
         "Accessories": "Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.89"
       },
       {
         "Name": "Morrissey Elite",
@@ -2273,7 +2273,7 @@
         "Cost": "950",
         "Street Index": "2",
         "Accessories": "Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.89"
       },
       {
         "Name": "Nova .338 City Gun",
@@ -2286,7 +2286,7 @@
         "Cost": "460",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.20"
       },
       {
         "Name": "Phoenix Gyroc",
@@ -2312,7 +2312,7 @@
         "Cost": "190",
         "Street Index": ".6",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.30"
       },
       {
         "Name": "Remington Roomsweeper",
@@ -2390,7 +2390,7 @@
         "Cost": "500",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.19"
       },
       {
         "Name": "Ruger M45",
@@ -2403,7 +2403,7 @@
         "Cost": "860",
         "Street Index": "3",
         "Accessories": "Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.21"
       },
       {
         "Name": "Ruger P-105",
@@ -2416,7 +2416,7 @@
         "Cost": "600",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.17"
       },
       {
         "Name": "Ruger Warhawk",
@@ -2429,7 +2429,7 @@
         "Cost": "250",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.21"
       },
       {
         "Name": "S&W 'Tri-Star'",
@@ -2455,7 +2455,7 @@
         "Cost": "900",
         "Street Index": "2.5",
         "Accessories": "Recoil Compensation (1), Smartlink II",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.89"
       },
       {
         "Name": "Sig Sauer P300",
@@ -2468,7 +2468,7 @@
         "Cost": "800",
         "Street Index": "2",
         "Accessories": "Caseless, Laser Sight, Silencer",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.17"
       },
       {
         "Name": "SMF",
@@ -2507,7 +2507,7 @@
         "Cost": "600",
         "Street Index": "1.5",
         "Accessories": "Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.21"
       },
       {
         "Name": "Syrko Wolf",
@@ -2520,7 +2520,7 @@
         "Cost": "800",
         "Street Index": "1.5",
         "Accessories": "Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.24"
       },
       {
         "Name": "Walther Secura",
@@ -2533,7 +2533,7 @@
         "Cost": "500",
         "Street Index": "1.5",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.17"
       },
       {
         "Name": "Zastava Magnum Model 2054",
@@ -2546,7 +2546,7 @@
         "Cost": "350",
         "Street Index": ".9",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.17"
       },
       {
         "Name": "Colt TP-6A",
@@ -2559,7 +2559,7 @@
         "Cost": "550",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       },
       {
         "Name": "Defiance Super Shock",
@@ -2611,7 +2611,7 @@
         "Cost": "1950",
         "Street Index": "2.5",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       },
       {
         "Name": "Yamaha Pulsar",
@@ -2624,7 +2624,7 @@
         "Cost": "1350",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.89"
       },
       {
         "Name": "Ares Cascade",
@@ -2689,7 +2689,7 @@
         "Cost": "200",
         "Street Index": ".75",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.12"
       },
       {
         "Name": "Enerts AKM Power Squirt",
@@ -2741,7 +2741,7 @@
         "Cost": "1,660",
         "Street Index": "4.5",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.12"
       },
       {
         "Name": "Micro-Missile Pod",
@@ -2754,7 +2754,7 @@
         "Cost": "2000",
         "Street Index": "1.9",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.33"
       },
       {
         "Name": "Militech Urban Missile Launchr",
@@ -2845,7 +2845,7 @@
         "Cost": "500",
         "Street Index": "2.5",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       },
       {
         "Name": "Rostovic Wrist Racate",
@@ -2858,7 +2858,7 @@
         "Cost": "3800",
         "Street Index": "3.5",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.33"
       },
       {
         "Name": "Sonic Stunner",
@@ -2871,7 +2871,7 @@
         "Cost": "1000",
         "Street Index": "1.5",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       },
       {
         "Name": "Spetsdod",
@@ -2884,7 +2884,7 @@
         "Cost": "3600",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       },
       {
         "Name": "Techtronica M40",
@@ -2897,7 +2897,7 @@
         "Cost": "3500",
         "Street Index": "-",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       },
       {
         "Name": "Tsunami Arms",
@@ -2936,7 +2936,7 @@
         "Cost": "95000",
         "Street Index": "3.5",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       },
       {
         "Name": "AK-97 SMG",
@@ -2949,7 +2949,7 @@
         "Cost": "800",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.90"
       },
       {
         "Name": "Arasaka Minami 10",
@@ -2975,7 +2975,7 @@
         "Cost": "950",
         "Street Index": "1.25",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.23"
       },
       {
         "Name": "Beretta M-24 Advanced Smart",
@@ -2988,7 +2988,7 @@
         "Cost": "1250",
         "Street Index": "1.25",
         "Accessories": "Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.23"
       },
       {
         "Name": "Berretta Model 70",
@@ -3040,7 +3040,7 @@
         "Cost": "700",
         "Street Index": "2",
         "Accessories": "Gas Vent (2)",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.30"
       },
       {
         "Name": "Colt Cobra TZ-115",
@@ -3053,7 +3053,7 @@
         "Cost": "850",
         "Street Index": "2",
         "Accessories": "Gas Vent (2), Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.30"
       },
       {
         "Name": "Colt Cobra TZ-118",
@@ -3066,7 +3066,7 @@
         "Cost": "1000",
         "Street Index": "2",
         "Accessories": "Gas Vent (2), Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.30"
       },
       {
         "Name": "Defiance AT-900",
@@ -3105,7 +3105,7 @@
         "Cost": "600",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.22"
       },
       {
         "Name": "FN P55",
@@ -3118,7 +3118,7 @@
         "Cost": "650",
         "Street Index": "2.5",
         "Accessories": "Gas Vent (2), Magnification (2)",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.23"
       },
       {
         "Name": "FN P55 Smart",
@@ -3131,7 +3131,7 @@
         "Cost": "900",
         "Street Index": "2.75",
         "Accessories": "Gas Vent (2), Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.23"
       },
       {
         "Name": "H&K MP7z Urban Combat",
@@ -3170,7 +3170,7 @@
         "Cost": "900",
         "Street Index": "1",
         "Accessories": "Gas Vent (3), Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.22"
       },
       {
         "Name": "H&K MP-2013",
@@ -3183,7 +3183,7 @@
         "Cost": "900",
         "Street Index": "1.1",
         "Accessories": "Sound Suppressor",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.23"
       },
       {
         "Name": "H&K MPK9",
@@ -3196,7 +3196,7 @@
         "Cost": "1040",
         "Street Index": ".8",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.22"
       },
       {
         "Name": "H&K MPK-11",
@@ -3209,7 +3209,7 @@
         "Cost": "1,400",
         "Street Index": "1.2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.24"
       },
       {
         "Name": "Heckler & Koch HK227",
@@ -3261,7 +3261,7 @@
         "Cost": "650",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.24"
       },
       {
         "Name": "Ingram MAC-20",
@@ -3274,7 +3274,7 @@
         "Cost": "700",
         "Street Index": "1.5",
         "Accessories": "Sound Suppressor",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.24"
       },
       {
         "Name": "Ingram Smartgun Model 20t",
@@ -3300,7 +3300,7 @@
         "Cost": "850",
         "Street Index": "3",
         "Accessories": "Gas Vent (3)",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.31"
       },
       {
         "Name": "Ingram Warrior",
@@ -3313,7 +3313,7 @@
         "Cost": "650",
         "Street Index": ".9",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.29"
       },
       {
         "Name": "Malorian Arms SubFlechette Gun",
@@ -3365,7 +3365,7 @@
         "Cost": "700",
         "Street Index": "1",
         "Accessories": "Gas Vent (2), Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.24"
       },
       {
         "Name": "Sandler TMP",
@@ -3430,7 +3430,7 @@
         "Cost": "1000",
         "Street Index": "1.1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.24"
       },
       {
         "Name": "Steyr MP i 25",
@@ -3443,7 +3443,7 @@
         "Cost": "725",
         "Street Index": "2",
         "Accessories": "Gas Vent (1), Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.23"
       },
       {
         "Name": "Syrko Eagle",
@@ -3456,7 +3456,7 @@
         "Cost": "900",
         "Street Index": "1",
         "Accessories": "Gas Vent (2), Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.24"
       },
       {
         "Name": "Uzi III",
@@ -3495,7 +3495,7 @@
         "Cost": "1000",
         "Street Index": "1",
         "Accessories": "Gas Vent (2), Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.22"
       },
       {
         "Name": "Uzi IV Smart",
@@ -3508,7 +3508,7 @@
         "Cost": "1200",
         "Street Index": "1.25",
         "Accessories": "Gas Vent (2), Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.22"
       },
       {
         "Name": "Uzi Miniauto 9",
@@ -3521,7 +3521,7 @@
         "Cost": "700",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.22"
       },
       {
         "Name": "Walther S900",
@@ -3534,7 +3534,7 @@
         "Cost": "900",
         "Street Index": "1",
         "Accessories": "Gas Vent (2), Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.24"
       },
       {
         "Name": "Ares Alpha Combat Gun",
@@ -3547,7 +3547,7 @@
         "Cost": "2000",
         "Street Index": "4",
         "Accessories": "Grenade Launcher (8-shot), Recoil Compensation (2), Smartlink II",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.33"
       },
       {
         "Name": "Ares High-Vel. Assault Rifle",
@@ -3573,7 +3573,7 @@
         "Cost": "700",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.90"
       },
       {
         "Name": "AK-98",
@@ -3599,7 +3599,7 @@
         "Cost": "1000",
         "Street Index": "2",
         "Accessories": "Gas Vent (1), Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.26"
       },
       {
         "Name": "Anti-Vehicular Rifle",
@@ -3612,7 +3612,7 @@
         "Cost": "6000",
         "Street Index": "3.2",
         "Accessories": "Magnification (2)",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.28"
       },
       {
         "Name": "Colt M22A2",
@@ -3638,7 +3638,7 @@
         "Cost": "950",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.32"
       },
       {
         "Name": "Darra-Polytechnic M-9",
@@ -3651,7 +3651,7 @@
         "Cost": "1300",
         "Street Index": ".9",
         "Accessories": "Caseless, Magnification (1)",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.26"
       },
       {
         "Name": "Federated Arms Light Assault15",
@@ -3664,7 +3664,7 @@
         "Cost": "400",
         "Street Index": "1.25",
         "Accessories": "Caseless, Magnification (1)",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.26"
       },
       {
         "Name": "Federated Arms Light Assault15",
@@ -3677,7 +3677,7 @@
         "Cost": "700",
         "Street Index": "1.25",
         "Accessories": "Caseless, Magnification (1), Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.26"
       },
       {
         "Name": "FN AGRL",
@@ -3690,7 +3690,7 @@
         "Cost": "2000",
         "Street Index": "2",
         "Accessories": "Gas Vent (2)< Grenade Launcher (6-shot), Laser Sight, Magnification (2)",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.27"
       },
       {
         "Name": "FN HAR",
@@ -3716,7 +3716,7 @@
         "Cost": "1200",
         "Street Index": "2",
         "Accessories": "Magnification (1)",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.26"
       },
       {
         "Name": "H",
@@ -3781,7 +3781,7 @@
         "Cost": "1000",
         "Street Index": "2",
         "Accessories": "Magnifcation (1)",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.26"
       },
       {
         "Name": "Kalashnikov A-80",
@@ -3794,7 +3794,7 @@
         "Cost": "1100",
         "Street Index": "2.5",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.27"
       },
       {
         "Name": "Kalishnikov AK-100",
@@ -3807,7 +3807,7 @@
         "Cost": "1000",
         "Street Index": "2",
         "Accessories": "Gas Vent (2)",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.27"
       },
       {
         "Name": "Kalishnikov AK-100 Smart",
@@ -3820,7 +3820,7 @@
         "Cost": "2000",
         "Street Index": "2",
         "Accessories": "Gas Vent (2), Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.27"
       },
       {
         "Name": "Kalishnikov AK-101",
@@ -3833,7 +3833,7 @@
         "Cost": "1600",
         "Street Index": "2",
         "Accessories": "Gas Vent (2), Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.27"
       },
       {
         "Name": "Kalishnikov AK-101 Smart",
@@ -3846,7 +3846,7 @@
         "Cost": "3200",
         "Street Index": "2",
         "Accessories": "Gas Vent (2), Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.27"
       },
       {
         "Name": "Maremont LR",
@@ -3859,7 +3859,7 @@
         "Cost": "1400",
         "Street Index": "2.5",
         "Accessories": "Laser Sight, Magnification (1)",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.30"
       },
       {
         "Name": "Militech Cyborg Rifle",
@@ -3911,7 +3911,7 @@
         "Cost": "2500",
         "Street Index": "1",
         "Accessories": "Caseless, Gas Vent (2), recoil is halved",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.27"
       },
       {
         "Name": "Samopal vz 88V",
@@ -3950,7 +3950,7 @@
         "Cost": "850",
         "Street Index": "2",
         "Accessories": "Gas Vent (2), Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.27"
       },
       {
         "Name": "SIG 882",
@@ -3963,7 +3963,7 @@
         "Cost": "850",
         "Street Index": "2",
         "Accessories": "Gas Vent (2), Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.27"
       },
       {
         "Name": "Seco M-995",
@@ -3989,7 +3989,7 @@
         "Cost": "6000",
         "Street Index": "3",
         "Accessories": "Gas Vent (3), Grenade Launcher (6-shot), Rangefinder Grenade Link, Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.26"
       },
       {
         "Name": "Arasaka Rapid Assault Shot 12",
@@ -4028,7 +4028,7 @@
         "Cost": "1500",
         "Street Index": "2",
         "Accessories": "Gas Vent (2), Shock Pads",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.25"
       },
       {
         "Name": "Chandler Capture 100 Smart",
@@ -4041,7 +4041,7 @@
         "Cost": "2200",
         "Street Index": "2",
         "Accessories": "Gas Vent (2), Shock Pads, Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.25"
       },
       {
         "Name": "Syrko Cobra",
@@ -4054,7 +4054,7 @@
         "Cost": "1200",
         "Street Index": "1",
         "Accessories": "Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.24"
       },
       {
         "Name": "Defiance T-250",
@@ -4080,7 +4080,7 @@
         "Cost": "1200",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.25"
       },
       {
         "Name": "Enfield AS7",
@@ -4106,7 +4106,7 @@
         "Cost": "1000",
         "Street Index": "2",
         "Accessories": "Smartlink II",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.37"
       },
       {
         "Name": "Holland & Holland .600 NE",
@@ -4119,7 +4119,7 @@
         "Cost": "10000",
         "Street Index": "-",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.25"
       },
       {
         "Name": "Kimatsuhama UBS-5",
@@ -4132,7 +4132,7 @@
         "Cost": "500",
         "Street Index": "1.1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.25"
       },
       {
         "Name": "Kimatsuhama UBS-6",
@@ -4145,7 +4145,7 @@
         "Cost": "750",
         "Street Index": "1.1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.25"
       },
       {
         "Name": "Kimatsuhama UBS-7",
@@ -4158,7 +4158,7 @@
         "Cost": "1700",
         "Street Index": "1.25",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.25"
       },
       {
         "Name": "Luigi 'King Buck' Multi-Magnum",
@@ -4250,7 +4250,7 @@
         "Cost": "2000",
         "Street Index": "2",
         "Accessories": "Gas Vent (2), Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.25"
       },
       {
         "Name": "Remington 990",
@@ -4263,7 +4263,7 @@
         "Cost": "650",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.36"
       },
       {
         "Name": "Remington 990 Sawn-Off",
@@ -4276,7 +4276,7 @@
         "Cost": "650",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.36"
       },
       {
         "Name": "Remington 1628",
@@ -4289,7 +4289,7 @@
         "Cost": "500",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.25"
       },
       {
         "Name": "Remington Rapid Assault 12",
@@ -4302,7 +4302,7 @@
         "Cost": "2000",
         "Street Index": "2",
         "Accessories": "Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.25"
       },
       {
         "Name": "Wirtz SW3i DemoControl",
@@ -4315,7 +4315,7 @@
         "Cost": "600",
         "Street Index": "4",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.25"
       },
       {
         "Name": "Wristbreaker I",
@@ -4367,7 +4367,7 @@
         "Cost": "900",
         "Street Index": "1.5",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.25"
       },
       {
         "Name": "Barret Model 121 HSR",
@@ -4393,7 +4393,7 @@
         "Cost": "7000",
         "Street Index": "4",
         "Accessories": "Gas Vent (2), Low-Light, Magnification (3), Smartlink, Thermographic",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.28"
       },
       {
         "Name": "Ranger Arms SM-3",
@@ -4419,7 +4419,7 @@
         "Cost": "2000",
         "Street Index": "3",
         "Accessories": "Gas Vent (2)",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.28"
       },
       {
         "Name": "Tsunami Arms Ramjet Rifle",
@@ -4432,7 +4432,7 @@
         "Cost": "7380",
         "Street Index": "4",
         "Accessories": "Bipod, Magnification (3), Recoil Compensation (1), Samrtlink II",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.30"
       },
       {
         "Name": "Walther WA-2100",
@@ -4497,7 +4497,7 @@
         "Cost": "950",
         "Street Index": "1.5",
         "Accessories": "Magnification (2), Shock Pads",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.31"
       },
       {
         "Name": "Mossberg M-712",
@@ -4510,7 +4510,7 @@
         "Cost": "4000",
         "Street Index": "3",
         "Accessories": "Gas Vent (2, Rifle), Magnification (2), Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.25"
       },
       {
         "Name": "Steyr AUG-CSL",
@@ -4536,7 +4536,7 @@
         "Cost": "4000",
         "Street Index": "3",
         "Accessories": "Gas Vent (3, Rifle), Gas Vent (2, Shotgun), Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.24"
       },
       {
         "Name": "Ares MP LMG",
@@ -4562,7 +4562,7 @@
         "Cost": "4500",
         "Street Index": "4",
         "Accessories": "Recoil Compensation (3), Smartlink II",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.38"
       },
       {
         "Name": "GE Vindicator Minigun",
@@ -4588,7 +4588,7 @@
         "Cost": "2050",
         "Street Index": "3.5",
         "Accessories": "Caseless, Magnification (2), Smartlink II, Thermographic",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.30"
       },
       {
         "Name": "H&K MG4/46",
@@ -4601,7 +4601,7 @@
         "Cost": "2500",
         "Street Index": "4",
         "Accessories": "Laser Sight, Magnification (3), Shock Pads, Thermographic",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.30"
       },
       {
         "Name": "Ingram Valiant",
@@ -4627,7 +4627,7 @@
         "Cost": "13000",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.34"
       },
       {
         "Name": "IWS Mini-5 Smart",
@@ -4640,7 +4640,7 @@
         "Cost": "26000",
         "Street Index": "2",
         "Accessories": "Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.34"
       },
       {
         "Name": "SIG 883",
@@ -4653,7 +4653,7 @@
         "Cost": "1000",
         "Street Index": "2.5",
         "Accessories": "Bipod, Gas Vent (3), Laser Sight, Shock Pads",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.31"
       },
       {
         "Name": "Syrko Tiger",
@@ -4666,7 +4666,7 @@
         "Cost": "3000",
         "Street Index": "2",
         "Accessories": "Caseless, Gas Vent (3), Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.24"
       },
       {
         "Name": "Ares MP Laser",
@@ -4705,7 +4705,7 @@
         "Cost": "double normal",
         "Street Index": "+1",
         "Accessories": "normal",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       },
       {
         "Name": "Laser LAW",
@@ -4718,7 +4718,7 @@
         "Cost": "75000",
         "Street Index": "3",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.32"
       },
       {
         "Name": "Laser VLAW",
@@ -4731,7 +4731,7 @@
         "Cost": "60000",
         "Street Index": "3",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.32"
       },
       {
         "Name": "Militech Electronics Laser",
@@ -4757,7 +4757,7 @@
         "Cost": "6500",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.9"
       },
       {
         "Name": "7.62cm 10-Barrel",
@@ -4770,7 +4770,7 @@
         "Cost": "9500",
         "Street Index": "4",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.31"
       },
       {
         "Name": "7.62cm Single Barrel",
@@ -4783,7 +4783,7 @@
         "Cost": "1000",
         "Street Index": "1.75",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.31"
       },
       {
         "Name": "12.7cm 10-Barrel",
@@ -4796,7 +4796,7 @@
         "Cost": "12000",
         "Street Index": "4",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.31"
       },
       {
         "Name": "12.7cm Single Barrel",
@@ -4809,7 +4809,7 @@
         "Cost": "1250",
         "Street Index": "1.75",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.31"
       },
       {
         "Name": "Ares MP Maser",
@@ -4861,7 +4861,7 @@
         "Cost": "6100",
         "Street Index": "2",
         "Accessories": "Magnification (2), Shock Pads",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.31"
       },
       {
         "Name": "FN MAG-5 MMG",
@@ -4913,7 +4913,7 @@
         "Cost": "7200",
         "Street Index": "2",
         "Accessories": "Gas Vent (4), Shock Pads",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.34"
       },
       {
         "Name": "M10A Light Recoilless Rifle",
@@ -4939,7 +4939,7 @@
         "Cost": "5500",
         "Street Index": "2",
         "Accessories": "Gas Vent (3)",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.32"
       },
       {
         "Name": "M400 Smart",
@@ -4952,7 +4952,7 @@
         "Cost": "7500",
         "Street Index": "2.5",
         "Accessories": "Gas Vent (3), Smartlink II",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.32"
       },
       {
         "Name": "Militech AM-3",
@@ -4978,7 +4978,7 @@
         "Cost": "75000",
         "Street Index": "3",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.31"
       },
       {
         "Name": "Stoner-Ares M107",
@@ -5030,7 +5030,7 @@
         "Cost": "113700",
         "Street Index": "-",
         "Accessories": "Gyro Mount (5), Smartlink II",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.33"
       },
       {
         "Name": "Ruhrmetall SF20",
@@ -5043,7 +5043,7 @@
         "Cost": "7200",
         "Street Index": "2",
         "Accessories": "Gas Vent (3), Shock Pads",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.33"
       },
       {
         "Name": "Whitney-Morgan Caseless MMG",
@@ -5056,7 +5056,7 @@
         "Cost": "25000",
         "Street Index": "4",
         "Accessories": "Caseless",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.31"
       },
       {
         "Name": "Ares Suppressor (Standard)",
@@ -5121,7 +5121,7 @@
         "Cost": "2200",
         "Street Index": "3",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.47"
       },
       {
         "Name": "ArmTech Mini-6",
@@ -5134,7 +5134,7 @@
         "Cost": "1600",
         "Street Index": "3",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.47"
       },
       {
         "Name": "Generic Under-Barrel",
@@ -5147,7 +5147,7 @@
         "Cost": "1700",
         "Street Index": "3",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.32"
       },
       {
         "Name": "Grenade Launcher",
@@ -5160,7 +5160,7 @@
         "Cost": "1250",
         "Street Index": "2.75",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.32"
       },
       {
         "Name": "Hand-Held Grenade Launcher",
@@ -5173,7 +5173,7 @@
         "Cost": "2300",
         "Street Index": "3",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.32"
       },
       {
         "Name": "Militech Mini-Grenade Launcher",
@@ -5212,7 +5212,7 @@
         "Cost": "15000",
         "Street Index": "4",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.32"
       },
       {
         "Name": "Arbelast II MAW",
@@ -5225,7 +5225,7 @@
         "Cost": "1200",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.91"
       },
       {
         "Name": "Great Dragon ATGM",
@@ -5238,7 +5238,7 @@
         "Cost": "1200",
         "Street Index": "2",
         "Accessories": "Magnification (2)",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.41"
       },
       {
         "Name": "M79B LAW",
@@ -5277,7 +5277,7 @@
         "Cost": "8000",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.91"
       },
       {
         "Name": "Ruhrmetall GPRL-Alpha",
@@ -5290,7 +5290,7 @@
         "Cost": "9000",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.33"
       },
       {
         "Name": "Scorpion 16 Missile Launcher",
@@ -5303,7 +5303,7 @@
         "Cost": "6000",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.33"
       },
       {
         "Name": "M-12 Man-Portable Mortar",
@@ -5316,7 +5316,7 @@
         "Cost": "3000",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.44"
       },
       {
         "Name": "Ballista Multi-Role Launcher",
@@ -5329,7 +5329,7 @@
         "Cost": "10500",
         "Street Index": "4",
         "Accessories": "Type I Laser Designator",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.42"
       },
       {
         "Name": "Improved Silencer",
@@ -5796,7 +5796,7 @@
         "Availability": "2/3days",
         "Cost": "20",
         "Street Index": ".9",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.37"
       },
       {
         "Name": "Stench Bomb",
@@ -5806,7 +5806,7 @@
         "Availability": "3/48hrs",
         "Cost": "20",
         "Street Index": ".8",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.37"
       },
       {
         "Name": "Thermal Smoke",
@@ -8879,7 +8879,7 @@
         "Availability": "6/48hrs",
         "Cost": "100",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       },
       {
         "Name": "FEN Dz-55 Det-Web",
@@ -8889,7 +8889,7 @@
         "Availability": "10/72hrs",
         "Cost": "450",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       },
       {
         "Name": "Large Net",
@@ -8919,7 +8919,7 @@
         "Availability": "14/14days",
         "Cost": "GM",
         "Street Index": "GM",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       },
       {
         "Name": "ShokTox Spetsdod Round",
@@ -8929,7 +8929,7 @@
         "Availability": "4/48hrs",
         "Cost": "200",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       },
       {
         "Name": "SPAZM Spetsdod Round",
@@ -8939,7 +8939,7 @@
         "Availability": "14/30days",
         "Cost": "GM",
         "Street Index": "GM",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       },
       {
         "Name": "Stinger Spetsdod Round",
@@ -8949,7 +8949,7 @@
         "Availability": "4/48hrs",
         "Cost": "100",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       },
       {
         "Name": "Chaff (ECM) Grenade (A)",
@@ -10863,7 +10863,7 @@
         "Availability": "2/48hrs",
         "Cost": "750",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.93"
       },
       {
         "Name": "Armant",
@@ -10874,7 +10874,7 @@
         "Availability": "4/48hrs",
         "Cost": "1100",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.93"
       },
       {
         "Name": "Armant",
@@ -10885,7 +10885,7 @@
         "Availability": "4/48hrs",
         "Cost": "600",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.93"
       },
       {
         "Name": "Armant",
@@ -10896,7 +10896,7 @@
         "Availability": "2/48hrs",
         "Cost": "4500",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.93"
       },
       {
         "Name": "Armant",
@@ -10907,7 +10907,7 @@
         "Availability": "3/48hrs",
         "Cost": "1000",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.93"
       },
       {
         "Name": "Armant",
@@ -10918,7 +10918,7 @@
         "Availability": "2/48hrs",
         "Cost": "3500",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.93"
       },
       {
         "Name": "Eji Armored Cloak",
@@ -11402,7 +11402,7 @@
         "Availability": "6/72hrs",
         "Cost": "500",
         "Street Index": ".9",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.17"
       },
       {
         "Name": "Uniware Armored Jacket",
@@ -11545,7 +11545,7 @@
         "Availability": "6/48hrs",
         "Cost": "2000",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.94"
       },
       {
         "Name": "Vashon Island Hunt Ball Set",
@@ -11556,7 +11556,7 @@
         "Availability": "5/48hrs",
         "Cost": "3000",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.94"
       },
       {
         "Name": "Zo",
@@ -12029,7 +12029,7 @@
         "Availability": "18/1mth",
         "Cost": "25000",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.54"
       },
       {
         "Name": "Medium Military Armor",
@@ -12040,7 +12040,7 @@
         "Availability": "24/1mth",
         "Cost": "45000",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.54"
       },
       {
         "Name": "Heavy Military Armor",
@@ -12051,7 +12051,7 @@
         "Availability": "28/1mth",
         "Cost": "70000",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.54"
       },
       {
         "Name": "Military Helmet",
@@ -12062,7 +12062,7 @@
         "Availability": "24/1mth",
         "Cost": "2500",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.54"
       },
       {
         "Name": "MetalGear Arm Piece",
@@ -12205,7 +12205,7 @@
         "Availability": "18/14days",
         "Cost": "15000",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.17"
       },
       {
         "Name": "Gear",
@@ -17254,7 +17254,7 @@
         "Availability": "5/60hrs",
         "Cost": "70",
         "Street Index": "1.3",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       },
       {
         "Name": "Slosh Bag",
@@ -17524,7 +17524,7 @@
         "Availability": "always",
         "Cost": "2500",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.95"
       },
       {
         "Name": "Fuchi RealSense MasterSim",
@@ -17542,7 +17542,7 @@
         "Availability": "always",
         "Cost": "200",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.95"
       },
       {
         "Name": "Sony Beautiful Dreamer II",
@@ -17551,7 +17551,7 @@
         "Availability": "always",
         "Cost": "1800",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.95"
       },
       {
         "Name": "Truman Dreambox",
@@ -17569,7 +17569,7 @@
         "Availability": "4/36hrs",
         "Cost": "75000",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.95"
       },
       {
         "Name": "Cheap Baseline ACT Recording",
@@ -17668,7 +17668,7 @@
         "Availability": "always",
         "Cost": "9",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.95"
       },
       {
         "Name": "Average Full-X Dir-X Recording",
@@ -17686,7 +17686,7 @@
         "Availability": "always",
         "Cost": "300",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.95"
       },
       {
         "Name": "Current Hit Full-X Dir-X Rec",
@@ -17695,7 +17695,7 @@
         "Availability": "always",
         "Cost": "450",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.95"
       },
       {
         "Name": "Video Disk",
@@ -18010,7 +18010,7 @@
         "Availability": "Always",
         "Cost": "20xMP",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.95"
       },
       {
         "Name": "Computer Printer",
@@ -18523,7 +18523,7 @@
         "Availability": "2/24hrs",
         "Cost": "750",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.95"
       },
       {
         "Name": "Zetatech Drug Analyzer 1",
@@ -18946,7 +18946,7 @@
         "Availability": "2/72hrs",
         "Cost": "700",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "Fuchi VX2200 Portacam",
@@ -19009,7 +19009,7 @@
         "Availability": "3/48hrs",
         "Cost": "2200",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "AZT Micro30 StaticBrace Wrist",
@@ -19018,7 +19018,7 @@
         "Availability": "3/48hrs",
         "Cost": "2200",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "Cinema Pr. Steadycam Chest",
@@ -19054,7 +19054,7 @@
         "Availability": "3/48hrs",
         "Cost": "200",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "Fuchi I-C-U Autocam Controller",
@@ -19063,7 +19063,7 @@
         "Availability": "5/72hrs",
         "Cost": "400",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "Sekrit Sistemz No-Sho Camtrol.",
@@ -19168,7 +19168,7 @@
         "Availability": "4/72hrs",
         "Cost": "10000",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "Sony TFX-10000 Imaging Gener.",
@@ -19393,7 +19393,7 @@
         "Availability": "8/1week",
         "Cost": "2000",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "Cable Signal Formatter ECM 1",
@@ -19402,7 +19402,7 @@
         "Availability": "9/1week",
         "Cost": "3500",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "Cable Signal Formatter ECM 2",
@@ -19411,7 +19411,7 @@
         "Availability": "10/1week",
         "Cost": "5000",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "Cable Signal Formatter ECM 3",
@@ -19420,7 +19420,7 @@
         "Availability": "11/1week",
         "Cost": "6500",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "Cable Signal Formatter ECM 4",
@@ -19429,7 +19429,7 @@
         "Availability": "12/1week",
         "Cost": "8000",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "Cable Signal Formatter ECM 5",
@@ -19438,7 +19438,7 @@
         "Availability": "13/1week",
         "Cost": "9500",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "Cable Signal Formatter ECM 6",
@@ -19447,7 +19447,7 @@
         "Availability": "14/1week",
         "Cost": "11000",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "Ares CyberMed Psychscanner",
@@ -19456,7 +19456,7 @@
         "Availability": "8/2weeks",
         "Cost": "25000",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "EBMM Therapeutic ASIST System",
@@ -19510,7 +19510,7 @@
         "Availability": "8/2weeks",
         "Cost": "200000",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.97"
       },
       {
         "Name": "Truman Reality-500",
@@ -19519,7 +19519,7 @@
         "Availability": "8/1week",
         "Cost": "25000",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.97"
       },
       {
         "Name": "Sense Patch Injector",
@@ -19528,7 +19528,7 @@
         "Availability": "8/1week",
         "Cost": "25000",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.97"
       },
       {
         "Name": "Signal Peak Controller",
@@ -19537,7 +19537,7 @@
         "Availability": "8/1week",
         "Cost": "15000",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.97"
       },
       {
         "Name": "MonoPOV ACT Format",
@@ -19546,7 +19546,7 @@
         "Availability": "8/1week",
         "Cost": "15000",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.95"
       },
       {
         "Name": "MonoPOV Dir-X Format",
@@ -19555,7 +19555,7 @@
         "Availability": "8/1week",
         "Cost": "75000",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.95"
       },
       {
         "Name": "Musical instrument: Cheap Complexity 1",
@@ -19906,7 +19906,7 @@
         "Availability": "always",
         "Cost": "2100",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.35"
       },
       {
         "Name": "Synthesizers Fine, 1 voice",
@@ -20482,7 +20482,7 @@
         "Availability": "2/36hrs",
         "Cost": "100",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.98"
       },
       {
         "Name": "Hand Mike",
@@ -20491,7 +20491,7 @@
         "Availability": "always",
         "Cost": "100",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.98"
       },
       {
         "Name": "Mike Stand",
@@ -20500,7 +20500,7 @@
         "Availability": "always",
         "Cost": "50",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.98"
       },
       {
         "Name": "Mike Boom",
@@ -20509,7 +20509,7 @@
         "Availability": "3/36hrs",
         "Cost": "75",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.98"
       },
       {
         "Name": "Basic Mixer Unit",
@@ -20572,7 +20572,7 @@
         "Availability": "6/48hrs",
         "Cost": "1000",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.98"
       },
       {
         "Name": "Minicorder",
@@ -20581,7 +20581,7 @@
         "Availability": "4/24hrs",
         "Cost": "700",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.98"
       },
       {
         "Name": "Pocket Sized Polycorder",
@@ -20608,7 +20608,7 @@
         "Availability": "always",
         "Cost": "200",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.98"
       },
       {
         "Name": "Sprawl Fuserr",
@@ -20617,7 +20617,7 @@
         "Availability": "always",
         "Cost": "1200",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.98"
       },
       {
         "Name": "Cab Hailer",
@@ -20716,7 +20716,7 @@
         "Availability": "5/48hrs",
         "Cost": "165",
         "Street Index": "1.5",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.13"
       },
       {
         "Name": "WorldSat Comm Flopscreen",
@@ -24718,7 +24718,7 @@
         "Availability": "1/10days",
         "Cost": "10000",
         "Street Index": "1.5",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.99"
       },
       {
         "Name": "Data Codebreaker Lv 2",
@@ -24728,7 +24728,7 @@
         "Availability": "2/10days",
         "Cost": "20000",
         "Street Index": "1.5",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.99"
       },
       {
         "Name": "Data Codebreaker Lv 3",
@@ -24738,7 +24738,7 @@
         "Availability": "3/10days",
         "Cost": "30000",
         "Street Index": "1.5",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.99"
       },
       {
         "Name": "Data Codebreaker Lv 4",
@@ -24748,7 +24748,7 @@
         "Availability": "4/10days",
         "Cost": "40000",
         "Street Index": "1.5",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.99"
       },
       {
         "Name": "Data Codebreaker Lv 5",
@@ -24758,7 +24758,7 @@
         "Availability": "5/10days",
         "Cost": "50000",
         "Street Index": "1.5",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.99"
       },
       {
         "Name": "Data Codebreaker Lv 6",
@@ -24768,7 +24768,7 @@
         "Availability": "6/10days",
         "Cost": "60000",
         "Street Index": "1.5",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.99"
       },
       {
         "Name": "Data Codebreaker Lv 7",
@@ -24778,7 +24778,7 @@
         "Availability": "7/10days",
         "Cost": "70000",
         "Street Index": "1.5",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.99"
       },
       {
         "Name": "Data Codebreaker Lv 8",
@@ -24788,7 +24788,7 @@
         "Availability": "8/10days",
         "Cost": "80000",
         "Street Index": "1.5",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.99"
       },
       {
         "Name": "Data Codebreaker Lv 9",
@@ -24798,7 +24798,7 @@
         "Availability": "9/10days",
         "Cost": "90000",
         "Street Index": "1.5",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.99"
       },
       {
         "Name": "Data Codebreaker Lv 10",
@@ -24808,7 +24808,7 @@
         "Availability": "10/10days",
         "Cost": "100000",
         "Street Index": "1.5",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.99"
       },
       {
         "Name": "Omega Phone Tap",
@@ -26978,7 +26978,7 @@
         "Availability": "8/7days",
         "Cost": "60",
         "Street Index": "2.5",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.12"
       },
       {
         "Name": "Microtech Virtual Reality BBS",
@@ -27048,7 +27048,7 @@
         "Availability": "6/72hrs",
         "Cost": "7000",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.90"
       },
       {
         "Name": "Raven",
@@ -27108,7 +27108,7 @@
         "Availability": "8/72hrs",
         "Cost": "3000",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.19"
       }
     ]
   },
