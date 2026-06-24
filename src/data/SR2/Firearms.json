@@ -10,7 +10,7 @@
     "Cost": "1300",
     "StreetIndex": "3",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.20"
   },
   {
     "Name": "Barton Arms Gun Cane (HOPist)",
@@ -23,7 +23,7 @@
     "Cost": "500",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.20"
   },
   {
     "Name": "BudgetArms C13 (HOPist)",
@@ -36,7 +36,7 @@
     "Cost": "150",
     "StreetIndex": ".75",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.14"
   },
   {
     "Name": "Ceska Diplomat (HOPist)",
@@ -49,7 +49,7 @@
     "Cost": "250",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.14"
   },
   {
     "Name": "Colt Take-Down (HOPist)",
@@ -62,7 +62,7 @@
     "Cost": "150",
     "StreetIndex": ".8",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.14"
   },
   {
     "Name": "Dai Lung Cybermag 15 (HOPist)",
@@ -75,7 +75,7 @@
     "Cost": "100",
     "StreetIndex": ".7",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.14"
   },
   {
     "Name": "Federated Arms X-22 (HOPist)",
@@ -88,7 +88,7 @@
     "Cost": "300",
     "StreetIndex": ".8",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.14"
   },
   {
     "Name": "Fich. Tiff. Needler (HOPist)",
@@ -101,7 +101,7 @@
     "Cost": "650",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.17"
   },
   {
     "Name": "Hammerli Model 520 (HOPist)",
@@ -114,7 +114,7 @@
     "Cost": "1000",
     "StreetIndex": "1",
     "Accessories": "RC:(1)",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.14"
   },
   {
     "Name": "H&K P48 (HOPist)",
@@ -127,7 +127,7 @@
     "Cost": "300",
     "StreetIndex": "1.5",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.20"
   },
   {
     "Name": "N. Ind. Firing Knife (HOPist)",
@@ -140,7 +140,7 @@
     "Cost": "250",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.9"
   },
   {
     "Name": "Nova Infranat. OneShot(HOPist)",
@@ -166,33 +166,7 @@
     "Cost": "300",
     "StreetIndex": ".8",
     "Accessories": "None",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Hornet (LPist)",
-    "Concealability": "8",
-    "Ammunition": "7(cy)",
-    "Mode": "DAR(SA)",
-    "Damage": "7L",
-    "Weight": "2",
-    "Availability": "4/48hrs",
-    "Cost": "250",
-    "StreetIndex": ".8",
-    "Accessories": "None",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Scorpion (LPist)",
-    "Concealability": "8",
-    "Ammunition": "7(cy)",
-    "Mode": "DAR(SA)",
-    "Damage": "7L",
-    "Weight": "2.25",
-    "Availability": "4/48hrs",
-    "Cost": "275",
-    "StreetIndex": "1",
-    "Accessories": "Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.14"
   },
   {
     "Name": "Dai Lung Streetmaster (LPist)",
@@ -205,7 +179,7 @@
     "Cost": "325",
     "StreetIndex": ".8",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.15"
   },
   {
     "Name": "Derringer (LPist)",
@@ -231,46 +205,7 @@
     "Cost": "450",
     "StreetIndex": ".75",
     "Accessories": "None",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Glock 19 Mk.IV (LPist)",
-    "Concealability": "5",
-    "Ammunition": "17(c)",
-    "Mode": "SA",
-    "Damage": "6L",
-    "Weight": "1",
-    "Availability": "8/24hrs",
-    "Cost": "750",
-    "StreetIndex": "2",
-    "Accessories": "Laser Sight, RC:(1)",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Glock 19 Mk.IV Smart (LPist)",
-    "Concealability": "5",
-    "Ammunition": "17(c)",
-    "Mode": "SA",
-    "Damage": "6L",
-    "Weight": "1",
-    "Availability": "8/24hrs",
-    "Cost": "950",
-    "StreetIndex": "2",
-    "Accessories": "Smartlink, RC:(1)",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Glck 19 Mk.IV SmartII (LPist)",
-    "Concealability": "5",
-    "Ammunition": "17(c)",
-    "Mode": "SA",
-    "Damage": "6L",
-    "Weight": "1",
-    "Availability": "8/24hrs",
-    "Cost": "1150",
-    "StreetIndex": "2",
-    "Accessories": "Smartlink-2, RC:(1)",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.16"
   },
   {
     "Name": "H&K Cavaet (LPist)",
@@ -283,7 +218,7 @@
     "Cost": "500",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.16"
   },
   {
     "Name": "H&K P7S15 (LPist)",
@@ -296,7 +231,7 @@
     "Cost": "400",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.16"
   },
   {
     "Name": "H&K P11M8 (LPist)",
@@ -309,7 +244,7 @@
     "Cost": "600",
     "StreetIndex": "1.25",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.22"
   },
   {
     "Name": "H&K P11M13 (LPist)",
@@ -322,7 +257,7 @@
     "Cost": "650",
     "StreetIndex": "1.25",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.22"
   },
   {
     "Name": "Mauser Ladyline (LPist)",
@@ -335,7 +270,7 @@
     "Cost": "350",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.14"
   },
   {
     "Name": "Militech Arms Avenger (LPist)",
@@ -348,7 +283,7 @@
     "Cost": "325",
     "StreetIndex": ".8",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.15"
   },
   {
     "Name": "Nostal. Ind. Gentleman (LPist)",
@@ -400,7 +335,7 @@
     "Cost": "250",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.9"
   },
   {
     "Name": "Ruger P-8 (LPist)",
@@ -413,7 +348,7 @@
     "Cost": "395",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.16"
   },
   {
     "Name": "S&W Model 6739 (LPist)",
@@ -426,7 +361,7 @@
     "Cost": "250",
     "StreetIndex": ".9",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.16"
   },
   {
     "Name": "Thumper (LPist)",
@@ -452,20 +387,7 @@
     "Cost": "1000",
     "StreetIndex": "2",
     "Accessories": "Improved Gas Vent (2)",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Black Widow (MaPist)",
-    "Concealability": "6",
-    "Ammunition": "21(c)",
-    "Mode": "SA/BF",
-    "Damage": "6L",
-    "Weight": "1",
-    "Availability": "14/7days",
-    "Cost": "1500",
-    "StreetIndex": "3",
-    "Accessories": "Silencer, Smartlink-2",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.17"
   },
   {
     "Name": "Beretta Model 200ST (MaPist)",
@@ -478,7 +400,7 @@
     "Cost": "750",
     "StreetIndex": "1.5",
     "Accessories": "RC:(1)",
-    "BookPage": "ssc.???"
+    "BookPage": "ssc.19"
   },
   {
     "Name": "BudgetArms Laser-Nine (MaPist)",
@@ -504,7 +426,7 @@
     "Cost": "1150",
     "StreetIndex": "3",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.17"
   },
   {
     "Name": "H&K VP80Z (MaPist)",
@@ -517,7 +439,7 @@
     "Cost": "1200",
     "StreetIndex": "3",
     "Accessories": "RC:(1)",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.23"
   },
   {
     "Name": "Micro Uzi III (MaPist)",
@@ -530,7 +452,7 @@
     "Cost": "750",
     "StreetIndex": "1",
     "Accessories": "Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.22"
   },
   {
     "Name": "Ruger P-4 (MaPist)",
@@ -556,7 +478,7 @@
     "Cost": "750",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.17"
   },
   {
     "Name": "Altmayr SP (HPist)",
@@ -569,7 +491,7 @@
     "Cost": "900",
     "StreetIndex": "1.5",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.15"
   },
   {
     "Name": "Ares Black Knight (HPist)",
@@ -585,58 +507,6 @@
     "BookPage": "tss.16"
   },
   {
-    "Name": "Ares Constrictor (HPist)",
-    "Concealability": "6",
-    "Ammunition": "6(cy)",
-    "Mode": "DAR",
-    "Damage": "10M",
-    "Weight": "2.5",
-    "Availability": "7/7days",
-    "Cost": "400",
-    "StreetIndex": "2",
-    "Accessories": "Smartlink",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Jaguar (HPist)",
-    "Concealability": "5",
-    "Ammunition": "6(cy)",
-    "Mode": "DAR",
-    "Damage": "10M",
-    "Weight": "2.5",
-    "Availability": "5/4days",
-    "Cost": "300",
-    "StreetIndex": "1",
-    "Accessories": "Laser Sight",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Stingray (HPist)",
-    "Concealability": "4",
-    "Ammunition": "6(cy)",
-    "Mode": "DAR",
-    "Damage": "10M",
-    "Weight": "2.75",
-    "Availability": "7/7days",
-    "Cost": "500",
-    "StreetIndex": "3",
-    "Accessories": "Laser Sight, RC:(1)",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Stingray Smart (HPist)",
-    "Concealability": "4",
-    "Ammunition": "6(cy)",
-    "Mode": "DAR",
-    "Damage": "10M",
-    "Weight": "2.75",
-    "Availability": "7/7days",
-    "Cost": "500",
-    "StreetIndex": "3",
-    "Accessories": "Smartlink, RC:(1)",
-    "BookPage": "ssc.???"
-  },
-  {
     "Name": "Armalite 44 (HPist)",
     "Concealability": "4",
     "Ammunition": "8(c)",
@@ -647,7 +517,7 @@
     "Cost": "450",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.21"
   },
   {
     "Name": "Beretta Model 95S (HPist)",
@@ -660,7 +530,7 @@
     "Cost": "500",
     "StreetIndex": "1",
     "Accessories": "Smartlink-2",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.15"
   },
   {
     "Name": "Beretta Model 95S-B (HPist)",
@@ -673,7 +543,7 @@
     "Cost": "750",
     "StreetIndex": "1.75",
     "Accessories": "Smartlink-2",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.15"
   },
   {
     "Name": "Beretta 100S (HPist)",
@@ -686,7 +556,7 @@
     "Cost": "650",
     "StreetIndex": "1.5",
     "Accessories": "Laser Sight, Silencer",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.15"
   },
   {
     "Name": "Beretta 100S Smart (HPist)",
@@ -699,7 +569,7 @@
     "Cost": "1300",
     "StreetIndex": "1.5",
     "Accessories": "Smartlink, Silencer",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.15"
   },
   {
     "Name": "Beretta Model 110-T (HPist)",
@@ -712,7 +582,7 @@
     "Cost": "400",
     "StreetIndex": "1",
     "Accessories": "Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.15"
   },
   {
     "Name": "Bond&Carrington MP-11 (HPist)",
@@ -725,7 +595,7 @@
     "Cost": "1200",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (2), Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.15"
   },
   {
     "Name": "B&Carr. MP-11 Smart (HPist)",
@@ -738,7 +608,7 @@
     "Cost": "2000",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (2), Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.15"
   },
   {
     "Name": "Browning Defender 10 (HPist)",
@@ -751,7 +621,7 @@
     "Cost": "900",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.15"
   },
   {
     "Name": "Browning Def. 10 Smart (HPist)",
@@ -764,7 +634,7 @@
     "Cost": "1800",
     "StreetIndex": "2",
     "Accessories": "Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.15"
   },
   {
     "Name": "BudgetArms Auto (HPist) 3",
@@ -777,7 +647,7 @@
     "Cost": "350",
     "StreetIndex": ".7",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.19"
   },
   {
     "Name": "Colt 1911 (HPist)",
@@ -816,7 +686,7 @@
     "Cost": "500",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.21"
   },
   {
     "Name": "Colt Manhunter S (HPist)",
@@ -829,7 +699,7 @@
     "Cost": "600",
     "StreetIndex": "1",
     "Accessories": "Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "ssc.23"
   },
   {
     "Name": "Colt Manhunter S+ (HPist)",
@@ -842,7 +712,7 @@
     "Cost": "800",
     "StreetIndex": "1",
     "Accessories": "Smartlink-2",
-    "BookPage": "ssc.???"
+    "BookPage": "ssc.23"
   },
   {
     "Name": "Colt Peacemaker (HPist)",
@@ -855,7 +725,7 @@
     "Cost": "350",
     "StreetIndex": ".9",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.17"
   },
   {
     "Name": "Colt Penetrator (HPist)",
@@ -868,7 +738,7 @@
     "Cost": "600",
     "StreetIndex": "1.5",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.21"
   },
   {
     "Name": "DinaTech F5A (HPist)",
@@ -881,7 +751,7 @@
     "Cost": "500",
     "StreetIndex": "3",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.15"
   },
   {
     "Name": "DinaTech F5B (HPist)",
@@ -894,7 +764,7 @@
     "Cost": "700",
     "StreetIndex": "3",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.15"
   },
   {
     "Name": "Federated Arms 454 DA (HPist)",
@@ -920,7 +790,7 @@
     "Cost": "600",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.17"
   },
   {
     "Name": "Fichetti Military XI (HPist)",
@@ -933,7 +803,7 @@
     "Cost": "900",
     "StreetIndex": "2",
     "Accessories": "Laser Sight, RC:(1)",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.17"
   },
   {
     "Name": "Fich. Mil. XI Smart (HPist)",
@@ -946,7 +816,7 @@
     "Cost": "1800",
     "StreetIndex": "2",
     "Accessories": "Smartlink, RC:(1)",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.17"
   },
   {
     "Name": "FN 5-7 [TSS version] (HPist)",
@@ -973,45 +843,6 @@
     "StreetIndex": "1",
     "Accessories": "",
     "BookPage": "bjf.00"
-  },
-  {
-    "Name": "Glock 22 Mk. III (HPist)",
-    "Concealability": "4",
-    "Ammunition": "15(c)",
-    "Mode": "SA",
-    "Damage": "9M",
-    "Weight": "2.5",
-    "Availability": "6/24hrs",
-    "Cost": "600",
-    "StreetIndex": "1.5",
-    "Accessories": "Laser Sight",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Glock 22 Mk. III Smart (HPist)",
-    "Concealability": "4",
-    "Ammunition": "15(c)",
-    "Mode": "SA",
-    "Damage": "9M",
-    "Weight": "2.5",
-    "Availability": "6/24hrs",
-    "Cost": "800",
-    "StreetIndex": "1.5",
-    "Accessories": "Smartlink",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Glck22 Mk. III SmartII (HPist)",
-    "Concealability": "4",
-    "Ammunition": "15(c)",
-    "Mode": "SA",
-    "Damage": "9M",
-    "Weight": "2.5",
-    "Availability": "6/24hrs",
-    "Cost": "1000",
-    "StreetIndex": "1.5",
-    "Accessories": "Smartlink-2",
-    "BookPage": "ssc.???"
   },
   {
     "Name": "Glck0 Machine Pistol (HPist) 3",
@@ -1050,20 +881,7 @@
     "Cost": "700",
     "StreetIndex": "1.75",
     "Accessories": "None",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "H&K \"Blaster\" (HPist)",
-    "Concealability": "4",
-    "Ammunition": "6(m)",
-    "Mode": "SS",
-    "Damage": "12M",
-    "Weight": "3",
-    "Availability": "-",
-    "Cost": "-",
-    "StreetIndex": "-",
-    "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.16"
   },
   {
     "Name": "H&K OHWS (HPist)",
@@ -1076,7 +894,7 @@
     "Cost": "2500",
     "StreetIndex": "2",
     "Accessories": "Flashlight, Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.22"
   },
   {
     "Name": "H&K USP45 (MPist)",
@@ -1128,7 +946,7 @@
     "Cost": "2500",
     "StreetIndex": "3",
     "Accessories": "Gas Vent (3), Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.15"
   },
   {
     "Name": "Kimber Custom CDP (MPist)",
@@ -1180,7 +998,7 @@
     "Cost": "1595",
     "StreetIndex": "2",
     "Accessories": "Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.20"
   },
   {
     "Name": "Mal. Arms Sliver Gun (HPist)",
@@ -1206,7 +1024,7 @@
     "Cost": "460",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.20"
   },
   {
     "Name": "Phoenix Gyroc (HPist)",
@@ -1232,46 +1050,7 @@
     "Cost": "190",
     "StreetIndex": ".6",
     "Accessories": "None",
-    "BookPage": "ssc.???"
-  },
-  {
-    "name": "Ruger Thunderbolt",
-    "Concealability": "4",
-    "Ammunition": "12(c)",
-    "Mode": "BF",
-    "Damage": "12S*",
-    "Weight": "2.75",
-    "Availability": "14/12days",
-    "Cost": "1000",
-    "Street Index": "3",
-    "Accessories": "None",
-    "BookPage": "ssc.???"
-  },
-  {
-    "name": "Ruger Thunderbolt - Laser Sight",
-    "Concealability": "4",
-    "Ammunition": "12(c)",
-    "Mode": "BF",
-    "Damage": "12S*",
-    "Weight": "2.75",
-    "Availability": "14/12days",
-    "Cost": "1250",
-    "Street Index": "3",
-    "Accessories": "Laser Sight",
-    "BookPage": "ssc.???"
-  },
-  {
-    "name": "Ruger Thunderbolt - Smartlinked",
-    "Concealability": "4",
-    "Ammunition": "12(c)",
-    "Mode": "BF",
-    "Damage": "12S*",
-    "Weight": "2.75",
-    "Availability": "14/12days",
-    "Cost": "1400",
-    "Street Index": "3",
-    "Accessories": "Smatlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.30"
   },
   {
     "Name": "Riot Gun (HPist)",
@@ -1284,7 +1063,7 @@
     "Cost": "500",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.19"
   },
   {
     "Name": "Ruger M45 (HPist)",
@@ -1297,7 +1076,7 @@
     "Cost": "860",
     "StreetIndex": "3",
     "Accessories": "Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.21"
   },
   {
     "Name": "Ruger P-105 (HPist)",
@@ -1310,7 +1089,7 @@
     "Cost": "600",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.17"
   },
   {
     "Name": "Ruger Warhawk (HPist)",
@@ -1323,7 +1102,7 @@
     "Cost": "250",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.21"
   },
   {
     "Name": "S&W \"Tri-Star\" (HPist)",
@@ -1336,7 +1115,7 @@
     "Cost": "375",
     "StreetIndex": "1.5",
     "Accessories": "Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.17"
   },
   {
     "Name": "Sig Sauer P300 (HPist)",
@@ -1349,7 +1128,7 @@
     "Cost": "800",
     "StreetIndex": "2",
     "Accessories": "Caseless, Laser Sight, Silencer",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.17"
   },
   {
     "Name": "SIG P226- .40 S&W (MPist)",
@@ -1375,7 +1154,7 @@
     "Cost": "950",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.17"
   },
   {
     "Name": "SternMeyer Type5 (HPist) 3",
@@ -1388,7 +1167,7 @@
     "Cost": "400",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.17"
   },
   {
     "Name": "SuperEagle (HPist)",
@@ -1401,7 +1180,7 @@
     "Cost": "600",
     "StreetIndex": "1.5",
     "Accessories": "Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.21"
   },
   {
     "Name": "Syrko Wolf (HPist)",
@@ -1414,7 +1193,7 @@
     "Cost": "800",
     "StreetIndex": "1.5",
     "Accessories": "Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.24"
   },
   {
     "Name": "Walther Secura (HPist)",
@@ -1427,7 +1206,7 @@
     "Cost": "500",
     "StreetIndex": "1.5",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.17"
   },
   {
     "Name": "Zastava Mag. Mod.2054 (HPist)",
@@ -1440,7 +1219,7 @@
     "Cost": "350",
     "StreetIndex": ".9",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.17"
   },
   {
     "Name": "Ares Predator III ERASe (VHP)",
@@ -7810,7 +7589,7 @@
     "Cost": "550",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.13"
   },
   {
     "Name": "Dynatech Industries HT (Tasr)",
@@ -7917,17 +7696,17 @@
     "BookPage": "cb1.34"
   },
   {
-    "Name": "Taser II (Tasr) 1",
+    "Name": "Taser II (Tasr)",
     "Concealability": "7",
-    "Ammunition": "0",
-    "Mode": "5S Stun",
-    "Damage": ".5",
-    "Weight": "4/24hrs",
-    "Availability": "300",
-    "Cost": "1",
-    "StreetIndex": "sr2.???",
-    "Accessories": "",
-    "BookPage": ""
+    "Ammunition": "1(b)",
+    "Mode": "SS",
+    "Damage": "5S Stun",
+    "Weight": ".5",
+    "Availability": "4/24hrs",
+    "Cost": "300",
+    "StreetIndex": "1",
+    "Accessories": "None",
+    "BookPage": "sr2.???"
   },
   {
     "Name": "Techtronica Model 009 (Tasr)",
@@ -7940,7 +7719,7 @@
     "Cost": "1950",
     "StreetIndex": "2.5",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.13"
   },
   {
     "Name": "9mm Flechette SMG (SMG)",
@@ -7966,7 +7745,7 @@
     "Cost": "1000",
     "StreetIndex": ".9",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.23"
   },
   {
     "Name": "Ares Tommy Gun (SMG)",
@@ -8044,7 +7823,7 @@
     "Cost": "1250",
     "StreetIndex": "1.25",
     "Accessories": "Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.23"
   },
   {
     "Name": "Buzzsaw (SMG)",
@@ -8086,32 +7865,6 @@
     "BookPage": "tss.7"
   },
   {
-    "Name": "Defiance AT-900 (SMG)",
-    "Concealability": "4",
-    "Ammunition": "30(c)",
-    "Mode": "SA/BF/FA",
-    "Damage": "6M",
-    "Weight": "3.75",
-    "Availability": "5/36hrs",
-    "Cost": "900",
-    "StreetIndex": "1",
-    "Accessories": "Gas Vent (2), Laser Sight",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Defiance AT-900 Smart (SMG)",
-    "Concealability": "4",
-    "Ammunition": "30(c)",
-    "Mode": "SA/BF/FA",
-    "Damage": "6M",
-    "Weight": "3.75",
-    "Availability": "5/36hrs",
-    "Cost": "1800",
-    "StreetIndex": "1",
-    "Accessories": "Gas Vent (2), Smartlink",
-    "BookPage": "ssc.???"
-  },
-  {
     "Name": "Fed. Arms Tech Asslt II (SMG)",
     "Concealability": "5",
     "Ammunition": "50(c)",
@@ -8122,7 +7875,7 @@
     "Cost": "600",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.22"
   },
   {
     "Name": "FN P55 (SMG)",
@@ -8135,7 +7888,7 @@
     "Cost": "650",
     "StreetIndex": "2.5",
     "Accessories": "Gas Vent (2), Mag:(2)",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.23"
   },
   {
     "Name": "FN P55 Smart (SMG)",
@@ -8148,33 +7901,7 @@
     "Cost": "900",
     "StreetIndex": "2.75",
     "Accessories": "Gas Vent (2), Smartlink",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "H&K MP7z Urban Combat (SMG)",
-    "Concealability": "6/18",
-    "Ammunition": "36(c)",
-    "Mode": "SA/BF/FA",
-    "Damage": "7M",
-    "Weight": "1.75",
-    "Availability": "6/6days",
-    "Cost": "2200",
-    "StreetIndex": "2",
-    "Accessories": "Gas Vent (3), Silencer",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "H&K MP7z Urb. Comb.Smart (SMG)",
-    "Concealability": "6/18",
-    "Ammunition": "36(c)",
-    "Mode": "SA/BF/FA",
-    "Damage": "7M",
-    "Weight": "2",
-    "Availability": "8/8days",
-    "Cost": "4000",
-    "StreetIndex": "2",
-    "Accessories": "Gas Vent (3), Silencer, Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.23"
   },
   {
     "Name": "H&K MP-9 (SMG)",
@@ -8187,7 +7914,7 @@
     "Cost": "900",
     "StreetIndex": "1",
     "Accessories": "Gas Vent (3), Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.22"
   },
   {
     "Name": "H&K MP-2013 (SMG)",
@@ -8200,7 +7927,7 @@
     "Cost": "900",
     "StreetIndex": "1.1",
     "Accessories": "Sound Suppressor",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.23"
   },
   {
     "Name": "H&K MPK9 (SMG)",
@@ -8213,7 +7940,7 @@
     "Cost": "1040",
     "StreetIndex": ".8",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.22"
   },
   {
     "Name": "H&K MPK-11 (SMG)",
@@ -8226,7 +7953,7 @@
     "Cost": "1400",
     "StreetIndex": "1.2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.24"
   },
   {
     "Name": "Ingram MAC-14 (SMG)",
@@ -8239,7 +7966,7 @@
     "Cost": "650",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.24"
   },
   {
     "Name": "Ingram MAC-20 (SMG)",
@@ -8252,7 +7979,7 @@
     "Cost": "700",
     "StreetIndex": "1.5",
     "Accessories": "Sound Suppressor",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.24"
   },
   {
     "Name": "Mal. Arms SubFlechette (SMG)",
@@ -8317,7 +8044,7 @@
     "Cost": "700",
     "StreetIndex": "1",
     "Accessories": "Gas Vent (2), Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.24"
   },
   {
     "Name": "Set.-Arasaka \"PMS\" Adv. (SMG)",
@@ -8343,7 +8070,7 @@
     "Cost": "1150",
     "StreetIndex": "1",
     "Accessories": "Caseless, Smartlink, Sound Suppressor",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.22"
   },
   {
     "Name": "Sternmeyer SMG 21 (SMG)",
@@ -8356,7 +8083,7 @@
     "Cost": "1000",
     "StreetIndex": "1.1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.24"
   },
   {
     "Name": "Steyr MP i 25 (SMG)",
@@ -8369,7 +8096,7 @@
     "Cost": "725",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (1), Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.23"
   },
   {
     "Name": "Syrko Eagle (SMG)",
@@ -8382,7 +8109,7 @@
     "Cost": "900",
     "StreetIndex": "1",
     "Accessories": "Gas Vent (2), Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.24"
   },
   {
     "Name": "UziS (SMG) 3",
@@ -8395,7 +8122,7 @@
     "Cost": "900",
     "StreetIndex": "2",
     "Accessories": "Laser Sight, Sound Suppressor",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.22"
   },
   {
     "Name": "Uzi IV (SMG)",
@@ -8408,7 +8135,7 @@
     "Cost": "1000",
     "StreetIndex": "1",
     "Accessories": "Gas Vent (2), Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.22"
   },
   {
     "Name": "Uzi IV Smart (SMG)",
@@ -8421,7 +8148,7 @@
     "Cost": "1200",
     "StreetIndex": "1.25",
     "Accessories": "Gas Vent (2), Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.22"
   },
   {
     "Name": "Uzi Miniauto 9 (SMG)",
@@ -8434,7 +8161,7 @@
     "Cost": "700",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.22"
   },
   {
     "Name": "Walther S900 (SMG)",
@@ -8447,7 +8174,7 @@
     "Cost": "900",
     "StreetIndex": "1",
     "Accessories": "Gas Vent (2), Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.24"
   },
   {
     "Name": "H&K 227 .227HK (Carb)",
@@ -9097,7 +8824,7 @@
     "Cost": "1000",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (1), Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.26"
   },
   {
     "Name": "Anti-Vehicular Rifle (AsRf)",
@@ -9110,7 +8837,7 @@
     "Cost": "6000",
     "StreetIndex": "3.2",
     "Accessories": "Mag:(2)",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.28"
   },
   {
     "Name": "Darra-Polytechnic M-9 (AsRf)",
@@ -9175,7 +8902,7 @@
     "Cost": "2000",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (2), Grenade Launcher (6-shot), Laser Sight, Mag:(2)",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.27"
   },
   {
     "Name": "FN RAL (AsRf)",
@@ -9188,7 +8915,7 @@
     "Cost": "1200",
     "StreetIndex": "2",
     "Accessories": "Mag:(1)",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.26"
   },
   {
     "Name": "H&K G9A4z/i (AsRf)",
@@ -9201,7 +8928,7 @@
     "Cost": "1500",
     "StreetIndex": "4",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.26"
   },
   {
     "Name": "H&K G36A3C Compact (Carb)",
@@ -9227,7 +8954,7 @@
     "Cost": "950",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (2)",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.29"
   },
   {
     "Name": "H&K HK 70 K (AsRf)",
@@ -9240,7 +8967,7 @@
     "Cost": "950",
     "StreetIndex": "2.25",
     "Accessories": "Gas Vent (2)",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.29"
   },
   {
     "Name": "Honda AR-1 (AsRf)",
@@ -9253,7 +8980,7 @@
     "Cost": "1000",
     "StreetIndex": "2",
     "Accessories": "Magnifcation (1)",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.26"
   },
   {
     "Name": "Kalashnikov A-80 (AsRf)",
@@ -9266,7 +8993,7 @@
     "Cost": "1100",
     "StreetIndex": "2.5",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.27"
   },
   {
     "Name": "Kalishnikov AK-100 (AsRf)",
@@ -9279,7 +9006,7 @@
     "Cost": "1000",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (2)",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.27"
   },
   {
     "Name": "Kalishnikov AK-100 Smart(AsRf)",
@@ -9292,7 +9019,7 @@
     "Cost": "2000",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (2), Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.27"
   },
   {
     "Name": "Kalishnikov AK-101 (AsRf)",
@@ -9305,7 +9032,7 @@
     "Cost": "1600",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (2), Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.27"
   },
   {
     "Name": "Kalishnikov AK-101 Smart(AsRf)",
@@ -9318,7 +9045,7 @@
     "Cost": "3200",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (2), Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.27"
   },
   {
     "Name": "M-16A1 (AsRf)",
@@ -9357,7 +9084,7 @@
     "Cost": "1400",
     "StreetIndex": "2.5",
     "Accessories": "Laser Sight, Mag:(1)",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.30"
   },
   {
     "Name": "Militech Cyborg Rifle (AsRf)",
@@ -9370,7 +9097,7 @@
     "Cost": "800",
     "StreetIndex": "2.5",
     "Accessories": "Gas Vent (2)",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.29"
   },
   {
     "Name": "Militech M-31a1 AICW (AsRf)",
@@ -9396,7 +9123,7 @@
     "Cost": "900",
     "StreetIndex": "2",
     "Accessories": "Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.27"
   },
   {
     "Name": "Parker Carbine (AsRf)",
@@ -9409,7 +9136,7 @@
     "Cost": "2500",
     "StreetIndex": "1",
     "Accessories": "Caseless, Gas Vent (2), RC:is halved",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.27"
   },
   {
     "Name": "S&W MdF \"Cyborg Assault\"(AsRf)",
@@ -9435,7 +9162,7 @@
     "Cost": "850",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (2), Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.27"
   },
   {
     "Name": "SIG 882 (AsRf)",
@@ -9448,7 +9175,7 @@
     "Cost": "850",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (2), Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.27"
   },
   {
     "Name": "Seco M-995 (AsRf)",
@@ -9461,7 +9188,7 @@
     "Cost": "3000",
     "StreetIndex": "3",
     "Accessories": "Gas Vent (3), Grenade Launcher (6-shot), Laser Sight, Rangefinder Grenade Link",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.26"
   },
   {
     "Name": "Seco M-995 Smart (AsRf)",
@@ -9474,7 +9201,7 @@
     "Cost": "6000",
     "StreetIndex": "3",
     "Accessories": "Gas Vent (3), Grenade Launcher (6-shot), Rangefinder Grenade Link, Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.26"
   },
   {
     "Name": "Shadow Arms Bullpup AR (AsRf)",
@@ -10605,20 +10332,7 @@
     "Cost": "1800",
     "StreetIndex": "2.25",
     "Accessories": "None",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Wippet (ShtG)",
-    "Concealability": "4",
-    "Ammunition": "6(m)",
-    "Mode": "SA",
-    "Damage": "6M/9M",
-    "Weight": "2",
-    "Availability": "5/36hrs",
-    "Cost": "1500",
-    "StreetIndex": "1.5",
-    "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.24"
   },
   {
     "Name": "Autoshot Riot Gun (ShtG)",
@@ -10631,7 +10345,7 @@
     "Cost": "1500",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.25"
   },
   {
     "Name": "Chandler Capture 100 (ShtG)",
@@ -10644,7 +10358,7 @@
     "Cost": "1500",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (2), Shock Pads",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.25"
   },
   {
     "Name": "Chandler Capt. 100 Smart(ShtG)",
@@ -10657,7 +10371,7 @@
     "Cost": "2200",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (2), Shock Pads, Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.25"
   },
   {
     "Name": "Syrko Cobra (ShtG)",
@@ -10670,7 +10384,7 @@
     "Cost": "1200",
     "StreetIndex": "1",
     "Accessories": "Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.24"
   },
   {
     "Name": "Eichiro Hatamoto II (ShtG)",
@@ -10683,7 +10397,7 @@
     "Cost": "1200",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.25"
   },
   {
     "Name": "Franchi SPAS-15 12G (ShtG)",
@@ -10709,7 +10423,7 @@
     "Cost": "10000",
     "StreetIndex": "-",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.25"
   },
   {
     "Name": "Kimatsuhama UBS-5 (ShtG)",
@@ -10722,7 +10436,7 @@
     "Cost": "500",
     "StreetIndex": "1.1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.25"
   },
   {
     "Name": "Kimatsuhama UBS-6 (ShtG)",
@@ -10735,7 +10449,7 @@
     "Cost": "750",
     "StreetIndex": "1.1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.25"
   },
   {
     "Name": "Kimatsuhama UBS-7 (ShtG)",
@@ -10748,20 +10462,7 @@
     "Cost": "1700",
     "StreetIndex": "1.25",
     "Accessories": "None",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "\"King Buck\" Multi-Magnum(ShtG)",
-    "Concealability": "1",
-    "Ammunition": "4(m)",
-    "Mode": "SA",
-    "Damage": "9S",
-    "Weight": "7",
-    "Availability": "12/4days",
-    "Cost": "800",
-    "StreetIndex": "2.1",
-    "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.25"
   },
   {
     "Name": "Militech Crusher SSG (ShtG)",
@@ -10865,7 +10566,7 @@
     "Cost": "2000",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (2), Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.25"
   },
   {
     "Name": "Remington 1628 (ShtG)",
@@ -10878,7 +10579,7 @@
     "Cost": "500",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.25"
   },
   {
     "Name": "Remington Rapid Asslt12 (ShtG)",
@@ -10891,20 +10592,7 @@
     "Cost": "2000",
     "StreetIndex": "2",
     "Accessories": "Smartlink",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Sandler \"Mad Max\" (ShtG)",
-    "Concealability": "5",
-    "Ammunition": "2(b)",
-    "Mode": "SA",
-    "Damage": "6S",
-    "Weight": "2.25",
-    "Availability": "4/48hrs",
-    "Cost": "400",
-    "StreetIndex": "1",
-    "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.22"
   },
   {
     "Name": "Saiga 12K (ShtG)",
@@ -10943,7 +10631,7 @@
     "Cost": "900",
     "StreetIndex": "1.5",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.25"
   },
   {
     "Name": "Stoeger Coach Gun (ShtG)",
@@ -11008,7 +10696,7 @@
     "Cost": "600",
     "StreetIndex": "4",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.25"
   },
   {
     "Name": "Wristbreaker I (ShtG)",
@@ -11450,7 +11138,7 @@
     "Cost": "7000",
     "StreetIndex": "4",
     "Accessories": "Gas Vent (2), Low-Light, Mag:(3), Smartlink, Thermographic",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.28"
   },
   {
     "Name": "RAI Model 1050 (Snip)",
@@ -11463,7 +11151,7 @@
     "Cost": "6000",
     "StreetIndex": "4",
     "Accessories": "High-power Laser Sight, Low-Light, Mag:(3), Shock Pads, Silencer",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.28"
   },
   {
     "Name": "SMF K6 (Snip)",
@@ -11476,7 +11164,7 @@
     "Cost": "2000",
     "StreetIndex": "3",
     "Accessories": "Gas Vent (2)",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.28"
   },
   {
     "Name": "Tsunami Arms Ramjet Rifl(Snip)",
@@ -11489,7 +11177,7 @@
     "Cost": "7380",
     "StreetIndex": "4",
     "Accessories": "Bipod, Mag:(3), RC:(1), Smartlink-2",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.30"
   },
   {
     "Name": "H&K G3 SG/1 7.62 NATO (Snip)",
@@ -11931,7 +11619,7 @@
     "Cost": "950",
     "StreetIndex": "1.5",
     "Accessories": "Mag:(2), Shock Pads",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.31"
   },
   {
     "Name": "Browning Eclipse M1000 (MMG)",
@@ -13491,7 +13179,7 @@
     "Cost": "4000",
     "StreetIndex": "3",
     "Accessories": "Gas Vent (2, Rifle), Mag:(2), Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.25"
   },
   {
     "Name": "Steyr AUG-CSL (MulWea)",
@@ -13504,7 +13192,7 @@
     "Cost": "4500",
     "StreetIndex": "3",
     "Accessories": "Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "ssc.53"
   },
   {
     "Name": "Syrko Panther (MulWea)",
@@ -13517,7 +13205,7 @@
     "Cost": "4000",
     "StreetIndex": "3",
     "Accessories": "Gas Vent (3, Rifle), Gas Vent (2, Shotgun), Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.24"
   },
   {
     "Name": "GE Vindicator Minigun (LMG)",
@@ -13530,7 +13218,7 @@
     "Cost": "2500",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "ssc.59"
   },
   {
     "Name": "H&K G-6 Adv. Squad Auto. (LMG)",
@@ -13556,7 +13244,7 @@
     "Cost": "2500",
     "StreetIndex": "4",
     "Accessories": "Laser Sight, Mag:(3), Shock Pads, Thermographic",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.30"
   },
   {
     "Name": "IWS Mini-5 (LMG)",
@@ -13569,7 +13257,7 @@
     "Cost": "13000",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.34"
   },
   {
     "Name": "IWS Mini-5 Smart (LMG)",
@@ -13582,7 +13270,7 @@
     "Cost": "26000",
     "StreetIndex": "2",
     "Accessories": "Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.34"
   },
   {
     "Name": "SIG 883 (LMG)",
@@ -13595,7 +13283,7 @@
     "Cost": "1000",
     "StreetIndex": "2.5",
     "Accessories": "Bipod, Gas Vent (3), Laser Sight, Shock Pads",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.31"
   },
   {
     "Name": "Syrko Tiger (LMG)",
@@ -13608,7 +13296,7 @@
     "Cost": "3000",
     "StreetIndex": "2",
     "Accessories": "Caseless, Gas Vent (3), Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.24"
   },
   {
     "Name": "Fab-Nat Minimi(M249 SAW) (LMG)",
@@ -13803,7 +13491,7 @@
     "Cost": "75000",
     "StreetIndex": "3",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.31"
   },
   {
     "Name": "Ruhrmetall SF20 (HMG)",
@@ -13816,7 +13504,7 @@
     "Cost": "7200",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (3), Shock Pads",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.33"
   },
   {
     "Name": "2-Barrel HMG Chaingun",
@@ -13829,7 +13517,7 @@
     "Cost": "6500",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.9"
   },
   {
     "Name": "7.62cm 10-Barrel",
@@ -13842,7 +13530,7 @@
     "Cost": "9500",
     "StreetIndex": "4",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.31"
   },
   {
     "Name": "7.62cm Single Barrel",
@@ -13855,7 +13543,7 @@
     "Cost": "1000",
     "StreetIndex": "1.75",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.31"
   },
   {
     "Name": "12.7cm 10-Barrel",
@@ -13868,7 +13556,7 @@
     "Cost": "12000",
     "StreetIndex": "4",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.31"
   },
   {
     "Name": "12.7cm Single Barrel",
@@ -13881,7 +13569,7 @@
     "Cost": "1250",
     "StreetIndex": "1.75",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.31"
   },
   {
     "Name": "Ares MP Maser",
@@ -13894,7 +13582,7 @@
     "Cost": "750000",
     "StreetIndex": "-",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "ssc.112"
   },
   {
     "Name": "Barrett-Arasaka Light 20mm",
@@ -13907,7 +13595,7 @@
     "Cost": "6000",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.28"
   },
   {
     "Name": "Colt-Mauser M2X Cannon",
@@ -13920,7 +13608,7 @@
     "Cost": "6100",
     "StreetIndex": "2",
     "Accessories": "Mag:(2), Shock Pads",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.31"
   },
   {
     "Name": "IWS Assault 20",
@@ -13933,7 +13621,7 @@
     "Cost": "7200",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (4), Shock Pads",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.34"
   },
   {
     "Name": "M10A Light Recoilless Rifle",
@@ -13959,7 +13647,7 @@
     "Cost": "5500",
     "StreetIndex": "2",
     "Accessories": "Gas Vent (3)",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.32"
   },
   {
     "Name": "M400 Smart",
@@ -13972,7 +13660,7 @@
     "Cost": "7500",
     "StreetIndex": "2.5",
     "Accessories": "Gas Vent (3), Smartlink-2",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.32"
   },
   {
     "Name": "Militech AM-3",
@@ -13985,7 +13673,7 @@
     "Cost": "8000",
     "StreetIndex": "3",
     "Accessories": "Gas Vent (2), Mag:(3), Shock Pads, Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.32"
   },
   {
     "Name": "Panther Hvy Recoilless Rfe",
@@ -14011,7 +13699,7 @@
     "Cost": "113700",
     "StreetIndex": "-",
     "Accessories": "Gyro Mount (5), Smartlink-2",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.33"
   },
   {
     "Name": "Whitney-Morgan Caseless (MMG)",
@@ -14024,59 +13712,7 @@
     "Cost": "25000",
     "StreetIndex": "4",
     "Accessories": "Caseless",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Suppressor (Stan.) (GrLn)",
-    "Concealability": "-",
-    "Ammunition": "12(c)",
-    "Mode": "SA/BF",
-    "Damage": "(Grenade)",
-    "Weight": "7",
-    "Availability": "18/14days",
-    "Cost": "3400",
-    "StreetIndex": "3",
-    "Accessories": "None",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Suppressor (RF) (GrLn)",
-    "Concealability": "-",
-    "Ammunition": "12(c)",
-    "Mode": "SA/BF",
-    "Damage": "(Grenade)",
-    "Weight": "7",
-    "Availability": "18/14days",
-    "Cost": "4300",
-    "StreetIndex": "3",
-    "Accessories": "Rangefinder",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Suprpessor (Smart) (GrLn)",
-    "Concealability": "-",
-    "Ammunition": "12(c)",
-    "Mode": "SA/BF",
-    "Damage": "(Grenade)",
-    "Weight": "7",
-    "Availability": "18/14days",
-    "Cost": "6800",
-    "StreetIndex": "3",
-    "Accessories": "Smartlink",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Suppressor(Smrt+Ran)GrLn)",
-    "Concealability": "-",
-    "Ammunition": "12(c)",
-    "Mode": "SA/BF",
-    "Damage": "(Grenade)",
-    "Weight": "7",
-    "Availability": "18/14days",
-    "Cost": "7700",
-    "StreetIndex": "3",
-    "Accessories": "Rangefinder, Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.31"
   },
   {
     "Name": "Generic Under-Barrel (GrLn)",
@@ -14089,7 +13725,7 @@
     "Cost": "1700",
     "StreetIndex": "3",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.32"
   },
   {
     "Name": "Grenade Launcher (GrLn)",
@@ -14102,7 +13738,7 @@
     "Cost": "1250",
     "StreetIndex": "2.75",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.32"
   },
   {
     "Name": "Hand-Held GrLn (GrLn)",
@@ -14115,7 +13751,7 @@
     "Cost": "2300",
     "StreetIndex": "3",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.32"
   },
   {
     "Name": "Militech Mini-GrLn (GrLn)",
@@ -14154,7 +13790,7 @@
     "Cost": "15000",
     "StreetIndex": "4",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.32"
   },
   {
     "Name": "US M79 (GrLn)",
@@ -14258,7 +13894,7 @@
     "Cost": "4500",
     "StreetIndex": "2.5",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.33"
   },
   {
     "Name": "Ruhrmetall GPRL-Alpha (MisLn)",
@@ -14271,7 +13907,7 @@
     "Cost": "9000",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.33"
   },
   {
     "Name": "Scorpion 16 Missile Launcher",
@@ -14284,7 +13920,7 @@
     "Cost": "6000",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.33"
   },
   {
     "Name": "M-12 Man-Portable Mortar",
@@ -14323,7 +13959,7 @@
     "Cost": "750",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "st.92"
   },
   {
     "Name": "Enerts AKM Power Squirt",
@@ -14349,7 +13985,7 @@
     "Cost": "600",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "ssc.62"
   },
   {
     "Name": "Narcoject Rifle",
@@ -14362,7 +13998,7 @@
     "Cost": "1700",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "ssc.62"
   },
   {
     "Name": "Arasaka Restraint Caster (Net)",
@@ -14414,7 +14050,7 @@
     "Cost": "500",
     "StreetIndex": "2.5",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.13"
   },
   {
     "Name": "Kendachi Dragon flamethrower",
@@ -14440,7 +14076,7 @@
     "Cost": "2500000",
     "StreetIndex": "NA",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "ssc.112"
   },
   {
     "Name": "Ares MP Laser III (Las)",
@@ -14453,7 +14089,7 @@
     "Cost": "120000",
     "StreetIndex": "3",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "ssc.112"
   },
   {
     "Name": "Infrared Laser (Las)",
@@ -14466,7 +14102,7 @@
     "Cost": "double normal",
     "StreetIndex": "+1",
     "Accessories": "normal",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.13"
   },
   {
     "Name": "Laser LAW (Las)",
@@ -14479,7 +14115,7 @@
     "Cost": "75000",
     "StreetIndex": "3",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.32"
   },
   {
     "Name": "Laser VLAW (Las)",
@@ -14492,7 +14128,7 @@
     "Cost": "60000",
     "StreetIndex": "3",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.32"
   },
   {
     "Name": "Militech Electronics Laser",
@@ -14518,7 +14154,7 @@
     "Cost": "2000",
     "StreetIndex": "1.9",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.33"
   },
   {
     "Name": "Rostovic Wrist Racate",
@@ -14544,7 +14180,7 @@
     "Cost": "4500",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.33"
   },
   {
     "Name": "Ares ELD-AR",
@@ -14610,18 +14246,6 @@
     "BookPage": "cp.21"
   },
   {
-    "Name": "Sentry Weapons 27",
-    "Concealability": "6",
-    "Ammunition": "-",
-    "Mode": "4.0*",
-    "Damage": "22000",
-    "Weight": "12/21days",
-    "Availability": "4",
-    "Cost": "None",
-    "StreetIndex": "fof.46",
-    "Accessories": ""
-  },
-  {
     "Name": "Sonic Stunner",
     "Concealability": "6",
     "Ammunition": "10",
@@ -14632,7 +14256,7 @@
     "Cost": "1000",
     "StreetIndex": "1.5",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.13"
   },
   {
     "Name": "Spetsdod",
@@ -14645,7 +14269,7 @@
     "Cost": "3600",
     "StreetIndex": "1",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.13"
   },
   {
     "Name": "Techtronica M40 \"Pulse Rifle\"",
@@ -14658,7 +14282,7 @@
     "Cost": "3500",
     "StreetIndex": "-",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.13"
   },
   {
     "Name": "Tsunami Arms \"Airhammer\" #1",
@@ -14671,7 +14295,7 @@
     "Cost": "325",
     "StreetIndex": "2.5",
     "Accessories": "Gun Camera, Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.19"
   },
   {
     "Name": "Tsunami Arms \"Airhammer\" #2",
@@ -14684,7 +14308,7 @@
     "Cost": "400",
     "StreetIndex": "3",
     "Accessories": "Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.13"
   },
   {
     "Name": "Underbarrel Capacitor Laser",
@@ -14697,6 +14321,6 @@
     "Cost": "95000",
     "StreetIndex": "3.5",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "pw.13"
   }
 ]

@@ -1,0 +1,6243 @@
+{
+  "Edged weapon": {
+    "Name": "Edged weapon",
+    "attributes": [
+      "Concealability",
+      "Reach",
+      "Damage",
+      "Weight",
+      "Availability",
+      "Cost",
+      "Street Index"
+    ],
+    "entries": [
+      {
+        "Name": "Bear-Knife",
+        "Concealability": "3",
+        "Reach": "0",
+        "Damage": "(STR+2)M",
+        "Weight": "1",
+        "Availability": "6/48hrs",
+        "Cost": "2000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Bowie Knife",
+        "Concealability": "6",
+        "Reach": "0",
+        "Damage": "(STR+2)L",
+        "Weight": "1",
+        "Availability": "3/24hrs",
+        "Cost": "50",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Broadsword",
+        "Concealability": "4",
+        "Reach": "1",
+        "Damage": "(str+1)M",
+        "Weight": "2",
+        "Availability": "6/48hrs",
+        "Cost": "1000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Cane Knife",
+        "Concealability": "2",
+        "Reach": "1",
+        "Damage": "(STR+1)M",
+        "Weight": "1",
+        "Availability": "10/7days",
+        "Cost": "600",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Cane Sword",
+        "Concealability": "2",
+        "Reach": "1",
+        "Damage": "(STR+1)M",
+        "Weight": "1",
+        "Availability": "10/7days",
+        "Cost": "600",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Decapitator battleaxe",
+        "Concealability": "-",
+        "Reach": "2",
+        "Damage": "(STR+4)S",
+        "Weight": "11",
+        "Availability": "6/48hrs",
+        "Cost": "2000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Gasher battleaxe",
+        "Concealability": "2",
+        "Reach": "1",
+        "Damage": "(STR)S",
+        "Weight": "2",
+        "Availability": "6/48hrs",
+        "Cost": "1000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Gutter dagger",
+        "Concealability": "8",
+        "Reach": "0",
+        "Damage": "(str)M",
+        "Weight": ".5",
+        "Availability": "6/48hrs",
+        "Cost": "1000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Kendachi Mononaginata",
+        "Concealability": "2",
+        "Reach": "1",
+        "Damage": "(STR+2)L",
+        "Weight": ".5",
+        "Availability": "6/60hrs",
+        "Cost": "300",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Longsword",
+        "Concealability": "4",
+        "Reach": "1",
+        "Damage": "(STR+2)M",
+        "Weight": "2",
+        "Availability": "6/48hrs",
+        "Cost": "1000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Scimitar",
+        "Concealability": "4",
+        "Reach": "1",
+        "Damage": "(STR+2)M",
+        "Weight": "1.5",
+        "Availability": "6/48hrs",
+        "Cost": "1,000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Shortsword",
+        "Concealability": "5",
+        "Reach": "1",
+        "Damage": "(STR)M",
+        "Weight": "2",
+        "Availability": "6/48hrs",
+        "Cost": "1000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Stiletto",
+        "Concealability": "10",
+        "Reach": "0",
+        "Damage": "(STR)L",
+        "Weight": ".3",
+        "Availability": "6/48hrs",
+        "Cost": "1000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Stiletto",
+        "Concealability": "14",
+        "Reach": "0",
+        "Damage": "(STR-1)L",
+        "Weight": ".1",
+        "Availability": "2/24hrs",
+        "Cost": "10",
+        "Street Index": ".5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Two-Handed Sword",
+        "Concealability": "2",
+        "Reach": "1",
+        "Damage": "(STR+3)S",
+        "Weight": "5",
+        "Availability": "6/48hrs",
+        "Cost": "3000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Devil",
+        "Concealability": "-",
+        "Reach": "2",
+        "Damage": "(str)S",
+        "Weight": "10",
+        "Availability": "6/48hrs",
+        "Cost": "1500",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mace",
+        "Concealability": "2",
+        "Reach": "1",
+        "Damage": "(STR)M",
+        "Weight": "5",
+        "Availability": "6/48hrs",
+        "Cost": "700",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mace",
+        "Concealability": "4",
+        "Reach": "1",
+        "Damage": "(STR+1)M Stun",
+        "Weight": "1",
+        "Availability": "2/6hrs",
+        "Cost": "40",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mjolnir warhammer",
+        "Concealability": "-",
+        "Reach": "2",
+        "Damage": "(STR+4)D",
+        "Weight": "15",
+        "Availability": "6/48hrs",
+        "Cost": "2000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Morning Star",
+        "Concealability": "2",
+        "Reach": "1",
+        "Damage": "(STR+1)M",
+        "Weight": "7",
+        "Availability": "6/48hrs",
+        "Cost": "1000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Skull Crusher warhammer",
+        "Concealability": "2",
+        "Reach": "1",
+        "Damage": "(STR)S",
+        "Weight": "5",
+        "Availability": "6/48hrs",
+        "Cost": "1000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Halberd",
+        "Concealability": "2",
+        "Reach": "2",
+        "Damage": "(STR)S",
+        "Weight": "6",
+        "Availability": "6/48hrs",
+        "Cost": "1000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Lance",
+        "Concealability": "-",
+        "Reach": "2",
+        "Damage": "(kph/5)M",
+        "Weight": "2",
+        "Availability": "4/12hrs",
+        "Cost": "60",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Long Spear",
+        "Concealability": "2",
+        "Reach": "2",
+        "Damage": "(STR)S",
+        "Weight": "4",
+        "Availability": "6/48hrs",
+        "Cost": "1000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mersch MX-23 Stunlance",
+        "Concealability": "2",
+        "Reach": "2",
+        "Damage": "(STR+2)L/9S Stun",
+        "Weight": "3",
+        "Availability": "5/48hrs",
+        "Cost": "2500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Scythe",
+        "Concealability": "-",
+        "Reach": "2",
+        "Damage": "(STR+1)S",
+        "Weight": "7",
+        "Availability": "6/48hrs",
+        "Cost": "1000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Tetsubo",
+        "Concealability": "-",
+        "Reach": "2",
+        "Damage": "(STR+3)S",
+        "Weight": "3",
+        "Availability": "5/24hrs",
+        "Cost": "500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Cat With Nine Tails",
+        "Concealability": "5",
+        "Reach": "2",
+        "Damage": "(STR+2)M",
+        "Weight": "3",
+        "Availability": "6/48hrs",
+        "Cost": "1000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Flail",
+        "Concealability": "3",
+        "Reach": "2",
+        "Damage": "(STR+1)M Stun",
+        "Weight": ".75",
+        "Availability": "4/12hrs",
+        "Cost": "50",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Bio-Injector",
+        "Concealability": "8",
+        "Reach": "0",
+        "Damage": "5L",
+        "Weight": "-",
+        "Availability": "14/7 days",
+        "Cost": "15000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Bio-Injector",
+        "Concealability": "8",
+        "Reach": "0",
+        "Damage": "5L + drug",
+        "Weight": ".5",
+        "Availability": "10/96hrs",
+        "Cost": "15000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Fashion Gloves",
+        "Concealability": "-",
+        "Reach": "0",
+        "Damage": "(STR+1)M Stun",
+        "Weight": ".2",
+        "Availability": "4/36hrs",
+        "Cost": "350",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "IMI",
+        "Concealability": "6",
+        "Reach": "0",
+        "Damage": "(STR+5)L",
+        "Weight": ".75",
+        "Availability": "6/48hrs",
+        "Cost": "120",
+        "Street Index": "1.2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Kitchen Sink",
+        "Concealability": "-",
+        "Reach": "0",
+        "Damage": "((2x STR)-6)S Stun",
+        "Weight": "10",
+        "Availability": "always",
+        "Cost": "100",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Taser II",
+        "Concealability": "7",
+        "Reach": "0",
+        "Damage": "5S Stun",
+        "Weight": ".5",
+        "Availability": "4/24hrs",
+        "Cost": "300",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      }
+    ]
+  },
+  "Firearms": {
+    "Name": "Firearms",
+    "attributes": [
+      "Concealability",
+      "Ammunition",
+      "Mode",
+      "Damage",
+      "Weight",
+      "Availability",
+      "Cost",
+      "Street Index",
+      "Accessories",
+      ""
+    ],
+    "entries": [
+      {
+        "Name": "Ares Hornet",
+        "Concealability": "8",
+        "Ammunition": "7(cy)",
+        "Mode": "DAR(SA)",
+        "Damage": "7L",
+        "Weight": "2",
+        "Availability": "4/48hrs",
+        "Cost": "250",
+        "Street Index": ".8",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ares Scorpion",
+        "Concealability": "8",
+        "Ammunition": "7(cy)",
+        "Mode": "DAR(SA)",
+        "Damage": "7L",
+        "Weight": "2.25",
+        "Availability": "4/48hrs",
+        "Cost": "275",
+        "Street Index": "1",
+        "Accessories": "Laser Sight",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Colt Protector",
+        "Concealability": "8",
+        "Ammunition": "6(cy)",
+        "Mode": "SS",
+        "Damage": "6L",
+        "Weight": ".75",
+        "Availability": "2/12hrs",
+        "Cost": "300",
+        "Street Index": ".7",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Glock 19 Mk.IV",
+        "Concealability": "5",
+        "Ammunition": "17(c)",
+        "Mode": "SA",
+        "Damage": "6L",
+        "Weight": "1",
+        "Availability": "8/24hrs",
+        "Cost": "750",
+        "Street Index": "2",
+        "Accessories": "Laser Sight, Recoil Compensation (1)",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Glock 19 Mk.IV Smart",
+        "Concealability": "5",
+        "Ammunition": "17(c)",
+        "Mode": "SA",
+        "Damage": "6L",
+        "Weight": "1",
+        "Availability": "8/24hrs",
+        "Cost": "950",
+        "Street Index": "2",
+        "Accessories": "Smartlink, Recoil Compensation (1)",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Glock 19 Mk.IV Smart II",
+        "Concealability": "5",
+        "Ammunition": "17(c)",
+        "Mode": "SA",
+        "Damage": "6L",
+        "Weight": "1",
+        "Availability": "8/24hrs",
+        "Cost": "1150",
+        "Street Index": "2",
+        "Accessories": "Smartlink II, Recoil Compensation (1)",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Thumper",
+        "Concealability": "6",
+        "Ammunition": "10(c)",
+        "Mode": "SA",
+        "Damage": "5L Stun",
+        "Weight": "1.25",
+        "Availability": "3/12hrs",
+        "Cost": "120",
+        "Street Index": ".75",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ares Black Widow",
+        "Concealability": "6",
+        "Ammunition": "21(c)",
+        "Mode": "SA/BF",
+        "Damage": "6L",
+        "Weight": "1",
+        "Availability": "14/7days",
+        "Cost": "1500",
+        "Street Index": "3",
+        "Accessories": "Silencer, Smartlink II",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ruger P-4",
+        "Concealability": "4",
+        "Ammunition": "100(c)",
+        "Mode": "BF",
+        "Damage": "7L",
+        "Weight": "1.25",
+        "Availability": "8/48hrs",
+        "Cost": "1350",
+        "Street Index": "2.25",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ares Constrictor",
+        "Concealability": "6",
+        "Ammunition": "6(cy)",
+        "Mode": "DAR",
+        "Damage": "10M",
+        "Weight": "2.5",
+        "Availability": "7/7days",
+        "Cost": "400",
+        "Street Index": "2",
+        "Accessories": "Smartlink",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ares Jaguar",
+        "Concealability": "5",
+        "Ammunition": "6(cy)",
+        "Mode": "DAR",
+        "Damage": "10M",
+        "Weight": "2.5",
+        "Availability": "5/4days",
+        "Cost": "300",
+        "Street Index": "1",
+        "Accessories": "Laser Sight",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ares Stingray",
+        "Concealability": "4",
+        "Ammunition": "6(cy)",
+        "Mode": "DAR",
+        "Damage": "10M",
+        "Weight": "2.75",
+        "Availability": "7/7days",
+        "Cost": "500",
+        "Street Index": "3",
+        "Accessories": "Laser Sight, Recoil Compensation (1)",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ares Stingray Smart",
+        "Concealability": "4",
+        "Ammunition": "6(cy)",
+        "Mode": "DAR",
+        "Damage": "10M",
+        "Weight": "2.75",
+        "Availability": "7/7days",
+        "Cost": "500",
+        "Street Index": "3",
+        "Accessories": "Smartlink, Recoil Compensation (1)",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Beretta Model 95S",
+        "Concealability": "5",
+        "Ammunition": "15(c)",
+        "Mode": "SA",
+        "Damage": "9M",
+        "Weight": "2.5",
+        "Availability": "3/24hrs",
+        "Cost": "500",
+        "Street Index": "1",
+        "Accessories": "Smartlink II",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Beretta 100S",
+        "Concealability": "5",
+        "Ammunition": "15(c)",
+        "Mode": "SA",
+        "Damage": "9M",
+        "Weight": "2.5",
+        "Availability": "5/36hrs",
+        "Cost": "650",
+        "Street Index": "1.5",
+        "Accessories": "Laser Sight, Silencer",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Bond & Carrington MP-11",
+        "Concealability": "4",
+        "Ammunition": "15(30)(c)",
+        "Mode": "SA/BF",
+        "Damage": "9M",
+        "Weight": "3",
+        "Availability": "8/36hrs",
+        "Cost": "1200",
+        "Street Index": "2",
+        "Accessories": "Gas Vent (2), Laser Sight",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Glock 22 Mk. III",
+        "Concealability": "4",
+        "Ammunition": "15(c)",
+        "Mode": "SA",
+        "Damage": "9M",
+        "Weight": "2.5",
+        "Availability": "6/24hrs",
+        "Cost": "600",
+        "Street Index": "1.5",
+        "Accessories": "Laser Sight",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Glock 22 Mk. III Smart",
+        "Concealability": "4",
+        "Ammunition": "15(c)",
+        "Mode": "SA",
+        "Damage": "9M",
+        "Weight": "2.5",
+        "Availability": "6/24hrs",
+        "Cost": "800",
+        "Street Index": "1.5",
+        "Accessories": "Smartlink",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Glock 22 Mk. III Smart II",
+        "Concealability": "4",
+        "Ammunition": "15(c)",
+        "Mode": "SA",
+        "Damage": "9M",
+        "Weight": "2.5",
+        "Availability": "6/24hrs",
+        "Cost": "1000",
+        "Street Index": "1.5",
+        "Accessories": "Smartlink II",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "H&K 'Blaster'",
+        "Concealability": "4",
+        "Ammunition": "6(m)",
+        "Mode": "SS",
+        "Damage": "12M",
+        "Weight": "3",
+        "Availability": "-",
+        "Cost": "-",
+        "Street Index": "-",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Phoenix Gyroc",
+        "Concealability": "3",
+        "Ammunition": "3(b)",
+        "Mode": "SA",
+        "Damage": "ammo",
+        "Weight": "3",
+        "Availability": "8/7days",
+        "Cost": "10000",
+        "Street Index": "2",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ruger Thunderbolt",
+        "Concealability": "4",
+        "Ammunition": "12(c)",
+        "Mode": "BF",
+        "Damage": "12S*",
+        "Weight": "2.75",
+        "Availability": "14/12days",
+        "Cost": "1000",
+        "Street Index": "3",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ruger Thunderbolt - Laser Sight",
+        "Concealability": "4",
+        "Ammunition": "12(c)",
+        "Mode": "BF",
+        "Damage": "12S*",
+        "Weight": "2.75",
+        "Availability": "14/12days",
+        "Cost": "1250",
+        "Street Index": "3",
+        "Accessories": "Laser Sight",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ruger Thunderbolt - Smartlinked",
+        "Concealability": "4",
+        "Ammunition": "12(c)",
+        "Mode": "BF",
+        "Damage": "12S*",
+        "Weight": "2.75",
+        "Availability": "14/12days",
+        "Cost": "1400",
+        "Street Index": "3",
+        "Accessories": "Smatlink",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "S&W 'Tri-Star'",
+        "Concealability": "3",
+        "Ammunition": "6(cy)",
+        "Mode": "SS",
+        "Damage": "10M",
+        "Weight": "2.5",
+        "Availability": "6/24hrs",
+        "Cost": "375",
+        "Street Index": "1.5",
+        "Accessories": "Laser Sight",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "SMF",
+        "Concealability": "3",
+        "Ammunition": "5(cy)",
+        "Mode": "SS",
+        "Damage": "11M",
+        "Weight": "3.5",
+        "Availability": "10/7days",
+        "Cost": "950",
+        "Street Index": "2",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "SternMeyer Type 35",
+        "Concealability": "5",
+        "Ammunition": "8(c)",
+        "Mode": "SA",
+        "Damage": "9M",
+        "Weight": "2.5",
+        "Availability": "4/36hrs",
+        "Cost": "400",
+        "Street Index": "1",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Miltech Electronics Taser",
+        "Concealability": "6",
+        "Ammunition": "10(m)",
+        "Mode": "SS",
+        "Damage": "8S Stun",
+        "Weight": "1.5",
+        "Availability": "5/36hrs",
+        "Cost": "600",
+        "Street Index": "1.4",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Stundart Pistol",
+        "Concealability": "3",
+        "Ammunition": "2(b)",
+        "Mode": "SS",
+        "Damage": "10S Stun",
+        "Weight": "3.5",
+        "Availability": "8/4days",
+        "Cost": "1090",
+        "Street Index": "2",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ares Cascade",
+        "Concealability": "4",
+        "Ammunition": "60",
+        "Mode": "SA",
+        "Damage": "(Special)",
+        "Weight": "5.5",
+        "Availability": "12/14days",
+        "Cost": "1800",
+        "Street Index": "2",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ares ELD-AR",
+        "Concealability": "4",
+        "Ammunition": "50(c)",
+        "Mode": "SA/BF",
+        "Damage": "(Special)",
+        "Weight": "4.5",
+        "Availability": "9/7days",
+        "Cost": "950",
+        "Street Index": "2",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ares Squirt",
+        "Concealability": "7",
+        "Ammunition": "10/20",
+        "Mode": "SA",
+        "Damage": "(Special)",
+        "Weight": "1.75",
+        "Availability": "8/3days",
+        "Cost": "750",
+        "Street Index": "2",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ares SuperSquirt II",
+        "Concealability": "7",
+        "Ammunition": "20",
+        "Mode": "SA",
+        "Damage": "(Special)",
+        "Weight": "2",
+        "Availability": "9/14days",
+        "Cost": "800",
+        "Street Index": "1.5",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Enerts AKM Power Squirt",
+        "Concealability": "5",
+        "Ammunition": "50(m)",
+        "Mode": "SS",
+        "Damage": "(Drugs)",
+        "Weight": "1",
+        "Availability": "always",
+        "Cost": "15",
+        "Street Index": "1",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "FAB-NG Netgun",
+        "Concealability": "3",
+        "Ammunition": "4(b)",
+        "Mode": "SA",
+        "Damage": "(Special)",
+        "Weight": "4.5",
+        "Availability": "8/14days",
+        "Cost": "1500",
+        "Street Index": "4",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "FAB-NG Netgun",
+        "Concealability": "2",
+        "Ammunition": "4(b)",
+        "Mode": "SA",
+        "Damage": "(Special)",
+        "Weight": "5",
+        "Availability": "8/14days",
+        "Cost": "2500",
+        "Street Index": "5",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Nelspot",
+        "Concealability": "4",
+        "Ammunition": "20(c)",
+        "Mode": "SA",
+        "Damage": "4L Stun",
+        "Weight": "1.5",
+        "Availability": "2/24hrs",
+        "Cost": "200",
+        "Street Index": ".75",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Tsunami Arms",
+        "Concealability": "5",
+        "Ammunition": "5(cy)",
+        "Mode": "SA",
+        "Damage": "(Special)",
+        "Weight": "1.5",
+        "Availability": "11/14days",
+        "Cost": "325",
+        "Street Index": "2.5",
+        "Accessories": "Gun Camera, Laser Sight",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Tsunami Arms",
+        "Concealability": "5",
+        "Ammunition": "7(cy)",
+        "Mode": "SA",
+        "Damage": "special",
+        "Weight": "1.5",
+        "Availability": "12/14days",
+        "Cost": "400",
+        "Street Index": "3",
+        "Accessories": "Smartlink",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Buzzsaw",
+        "Concealability": "4",
+        "Ammunition": "1000(c)",
+        "Mode": "FA",
+        "Damage": "7L",
+        "Weight": "5.5",
+        "Availability": "12/14days",
+        "Cost": "215",
+        "Street Index": "1",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ceres Tri-Barrel",
+        "Concealability": "2",
+        "Ammunition": "36(c)/belt",
+        "Mode": "BF/FA",
+        "Damage": "6L",
+        "Weight": "4.5",
+        "Availability": "9/60hrs",
+        "Cost": "1000",
+        "Street Index": "3",
+        "Accessories": "Smartlink",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Defiance AT-900",
+        "Concealability": "4",
+        "Ammunition": "30(c)",
+        "Mode": "SA/BF/FA",
+        "Damage": "6M",
+        "Weight": "3.75",
+        "Availability": "5/36hrs",
+        "Cost": "900",
+        "Street Index": "1",
+        "Accessories": "Gas Vent (2), Laser Sight",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Defiance AT-900 Smart",
+        "Concealability": "4",
+        "Ammunition": "30(c)",
+        "Mode": "SA/BF/FA",
+        "Damage": "6M",
+        "Weight": "3.75",
+        "Availability": "5/36hrs",
+        "Cost": "1800",
+        "Street Index": "1",
+        "Accessories": "Gas Vent (2), Smartlink",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "H&K MP7z Urban Combat",
+        "Concealability": "6/18",
+        "Ammunition": "36(c)",
+        "Mode": "SA/BF/FA",
+        "Damage": "7M",
+        "Weight": "1.75",
+        "Availability": "6/6days",
+        "Cost": "2200",
+        "Street Index": "2",
+        "Accessories": "Gas Vent (3), Silencer",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "H&K MP7z Urban Combat Smart",
+        "Concealability": "6/18",
+        "Ammunition": "36(c)",
+        "Mode": "SA/BF/FA",
+        "Damage": "7M",
+        "Weight": "2",
+        "Availability": "8/8days",
+        "Cost": "4000",
+        "Street Index": "2",
+        "Accessories": "Gas Vent (3), Silencer, Smartlink",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Uzi 3S",
+        "Concealability": "5",
+        "Ammunition": "24(c)",
+        "Mode": "SA/BF",
+        "Damage": "6M",
+        "Weight": "2.5",
+        "Availability": "10/36hrs",
+        "Cost": "900",
+        "Street Index": "2",
+        "Accessories": "Laser Sight, Sound Suppressor",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ares High-Vel. Assault Rifle",
+        "Concealability": "2",
+        "Ammunition": "50(c)",
+        "Mode": "SA/BF/FA",
+        "Damage": "6M",
+        "Weight": "5",
+        "Availability": "14/7days",
+        "Cost": "3200",
+        "Street Index": "4",
+        "Accessories": "Recoil Compensation (3), Smartlink II",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "H",
+        "Concealability": "3",
+        "Ammunition": "30(c)",
+        "Mode": "SA/BF/FA",
+        "Damage": "8M",
+        "Weight": "4",
+        "Availability": "3/36hrs",
+        "Cost": "1500",
+        "Street Index": "4",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "H",
+        "Concealability": "2",
+        "Ammunition": "32(c)",
+        "Mode": "SA/BF/FA",
+        "Damage": "8M",
+        "Weight": "5.25",
+        "Availability": "8/4days",
+        "Cost": "2200",
+        "Street Index": "3",
+        "Accessories": "Gas Vent (2), Laser Sight, Shock Pads",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "H",
+        "Concealability": "2(1)",
+        "Ammunition": "20(45)(c)",
+        "Mode": "SA/BF/FA",
+        "Damage": "8M",
+        "Weight": "3.75",
+        "Availability": "8/7days",
+        "Cost": "950",
+        "Street Index": "2",
+        "Accessories": "Gas Vent (2)",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "H",
+        "Concealability": "3(2)",
+        "Ammunition": "20(45)(c)",
+        "Mode": "SA/BF/FA",
+        "Damage": "8M",
+        "Weight": "4",
+        "Availability": "8/7days",
+        "Cost": "950",
+        "Street Index": "2.25",
+        "Accessories": "Gas Vent (2)",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "S&W Model F 'Cyborg Assault'",
+        "Concealability": "4",
+        "Ammunition": "8(c)",
+        "Mode": "SS",
+        "Damage": "8S",
+        "Weight": "4",
+        "Availability": "10/5days",
+        "Cost": "1650",
+        "Street Index": "2.5",
+        "Accessories": "22mm Muzzle Adaptor",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Seco M-995",
+        "Concealability": "-",
+        "Ammunition": "30(c)",
+        "Mode": "SA/BF/FA",
+        "Damage": "8M",
+        "Weight": "5.75",
+        "Availability": "10/4days",
+        "Cost": "3000",
+        "Street Index": "3",
+        "Accessories": "Gas Vent (3), Grenade Launcher (6-shot), Laser Sight, Rangefinder Grenade Link",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ares Wippet",
+        "Concealability": "4",
+        "Ammunition": "6(m)",
+        "Mode": "SA",
+        "Damage": "6M/9M",
+        "Weight": "2",
+        "Availability": "5/36hrs",
+        "Cost": "1500",
+        "Street Index": "1.5",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Wristbreaker I",
+        "Concealability": "2(3)",
+        "Ammunition": "2x 10(m)",
+        "Mode": "2x SA/FA",
+        "Damage": "8S",
+        "Weight": "4.25",
+        "Availability": "14/14days",
+        "Cost": "1450",
+        "Street Index": "3",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Wristbreaker II",
+        "Concealability": "3(4)",
+        "Ammunition": "2x 5(m)",
+        "Mode": "2x SA",
+        "Damage": "8S",
+        "Weight": "2.75",
+        "Availability": "8/10days",
+        "Cost": "1450",
+        "Street Index": "1.5",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Sandler 'Mad Max'",
+        "Concealability": "5",
+        "Ammunition": "2(b)",
+        "Mode": "SA",
+        "Damage": "6S",
+        "Weight": "2.25",
+        "Availability": "4/48hrs",
+        "Cost": "400",
+        "Street Index": "1",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Barret Model 121 HSR",
+        "Concealability": "-",
+        "Ammunition": "14(c)",
+        "Mode": "SA",
+        "Damage": "14D",
+        "Weight": "10",
+        "Availability": "14/30days",
+        "Cost": "4800",
+        "Street Index": "5",
+        "Accessories": "Recoil Compensation (2), Silencer, Smartlink",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ares MP Maser",
+        "Concealability": "-",
+        "Ammunition": "20",
+        "Mode": "SA",
+        "Damage": "10M + Special",
+        "Weight": "25",
+        "Availability": "-",
+        "Cost": "750000",
+        "Street Index": "-",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "M10A Light Recoilless Rifle",
+        "Concealability": "-",
+        "Ammunition": "1(b",
+        "Mode": "SS",
+        "Damage": "(Grenade)",
+        "Weight": "6.5",
+        "Availability": "12/14days",
+        "Cost": "2000",
+        "Street Index": "2",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Panther Heavy Recoilless Rifle",
+        "Concealability": "-",
+        "Ammunition": "1(b)",
+        "Mode": "SS",
+        "Damage": "(Grenade)",
+        "Weight": "10",
+        "Availability": "14/14days",
+        "Cost": "4000",
+        "Street Index": "3",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ares Suppressor (Standard)",
+        "Concealability": "-",
+        "Ammunition": "12(c)",
+        "Mode": "SA/BF",
+        "Damage": "(Grenade)",
+        "Weight": "7",
+        "Availability": "18/14days",
+        "Cost": "3400",
+        "Street Index": "3",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ares Suprpessor (Smart)",
+        "Concealability": "-",
+        "Ammunition": "12(c)",
+        "Mode": "SA/BF",
+        "Damage": "(Grenade)",
+        "Weight": "7",
+        "Availability": "18/14days",
+        "Cost": "6800",
+        "Street Index": "3",
+        "Accessories": "Smartlink",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ares Suppressor (Smart",
+        "Concealability": "-",
+        "Ammunition": "12(c)",
+        "Mode": "SA/BF",
+        "Damage": "(Grenade)",
+        "Weight": "7",
+        "Availability": "18/14days",
+        "Cost": "7700",
+        "Street Index": "3",
+        "Accessories": "Rangefinder, Smartlink",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "M79B LAW",
+        "Concealability": "4/-",
+        "Ammunition": "1",
+        "Mode": "SS",
+        "Damage": "12D",
+        "Weight": "2.5",
+        "Availability": "6/36hrs",
+        "Cost": "700",
+        "Street Index": "2",
+        "Accessories": "None",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Improved Silencer",
+        "Concealability": "Barrel",
+        "Ammunition": "(-2)",
+        "Mode": "+1",
+        "Damage": ".2",
+        "Weight": "8/72hrs",
+        "Availability": "5000",
+        "Cost": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Smartscope (Magnification 2)",
+        "Concealability": "Top",
+        "Ammunition": "(-2)",
+        "Mode": "-1/2",
+        "Damage": "1",
+        "Weight": "5/60hrs",
+        "Availability": "3750",
+        "Cost": "1.1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Smartscope (Magnification 3)",
+        "Concealability": "Top",
+        "Ammunition": "(-2)",
+        "Mode": "-1/3",
+        "Damage": "1",
+        "Weight": "5/60hrs",
+        "Availability": "4250",
+        "Cost": "1.1",
+        "BookPage": "unknown"
+      }
+    ]
+  },
+  "Grenades": {
+    "Name": "Grenades",
+    "attributes": [
+      "Concealability",
+      "Damage",
+      "Weight",
+      "Availability",
+      "Cost",
+      "Street Index"
+    ],
+    "entries": [
+      {
+        "Name": "Crawler Grenade",
+        "Concealability": "6",
+        "Damage": "(see rules)",
+        "Weight": ".25",
+        "Availability": "20/14 days",
+        "Cost": "150",
+        "Street Index": "6",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "CS Grenade",
+        "Concealability": "5",
+        "Damage": "tear gas",
+        "Weight": ".5",
+        "Availability": "6/4 days",
+        "Cost": "75",
+        "Street Index": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mace XII Gas Grenade (N)",
+        "Concealability": "6",
+        "Damage": "gas",
+        "Weight": ".25",
+        "Availability": "8/6days",
+        "Cost": "50",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Neurostun IX Grenade (N)",
+        "Concealability": "6",
+        "Damage": "gas",
+        "Weight": ".25",
+        "Availability": "6/6days",
+        "Cost": "50",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Niref D Gas Grenade (N)",
+        "Concealability": "6",
+        "Damage": "gas",
+        "Weight": ".25",
+        "Availability": "10/6days",
+        "Cost": "80",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Paint Grenade",
+        "Concealability": "6",
+        "Damage": "-",
+        "Weight": ".25",
+        "Availability": "3/48hrs",
+        "Cost": "20",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Thermal Smoke",
+        "Concealability": "6",
+        "Damage": "-",
+        "Weight": ".25",
+        "Availability": "5/4days",
+        "Cost": "40",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      }
+    ]
+  },
+  "Ammunition": {
+    "Name": "Ammunition",
+    "attributes": [
+      "Concealability",
+      "Damage",
+      "Weight",
+      "Availability",
+      "Cost",
+      "Street Index"
+    ],
+    "entries": [
+      {
+        "Name": "Crawler Rnds",
+        "Concealability": "8",
+        "Damage": "(see rules)",
+        "Weight": ".05",
+        "Availability": "14/14days",
+        "Cost": "10",
+        "Street Index": "6",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Gas Rnds(Shotgun only)",
+        "Concealability": "8",
+        "Damage": "gas",
+        "Weight": ".05",
+        "Availability": "6/48hrs",
+        "Cost": "5",
+        "Street Index": "1.1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Wirtz-Bet",
+        "Concealability": "6",
+        "Damage": "12M Stun",
+        "Weight": ".15",
+        "Availability": "8/36hrs",
+        "Cost": "10",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Wirtz-Schrot Rnds",
+        "Concealability": "8",
+        "Damage": "11S(f)",
+        "Weight": ".125",
+        "Availability": "8/36hrs",
+        "Cost": "8",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Extra High Impact",
+        "Concealability": "3",
+        "Damage": "special",
+        "Weight": ".15",
+        "Availability": "8/4 days",
+        "Cost": "1000",
+        "Street Index": "2.25",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Green Ring 4 Minigrenade",
+        "Concealability": "8",
+        "Damage": "gas",
+        "Weight": ".1",
+        "Availability": "14/6days",
+        "Cost": "120",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Neurostun-Minigrenade",
+        "Concealability": "8",
+        "Damage": "8M + gas",
+        "Weight": ".15",
+        "Availability": "12/4ays",
+        "Cost": "200",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Neurostun-Minigrenade",
+        "Concealability": "8",
+        "Damage": "8M + gas",
+        "Weight": ".15",
+        "Availability": "12/4ays",
+        "Cost": "200",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "SplatShell Minigrenade",
+        "Concealability": "8",
+        "Damage": "splatballs",
+        "Weight": ".1",
+        "Availability": "6/48hrs",
+        "Cost": "10",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      }
+    ]
+  },
+  "Firearms Accessories": {
+    "Name": "Firearms Accessories",
+    "attributes": [
+      "Mount",
+      "Concealability",
+      "Rating",
+      "Weight",
+      "Availability",
+      "Cost",
+      "Street Index",
+      ""
+    ],
+    "entries": [
+      {
+        "Name": "22mm Muzzle Adaptor",
+        "Mount": "Barrel",
+        "Concealability": "-",
+        "Rating": "-",
+        "Weight": "-",
+        "Availability": "6/48hrs",
+        "Cost": "100",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Ares MirrorSmarts",
+        "Mount": "-",
+        "Concealability": "10",
+        "Rating": "-",
+        "Weight": "-",
+        "Availability": "6/60hrs",
+        "Cost": "6500",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Digital Weapon Uplink",
+        "Mount": "Top/Under",
+        "Concealability": "-1",
+        "Rating": "-",
+        "Weight": ".5",
+        "Availability": "6/6days",
+        "Cost": "500",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Electrothermal Ammo Enhancem.",
+        "Mount": "-",
+        "Concealability": "-",
+        "Rating": "-",
+        "Weight": ".5",
+        "Availability": "10/7days",
+        "Cost": "0",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Gun Cam",
+        "Mount": "Top/Under",
+        "Concealability": "(-1)",
+        "Rating": "-",
+        "Weight": ".25",
+        "Availability": "3/36hrs",
+        "Cost": "100",
+        "Street Index": "1.2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Gun Camera",
+        "Mount": "Top/Under",
+        "Concealability": "(-1)",
+        "Rating": "-",
+        "Weight": ".25",
+        "Availability": "2/24hrs",
+        "Cost": "300",
+        "Street Index": ".5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Individual Biometric Safety",
+        "Mount": "-",
+        "Concealability": "-",
+        "Rating": ".1",
+        "Weight": "3/36hrs",
+        "Availability": "2250",
+        "Cost": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Nine-Eleven Chip",
+        "Mount": "Top/Under",
+        "Concealability": "(-1)",
+        "Rating": "-",
+        "Weight": "-",
+        "Availability": "call Lone Star",
+        "Cost": "1750",
+        "Street Index": "-",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Security Chipping",
+        "Mount": "Top/Under",
+        "Concealability": "-",
+        "Rating": "10",
+        "Weight": "-",
+        "Availability": "4/72hrs",
+        "Cost": "1250",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "LaserEdge",
+        "Mount": "melee weapons only",
+        "Concealability": "-1",
+        "Rating": "-",
+        "Weight": ".25",
+        "Availability": "6/5days",
+        "Cost": "700",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Sharpwire Net Under-Barrel",
+        "Mount": "Under",
+        "Concealability": "(-2)",
+        "Rating": "-",
+        "Weight": "2",
+        "Availability": "5/4days",
+        "Cost": "450",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Sighting Band",
+        "Mount": "Top",
+        "Concealability": "-",
+        "Rating": "(-1)",
+        "Weight": ".25",
+        "Availability": "4/24hrs",
+        "Cost": "20",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Speedholster",
+        "Mount": "-",
+        "Concealability": "(+2)",
+        "Rating": "-",
+        "Weight": ".25",
+        "Availability": "4/24hrs",
+        "Cost": "200",
+        "Street Index": "1.25",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Speedloader",
+        "Mount": "-",
+        "Concealability": "8",
+        "Rating": "-",
+        "Weight": ".5",
+        "Availability": "2/24hrs",
+        "Cost": "10",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Improved Sound Suppressor",
+        "Mount": "Barrel",
+        "Concealability": "(-2)",
+        "Rating": "+1",
+        "Weight": ".5",
+        "Availability": "8/72hrs",
+        "Cost": "7500",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mini Silencer",
+        "Mount": "Barrel",
+        "Concealability": "-",
+        "Rating": "(-1)",
+        "Weight": ".1",
+        "Availability": "6/48hrs",
+        "Cost": "2500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Revolver Silencer",
+        "Mount": "Barrel",
+        "Concealability": "(-3)",
+        "Rating": "-",
+        "Weight": "1",
+        "Availability": "6/60hrs",
+        "Cost": "700",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Shhh 7000 Sound Suppressor",
+        "Mount": "Barrel",
+        "Concealability": "(-3)",
+        "Rating": "+2",
+        "Weight": "1",
+        "Availability": "9/72hrs",
+        "Cost": "11250",
+        "Street Index": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Slimline Silencer",
+        "Mount": "Barrel",
+        "Concealability": "(-1)",
+        "Rating": "-",
+        "Weight": ".2",
+        "Availability": "6/48hrs",
+        "Cost": "2500",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "DUD Smartgun Controller",
+        "Mount": "Top/Under",
+        "Concealability": "-1",
+        "Rating": "3",
+        "Weight": ".25",
+        "Availability": "8/6days",
+        "Cost": "5000",
+        "Street Index": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Midnight Arms Smartshades",
+        "Mount": "-",
+        "Concealability": "5",
+        "Rating": "-",
+        "Weight": "-",
+        "Availability": "3/36hrs",
+        "Cost": "4500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      }
+    ]
+  },
+  "Explosives": {
+    "Name": "Explosives",
+    "attributes": [
+      "Concealability",
+      "Rating",
+      "Weight",
+      "Availability",
+      "Cost",
+      "Street Index",
+      ""
+    ],
+    "entries": [
+      {
+        "Name": "Detcord (per 10 meters)",
+        "Concealability": "6",
+        "Rating": "6",
+        "Weight": "5",
+        "Availability": "10/48hrs",
+        "Cost": "900",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "FEN Dz 25",
+        "Concealability": "10",
+        "Rating": "4",
+        "Weight": ".02",
+        "Availability": "8/5days",
+        "Cost": "120",
+        "Street Index": "4",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Plastic",
+        "Concealability": "6",
+        "Rating": "6",
+        "Weight": "1",
+        "Availability": "8/48hrs",
+        "Cost": "80",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Plastic",
+        "Concealability": "6",
+        "Rating": "12",
+        "Weight": "1",
+        "Availability": "10/48hrs",
+        "Cost": "250",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Shaped Charge",
+        "Concealability": "4",
+        "Rating": "15D",
+        "Weight": "1",
+        "Availability": "12/48hrs",
+        "Cost": "500",
+        "Street Index": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "SecSystems Protection Field",
+        "Concealability": "8",
+        "Rating": "6L Stun",
+        "Weight": "1.5",
+        "Availability": "6/36hrs",
+        "Cost": "750",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Sleep Inducer",
+        "Concealability": "6",
+        "Rating": "4",
+        "Weight": ".5",
+        "Availability": "6/4days",
+        "Cost": "85",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      }
+    ]
+  },
+  "Clothing and Armor": {
+    "Name": "Clothing and Armor",
+    "attributes": [
+      "Concealability",
+      "Ballistic",
+      "Impact",
+      "Weight",
+      "Availability",
+      "Cost",
+      "Street Index",
+      ""
+    ],
+    "entries": [
+      {
+        "Name": "Armored Stockings",
+        "Concealability": "15",
+        "Ballistic": "+1",
+        "Impact": "0",
+        "Weight": "-",
+        "Availability": "6/72hrs",
+        "Cost": "110",
+        "Street Index": "1.1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Kevlar Armor Jacket",
+        "Concealability": "8",
+        "Ballistic": "3",
+        "Impact": "2",
+        "Weight": "1",
+        "Availability": "2/36hrs",
+        "Cost": "600",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Kevlar Armor Jacket",
+        "Concealability": "6",
+        "Ballistic": "4",
+        "Impact": "3",
+        "Weight": "1.5",
+        "Availability": "3/36hrs",
+        "Cost": "800",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Kevlar Armor Jacket",
+        "Concealability": "5",
+        "Ballistic": "5",
+        "Impact": "4",
+        "Weight": "2",
+        "Availability": "3/36hrs",
+        "Cost": "1000",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Kevlar T-Shirt",
+        "Concealability": "11",
+        "Ballistic": "2",
+        "Impact": "0",
+        "Weight": "1",
+        "Availability": "4/48hrs",
+        "Cost": "220",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Eji Armored Cloak",
+        "Concealability": "14",
+        "Ballistic": "2",
+        "Impact": "1",
+        "Weight": "1.5",
+        "Availability": "always",
+        "Cost": "500",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Eji Designer",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "1",
+        "Availability": "always",
+        "Cost": "50",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Eji Lamb",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "1",
+        "Availability": "always",
+        "Cost": "60",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Gibson Acid-washed Jeans",
+        "Concealability": "10",
+        "Ballistic": "2",
+        "Impact": "1",
+        "Weight": "1",
+        "Availability": "4/48hrs",
+        "Cost": "300",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Gibson Denim Jacket",
+        "Concealability": "9",
+        "Ballistic": "2",
+        "Impact": "1",
+        "Weight": "1",
+        "Availability": "4/48hrs",
+        "Cost": "1500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Gibson T-Shirt",
+        "Concealability": "10",
+        "Ballistic": "1",
+        "Impact": "0",
+        "Weight": ".5",
+        "Availability": "4/48hrs",
+        "Cost": "100",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Gibson Sneak Suit Helmet",
+        "Concealability": "-",
+        "Ballistic": "+1",
+        "Impact": "+0",
+        "Weight": "1.5",
+        "Availability": "10/5days",
+        "Cost": "1185",
+        "Street Index": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Gibson Sneak Suit Diving Suit",
+        "Concealability": "+4",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "2",
+        "Availability": "12/7days",
+        "Cost": "35000",
+        "Street Index": "3.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Gibson Sneak Suit Flak Vest",
+        "Concealability": "+2",
+        "Ballistic": "2",
+        "Impact": "1",
+        "Weight": "1.5",
+        "Availability": "8/5days",
+        "Cost": "1375",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Gibson Sneak Suit Sneak Suit",
+        "Concealability": "+4",
+        "Ballistic": "1",
+        "Impact": "0",
+        "Weight": "1",
+        "Availability": "8/5days",
+        "Cost": "1560",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Gibson Sneak Suit Space Suit",
+        "Concealability": "+4",
+        "Ballistic": "1",
+        "Impact": "1",
+        "Weight": "10",
+        "Availability": "14/7days",
+        "Cost": "25000",
+        "Street Index": "4.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "ICON Bomber Jacket",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "2",
+        "Weight": "1.5",
+        "Availability": "always",
+        "Cost": "900",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "ICON Boots",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "1",
+        "Availability": "always",
+        "Cost": "450",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "ICON Gun Belt",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": ".25",
+        "Availability": "3/24hrs",
+        "Cost": "180",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "ICON",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": ".5",
+        "Availability": "always",
+        "Cost": "300",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "ICON Half Boots",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": ".75",
+        "Availability": "always",
+        "Cost": "300",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "ICON Long Duster",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "1",
+        "Weight": "1.5",
+        "Availability": "always",
+        "Cost": "1500",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "ICON Long Skirt",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "1",
+        "Availability": "always",
+        "Cost": "600",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "ICON Miniskirt",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": ".5",
+        "Availability": "always",
+        "Cost": "300",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "ICON Pants",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "1",
+        "Availability": "always",
+        "Cost": "750",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "ICON Tunic",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "1",
+        "Weight": "1",
+        "Availability": "always",
+        "Cost": "660",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Masetto",
+        "Concealability": "-",
+        "Ballistic": "-",
+        "Impact": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "200",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Masetto",
+        "Concealability": "-",
+        "Ballistic": "-",
+        "Impact": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "40",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Masetto",
+        "Concealability": "-",
+        "Ballistic": "-",
+        "Impact": "+1",
+        "Weight": "1",
+        "Availability": "4/48hrs",
+        "Cost": "3,500",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Masetto",
+        "Concealability": "-",
+        "Ballistic": "-",
+        "Impact": "+1",
+        "Weight": "1",
+        "Availability": "3/48hrs",
+        "Cost": "600",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Masetto",
+        "Concealability": "6",
+        "Ballistic": "3",
+        "Impact": "2",
+        "Weight": "1",
+        "Availability": "always",
+        "Cost": "1600",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Masetto",
+        "Concealability": "-",
+        "Ballistic": "-",
+        "Impact": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "50",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Nu-Tek Wearment Jacket",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "1",
+        "Availability": "3/48hrs",
+        "Cost": "300",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Nu-Tek Wearman Skirt",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": ".75",
+        "Availability": "3/48hrs",
+        "Cost": "200",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Takanaka Exec Briefcase",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "1.5",
+        "Availability": "5/72hrs",
+        "Cost": "600",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Takanaka Exec Cape",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "1.5",
+        "Availability": "6/72hrs",
+        "Cost": "900",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Takanaka Exec Cologne",
+        "Concealability": "-",
+        "Ballistic": "-",
+        "Impact": "-",
+        "Weight": "-",
+        "Availability": "6/72hrs",
+        "Cost": "150",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Takanaka Exec Cravat",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": ".5",
+        "Availability": "6/72hrs",
+        "Cost": "100",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Takanaka Exec Armored Topcoat",
+        "Concealability": "10",
+        "Ballistic": "4",
+        "Impact": "1",
+        "Weight": "2.5",
+        "Availability": "8/72hrs",
+        "Cost": "2000",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Takanaka Exec Jacket",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "1",
+        "Availability": "6/72hrs",
+        "Cost": "800",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Takanaka Exec Monogram Shirt",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": ".75",
+        "Availability": "7/72hrs",
+        "Cost": "200",
+        "Street Index": "1.1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Takanaka Exec Opera Cloak",
+        "Concealability": "10",
+        "Ballistic": "3",
+        "Impact": "1",
+        "Weight": "2.5",
+        "Availability": "8/72hrs",
+        "Cost": "1200",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Takanaka Exec Pants",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "1",
+        "Availability": "6/72hrs",
+        "Cost": "700",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Takanaka Exec Scarf",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": ".25",
+        "Availability": "6/72hrs",
+        "Cost": "75",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Takanaka Exec Sword Case",
+        "Concealability": "-",
+        "Ballistic": "-",
+        "Impact": "-",
+        "Weight": ".5",
+        "Availability": "8/72hrs",
+        "Cost": "300",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Takanaka Exec Tie",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "-",
+        "Availability": "6/72hrs",
+        "Cost": "100",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Takanaka Exec Top Coat",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "1.5",
+        "Availability": "6/72hrs",
+        "Cost": "1000",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Uniware Armored Jacket",
+        "Concealability": "7",
+        "Ballistic": "3",
+        "Impact": "2",
+        "Weight": "1.5",
+        "Availability": "10/4days",
+        "Cost": "800",
+        "Street Index": "1.3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Uniware Armored Trenchcoat",
+        "Concealability": "7",
+        "Ballistic": "4",
+        "Impact": "3",
+        "Weight": "2",
+        "Availability": "10/4days",
+        "Cost": "900",
+        "Street Index": "1.3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Uniware Blouse",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": ".75",
+        "Availability": "8/4days",
+        "Cost": "40",
+        "Street Index": "1.2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Uniware Boots",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "1",
+        "Availability": "4/4days",
+        "Cost": "60",
+        "Street Index": "1.2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Uniware Dress",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "1.5",
+        "Availability": "6/4days",
+        "Cost": "100",
+        "Street Index": "1.2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Uniware Jumpsuit",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "1.5",
+        "Availability": "8/4days",
+        "Cost": "150",
+        "Street Index": "1.2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Uniware Legpads",
+        "Concealability": "8",
+        "Ballistic": "2",
+        "Impact": "2",
+        "Weight": "1.5",
+        "Availability": "9/4days",
+        "Cost": "300",
+        "Street Index": "1.3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Uniware Pants",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "1",
+        "Availability": "8/4days",
+        "Cost": "70",
+        "Street Index": "1.2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Uniware Skirt",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": ".75",
+        "Availability": "8/4days",
+        "Cost": "70",
+        "Street Index": "1.2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Uniware Torso Armor",
+        "Concealability": "8",
+        "Ballistic": "2",
+        "Impact": "2",
+        "Weight": "2",
+        "Availability": "10/4days",
+        "Cost": "300",
+        "Street Index": "1.3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Uniware Utility Belt",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": ".5",
+        "Availability": "5/4days",
+        "Cost": "30",
+        "Street Index": "1.1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Uniware Vest",
+        "Concealability": "-",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": ".5",
+        "Availability": "8/4days",
+        "Cost": "50",
+        "Street Index": "1.2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zo",
+        "Concealability": "13",
+        "Ballistic": "3",
+        "Impact": "1",
+        "Weight": "1",
+        "Availability": "4/48hrs",
+        "Cost": "2000",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zo",
+        "Concealability": "14",
+        "Ballistic": "4",
+        "Impact": "2",
+        "Weight": "1.5",
+        "Availability": "6/48hrs",
+        "Cost": "2000",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zo",
+        "Concealability": "13",
+        "Ballistic": "3",
+        "Impact": "1",
+        "Weight": "1.5",
+        "Availability": "4/48hrs",
+        "Cost": "2500",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Fireproof Coat",
+        "Concealability": "8",
+        "Ballistic": "0",
+        "Impact": "2",
+        "Weight": "1",
+        "Availability": "4/48hrs",
+        "Cost": "220",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Fireproof Jacket",
+        "Concealability": "8",
+        "Ballistic": "0",
+        "Impact": "2",
+        "Weight": "1",
+        "Availability": "4/48hrs",
+        "Cost": "200",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Fireproof Shirt",
+        "Concealability": "8",
+        "Ballistic": "0",
+        "Impact": "1",
+        "Weight": ".5",
+        "Availability": "4/48hrs",
+        "Cost": "130",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Fireproof Hat",
+        "Concealability": "8",
+        "Ballistic": "0",
+        "Impact": "1",
+        "Weight": "-",
+        "Availability": "4/48hrs",
+        "Cost": "130",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Fireproof Skirt",
+        "Concealability": "8",
+        "Ballistic": "0",
+        "Impact": "1",
+        "Weight": "1",
+        "Availability": "4/48hrs",
+        "Cost": "150",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Fireproof Pants",
+        "Concealability": "8",
+        "Ballistic": "0",
+        "Impact": "2",
+        "Weight": "1.5",
+        "Availability": "4/48hrs",
+        "Cost": "150",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Fireproof Overcoat",
+        "Concealability": "8",
+        "Ballistic": "0",
+        "Impact": "2",
+        "Weight": "2",
+        "Availability": "4/48hrs",
+        "Cost": "500",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Fireproof Suit",
+        "Concealability": "4",
+        "Ballistic": "(Special)",
+        "Impact": "(Special)",
+        "Weight": "3",
+        "Availability": "6/72hrs",
+        "Cost": "500",
+        "Street Index": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Fire-Resistant Coveralls",
+        "Concealability": "10",
+        "Ballistic": "0",
+        "Impact": "3",
+        "Weight": "3.5",
+        "Availability": "10/48hrs",
+        "Cost": "2000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Light Combat Biker Armor",
+        "Concealability": "-",
+        "Ballistic": "3",
+        "Impact": "2",
+        "Weight": "1.25",
+        "Availability": "4/48hrs",
+        "Cost": "900",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Heavy Combat Biker Armor",
+        "Concealability": "-",
+        "Ballistic": "6",
+        "Impact": "5",
+        "Weight": "2.75",
+        "Availability": "4/48hrs",
+        "Cost": "1200",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Combat Bikr Helmet",
+        "Concealability": "-",
+        "Ballistic": "+1",
+        "Impact": "+1",
+        "Weight": ".5",
+        "Availability": "5/48hrs",
+        "Cost": "600",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Light Urban Brawl Armor",
+        "Concealability": "-",
+        "Ballistic": "3",
+        "Impact": "2",
+        "Weight": "1.25",
+        "Availability": "4/48hrs",
+        "Cost": "700",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Medium Urban Brawl Armor",
+        "Concealability": "-",
+        "Ballistic": "4",
+        "Impact": "3",
+        "Weight": "1.5",
+        "Availability": "4/48hrs",
+        "Cost": "750",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Heavy Urban Brawl Armor",
+        "Concealability": "-",
+        "Ballistic": "6",
+        "Impact": "4",
+        "Weight": "2.5",
+        "Availability": "4/48hrs",
+        "Cost": "1000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Urban Brawl Helmet",
+        "Concealability": "-",
+        "Ballistic": "+1",
+        "Impact": "+1",
+        "Weight": ".5",
+        "Availability": "5/48hrs",
+        "Cost": "600",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Battle Vest",
+        "Concealability": "7",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "1",
+        "Availability": "5/3days",
+        "Cost": "750",
+        "Street Index": "1.75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Doorgunner",
+        "Concealability": "-",
+        "Ballistic": "6",
+        "Impact": "4",
+        "Weight": "12",
+        "Availability": "9/8days",
+        "Cost": "7500",
+        "Street Index": "1.9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Flack Vest",
+        "Concealability": "-",
+        "Ballistic": "4",
+        "Impact": "4",
+        "Weight": "2",
+        "Availability": "6/4days",
+        "Cost": "1000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "MedicGear Combat Medical Armor",
+        "Concealability": "5",
+        "Ballistic": "3",
+        "Impact": "1",
+        "Weight": "4",
+        "Availability": "10/14days",
+        "Cost": "3400",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Partial Suit",
+        "Concealability": "-",
+        "Ballistic": "6",
+        "Impact": "4",
+        "Weight": "(10+BODY)",
+        "Availability": "8/10days",
+        "Cost": "10000",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Kelmar Light Police Armor",
+        "Concealability": "2",
+        "Ballistic": "3",
+        "Impact": "5",
+        "Weight": "2.5",
+        "Availability": "20/14days",
+        "Cost": "10000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Kelmar Heavy Police Armor",
+        "Concealability": "1",
+        "Ballistic": "5",
+        "Impact": "7",
+        "Weight": "4",
+        "Availability": "24/20days",
+        "Cost": "12500",
+        "Street Index": "3.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Kelmar Police Helmet",
+        "Concealability": "-",
+        "Ballistic": "+0",
+        "Impact": "+1",
+        "Weight": ".75",
+        "Availability": "20/14days",
+        "Cost": "2000",
+        "Street Index": "3.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "MetalGear Arm Piece",
+        "Concealability": "2",
+        "Ballistic": "1.5",
+        "Impact": "1.25",
+        "Weight": "2",
+        "Availability": "10/7days",
+        "Cost": "2000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "MetalGear Helmet",
+        "Concealability": "2",
+        "Ballistic": "1.5",
+        "Impact": "1.25",
+        "Weight": "2",
+        "Availability": "10/7days",
+        "Cost": "2000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "MetalGear Leg Piece",
+        "Concealability": "2",
+        "Ballistic": "1.5",
+        "Impact": "1.25",
+        "Weight": "2",
+        "Availability": "10/7days",
+        "Cost": "2000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "MetalGear Torso Piece",
+        "Concealability": "2",
+        "Ballistic": "1.5",
+        "Impact": "1.25",
+        "Weight": "2",
+        "Availability": "10/7days",
+        "Cost": "2000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Diving Suit",
+        "Concealability": "-",
+        "Ballistic": "2",
+        "Impact": "1",
+        "Weight": "10",
+        "Availability": "10/10 days",
+        "Cost": "6,000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Esporma Environment Suit",
+        "Concealability": "1",
+        "Ballistic": "2",
+        "Impact": "1",
+        "Weight": "5",
+        "Availability": "6/4days",
+        "Cost": "7250",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "8",
+        "Concealability": "+4",
+        "Ballistic": "2",
+        "Impact": "1",
+        "Weight": "3",
+        "Availability": "6/14days",
+        "Cost": "53000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Helmet             8",
+        "Concealability": "-",
+        "Ballistic": "+1",
+        "Impact": "+0",
+        "Weight": "1.5",
+        "Availability": "8/14days",
+        "Cost": "6000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "IR Combat Cloak",
+        "Concealability": "+4/+2",
+        "Ballistic": "-",
+        "Impact": "-",
+        "Weight": "2",
+        "Availability": "6/48hrs",
+        "Cost": "450",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Kevlar Blanket",
+        "Concealability": "-",
+        "Ballistic": "2",
+        "Impact": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Medieval Armor (Maximillian)",
+        "Concealability": "-",
+        "Ballistic": "3",
+        "Impact": "4",
+        "Weight": "14",
+        "Availability": "10/4days",
+        "Cost": "10600",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Medieval Armor (Standard)",
+        "Concealability": "-",
+        "Ballistic": "2",
+        "Impact": "3",
+        "Weight": "10",
+        "Availability": "8/48hrs",
+        "Cost": "3500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Gear",
+        "Concealability": "-",
+        "Ballistic": "+1",
+        "Impact": "+0",
+        "Weight": "1",
+        "Availability": "9/4days",
+        "Cost": "700",
+        "Street Index": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Gear",
+        "Concealability": "-",
+        "Ballistic": "2",
+        "Impact": "1",
+        "Weight": "1.5",
+        "Availability": "7/4days",
+        "Cost": "1275",
+        "Street Index": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Gear",
+        "Concealability": "+2",
+        "Ballistic": "1",
+        "Impact": "0",
+        "Weight": "1.5",
+        "Availability": "5/48hrs",
+        "Cost": "1050",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Shadow Suit",
+        "Concealability": "12",
+        "Ballistic": "4",
+        "Impact": "1",
+        "Weight": "1.5",
+        "Availability": "6/48hrs",
+        "Cost": "800",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Sneak Suit",
+        "Concealability": "+4",
+        "Ballistic": "0",
+        "Impact": "0",
+        "Weight": "2",
+        "Availability": "8/14days",
+        "Cost": "50000",
+        "Street Index": "7.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Thermal Regulation Suit",
+        "Concealability": "14",
+        "Ballistic": "-",
+        "Impact": "-",
+        "Weight": "2",
+        "Availability": "6/48hrs",
+        "Cost": "8000",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      }
+    ]
+  },
+  "Lifestyle Extras": {
+    "Name": "Lifestyle Extras",
+    "attributes": [
+      "Concealability",
+      "Weight",
+      "Availability",
+      "Cost",
+      "Street Index",
+      ""
+    ],
+    "entries": [
+      {
+        "Name": "Armament Briefcase (armor 0",
+        "Concealability": "-",
+        "Weight": "1.5",
+        "Availability": "4/36hrs",
+        "Cost": "500",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Armament Computer Case",
+        "Concealability": "-",
+        "Weight": "1.5",
+        "Availability": "4/36hrs",
+        "Cost": "450",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Armament Guitar Case",
+        "Concealability": "-",
+        "Weight": "3.5",
+        "Availability": "5/36hrs",
+        "Cost": "700",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Armament Keyboard Case",
+        "Concealability": "-",
+        "Weight": "3",
+        "Availability": "6/36hrs",
+        "Cost": "700",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Armament Large Suitcase",
+        "Concealability": "-",
+        "Weight": "3",
+        "Availability": "6/36hrs",
+        "Cost": "600",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Armament Small Suitcase",
+        "Concealability": "-",
+        "Weight": "2.5",
+        "Availability": "5/36hrs",
+        "Cost": "500",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Armament Tool Case",
+        "Concealability": "-",
+        "Weight": "1",
+        "Availability": "4/36hrs",
+        "Cost": "400",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Armament Violin Case",
+        "Concealability": "-",
+        "Weight": "2",
+        "Availability": "6/36hrs",
+        "Cost": "650",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "IEC Domitic System (per m",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "2/48hrs",
+        "Cost": "2D6x50",
+        "Street Index": "-",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Autotanner",
+        "Concealability": "3",
+        "Weight": "1",
+        "Availability": "always",
+        "Cost": "200",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Bar-In-A-Briefcase",
+        "Concealability": "3",
+        "Weight": "5",
+        "Availability": "6/36hrs",
+        "Cost": "100",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Biotech Nutrisupplement",
+        "Concealability": "-",
+        "Weight": ".5",
+        "Availability": "always",
+        "Cost": "10",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Biotech Nymph Perfume",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "200",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Boyo Bodyfree Masks",
+        "Concealability": "8",
+        "Weight": "-",
+        "Availability": "-",
+        "Cost": "600",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "DDI PrayerWare",
+        "Concealability": "7",
+        "Weight": "-",
+        "Availability": "on payment",
+        "Cost": "120",
+        "Street Index": "-",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Everest Climbing Spikes",
+        "Concealability": "3",
+        "Weight": "-",
+        "Availability": "2/24hrs",
+        "Cost": "75",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Flavored Cigarettes",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "2",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Flare Compensation Sunglasses",
+        "Concealability": "12",
+        "Weight": ".1",
+        "Availability": "5/24hrs",
+        "Cost": "2000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Folding Pocket Binoculars",
+        "Concealability": "8",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "50",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Shower-In-A-Can",
+        "Concealability": "8",
+        "Weight": ".5",
+        "Availability": "2/12hrs",
+        "Cost": "3",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Slosh Bag",
+        "Concealability": "2",
+        "Weight": "2",
+        "Availability": "4/72hrs",
+        "Cost": "65",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Smartgun Sunglasses",
+        "Concealability": "12",
+        "Weight": ".1",
+        "Availability": "4/24hrs",
+        "Cost": "1950",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Swiss Army Knife",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "30",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Thermographic Sunglasses",
+        "Concealability": "12",
+        "Weight": ".1",
+        "Availability": "4/24hrs",
+        "Cost": "2600",
+        "Street Index": "1.25",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Temperfoam Furniture",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "2/24hrs",
+        "Cost": "140",
+        "Street Index": ".5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Travel Kit",
+        "Concealability": "3",
+        "Weight": "5",
+        "Availability": "always",
+        "Cost": "500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Wonders",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "4/60hrs",
+        "Cost": "500",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mindscape Cyberholo Art Imager",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "6000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Newsviewer",
+        "Concealability": "4",
+        "Weight": ".1",
+        "Availability": "3/36hrs",
+        "Cost": "100",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Yamaha RX4000 Ultrasynth",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "9380",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Basic Rush System",
+        "Concealability": "3",
+        "Weight": "4.5",
+        "Availability": "always",
+        "Cost": "500",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Rush Multi-player Adaptor",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "100",
+        "Street Index": ".6",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Rush Total Environment",
+        "Concealability": "-",
+        "Weight": ".75",
+        "Availability": "always",
+        "Cost": "1000",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Video Wall",
+        "Concealability": "-",
+        "Weight": "5",
+        "Availability": "always",
+        "Cost": "3500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Rush Virtual Villains",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "150",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "High-Quality Baseline ACT Rec.",
+        "Concealability": "10",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "2.5",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Current Hit Baseline ACT Rec.",
+        "Concealability": "10",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "3",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Average Baseline Dir-X Rec.",
+        "Concealability": "10",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "90",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "HighQuality Baseline Dir-X Rec",
+        "Concealability": "10",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "100",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Current Hit Baseline Dir-X Rec",
+        "Concealability": "10",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "150",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "High-Quality Full-X ACT Rec.",
+        "Concealability": "10",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "7.5",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Video Recorder Package",
+        "Concealability": "2",
+        "Weight": "2",
+        "Availability": "6/48hrs",
+        "Cost": "1000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Video Screen",
+        "Concealability": "-",
+        "Weight": "3",
+        "Availability": "always",
+        "Cost": "150",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Video Transmission Unit",
+        "Concealability": "-",
+        "Weight": "5",
+        "Availability": "8/7days",
+        "Cost": "4000",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Heat-sensitive Color Changers",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "3/24hrs",
+        "Cost": "120",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Stars",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "2/24hrs",
+        "Cost": "50",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Trademarks",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "4/24hrs",
+        "Cost": "100",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Telecom (100 mp)",
+        "Concealability": "-",
+        "Weight": "15",
+        "Availability": "Always",
+        "Cost": "3000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Telecom (250 mp)",
+        "Concealability": "-",
+        "Weight": "15",
+        "Availability": "Always",
+        "Cost": "7500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Telecom (500 mp)",
+        "Concealability": "-",
+        "Weight": "15",
+        "Availability": "Always",
+        "Cost": "15000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Telecom (1000 mp)",
+        "Concealability": "-",
+        "Weight": "15",
+        "Availability": "Always",
+        "Cost": "30000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Advanced Comm. Suitcase",
+        "Concealability": "3",
+        "Weight": "6",
+        "Availability": "8/48hrs",
+        "Cost": "8000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Earplug Phone",
+        "Concealability": "8",
+        "Weight": "-",
+        "Availability": "Always",
+        "Cost": "1000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "EBM Carfaxx 2002",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "-",
+        "Cost": "500",
+        "Street Index": "-",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Fax Plus 1000 Fax Machine",
+        "Concealability": "6",
+        "Weight": ".5",
+        "Availability": "always",
+        "Cost": "300",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Handset Phone",
+        "Concealability": "3",
+        "Weight": "1",
+        "Availability": "Always",
+        "Cost": "500",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Phone Booster Pack",
+        "Concealability": "3",
+        "Weight": "2",
+        "Availability": "Always",
+        "Cost": "500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Pocket Security",
+        "Concealability": "3",
+        "Weight": ".5",
+        "Availability": "Always",
+        "Cost": "3000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Office Communications Suite",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "10/10days",
+        "Cost": "10000",
+        "Street Index": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "ThunderArc Three-D Holophone",
+        "Concealability": "-",
+        "Weight": "1",
+        "Availability": "3/24hrs",
+        "Cost": "9000",
+        "Street Index": "1.25",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Wrist Phone",
+        "Concealability": "4",
+        "Weight": "-",
+        "Availability": "Always",
+        "Cost": "1000",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Wrist Phone w",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "Always",
+        "Cost": "1500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Call Forwarding Phone Upgrade",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "50",
+        "Street Index": "-",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Call Waiting Phone Upgrade",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "50",
+        "Street Index": "-",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Conference Calling Phone Upgr.",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "50",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Digital Recorder Phone Upgrade",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "6/36hrs",
+        "Cost": "2500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "ECM Scrambler Phone Upgrade",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "25",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Emergency Dialer Phone Upgrade",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "150",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Fax Interface Phone Upgrade",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "150",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Privacy Plus Phone Upgrade",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "3000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Split Line Phone Upgrade",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "100",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Tight Beam Phone Upgrade",
+        "Concealability": "-",
+        "Weight": "3",
+        "Availability": "2/12hrs",
+        "Cost": "200",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Video Option Phone Upgrade",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "450",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Voicemail Phone Upgrade",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "40",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Computer Printer",
+        "Concealability": "NA",
+        "Weight": "10",
+        "Availability": "Always",
+        "Cost": "100",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "DataTel RotoWrighter (printer)",
+        "Concealability": "8",
+        "Weight": ".25",
+        "Availability": "always",
+        "Cost": "20",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "E-Book Microcomp (12 Mp)",
+        "Concealability": "4",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "4800",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "E-Book Microcomp Cyber (12 Mp)",
+        "Concealability": "4",
+        "Weight": "-",
+        "Availability": "3/36hrs",
+        "Cost": "6720",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "EBM Cyber-PCX Minicomp (25 Mp)",
+        "Concealability": "3",
+        "Weight": "1",
+        "Availability": "3/24hrs",
+        "Cost": "3500",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "EBM PCX Minicomp (25 Mp)",
+        "Concealability": "3",
+        "Weight": "1",
+        "Availability": "always",
+        "Cost": "2500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Hybrid Wearable Computer 25 Mp",
+        "Concealability": "6",
+        "Weight": "2",
+        "Availability": "10/8 days",
+        "Cost": "3000",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "IIKL-4 Workstation 40 Mp",
+        "Concealability": "-",
+        "Weight": "10",
+        "Availability": "always",
+        "Cost": "800",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "IIKL-4 Workstation Cyber 40 Mp",
+        "Concealability": "-",
+        "Weight": "10",
+        "Availability": "3/36hrs",
+        "Cost": "1120",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mead Electronic Notebook 30 Mp",
+        "Concealability": "4",
+        "Weight": "1",
+        "Availability": "always",
+        "Cost": "3000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mini-Printer",
+        "Concealability": "3",
+        "Weight": ".5",
+        "Availability": "always",
+        "Cost": "125",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "PCZ Super Laptop (30 Mp)",
+        "Concealability": "1",
+        "Weight": "3",
+        "Availability": "always",
+        "Cost": "750",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Pocket Computer (100 mp)",
+        "Concealability": "3",
+        "Weight": "1",
+        "Availability": "Always",
+        "Cost": "10000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Pocket Computer (250 mp)",
+        "Concealability": "3",
+        "Weight": "1",
+        "Availability": "Always",
+        "Cost": "25000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Pocket Computer (500 mp)",
+        "Concealability": "3",
+        "Weight": "1",
+        "Availability": "Always",
+        "Cost": "50000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Pocket Computer (1000 mp)",
+        "Concealability": "3",
+        "Weight": "1",
+        "Availability": "Always",
+        "Cost": "100000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Techtronics Black Book (12 Mp)",
+        "Concealability": "4",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "5750",
+        "Street Index": "1.6",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Treasurer Datawatch (1 Mp)",
+        "Concealability": "12",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "55",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Table Top PC (100 mp)",
+        "Concealability": "-",
+        "Weight": "10",
+        "Availability": "Always",
+        "Cost": "2000",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Table Top PC (250 mp)",
+        "Concealability": "-",
+        "Weight": "10",
+        "Availability": "Always",
+        "Cost": "5000",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Table Top PC (500 mp)",
+        "Concealability": "-",
+        "Weight": "10",
+        "Availability": "Always",
+        "Cost": "10000",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Table Top PC (1000 mp)",
+        "Concealability": "-",
+        "Weight": "10",
+        "Availability": "Always",
+        "Cost": "20000",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Table Top PC (1500 mp)",
+        "Concealability": "-",
+        "Weight": "10",
+        "Availability": "Always",
+        "Cost": "30000",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Wrist Computer (100 mp)",
+        "Concealability": "4",
+        "Weight": "-",
+        "Availability": "Always",
+        "Cost": "40000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Wrist Computer (250 mp)",
+        "Concealability": "4",
+        "Weight": "-",
+        "Availability": "Always",
+        "Cost": "100000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Wrist Computer (500 mp)",
+        "Concealability": "4",
+        "Weight": "-",
+        "Availability": "Always",
+        "Cost": "200000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Wrist Computer (1000 mp)",
+        "Concealability": "4",
+        "Weight": "-",
+        "Availability": "Always",
+        "Cost": "400000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Wrist Computer (1500 mp)",
+        "Concealability": "4",
+        "Weight": "-",
+        "Availability": "Always",
+        "Cost": "600000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Wyzard Handbox Personal Comp.",
+        "Concealability": "3",
+        "Weight": "1",
+        "Availability": "2/6hrs",
+        "Cost": "6700",
+        "Street Index": "1.25",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech PDA",
+        "Concealability": "-",
+        "Weight": "1.1",
+        "Availability": "always",
+        "Cost": "3000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech PS-4040 (30 Mp)",
+        "Concealability": "-",
+        "Weight": "3",
+        "Availability": "always",
+        "Cost": "1600",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Dataport",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "100",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "External Memory",
+        "Concealability": "-",
+        "Weight": ".25",
+        "Availability": "always",
+        "Cost": "200",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Memory Upgrades (+10 Mp)",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "200",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Language Processors",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "+40%",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Tritech Datashielding",
+        "Concealability": "-",
+        "Weight": "+1",
+        "Availability": "5/48hrs",
+        "Cost": "+20%",
+        "Street Index": "1.2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Detector 1",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "2/48hrs",
+        "Cost": "600",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Detector 2",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "2/48hrs",
+        "Cost": "1200",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Detector 3",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "3/48hrs",
+        "Cost": "1800",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Detector 4",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "4/48hrs",
+        "Cost": "2400",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Detector 5",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "5/48hrs",
+        "Cost": "3000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Detector 6",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "6/48hrs",
+        "Cost": "3600",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Detector 7",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "7/48hrs",
+        "Cost": "4200",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Detector 8",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "8/48hrs",
+        "Cost": "4800",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Detector 9",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "9/48hrs",
+        "Cost": "5400",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Detector 10",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "10/48hrs",
+        "Cost": "6000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Jammer 1",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "2/72hrs",
+        "Cost": "600",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Jammer 2",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "2/72hrs",
+        "Cost": "1200",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Jammer 3",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "3/72hrs",
+        "Cost": "1800",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Jammer 4",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "4/72hrs",
+        "Cost": "2400",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Jammer 5",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "5/72hrs",
+        "Cost": "3000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Jammer 6",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "6/72hrs",
+        "Cost": "3600",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Jammer 7",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "7/72hrs",
+        "Cost": "4200",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Jammer 8",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "8/72hrs",
+        "Cost": "4800",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Jammer 9",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "9/72hrs",
+        "Cost": "5400",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Bug Jammer 10",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "10/72hrs",
+        "Cost": "6000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Drug Analyzer 1",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "2/48hrs",
+        "Cost": "225",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Drug Analyzer 2",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "2/48hrs",
+        "Cost": "450",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Drug Analyzer 3",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "3/48hrs",
+        "Cost": "675",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Drug Analyzer 4",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "4/48hrs",
+        "Cost": "900",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Lie Detector 1",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "3/48hrs",
+        "Cost": "600",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Lie Detector 2",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "6/48hrs",
+        "Cost": "1200",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Lie Detector 3",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "9/48hrs",
+        "Cost": "1800",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Medscanner 1",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "2/24hrs",
+        "Cost": "750",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Medscanner 2",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "2/24hrs",
+        "Cost": "1500",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Medscanner 3",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "3/24hrs",
+        "Cost": "2250",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Medscanner 4",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "4/24hrs",
+        "Cost": "3000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Radar Detector 1",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "2/72hrs",
+        "Cost": "450",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Radar Detector 2",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "2/72hrs",
+        "Cost": "900",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Radar Detector 3",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "3/72hrs",
+        "Cost": "1350",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Radar Detector 4",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "4/72hrs",
+        "Cost": "1800",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Radar Detector 5",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "5/72hrs",
+        "Cost": "2250",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Radar Detector 6",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "6/72hrs",
+        "Cost": "2700",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Radar Detector 7",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "7/72hrs",
+        "Cost": "3150",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Radar Detector 8",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "8/72hrs",
+        "Cost": "3600",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Radar Detector 9",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "9/72hrs",
+        "Cost": "4050",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Radar Detector 10",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "10/72hrs",
+        "Cost": "4500",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Signal Tracker 1",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "2/48hrs",
+        "Cost": "900",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Signal Tracker 2",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "2/48hrs",
+        "Cost": "1800",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Signal Tracker 3",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "3/48hrs",
+        "Cost": "2700",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Signal Tracker 4",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "4/48hrs",
+        "Cost": "3600",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Signal Tracker 5",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "5/48hrs",
+        "Cost": "4500",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Signal Tracker 6",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "6/48hrs",
+        "Cost": "5400",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Signal Tracker 7",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "7/48hrs",
+        "Cost": "6300",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Signal Tracker 8",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "8/48hrs",
+        "Cost": "7200",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Signal Tracker 9",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "9/48hrs",
+        "Cost": "8100",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Signal Tracker 10",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "10/48hrs",
+        "Cost": "9000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Techscanner 1",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "2/24hrs",
+        "Cost": "750",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Techscanner 2",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "2/24hrs",
+        "Cost": "1500",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Techscanner 3",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "3/24hrs",
+        "Cost": "2250",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Techscanner 4",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "4/24hrs",
+        "Cost": "3000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Voice Stress Analyz 1",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "2/48hrs",
+        "Cost": "300",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Voice Stress Analyz 2",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "4/48hrs",
+        "Cost": "600",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zetatech Voice Stress Analyz 3",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "6/48hrs",
+        "Cost": "900",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Data Unit (1000Mp)",
+        "Concealability": "3",
+        "Weight": "2",
+        "Availability": "Always",
+        "Cost": "20000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Data: Headset (500Mp)",
+        "Concealability": "4",
+        "Weight": "1",
+        "Availability": "Always",
+        "Cost": "20000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Data: Heads-Up Display (200Mp)",
+        "Concealability": "NA",
+        "Weight": "1",
+        "Availability": "6/7days",
+        "Cost": "40000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Kiroshi Goggles",
+        "Concealability": "-",
+        "Weight": "1",
+        "Availability": "8/7days",
+        "Cost": "150",
+        "Street Index": "3.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Kiroshi Mirrorshades",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "8/7days",
+        "Cost": "300",
+        "Street Index": "3.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Kiroshi Monocle",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "8/7days",
+        "Cost": "200",
+        "Street Index": "3.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Nikkon America Campod",
+        "Concealability": "-",
+        "Weight": "2",
+        "Availability": "4/72hrs",
+        "Cost": "2000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Cinema Pr. Steadycam Chest",
+        "Concealability": "-",
+        "Weight": "3",
+        "Availability": "3/48hrs",
+        "Cost": "1800",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Cinema Pr. Steadycam Head",
+        "Concealability": "-",
+        "Weight": "2",
+        "Availability": "3/48hrs",
+        "Cost": "1800",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Sekrit Sistemz No-Sho Camtrol.",
+        "Concealability": "5",
+        "Weight": "1",
+        "Availability": "5/72hrs",
+        "Cost": "1000",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Zeemandt Luzor Monocular",
+        "Concealability": "6",
+        "Weight": ".5",
+        "Availability": "5/72hrs",
+        "Cost": "700",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Fibre-Optic Cable",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "0.10 per meter",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Secured Short-Haul Link",
+        "Concealability": "4",
+        "Weight": "5",
+        "Availability": "4/72hrs",
+        "Cost": "5/72hrs",
+        "Street Index": "6000",
+        "": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Secured Long-Haul Link",
+        "Concealability": "2",
+        "Weight": "4",
+        "Availability": "4/72hrs",
+        "Cost": "5/72hrs",
+        "Street Index": "9000",
+        "": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Secured Uplink",
+        "Concealability": "-",
+        "Weight": "3",
+        "Availability": "4/72hrs",
+        "Cost": "5/72hrs",
+        "Street Index": "1000",
+        "": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Unsecured Short-Haul Link",
+        "Concealability": "6",
+        "Weight": "5",
+        "Availability": "4/72hrs",
+        "Cost": "4/72hrs",
+        "Street Index": "4000",
+        "": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Unsecured Long-Haul Link",
+        "Concealability": "4",
+        "Weight": "4",
+        "Availability": "4/72hrs",
+        "Cost": "4/72hrs",
+        "Street Index": "6000",
+        "": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Unsecured Uplink",
+        "Concealability": "2",
+        "Weight": "3",
+        "Availability": "4/72hrs",
+        "Cost": "4/72hrs",
+        "Street Index": "1000",
+        "": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Sony TFX-10000 Imaging Gener.",
+        "Concealability": "-",
+        "Weight": "7",
+        "Availability": "8/1week",
+        "Cost": "13000",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Non-Mobile Radio",
+        "Concealability": "-",
+        "Weight": "35",
+        "Availability": "8/1week",
+        "Cost": "5500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Non-Mobile TV",
+        "Concealability": "-",
+        "Weight": "35",
+        "Availability": "9/1week",
+        "Cost": "8000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Non-Mobile TV",
+        "Concealability": "-",
+        "Weight": "35",
+        "Availability": "10/week",
+        "Cost": "10500",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Non-Mobile TV",
+        "Concealability": "-",
+        "Weight": "35",
+        "Availability": "11/1week",
+        "Cost": "13000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Non-Mobile TV",
+        "Concealability": "-",
+        "Weight": "35",
+        "Availability": "12/1week",
+        "Cost": "15500",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Non-Mobile TV",
+        "Concealability": "-",
+        "Weight": "35",
+        "Availability": "13/1week",
+        "Cost": "18000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Non-Mobile TV",
+        "Concealability": "-",
+        "Weight": "35",
+        "Availability": "14/1week",
+        "Cost": "20500",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mobile Radio",
+        "Concealability": "-",
+        "Weight": "25",
+        "Availability": "8/2weeks",
+        "Cost": "7500",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mobile TV",
+        "Concealability": "-",
+        "Weight": "25",
+        "Availability": "9/2weeks",
+        "Cost": "10000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mobile TV",
+        "Concealability": "-",
+        "Weight": "25",
+        "Availability": "10/2weeks",
+        "Cost": "12500",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mobile TV",
+        "Concealability": "-",
+        "Weight": "25",
+        "Availability": "11/2weeks",
+        "Cost": "15000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mobile TV",
+        "Concealability": "-",
+        "Weight": "25",
+        "Availability": "12/2weeks",
+        "Cost": "17500",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mobile TV",
+        "Concealability": "-",
+        "Weight": "25",
+        "Availability": "13/2weeks",
+        "Cost": "20000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mobile TV",
+        "Concealability": "-",
+        "Weight": "25",
+        "Availability": "14/2weeks",
+        "Cost": "22500",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Satellite Injecton Uplink",
+        "Concealability": "-",
+        "Weight": "20",
+        "Availability": "8/2weeks",
+        "Cost": "1000",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Satellite Injecton Uplink ECM1",
+        "Concealability": "-",
+        "Weight": "20",
+        "Availability": "9/2weeks",
+        "Cost": "4000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Satellite Injecton Uplink ECM2",
+        "Concealability": "-",
+        "Weight": "20",
+        "Availability": "10/2weeks",
+        "Cost": "7000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Satellite Injecton Uplink ECM3",
+        "Concealability": "-",
+        "Weight": "20",
+        "Availability": "11/2weeks",
+        "Cost": "10000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Satellite Injecton Uplink ECM4",
+        "Concealability": "-",
+        "Weight": "20",
+        "Availability": "12/2weeks",
+        "Cost": "13000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Satellite Injecton Uplink ECM5",
+        "Concealability": "-",
+        "Weight": "20",
+        "Availability": "13/2weeks",
+        "Cost": "16000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Satellite Injecton Uplink ECM6",
+        "Concealability": "-",
+        "Weight": "20",
+        "Availability": "14/2weeks",
+        "Cost": "19000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mitsuhama MenTokko-II Manip.",
+        "Concealability": "4",
+        "Weight": "3",
+        "Availability": "8/2weeks",
+        "Cost": "15000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mitsuhama MenTokko-V Manip.",
+        "Concealability": "-",
+        "Weight": "14",
+        "Availability": "12/3weeks",
+        "Cost": "60000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Cheap, 1 voice",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "175",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Cheap, 2 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "200",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Cheap, 3 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "225",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Cheap, 4 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "250",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Cheap, 5 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "275",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Cheap, 6 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "300",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Cheap, 7 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "325",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Cheap, 8 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "350",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Average, 1 voice",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "600",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Average, 2 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "700",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Average, 3 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "800",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Average, 4 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "900",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Average, 5 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "1000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Average, 6 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "1100",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Average, 7 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "1200",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Average, 8 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "1300",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Average, 9 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "1400",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Average, 10 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "1500",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Average, 11 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "1600",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Average, 12 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "1700",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Average, 13 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "1800",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Average, 14 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "1900",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Average, 15 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "2000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 1 voice",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "5500",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 2 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "6000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 3 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "6500",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 4 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "7000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 5 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "7500",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 6 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "8000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 7 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "8500",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 8 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "9000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 9 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "9500",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 10 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "10000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 11 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "10500",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 12 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "11000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 13 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "11500",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 14 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "12000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 15 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "12500",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 16 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "13000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 17 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "13500",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 18 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "14000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 19 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "14500",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 20 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "15000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 21 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "15500",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 22 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "16000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 23 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "16500",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 24 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "17000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 25 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "17500",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 26 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "18000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 27 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "18500",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 28 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "19000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 29 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "19500",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 30 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "20000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 31 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "20500",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Synthesizers Fine, 32 voices",
+        "Concealability": "-",
+        "Weight": "varies",
+        "Availability": "always",
+        "Cost": "21000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Small Acoustic Modulators",
+        "Concealability": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "8000",
+        "Street Index": "8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Hand-held Polycorder",
+        "Concealability": "2",
+        "Weight": "2.5",
+        "Availability": "always",
+        "Cost": "100",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Pocket Sized Polycorder",
+        "Concealability": "5",
+        "Weight": ".2",
+        "Availability": "always",
+        "Cost": "200",
+        "Street Index": ".75",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Rack-Mounted Polycorder",
+        "Concealability": "-",
+        "Weight": "4",
+        "Availability": "3/24hrs",
+        "Cost": "1500",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Cab Hailer",
+        "Concealability": "10",
+        "Weight": "-",
+        "Availability": "upon payment",
+        "Cost": "150",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Image Wallet",
+        "Concealability": "8",
+        "Weight": ".1",
+        "Availability": "4/36hrs",
+        "Cost": "250",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Life",
+        "Concealability": "4",
+        "Weight": "1.5",
+        "Availability": "5/36hrs",
+        "Cost": "500",
+        "Street Index": ".9",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "DataTel",
+        "Concealability": "4",
+        "Weight": "1",
+        "Availability": "4/4days",
+        "Cost": "500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Miniature Copier",
+        "Concealability": "3",
+        "Weight": ".5",
+        "Availability": "2/12hrs",
+        "Cost": "230",
+        "Street Index": ".8",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Orientation Unit",
+        "Concealability": "6",
+        "Weight": ".5",
+        "Availability": "5/4 days",
+        "Cost": "1500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Paper Shredder",
+        "Concealability": "-",
+        "Weight": "2.5",
+        "Availability": "always",
+        "Cost": "500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Mastoid Commo",
+        "Concealability": "8",
+        "Weight": "-",
+        "Availability": "2/12hrs",
+        "Cost": "1000",
+        "Street Index": ".6",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Pocket Commo",
+        "Concealability": "7",
+        "Weight": ".1",
+        "Availability": "always",
+        "Cost": "500",
+        "Street Index": ".5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Power Grid SolarElectric Panel",
+        "Concealability": "2",
+        "Weight": "1",
+        "Availability": "4/36hrs",
+        "Cost": "100",
+        "Street Index": "1.1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "SecSystems Detention Collar",
+        "Concealability": "4",
+        "Weight": ".5",
+        "Availability": "8/10days",
+        "Cost": "260",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      }
+    ]
+  },
+  "Stuff With Ratings": {
+    "Name": "Stuff With Ratings",
+    "attributes": [
+      "Concealability",
+      "Rating",
+      "Weight",
+      "Availability",
+      "Cost",
+      "Street Index",
+      ""
+    ],
+    "entries": [
+      {
+        "Name": "Omega Phone Tap",
+        "Concealability": "5",
+        "Rating": "6",
+        "Weight": ".5",
+        "Availability": "10/10days",
+        "Cost": "35000",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Limpet Beacon",
+        "Concealability": "8",
+        "Rating": "-1",
+        "Weight": "-",
+        "Availability": "8/6days",
+        "Cost": "250",
+        "Street Index": "1.2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "BRL-3014 Window Trembler 1",
+        "Concealability": "9",
+        "Rating": "1",
+        "Weight": "2/4days",
+        "Availability": "120",
+        "Cost": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "BRL-3014 Window Trembler 2",
+        "Concealability": "9",
+        "Rating": "2",
+        "Weight": "3/4days",
+        "Availability": "240",
+        "Cost": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "BRL-3014 Window Trembler 3",
+        "Concealability": "9",
+        "Rating": "3",
+        "Weight": "4/4days",
+        "Availability": "360",
+        "Cost": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "BRL-3014 Window Trembler 4",
+        "Concealability": "9",
+        "Rating": "4",
+        "Weight": "5/4days",
+        "Availability": "480",
+        "Cost": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "BRL-3014 Window Trembler 5",
+        "Concealability": "9",
+        "Rating": "5",
+        "Weight": "6/4days",
+        "Availability": "600",
+        "Cost": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "BRL-3014 Window Trembler 6",
+        "Concealability": "9",
+        "Rating": "6",
+        "Weight": "7/4days",
+        "Availability": "720",
+        "Cost": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "BRL-3014 Window Trembler 7",
+        "Concealability": "9",
+        "Rating": "7",
+        "Weight": "8/4days",
+        "Availability": "840",
+        "Cost": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "BRL-3014 Window Trembler 8",
+        "Concealability": "9",
+        "Rating": "8",
+        "Weight": "9/4days",
+        "Availability": "960",
+        "Cost": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "BRL-3014 Window Trembler 9",
+        "Concealability": "9",
+        "Rating": "9",
+        "Weight": "10/4days",
+        "Availability": "1080",
+        "Cost": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "BRL-3014 Window Trembler 10",
+        "Concealability": "9",
+        "Rating": "10",
+        "Weight": "11/4days",
+        "Availability": "1200",
+        "Cost": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "SecSystems Maglock",
+        "Concealability": "3",
+        "Rating": "3",
+        "Weight": "1",
+        "Availability": "4/72hrs",
+        "Cost": "300",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Scanway Chem",
+        "Concealability": "-",
+        "Rating": "5",
+        "Weight": "-",
+        "Availability": "9/7days",
+        "Cost": "350000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Scanway Cyberware detector",
+        "Concealability": "-",
+        "Rating": "5",
+        "Weight": "-",
+        "Availability": "8/7days",
+        "Cost": "50000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Scanway Weapon Detector",
+        "Concealability": "-",
+        "Rating": "5",
+        "Weight": "-",
+        "Availability": "6/7days",
+        "Cost": "25000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Scanway Large screen",
+        "Concealability": "-",
+        "Rating": "-",
+        "Weight": "-",
+        "Availability": "as detector",
+        "Cost": "500",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Scanman Full Identity Scanner",
+        "Concealability": "4",
+        "Rating": "5",
+        "Weight": "2.5",
+        "Availability": "14/14days",
+        "Cost": "21000",
+        "Street Index": "5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "SecSystems Detection Wand",
+        "Concealability": "4",
+        "Rating": "2",
+        "Weight": ".5",
+        "Availability": "2/12hrs",
+        "Cost": "10000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "ANQ 3",
+        "Concealability": "4",
+        "Rating": "3",
+        "Weight": "1",
+        "Availability": "6/48hrs",
+        "Cost": "1000",
+        "Street Index": "2.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "ID badgemaker",
+        "Concealability": "3",
+        "Rating": "3",
+        "Weight": "1",
+        "Availability": "5/48hrs",
+        "Cost": "500",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "M-0116 Tripwire Sensor",
+        "Concealability": "6",
+        "Rating": "1",
+        "Weight": "-",
+        "Availability": "3/24hrs",
+        "Cost": "20",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Magnetic Anomaly Detector Lv 1",
+        "Concealability": "3",
+        "Rating": "1",
+        "Weight": "1",
+        "Availability": "8/4days",
+        "Cost": "5000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Magnetic Anomaly Detector Lv 2",
+        "Concealability": "3",
+        "Rating": "2",
+        "Weight": "1",
+        "Availability": "8/4days",
+        "Cost": "10000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Magnetic Anomaly Detector Lv 3",
+        "Concealability": "3",
+        "Rating": "3",
+        "Weight": "1",
+        "Availability": "8/4days",
+        "Cost": "15000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Magnetic Anomaly Detector Lv 4",
+        "Concealability": "3",
+        "Rating": "4",
+        "Weight": "1",
+        "Availability": "8/4days",
+        "Cost": "20000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "MS1803 Panoramic Motion Sensor",
+        "Concealability": "2",
+        "Rating": "5",
+        "Weight": "2.5",
+        "Availability": "8/48hrs",
+        "Cost": "1000",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Duplicator 1",
+        "Concealability": "3",
+        "Rating": "1",
+        "Weight": "1",
+        "Availability": "14/10days",
+        "Cost": "60000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Duplicator 2",
+        "Concealability": "3",
+        "Rating": "2",
+        "Weight": "1",
+        "Availability": "14/10days",
+        "Cost": "120000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Duplicator 3",
+        "Concealability": "3",
+        "Rating": "3",
+        "Weight": "1",
+        "Availability": "14/10days",
+        "Cost": "180000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Duplicator 4",
+        "Concealability": "3",
+        "Rating": "4",
+        "Weight": "1",
+        "Availability": "14/10days",
+        "Cost": "240000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Duplicator 5",
+        "Concealability": "3",
+        "Rating": "5",
+        "Weight": "1",
+        "Availability": "14/10days",
+        "Cost": "300000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Duplicator 6",
+        "Concealability": "3",
+        "Rating": "6",
+        "Weight": "1",
+        "Availability": "14/10days",
+        "Cost": "360000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Duplicator 7",
+        "Concealability": "3",
+        "Rating": "7",
+        "Weight": "1",
+        "Availability": "14/10days",
+        "Cost": "420000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Duplicator 8",
+        "Concealability": "3",
+        "Rating": "8",
+        "Weight": "1",
+        "Availability": "14/10days",
+        "Cost": "480000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Duplicator 9",
+        "Concealability": "3",
+        "Rating": "9",
+        "Weight": "1",
+        "Availability": "14/10days",
+        "Cost": "540000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Duplicator 10",
+        "Concealability": "3",
+        "Rating": "10",
+        "Weight": "1",
+        "Availability": "14/10days",
+        "Cost": "600000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Input Dev. 1",
+        "Concealability": "4",
+        "Rating": "1",
+        "Weight": ".5",
+        "Availability": "10/6days",
+        "Cost": "1000",
+        "Street Index": "4",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Input Dev. 2",
+        "Concealability": "4",
+        "Rating": "2",
+        "Weight": ".5",
+        "Availability": "10/6days",
+        "Cost": "2000",
+        "Street Index": "4",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Input Dev. 3",
+        "Concealability": "4",
+        "Rating": "3",
+        "Weight": ".5",
+        "Availability": "10/6days",
+        "Cost": "3000",
+        "Street Index": "4",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Input Dev. 4",
+        "Concealability": "4",
+        "Rating": "4",
+        "Weight": ".5",
+        "Availability": "10/6days",
+        "Cost": "4000",
+        "Street Index": "4",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Input Dev. 5",
+        "Concealability": "4",
+        "Rating": "5",
+        "Weight": ".5",
+        "Availability": "10/6days",
+        "Cost": "5000",
+        "Street Index": "4",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Input Dev. 6",
+        "Concealability": "4",
+        "Rating": "6",
+        "Weight": ".5",
+        "Availability": "10/6days",
+        "Cost": "6000",
+        "Street Index": "4",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Input Dev. 7",
+        "Concealability": "4",
+        "Rating": "7",
+        "Weight": ".5",
+        "Availability": "10/6days",
+        "Cost": "7000",
+        "Street Index": "4",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Input Dev. 8",
+        "Concealability": "4",
+        "Rating": "8",
+        "Weight": ".5",
+        "Availability": "10/6days",
+        "Cost": "8000",
+        "Street Index": "4",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Retinal Pattern Input Dev. 9",
+        "Concealability": "4",
+        "Rating": "9",
+        "Weight": ".5",
+        "Availability": "10/6days",
+        "Cost": "9000",
+        "Street Index": "4",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "S91KA Remote Heat Sensor",
+        "Concealability": "4",
+        "Rating": "8",
+        "Weight": ".5",
+        "Availability": "4/48hrs",
+        "Cost": "2000",
+        "Street Index": "1.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Sonar Scanner",
+        "Concealability": "4",
+        "Rating": "3",
+        "Weight": ".2",
+        "Availability": "5/48hrs",
+        "Cost": "50",
+        "Street Index": "1.2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Print Duplication Supplies 1",
+        "Concealability": "-",
+        "Rating": "1",
+        "Weight": "-",
+        "Availability": "4/12hrs",
+        "Cost": "200",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Print Duplication Supplies 2",
+        "Concealability": "-",
+        "Rating": "2",
+        "Weight": "-",
+        "Availability": "4/12hrs",
+        "Cost": "400",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Print Duplication Supplies 3",
+        "Concealability": "-",
+        "Rating": "3",
+        "Weight": "-",
+        "Availability": "4/12hrs",
+        "Cost": "600",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Print Duplication Supplies 4",
+        "Concealability": "-",
+        "Rating": "4",
+        "Weight": "-",
+        "Availability": "4/12hrs",
+        "Cost": "800",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "U-Open-It Rating 1",
+        "Concealability": "2",
+        "Rating": "1",
+        "Weight": "5",
+        "Availability": "6/48hrs",
+        "Cost": "75",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "U-Open-It Rating 2",
+        "Concealability": "2",
+        "Rating": "1",
+        "Weight": "5",
+        "Availability": "6/48hrs",
+        "Cost": "150",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "U-Open-It Rating 3",
+        "Concealability": "2",
+        "Rating": "1",
+        "Weight": "5",
+        "Availability": "6/48hrs",
+        "Cost": "225",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "U-Open-It Rating 4",
+        "Concealability": "2",
+        "Rating": "1",
+        "Weight": "5",
+        "Availability": "6/48hrs",
+        "Cost": "300",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "U-Open-It Rating 5",
+        "Concealability": "2",
+        "Rating": "1",
+        "Weight": "5",
+        "Availability": "6/48hrs",
+        "Cost": "375",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Buchsterhude GmbH Tool Kits",
+        "Concealability": "-",
+        "Rating": "-",
+        "Weight": "5",
+        "Availability": "6/48hrs",
+        "Cost": "1000",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Tech Tool Kit       21",
+        "Concealability": "3",
+        "Rating": "-",
+        "Weight": "5",
+        "Availability": "5/48hrs",
+        "Cost": "350",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Arc Furnace",
+        "Concealability": "-",
+        "Rating": "-",
+        "Weight": "-",
+        "Availability": "6/7days",
+        "Cost": "10000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "CTS Pembroke Techscanner",
+        "Concealability": "-",
+        "Rating": "-1",
+        "Weight": "5",
+        "Availability": "9/72hrs",
+        "Cost": "1500",
+        "Street Index": "3.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Tech Scanner       21",
+        "Concealability": "3",
+        "Rating": "-",
+        "Weight": "5",
+        "Availability": "5/48hrs",
+        "Cost": "1200",
+        "Street Index": "2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Portable Cryogenic Case",
+        "Concealability": "2",
+        "Rating": "armor 2/2",
+        "Weight": "2",
+        "Availability": "6/12hrs",
+        "Cost": "250",
+        "Street Index": "1.2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Geotech Enviroscanner",
+        "Concealability": "5",
+        "Rating": "3",
+        "Weight": "1",
+        "Availability": "8/7days",
+        "Cost": "45000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Geotech Enviroscanner",
+        "Concealability": "6",
+        "Rating": "4",
+        "Weight": "1",
+        "Availability": "4/24hrs",
+        "Cost": "1400",
+        "Street Index": "1.2",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Microtech Virtual Reality BBS",
+        "Concealability": "-",
+        "Rating": "-1",
+        "Weight": "-",
+        "Availability": "6/7days",
+        "Cost": "10000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Portable Electropack",
+        "Concealability": "3",
+        "Rating": "-",
+        "Weight": "2",
+        "Availability": "always",
+        "Cost": "100",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Raven Interface Monitor",
+        "Concealability": "5",
+        "Rating": "-1",
+        "Weight": "1",
+        "Availability": "6/48hrs",
+        "Cost": "8000",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Microwaldo",
+        "Concealability": "-",
+        "Rating": "-",
+        "Weight": "2",
+        "Availability": "8/72hrs",
+        "Cost": "8000",
+        "Street Index": "3.25",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Raven",
+        "Concealability": "-",
+        "Rating": "-",
+        "Weight": "25",
+        "Availability": "10/7days",
+        "Cost": "8000",
+        "Street Index": "3.5",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Swiss Army Chronograph",
+        "Concealability": "-",
+        "Rating": "-",
+        "Weight": "-",
+        "Availability": "always",
+        "Cost": "120",
+        "Street Index": "1",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Diagnostic Remote",
+        "Concealability": "-",
+        "Rating": "-",
+        "Weight": "1",
+        "Availability": "8/72hrs",
+        "Cost": "5000",
+        "Street Index": "3.25",
+        "BookPage": "unknown"
+      },
+      {
+        "Name": "Diagnostic Remote",
+        "Concealability": "-",
+        "Rating": "-",
+        "Weight": "1",
+        "Availability": "6/72hrs",
+        "Cost": "4000",
+        "Street Index": "3",
+        "BookPage": "unknown"
+      }
+    ]
+  }
+}
