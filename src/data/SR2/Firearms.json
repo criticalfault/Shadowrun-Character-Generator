@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "Name": "Barton Arms Bracer (HOPist)",
     "Concealability": "7",
@@ -169,32 +169,6 @@
     "BookPage": "pw.14"
   },
   {
-    "Name": "Ares Hornet (LPist)",
-    "Concealability": "8",
-    "Ammunition": "7(cy)",
-    "Mode": "DAR(SA)",
-    "Damage": "7L",
-    "Weight": "2",
-    "Availability": "4/48hrs",
-    "Cost": "250",
-    "StreetIndex": ".8",
-    "Accessories": "None",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Scorpion (LPist)",
-    "Concealability": "8",
-    "Ammunition": "7(cy)",
-    "Mode": "DAR(SA)",
-    "Damage": "7L",
-    "Weight": "2.25",
-    "Availability": "4/48hrs",
-    "Cost": "275",
-    "StreetIndex": "1",
-    "Accessories": "Laser Sight",
-    "BookPage": "ssc.???"
-  },
-  {
     "Name": "Dai Lung Streetmaster (LPist)",
     "Concealability": "6",
     "Ammunition": "12(c)",
@@ -232,45 +206,6 @@
     "StreetIndex": ".75",
     "Accessories": "None",
     "BookPage": "pw.16"
-  },
-  {
-    "Name": "Glock 19 Mk.IV (LPist)",
-    "Concealability": "5",
-    "Ammunition": "17(c)",
-    "Mode": "SA",
-    "Damage": "6L",
-    "Weight": "1",
-    "Availability": "8/24hrs",
-    "Cost": "750",
-    "StreetIndex": "2",
-    "Accessories": "Laser Sight, RC:(1)",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Glock 19 Mk.IV Smart (LPist)",
-    "Concealability": "5",
-    "Ammunition": "17(c)",
-    "Mode": "SA",
-    "Damage": "6L",
-    "Weight": "1",
-    "Availability": "8/24hrs",
-    "Cost": "950",
-    "StreetIndex": "2",
-    "Accessories": "Smartlink, RC:(1)",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Glck 19 Mk.IV SmartII (LPist)",
-    "Concealability": "5",
-    "Ammunition": "17(c)",
-    "Mode": "SA",
-    "Damage": "6L",
-    "Weight": "1",
-    "Availability": "8/24hrs",
-    "Cost": "1150",
-    "StreetIndex": "2",
-    "Accessories": "Smartlink-2, RC:(1)",
-    "BookPage": "ssc.???"
   },
   {
     "Name": "H&K Cavaet (LPist)",
@@ -455,19 +390,6 @@
     "BookPage": "pw.17"
   },
   {
-    "Name": "Ares Black Widow (MaPist)",
-    "Concealability": "6",
-    "Ammunition": "21(c)",
-    "Mode": "SA/BF",
-    "Damage": "6L",
-    "Weight": "1",
-    "Availability": "14/7days",
-    "Cost": "1500",
-    "StreetIndex": "3",
-    "Accessories": "Silencer, Smartlink-2",
-    "BookPage": "ssc.???"
-  },
-  {
     "Name": "Beretta Model 200ST (MaPist)",
     "Concealability": "4",
     "Ammunition": "26(c)",
@@ -583,58 +505,6 @@
     "StreetIndex": "1.5",
     "Accessories": "Smartlink, RC(2)",
     "BookPage": "tss.16"
-  },
-  {
-    "Name": "Ares Constrictor (HPist)",
-    "Concealability": "6",
-    "Ammunition": "6(cy)",
-    "Mode": "DAR",
-    "Damage": "10M",
-    "Weight": "2.5",
-    "Availability": "7/7days",
-    "Cost": "400",
-    "StreetIndex": "2",
-    "Accessories": "Smartlink",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Jaguar (HPist)",
-    "Concealability": "5",
-    "Ammunition": "6(cy)",
-    "Mode": "DAR",
-    "Damage": "10M",
-    "Weight": "2.5",
-    "Availability": "5/4days",
-    "Cost": "300",
-    "StreetIndex": "1",
-    "Accessories": "Laser Sight",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Stingray (HPist)",
-    "Concealability": "4",
-    "Ammunition": "6(cy)",
-    "Mode": "DAR",
-    "Damage": "10M",
-    "Weight": "2.75",
-    "Availability": "7/7days",
-    "Cost": "500",
-    "StreetIndex": "3",
-    "Accessories": "Laser Sight, RC:(1)",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Stingray Smart (HPist)",
-    "Concealability": "4",
-    "Ammunition": "6(cy)",
-    "Mode": "DAR",
-    "Damage": "10M",
-    "Weight": "2.75",
-    "Availability": "7/7days",
-    "Cost": "500",
-    "StreetIndex": "3",
-    "Accessories": "Smartlink, RC:(1)",
-    "BookPage": "ssc.???"
   },
   {
     "Name": "Armalite 44 (HPist)",
@@ -975,45 +845,6 @@
     "BookPage": "bjf.00"
   },
   {
-    "Name": "Glock 22 Mk. III (HPist)",
-    "Concealability": "4",
-    "Ammunition": "15(c)",
-    "Mode": "SA",
-    "Damage": "9M",
-    "Weight": "2.5",
-    "Availability": "6/24hrs",
-    "Cost": "600",
-    "StreetIndex": "1.5",
-    "Accessories": "Laser Sight",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Glock 22 Mk. III Smart (HPist)",
-    "Concealability": "4",
-    "Ammunition": "15(c)",
-    "Mode": "SA",
-    "Damage": "9M",
-    "Weight": "2.5",
-    "Availability": "6/24hrs",
-    "Cost": "800",
-    "StreetIndex": "1.5",
-    "Accessories": "Smartlink",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Glck22 Mk. III SmartII (HPist)",
-    "Concealability": "4",
-    "Ammunition": "15(c)",
-    "Mode": "SA",
-    "Damage": "9M",
-    "Weight": "2.5",
-    "Availability": "6/24hrs",
-    "Cost": "1000",
-    "StreetIndex": "1.5",
-    "Accessories": "Smartlink-2",
-    "BookPage": "ssc.???"
-  },
-  {
     "Name": "Glck0 Machine Pistol (HPist) 3",
     "Concealability": "6(5)",
     "Ammunition": "20(30)(c)",
@@ -1051,19 +882,6 @@
     "StreetIndex": "1.75",
     "Accessories": "None",
     "BookPage": "pw.16"
-  },
-  {
-    "Name": "H&K \"Blaster\" (HPist)",
-    "Concealability": "4",
-    "Ammunition": "6(m)",
-    "Mode": "SS",
-    "Damage": "12M",
-    "Weight": "3",
-    "Availability": "-",
-    "Cost": "-",
-    "StreetIndex": "-",
-    "Accessories": "None",
-    "BookPage": "ssc.???"
   },
   {
     "Name": "H&K OHWS (HPist)",
@@ -1233,45 +1051,6 @@
     "StreetIndex": ".6",
     "Accessories": "None",
     "BookPage": "pw.30"
-  },
-  {
-    "name": "Ruger Thunderbolt",
-    "Concealability": "4",
-    "Ammunition": "12(c)",
-    "Mode": "BF",
-    "Damage": "12S*",
-    "Weight": "2.75",
-    "Availability": "14/12days",
-    "Cost": "1000",
-    "Street Index": "3",
-    "Accessories": "None",
-    "BookPage": "ssc.???"
-  },
-  {
-    "name": "Ruger Thunderbolt - Laser Sight",
-    "Concealability": "4",
-    "Ammunition": "12(c)",
-    "Mode": "BF",
-    "Damage": "12S*",
-    "Weight": "2.75",
-    "Availability": "14/12days",
-    "Cost": "1250",
-    "Street Index": "3",
-    "Accessories": "Laser Sight",
-    "BookPage": "ssc.???"
-  },
-  {
-    "name": "Ruger Thunderbolt - Smartlinked",
-    "Concealability": "4",
-    "Ammunition": "12(c)",
-    "Mode": "BF",
-    "Damage": "12S*",
-    "Weight": "2.75",
-    "Availability": "14/12days",
-    "Cost": "1400",
-    "Street Index": "3",
-    "Accessories": "Smatlink",
-    "BookPage": "ssc.???"
   },
   {
     "Name": "Riot Gun (HPist)",
@@ -8086,32 +7865,6 @@
     "BookPage": "tss.7"
   },
   {
-    "Name": "Defiance AT-900 (SMG)",
-    "Concealability": "4",
-    "Ammunition": "30(c)",
-    "Mode": "SA/BF/FA",
-    "Damage": "6M",
-    "Weight": "3.75",
-    "Availability": "5/36hrs",
-    "Cost": "900",
-    "StreetIndex": "1",
-    "Accessories": "Gas Vent (2), Laser Sight",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Defiance AT-900 Smart (SMG)",
-    "Concealability": "4",
-    "Ammunition": "30(c)",
-    "Mode": "SA/BF/FA",
-    "Damage": "6M",
-    "Weight": "3.75",
-    "Availability": "5/36hrs",
-    "Cost": "1800",
-    "StreetIndex": "1",
-    "Accessories": "Gas Vent (2), Smartlink",
-    "BookPage": "ssc.???"
-  },
-  {
     "Name": "Fed. Arms Tech Asslt II (SMG)",
     "Concealability": "5",
     "Ammunition": "50(c)",
@@ -8149,32 +7902,6 @@
     "StreetIndex": "2.75",
     "Accessories": "Gas Vent (2), Smartlink",
     "BookPage": "pw.23"
-  },
-  {
-    "Name": "H&K MP7z Urban Combat (SMG)",
-    "Concealability": "6/18",
-    "Ammunition": "36(c)",
-    "Mode": "SA/BF/FA",
-    "Damage": "7M",
-    "Weight": "1.75",
-    "Availability": "6/6days",
-    "Cost": "2200",
-    "StreetIndex": "2",
-    "Accessories": "Gas Vent (3), Silencer",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "H&K MP7z Urb. Comb.Smart (SMG)",
-    "Concealability": "6/18",
-    "Ammunition": "36(c)",
-    "Mode": "SA/BF/FA",
-    "Damage": "7M",
-    "Weight": "2",
-    "Availability": "8/8days",
-    "Cost": "4000",
-    "StreetIndex": "2",
-    "Accessories": "Gas Vent (3), Silencer, Smartlink",
-    "BookPage": "ssc.???"
   },
   {
     "Name": "H&K MP-9 (SMG)",
@@ -10608,19 +10335,6 @@
     "BookPage": "pw.24"
   },
   {
-    "Name": "Ares Wippet (ShtG)",
-    "Concealability": "4",
-    "Ammunition": "6(m)",
-    "Mode": "SA",
-    "Damage": "6M/9M",
-    "Weight": "2",
-    "Availability": "5/36hrs",
-    "Cost": "1500",
-    "StreetIndex": "1.5",
-    "Accessories": "None",
-    "BookPage": "ssc.???"
-  },
-  {
     "Name": "Autoshot Riot Gun (ShtG)",
     "Concealability": "2",
     "Ammunition": "20(c)",
@@ -10751,19 +10465,6 @@
     "BookPage": "pw.25"
   },
   {
-    "Name": "\"King Buck\" Multi-Magnum(ShtG)",
-    "Concealability": "1",
-    "Ammunition": "4(m)",
-    "Mode": "SA",
-    "Damage": "9S",
-    "Weight": "7",
-    "Availability": "12/4days",
-    "Cost": "800",
-    "StreetIndex": "2.1",
-    "Accessories": "None",
-    "BookPage": "ssc.???"
-  },
-  {
     "Name": "Militech Crusher SSG (ShtG)",
     "Concealability": "5",
     "Ammunition": "6(c)",
@@ -10892,19 +10593,6 @@
     "StreetIndex": "2",
     "Accessories": "Smartlink",
     "BookPage": "pw.22"
-  },
-  {
-    "Name": "Sandler \"Mad Max\" (ShtG)",
-    "Concealability": "5",
-    "Ammunition": "2(b)",
-    "Mode": "SA",
-    "Damage": "6S",
-    "Weight": "2.25",
-    "Availability": "4/48hrs",
-    "Cost": "400",
-    "StreetIndex": "1",
-    "Accessories": "None",
-    "BookPage": "ssc.???"
   },
   {
     "Name": "Saiga 12K (ShtG)",
@@ -14025,58 +13713,6 @@
     "StreetIndex": "4",
     "Accessories": "Caseless",
     "BookPage": "pw.31"
-  },
-  {
-    "Name": "Ares Suppressor (Stan.) (GrLn)",
-    "Concealability": "-",
-    "Ammunition": "12(c)",
-    "Mode": "SA/BF",
-    "Damage": "(Grenade)",
-    "Weight": "7",
-    "Availability": "18/14days",
-    "Cost": "3400",
-    "StreetIndex": "3",
-    "Accessories": "None",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Suppressor (RF) (GrLn)",
-    "Concealability": "-",
-    "Ammunition": "12(c)",
-    "Mode": "SA/BF",
-    "Damage": "(Grenade)",
-    "Weight": "7",
-    "Availability": "18/14days",
-    "Cost": "4300",
-    "StreetIndex": "3",
-    "Accessories": "Rangefinder",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Suprpessor (Smart) (GrLn)",
-    "Concealability": "-",
-    "Ammunition": "12(c)",
-    "Mode": "SA/BF",
-    "Damage": "(Grenade)",
-    "Weight": "7",
-    "Availability": "18/14days",
-    "Cost": "6800",
-    "StreetIndex": "3",
-    "Accessories": "Smartlink",
-    "BookPage": "ssc.???"
-  },
-  {
-    "Name": "Ares Suppressor(Smrt+Ran)GrLn)",
-    "Concealability": "-",
-    "Ammunition": "12(c)",
-    "Mode": "SA/BF",
-    "Damage": "(Grenade)",
-    "Weight": "7",
-    "Availability": "18/14days",
-    "Cost": "7700",
-    "StreetIndex": "3",
-    "Accessories": "Rangefinder, Smartlink",
-    "BookPage": "ssc.???"
   },
   {
     "Name": "Generic Under-Barrel (GrLn)",
