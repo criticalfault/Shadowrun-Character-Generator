@@ -32,7 +32,7 @@ import "./SheetDisplay.css";
 import DiceRollerTray from "./DiceRollerTray";
 import SignInPopup from "./SignInPopup";
 import { Grid } from "@mui/material";
-import { trackEditionChanged, trackTabChanged, trackCharacterFinalized } from '../analytics';
+import { trackEditionChanged, trackTabChanged, trackCharacterFinalized, trackCustomVehicleSaved, trackCustomWeaponSaved, trackCustomDeckSaved } from '../analytics';
 // import TableAttribute from "./CustomTable";
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -1074,6 +1074,7 @@ export default function BasicTabs() {
             onSave={(design) => {
               const customVehicles = [...(Character.customVehicles ?? []), design];
               setCharacter({ ...Character, customVehicles });
+              trackCustomVehicleSaved(Edition);
             }}
           />
         </CustomTabPanel>
@@ -1083,6 +1084,7 @@ export default function BasicTabs() {
             onSave={(design) => {
               const customWeapons = [...(Character.customWeapons ?? []), design];
               setCharacter({ ...Character, customWeapons });
+              trackCustomWeaponSaved(Edition);
             }}
           />
         </CustomTabPanel>
@@ -1092,6 +1094,7 @@ export default function BasicTabs() {
             onSave={(design) => {
               const customDecks = [...(Character.customDecks ?? []), design];
               setCharacter({ ...Character, customDecks });
+              trackCustomDeckSaved(Edition);
             }}
           />
         </CustomTabPanel>

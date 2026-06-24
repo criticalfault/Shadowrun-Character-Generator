@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import { Grid } from "@mui/material";
-import { trackCharacterSaved, trackCharacterLoaded } from '../analytics';
+import { trackCharacterSavedWithEdition, trackCharacterLoaded } from '../analytics';
 const style = {
   position: "absolute",
   top: "50%",
@@ -66,7 +66,7 @@ export default function LoadCharacter(props) {
 
     // Clean up by revoking the object URL
     URL.revokeObjectURL(url);
-    trackCharacterSaved();
+    trackCharacterSavedWithEdition(props.Edition);
   };
 
   const LoadCharacter = (event) => {
@@ -91,6 +91,7 @@ export default function LoadCharacter(props) {
     Char.edition = props.Edition;
     let characterJSON = JSON.stringify(Char);
     localStorage.setItem("characterSlot" + saveSlot, characterJSON);
+    trackCharacterSavedWithEdition(props.Edition);
     setOpenLocalStorage(false);
   };
 
