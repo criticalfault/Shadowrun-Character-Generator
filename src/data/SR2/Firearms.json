@@ -478,7 +478,7 @@
     "Cost": "750",
     "StreetIndex": "1.5",
     "Accessories": "RC:(1)",
-    "BookPage": "ssc.???"
+    "BookPage": "ssc.19"
   },
   {
     "Name": "BudgetArms Laser-Nine (MaPist)",
@@ -829,7 +829,7 @@
     "Cost": "600",
     "StreetIndex": "1",
     "Accessories": "Smartlink",
-    "BookPage": "ssc.???"
+    "BookPage": "ssc.23"
   },
   {
     "Name": "Colt Manhunter S+ (HPist)",
@@ -842,7 +842,7 @@
     "Cost": "800",
     "StreetIndex": "1",
     "Accessories": "Smartlink-2",
-    "BookPage": "ssc.???"
+    "BookPage": "ssc.23"
   },
   {
     "Name": "Colt Peacemaker (HPist)",
@@ -13504,7 +13504,7 @@
     "Cost": "4500",
     "StreetIndex": "3",
     "Accessories": "Laser Sight",
-    "BookPage": "ssc.???"
+    "BookPage": "ssc.53"
   },
   {
     "Name": "Syrko Panther (MulWea)",
@@ -13530,7 +13530,7 @@
     "Cost": "2500",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "ssc.59"
   },
   {
     "Name": "H&K G-6 Adv. Squad Auto. (LMG)",
@@ -14349,7 +14349,7 @@
     "Cost": "600",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "ssc.62"
   },
   {
     "Name": "Narcoject Rifle",
@@ -14362,7 +14362,7 @@
     "Cost": "1700",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "ssc.???"
+    "BookPage": "ssc.62"
   },
   {
     "Name": "Arasaka Restraint Caster (Net)",
