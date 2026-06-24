@@ -14610,18 +14610,6 @@
     "BookPage": "cp.21"
   },
   {
-    "Name": "Sentry Weapons 27",
-    "Concealability": "6",
-    "Ammunition": "-",
-    "Mode": "4.0*",
-    "Damage": "22000",
-    "Weight": "12/21days",
-    "Availability": "4",
-    "Cost": "None",
-    "StreetIndex": "fof.46",
-    "Accessories": ""
-  },
-  {
     "Name": "Sonic Stunner",
     "Concealability": "6",
     "Ammunition": "10",
