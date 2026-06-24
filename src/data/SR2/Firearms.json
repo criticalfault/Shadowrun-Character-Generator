@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Name": "Barton Arms Bracer (HOPist)",
     "Concealability": "7",
@@ -348,7 +348,7 @@
     "Cost": "325",
     "StreetIndex": ".8",
     "Accessories": "None",
-    "BookPage": "cp.???"
+    "BookPage": "pw.15"
   },
   {
     "Name": "Nostal. Ind. Gentleman (LPist)",
@@ -7966,7 +7966,7 @@
     "Cost": "1000",
     "StreetIndex": ".9",
     "Accessories": "None",
-    "BookPage": "cp.???"
+    "BookPage": "pw.23"
   },
   {
     "Name": "Ares Tommy Gun (SMG)",
@@ -8343,7 +8343,7 @@
     "Cost": "1150",
     "StreetIndex": "1",
     "Accessories": "Caseless, Smartlink, Sound Suppressor",
-    "BookPage": "cp.???"
+    "BookPage": "pw.22"
   },
   {
     "Name": "Sternmeyer SMG 21 (SMG)",
@@ -9370,7 +9370,7 @@
     "Cost": "800",
     "StreetIndex": "2.5",
     "Accessories": "Gas Vent (2)",
-    "BookPage": "cp.???"
+    "BookPage": "pw.29"
   },
   {
     "Name": "Militech M-31a1 AICW (AsRf)",
@@ -9396,7 +9396,7 @@
     "Cost": "900",
     "StreetIndex": "2",
     "Accessories": "Laser Sight",
-    "BookPage": "cp.???"
+    "BookPage": "pw.27"
   },
   {
     "Name": "Parker Carbine (AsRf)",
@@ -10605,7 +10605,7 @@
     "Cost": "1800",
     "StreetIndex": "2.25",
     "Accessories": "None",
-    "BookPage": "cp.???"
+    "BookPage": "pw.24"
   },
   {
     "Name": "Ares Wippet (ShtG)",
@@ -13907,7 +13907,7 @@
     "Cost": "6000",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "cp.???"
+    "BookPage": "pw.28"
   },
   {
     "Name": "Colt-Mauser M2X Cannon",
@@ -13985,7 +13985,7 @@
     "Cost": "8000",
     "StreetIndex": "3",
     "Accessories": "Gas Vent (2), Mag:(3), Shock Pads, Smartlink",
-    "BookPage": "cp.???"
+    "BookPage": "pw.32"
   },
   {
     "Name": "Panther Hvy Recoilless Rfe",
@@ -14258,7 +14258,7 @@
     "Cost": "4500",
     "StreetIndex": "2.5",
     "Accessories": "None",
-    "BookPage": "cp.???"
+    "BookPage": "pw.33"
   },
   {
     "Name": "Ruhrmetall GPRL-Alpha (MisLn)",
@@ -14544,7 +14544,7 @@
     "Cost": "4500",
     "StreetIndex": "2",
     "Accessories": "None",
-    "BookPage": "cp.???"
+    "BookPage": "pw.33"
   },
   {
     "Name": "Ares ELD-AR",

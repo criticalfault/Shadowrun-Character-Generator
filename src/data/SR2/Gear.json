@@ -1,4 +1,4 @@
-{
+﻿{
   "Edged weapon": {
     "Name": "Edged weapon",
     "attributes": [
@@ -1415,7 +1415,7 @@
         "Cost": "325",
         "Street Index": ".8",
         "Accessories": "None",
-        "BookPage": "cp.???"
+        "BookPage": "pw.15"
       },
       {
         "Name": "Powell Knife Pistol",
@@ -2767,7 +2767,7 @@
         "Cost": "4500",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "cp.???"
+        "BookPage": "pw.33"
       },
       {
         "Name": "Narcoject Pistol",
@@ -2962,7 +2962,7 @@
         "Cost": "1000",
         "Street Index": ".9",
         "Accessories": "None",
-        "BookPage": "cp.???"
+        "BookPage": "pw.23"
       },
       {
         "Name": "Beretta M-24 Advanced",
@@ -3339,7 +3339,7 @@
         "Cost": "3455",
         "Street Index": "3",
         "Accessories": "Magnification 91), Grenade Launcher (4-shot), Sound Suppressor",
-        "BookPage": "cp.???"
+        "BookPage": "pw.23"
       },
       {
         "Name": "Militech Mini-Gat Carbine",
@@ -3352,7 +3352,7 @@
         "Cost": "2695",
         "Street Index": "5",
         "Accessories": "Caseless",
-        "BookPage": "cp.???"
+        "BookPage": "pw.22"
       },
       {
         "Name": "Sandler Model II",
@@ -3404,7 +3404,7 @@
         "Cost": "950",
         "Street Index": "1",
         "Accessories": "Caseless, Sound Suppressor",
-        "BookPage": "cp.???"
+        "BookPage": "pw.22"
       },
       {
         "Name": "Setsuko-Arasaka",
@@ -3417,7 +3417,7 @@
         "Cost": "1150",
         "Street Index": "1",
         "Accessories": "Caseless, Smartlink, Sound Suppressor",
-        "BookPage": "cp.???"
+        "BookPage": "pw.22"
       },
       {
         "Name": "Sternmeyer SMG 21",
@@ -3872,7 +3872,7 @@
         "Cost": "800",
         "Street Index": "2.5",
         "Accessories": "Gas Vent (2)",
-        "BookPage": "cp.???"
+        "BookPage": "pw.29"
       },
       {
         "Name": "Militech M-31a1 AICW",
@@ -3885,7 +3885,7 @@
         "Cost": "1695",
         "Street Index": "4.5",
         "Accessories": "Grenade Launcher (4-shot)",
-        "BookPage": "cp.???"
+        "BookPage": "pw.27"
       },
       {
         "Name": "Militech Ronin Light Assault",
@@ -3898,7 +3898,7 @@
         "Cost": "900",
         "Street Index": "2",
         "Accessories": "Laser Sight",
-        "BookPage": "cp.???"
+        "BookPage": "pw.27"
       },
       {
         "Name": "Parker Carbine",
@@ -4002,7 +4002,7 @@
         "Cost": "1800",
         "Street Index": "2.25",
         "Accessories": "None",
-        "BookPage": "cp.???"
+        "BookPage": "pw.24"
       },
       {
         "Name": "Ares Wippet",
@@ -4185,7 +4185,7 @@
         "Cost": "1450",
         "Street Index": "1.5",
         "Accessories": "None",
-        "BookPage": "cp.???"
+        "BookPage": "pw.25"
       },
       {
         "Name": "Militech Military",
@@ -4198,7 +4198,7 @@
         "Cost": "800",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "cp.???"
+        "BookPage": "pw.25"
       },
       {
         "Name": "Militech Military",
@@ -4211,7 +4211,7 @@
         "Cost": "800",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "cp.???"
+        "BookPage": "pw.25"
       },
       {
         "Name": "Mossberg CMDT",
@@ -4744,7 +4744,7 @@
         "Cost": "130000",
         "Street Index": "3.25",
         "Accessories": "None",
-        "BookPage": "cp.???"
+        "BookPage": "pw.7"
       },
       {
         "Name": "2-Barrel HMG Chaingun",
@@ -4848,7 +4848,7 @@
         "Cost": "6000",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "cp.???"
+        "BookPage": "pw.28"
       },
       {
         "Name": "Colt-Mauser M2X Cannon",
@@ -4965,7 +4965,7 @@
         "Cost": "8000",
         "Street Index": "3",
         "Accessories": "Gas Vent (2), Magnification (3), Shock Pads, Smartlink",
-        "BookPage": "cp.???"
+        "BookPage": "pw.32"
       },
       {
         "Name": "NR-10 Multi-Barrel HMG",
@@ -5186,7 +5186,7 @@
         "Cost": "2550",
         "Street Index": "3",
         "Accessories": "None",
-        "BookPage": "cp.???"
+        "BookPage": "pw.33"
       },
       {
         "Name": "Militech Mini-Grenade Launcher",
@@ -5199,7 +5199,7 @@
         "Cost": "4750",
         "Street Index": "5",
         "Accessories": "None",
-        "BookPage": "cp.???"
+        "BookPage": "pw.33"
       },
       {
         "Name": "Rockwell AGL-113",
@@ -5264,7 +5264,7 @@
         "Cost": "4500",
         "Street Index": "2.5",
         "Accessories": "None",
-        "BookPage": "cp.???"
+        "BookPage": "pw.33"
       },
       {
         "Name": "Multi-Launcher",
@@ -5696,7 +5696,7 @@
         "Availability": "10/7days",
         "Cost": "150",
         "Street Index": "2.5",
-        "BookPage": "cp.???"
+        "BookPage": "pw.39"
       },
       {
         "Name": "Motion Restraints Grenade (N)",
@@ -22973,7 +22973,7 @@
         "Availability": "",
         "Cost": "",
         "Street Index": "",
-        "Notes": "Disperses jamming transponders. Level 4 ECM/radio/remote jamming in area (50 + 3D6 × successes meters). Pre-set to jam sensors, radio, or remote control.",
+        "Notes": "Disperses jamming transponders. Level 4 ECM/radio/remote jamming in area (50 + 3D6 Ã— successes meters). Pre-set to jam sensors, radio, or remote control.",
         "BookPage": "r2.95"
       },
       {
