@@ -1148,7 +1148,14 @@ function MagicPanel(props) {
     .reduce((sum, p) => sum + (parseInt(p.Rating) || 1), 0);
   const magicianSpellBudget = magicalPowerLevel * 6;
 
-  const sortedSpells = (spellsData ?? []).slice().sort((a, b) => (a.Name ?? '').localeCompare(b.Name ?? ''));
+  const isBookAllowed = (item) => {
+    if (!props.BooksFilter) return true;
+    if (item.Books) return item.Books.some(b => props.BooksFilter.includes(b));
+    const code = item.BookPage?.split('.')[0];
+    return !code || props.BooksFilter.includes(code);
+  };
+
+  const sortedSpells = (spellsData ?? []).filter(isBookAllowed).slice().sort((a, b) => (a.Name ?? '').localeCompare(b.Name ?? ''));
 
   const label = { inputProps: { "aria-label": "Edition Switch" } };
 
@@ -1442,7 +1449,7 @@ function MagicPanel(props) {
         </Box>
         <br></br>
         <SearchableSelect
-          items={AdeptPowers.slice().sort((a, b) => a.Name.localeCompare(b.Name))}
+          items={AdeptPowers.filter(isBookAllowed).slice().sort((a, b) => a.Name.localeCompare(b.Name))}
           value={NewPowerIndex}
           onChange={handlePowerChange}
           label="Adept Powers"
