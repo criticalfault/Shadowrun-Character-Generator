@@ -5423,7 +5423,7 @@
         "Availability": "6/48hrs",
         "Cost": "2500",
         "Street Index": "1.3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.43"
       },
       {
         "Name": "Anti-Vehicle Rocket",
@@ -5443,7 +5443,7 @@
         "Availability": "12/6days",
         "Cost": "3500",
         "Street Index": "2.5",
-        "BookPage": "fof.???"
+        "BookPage": "fof.43"
       },
       {
         "Name": "Baffler Rocket",
@@ -5453,7 +5453,7 @@
         "Availability": "6/3days",
         "Cost": "3000",
         "Street Index": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.43"
       },
       {
         "Name": "Fireball Special Rocket",
@@ -5463,7 +5463,7 @@
         "Availability": "10/4days",
         "Cost": "3500",
         "Street Index": "2.3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.43"
       },
       {
         "Name": "High-Explosive Rocket",
@@ -5483,7 +5483,7 @@
         "Availability": "9/72hrs",
         "Cost": "2200",
         "Street Index": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.43"
       },
       {
         "Name": "Smoking Jenny Rocket",
@@ -5493,7 +5493,7 @@
         "Availability": "8/72hrs",
         "Cost": "2000",
         "Street Index": "1.8",
-        "BookPage": "fof.???"
+        "BookPage": "fof.43"
       },
       {
         "Name": "Anti-Personnel Missile",
@@ -5523,7 +5523,7 @@
         "Availability": "10/6days",
         "Cost": "4500",
         "Street Index": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.43"
       },
       {
         "Name": "Fireball Special Missile",
@@ -5533,7 +5533,7 @@
         "Availability": "12/7days",
         "Cost": "4500",
         "Street Index": "2.5",
-        "BookPage": "fof.???"
+        "BookPage": "fof.43"
       },
       {
         "Name": "High-Explosive Missile",
@@ -5553,7 +5553,7 @@
         "Availability": "10/72hrs",
         "Cost": "3200",
         "Street Index": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.43"
       },
       {
         "Name": "Surface to Air Missile (SAM)",
@@ -5563,7 +5563,7 @@
         "Availability": "18/21days",
         "Cost": "2500",
         "Street Index": "4",
-        "BookPage": "fof.???"
+        "BookPage": "fof.43"
       },
       {
         "Name": "Anti-Armor Micromissile",
@@ -5573,7 +5573,7 @@
         "Availability": "16/14ays",
         "Cost": "750",
         "Street Index": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.43"
       },
       {
         "Name": "HEP Micromissile",
@@ -5583,7 +5583,7 @@
         "Availability": "12/14days",
         "Cost": "200",
         "Street Index": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.43"
       },
       {
         "Name": "Normal Micromissile",
@@ -5593,7 +5593,7 @@
         "Availability": "14/14days",
         "Cost": "500",
         "Street Index": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.43"
       },
       {
         "Name": "Ballista Round Mark I",
@@ -5603,7 +5603,7 @@
         "Availability": "12/21days",
         "Cost": "1000",
         "Street Index": "4",
-        "BookPage": "fof.???"
+        "BookPage": "fof.43"
       },
       {
         "Name": "Ballista Round Mark II",
@@ -5613,7 +5613,7 @@
         "Availability": "18/28days",
         "Cost": "2000",
         "Street Index": "4",
-        "BookPage": "fof.???"
+        "BookPage": "fof.43"
       },
       {
         "Name": "Ballista Round Mark III",
@@ -5623,7 +5623,7 @@
         "Availability": "14/28days",
         "Cost": "2500",
         "Street Index": "4",
-        "BookPage": "fof.???"
+        "BookPage": "fof.43"
       }
     ]
   },
@@ -7559,7 +7559,7 @@
         "Availability": "4/60hrs",
         "Cost": "5",
         "Street Index": "1.25",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "30mm-Explosiv Rnds",
@@ -7609,7 +7609,7 @@
         "Availability": "12/10days",
         "Cost": "10",
         "Street Index": "3.5",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "Anti-Vehicular Rnds",
@@ -7619,7 +7619,7 @@
         "Availability": "16/14days",
         "Cost": "30",
         "Street Index": "4",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "APDS Rnds",
@@ -7649,7 +7649,7 @@
         "Availability": "2/24hrs",
         "Cost": "2",
         "Street Index": ".75",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "APiercing Flechette Rnds",
@@ -7699,7 +7699,7 @@
         "Availability": "8/12days",
         "Cost": "75",
         "Street Index": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "Dragon",
@@ -7709,7 +7709,7 @@
         "Availability": "12/7days",
         "Cost": "9",
         "Street Index": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "Dual-Purpose Rnds",
@@ -7719,7 +7719,7 @@
         "Availability": "16/14days",
         "Cost": "8",
         "Street Index": "4",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "Duplex Rnds",
@@ -7729,7 +7729,7 @@
         "Availability": "5/36hrs",
         "Cost": "9",
         "Street Index": "1",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "Explosive Rnds",
@@ -7759,7 +7759,7 @@
         "Availability": "3/36hrs",
         "Cost": "35",
         "Street Index": ".75",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "Flare Rnds(Shotgun only)",
@@ -7769,7 +7769,7 @@
         "Availability": "4/24hrs",
         "Cost": "5",
         "Street Index": "1",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "Flash Rnds(Shotgun only)",
@@ -7779,7 +7779,7 @@
         "Availability": "4/24hrs",
         "Cost": "6",
         "Street Index": "1",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "Flechette Rnds",
@@ -7819,7 +7819,7 @@
         "Availability": "-",
         "Cost": "300",
         "Street Index": "-",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "Gel Rnds",
@@ -7839,7 +7839,7 @@
         "Availability": "18/21days",
         "Cost": "20",
         "Street Index": "5",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "HEP Rnds",
@@ -7859,7 +7859,7 @@
         "Availability": "18/14days",
         "Cost": "20",
         "Street Index": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "Light APiercing",
@@ -7869,7 +7869,7 @@
         "Availability": "16/14days",
         "Cost": "10",
         "Street Index": "2.5",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "Mal. Arms Sliver Gun ammo (7)",
@@ -7909,7 +7909,7 @@
         "Availability": "8/72hrs",
         "Cost": "10",
         "Street Index": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "Rostovic Wrist Racate (6 rnds)",
@@ -7949,7 +7949,7 @@
         "Availability": "3/12hrs",
         "Cost": "4",
         "Street Index": ".8",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "Stinger Rnds(Shotgun only)",
@@ -7959,7 +7959,7 @@
         "Availability": "4/18hrs",
         "Cost": "3",
         "Street Index": "1",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "Stun Rnds",
@@ -7989,7 +7989,7 @@
         "Availability": "6/6days",
         "Cost": "5",
         "Street Index": "1.5",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "Wirtz-Bet",
@@ -9119,7 +9119,7 @@
         "Availability": "4/24hrs",
         "Cost": "50",
         "Street Index": "1.5",
-        "BookPage": "fof.???"
+        "BookPage": "fof.51"
       },
       {
         "Name": "XM1822 Adapter",
@@ -9519,7 +9519,7 @@
         "Availability": "8/8 days",
         "Cost": "100",
         "Street Index": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Concussion",
@@ -9559,7 +9559,7 @@
         "Availability": "7/4 days",
         "Cost": "600",
         "Street Index": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Defensive Shotgun Grenade",
@@ -9569,7 +9569,7 @@
         "Availability": "6/4 days",
         "Cost": "600",
         "Street Index": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Offensive Shotgun Grenade",
@@ -9579,7 +9579,7 @@
         "Availability": "6/4 days",
         "Cost": "600",
         "Street Index": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Smoke",
@@ -9589,7 +9589,7 @@
         "Availability": "4/4 days",
         "Cost": "30",
         "Street Index": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Defensive Mikrogrenade",
@@ -9629,7 +9629,7 @@
         "Availability": "5/6 days",
         "Cost": "15",
         "Street Index": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Defensive Frag Pistol Grenade",
@@ -9639,7 +9639,7 @@
         "Availability": "5/7 days",
         "Cost": "20",
         "Street Index": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Flash Bomb Pistol Grenade",
@@ -9649,7 +9649,7 @@
         "Availability": "4/72hrs",
         "Cost": "15",
         "Street Index": "1.2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "HEP (Cratering) Pistol Grenade",
@@ -9659,7 +9659,7 @@
         "Availability": "4/6 days",
         "Cost": "30",
         "Street Index": "1.5",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Incendiary Pistol Grenade",
@@ -9669,7 +9669,7 @@
         "Availability": "8/7 days",
         "Cost": "30",
         "Street Index": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Offensive Frag Pistol Grenade",
@@ -9679,7 +9679,7 @@
         "Availability": "5/7 days",
         "Cost": "25",
         "Street Index": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Smoke",
@@ -9689,7 +9689,7 @@
         "Availability": "6/7 days",
         "Cost": "20",
         "Street Index": "2.5",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Anti-Armor LRR Grenade",
@@ -9699,7 +9699,7 @@
         "Availability": "5/36hrs",
         "Cost": "200",
         "Street Index": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Anti-Personnel LRR Grenade",
@@ -9709,7 +9709,7 @@
         "Availability": "5/36hrs",
         "Cost": "150",
         "Street Index": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "High Explosive LRR Grenade",
@@ -9719,7 +9719,7 @@
         "Availability": "5/36hrs",
         "Cost": "150",
         "Street Index": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Smoke LRR Grenade",
@@ -9729,7 +9729,7 @@
         "Availability": "4/36hrs",
         "Cost": "125",
         "Street Index": "2.5",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Anti-Armor HRR Grenade",
@@ -9739,7 +9739,7 @@
         "Availability": "5/36hrs",
         "Cost": "200",
         "Street Index": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Anti-Personnel HRR Grenade",
@@ -9749,7 +9749,7 @@
         "Availability": "5/36hrs",
         "Cost": "150",
         "Street Index": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "High Explosive HRR Grenade",
@@ -9759,7 +9759,7 @@
         "Availability": "5/36hrs",
         "Cost": "150",
         "Street Index": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Smoke HRR Grenade",
@@ -9769,7 +9769,7 @@
         "Availability": "4/36hrs",
         "Cost": "125",
         "Street Index": "2.5",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Antitank Mine",
@@ -9779,7 +9779,7 @@
         "Availability": "10/7days",
         "Cost": "40",
         "Street Index": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Claymore",
@@ -9789,7 +9789,7 @@
         "Availability": "8/6days",
         "Cost": "175",
         "Street Index": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Directional A-P Mine",
@@ -9799,7 +9799,7 @@
         "Availability": "10/7days",
         "Cost": "100",
         "Street Index": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Explosive-Tipped Spike",
@@ -9809,7 +9809,7 @@
         "Availability": "8/10days",
         "Cost": "5",
         "Street Index": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Thermite Limpet Mine",
@@ -9819,7 +9819,7 @@
         "Availability": "9/7days",
         "Cost": "80",
         "Street Index": "2.5",
-        "BookPage": "fof.???"
+        "BookPage": "fof.48"
       },
       {
         "Name": "Micro Flares",
@@ -28035,147 +28035,147 @@
         "Cost": "750",
         "Equipment": "-",
         "CF": "1",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "Hardpoint Single Centerline",
         "Cost": "1000",
         "Equipment": "-",
         "CF": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "Hardpoint Dual Centerline ",
         "Cost": "1750",
         "Equipment": "-",
         "CF": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "Hardpoint Wing/Fairing",
         "Cost": "750",
         "Equipment": "-",
         "CF": ".5",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "External Micro Turret",
         "Cost": "5000",
         "Equipment": "-",
         "CF": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "External Small Turret",
         "Cost": "7500",
         "Equipment": "-",
         "CF": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "External Medium Turret",
         "Cost": "15000",
         "Equipment": "-",
         "CF": "4",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "Pop-Up Remote Micro Turret",
         "Cost": "18000",
         "Equipment": "-",
         "CF": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "Pop-Up Remote Small Turret",
         "Cost": "27000",
         "Equipment": "-",
         "CF": "4",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "Pop-Up Remote Medium Turret",
         "Cost": "52500",
         "Equipment": "-",
         "CF": "6",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "Remote Micro Turret",
         "Cost": "6000",
         "Equipment": "-",
         "CF": "1",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "Remote Small Turret",
         "Cost": "9000",
         "Equipment": "-",
         "CF": "2",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "Remote Medium Turret",
         "Cost": "17500",
         "Equipment": "-",
         "CF": "3",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "Pop-Up Micro Turret",
         "Cost": "15000",
         "Equipment": "-",
         "CF": "4",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "Pop-Up Small Turret",
         "Cost": "22500",
         "Equipment": "-",
         "CF": "6",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "Pop-Up Medium Turret",
         "Cost": "45000",
         "Equipment": "-",
         "CF": "8",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "External Rack Mount(1 missile)",
         "Cost": "1000",
         "Equipment": "-",
         "CF": "0",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "Pintle Mount",
         "Cost": "50",
         "Equipment": "-",
         "CF": "0",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "Ring Mount",
         "Cost": "1500",
         "Equipment": "-",
         "CF": "0",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "Ring Mount with Hatch",
         "Cost": "2000",
         "Equipment": "-",
         "CF": "0",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       },
       {
         "Name": "Ring Mount",
         "Cost": "3000",
         "Equipment": "-",
         "CF": "1",
-        "BookPage": "fof.???"
+        "BookPage": "fof.46"
       }
     ]
   }
