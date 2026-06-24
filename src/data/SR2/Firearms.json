@@ -7917,17 +7917,17 @@
     "BookPage": "cb1.34"
   },
   {
-    "Name": "Taser II (Tasr) 1",
+    "Name": "Taser II (Tasr)",
     "Concealability": "7",
-    "Ammunition": "0",
-    "Mode": "5S Stun",
-    "Damage": ".5",
-    "Weight": "4/24hrs",
-    "Availability": "300",
-    "Cost": "1",
-    "StreetIndex": "sr2.???",
-    "Accessories": "",
-    "BookPage": ""
+    "Ammunition": "1(b)",
+    "Mode": "SS",
+    "Damage": "5S Stun",
+    "Weight": ".5",
+    "Availability": "4/24hrs",
+    "Cost": "300",
+    "StreetIndex": "1",
+    "Accessories": "None",
+    "BookPage": "sr2.???"
   },
   {
     "Name": "Techtronica Model 009 (Tasr)",
