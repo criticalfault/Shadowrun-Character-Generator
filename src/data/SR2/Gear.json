@@ -1025,7 +1025,7 @@
         "Cost": "650",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.89"
       },
       {
         "Name": "Hammerli Model 520",
@@ -1584,7 +1584,7 @@
         "Cost": "1150",
         "Street Index": "3",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.89"
       },
       {
         "Name": "H&K VP80Z",
@@ -1753,7 +1753,7 @@
         "Cost": "600",
         "Street Index": "1",
         "Accessories": "Silencer",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.89"
       },
       {
         "Name": "Armalite 44",
@@ -2078,7 +2078,7 @@
         "Cost": "900",
         "Street Index": "2",
         "Accessories": "Laser Sight, Recoil Compensation (1)",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.89"
       },
       {
         "Name": "Fichetti Military XI Smart",
@@ -2091,7 +2091,7 @@
         "Cost": "1800",
         "Street Index": "2",
         "Accessories": "Smartlink, Recoil Compensation (1)",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.89"
       },
       {
         "Name": "Glock 22 Mk. III",
@@ -3001,7 +3001,7 @@
         "Cost": "900",
         "Street Index": "1",
         "Accessories": "Laser Sight, Sound Suppressor",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.90"
       },
       {
         "Name": "Buzzsaw",
@@ -3235,7 +3235,7 @@
         "Cost": "1200",
         "Street Index": "2",
         "Accessories": "Laser Sight, Silencer",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.90"
       },
       {
         "Name": "Heckler & Koch MP-5TX",
@@ -4093,7 +4093,7 @@
         "Cost": "1000",
         "Street Index": "1",
         "Accessories": "Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "ssc.111"
       },
       {
         "Name": "Franchi SPAS-22",
@@ -17344,7 +17344,7 @@
         "Availability": "4/48hrs",
         "Cost": "1000",
         "Street Index": "1.2",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "Holotank",
@@ -17353,7 +17353,7 @@
         "Availability": "5/48hrs",
         "Cost": "5000",
         "Street Index": "1.2",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "Tabletop Holotank",
@@ -17362,7 +17362,7 @@
         "Availability": "4/48hrs",
         "Cost": "500",
         "Street Index": "1.2",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "Music",
@@ -17533,7 +17533,7 @@
         "Availability": "8/1week",
         "Cost": "125000",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.95"
       },
       {
         "Name": "Sony Beautiful Dreamer",
@@ -17560,7 +17560,7 @@
         "Availability": "always",
         "Cost": "350",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.95"
       },
       {
         "Name": "Truman Paradiso",
@@ -19474,7 +19474,7 @@
         "Availability": "8/1week",
         "Cost": "10000",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "Mitsuhama MenTokko-II Manip.",
@@ -19501,7 +19501,7 @@
         "Availability": "8/2weeks",
         "Cost": "250000",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.95"
       },
       {
         "Name": "Truman Inner-I",
