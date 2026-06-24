@@ -8,9 +8,6 @@ const track = (eventName, params = {}) => {
 export const trackDiceRolled = (diceCount) =>
   track('dice_rolled', { dice_count: diceCount });
 
-export const trackCharacterSaved = () =>
-  track('character_saved');
-
 export const trackCharacterLoaded = () =>
   track('character_loaded');
 
@@ -22,3 +19,15 @@ export const trackCharacterFinalized = (edition, race) =>
 
 export const trackTabChanged = (tabName) =>
   track('tab_viewed', { tab_name: tabName });
+
+export const trackCustomVehicleSaved = (edition) =>
+  track('custom_vehicle_saved', { edition });
+
+export const trackCustomWeaponSaved = (edition) =>
+  track('custom_weapon_saved', { edition });
+
+export const trackCustomDeckSaved = (edition) =>
+  track('custom_deck_saved', { edition });
+
+export const trackCharacterSavedWithEdition = (edition) =>
+  track('character_saved', { edition });
