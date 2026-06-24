@@ -1077,7 +1077,7 @@
         "Cost": "250",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.9"
       },
       {
         "Name": "Raecor Sting",
@@ -3326,7 +3326,7 @@
         "Cost": "795",
         "Street Index": "1",
         "Accessories": "Caseless, Gas Vent (3)",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.23"
       },
       {
         "Name": "Militech-10",
@@ -4172,7 +4172,7 @@
         "Street Index": "2.1",
         "Accessories": "CB2",
         "": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "pw.25"
       },
       {
         "Name": "Militech Crusher SSG",
@@ -11226,7 +11226,7 @@
         "Availability": "6/48hrs",
         "Cost": "1000",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.94"
       },
       {
         "Name": "Nu-Tek Wearment Jacket",
@@ -17371,7 +17371,7 @@
         "Availability": "Always",
         "Cost": "20",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.94"
       },
       {
         "Name": "Music",
@@ -17380,7 +17380,7 @@
         "Availability": "Always",
         "Cost": "200",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.94"
       },
       {
         "Name": "Music",
@@ -17389,7 +17389,7 @@
         "Availability": "Always",
         "Cost": "100",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.94"
       },
       {
         "Name": "DPI Black Box Backup Synthamp",
@@ -17407,7 +17407,7 @@
         "Availability": "6/48hrs",
         "Cost": "100",
         "Street Index": "1.3",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.105"
       },
       {
         "Name": "DPI Body Rythm Dance Bracelets",
@@ -17416,7 +17416,7 @@
         "Availability": "always",
         "Cost": "400",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.105"
       },
       {
         "Name": "DPI Drumsticks",
@@ -17425,7 +17425,7 @@
         "Availability": "3/36hrs",
         "Cost": "800",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.105"
       },
       {
         "Name": "Washburn Soundmachine Guitar",
@@ -19045,7 +19045,7 @@
         "Availability": "3/48hrs",
         "Cost": "1800",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "fof.96"
       },
       {
         "Name": "Kodak GAC-25 Shoulder Mount",
@@ -20329,7 +20329,7 @@
         "Availability": "always",
         "Cost": "15000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.105"
       },
       {
         "Name": "Hall Acoustic Modulators",
@@ -20338,7 +20338,7 @@
         "Availability": "always",
         "Cost": "35000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.105"
       },
       {
         "Name": "Small Amplifiers",
@@ -26078,7 +26078,7 @@
         "Availability": "2/10days",
         "Cost": "500",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "cs.92"
       },
       {
         "Name": "Keypad Sequencer Level 2",
@@ -26088,7 +26088,7 @@
         "Availability": "2/10days",
         "Cost": "2000",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "cs.92"
       },
       {
         "Name": "Keypad Sequencer Level 3",
@@ -26098,7 +26098,7 @@
         "Availability": "2/10days",
         "Cost": "4500",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "cs.92"
       },
       {
         "Name": "Keypad Sequencer Level 4",
@@ -26108,7 +26108,7 @@
         "Availability": "2/10days",
         "Cost": "8000",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "cs.92"
       },
       {
         "Name": "Keypad Sequencer Level 5",
@@ -26118,7 +26118,7 @@
         "Availability": "2/10days",
         "Cost": "12500",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "cs.92"
       },
       {
         "Name": "Keypad Sequencer Level 6",
@@ -26128,7 +26128,7 @@
         "Availability": "3/10days",
         "Cost": "18000",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "cs.92"
       },
       {
         "Name": "Maglock Passkey Lvl 1",
