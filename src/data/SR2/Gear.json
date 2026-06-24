@@ -1415,7 +1415,7 @@
         "Cost": "325",
         "Street Index": ".8",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Powell Knife Pistol",
@@ -2767,7 +2767,7 @@
         "Cost": "4500",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Narcoject Pistol",
@@ -2962,7 +2962,7 @@
         "Cost": "1000",
         "Street Index": ".9",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Beretta M-24 Advanced",
@@ -3339,7 +3339,7 @@
         "Cost": "3455",
         "Street Index": "3",
         "Accessories": "Magnification 91), Grenade Launcher (4-shot), Sound Suppressor",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Militech Mini-Gat Carbine",
@@ -3352,7 +3352,7 @@
         "Cost": "2695",
         "Street Index": "5",
         "Accessories": "Caseless",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Sandler Model II",
@@ -3404,7 +3404,7 @@
         "Cost": "950",
         "Street Index": "1",
         "Accessories": "Caseless, Sound Suppressor",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Setsuko-Arasaka",
@@ -3417,7 +3417,7 @@
         "Cost": "1150",
         "Street Index": "1",
         "Accessories": "Caseless, Smartlink, Sound Suppressor",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Sternmeyer SMG 21",
@@ -3872,7 +3872,7 @@
         "Cost": "800",
         "Street Index": "2.5",
         "Accessories": "Gas Vent (2)",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Militech M-31a1 AICW",
@@ -3885,7 +3885,7 @@
         "Cost": "1695",
         "Street Index": "4.5",
         "Accessories": "Grenade Launcher (4-shot)",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Militech Ronin Light Assault",
@@ -3898,7 +3898,7 @@
         "Cost": "900",
         "Street Index": "2",
         "Accessories": "Laser Sight",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Parker Carbine",
@@ -4002,7 +4002,7 @@
         "Cost": "1800",
         "Street Index": "2.25",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Ares Wippet",
@@ -4185,7 +4185,7 @@
         "Cost": "1450",
         "Street Index": "1.5",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Militech Military",
@@ -4198,7 +4198,7 @@
         "Cost": "800",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Militech Military",
@@ -4211,7 +4211,7 @@
         "Cost": "800",
         "Street Index": "1",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Mossberg CMDT",
@@ -4744,7 +4744,7 @@
         "Cost": "130000",
         "Street Index": "3.25",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "2-Barrel HMG Chaingun",
@@ -4848,7 +4848,7 @@
         "Cost": "6000",
         "Street Index": "2",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Colt-Mauser M2X Cannon",
@@ -4965,7 +4965,7 @@
         "Cost": "8000",
         "Street Index": "3",
         "Accessories": "Gas Vent (2), Magnification (3), Shock Pads, Smartlink",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "NR-10 Multi-Barrel HMG",
@@ -5186,7 +5186,7 @@
         "Cost": "2550",
         "Street Index": "3",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Militech Mini-Grenade Launcher",
@@ -5199,7 +5199,7 @@
         "Cost": "4750",
         "Street Index": "5",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Rockwell AGL-113",
@@ -5264,7 +5264,7 @@
         "Cost": "4500",
         "Street Index": "2.5",
         "Accessories": "None",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Multi-Launcher",
@@ -5696,7 +5696,7 @@
         "Availability": "10/7days",
         "Cost": "150",
         "Street Index": "2.5",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Motion Restraints Grenade (N)",
@@ -9953,7 +9953,7 @@
         "Availability": "4/48hrs",
         "Cost": "200",
         "Street Index": ".9",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Nine-Eleven Chip",
@@ -10654,7 +10654,7 @@
         "Availability": "4/36hrs",
         "Cost": "2000",
         "Street Index": "1.2",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Armor Clothing",
@@ -17398,7 +17398,7 @@
         "Availability": "6/48hrs",
         "Cost": "8000",
         "Street Index": "1.3",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.93"
       },
       {
         "Name": "DPI Black Box Datachips",
@@ -17434,7 +17434,7 @@
         "Availability": "5/60hrs",
         "Cost": "1000",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.92"
       },
       {
         "Name": "Yamaha RX4000 Ultrasynth",
@@ -17497,7 +17497,7 @@
         "Availability": "always",
         "Cost": "350",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.97"
       },
       {
         "Name": "Simsense Program Chip",
@@ -17506,7 +17506,7 @@
         "Availability": "always",
         "Cost": "50",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.99"
       },
       {
         "Name": "Simsense Portable Recorder",
@@ -17515,7 +17515,7 @@
         "Availability": "7/7days",
         "Cost": "50000",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.97"
       },
       {
         "Name": "Fuchi Dreamliner",
@@ -17578,7 +17578,7 @@
         "Availability": "always",
         "Cost": "1",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.97"
       },
       {
         "Name": "Average Baseline ACT Recording",
@@ -17587,7 +17587,7 @@
         "Availability": "always",
         "Cost": "3",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.97"
       },
       {
         "Name": "High-Quality Baseline ACT Rec.",
@@ -17641,7 +17641,7 @@
         "Availability": "always",
         "Cost": "3",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.97"
       },
       {
         "Name": "Average Full-X ACT Recording",
@@ -17650,7 +17650,7 @@
         "Availability": "always",
         "Cost": "6",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.97"
       },
       {
         "Name": "High-Quality Full-X ACT Rec.",
@@ -17677,7 +17677,7 @@
         "Availability": "always",
         "Cost": "270",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.97"
       },
       {
         "Name": "HighQuality Full-X Dir-X Rec",
@@ -17704,7 +17704,7 @@
         "Availability": "always",
         "Cost": "20",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.99"
       },
       {
         "Name": "Video Recorder Package",
@@ -18928,7 +18928,7 @@
         "Availability": "5/72hrs",
         "Cost": "2500",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.88"
       },
       {
         "Name": "AZT Micro25 Microcybercam",
@@ -18937,7 +18937,7 @@
         "Availability": "5/72hrs",
         "Cost": "3200",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.88"
       },
       {
         "Name": "Bionome Tridlink Adaptor",
@@ -18955,7 +18955,7 @@
         "Availability": "2/48hrs",
         "Cost": "1000",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.88"
       },
       {
         "Name": "Fuchi VX2200 Cybercam",
@@ -18964,7 +18964,7 @@
         "Availability": "3/48hrs",
         "Cost": "1300",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.88"
       },
       {
         "Name": "Kiroshi Remote Cybercam 20",
@@ -18973,7 +18973,7 @@
         "Availability": "2/48hrs",
         "Cost": "1350",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.88"
       },
       {
         "Name": "Nikkon America Campod",
@@ -18991,7 +18991,7 @@
         "Availability": "4/72hrs",
         "Cost": "2200",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.88"
       },
       {
         "Name": "Sony CB5000 Cybercam",
@@ -19000,7 +19000,7 @@
         "Availability": "5/72hrs",
         "Cost": "2700",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.88"
       },
       {
         "Name": "AZT Micro30 StaticBrace Chest",
@@ -19081,7 +19081,7 @@
         "Availability": "5/72hrs",
         "Cost": "1500",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.89"
       },
       {
         "Name": "Zeemandt Luzor Monocular",
@@ -19186,7 +19186,7 @@
         "Availability": "2/48hs",
         "Cost": "8000",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.91"
       },
       {
         "Name": "Non-Mobile Radio",
@@ -19321,7 +19321,7 @@
         "Availability": "8/1week",
         "Cost": "1000",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "Satellite Injecton Uplink",
@@ -19465,7 +19465,7 @@
         "Availability": "8/2weeks",
         "Cost": "40000",
         "Street Index": "3",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.97"
       },
       {
         "Name": "Galil Ruach-Aleph Reprogrammer",
@@ -19564,7 +19564,7 @@
         "Availability": "always",
         "Cost": "50",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.92"
       },
       {
         "Name": "Musical instrument: Cheap Complexity 2",
@@ -19573,7 +19573,7 @@
         "Availability": "always",
         "Cost": "100",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.92"
       },
       {
         "Name": "Musical instrument: Cheap Complexity 3",
@@ -19582,7 +19582,7 @@
         "Availability": "always",
         "Cost": "150",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.92"
       },
       {
         "Name": "Musical instrument: Cheap Complexity 4",
@@ -19591,7 +19591,7 @@
         "Availability": "always",
         "Cost": "200",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.92"
       },
       {
         "Name": "Musical instrument: Cheap Complexity 5",
@@ -19600,7 +19600,7 @@
         "Availability": "always",
         "Cost": "250",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.92"
       },
       {
         "Name": "Musical instrument: Average Complexity 1",
@@ -19609,7 +19609,7 @@
         "Availability": "always",
         "Cost": "500",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.92"
       },
       {
         "Name": "Musical instrument: Average Complexity 2",
@@ -19618,7 +19618,7 @@
         "Availability": "always",
         "Cost": "1000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.92"
       },
       {
         "Name": "Musical instrument: Average Complexity 3",
@@ -19627,7 +19627,7 @@
         "Availability": "always",
         "Cost": "1500",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.92"
       },
       {
         "Name": "Musical instrument: Average Complexity 4",
@@ -19636,7 +19636,7 @@
         "Availability": "always",
         "Cost": "2000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.92"
       },
       {
         "Name": "Musical instrument: Average Complexity 5",
@@ -19645,7 +19645,7 @@
         "Availability": "always",
         "Cost": "2500",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.92"
       },
       {
         "Name": "Musical instrument: Fine Complexity 1",
@@ -19654,7 +19654,7 @@
         "Availability": "always",
         "Cost": "5000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.92"
       },
       {
         "Name": "Musical instrument: Fine Complexity 2",
@@ -19663,7 +19663,7 @@
         "Availability": "always",
         "Cost": "10000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.92"
       },
       {
         "Name": "Musical instrument: Fine Complexity 3",
@@ -19672,7 +19672,7 @@
         "Availability": "always",
         "Cost": "15000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.92"
       },
       {
         "Name": "Musical instrument: Fine Complexity 4",
@@ -19681,7 +19681,7 @@
         "Availability": "always",
         "Cost": "20000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.92"
       },
       {
         "Name": "Musical instrument: Fine Complexity 5",
@@ -19690,7 +19690,7 @@
         "Availability": "always",
         "Cost": "25000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.92"
       },
       {
         "Name": "Synthesizers Cheap, 1 voice",
@@ -20203,7 +20203,7 @@
         "Availability": "always",
         "Cost": "1000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "Autosynth, skill 2",
@@ -20212,7 +20212,7 @@
         "Availability": "always",
         "Cost": "2000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "Autosynth, skill 3",
@@ -20221,7 +20221,7 @@
         "Availability": "always",
         "Cost": "3000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "Autosynth, skill 4",
@@ -20230,7 +20230,7 @@
         "Availability": "always",
         "Cost": "12000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "Autosynth, skill 5",
@@ -20239,7 +20239,7 @@
         "Availability": "always",
         "Cost": "15000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "Autosynth, skill 6",
@@ -20248,7 +20248,7 @@
         "Availability": "always",
         "Cost": "30000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "Autosynth, skill 7",
@@ -20257,7 +20257,7 @@
         "Availability": "always",
         "Cost": "35000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "Autosynth, skill 8",
@@ -20266,7 +20266,7 @@
         "Availability": "always",
         "Cost": "40000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "Autosynth, skill 9",
@@ -20275,7 +20275,7 @@
         "Availability": "always",
         "Cost": "90000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "Autosynth, skill 10",
@@ -20284,7 +20284,7 @@
         "Availability": "always",
         "Cost": "100000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "Cheap Synthlink Controller",
@@ -20293,7 +20293,7 @@
         "Availability": "always",
         "Cost": "1000",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "Average Synthlink Controller",
@@ -20302,7 +20302,7 @@
         "Availability": "always",
         "Cost": "10000",
         "Street Index": ".75",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "Fine Synthlink Controller",
@@ -20311,7 +20311,7 @@
         "Availability": "3/48hrs",
         "Cost": "50000",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "Small Acoustic Modulators",
@@ -20347,7 +20347,7 @@
         "Availability": "always",
         "Cost": "100",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.93"
       },
       {
         "Name": "Club Amplifiers",
@@ -20356,7 +20356,7 @@
         "Availability": "always",
         "Cost": "400",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.93"
       },
       {
         "Name": "Hall Amplifiers",
@@ -20365,7 +20365,7 @@
         "Availability": "always",
         "Cost": "1200",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.93"
       },
       {
         "Name": "Stadium Amplifiers",
@@ -20374,7 +20374,7 @@
         "Availability": "always",
         "Cost": "5000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.93"
       },
       {
         "Name": "Superstatium Amplifiers",
@@ -20383,7 +20383,7 @@
         "Availability": "always",
         "Cost": "12000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.93"
       },
       {
         "Name": "Small Speakers",
@@ -20392,7 +20392,7 @@
         "Availability": "always",
         "Cost": "100",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.93"
       },
       {
         "Name": "Club Speakers",
@@ -20401,7 +20401,7 @@
         "Availability": "always",
         "Cost": "1000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.93"
       },
       {
         "Name": "Hall Speakers",
@@ -20410,7 +20410,7 @@
         "Availability": "always",
         "Cost": "5000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.93"
       },
       {
         "Name": "Stadium Speakers",
@@ -20419,7 +20419,7 @@
         "Availability": "always",
         "Cost": "12000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.93"
       },
       {
         "Name": "Superstadium Speakers",
@@ -20428,7 +20428,7 @@
         "Availability": "always",
         "Cost": "25000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.93"
       },
       {
         "Name": "4-track Sampler",
@@ -20437,7 +20437,7 @@
         "Availability": "always",
         "Cost": "1200",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "8-track Sampler",
@@ -20446,7 +20446,7 @@
         "Availability": "always",
         "Cost": "3200",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "16-track Sampler",
@@ -20455,7 +20455,7 @@
         "Availability": "always",
         "Cost": "8000",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "24-track Sampler",
@@ -20464,7 +20464,7 @@
         "Availability": "always",
         "Cost": "14400",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "32-track Sampler",
@@ -20473,7 +20473,7 @@
         "Availability": "always",
         "Cost": "22400",
         "Street Index": "8",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.95"
       },
       {
         "Name": "Body Mike",
@@ -20518,7 +20518,7 @@
         "Availability": "always",
         "Cost": "1000",
         "Street Index": "1",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.91"
       },
       {
         "Name": "Additional Mixer Input Channel",
@@ -20527,7 +20527,7 @@
         "Availability": "3/36hrs",
         "Cost": "200",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.91"
       },
       {
         "Name": "Additional Mixer Output Channl",
@@ -20536,7 +20536,7 @@
         "Availability": "-",
         "Cost": "500",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.91"
       },
       {
         "Name": "Built-in Polycorder in Mixer",
@@ -20545,7 +20545,7 @@
         "Availability": "5/36hrs",
         "Cost": "300",
         "Street Index": "2",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.91"
       },
       {
         "Name": "Digital Recording Studio",
@@ -20554,7 +20554,7 @@
         "Availability": "8/14 days",
         "Cost": "12000",
         "Street Index": "1.1",
-        "BookPage": "ssc.???"
+        "BookPage": "sb.91"
       },
       {
         "Name": "Hand-held Polycorder",
@@ -20725,7 +20725,7 @@
         "Availability": "always",
         "Cost": "4500",
         "Street Index": "1.1",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "SecSystems Detention Collar",
@@ -24828,7 +24828,7 @@
         "Availability": "4/48hrs",
         "Cost": "6000",
         "Street Index": "1.5",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Arasaka",
@@ -24838,7 +24838,7 @@
         "Availability": "4/48hsr",
         "Cost": "7500",
         "Street Index": "1.5",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Laser Microphone Lv 1",
@@ -25178,7 +25178,7 @@
         "Availability": "6/36hrs",
         "Cost": "30000",
         "Street Index": "1.2",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "Data Encryption System Lv 1",
@@ -25488,7 +25488,7 @@
         "Availability": "14/20days",
         "Cost": "5000",
         "Street Index": "4",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "White Noise Generator Lv 1",
@@ -26278,7 +26278,7 @@
         "Availability": "4/72hrs",
         "Cost": "2000",
         "Street Index": "1.5",
-        "BookPage": "ssc.???"
+        "BookPage": "cp.???"
       },
       {
         "Name": "ID badgemaker",
