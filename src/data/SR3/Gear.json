@@ -24908,106 +24908,6 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "Chaff (ECM) Grenade (A)",
-        "Concealability": "6",
-        "Damage": "Special",
-        "Weight": ".5",
-        "Availability": "4/4days",
-        "Cost": "30",
-        "Street Index": "1.5",
-        "BookPage": "tss.16"
-      },
-      {
-        "Name": "Concussion Grenade B",
-        "Concealability": "6",
-        "Damage": "12M Stun",
-        "Weight": ".25",
-        "Availability": "5/4days",
-        "Cost": "30",
-        "Street Index": "2",
-        "BookPage": "sr3.283"
-      },
-      {
-        "Name": "Concussion Grenade (A)",
-        "Concealability": "7",
-        "Damage": "10M Stun",
-        "Weight": ".25",
-        "Availability": "6/72hrs",
-        "Cost": "40",
-        "Street Index": "1.2",
-        "BookPage": "cb1.32"
-      },
-      {
-        "Name": "Crawler Grenade (A)",
-        "Concealability": "6",
-        "Damage": "(see rules)",
-        "Weight": ".25",
-        "Availability": "20/14 days",
-        "Cost": "150",
-        "Street Index": "6",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "CS Grenade (A)",
-        "Concealability": "5",
-        "Damage": "tear gas",
-        "Weight": ".5",
-        "Availability": "6/4 days",
-        "Cost": "75",
-        "Street Index": "2.5",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Dual Charge Grenade (A)",
-        "Concealability": "5",
-        "Damage": "(Special)",
-        "Weight": ".5",
-        "Availability": "8/1wk",
-        "Cost": "150",
-        "Street Index": "3",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "Def AP Grenade B",
-        "Concealability": "6",
-        "Damage": "10S(f)",
-        "Weight": ".25",
-        "Availability": "4/4days",
-        "Cost": "30",
-        "Street Index": "2",
-        "BookPage": "sr3.283"
-      },
-      {
-        "Name": "Def HE Grenade B",
-        "Concealability": "6",
-        "Damage": "10S",
-        "Weight": ".25",
-        "Availability": "4/4days",
-        "Cost": "30",
-        "Street Index": "2",
-        "BookPage": "sr3.283"
-      },
-      {
-        "Name": "EMP Grenade (A)",
-        "Concealability": "6",
-        "Damage": "(Special)",
-        "Weight": ".3",
-        "Availability": "10/10days",
-        "Cost": "400",
-        "Street Index": "4",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Explosive Grenade (A)",
-        "Concealability": "7",
-        "Damage": "6M",
-        "Weight": ".25",
-        "Availability": "6/72hrs",
-        "Cost": "25",
-        "Street Index": "1.5",
-        "BookPage": "sr2.???"
-      },
-      {
         "Name": "FEN Dz 22",
         "Concealability": "7",
         "Damage": "8S",
@@ -25028,26 +24928,6 @@
         "BookPage": "cb1.25"
       },
       {
-        "Name": "Flare Grenade (A)",
-        "Concealability": "6",
-        "Damage": "(Special)",
-        "Weight": ".25",
-        "Availability": "2/24hrs",
-        "Cost": "40",
-        "Street Index": "1",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "Flash Grenade (A)",
-        "Concealability": "6",
-        "Damage": "(Special)",
-        "Weight": ".25",
-        "Availability": "4/48hrs",
-        "Cost": "40",
-        "Street Index": "1",
-        "BookPage": "cc.41"
-      },
-      {
         "Name": "Flash-Pak (A)",
         "Concealability": "12",
         "Damage": "(Special)",
@@ -25056,66 +24936,6 @@
         "Cost": "250",
         "Street Index": "1",
         "BookPage": "sr3.283"
-      },
-      {
-        "Name": "Flashbang Grenade (A)",
-        "Concealability": "6",
-        "Damage": "12M Stun",
-        "Weight": ".25",
-        "Availability": "8/6days",
-        "Cost": "80",
-        "Street Index": "2.25",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Foam Grenade (A)",
-        "Concealability": "6",
-        "Damage": "-",
-        "Weight": ".25",
-        "Availability": "3/48hrs",
-        "Cost": "30",
-        "Street Index": ".9",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Fragmentation mini-grenade (A)",
-        "Concealability": "8",
-        "Damage": "10D(f)",
-        "Weight": ".1",
-        "Availability": "8/4days",
-        "Cost": "50",
-        "Street Index": "3",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Gas Grenade (A)",
-        "Concealability": "5",
-        "Damage": "Neuro-Stun VIII",
-        "Weight": ".5",
-        "Availability": "8/4days",
-        "Cost": "60",
-        "Street Index": "2",
-        "BookPage": "sr3.283"
-      },
-      {
-        "Name": "GPz-78 Grenade (A)",
-        "Concealability": "8",
-        "Damage": "8M",
-        "Weight": ".1",
-        "Availability": "4/60hrs",
-        "Cost": "40",
-        "Street Index": "1.5",
-        "BookPage": "cb1.33"
-      },
-      {
-        "Name": "Green Ring 4 Grenade (A)",
-        "Concealability": "6",
-        "Damage": "gas",
-        "Weight": ".25",
-        "Availability": "10/6 days",
-        "Cost": "80",
-        "Street Index": "2.5",
-        "BookPage": "sr2.???"
       },
       {
         "Name": "HEP (High-Explosive Cratering)",
@@ -25128,96 +24948,6 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "Incendary Grenade (A)",
-        "Concealability": "8",
-        "Damage": "(Special)",
-        "Weight": ".5",
-        "Availability": "4/4days",
-        "Cost": "50",
-        "Street Index": "3",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "Ink Grenade (A)",
-        "Concealability": "8",
-        "Damage": "None",
-        "Weight": ".25",
-        "Availability": "4/4days",
-        "Cost": "40",
-        "Street Index": "3",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "IPE Concussion Grenade (A)",
-        "Concealability": "6",
-        "Damage": "16M Stun",
-        "Weight": ".5",
-        "Availability": "8/1wk",
-        "Cost": "70",
-        "Street Index": "2",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "IPE Defensive AP Grenade (A)",
-        "Concealability": "6",
-        "Damage": "15D(f)",
-        "Weight": ".5",
-        "Availability": "8/1wk",
-        "Cost": "60",
-        "Street Index": "2",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "IPE Defensive HE Grenade (A)",
-        "Concealability": "6",
-        "Damage": "15S",
-        "Weight": ".5",
-        "Availability": "8/1wk",
-        "Cost": "60",
-        "Street Index": "2",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "IPE Offensive AP Grenade (A)",
-        "Concealability": "6",
-        "Damage": "15D(f)",
-        "Weight": ".5",
-        "Availability": "8/1wk",
-        "Cost": "60",
-        "Street Index": "2",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "IPE Offensive HE Grenade (A)",
-        "Concealability": "6",
-        "Damage": "15S",
-        "Weight": ".5",
-        "Availability": "8/1wk",
-        "Cost": "60",
-        "Street Index": "2",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "Limited EMP (LEMP) Grenade (A)",
-        "Concealability": "6",
-        "Damage": "12M",
-        "Weight": ".5",
-        "Availability": "8/20days",
-        "Cost": "180",
-        "Street Index": "2",
-        "BookPage": "tss.16"
-      },
-      {
-        "Name": "Mace XII Gas Grenade (A)",
-        "Concealability": "6",
-        "Damage": "gas",
-        "Weight": ".25",
-        "Availability": "8/6days",
-        "Cost": "50",
-        "Street Index": "2",
-        "BookPage": "sr2.???"
-      },
-      {
         "Name": "Militech PDU-3 (A)",
         "Concealability": "8",
         "Damage": "10S",
@@ -25225,106 +24955,6 @@
         "Availability": "10/7days",
         "Cost": "150",
         "Street Index": "2.5",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Motion Restraints Grenade (A)",
-        "Concealability": "6",
-        "Damage": "-",
-        "Weight": ".5",
-        "Availability": "6/48hrs",
-        "Cost": "60",
-        "Street Index": "2",
-        "BookPage": "cb1.33"
-      },
-      {
-        "Name": "Neurostun IX Grenade (A)",
-        "Concealability": "6",
-        "Damage": "gas",
-        "Weight": ".25",
-        "Availability": "6/6days",
-        "Cost": "50",
-        "Street Index": "2",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Niref D Gas Grenade (A)",
-        "Concealability": "6",
-        "Damage": "gas",
-        "Weight": ".25",
-        "Availability": "10/6days",
-        "Cost": "80",
-        "Street Index": "2",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Offensive AP Grenade B",
-        "Concealability": "6",
-        "Damage": "10S(f)",
-        "Weight": ".25",
-        "Availability": "4/4days",
-        "Cost": "30",
-        "Street Index": "2",
-        "BookPage": "sr3.283"
-      },
-      {
-        "Name": "Offensive HE Grenade B",
-        "Concealability": "6",
-        "Damage": "10S",
-        "Weight": ".25",
-        "Availability": "4/4days",
-        "Cost": "30",
-        "Street Index": "2",
-        "BookPage": "sr3.283"
-      },
-      {
-        "Name": "Paint Grenade (A)",
-        "Concealability": "6",
-        "Damage": "-",
-        "Weight": ".25",
-        "Availability": "3/48hrs",
-        "Cost": "20",
-        "Street Index": "2",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Scatter Grenade (A)",
-        "Concealability": "6",
-        "Damage": "per charge",
-        "Weight": ".25",
-        "Availability": "3/48hrs",
-        "Cost": "70",
-        "Street Index": "1.5",
-        "BookPage": "cb2.49,SR2-???"
-      },
-      {
-        "Name": "Smoke Grenade (A)",
-        "Concealability": "6",
-        "Damage": "-",
-        "Weight": ".25",
-        "Availability": "3/24hrs",
-        "Cost": "30",
-        "Street Index": "2",
-        "BookPage": "sr3.283,fof.48"
-      },
-      {
-        "Name": "Smoke (IR) Grenade (A)",
-        "Concealability": "6",
-        "Damage": "-",
-        "Weight": ".25",
-        "Availability": "4/48hrs",
-        "Cost": "40",
-        "Street Index": "2",
-        "BookPage": "sr3.283,fof.48"
-      },
-      {
-        "Name": "Spraypaint Grenade (A)",
-        "Concealability": "6",
-        "Damage": "-",
-        "Weight": ".25",
-        "Availability": "2/3days",
-        "Cost": "20",
-        "Street Index": ".9",
         "BookPage": "sr2.???"
       },
       {
@@ -25348,126 +24978,6 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "Super Flash Grenade (A)",
-        "Concealability": "8",
-        "Damage": "(Special)",
-        "Weight": ".25",
-        "Availability": "10/2wks",
-        "Cost": "80",
-        "Street Index": "3",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "White Phosphorus Grenade (A)",
-        "Concealability": "6",
-        "Damage": "14M/10L",
-        "Weight": ".25",
-        "Availability": "6/5days",
-        "Cost": "120",
-        "Street Index": "3",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "Chaff (ECM) Grenade (N)",
-        "Concealability": "6",
-        "Damage": "Special",
-        "Weight": ".5",
-        "Availability": "4/4days",
-        "Cost": "30",
-        "Street Index": "1.5",
-        "BookPage": "tss.16"
-      },
-      {
-        "Name": "Concussion Grenade B",
-        "Concealability": "6",
-        "Damage": "12M Stun",
-        "Weight": ".25",
-        "Availability": "5/4days",
-        "Cost": "30",
-        "Street Index": "2",
-        "BookPage": "sr3.283"
-      },
-      {
-        "Name": "Concussion Grenade (N)",
-        "Concealability": "7",
-        "Damage": "10M Stun",
-        "Weight": ".25",
-        "Availability": "6/72hrs",
-        "Cost": "40",
-        "Street Index": "1.2",
-        "BookPage": "cb1.32"
-      },
-      {
-        "Name": "Crawler Grenade (N)",
-        "Concealability": "6",
-        "Damage": "(see rules)",
-        "Weight": ".25",
-        "Availability": "20/14 days",
-        "Cost": "150",
-        "Street Index": "6",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "CS Grenade (N)",
-        "Concealability": "5",
-        "Damage": "tear gas",
-        "Weight": ".5",
-        "Availability": "6/4 days",
-        "Cost": "75",
-        "Street Index": "2.5",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Dual Charge Grenade (N)",
-        "Concealability": "5",
-        "Damage": "(Special)",
-        "Weight": ".5",
-        "Availability": "8/1wk",
-        "Cost": "150",
-        "Street Index": "3",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "Def AP Grenade B",
-        "Concealability": "6",
-        "Damage": "10S(f)",
-        "Weight": ".25",
-        "Availability": "4/4days",
-        "Cost": "30",
-        "Street Index": "2",
-        "BookPage": "sr3.283"
-      },
-      {
-        "Name": "Def HE Grenade B",
-        "Concealability": "6",
-        "Damage": "10S",
-        "Weight": ".25",
-        "Availability": "4/4days",
-        "Cost": "30",
-        "Street Index": "2",
-        "BookPage": "sr3.283"
-      },
-      {
-        "Name": "EMP Grenade (N)",
-        "Concealability": "6",
-        "Damage": "(Special)",
-        "Weight": ".3",
-        "Availability": "10/10days",
-        "Cost": "400",
-        "Street Index": "4",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Explosive Grenade (N)",
-        "Concealability": "7",
-        "Damage": "6M",
-        "Weight": ".25",
-        "Availability": "6/72hrs",
-        "Cost": "25",
-        "Street Index": "1.5",
-        "BookPage": "sr2.???"
-      },
-      {
         "Name": "FEN Dz 22",
         "Concealability": "7",
         "Damage": "8S",
@@ -25488,26 +24998,6 @@
         "BookPage": "cb1.25"
       },
       {
-        "Name": "Flare Grenade (N)",
-        "Concealability": "6",
-        "Damage": "(Special)",
-        "Weight": ".25",
-        "Availability": "2/24hrs",
-        "Cost": "40",
-        "Street Index": "1",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "Flash Grenade (N)",
-        "Concealability": "6",
-        "Damage": "(Special)",
-        "Weight": ".25",
-        "Availability": "4/48hrs",
-        "Cost": "40",
-        "Street Index": "1",
-        "BookPage": "cc.41"
-      },
-      {
         "Name": "Flash-Pak (N)",
         "Concealability": "12",
         "Damage": "(Special)",
@@ -25516,66 +25006,6 @@
         "Cost": "250",
         "Street Index": "1",
         "BookPage": "sr3.283"
-      },
-      {
-        "Name": "Flashbang Grenade (N)",
-        "Concealability": "6",
-        "Damage": "12M Stun",
-        "Weight": ".25",
-        "Availability": "8/6days",
-        "Cost": "80",
-        "Street Index": "2.25",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Foam Grenade (N)",
-        "Concealability": "6",
-        "Damage": "-",
-        "Weight": ".25",
-        "Availability": "3/48hrs",
-        "Cost": "30",
-        "Street Index": ".9",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Fragmentation mini-grenade (N)",
-        "Concealability": "8",
-        "Damage": "10D(f)",
-        "Weight": ".1",
-        "Availability": "8/4days",
-        "Cost": "50",
-        "Street Index": "3",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Gas Grenade (N)",
-        "Concealability": "5",
-        "Damage": "Neuro-Stun VIII",
-        "Weight": ".5",
-        "Availability": "8/4days",
-        "Cost": "60",
-        "Street Index": "2",
-        "BookPage": "sr3.283"
-      },
-      {
-        "Name": "GPz-78 Grenade (N)",
-        "Concealability": "8",
-        "Damage": "8M",
-        "Weight": ".1",
-        "Availability": "4/60hrs",
-        "Cost": "40",
-        "Street Index": "1.5",
-        "BookPage": "cb1.33"
-      },
-      {
-        "Name": "Green Ring 4 Grenade (N)",
-        "Concealability": "6",
-        "Damage": "gas",
-        "Weight": ".25",
-        "Availability": "10/6 days",
-        "Cost": "80",
-        "Street Index": "2.5",
-        "BookPage": "sr2.???"
       },
       {
         "Name": "HEP (High-Explosive Cratering)",
@@ -25588,96 +25018,6 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "Incendary Grenade (N)",
-        "Concealability": "8",
-        "Damage": "(Special)",
-        "Weight": ".5",
-        "Availability": "4/4days",
-        "Cost": "50",
-        "Street Index": "3",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "Ink Grenade (N)",
-        "Concealability": "8",
-        "Damage": "None",
-        "Weight": ".25",
-        "Availability": "4/4days",
-        "Cost": "40",
-        "Street Index": "3",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "IPE Concussion Grenade (N)",
-        "Concealability": "6",
-        "Damage": "16M Stun",
-        "Weight": ".5",
-        "Availability": "8/1wk",
-        "Cost": "70",
-        "Street Index": "2",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "IPE Defensive AP Grenade (N)",
-        "Concealability": "6",
-        "Damage": "15D(f)",
-        "Weight": ".5",
-        "Availability": "8/1wk",
-        "Cost": "60",
-        "Street Index": "2",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "IPE Defensive HE Grenade (N)",
-        "Concealability": "6",
-        "Damage": "15S",
-        "Weight": ".5",
-        "Availability": "8/1wk",
-        "Cost": "60",
-        "Street Index": "2",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "IPE Offensive AP Grenade (N)",
-        "Concealability": "6",
-        "Damage": "15D(f)",
-        "Weight": ".5",
-        "Availability": "8/1wk",
-        "Cost": "60",
-        "Street Index": "2",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "IPE Offensive HE Grenade (N)",
-        "Concealability": "6",
-        "Damage": "15S",
-        "Weight": ".5",
-        "Availability": "8/1wk",
-        "Cost": "60",
-        "Street Index": "2",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "Limited EMP (LEMP) Grenade (N)",
-        "Concealability": "6",
-        "Damage": "12M",
-        "Weight": ".5",
-        "Availability": "8/20days",
-        "Cost": "180",
-        "Street Index": "2",
-        "BookPage": "tss.16"
-      },
-      {
-        "Name": "Mace XII Gas Grenade (N)",
-        "Concealability": "6",
-        "Damage": "gas",
-        "Weight": ".25",
-        "Availability": "8/6days",
-        "Cost": "50",
-        "Street Index": "2",
-        "BookPage": "sr2.???"
-      },
-      {
         "Name": "Militech PDU-3 (N)",
         "Concealability": "8",
         "Damage": "10S",
@@ -25685,106 +25025,6 @@
         "Availability": "10/7days",
         "Cost": "150",
         "Street Index": "2.5",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Motion Restraints Grenade (N)",
-        "Concealability": "6",
-        "Damage": "-",
-        "Weight": ".5",
-        "Availability": "6/48hrs",
-        "Cost": "60",
-        "Street Index": "2",
-        "BookPage": "cb1.33"
-      },
-      {
-        "Name": "Neurostun IX Grenade (N)",
-        "Concealability": "6",
-        "Damage": "gas",
-        "Weight": ".25",
-        "Availability": "6/6days",
-        "Cost": "50",
-        "Street Index": "2",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Niref D Gas Grenade (N)",
-        "Concealability": "6",
-        "Damage": "gas",
-        "Weight": ".25",
-        "Availability": "10/6days",
-        "Cost": "80",
-        "Street Index": "2",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Offensive AP Grenade B",
-        "Concealability": "6",
-        "Damage": "10S(f)",
-        "Weight": ".25",
-        "Availability": "4/4days",
-        "Cost": "30",
-        "Street Index": "2",
-        "BookPage": "sr3.283"
-      },
-      {
-        "Name": "Offensive HE Grenade B",
-        "Concealability": "6",
-        "Damage": "10S",
-        "Weight": ".25",
-        "Availability": "4/4days",
-        "Cost": "30",
-        "Street Index": "2",
-        "BookPage": "sr3.283"
-      },
-      {
-        "Name": "Paint Grenade (N)",
-        "Concealability": "6",
-        "Damage": "-",
-        "Weight": ".25",
-        "Availability": "3/48hrs",
-        "Cost": "20",
-        "Street Index": "2",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Scatter Grenade (N)",
-        "Concealability": "6",
-        "Damage": "per charge",
-        "Weight": ".25",
-        "Availability": "3/48hrs",
-        "Cost": "70",
-        "Street Index": "1.5",
-        "BookPage": "cb2.49,SR2-???"
-      },
-      {
-        "Name": "Smoke Grenade (N)",
-        "Concealability": "6",
-        "Damage": "-",
-        "Weight": ".25",
-        "Availability": "3/24hrs",
-        "Cost": "30",
-        "Street Index": "2",
-        "BookPage": "sr3.283,fof.48"
-      },
-      {
-        "Name": "Smoke (IR) Grenade (N)",
-        "Concealability": "6",
-        "Damage": "-",
-        "Weight": ".25",
-        "Availability": "4/48hrs",
-        "Cost": "40",
-        "Street Index": "2",
-        "BookPage": "sr3.283,fof.48"
-      },
-      {
-        "Name": "Spraypaint Grenade (N)",
-        "Concealability": "6",
-        "Damage": "-",
-        "Weight": ".25",
-        "Availability": "2/3days",
-        "Cost": "20",
-        "Street Index": ".9",
         "BookPage": "sr2.???"
       },
       {
@@ -25808,76 +25048,6 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "Super Flash Grenade (N)",
-        "Concealability": "8",
-        "Damage": "(Special)",
-        "Weight": ".25",
-        "Availability": "10/2wks",
-        "Cost": "80",
-        "Street Index": "3",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "White Phosphorus Grenade (N)",
-        "Concealability": "6",
-        "Damage": "14M/10L",
-        "Weight": ".25",
-        "Availability": "6/5days",
-        "Cost": "120",
-        "Street Index": "3",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "Splash Grenade",
-        "Concealability": "5",
-        "Damage": "-",
-        "Weight": "1",
-        "Availability": "8/4days",
-        "Cost": "50",
-        "Street Index": "2",
-        "BookPage": "mm.119"
-      },
-      {
-        "Name": "Splash Grenade",
-        "Concealability": "5",
-        "Damage": "-",
-        "Weight": "1",
-        "Availability": "8/4days",
-        "Cost": "3100",
-        "Street Index": "2",
-        "BookPage": "sr3.250"
-      },
-      {
-        "Name": "Splash Grenade",
-        "Concealability": "5",
-        "Damage": "-",
-        "Weight": "1",
-        "Availability": "8/4days",
-        "Cost": "60",
-        "Street Index": "2",
-        "BookPage": "mm.119"
-      },
-      {
-        "Name": "Splash Grenade",
-        "Concealability": "5",
-        "Damage": "-",
-        "Weight": "1",
-        "Availability": "8/4days",
-        "Cost": "150",
-        "Street Index": "2",
-        "BookPage": "mm.119"
-      },
-      {
-        "Name": "Anti-Armor Minigrenade",
-        "Concealability": "8",
-        "Damage": "10S",
-        "Weight": ".1",
-        "Availability": "8/5days",
-        "Cost": "125",
-        "Street Index": "3.5",
-        "BookPage": "fof.48"
-      },
-      {
         "Name": "Anti-Personnel Flechette",
         "Concealability": "8",
         "Damage": "10D(f)",
@@ -25888,226 +25058,6 @@
         "BookPage": "fof.48"
       },
       {
-        "Name": "Concussion Minigrenade B",
-        "Concealability": "8",
-        "Damage": "10M Stun",
-        "Weight": ".1",
-        "Availability": "7/4days",
-        "Cost": "60",
-        "Street Index": "3",
-        "BookPage": "sr3.283,fof.48"
-      },
-      {
-        "Name": "Def. AP Minigrenade B",
-        "Concealability": "8",
-        "Damage": "10S(f)",
-        "Weight": ".1",
-        "Availability": "6days",
-        "Cost": "60",
-        "Street Index": "3",
-        "BookPage": "sr3.283,fof.48"
-      },
-      {
-        "Name": "Def. HE Minigrenade B",
-        "Concealability": "8",
-        "Damage": "10S",
-        "Weight": ".1",
-        "Availability": "6/6days",
-        "Cost": "60",
-        "Street Index": "3",
-        "BookPage": "sr3.283,fof.48"
-      },
-      {
-        "Name": "Dual Charge Minigrenade",
-        "Concealability": "8",
-        "Damage": "(Special)",
-        "Weight": ".1",
-        "Availability": "10/9days",
-        "Cost": "300",
-        "Street Index": "4",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "Flare Minigrenade",
-        "Concealability": "8",
-        "Damage": "(Special)",
-        "Weight": ".1",
-        "Availability": "4/24hrs",
-        "Cost": "80",
-        "Street Index": "2",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "Flash Minigrenade",
-        "Concealability": "8",
-        "Damage": "(Special)",
-        "Weight": ".1",
-        "Availability": "6/48hrs",
-        "Cost": "80",
-        "Street Index": "2",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "Gas Minigrenade",
-        "Concealability": "8",
-        "Damage": "NeuroStun",
-        "Weight": ".1",
-        "Availability": "10/6days",
-        "Cost": "120",
-        "Street Index": "3",
-        "BookPage": "sr3.283,fof.48"
-      },
-      {
-        "Name": "Green Ring 4 Minigrenade",
-        "Concealability": "8",
-        "Damage": "gas",
-        "Weight": ".1",
-        "Availability": "14/6days",
-        "Cost": "120",
-        "Street Index": "3",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Incendary Minigrenade",
-        "Concealability": "8",
-        "Damage": "(Special)",
-        "Weight": ".1",
-        "Availability": "6/6days",
-        "Cost": "100",
-        "Street Index": "3",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "Ink Minigrenade",
-        "Concealability": "8",
-        "Damage": "None",
-        "Weight": ".1",
-        "Availability": "6/6days",
-        "Cost": "80",
-        "Street Index": "3",
-        "BookPage": "sr3.283"
-      },
-      {
-        "Name": "IPE Concussion Minigrenade",
-        "Concealability": "8",
-        "Damage": "16M Stun",
-        "Weight": ".1",
-        "Availability": "10/9days",
-        "Cost": "140",
-        "Street Index": "3",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "IPE Defensive AP Minigrenade",
-        "Concealability": "8",
-        "Damage": "15D(f)",
-        "Weight": ".1",
-        "Availability": "10/9days",
-        "Cost": "120",
-        "Street Index": "3",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "IPE Defensive HE Minigrenade",
-        "Concealability": "8",
-        "Damage": "15S",
-        "Weight": ".1",
-        "Availability": "10/9days",
-        "Cost": "120",
-        "Street Index": "3",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "IPE Offensive AP Minigrenade",
-        "Concealability": "8",
-        "Damage": "15D(f)",
-        "Weight": ".1",
-        "Availability": "10/9days",
-        "Cost": "120",
-        "Street Index": "3",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "IPE Offensive HE Minigrenade",
-        "Concealability": "8",
-        "Damage": "15S",
-        "Weight": ".1",
-        "Availability": "10/9days",
-        "Cost": "120",
-        "Street Index": "3",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "Neurostun-Minigrenade",
-        "Concealability": "8",
-        "Damage": "8M + gas",
-        "Weight": ".15",
-        "Availability": "12/4ays",
-        "Cost": "200",
-        "Street Index": "3",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Off. AP Minigrenade B",
-        "Concealability": "8",
-        "Damage": "10S(f)",
-        "Weight": ".1",
-        "Availability": "6/6days",
-        "Cost": "60",
-        "Street Index": "3",
-        "BookPage": "sr3.283,fof.48"
-      },
-      {
-        "Name": "Off. HE Minigrenade B",
-        "Concealability": "8",
-        "Damage": "10S",
-        "Weight": ".1",
-        "Availability": "6/6days",
-        "Cost": "60",
-        "Street Index": "3",
-        "BookPage": "sr3.283,fof.48"
-      },
-      {
-        "Name": "Smoke Minigrenade",
-        "Concealability": "8",
-        "Damage": "-",
-        "Weight": ".1",
-        "Availability": "5/24hrs",
-        "Cost": "60",
-        "Street Index": "3",
-        "BookPage": "sr3.283"
-      },
-      {
-        "Name": "Smoke (IR) Minigrenade",
-        "Concealability": "8",
-        "Damage": "-",
-        "Weight": ".1",
-        "Availability": "6/48hrs",
-        "Cost": "80",
-        "Street Index": "3",
-        "BookPage": "sr3.283"
-      },
-      {
-        "Name": "Neurostun-Minigrenade",
-        "Concealability": "8",
-        "Damage": "8M + gas",
-        "Weight": ".15",
-        "Availability": "12/4ays",
-        "Cost": "200",
-        "Street Index": "3",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "SplatShell Minigrenade",
-        "Concealability": "8",
-        "Damage": "splatballs",
-        "Weight": ".1",
-        "Availability": "6/48hrs",
-        "Cost": "10",
-        "Street Index": "1",
-        "BookPage": "sr2.???"
-      },
-      {
         "Name": "Tr",
         "Concealability": "8",
         "Damage": "8M",
@@ -26116,26 +25066,6 @@
         "Cost": "50",
         "Street Index": "1.5",
         "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Super Flash Minigrenade",
-        "Concealability": "8",
-        "Damage": "(Special)",
-        "Weight": ".1",
-        "Availability": "12/16days",
-        "Cost": "160",
-        "Street Index": "4",
-        "BookPage": "cc.41"
-      },
-      {
-        "Name": "White Phosphorus Minigrenade",
-        "Concealability": "8",
-        "Damage": "14M/10L",
-        "Weight": ".1",
-        "Availability": "8/7days",
-        "Cost": "240",
-        "Street Index": "4",
-        "BookPage": "cc.41"
       },
       {
         "Name": "XM1822 Adapter",
@@ -26568,36 +25498,6 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "Concussion Shotgun Grenade",
-        "Concealability": "8",
-        "Damage": "10M",
-        "Weight": ".2",
-        "Availability": "7/4 days",
-        "Cost": "600",
-        "Street Index": "3",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Defensive Shotgun Grenade",
-        "Concealability": "8",
-        "Damage": "8S",
-        "Weight": ".2",
-        "Availability": "6/4 days",
-        "Cost": "600",
-        "Street Index": "3",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Offensive Shotgun Grenade",
-        "Concealability": "8",
-        "Damage": "8S",
-        "Weight": ".2",
-        "Availability": "6/4 days",
-        "Cost": "600",
-        "Street Index": "3",
-        "BookPage": "sr2.???"
-      },
-      {
         "Name": "Smoke",
         "Concealability": "6",
         "Damage": "-",
@@ -26608,182 +25508,12 @@
         "BookPage": "sr2.???"
       },
       {
-        "Name": "Defensive Mikrogrenade",
-        "Concealability": "9",
-        "Damage": "10S",
-        "Weight": ".1",
-        "Availability": "6/36hrs",
-        "Cost": "80",
-        "Street Index": "1.5",
-        "BookPage": "cp.36"
-      },
-      {
-        "Name": "Offensive Mikrogrenade",
-        "Concealability": "9",
-        "Damage": "10S",
-        "Weight": ".1",
-        "Availability": "6/36hrs",
-        "Cost": "80",
-        "Street Index": "1.5",
-        "BookPage": "cp.36"
-      },
-      {
-        "Name": "Schock Mikrogrenade",
-        "Concealability": "9",
-        "Damage": "12M Stun",
-        "Weight": ".1",
-        "Availability": "8/36hrs",
-        "Cost": "80",
-        "Street Index": "1.5",
-        "BookPage": "cp.36"
-      },
-      {
-        "Name": "Concussion Pistol Grenade",
-        "Concealability": "8",
-        "Damage": "8M Stun",
-        "Weight": ".1",
-        "Availability": "5/6 days",
-        "Cost": "15",
-        "Street Index": "2",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Defensive Frag Pistol Grenade",
-        "Concealability": "8",
-        "Damage": "6M",
-        "Weight": ".1",
-        "Availability": "5/7 days",
-        "Cost": "20",
-        "Street Index": "2",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Flash Bomb Pistol Grenade",
-        "Concealability": "8",
-        "Damage": "4L",
-        "Weight": ".1",
-        "Availability": "4/72hrs",
-        "Cost": "15",
-        "Street Index": "1.2",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "HEP (Cratering) Pistol Grenade",
-        "Concealability": "8",
-        "Damage": "(see rules)",
-        "Weight": ".1",
-        "Availability": "4/6 days",
-        "Cost": "30",
-        "Street Index": "1.5",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Incendiary Pistol Grenade",
-        "Concealability": "8",
-        "Damage": "6M",
-        "Weight": ".1",
-        "Availability": "8/7 days",
-        "Cost": "30",
-        "Street Index": "2",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Offensive Frag Pistol Grenade",
-        "Concealability": "8",
-        "Damage": "6S",
-        "Weight": ".1",
-        "Availability": "5/7 days",
-        "Cost": "25",
-        "Street Index": "2",
-        "BookPage": "sr2.???"
-      },
-      {
         "Name": "Smoke",
         "Concealability": "8",
         "Damage": "gas",
         "Weight": ".1",
         "Availability": "6/7 days",
         "Cost": "20",
-        "Street Index": "2.5",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Anti-Armor LRR Grenade",
-        "Concealability": "5",
-        "Damage": "12D",
-        "Weight": "3",
-        "Availability": "5/36hrs",
-        "Cost": "200",
-        "Street Index": "3",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Anti-Personnel LRR Grenade",
-        "Concealability": "5",
-        "Damage": "12S(f)",
-        "Weight": "3",
-        "Availability": "5/36hrs",
-        "Cost": "150",
-        "Street Index": "3",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "High Explosive LRR Grenade",
-        "Concealability": "5",
-        "Damage": "12S",
-        "Weight": "3",
-        "Availability": "5/36hrs",
-        "Cost": "150",
-        "Street Index": "3",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Smoke LRR Grenade",
-        "Concealability": "5",
-        "Damage": "-",
-        "Weight": "2.5",
-        "Availability": "4/36hrs",
-        "Cost": "125",
-        "Street Index": "2.5",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Anti-Armor HRR Grenade",
-        "Concealability": "5",
-        "Damage": "18D",
-        "Weight": "3",
-        "Availability": "5/36hrs",
-        "Cost": "200",
-        "Street Index": "3",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Anti-Personnel HRR Grenade",
-        "Concealability": "5",
-        "Damage": "18D(f)",
-        "Weight": "3",
-        "Availability": "5/36hrs",
-        "Cost": "150",
-        "Street Index": "3",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "High Explosive HRR Grenade",
-        "Concealability": "5",
-        "Damage": "18S",
-        "Weight": "3",
-        "Availability": "5/36hrs",
-        "Cost": "150",
-        "Street Index": "3",
-        "BookPage": "sr2.???"
-      },
-      {
-        "Name": "Smoke HRR Grenade",
-        "Concealability": "5",
-        "Damage": "-",
-        "Weight": "2.5",
-        "Availability": "4/36hrs",
-        "Cost": "125",
         "Street Index": "2.5",
         "BookPage": "sr2.???"
       },
@@ -60660,136 +59390,6 @@
         "BookPage": "ssg.39"
       },
       {
-        "Name": "Standard Credstick[1]>>",
-        "Concealability": "-",
-        "Rating": "1",
-        "Weight": "-",
-        "Availability": "1/24hrs",
-        "Cost": "1000",
-        "Street Index": "1",
-        "BookPage": "sr3.239"
-      },
-      {
-        "Name": "Standard Credstick[2]>>",
-        "Concealability": "-",
-        "Rating": "2",
-        "Weight": "-",
-        "Availability": "2/24hrs",
-        "Cost": "4000",
-        "Street Index": "1",
-        "BookPage": "sr3.239"
-      },
-      {
-        "Name": "Standard Credstick[3]>>",
-        "Concealability": "-",
-        "Rating": "3",
-        "Weight": "-",
-        "Availability": "3/24hrs",
-        "Cost": "9000",
-        "Street Index": "1",
-        "BookPage": "sr3.239"
-      },
-      {
-        "Name": "Standard Credstick[4]>>",
-        "Concealability": "-",
-        "Rating": "4",
-        "Weight": "-",
-        "Availability": "4/24hrs",
-        "Cost": "16000",
-        "Street Index": "1",
-        "BookPage": "sr3.239"
-      },
-      {
-        "Name": "Standard Credstick[5]>>",
-        "Concealability": "-",
-        "Rating": "5",
-        "Weight": "-",
-        "Availability": "5/72hrs",
-        "Cost": "25000",
-        "Street Index": "1",
-        "BookPage": "sr3.239"
-      },
-      {
-        "Name": "Standard Credstick[6]>>",
-        "Concealability": "-",
-        "Rating": "6",
-        "Weight": "-",
-        "Availability": "6/72hrs",
-        "Cost": "30000",
-        "Street Index": "1",
-        "BookPage": "sr3.239"
-      },
-      {
-        "Name": "Standard Credstick[7]>>",
-        "Concealability": "-",
-        "Rating": "7",
-        "Weight": "-",
-        "Availability": "7/72hrs",
-        "Cost": "35000",
-        "Street Index": "1",
-        "BookPage": "sr3.239"
-      },
-      {
-        "Name": "Standard Credstick[8]>>",
-        "Concealability": "-",
-        "Rating": "8",
-        "Weight": "-",
-        "Availability": "8/72hrs",
-        "Cost": "40000",
-        "Street Index": "1",
-        "BookPage": "sr3.239"
-      },
-      {
-        "Name": "Standard Credstick[9]>>",
-        "Concealability": "-",
-        "Rating": "9",
-        "Weight": "-",
-        "Availability": "9/14days",
-        "Cost": "90000",
-        "Street Index": "1",
-        "BookPage": "sr3.239"
-      },
-      {
-        "Name": "Standard Credstick[10]>>",
-        "Concealability": "-",
-        "Rating": "10",
-        "Weight": "-",
-        "Availability": "10/14days",
-        "Cost": "100000",
-        "Street Index": "1",
-        "BookPage": "sr3.239"
-      },
-      {
-        "Name": "Standard Credstick[11]>>",
-        "Concealability": "-",
-        "Rating": "11",
-        "Weight": "-",
-        "Availability": "11/14days",
-        "Cost": "110000",
-        "Street Index": "1",
-        "BookPage": "sr3.239"
-      },
-      {
-        "Name": "Standard Credstick[12]>>",
-        "Concealability": "-",
-        "Rating": "12",
-        "Weight": "-",
-        "Availability": "12/14days",
-        "Cost": "120000",
-        "Street Index": "1",
-        "BookPage": "sr3.239"
-      },
-      {
-        "Name": "Standard Credstick[13]>>",
-        "Concealability": "-",
-        "Rating": "13",
-        "Weight": "-",
-        "Availability": "13/30days",
-        "Cost": "650000",
-        "Street Index": "1",
-        "BookPage": "sr3.239"
-      },
-      {
         "Name": "Silver Credstick[1]>>",
         "Concealability": "-",
         "Rating": "1",
@@ -61075,7 +59675,7 @@
         "Rating": "3",
         "Weight": "-",
         "Availability": "3/24hrs",
-        "Cost": "9000?",
+        "Cost": "9000",
         "Street Index": "1",
         "BookPage": "sr3.239"
       },
@@ -61451,46 +60051,1611 @@
       "BookPage"
     ],
     "entries": [
-      { "Name": "Audio Speakers", "Cost": "25-2500", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Battery Pack", "Cost": "25", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Camera — Trideo", "Cost": "200-2000", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Camera — Video", "Cost": "100-1000", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Casing (Rating 3)", "Cost": "100", "Availability": "2/12 hrs", "Street Index": ".5", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Casing (Higher Barrier rating)", "Cost": "500 per point", "Availability": "Rating/(12×rating) hrs", "Street Index": ".5", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Chip Reader", "Cost": "200", "Availability": "Always", "Street Index": ".75", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Credstick Reader Rating 1", "Cost": "12000", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Credstick Reader Rating 2-3", "Cost": "60000", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Credstick Reader Rating 4-5", "Cost": "100000", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Credstick Reader Rating 6+", "Cost": "Restricted", "Availability": "Restricted", "Street Index": "NA", "Legal": "Restricted", "BookPage": "sr3.302" },
-      { "Name": "Credstick Slot", "Cost": "50", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Disk Drive", "Cost": "200", "Availability": "Always", "Street Index": ".75", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Display Screen", "Cost": "100", "Availability": "2/24 hrs", "Street Index": "2", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Fiberoptic Cable (per meter)", "Cost": "1", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Hitcher Jack", "Cost": "250", "Availability": "2/48 hrs", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Keyboard", "Cost": "50", "Availability": "Always", "Street Index": ".5", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Microphone (basic)", "Cost": "50", "Availability": "Always", "Street Index": ".5", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Microwave Dish — Standard Portable", "Cost": "5000", "Availability": "6/1 wk", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Microwave Dish — Large Portable", "Cost": "10000", "Availability": "8/2 wks", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Microwave Dish — Fixed Base", "Cost": "2500", "Availability": "8/1 mo", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Monitor", "Cost": "100-25000", "Availability": "2/12 hrs", "Street Index": ".5", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Off-Line Storage (per Mp)", "Cost": "50+(5×Mp)", "Availability": "2/24 hrs", "Street Index": "2", "Legal": "9P-V", "BookPage": "sr3.302" },
-      { "Name": "Passkey Reader (Blank)", "Cost": "250", "Availability": "2/24 hrs", "Street Index": "2", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Power Cord", "Cost": "15", "Availability": "4/48 hrs", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Printer", "Cost": "100", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Scanner — Finger/Thumbprint (per Rating)", "Cost": "Rating×200", "Availability": "Rating/72 hrs", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Scanner — Palmprint (per Rating)", "Cost": "Rating×300", "Availability": "(Rating+1)/72 hrs", "Street Index": "2", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Scanner — Retinal (per Rating)", "Cost": "Rating×1000", "Availability": "(Rating+1)/72 hrs", "Street Index": "2", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Scanner — Text/Picture", "Cost": "100", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Signal Locator — Simlink (per Rating)", "Cost": "25000+(Rating×5000)", "Availability": "8/2 wks", "Street Index": "2", "Legal": "8P-L", "BookPage": "sr3.302" },
-      { "Name": "Temp. Satellite Dish — Electronics", "Cost": "1000", "Availability": "4/24 hrs", "Street Index": ".5", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Temp. Satellite Dish — Plastic Webbing", "Cost": "5", "Availability": "4/24 hrs", "Street Index": ".5", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Temp. Satellite Dish — Spray Polymer (1 use)", "Cost": "1", "Availability": "4/24 hrs", "Street Index": ".5", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Touchpad", "Cost": "50", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Touchpad w/Mouse Adapter", "Cost": "60", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Touchpad w/Trackball Adapter", "Cost": "60", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Trode Jack", "Cost": "500", "Availability": "Always", "Street Index": "NA", "Legal": "Legal", "BookPage": "sr3.302" },
-      { "Name": "Vid-link Transmitter (per Rating)", "Cost": "Rating×2000", "Availability": "4/1 wk", "Street Index": "2", "Legal": "8P-L", "BookPage": "sr3.302" },
-      { "Name": "VR Kit", "Cost": "250", "Availability": "Always", "Street Index": "1", "Legal": "Legal", "BookPage": "sr3.302" }
+      {
+        "Name": "Audio Speakers",
+        "Cost": "25-2500",
+        "Availability": "Always",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Battery Pack",
+        "Cost": "25",
+        "Availability": "Always",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Camera — Trideo",
+        "Cost": "200-2000",
+        "Availability": "Always",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Camera — Video",
+        "Cost": "100-1000",
+        "Availability": "Always",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Casing (Rating 3)",
+        "Cost": "100",
+        "Availability": "2/12 hrs",
+        "Street Index": ".5",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Casing (Higher Barrier rating)",
+        "Cost": "500 per point",
+        "Availability": "Rating/(12×rating) hrs",
+        "Street Index": ".5",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Chip Reader",
+        "Cost": "200",
+        "Availability": "Always",
+        "Street Index": ".75",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Credstick Reader Rating 1",
+        "Cost": "12000",
+        "Availability": "Always",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Credstick Reader Rating 2-3",
+        "Cost": "60000",
+        "Availability": "Always",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Credstick Reader Rating 4-5",
+        "Cost": "100000",
+        "Availability": "Always",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Credstick Reader Rating 6+",
+        "Cost": "Restricted",
+        "Availability": "Restricted",
+        "Street Index": "NA",
+        "Legal": "Restricted",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Credstick Slot",
+        "Cost": "50",
+        "Availability": "Always",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Disk Drive",
+        "Cost": "200",
+        "Availability": "Always",
+        "Street Index": ".75",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Display Screen",
+        "Cost": "100",
+        "Availability": "2/24 hrs",
+        "Street Index": "2",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Fiberoptic Cable (per meter)",
+        "Cost": "1",
+        "Availability": "Always",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Hitcher Jack",
+        "Cost": "250",
+        "Availability": "2/48 hrs",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Keyboard",
+        "Cost": "50",
+        "Availability": "Always",
+        "Street Index": ".5",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Microphone (basic)",
+        "Cost": "50",
+        "Availability": "Always",
+        "Street Index": ".5",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Microwave Dish — Standard Portable",
+        "Cost": "5000",
+        "Availability": "6/1 wk",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Microwave Dish — Large Portable",
+        "Cost": "10000",
+        "Availability": "8/2 wks",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Microwave Dish — Fixed Base",
+        "Cost": "2500",
+        "Availability": "8/1 mo",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Monitor",
+        "Cost": "100-25000",
+        "Availability": "2/12 hrs",
+        "Street Index": ".5",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Off-Line Storage (per Mp)",
+        "Cost": "50+(5×Mp)",
+        "Availability": "2/24 hrs",
+        "Street Index": "2",
+        "Legal": "9P-V",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Passkey Reader (Blank)",
+        "Cost": "250",
+        "Availability": "2/24 hrs",
+        "Street Index": "2",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Power Cord",
+        "Cost": "15",
+        "Availability": "4/48 hrs",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Printer",
+        "Cost": "100",
+        "Availability": "Always",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Scanner — Finger/Thumbprint (per Rating)",
+        "Cost": "Rating×200",
+        "Availability": "Rating/72 hrs",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Scanner — Palmprint (per Rating)",
+        "Cost": "Rating×300",
+        "Availability": "(Rating+1)/72 hrs",
+        "Street Index": "2",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Scanner — Retinal (per Rating)",
+        "Cost": "Rating×1000",
+        "Availability": "(Rating+1)/72 hrs",
+        "Street Index": "2",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Scanner — Text/Picture",
+        "Cost": "100",
+        "Availability": "Always",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Signal Locator — Simlink (per Rating)",
+        "Cost": "25000+(Rating×5000)",
+        "Availability": "8/2 wks",
+        "Street Index": "2",
+        "Legal": "8P-L",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Temp. Satellite Dish — Electronics",
+        "Cost": "1000",
+        "Availability": "4/24 hrs",
+        "Street Index": ".5",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Temp. Satellite Dish — Plastic Webbing",
+        "Cost": "5",
+        "Availability": "4/24 hrs",
+        "Street Index": ".5",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Temp. Satellite Dish — Spray Polymer (1 use)",
+        "Cost": "1",
+        "Availability": "4/24 hrs",
+        "Street Index": ".5",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Touchpad",
+        "Cost": "50",
+        "Availability": "Always",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Touchpad w/Mouse Adapter",
+        "Cost": "60",
+        "Availability": "Always",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Touchpad w/Trackball Adapter",
+        "Cost": "60",
+        "Availability": "Always",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Trode Jack",
+        "Cost": "500",
+        "Availability": "Always",
+        "Street Index": "NA",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "Vid-link Transmitter (per Rating)",
+        "Cost": "Rating×2000",
+        "Availability": "4/1 wk",
+        "Street Index": "2",
+        "Legal": "8P-L",
+        "BookPage": "sr3.302"
+      },
+      {
+        "Name": "VR Kit",
+        "Cost": "250",
+        "Availability": "Always",
+        "Street Index": "1",
+        "Legal": "Legal",
+        "BookPage": "sr3.302"
+      }
+    ]
+  },
+  "Grenades": {
+    "Name": "Grenades",
+    "attributes": [
+      "Concealability",
+      "Damage",
+      "Weight",
+      "Availability",
+      "Cost",
+      "Street Index",
+      "BookPage",
+      ""
+    ],
+    "entries": [
+      {
+        "Name": "Chaff (ECM) Grenade (A)",
+        "Concealability": "6",
+        "Damage": "Special",
+        "Weight": ".5",
+        "Availability": "4/4days",
+        "Cost": "30",
+        "Street Index": "1.5",
+        "BookPage": "tss.16"
+      },
+      {
+        "Name": "Concussion Grenade B",
+        "Concealability": "6",
+        "Damage": "12M Stun",
+        "Weight": ".25",
+        "Availability": "5/4days",
+        "Cost": "30",
+        "Street Index": "2",
+        "BookPage": "sr3.283"
+      },
+      {
+        "Name": "Concussion Grenade (A)",
+        "Concealability": "7",
+        "Damage": "10M Stun",
+        "Weight": ".25",
+        "Availability": "6/72hrs",
+        "Cost": "40",
+        "Street Index": "1.2",
+        "BookPage": "cb1.32"
+      },
+      {
+        "Name": "Crawler Grenade (A)",
+        "Concealability": "6",
+        "Damage": "(see rules)",
+        "Weight": ".25",
+        "Availability": "20/14 days",
+        "Cost": "150",
+        "Street Index": "6",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "CS Grenade (A)",
+        "Concealability": "5",
+        "Damage": "tear gas",
+        "Weight": ".5",
+        "Availability": "6/4 days",
+        "Cost": "75",
+        "Street Index": "2.5",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Dual Charge Grenade (A)",
+        "Concealability": "5",
+        "Damage": "(Special)",
+        "Weight": ".5",
+        "Availability": "8/1wk",
+        "Cost": "150",
+        "Street Index": "3",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Def AP Grenade B",
+        "Concealability": "6",
+        "Damage": "10S(f)",
+        "Weight": ".25",
+        "Availability": "4/4days",
+        "Cost": "30",
+        "Street Index": "2",
+        "BookPage": "sr3.283"
+      },
+      {
+        "Name": "Def HE Grenade B",
+        "Concealability": "6",
+        "Damage": "10S",
+        "Weight": ".25",
+        "Availability": "4/4days",
+        "Cost": "30",
+        "Street Index": "2",
+        "BookPage": "sr3.283"
+      },
+      {
+        "Name": "EMP Grenade (A)",
+        "Concealability": "6",
+        "Damage": "(Special)",
+        "Weight": ".3",
+        "Availability": "10/10days",
+        "Cost": "400",
+        "Street Index": "4",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Explosive Grenade (A)",
+        "Concealability": "7",
+        "Damage": "6M",
+        "Weight": ".25",
+        "Availability": "6/72hrs",
+        "Cost": "25",
+        "Street Index": "1.5",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Flare Grenade (A)",
+        "Concealability": "6",
+        "Damage": "(Special)",
+        "Weight": ".25",
+        "Availability": "2/24hrs",
+        "Cost": "40",
+        "Street Index": "1",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Flash Grenade (A)",
+        "Concealability": "6",
+        "Damage": "(Special)",
+        "Weight": ".25",
+        "Availability": "4/48hrs",
+        "Cost": "40",
+        "Street Index": "1",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Flashbang Grenade (A)",
+        "Concealability": "6",
+        "Damage": "12M Stun",
+        "Weight": ".25",
+        "Availability": "8/6days",
+        "Cost": "80",
+        "Street Index": "2.25",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Foam Grenade (A)",
+        "Concealability": "6",
+        "Damage": "-",
+        "Weight": ".25",
+        "Availability": "3/48hrs",
+        "Cost": "30",
+        "Street Index": ".9",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Fragmentation mini-grenade (A)",
+        "Concealability": "8",
+        "Damage": "10D(f)",
+        "Weight": ".1",
+        "Availability": "8/4days",
+        "Cost": "50",
+        "Street Index": "3",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Gas Grenade (A)",
+        "Concealability": "5",
+        "Damage": "Neuro-Stun VIII",
+        "Weight": ".5",
+        "Availability": "8/4days",
+        "Cost": "60",
+        "Street Index": "2",
+        "BookPage": "sr3.283"
+      },
+      {
+        "Name": "GPz-78 Grenade (A)",
+        "Concealability": "8",
+        "Damage": "8M",
+        "Weight": ".1",
+        "Availability": "4/60hrs",
+        "Cost": "40",
+        "Street Index": "1.5",
+        "BookPage": "cb1.33"
+      },
+      {
+        "Name": "Green Ring 4 Grenade (A)",
+        "Concealability": "6",
+        "Damage": "gas",
+        "Weight": ".25",
+        "Availability": "10/6 days",
+        "Cost": "80",
+        "Street Index": "2.5",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Incendary Grenade (A)",
+        "Concealability": "8",
+        "Damage": "(Special)",
+        "Weight": ".5",
+        "Availability": "4/4days",
+        "Cost": "50",
+        "Street Index": "3",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Ink Grenade (A)",
+        "Concealability": "8",
+        "Damage": "None",
+        "Weight": ".25",
+        "Availability": "4/4days",
+        "Cost": "40",
+        "Street Index": "3",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "IPE Concussion Grenade (A)",
+        "Concealability": "6",
+        "Damage": "16M Stun",
+        "Weight": ".5",
+        "Availability": "8/1wk",
+        "Cost": "70",
+        "Street Index": "2",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "IPE Defensive AP Grenade (A)",
+        "Concealability": "6",
+        "Damage": "15D(f)",
+        "Weight": ".5",
+        "Availability": "8/1wk",
+        "Cost": "60",
+        "Street Index": "2",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "IPE Defensive HE Grenade (A)",
+        "Concealability": "6",
+        "Damage": "15S",
+        "Weight": ".5",
+        "Availability": "8/1wk",
+        "Cost": "60",
+        "Street Index": "2",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "IPE Offensive AP Grenade (A)",
+        "Concealability": "6",
+        "Damage": "15D(f)",
+        "Weight": ".5",
+        "Availability": "8/1wk",
+        "Cost": "60",
+        "Street Index": "2",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "IPE Offensive HE Grenade (A)",
+        "Concealability": "6",
+        "Damage": "15S",
+        "Weight": ".5",
+        "Availability": "8/1wk",
+        "Cost": "60",
+        "Street Index": "2",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Limited EMP (LEMP) Grenade (A)",
+        "Concealability": "6",
+        "Damage": "12M",
+        "Weight": ".5",
+        "Availability": "8/20days",
+        "Cost": "180",
+        "Street Index": "2",
+        "BookPage": "tss.16"
+      },
+      {
+        "Name": "Mace XII Gas Grenade (A)",
+        "Concealability": "6",
+        "Damage": "gas",
+        "Weight": ".25",
+        "Availability": "8/6days",
+        "Cost": "50",
+        "Street Index": "2",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Motion Restraints Grenade (A)",
+        "Concealability": "6",
+        "Damage": "-",
+        "Weight": ".5",
+        "Availability": "6/48hrs",
+        "Cost": "60",
+        "Street Index": "2",
+        "BookPage": "cb1.33"
+      },
+      {
+        "Name": "Neurostun IX Grenade (A)",
+        "Concealability": "6",
+        "Damage": "gas",
+        "Weight": ".25",
+        "Availability": "6/6days",
+        "Cost": "50",
+        "Street Index": "2",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Niref D Gas Grenade (A)",
+        "Concealability": "6",
+        "Damage": "gas",
+        "Weight": ".25",
+        "Availability": "10/6days",
+        "Cost": "80",
+        "Street Index": "2",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Offensive AP Grenade B",
+        "Concealability": "6",
+        "Damage": "10S(f)",
+        "Weight": ".25",
+        "Availability": "4/4days",
+        "Cost": "30",
+        "Street Index": "2",
+        "BookPage": "sr3.283"
+      },
+      {
+        "Name": "Offensive HE Grenade B",
+        "Concealability": "6",
+        "Damage": "10S",
+        "Weight": ".25",
+        "Availability": "4/4days",
+        "Cost": "30",
+        "Street Index": "2",
+        "BookPage": "sr3.283"
+      },
+      {
+        "Name": "Paint Grenade (A)",
+        "Concealability": "6",
+        "Damage": "-",
+        "Weight": ".25",
+        "Availability": "3/48hrs",
+        "Cost": "20",
+        "Street Index": "2",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Scatter Grenade (A)",
+        "Concealability": "6",
+        "Damage": "per charge",
+        "Weight": ".25",
+        "Availability": "3/48hrs",
+        "Cost": "70",
+        "Street Index": "1.5",
+        "BookPage": "cb2.49,SR2-???"
+      },
+      {
+        "Name": "Smoke Grenade (A)",
+        "Concealability": "6",
+        "Damage": "-",
+        "Weight": ".25",
+        "Availability": "3/24hrs",
+        "Cost": "30",
+        "Street Index": "2",
+        "BookPage": "sr3.283,fof.48"
+      },
+      {
+        "Name": "Smoke (IR) Grenade (A)",
+        "Concealability": "6",
+        "Damage": "-",
+        "Weight": ".25",
+        "Availability": "4/48hrs",
+        "Cost": "40",
+        "Street Index": "2",
+        "BookPage": "sr3.283,fof.48"
+      },
+      {
+        "Name": "Spraypaint Grenade (A)",
+        "Concealability": "6",
+        "Damage": "-",
+        "Weight": ".25",
+        "Availability": "2/3days",
+        "Cost": "20",
+        "Street Index": ".9",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Super Flash Grenade (A)",
+        "Concealability": "8",
+        "Damage": "(Special)",
+        "Weight": ".25",
+        "Availability": "10/2wks",
+        "Cost": "80",
+        "Street Index": "3",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "White Phosphorus Grenade (A)",
+        "Concealability": "6",
+        "Damage": "14M/10L",
+        "Weight": ".25",
+        "Availability": "6/5days",
+        "Cost": "120",
+        "Street Index": "3",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Chaff (ECM) Grenade (N)",
+        "Concealability": "6",
+        "Damage": "Special",
+        "Weight": ".5",
+        "Availability": "4/4days",
+        "Cost": "30",
+        "Street Index": "1.5",
+        "BookPage": "tss.16"
+      },
+      {
+        "Name": "Concussion Grenade B",
+        "Concealability": "6",
+        "Damage": "12M Stun",
+        "Weight": ".25",
+        "Availability": "5/4days",
+        "Cost": "30",
+        "Street Index": "2",
+        "BookPage": "sr3.283"
+      },
+      {
+        "Name": "Concussion Grenade (N)",
+        "Concealability": "7",
+        "Damage": "10M Stun",
+        "Weight": ".25",
+        "Availability": "6/72hrs",
+        "Cost": "40",
+        "Street Index": "1.2",
+        "BookPage": "cb1.32"
+      },
+      {
+        "Name": "Crawler Grenade (N)",
+        "Concealability": "6",
+        "Damage": "(see rules)",
+        "Weight": ".25",
+        "Availability": "20/14 days",
+        "Cost": "150",
+        "Street Index": "6",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "CS Grenade (N)",
+        "Concealability": "5",
+        "Damage": "tear gas",
+        "Weight": ".5",
+        "Availability": "6/4 days",
+        "Cost": "75",
+        "Street Index": "2.5",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Dual Charge Grenade (N)",
+        "Concealability": "5",
+        "Damage": "(Special)",
+        "Weight": ".5",
+        "Availability": "8/1wk",
+        "Cost": "150",
+        "Street Index": "3",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Def AP Grenade B",
+        "Concealability": "6",
+        "Damage": "10S(f)",
+        "Weight": ".25",
+        "Availability": "4/4days",
+        "Cost": "30",
+        "Street Index": "2",
+        "BookPage": "sr3.283"
+      },
+      {
+        "Name": "Def HE Grenade B",
+        "Concealability": "6",
+        "Damage": "10S",
+        "Weight": ".25",
+        "Availability": "4/4days",
+        "Cost": "30",
+        "Street Index": "2",
+        "BookPage": "sr3.283"
+      },
+      {
+        "Name": "EMP Grenade (N)",
+        "Concealability": "6",
+        "Damage": "(Special)",
+        "Weight": ".3",
+        "Availability": "10/10days",
+        "Cost": "400",
+        "Street Index": "4",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Explosive Grenade (N)",
+        "Concealability": "7",
+        "Damage": "6M",
+        "Weight": ".25",
+        "Availability": "6/72hrs",
+        "Cost": "25",
+        "Street Index": "1.5",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Flare Grenade (N)",
+        "Concealability": "6",
+        "Damage": "(Special)",
+        "Weight": ".25",
+        "Availability": "2/24hrs",
+        "Cost": "40",
+        "Street Index": "1",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Flash Grenade (N)",
+        "Concealability": "6",
+        "Damage": "(Special)",
+        "Weight": ".25",
+        "Availability": "4/48hrs",
+        "Cost": "40",
+        "Street Index": "1",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Flashbang Grenade (N)",
+        "Concealability": "6",
+        "Damage": "12M Stun",
+        "Weight": ".25",
+        "Availability": "8/6days",
+        "Cost": "80",
+        "Street Index": "2.25",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Foam Grenade (N)",
+        "Concealability": "6",
+        "Damage": "-",
+        "Weight": ".25",
+        "Availability": "3/48hrs",
+        "Cost": "30",
+        "Street Index": ".9",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Fragmentation mini-grenade (N)",
+        "Concealability": "8",
+        "Damage": "10D(f)",
+        "Weight": ".1",
+        "Availability": "8/4days",
+        "Cost": "50",
+        "Street Index": "3",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Gas Grenade (N)",
+        "Concealability": "5",
+        "Damage": "Neuro-Stun VIII",
+        "Weight": ".5",
+        "Availability": "8/4days",
+        "Cost": "60",
+        "Street Index": "2",
+        "BookPage": "sr3.283"
+      },
+      {
+        "Name": "GPz-78 Grenade (N)",
+        "Concealability": "8",
+        "Damage": "8M",
+        "Weight": ".1",
+        "Availability": "4/60hrs",
+        "Cost": "40",
+        "Street Index": "1.5",
+        "BookPage": "cb1.33"
+      },
+      {
+        "Name": "Green Ring 4 Grenade (N)",
+        "Concealability": "6",
+        "Damage": "gas",
+        "Weight": ".25",
+        "Availability": "10/6 days",
+        "Cost": "80",
+        "Street Index": "2.5",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Incendary Grenade (N)",
+        "Concealability": "8",
+        "Damage": "(Special)",
+        "Weight": ".5",
+        "Availability": "4/4days",
+        "Cost": "50",
+        "Street Index": "3",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Ink Grenade (N)",
+        "Concealability": "8",
+        "Damage": "None",
+        "Weight": ".25",
+        "Availability": "4/4days",
+        "Cost": "40",
+        "Street Index": "3",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "IPE Concussion Grenade (N)",
+        "Concealability": "6",
+        "Damage": "16M Stun",
+        "Weight": ".5",
+        "Availability": "8/1wk",
+        "Cost": "70",
+        "Street Index": "2",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "IPE Defensive AP Grenade (N)",
+        "Concealability": "6",
+        "Damage": "15D(f)",
+        "Weight": ".5",
+        "Availability": "8/1wk",
+        "Cost": "60",
+        "Street Index": "2",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "IPE Defensive HE Grenade (N)",
+        "Concealability": "6",
+        "Damage": "15S",
+        "Weight": ".5",
+        "Availability": "8/1wk",
+        "Cost": "60",
+        "Street Index": "2",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "IPE Offensive AP Grenade (N)",
+        "Concealability": "6",
+        "Damage": "15D(f)",
+        "Weight": ".5",
+        "Availability": "8/1wk",
+        "Cost": "60",
+        "Street Index": "2",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "IPE Offensive HE Grenade (N)",
+        "Concealability": "6",
+        "Damage": "15S",
+        "Weight": ".5",
+        "Availability": "8/1wk",
+        "Cost": "60",
+        "Street Index": "2",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Limited EMP (LEMP) Grenade (N)",
+        "Concealability": "6",
+        "Damage": "12M",
+        "Weight": ".5",
+        "Availability": "8/20days",
+        "Cost": "180",
+        "Street Index": "2",
+        "BookPage": "tss.16"
+      },
+      {
+        "Name": "Mace XII Gas Grenade (N)",
+        "Concealability": "6",
+        "Damage": "gas",
+        "Weight": ".25",
+        "Availability": "8/6days",
+        "Cost": "50",
+        "Street Index": "2",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Motion Restraints Grenade (N)",
+        "Concealability": "6",
+        "Damage": "-",
+        "Weight": ".5",
+        "Availability": "6/48hrs",
+        "Cost": "60",
+        "Street Index": "2",
+        "BookPage": "cb1.33"
+      },
+      {
+        "Name": "Neurostun IX Grenade (N)",
+        "Concealability": "6",
+        "Damage": "gas",
+        "Weight": ".25",
+        "Availability": "6/6days",
+        "Cost": "50",
+        "Street Index": "2",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Niref D Gas Grenade (N)",
+        "Concealability": "6",
+        "Damage": "gas",
+        "Weight": ".25",
+        "Availability": "10/6days",
+        "Cost": "80",
+        "Street Index": "2",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Offensive AP Grenade B",
+        "Concealability": "6",
+        "Damage": "10S(f)",
+        "Weight": ".25",
+        "Availability": "4/4days",
+        "Cost": "30",
+        "Street Index": "2",
+        "BookPage": "sr3.283"
+      },
+      {
+        "Name": "Offensive HE Grenade B",
+        "Concealability": "6",
+        "Damage": "10S",
+        "Weight": ".25",
+        "Availability": "4/4days",
+        "Cost": "30",
+        "Street Index": "2",
+        "BookPage": "sr3.283"
+      },
+      {
+        "Name": "Paint Grenade (N)",
+        "Concealability": "6",
+        "Damage": "-",
+        "Weight": ".25",
+        "Availability": "3/48hrs",
+        "Cost": "20",
+        "Street Index": "2",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Scatter Grenade (N)",
+        "Concealability": "6",
+        "Damage": "per charge",
+        "Weight": ".25",
+        "Availability": "3/48hrs",
+        "Cost": "70",
+        "Street Index": "1.5",
+        "BookPage": "cb2.49,SR2-???"
+      },
+      {
+        "Name": "Smoke Grenade (N)",
+        "Concealability": "6",
+        "Damage": "-",
+        "Weight": ".25",
+        "Availability": "3/24hrs",
+        "Cost": "30",
+        "Street Index": "2",
+        "BookPage": "sr3.283,fof.48"
+      },
+      {
+        "Name": "Smoke (IR) Grenade (N)",
+        "Concealability": "6",
+        "Damage": "-",
+        "Weight": ".25",
+        "Availability": "4/48hrs",
+        "Cost": "40",
+        "Street Index": "2",
+        "BookPage": "sr3.283,fof.48"
+      },
+      {
+        "Name": "Spraypaint Grenade (N)",
+        "Concealability": "6",
+        "Damage": "-",
+        "Weight": ".25",
+        "Availability": "2/3days",
+        "Cost": "20",
+        "Street Index": ".9",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Super Flash Grenade (N)",
+        "Concealability": "8",
+        "Damage": "(Special)",
+        "Weight": ".25",
+        "Availability": "10/2wks",
+        "Cost": "80",
+        "Street Index": "3",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "White Phosphorus Grenade (N)",
+        "Concealability": "6",
+        "Damage": "14M/10L",
+        "Weight": ".25",
+        "Availability": "6/5days",
+        "Cost": "120",
+        "Street Index": "3",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Splash Grenade",
+        "Concealability": "5",
+        "Damage": "-",
+        "Weight": "1",
+        "Availability": "8/4days",
+        "Cost": "50",
+        "Street Index": "2",
+        "BookPage": "mm.119"
+      },
+      {
+        "Name": "Splash Grenade",
+        "Concealability": "5",
+        "Damage": "-",
+        "Weight": "1",
+        "Availability": "8/4days",
+        "Cost": "3100",
+        "Street Index": "2",
+        "BookPage": "sr3.250"
+      },
+      {
+        "Name": "Splash Grenade",
+        "Concealability": "5",
+        "Damage": "-",
+        "Weight": "1",
+        "Availability": "8/4days",
+        "Cost": "60",
+        "Street Index": "2",
+        "BookPage": "mm.119"
+      },
+      {
+        "Name": "Splash Grenade",
+        "Concealability": "5",
+        "Damage": "-",
+        "Weight": "1",
+        "Availability": "8/4days",
+        "Cost": "150",
+        "Street Index": "2",
+        "BookPage": "mm.119"
+      },
+      {
+        "Name": "Anti-Armor Minigrenade",
+        "Concealability": "8",
+        "Damage": "10S",
+        "Weight": ".1",
+        "Availability": "8/5days",
+        "Cost": "125",
+        "Street Index": "3.5",
+        "BookPage": "fof.48"
+      },
+      {
+        "Name": "Concussion Minigrenade B",
+        "Concealability": "8",
+        "Damage": "10M Stun",
+        "Weight": ".1",
+        "Availability": "7/4days",
+        "Cost": "60",
+        "Street Index": "3",
+        "BookPage": "sr3.283,fof.48"
+      },
+      {
+        "Name": "Def. AP Minigrenade B",
+        "Concealability": "8",
+        "Damage": "10S(f)",
+        "Weight": ".1",
+        "Availability": "6days",
+        "Cost": "60",
+        "Street Index": "3",
+        "BookPage": "sr3.283,fof.48"
+      },
+      {
+        "Name": "Def. HE Minigrenade B",
+        "Concealability": "8",
+        "Damage": "10S",
+        "Weight": ".1",
+        "Availability": "6/6days",
+        "Cost": "60",
+        "Street Index": "3",
+        "BookPage": "sr3.283,fof.48"
+      },
+      {
+        "Name": "Dual Charge Minigrenade",
+        "Concealability": "8",
+        "Damage": "(Special)",
+        "Weight": ".1",
+        "Availability": "10/9days",
+        "Cost": "300",
+        "Street Index": "4",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Flare Minigrenade",
+        "Concealability": "8",
+        "Damage": "(Special)",
+        "Weight": ".1",
+        "Availability": "4/24hrs",
+        "Cost": "80",
+        "Street Index": "2",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Flash Minigrenade",
+        "Concealability": "8",
+        "Damage": "(Special)",
+        "Weight": ".1",
+        "Availability": "6/48hrs",
+        "Cost": "80",
+        "Street Index": "2",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Gas Minigrenade",
+        "Concealability": "8",
+        "Damage": "NeuroStun",
+        "Weight": ".1",
+        "Availability": "10/6days",
+        "Cost": "120",
+        "Street Index": "3",
+        "BookPage": "sr3.283,fof.48"
+      },
+      {
+        "Name": "Green Ring 4 Minigrenade",
+        "Concealability": "8",
+        "Damage": "gas",
+        "Weight": ".1",
+        "Availability": "14/6days",
+        "Cost": "120",
+        "Street Index": "3",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Incendary Minigrenade",
+        "Concealability": "8",
+        "Damage": "(Special)",
+        "Weight": ".1",
+        "Availability": "6/6days",
+        "Cost": "100",
+        "Street Index": "3",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Ink Minigrenade",
+        "Concealability": "8",
+        "Damage": "None",
+        "Weight": ".1",
+        "Availability": "6/6days",
+        "Cost": "80",
+        "Street Index": "3",
+        "BookPage": "sr3.283"
+      },
+      {
+        "Name": "IPE Concussion Minigrenade",
+        "Concealability": "8",
+        "Damage": "16M Stun",
+        "Weight": ".1",
+        "Availability": "10/9days",
+        "Cost": "140",
+        "Street Index": "3",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "IPE Defensive AP Minigrenade",
+        "Concealability": "8",
+        "Damage": "15D(f)",
+        "Weight": ".1",
+        "Availability": "10/9days",
+        "Cost": "120",
+        "Street Index": "3",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "IPE Defensive HE Minigrenade",
+        "Concealability": "8",
+        "Damage": "15S",
+        "Weight": ".1",
+        "Availability": "10/9days",
+        "Cost": "120",
+        "Street Index": "3",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "IPE Offensive AP Minigrenade",
+        "Concealability": "8",
+        "Damage": "15D(f)",
+        "Weight": ".1",
+        "Availability": "10/9days",
+        "Cost": "120",
+        "Street Index": "3",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "IPE Offensive HE Minigrenade",
+        "Concealability": "8",
+        "Damage": "15S",
+        "Weight": ".1",
+        "Availability": "10/9days",
+        "Cost": "120",
+        "Street Index": "3",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Neurostun-Minigrenade",
+        "Concealability": "8",
+        "Damage": "8M + gas",
+        "Weight": ".15",
+        "Availability": "12/4ays",
+        "Cost": "200",
+        "Street Index": "3",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Off. AP Minigrenade B",
+        "Concealability": "8",
+        "Damage": "10S(f)",
+        "Weight": ".1",
+        "Availability": "6/6days",
+        "Cost": "60",
+        "Street Index": "3",
+        "BookPage": "sr3.283,fof.48"
+      },
+      {
+        "Name": "Off. HE Minigrenade B",
+        "Concealability": "8",
+        "Damage": "10S",
+        "Weight": ".1",
+        "Availability": "6/6days",
+        "Cost": "60",
+        "Street Index": "3",
+        "BookPage": "sr3.283,fof.48"
+      },
+      {
+        "Name": "Smoke Minigrenade",
+        "Concealability": "8",
+        "Damage": "-",
+        "Weight": ".1",
+        "Availability": "5/24hrs",
+        "Cost": "60",
+        "Street Index": "3",
+        "BookPage": "sr3.283"
+      },
+      {
+        "Name": "Smoke (IR) Minigrenade",
+        "Concealability": "8",
+        "Damage": "-",
+        "Weight": ".1",
+        "Availability": "6/48hrs",
+        "Cost": "80",
+        "Street Index": "3",
+        "BookPage": "sr3.283"
+      },
+      {
+        "Name": "Neurostun-Minigrenade",
+        "Concealability": "8",
+        "Damage": "8M + gas",
+        "Weight": ".15",
+        "Availability": "12/4ays",
+        "Cost": "200",
+        "Street Index": "3",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "SplatShell Minigrenade",
+        "Concealability": "8",
+        "Damage": "splatballs",
+        "Weight": ".1",
+        "Availability": "6/48hrs",
+        "Cost": "10",
+        "Street Index": "1",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Super Flash Minigrenade",
+        "Concealability": "8",
+        "Damage": "(Special)",
+        "Weight": ".1",
+        "Availability": "12/16days",
+        "Cost": "160",
+        "Street Index": "4",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "White Phosphorus Minigrenade",
+        "Concealability": "8",
+        "Damage": "14M/10L",
+        "Weight": ".1",
+        "Availability": "8/7days",
+        "Cost": "240",
+        "Street Index": "4",
+        "BookPage": "cc.41"
+      },
+      {
+        "Name": "Concussion Shotgun Grenade",
+        "Concealability": "8",
+        "Damage": "10M",
+        "Weight": ".2",
+        "Availability": "7/4 days",
+        "Cost": "600",
+        "Street Index": "3",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Defensive Shotgun Grenade",
+        "Concealability": "8",
+        "Damage": "8S",
+        "Weight": ".2",
+        "Availability": "6/4 days",
+        "Cost": "600",
+        "Street Index": "3",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Offensive Shotgun Grenade",
+        "Concealability": "8",
+        "Damage": "8S",
+        "Weight": ".2",
+        "Availability": "6/4 days",
+        "Cost": "600",
+        "Street Index": "3",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Defensive Mikrogrenade",
+        "Concealability": "9",
+        "Damage": "10S",
+        "Weight": ".1",
+        "Availability": "6/36hrs",
+        "Cost": "80",
+        "Street Index": "1.5",
+        "BookPage": "cp.36"
+      },
+      {
+        "Name": "Offensive Mikrogrenade",
+        "Concealability": "9",
+        "Damage": "10S",
+        "Weight": ".1",
+        "Availability": "6/36hrs",
+        "Cost": "80",
+        "Street Index": "1.5",
+        "BookPage": "cp.36"
+      },
+      {
+        "Name": "Schock Mikrogrenade",
+        "Concealability": "9",
+        "Damage": "12M Stun",
+        "Weight": ".1",
+        "Availability": "8/36hrs",
+        "Cost": "80",
+        "Street Index": "1.5",
+        "BookPage": "cp.36"
+      },
+      {
+        "Name": "Concussion Pistol Grenade",
+        "Concealability": "8",
+        "Damage": "8M Stun",
+        "Weight": ".1",
+        "Availability": "5/6 days",
+        "Cost": "15",
+        "Street Index": "2",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Defensive Frag Pistol Grenade",
+        "Concealability": "8",
+        "Damage": "6M",
+        "Weight": ".1",
+        "Availability": "5/7 days",
+        "Cost": "20",
+        "Street Index": "2",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Flash Bomb Pistol Grenade",
+        "Concealability": "8",
+        "Damage": "4L",
+        "Weight": ".1",
+        "Availability": "4/72hrs",
+        "Cost": "15",
+        "Street Index": "1.2",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "HEP (Cratering) Pistol Grenade",
+        "Concealability": "8",
+        "Damage": "(see rules)",
+        "Weight": ".1",
+        "Availability": "4/6 days",
+        "Cost": "30",
+        "Street Index": "1.5",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Incendiary Pistol Grenade",
+        "Concealability": "8",
+        "Damage": "6M",
+        "Weight": ".1",
+        "Availability": "8/7 days",
+        "Cost": "30",
+        "Street Index": "2",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Offensive Frag Pistol Grenade",
+        "Concealability": "8",
+        "Damage": "6S",
+        "Weight": ".1",
+        "Availability": "5/7 days",
+        "Cost": "25",
+        "Street Index": "2",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Anti-Armor LRR Grenade",
+        "Concealability": "5",
+        "Damage": "12D",
+        "Weight": "3",
+        "Availability": "5/36hrs",
+        "Cost": "200",
+        "Street Index": "3",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Anti-Personnel LRR Grenade",
+        "Concealability": "5",
+        "Damage": "12S(f)",
+        "Weight": "3",
+        "Availability": "5/36hrs",
+        "Cost": "150",
+        "Street Index": "3",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "High Explosive LRR Grenade",
+        "Concealability": "5",
+        "Damage": "12S",
+        "Weight": "3",
+        "Availability": "5/36hrs",
+        "Cost": "150",
+        "Street Index": "3",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Smoke LRR Grenade",
+        "Concealability": "5",
+        "Damage": "-",
+        "Weight": "2.5",
+        "Availability": "4/36hrs",
+        "Cost": "125",
+        "Street Index": "2.5",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Anti-Armor HRR Grenade",
+        "Concealability": "5",
+        "Damage": "18D",
+        "Weight": "3",
+        "Availability": "5/36hrs",
+        "Cost": "200",
+        "Street Index": "3",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Anti-Personnel HRR Grenade",
+        "Concealability": "5",
+        "Damage": "18D(f)",
+        "Weight": "3",
+        "Availability": "5/36hrs",
+        "Cost": "150",
+        "Street Index": "3",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "High Explosive HRR Grenade",
+        "Concealability": "5",
+        "Damage": "18S",
+        "Weight": "3",
+        "Availability": "5/36hrs",
+        "Cost": "150",
+        "Street Index": "3",
+        "BookPage": "sr2.???"
+      },
+      {
+        "Name": "Smoke HRR Grenade",
+        "Concealability": "5",
+        "Damage": "-",
+        "Weight": "2.5",
+        "Availability": "4/36hrs",
+        "Cost": "125",
+        "Street Index": "2.5",
+        "BookPage": "sr2.???"
+      }
     ]
   }
 }

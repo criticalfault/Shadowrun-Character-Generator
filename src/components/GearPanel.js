@@ -18,6 +18,7 @@ import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import WeaponModsModal, { applyWeaponMods } from './WeaponModsModal';
 import LifestyleBuilderModal from './LifestyleBuilderModal';
+import BuyAmmoModal from './BuyAmmoModal';
 
 // Pre-import all edition data so Vite can bundle them (no runtime require)
 const allGear = import.meta.glob('../data/*/Gear.json', { eager: true });
@@ -92,6 +93,8 @@ export default function GearPanel(props) {
 
     const [modifyingWeaponIndex, setModifyingWeaponIndex] = useState(null);
     const [lifestyleBuilderOpen, setLifestyleBuilderOpen] = useState(false);
+    const [buyAmmoTarget, setBuyAmmoTarget] = useState(null);
+    const ammoEntries = GearData['Ammunition']?.entries ?? [];
     const ssgEnabled = props.Edition === 'SR3';
 
     const handleLifestylePurchase = (gearEntry) => {
@@ -205,6 +208,24 @@ export default function GearPanel(props) {
             Add Gear
             </Button>
             <div>Notes:{NewGearDesc}</div>
+            {NewGear.Ammunition !== undefined && (
+              <Box sx={{ mt: 1, p: 1, border: '1px solid #444', borderRadius: 1, maxWidth: 500, fontSize: '0.85em' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.5 }}>
+                  <strong>Weapon Info</strong>
+                  <Button size="small" variant="outlined" onClick={() => setBuyAmmoTarget(NewGear)}>
+                    Buy Ammo
+                  </Button>
+                </Box>
+                <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px 16px' }}>
+                  {NewGear.Concealability && <span>Conceal: {NewGear.Concealability}</span>}
+                  {NewGear.Mode && <span>Mode: {NewGear.Mode}</span>}
+                  {NewGear.Damage && <span>Damage: {NewGear.Damage}</span>}
+                  <span>Ammunition: <strong>{NewGear.Ammunition}</strong></span>
+                  {NewGear.Accessories && NewGear.Accessories !== 'None' && <span>Accessories: {NewGear.Accessories}</span>}
+                  {NewGear.BookPage && <span>Source: {NewGear.BookPage}</span>}
+                </Box>
+              </Box>
+            )}
         </>
     )}
 
@@ -343,6 +364,11 @@ export default function GearPanel(props) {
                         {hasMods ? 'Mods' : 'Modify'}
                       </Button>
                     )}
+                    {gear.Ammunition && (
+                      <Button size="small" onClick={() => setBuyAmmoTarget(gear)} sx={{ mr: 0.5 }}>
+                        Buy Ammo
+                      </Button>
+                    )}
                     <Button color="secondary" size="small" onClick={() => handleRemoveGear(index)}>Remove</Button>
                 </TableCell>
               </TableRow>
@@ -357,6 +383,18 @@ export default function GearPanel(props) {
       weaponIndex={modifyingWeaponIndex}
       onClose={() => setModifyingWeaponIndex(null)}
       onSave={handleSaveWeaponMods}
+    />
+    <BuyAmmoModal
+      open={!!buyAmmoTarget}
+      onClose={() => setBuyAmmoTarget(null)}
+      weapon={buyAmmoTarget}
+      ammoEntries={ammoEntries}
+      booksFilter={props.BooksFilter}
+      onPurchase={(ammoItem) => {
+        const updated = [...SelectedGear, ammoItem];
+        setSelectedGear(updated);
+        props.onChangeGear(updated);
+      }}
     />
     <h3>Gear</h3>
     <TableContainer component={Paper}>
