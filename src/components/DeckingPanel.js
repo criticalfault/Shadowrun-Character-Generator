@@ -1,6 +1,6 @@
 ﻿import React, { useState } from "react";
 import Paper from "@mui/material/Paper";
-import { Grid } from "@mui/material";
+import { Chip, Grid, Tooltip } from "@mui/material";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Table from "@mui/material/Table";
@@ -13,6 +13,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Modal from "@mui/material/Modal";
 import SearchableSelect from "./SearchableSelect";
 import ProgramCalculatorModal from "./ProgramCalculatorModal";
+import ProgrammingCalculator from "./ProgrammingCalculator";
 import "./DeckingPanel.css";
 
 // Pre-import all edition data so Vite can bundle them (no runtime require)
@@ -30,11 +31,26 @@ const modalStyle = {
   boxShadow: 24,
   p: 4,
 };
+function calcMatrixStats(deck, intelligence, reaction) {
+  const mpcp = parseInt(deck.Persona) || 0;
+  const ri = parseInt(deck['Response Increase']) || 0;
+  const riCap = Math.min(3, Math.floor(mpcp / 4));
+  const effectiveRI = Math.min(ri, riCap);
+  const hackingPool = Math.floor((mpcp + intelligence) / 3);
+  // Pure DNI: Matrix Reaction = INT; otherwise normal Reaction. RI adds +2 per level.
+  const matrixReaction = intelligence + effectiveRI * 2;
+  const normalReaction = reaction + effectiveRI * 2;
+  return { mpcp, ri, riCap, effectiveRI, hackingPool, matrixReaction, normalReaction };
+}
+
 export default function DeckingPanel(props) {
+  const intelligence = props.intelligence ?? 0;
+  const reaction = props.reaction ?? 0;
   const rawCyberdecks = allCyberdecks[`../data/${props.Edition}/Cyberdeck.json`]?.default;
   const rawPrograms = allPrograms[`../data/${props.Edition}/Programs.json`]?.default;
   const [NewCyberdeck, setNewCyberdeck] = useState();
   const [SelectedCyberdecks, setSelectedCyberdecks] = useState(props.Decks);
+  const [progCalcOpen, setProgCalcOpen] = useState(false);
   const [NewCyberdeckIndex, setNewCyberdeckIndex] = useState(0);
   const [NewCyberdeckProgram, setNewCyberdeckProgram] = useState(0);
   const [NewCyberdeckProgramIndex, setNewCyberdeckProgramIndex] = useState(0);
@@ -281,9 +297,31 @@ export default function DeckingPanel(props) {
     if (SelectedCyberdecks.length !== 0) {
       return (
         <div>
-          {SelectedCyberdecks.map((cyberdeck, index) => (
+          {SelectedCyberdecks.map((cyberdeck, index) => {
+            const ms = calcMatrixStats(cyberdeck, intelligence, reaction);
+            return (
             <Box className="cyberdeckCard" key={index}>
               <h3>{cyberdeck.Name}</h3>
+              {/* Matrix derived stats chips */}
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 1.5 }}>
+                <Tooltip title="(MPCP + INT) ÷ 3, round down (Matrix p.26)">
+                  <Chip size="small" color="primary" label={`Hacking Pool: ${ms.hackingPool}`} />
+                </Tooltip>
+                <Tooltip title="Running pure DNI: INT + RI bonus. Normal: Reaction + RI bonus. (Matrix p.20, p.160)">
+                  <Chip size="small" label={`Matrix Reaction (DNI): ${ms.matrixReaction}`} />
+                </Tooltip>
+                <Tooltip title="Reaction + RI bonus when not running pure DNI">
+                  <Chip size="small" variant="outlined" label={`Reaction (non-DNI): ${ms.normalReaction}`} />
+                </Tooltip>
+                <Tooltip title="Matrix Reaction + 1D6 base (Matrix p.24)">
+                  <Chip size="small" label={`Matrix Init (DNI): ${ms.matrixReaction} + 1D6`} />
+                </Tooltip>
+                {ms.ri > ms.riCap && (
+                  <Tooltip title={`Max RI = floor(MPCP ÷ 4) = ${ms.riCap} (Matrix p.20)`}>
+                    <Chip size="small" color="error" label={`RI ${ms.ri} exceeds cap (max ${ms.riCap})`} />
+                  </Tooltip>
+                )}
+              </Box>
               <Grid container spacing={2}>
                 <Grid size={{ xs: 5}} className="cyberDeckTable">
                   <div>
@@ -390,8 +428,10 @@ export default function DeckingPanel(props) {
                       </tr>
                       <tr>
                         <td>Response Increase:</td>
-                        <td>{parseInt(cyberdeck["Response Increase"])}</td>
-                        <td></td>
+                        <td style={ms.ri > ms.riCap ? { color: 'red', fontWeight: 'bold' } : {}}>
+                          {ms.ri}{ms.ri > ms.riCap ? ` (cap: ${ms.riCap})` : ''}
+                        </td>
+                        <td>{ms.riCap}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -500,7 +540,8 @@ export default function DeckingPanel(props) {
                 </Button>
               </Grid>
             </Box>
-          ))}
+          );
+          })}
         </div>
       );
     } else {
@@ -710,6 +751,14 @@ export default function DeckingPanel(props) {
         deck={calcModalDeck}
       />
       {RenderAgents()}
+      <hr />
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1 }}>
+        <h2 style={{ margin: 0 }}>Programming Calculator</h2>
+        <Button variant="outlined" size="small" onClick={() => setProgCalcOpen(v => !v)}>
+          {progCalcOpen ? 'Hide' : 'Show'}
+        </Button>
+      </Box>
+      {progCalcOpen && <ProgrammingCalculator />}
     </>
   );
 }
