@@ -181,7 +181,11 @@
     "Drain": "[special] ",
     "Type": "P",
     "Duration": "I",
-    "Class": "C"
+    "Class": "C",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -189,7 +193,11 @@
     "Drain": "[(F/2)+1]M",
     "Type": "P",
     "Duration": "I",
-    "Class": "C"
+    "Class": "C",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -197,7 +205,11 @@
     "Drain": "(F/2)S    ",
     "Type": "M",
     "Duration": "I",
-    "Class": "C"
+    "Class": "C",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "grm.127",
@@ -333,7 +345,11 @@
     "Drain": "(F/2)L    ",
     "Type": "M",
     "Duration": "S",
-    "Class": "D"
+    "Class": "D",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -349,7 +365,11 @@
     "Drain": "(F/2)M    ",
     "Type": "M",
     "Duration": "S",
-    "Class": "D"
+    "Class": "D",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -357,7 +377,11 @@
     "Drain": "[(F/2)-1]L",
     "Type": "P",
     "Duration": "I",
-    "Class": "D"
+    "Class": "D",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "sr2.152",
@@ -533,7 +557,11 @@
     "Drain": "[(F/2)-1]M",
     "Type": "M",
     "Duration": "I",
-    "Class": "D"
+    "Class": "D",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -541,7 +569,11 @@
     "Drain": "(F/2)S    ",
     "Type": "M",
     "Duration": "S",
-    "Class": "D"
+    "Class": "D",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -573,7 +605,11 @@
     "Drain": "(F/2)D    ",
     "Type": "M",
     "Duration": "I",
-    "Class": "D"
+    "Class": "D",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -589,7 +625,11 @@
     "Drain": "(F/2)L    ",
     "Type": "P",
     "Duration": "S",
-    "Class": "D"
+    "Class": "D",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -621,7 +661,11 @@
     "Drain": "(F/2)L    ",
     "Type": "P",
     "Duration": "S",
-    "Class": "D"
+    "Class": "D",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "sr2.152",
@@ -661,7 +705,11 @@
     "Drain": "[(F/2)+1]L",
     "Type": "M",
     "Duration": "S",
-    "Class": "D"
+    "Class": "D",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -677,7 +725,11 @@
     "Drain": "[(F/2)+2]S",
     "Type": "P",
     "Duration": "S",
-    "Class": "D"
+    "Class": "D",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -693,7 +745,11 @@
     "Drain": "[(F/2)+2]S ",
     "Type": "P",
     "Duration": "S",
-    "Class": "H"
+    "Class": "H",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -725,7 +781,11 @@
     "Drain": "(F/2)D     ",
     "Type": "P",
     "Duration": "S",
-    "Class": "H"
+    "Class": "H",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "sr2.153",
@@ -765,7 +825,11 @@
     "Drain": "[(F/2)-1]L ",
     "Type": "M",
     "Duration": "I",
-    "Class": "H"
+    "Class": "H",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -773,7 +837,11 @@
     "Drain": "[(F/2)+1]D ",
     "Type": "M",
     "Duration": "S",
-    "Class": "H"
+    "Class": "H",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -821,7 +889,11 @@
     "Drain": "(F/2)S     ",
     "Type": "M",
     "Duration": "S",
-    "Class": "H"
+    "Class": "H",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "sr2.153",
@@ -997,7 +1069,11 @@
     "Drain": "(F/2)L     ",
     "Type": "M",
     "Duration": "P",
-    "Class": "H"
+    "Class": "H",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -1181,7 +1257,11 @@
     "Drain": "[(F/2)+2]M",
     "Type": "M",
     "Duration": "S",
-    "Class": "H"
+    "Class": "H",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -1189,7 +1269,11 @@
     "Drain": "(F/2)L    ",
     "Type": "M",
     "Duration": "P",
-    "Class": "H"
+    "Class": "H",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "grm.129",
@@ -1205,7 +1289,11 @@
     "Drain": "[(F/2)+1]D",
     "Type": "M",
     "Duration": "S",
-    "Class": "H"
+    "Class": "H",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "grm.129",
@@ -1365,7 +1453,11 @@
     "Drain": "[(F/2)+1]M",
     "Type": "M",
     "Duration": "S",
-    "Class": "I"
+    "Class": "I",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -1405,7 +1497,11 @@
     "Drain": "[(F/2)-1]S",
     "Type": "P",
     "Duration": "S",
-    "Class": "I"
+    "Class": "I",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "sr2.154",
@@ -1437,7 +1533,11 @@
     "Drain": "[(F/2)+2]M",
     "Type": "P",
     "Duration": "S",
-    "Class": "I"
+    "Class": "I",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -1453,7 +1553,11 @@
     "Drain": "(F/2)M    ",
     "Type": "M",
     "Duration": "S",
-    "Class": "I"
+    "Class": "I",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -1469,7 +1573,11 @@
     "Drain": "(F/2)L    ",
     "Type": "M",
     "Duration": "S",
-    "Class": "I"
+    "Class": "I",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "sr2.155",
@@ -1493,7 +1601,11 @@
     "Drain": "[(F/2)+1]M",
     "Type": "P",
     "Duration": "I",
-    "Class": "I"
+    "Class": "I",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -1501,7 +1613,11 @@
     "Drain": "[(F/2)+1]M",
     "Type": "P",
     "Duration": "I",
-    "Class": "I"
+    "Class": "I",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -1621,7 +1737,11 @@
     "Drain": "[(F/2)+2]S",
     "Type": "P",
     "Duration": "S",
-    "Class": "I"
+    "Class": "I",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "grm.130",
@@ -1725,7 +1845,11 @@
     "Drain": "[(F/2)+2]S",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "grm.130",
@@ -1805,7 +1929,11 @@
     "Drain": "[(F/2)+2]M",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -1821,7 +1949,11 @@
     "Drain": "[(F/2)+2]D",
     "Type": "M",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "grm.130",
@@ -1837,7 +1969,11 @@
     "Drain": "[(F/2)+2]L",
     "Type": "M",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -1845,7 +1981,11 @@
     "Drain": "[(F/2)+2]L",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -1861,7 +2001,11 @@
     "Drain": "[(F/2)+1]S",
     "Type": "P",
     "Duration": "I",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -1869,7 +2013,11 @@
     "Drain": "(F/2)S    ",
     "Type": "P",
     "Duration": "P",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "grm.130",
@@ -1885,7 +2033,11 @@
     "Drain": "[(F/2)+2]L",
     "Type": "M",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "sr2.155",
@@ -1917,7 +2069,11 @@
     "Drain": "[(F/2)+2]S",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "sr2.156",
@@ -1957,7 +2113,11 @@
     "Drain": "[(F/2)+1]S",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -1973,7 +2133,11 @@
     "Drain": "[(F/2)+1]S",
     "Type": "P",
     "Duration": "I",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -1981,7 +2145,11 @@
     "Drain": "[(F/2)+2]S",
     "Type": "M",
     "Duration": "P",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "grm.130",
@@ -2013,7 +2181,11 @@
     "Drain": "[(F/2)+2]D",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2021,7 +2193,11 @@
     "Drain": "[(F/2)+1]M",
     "Type": "P",
     "Duration": "P",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2029,7 +2205,11 @@
     "Drain": "[(F/2)+2]M",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2037,7 +2217,11 @@
     "Drain": "[(F/2)+3]M",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "sr2.157",
@@ -2077,7 +2261,11 @@
     "Drain": "(F/2)M    ",
     "Type": "P",
     "Duration": "I",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2101,7 +2289,11 @@
     "Drain": "[(F/2)+1]S",
     "Type": "P",
     "Duration": "I",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2109,7 +2301,11 @@
     "Drain": "[(F/2)+1]M",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2117,7 +2313,11 @@
     "Drain": "[(F/2)+2]S",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2133,7 +2333,11 @@
     "Drain": "[(F/2)+2]M",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "sr2.156",
@@ -2301,7 +2505,11 @@
     "Drain": "[(F/2)+1]M",
     "Type": "M",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2325,7 +2533,11 @@
     "Drain": "[(F/2)+2]S",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "grm.130",
@@ -2349,7 +2561,11 @@
     "Drain": "[(F/2)+2]S",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2357,7 +2573,11 @@
     "Drain": "[(F/2)+2]D",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2461,7 +2681,11 @@
     "Drain": "[(F/2)+3]S",
     "Type": "M",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2485,7 +2709,11 @@
     "Drain": "[(F/2)+1]S",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2573,7 +2801,11 @@
     "Drain": "[(F/2)+2]S",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "grm.130",
@@ -2605,7 +2837,11 @@
     "Drain": "[(F/2)+2]D",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2629,7 +2865,11 @@
     "Drain": "[(F/2)+3]D",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2661,7 +2901,11 @@
     "Drain": "[(F/2)+2]M",
     "Type": "M",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2685,7 +2929,11 @@
     "Drain": "[(F/2)+2]D",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2701,7 +2949,11 @@
     "Drain": "[(F/2)+1]M",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2741,7 +2993,11 @@
     "Drain": "[(F/2)+2]S",
     "Type": "M",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "grm.130",
@@ -2797,7 +3053,11 @@
     "Drain": "[(F/2)+2]S",
     "Type": "P",
     "Duration": "S",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",
@@ -2821,7 +3081,11 @@
     "Drain": "[(F/2)+1]S",
     "Type": "P",
     "Duration": "I",
-    "Class": "M"
+    "Class": "M",
+    "Books": [
+      "gm2",
+      "awk"
+    ]
   },
   {
     "BookPage": "gm2.???",

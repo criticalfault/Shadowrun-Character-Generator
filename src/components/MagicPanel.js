@@ -1106,7 +1106,7 @@ function MagicPanel(props) {
     CalcTotalPowerRatings(props.powers)
   );
   const [AdeptPointsMax, setAdeptPointsMax] = useState(
-    (parseInt(props.maxSpellPoints) || 0) +
+    (parseInt(props.magicRating) || 0) +
     (parseInt(props.initiateGrade) || 0) +
     (parseInt(props.purchasedPowerPoints) || 0)
   );
@@ -1130,11 +1130,11 @@ function MagicPanel(props) {
 
   useEffect(() => {
     setAdeptPointsMax(
-      (parseInt(props.maxSpellPoints) || 0) +
+      (parseInt(props.magicRating) || 0) +
       (parseInt(initiateGrade) || 0) +
       (parseInt(props.purchasedPowerPoints) || 0)
     );
-  }, [props.maxSpellPoints, initiateGrade, props.purchasedPowerPoints]);
+  }, [props.magicRating, initiateGrade, props.purchasedPowerPoints]);
 
   // ── Magical Group state ───────────────────────────────────────
   const blankGroup = { name: '', type: 'Initiatory', resources: 'Low', strictures: [], patron: '' };
@@ -1148,7 +1148,15 @@ function MagicPanel(props) {
     .reduce((sum, p) => sum + (parseInt(p.Rating) || 1), 0);
   const magicianSpellBudget = magicalPowerLevel * 6;
 
-  const sortedSpells = (spellsData ?? []).slice().sort((a, b) => (a.Name ?? '').localeCompare(b.Name ?? ''));
+  const isBookAllowed = (item) => {
+    if (!props.BooksFilter) return true;
+    if (item.Books) return item.Books.some(b => props.BooksFilter.includes(b));
+    const code = item.BookPage?.split('.')[0];
+    return !code || props.BooksFilter.includes(code);
+  };
+
+  const sortedSpells = (spellsData ?? []).filter(isBookAllowed).slice().sort((a, b) => (a.Name ?? '').localeCompare(b.Name ?? ''));
+  const filteredSortedAdeptPowers = (AdeptPowers ?? []).filter(isBookAllowed).slice().sort((a, b) => a.Name.localeCompare(b.Name));
 
   const label = { inputProps: { "aria-label": "Edition Switch" } };
 
@@ -1286,7 +1294,7 @@ function MagicPanel(props) {
   };
 
   const handlePowerChange = (event) => {
-    const TempPower = AdeptPowers[event.target.value];
+    const TempPower = filteredSortedAdeptPowers[event.target.value];
     setNewPower(TempPower);
     setNewPowerIndex(event.target.value);
     setNewPowerCost(TempPower.Cost);
@@ -1442,7 +1450,7 @@ function MagicPanel(props) {
         </Box>
         <br></br>
         <SearchableSelect
-          items={AdeptPowers.slice().sort((a, b) => a.Name.localeCompare(b.Name))}
+          items={filteredSortedAdeptPowers}
           value={NewPowerIndex}
           onChange={handlePowerChange}
           label="Adept Powers"
