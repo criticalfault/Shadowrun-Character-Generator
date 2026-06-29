@@ -138,6 +138,21 @@ export default function OtakuPanel(props) {
 
   const MPCP = Math.ceil((INT + WIL + CHA) / 3);
   const hackingPool = Math.floor((MPCP + INT) / 3);
+  const Masking = Math.ceil((WIL + CHA) / 2);
+  // DF = ceil((Masking + 0) / 2) + 1 — otaku have no Sleaze utility; +1 otaku bonus (p.137)
+  const detectionFactor = Math.ceil(Masking / 2) + 1;
+
+  const CHANNEL_SKILL_NAMES = ['Access', 'Control', 'Index', 'Files', 'Slave'];
+  const getChannelSkills = () => {
+    const skills = props.currentCharacter.skills ?? [];
+    return CHANNEL_SKILL_NAMES.map(name => {
+      const found = skills.find(s => s.name === name);
+      return { name, rating: found?.rating ?? 0 };
+    });
+  };
+
+  const characterAge = parseInt(props.currentCharacter.age) || 0;
+  const submersionGradeVal = parseInt(props.submersionGrade) || 0;
 
   const OtakuPathInfo = {
     'Cyber Adept': "Complex forms are treated as 1 rating higher when used (does not affect size)",
@@ -440,6 +455,10 @@ export default function OtakuPanel(props) {
                   <td>Hacking Pool</td>
                   <td>{hackingPool}</td>
                 </tr>
+                <tr title="ceil(Masking ÷ 2) + 1 otaku bonus (Matrix p.137)">
+                  <td>Detection Factor</td>
+                  <td>{detectionFactor}</td>
+                </tr>
                 <tr>
                   <td>Memory</td>
                   <td title="Complex forms require no active memory">N/A</td>
@@ -561,6 +580,33 @@ export default function OtakuPanel(props) {
                 </TableBody>
               </Table>
             </TableContainer>
+           <p style={{ fontSize: '0.85em', color: '#888', margin: '-8px 0 8px' }}>
+             Creating a complex form costs 1 Good Karma Point (Matrix p.139). Size = Rating² × Multiplier.
+           </p>
+           <h3>Channel Skills</h3>
+           <p style={{ fontSize: '0.85em', opacity: 0.7, marginBottom: 6 }}>
+             Starting channel points = MPCP ({MPCP}). Distribute among the 5 channels. Add skills via the Skills tab.
+           </p>
+           <table style={{ marginBottom: 12 }}>
+             <thead><tr><th style={{ paddingRight: 16 }}>Channel</th><th>Rating</th></tr></thead>
+             <tbody>
+               {getChannelSkills().map(({ name, rating }) => (
+                 <tr key={name}>
+                   <td style={{ paddingRight: 16 }}>{name}</td>
+                   <td style={{ color: rating === 0 ? '#aaa' : 'inherit' }}>{rating === 0 ? '—' : rating}</td>
+                 </tr>
+               ))}
+             </tbody>
+           </table>
+           {characterAge >= 21 && (
+             <Box sx={{ mb: 2, p: 1.5, border: '1px solid #f57c00', borderRadius: 1, bgcolor: '#fff3e0' }}>
+               <strong>Fading Test Reminder</strong> (Matrix p.146)<br />
+               <span style={{ fontSize: '0.85em' }}>
+                 Age {characterAge} ≥ 21 — roll {submersionGradeVal + 1} dice vs TN {5 + (characterAge - 21)} annually.<br />
+                 Failure: lose 1 Computer (Programming) skill point.
+               </span>
+             </Box>
+           )}
            <h3>Sprites</h3>
            <p style={{ fontSize: '0.85em', opacity: 0.7 }}>
              Frame core is a complex form (×5). Persona Points = core×3 (Bod/Evasion/Masking/Sensor, each ≤ core).
