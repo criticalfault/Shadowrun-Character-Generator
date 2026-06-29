@@ -4,63 +4,49 @@ Last updated: 2026-06-29
 
 ---
 
-## Otaku Panel (SR3)
+## Partial / Needs Finish
 
-- [ ] **Sprites / Frames UI** — sprite designer modal. Frame core is a complex form (×5 mult). Persona Points = core rating × 3 (split among Bod/Evasion/Masking/Sensor, no attr > core). Frame Points = core rating × 4 (Pilot @ 2 FP/pt, extra Init dice @ 3 FP, CF payload @ 1 FP/pt). Karma cost = core rating. Source: Matrix pp.141–142
-- [ ] **Submersion / Echoes tracker** — track submersion grade; karma cost = `(grade × 2) + 10`; list of incremental echoes (Improved I/O Speed, Improved Hardening, Improved MPCP, Improved Persona, Improved Reaction) and static echoes (Daemon Summoning, Ghosting, Info Sortilage, Neurofilter, Overclock, Resonance Link, Switch, Traceroute). Source: Matrix pp.143–146
-- [ ] **Tribe resource level** — free complex form Mp = `Computer(Programming) × 50 Mp` + `+50 Mp per tribe resource level above Squatter`. Currently only base formula shown; tribe level not tracked.
-
----
-
-## Sheet Display / Play-at-the-Table Features
-
-- [ ] **One-click dice rolls on the sheet** — attributes and skills already have click-to-roll. Extend to dice pool chips (Combat Pool, Hacking Pool, etc.) so a player can roll directly from the sheet without entering pool size manually
-- [ ] **Condition monitor on sheet** — interactive physical/stun boxes directly on the sheet display (currently separate tab). Should update damage state that persists with the character
-- [ ] **Lifestyles on sheet** — show active lifestyle(s) in the sheet display (currently only in gear tab)
+- [ ] **Tribe resource level Mp bonus** — OtakuPanel has tribe name, resource level (Squatter/Low/Middle/High/Luxury), and resonance well tracked, but the +50 Mp per resource level above Squatter is never added to the free complex form Mp total. One formula line missing.
+- [ ] **Dice pool chip click-to-roll** — attributes and skills on the sheet already support click-to-roll. DicePools.js renders Combat Pool, Spell Pool, Hacking Pool, Control Pool, etc. as static tables with no onClick. Add the same `dice.openRoll()` handler so players can roll any pool directly from the sheet.
+- [ ] **Karma advancement — specializations & initiation** — KarmaSkillAdvancement.js covers skill advancement, attribute +1, new skill purchase, and spell learning. Missing: skill specialization purchase, initiation (Initiate grade karma cost, metamagic selection), submersion handled separately in OtakuPanel but not linked here.
 
 ---
 
-## Karma Advancement
+## Codebase Cleanup (safe deletes)
 
-- [ ] **Full karma advancement panel** — current `KarmaSkillAdvancement.js` handles skills. Expand to cover: attribute advancement (SR3: `new rating × 1.5` karma, round up), new skill purchase, specialization, spell learning (SR3: rating Force karma), initiation/submersion. Needs a proper post-chargen "advancement" mode distinct from chargen point-buy.
+- [ ] **Delete `src/data/SR2/SpellsWithCats.json`** — not imported anywhere, uses legacy schema, safe to remove.
+- [ ] **Delete `src/components/ProgramCalculatorModal.js`** — predates ProgrammingCalculator.js, not imported anywhere, safe to remove.
+- [ ] **Resolve `src/components/SR3VehicleDesigner.js`** — exists but not wired into Dashboard.js. Either connect it or delete it; currently dead code.
 
 ---
 
-## Data — Page Numbers (display/reference only, no functionality impact)
+## SR2 Gaps
 
-- [ ] `ssc.???` — Street Samurai Catalog: ~1,400 items (cyberware, adept powers, firearms, gear) have correct book code but unknown page numbers. Needs SSC OCR or manual lookup.
-- [ ] `gm2.???` — The Grimoire 2nd Ed: 188 spells. Need Grimoire 2nd Ed OCR.
+- [ ] **SR2 gear book filtering** — SR3 gear filters by active book toggles; SR2 gear does not. GearPanel needs to apply the same `allowedBooks` filter for SR2 characters.
+- [ ] **Magical libraries (SR2)** — SR3 already has magical library support in MagicPanel. SR2 does not. Listed in the app changelog as planned.
+
+---
+
+## Data — Page Numbers (reference only, no functionality impact)
+
+- [ ] `ssc.???` — Street Samurai Catalog: ~1,400 items with correct book code but unknown page numbers. Needs SSC OCR.
+- [ ] `gm2.???` — The Grimoire 2nd Ed: 188 spells. Needs Grimoire 2nd Ed OCR.
 - [ ] `fof.???` — Fields of Fire: ~60 gear/ammo/rocket items.
 - [ ] `rbb.???` — Rigger Black Box: 4 Sentinel Pod entries.
-- [ ] `grm` vs `gm2` reconciliation — both exist in Books.json for The Grimoire; data uses `grm` for confirmed Grimoire (SR2) content and `gm2` for unconfirmed Grimoire 2nd Ed spells. May overlap — resolve when Grimoire 2nd Ed OCR is available.
+- [ ] `grm` vs `gm2` reconciliation — both exist in Books.json for The Grimoire. Resolve once Grimoire 2nd Ed OCR is available.
 
 ---
 
-## SR3 Programming
+## SR2 Data Audit — Books Not Yet Audited
 
-- [ ] **Program cost table verification** — the `ProgramCosts` lookup table in `ProgrammingCalculator.js` may not match Matrix p.94 exactly (cost = Rating² × Multiplier × cost-per-Mp, varies by rating bracket). Verify and correct if needed.
-
----
-
-## Codebase Cleanup
-
-- [ ] **Delete `src/data/SR2/SpellsWithCats.json`** — unused file, not imported anywhere. Uses a legacy schema (`SR2.???` format). Safe to remove.
-- [ ] **Resolve `SR3VehicleDesigner.js`** — component exists at `src/components/SR3VehicleDesigner.js` but is not wired into Dashboard. Determine if it should replace or supplement the existing Vehicle Designer for SR3.
-- [ ] **Retire `ProgramCalculatorModal.js`** — older quick-calc modal predating the full `ProgrammingCalculator.js`. Confirm nothing still uses it and remove.
+- [ ] `awk` — Awakenings (adept powers, totems, critters)
+- [ ] `gm2` — The Grimoire 2nd Ed (188 spells at `gm2.???`)
+- [ ] `cs`, `pna`, `src`, `sb`, `pl`, `n/sl` — in Books.json but not yet audited
 
 ---
 
-## SR2 Data Audit
+## Nice-to-Have
 
-- [ ] **`awk` — Awakenings** — adept powers, totems, critters. No OCR yet.
-- [ ] **`gm2` — The Grimoire 2nd Ed** — 188 spells currently tagged `gm2.???`. Need OCR to get page numbers.
-- [ ] **Other SR2 books in Books.json** not yet audited: `cs` (Corporate Security), `pna` (Paranormal Animals of NA), `src` (Shadowrun Companion), `sb` (Shadowbeat), `pl` (Paradise Lost), `n/sl` (NERPS: ShadowLore).
-
----
-
-## Nice-to-Have / Future
-
-- [ ] **SR2 gear book filtering** — SR2 gear is still missing all-book filtering support (noted in app changelog). Gear shows but filtering by book doesn't work for SR2.
-- [ ] **Magical libraries (SR2)** — listed as planned in changelog but not yet done for SR2 (SR3 already has it).
-- [ ] **Public sheet improvements** — `PublicSheetPage` exists but may be missing some sections added since it was written (e.g. custom decks, new vehicle mod display).
-- [ ] **Test coverage** — test suite is minimal and acknowledged as a work in progress. Key panels (DeckingPanel, OtakuPanel, GearPanel) have no tests.
+- [ ] **SR3 program cost display** — ProgrammingCalculator shows size and time but not nuyen cost. Matrix p.94 gives cost = Rating² × Multiplier × cost-per-Mp (bracket by rating). Could add a cost column to the output.
+- [ ] **Public sheet audit** — PublicSheetPage delegates to SheetDisplay and picks up most sections, but worth a full pass to confirm nothing new (custom decks, vehicle mods, etc.) is missing.
+- [ ] **Test coverage** — DeckingPanel and GearPanel have no test files; OtakuPanel has a minimal stub. Low priority but worth expanding.
