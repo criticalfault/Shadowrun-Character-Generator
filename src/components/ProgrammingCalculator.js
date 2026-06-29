@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Box, Typography, TextField, Paper, Chip, Alert,
+  Box, Typography, TextField, Paper, Chip, Alert, Button,
   FormControl, InputLabel, Select, MenuItem, Checkbox, FormControlLabel,
   Table, TableBody, TableCell, TableContainer, TableHead, TableRow,
   Accordion, AccordionSummary, AccordionDetails, Divider, Tooltip, Grid,
@@ -664,9 +664,27 @@ const defaultState = {
   upgradeMode: false, oldRating: 3,
 };
 
+function rollSR3OpenTest(numDice, tn) {
+  // Rule of Six: each die accumulates — on a 6, add 6 to total and reroll,
+  // but only while total < tn. Stop once TN is met or roll is non-6.
+  const dice = [];
+  for (let i = 0; i < numDice; i++) {
+    let total = 0;
+    let roll;
+    do {
+      roll = Math.floor(Math.random() * 6) + 1;
+      total += roll;
+    } while (roll === 6 && total < tn);
+    dice.push(total);
+  }
+  const successes = dice.filter(d => d >= tn).length;
+  return { dice, successes, tn };
+}
+
 export default function ProgrammingCalculator() {
   const [s, setS] = useState(defaultState);
   const [subTab, setSubTab] = useState(0);
+  const [bugRoll, setBugRoll] = useState(null);
   const set = (k, v) => setS(d => ({ ...d, [k]: v }));
 
   const programType = PROGRAM_TYPES.find(t => t.id === s.programType) ?? PROGRAM_TYPES[0];
@@ -703,8 +721,10 @@ export default function ProgrammingCalculator() {
   const host = HOST_COLORS.find(h => h.id === s.hostColor);
   if (host?.mod) tnMod += host.mod;
   const lang = ProgrammingLanguages.find(l => l.id === s.language);
+  if (lang?.id === 'matcomdev')  tnMod += 1;
   if (lang?.id === 'mct_iconix') tnMod -= 1;
-  if (lang?.id === 'oblong')     tnMod -= 2;
+  if (lang?.id === 'metacomm')   tnMod -= 2;
+  if (lang?.id === 'oblong')     tnMod += 2;
   const finalTN = Math.max(2, baseTN + tnMod);
 
   const compDice = s.suiteRating > 0 ? suiteCompDice(s.suiteRating, s.skill) : 0;
@@ -721,7 +741,8 @@ export default function ProgrammingCalculator() {
 
   const isMainframe = s.hostColor !== 'none';
   const bugTN = bugTestTN(rating, s.skill, optionCount, s.teamMembers, isMainframe, s.reducedTime, s.language);
-  const effectiveRating = lang?.id === 'machodev' ? rating - 1 : rating;
+  const effectiveRating = lang?.id === 'intermod' ? rating - 1 : rating;
+  const finalBugTN = Math.max(2, 4 + bugTN);
 
   return (
     <Box sx={{ p: 2, maxWidth: 1100 }}>
@@ -921,7 +942,7 @@ export default function ProgrammingCalculator() {
                     <Select value={s.language} label="Programming Language" onChange={e => set('language', e.target.value)}>
                       {ProgrammingLanguages.map(l => (
                         <MenuItem key={l.id} value={l.id}>
-                          {l.label}{l.bugMod ? ` (Bug: ${l.bugMod > 0 ? '+' : ''}${l.id === 'novatech' ? l.bugMod + '/option' : l.bugMod})` : ''}
+                          {l.label}{l.bugMod ? ` (Bug: ${l.bugMod > 0 ? '+' : ''}${l.id === 'mct_iconix' ? l.bugMod + '/option' : l.bugMod})` : ''}
                         </MenuItem>
                       ))}
                     </Select>
@@ -967,7 +988,7 @@ export default function ProgrammingCalculator() {
                 <Typography variant="caption" color="text.secondary" sx={{ ml: 1, mt: 0.3 }}>(Matrix p.81)</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <TableContainer component={Paper} variant="outlined">
+                <TableContainer component={Paper} variant="outlined" sx={{ mb: 2 }}>
                   <Table size="small">
                     <TableHead>
                       <TableRow>
@@ -976,24 +997,69 @@ export default function ProgrammingCalculator() {
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      <TableRow><TableCell>Program difficulty (−(Rating+2))</TableCell><TableCell align="right">{-(rating + 2)}</TableCell></TableRow>
-                      {optionCount > 0 && <TableRow><TableCell>Options (−(options+2))</TableCell><TableCell align="right">{-(optionCount + 2)}</TableCell></TableRow>}
-                      {s.teamMembers > 1 && <TableRow><TableCell>Team ({s.teamMembers} members)</TableCell><TableCell align="right">{-(s.teamMembers + 2)}</TableCell></TableRow>}
+                      <TableRow><TableCell>Program difficulty (−⌈Rating÷2⌉)</TableCell><TableCell align="right">{-Math.ceil(rating / 2)}</TableCell></TableRow>
+                      {optionCount > 0 && <TableRow><TableCell>Options (−⌈options÷2⌉)</TableCell><TableCell align="right">{-Math.ceil(optionCount / 2)}</TableCell></TableRow>}
+                      {s.teamMembers > 1 && <TableRow><TableCell>Team (−⌈{s.teamMembers}÷2⌉)</TableCell><TableCell align="right">{-Math.ceil(s.teamMembers / 2)}</TableCell></TableRow>}
                       {isMainframe && <TableRow><TableCell>Used mainframe</TableCell><TableCell align="right">+2</TableCell></TableRow>}
                       {s.reducedTime && <TableRow><TableCell>Reduced base time</TableCell><TableCell align="right">+3</TableCell></TableRow>}
                       {lang && lang.id !== 'none' && lang.bugMod !== 0 && (
                         <TableRow>
-                          <TableCell>{lang.label}</TableCell>
-                          <TableCell align="right">{lang.id === 'novatech' ? `${lang.bugMod} × ${optionCount} = ${lang.bugMod * optionCount}` : lang.bugMod}</TableCell>
+                          <TableCell>{lang.label}{lang.id === 'mct_iconix' ? ` (${lang.bugMod} × ${optionCount} options)` : ''}</TableCell>
+                          <TableCell align="right">{lang.id === 'mct_iconix' ? lang.bugMod * optionCount : (lang.bugMod > 0 ? '+' : '') + lang.bugMod}</TableCell>
                         </TableRow>
                       )}
                       <TableRow sx={{ bgcolor: 'action.hover' }}>
-                        <TableCell><strong>Total Bug TN modifier</strong></TableCell>
+                        <TableCell><strong>Total modifier</strong></TableCell>
                         <TableCell align="right"><strong>{bugTN >= 0 ? '+' : ''}{bugTN}</strong></TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell><strong>Final Bug Test TN</strong> (base 4 + modifier)</TableCell>
+                        <TableCell align="right"><strong>{finalBugTN}</strong></TableCell>
                       </TableRow>
                     </TableBody>
                   </Table>
                 </TableContainer>
+
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
+                  <Button
+                    variant="contained"
+                    size="small"
+                    onClick={() => setBugRoll(rollSR3OpenTest(s.skill + compDice, finalBugTN))}
+                  >
+                    Roll Bug Test
+                  </Button>
+                  <Typography variant="caption" color="text.secondary">
+                    {s.skill + compDice} dice vs TN {finalBugTN}{compDice > 0 ? ` (${s.skill} skill + ${compDice} comp)` : ''}
+                  </Typography>
+                </Box>
+
+                {bugRoll && (
+                  <Paper variant="outlined" sx={{ p: 1.5 }}>
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, mb: 1 }}>
+                      {bugRoll.dice.map((d, i) => (
+                        <Chip
+                          key={i}
+                          size="small"
+                          label={d}
+                          color={d >= bugRoll.tn ? 'success' : 'default'}
+                          variant={d >= bugRoll.tn ? 'filled' : 'outlined'}
+                          sx={{ minWidth: 36, fontWeight: d >= bugRoll.tn ? 'bold' : 'normal' }}
+                        />
+                      ))}
+                    </Box>
+                    <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', alignItems: 'center' }}>
+                      <Chip
+                        color={bugRoll.successes === 0 ? 'error' : 'success'}
+                        label={`${bugRoll.successes} success${bugRoll.successes !== 1 ? 'es' : ''}`}
+                      />
+                      <Typography variant="body2">
+                        {bugRoll.successes === 0
+                          ? 'Bug is immediate — manifests on first use.'
+                          : `Bug appears every ${bugRoll.successes} use${bugRoll.successes !== 1 ? 's' : ''}.`}
+                      </Typography>
+                    </Box>
+                  </Paper>
+                )}
               </AccordionDetails>
             </Accordion>
           </Grid>
@@ -1011,13 +1077,15 @@ export default function ProgrammingCalculator() {
                   {s.doubleMem && <StatRow label="Double memory" value="−2" />}
                   {s.planSuccesses > 0 && <StatRow label={`Plan successes (×${s.planSuccesses})`} value={`−${s.planSuccesses}`} />}
                   {host?.mod && <StatRow label={host.label} value={host.mod} />}
+                  {lang?.id === 'matcomdev' && <StatRow label="MatComDev" value="+1" />}
                   {lang?.id === 'mct_iconix' && <StatRow label="MCT Iconix 7" value="−1" />}
-                  {lang?.id === 'oblong' && <StatRow label="Oblong" value="−2" />}
+                  {lang?.id === 'metacomm' && <StatRow label="Metacomm" value="−2" />}
+                  {lang?.id === 'oblong' && <StatRow label="Oblong" value="+2" />}
                 </Box>
                 <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', mt: 1 }}>
                   <Chip color="primary" label={`Final TN: ${finalTN}`} />
                   {compDice > 0 && <Chip color="secondary" label={`+${compDice} comp. dice`} />}
-                  {lang?.id === 'machodev' && <Chip color="warning" size="small" label={`Effective rating: ${effectiveRating} (MachoDev −1)`} />}
+                  {lang?.id === 'intermod' && <Chip color="warning" size="small" label={`Effective rating: ${effectiveRating} (InterMod −1)`} />}
                 </Box>
               </Paper>
 
