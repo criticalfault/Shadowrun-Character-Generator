@@ -86,13 +86,14 @@ export function planTN(rating, options) {
 // ── Programming Languages (optional rule, Matrix p.81) ────────────────────────
 export const ProgrammingLanguages = [
   { id: 'none',        label: 'None (default)',     bugMod: 0,   otherEffect: null,                                          description: null },
-  { id: 'hololisp',   label: 'HoloLISP',            bugMod: 0,   otherEffect: null,                                          description: 'No mechanical effects.' },
-  { id: 'machodev',   label: 'MachoDev',            bugMod: +4,  otherEffect: '−1 to program\'s effective rating',           description: 'Bug TN +4 · Effective program rating −1' },
-  { id: 'mct_iconix', label: 'MCT Iconix 7',        bugMod: +2,  otherEffect: '−1 to Computer (Programming) Test TN',       description: 'Bug TN +2 · Programming TN −1' },
-  { id: 'metacomm',   label: 'Metacomm',            bugMod: 0,   otherEffect: null,                                          description: 'No mechanical effects.' },
-  { id: 'novatech',   label: 'Novatech VRDrive 3',  bugMod: -1,  bugModNote: '−1 per option', otherEffect: null,             description: 'Bug TN −1 per program option' },
-  { id: 'oblong',     label: 'Oblong',              bugMod: -3,  otherEffect: '−2 to Computer (Programming) Test TN',       description: 'Bug TN −3 · Programming TN −2' },
-  { id: 'renraku',    label: 'Renraku Teng',        bugMod: -5,  otherEffect: 'Base time ×2',                               description: 'Bug TN −5 · Base programming time ×2' },
+  { id: 'hololisp',   label: 'HoloLISP',            bugMod:  0,  otherEffect: null,                                          description: 'No mechanical effects.' },
+  { id: 'intermod',   label: 'InterMod',             bugMod: +4,  otherEffect: '−1 to program\'s effective rating',           description: 'Bug TN +4 · Effective program rating −1' },
+  { id: 'matcomdev',  label: 'MatComDev',            bugMod: +2,  otherEffect: '+1 to Computer (Programming) Test TN',        description: 'Bug TN +2 · Programming TN +1' },
+  { id: 'mct_iconix', label: 'MCT Iconix 7',        bugMod: -1,  bugModNote: '−1 per option', otherEffect: '−1 to Computer (Programming) Test TN', description: 'Bug TN −1 per option · Programming TN −1' },
+  { id: 'metacomm',   label: 'Metacomm',            bugMod: -3,  otherEffect: '−2 to Computer (Programming) Test TN',        description: 'Bug TN −3 · Programming TN −2' },
+  { id: 'novatech',   label: 'Novatech VRDrive 3',  bugMod: +1,  otherEffect: '+2 when using Glitch Table',                  description: 'Bug TN +1 · +2 when using Glitch Table' },
+  { id: 'oblong',     label: 'Oblong',              bugMod: +3,  otherEffect: '+2 to Computer (Programming) Test TN',        description: 'Bug TN +3 · Programming TN +2' },
+  { id: 'renraku',    label: 'Renraku Teng',        bugMod: -5,  otherEffect: 'Base time ÷ 2',                               description: 'Bug TN −5 · Base programming time ÷ 2' },
 ];
 
 // ── Bug Test (optional rule, Matrix p.81) ────────────────────────────────────
@@ -101,13 +102,12 @@ export const ProgrammingLanguages = [
 
 export function bugTestTN(programRating, programSkill, options, teamMembers, usedMainframe, reducedTime, languageId) {
   let tn = 0;
-  // Program difficulty: −(Rating + 2, round up) — already rounded since integer
-  tn -= (programRating + 2);
-  // Less than half skill: no additional modifier listed (threshold check for GM)
-  // Options: −(options + 2, round up)
-  if (options > 0) tn -= (options + 2);
-  // Team programming: −(members + 2, round up)
-  if (teamMembers > 1) tn -= (teamMembers + 2);
+  // Program difficulty: −(Rating ÷ 2, round up)
+  tn -= Math.ceil(programRating / 2);
+  // Options: −(options ÷ 2, round up)
+  if (options > 0) tn -= Math.ceil(options / 2);
+  // Team programming: −(members ÷ 2, round up)
+  if (teamMembers > 1) tn -= Math.ceil(teamMembers / 2);
   // Used mainframe: +2
   if (usedMainframe) tn += 2;
   // Reduced base time: +3
@@ -115,7 +115,7 @@ export function bugTestTN(programRating, programSkill, options, teamMembers, use
   // Language modifier
   const lang = ProgrammingLanguages.find(l => l.id === languageId);
   if (lang && lang.bugMod) {
-    if (lang.id === 'novatech') tn += lang.bugMod * options; // -1 per option
+    if (lang.id === 'mct_iconix') tn += lang.bugMod * options; // −1 per option
     else tn += lang.bugMod;
   }
   return tn;
