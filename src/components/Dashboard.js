@@ -967,6 +967,8 @@ export default function BasicTabs() {
             }
             Edition={Edition}
             BooksFilter={Character.allowedBooks}
+            intelligence={parseInt(Character.attributes?.Intelligence) || 0}
+            reaction={parseInt(Character.attributes?.Reaction) || 0}
           />
         </CustomTabPanel>
         <CustomTabPanel value={value} index={9}>
