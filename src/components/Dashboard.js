@@ -914,6 +914,10 @@ export default function BasicTabs() {
             step={Character.step}
             purchasedPowerPoints={Character.purchasedPowerPoints ?? 0}
             onChangePurchasedPowerPoints={handleChangePurchasedPowerPoints}
+            magicRating={
+              (parseInt(Character.attributes?.Magic) || 0) +
+              (parseInt(Character.magicalAttributeBonuses?.Magic) || 0)
+            }
             onSpendKarma={(karma) => {
               let karmaSpentToSave = (Character.karmaSpent += karma);
               setCharacter({ ...Character, karmaSpent: karmaSpentToSave });
