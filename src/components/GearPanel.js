@@ -93,7 +93,7 @@ export default function GearPanel(props) {
 
     const [modifyingWeaponIndex, setModifyingWeaponIndex] = useState(null);
     const [lifestyleBuilderOpen, setLifestyleBuilderOpen] = useState(false);
-    const [buyAmmoOpen, setBuyAmmoOpen] = useState(false);
+    const [buyAmmoTarget, setBuyAmmoTarget] = useState(null);
     const ammoEntries = GearData['Ammunition']?.entries ?? [];
     const ssgEnabled = props.Edition === 'SR3';
 
@@ -212,7 +212,7 @@ export default function GearPanel(props) {
               <Box sx={{ mt: 1, p: 1, border: '1px solid #444', borderRadius: 1, maxWidth: 500, fontSize: '0.85em' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.5 }}>
                   <strong>Weapon Info</strong>
-                  <Button size="small" variant="outlined" onClick={() => setBuyAmmoOpen(true)}>
+                  <Button size="small" variant="outlined" onClick={() => setBuyAmmoTarget(NewGear)}>
                     Buy Ammo
                   </Button>
                 </Box>
@@ -364,6 +364,11 @@ export default function GearPanel(props) {
                         {hasMods ? 'Mods' : 'Modify'}
                       </Button>
                     )}
+                    {gear.Ammunition && (
+                      <Button size="small" onClick={() => setBuyAmmoTarget(gear)} sx={{ mr: 0.5 }}>
+                        Buy Ammo
+                      </Button>
+                    )}
                     <Button color="secondary" size="small" onClick={() => handleRemoveGear(index)}>Remove</Button>
                 </TableCell>
               </TableRow>
@@ -380,9 +385,9 @@ export default function GearPanel(props) {
       onSave={handleSaveWeaponMods}
     />
     <BuyAmmoModal
-      open={buyAmmoOpen}
-      onClose={() => setBuyAmmoOpen(false)}
-      weapon={NewGear}
+      open={!!buyAmmoTarget}
+      onClose={() => setBuyAmmoTarget(null)}
+      weapon={buyAmmoTarget}
       ammoEntries={ammoEntries}
       booksFilter={props.BooksFilter}
       onPurchase={(ammoItem) => {
