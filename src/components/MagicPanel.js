@@ -1156,7 +1156,7 @@ function MagicPanel(props) {
   };
 
   const sortedSpells = (spellsData ?? []).filter(isBookAllowed).slice().sort((a, b) => (a.Name ?? '').localeCompare(b.Name ?? ''));
-  const filteredSortedAdeptPowers = AdeptPowers.filter(isBookAllowed).slice().sort((a, b) => a.Name.localeCompare(b.Name));
+  const filteredSortedAdeptPowers = (AdeptPowers ?? []).filter(isBookAllowed).slice().sort((a, b) => a.Name.localeCompare(b.Name));
 
   const label = { inputProps: { "aria-label": "Edition Switch" } };
 
