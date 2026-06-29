@@ -35,8 +35,11 @@ const CyberdeckTable = (props) => {
     Math.floor((INT + parseInt(mpcp || 0)) / 3) + (cyber.Hacking_Pool ?? 0);
 
   const calcMatrixReaction = (deck) => {
+    const mpcp = parseInt(deck.Persona || 0);
     const ri = parseInt(deck['Response Increase'] || deck.ResponseIncrease || 0);
-    return INT + ri * 2;
+    const riCap = Math.min(3, Math.floor(mpcp / 4));
+    const effectiveRI = Math.min(ri, riCap);
+    return { reaction: INT + effectiveRI * 2, ri, riCap, effectiveRI };
   };
 
   const CalcMemoryUsed = (deck) => {
@@ -79,8 +82,7 @@ const CyberdeckTable = (props) => {
         {props.Decks.map((deck, index) => {
           const mpcp = deck.Persona;
           const hackingPool = calcHackingPool(mpcp);
-          const matrixReaction = calcMatrixReaction(deck);
-          const ri = parseInt(deck['Response Increase'] || deck.ResponseIncrease || 0);
+          const { reaction: matrixReaction, ri, riCap, effectiveRI } = calcMatrixReaction(deck);
 
           return (
             <TableContainer
@@ -147,7 +149,9 @@ const CyberdeckTable = (props) => {
                     <TableCell align="right">{matrixReaction}</TableCell>
                     <TableCell align="right">{matrixReaction} + 3D6</TableCell>
                     <TableCell align="right">{deck['I/O Speed'] || deck.IOSpeed || '—'}</TableCell>
-                    <TableCell align="right">{ri}</TableCell>
+                    <TableCell align="right" sx={ri > riCap ? { color: 'error.main' } : {}}>
+                      {ri}{ri > riCap ? ` (cap ${riCap})` : ''}
+                    </TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
