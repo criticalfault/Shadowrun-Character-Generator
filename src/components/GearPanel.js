@@ -205,6 +205,19 @@ export default function GearPanel(props) {
             Add Gear
             </Button>
             <div>Notes:{NewGearDesc}</div>
+            {NewGear.Ammunition !== undefined && (
+              <Box sx={{ mt: 1, p: 1, border: '1px solid #444', borderRadius: 1, maxWidth: 500, fontSize: '0.85em' }}>
+                <strong>Weapon Info</strong>
+                <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px 16px', mt: 0.5 }}>
+                  {NewGear.Concealability && <span>Conceal: {NewGear.Concealability}</span>}
+                  {NewGear.Mode && <span>Mode: {NewGear.Mode}</span>}
+                  {NewGear.Damage && <span>Damage: {NewGear.Damage}</span>}
+                  <span>Ammunition: <strong>{NewGear.Ammunition}</strong></span>
+                  {NewGear.Accessories && NewGear.Accessories !== 'None' && <span>Accessories: {NewGear.Accessories}</span>}
+                  {NewGear.BookPage && <span>Source: {NewGear.BookPage}</span>}
+                </Box>
+              </Box>
+            )}
         </>
     )}
 
