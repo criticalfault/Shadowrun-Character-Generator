@@ -10,7 +10,7 @@ const mockProps = {
   onChangeSpells: jest.fn(),
   onChangeFoci: jest.fn(),
   magicalTraditions: ["Full Magician", "Adept", "Aspected Magician"],
-  chosenTradition: "Full Magician",
+  chosenTradition: { name: "None" },
   magicalTotem: null,
   onChangeMagicalTradition: jest.fn(),
   onChangeMagicalTotem: jest.fn(),
