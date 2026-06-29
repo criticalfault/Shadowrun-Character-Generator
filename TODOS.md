@@ -11,14 +11,15 @@ Last updated: 2026-06-29 (session 2)
 - [x] **Otaku tribe bonus to MP** — tribe membership grants +1 MP to Otaku characters. PR #179
 - [x] **SR3 Programming language fixes** — corrected programming language data and Bug Test dice roller. PR #176
 - [x] **Initiation / Metamagic** — confirmed fully implemented: karma cost formula (5+grade × multiplier), all 10 SR3 metamagics, magical group + strictures, ordeal modifier, grade benefits (metamagic/geas/signature), astral pool bonus.
+- [x] **Sprites / Frames UI** — full sprite designer modal: frame core, Persona Points (core×3), Frame Points (core×4), Pilot/Initiative/CF payload allocation, add complex forms to payload, karma cost tracking. Confirmed in OtakuPanel.js.
+- [x] **Submersion / Echoes tracker** — submersion grade tracking, karma cost `(grade×2)+10`, all incremental echoes (Improved I/O Speed, Hardening, MPCP, Persona, Reaction) and static echoes (Daemon Summoning, Ghosting, Info Sortilage, Neurofilter, Overclock, Resonance Link, Switch, Traceroute), undo support. Confirmed in OtakuPanel.js.
+- [x] **Tribe resource level** — tribe registration UI, resource level affects free complex form Mp calculation. Confirmed in OtakuPanel.js.
 
 ---
 
 ## Otaku Panel (SR3)
 
-- [ ] **Sprites / Frames UI** — sprite designer modal. Frame core is a complex form (×5 mult). Persona Points = core rating × 3 (split among Bod/Evasion/Masking/Sensor, no attr > core). Frame Points = core rating × 4 (Pilot @ 2 FP/pt, extra Init dice @ 3 FP, CF payload @ 1 FP/pt). Karma cost = core rating. Source: Matrix pp.141–142
-- [ ] **Submersion / Echoes tracker** — track submersion grade; karma cost = `(grade × 2) + 10`; list of incremental echoes (Improved I/O Speed, Improved Hardening, Improved MPCP, Improved Persona, Improved Reaction) and static echoes (Daemon Summoning, Ghosting, Info Sortilage, Neurofilter, Overclock, Resonance Link, Switch, Traceroute). Source: Matrix pp.143–146
-- [ ] **Tribe resource level** — free complex form Mp = `Computer(Programming) × 50 Mp` + `+50 Mp per tribe resource level above Squatter`. Currently only base formula shown; tribe level not tracked.
+All major features confirmed implemented. No open items.
 
 ---
 
