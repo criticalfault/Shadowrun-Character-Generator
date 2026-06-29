@@ -193,12 +193,17 @@ export default function OtakuPanel(props) {
   };
 
   // Book (Matrix p.137): free complex forms = Computer(Programming) skill × 50 Mp
+  // + 50 Mp per tribe resource level above Squatter (Matrix p.138)
+  const TRIBE_RESOURCE_LEVELS = ['Squatter', 'Low', 'Middle', 'High', 'Luxury'];
   const getFreeComplexFormMp = () => {
     const compSkill = (props.currentCharacter.skills ?? []).find(
       (s) => s.name === "Computer" || s.name === "Computer (Programming)"
     );
     const rating = compSkill?.rating ?? 0;
-    return rating * 50;
+    const tribeBonus = otakuTribe
+      ? Math.max(0, TRIBE_RESOURCE_LEVELS.indexOf(otakuTribe.resources)) * 50
+      : 0;
+    return rating * 50 + tribeBonus;
   };
 
   const handlePathChange = (event) => {
@@ -491,7 +496,17 @@ export default function OtakuPanel(props) {
             <div><strong>Otaku Path:</strong> <em>{props.currentCharacter.otakuPath}</em>: {OtakuPathInfo[props.currentCharacter.otakuPath]} </div>
             <div><strong>Hacking Pool:</strong> {hackingPool}</div>
             <div><strong>Starting Channel Points:</strong> {MPCP} (= MPCP; distribute among 5 channels)</div>
-            <div><strong>Free Complex Forms (char gen):</strong> {getFreeComplexFormMp()} Mp (Computer(Programming) × 50)</div>
+            <div><strong>Free Complex Forms (char gen):</strong> {getFreeComplexFormMp()} Mp
+              {(() => {
+                const compSkill = (props.currentCharacter.skills ?? []).find(s => s.name === 'Computer' || s.name === 'Computer (Programming)');
+                const rating = compSkill?.rating ?? 0;
+                const tribeLevel = otakuTribe ? Math.max(0, TRIBE_RESOURCE_LEVELS.indexOf(otakuTribe.resources)) : 0;
+                const tribeBonus = tribeLevel * 50;
+                return tribeBonus > 0
+                  ? ` (skill ${rating} × 50 + ${tribeBonus} tribe bonus)`
+                  : ` (Computer(Programming) × 50)`;
+              })()}
+            </div>
             <h3>Complex Forms</h3>
             <div>
                <Modal
