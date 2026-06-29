@@ -665,15 +665,20 @@ const defaultState = {
 };
 
 function rollSR3OpenTest(numDice, tn) {
-  const allDice = [];
-  let pool = numDice;
-  while (pool > 0) {
-    const batch = Array.from({ length: pool }, () => Math.floor(Math.random() * 6) + 1);
-    allDice.push(...batch);
-    pool = batch.filter(d => d === 6).length; // Rule of Six: each 6 rerolls
+  // Rule of Six: each die accumulates — on a 6, add 6 to total and reroll,
+  // but only while total < tn. Stop once TN is met or roll is non-6.
+  const dice = [];
+  for (let i = 0; i < numDice; i++) {
+    let total = 0;
+    let roll;
+    do {
+      roll = Math.floor(Math.random() * 6) + 1;
+      total += roll;
+    } while (roll === 6 && total < tn);
+    dice.push(total);
   }
-  const successes = allDice.filter(d => d >= tn).length;
-  return { dice: allDice, successes, tn };
+  const successes = dice.filter(d => d >= tn).length;
+  return { dice, successes, tn };
 }
 
 export default function ProgrammingCalculator() {
