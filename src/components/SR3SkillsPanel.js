@@ -67,6 +67,12 @@ function SR3SkillsPanel({
   const [selectedSkills, setSelectedSkills] = useState(
     characterSkills.filter((skill) => skill.type === "Active")
   );
+
+  // Martial Arts Maneuvers (CC p.88) — 2 pts each, max = style rating
+  const [selectedManeuvers, setSelectedManeuvers] = useState(
+    characterSkills.filter((skill) => skill.type === "Maneuver")
+  );
+  const [maneuverSelections, setManeuverSelections] = useState({});
   const [selectedCategory, setSelectedCategory] = useState("Combat skills");
   const [skillRating, setSkillRating] = useState(1);
   const [skillPointsSpent, setSkillPointsSpent] = useState(
@@ -101,22 +107,49 @@ function SR3SkillsPanel({
   const [skillLanguagePointsSpent, setLanguageSkillPointsSpent] = useState(0);
   const [newLanguageSkill, setLanguageNewSkill] = useState("English");
 
+  const handleAddManeuver = (styleName, maneuverName) => {
+    if (!maneuverName) return;
+    const maneuver = {
+      name: maneuverName,
+      cost: 2,
+      rating: 1,
+      attribute: "STR",
+      specialization: "",
+      type: "Maneuver",
+      style: styleName,
+    };
+    setSelectedManeuvers((prev) => [...prev, maneuver]);
+    setManeuverSelections((prev) => {
+      const next = { ...prev };
+      delete next[styleName];
+      return next;
+    });
+  };
+
+  const handleRemoveManeuver = (maneuver) => {
+    setSelectedManeuvers((prev) => prev.filter((m) => m !== maneuver));
+  };
+
   useEffect(() => {
     //Actually remove the skills when they are deleted.
     onUpdateSkills([
       ...selectedSkills,
       ...selectedKnowledgeSkills,
       ...selectedLanguageSkills,
+      ...selectedManeuvers,
     ]);
     //Update bar graphs for each category
-    setSkillPointsSpent(CalcTotalSkillsRatings([...selectedSkills]));
+    setSkillPointsSpent(
+      CalcTotalSkillsRatings([...selectedSkills]) +
+      CalcTotalSkillsRatings([...selectedManeuvers])
+    );
     setKnowledgeSkillPointsSpent(
       CalcTotalSkillsRatings([...selectedKnowledgeSkills])
     );
     setLanguageSkillPointsSpent(
       CalcTotalSkillsRatings([...selectedLanguageSkills])
     );
-  }, [selectedSkills, selectedKnowledgeSkills, selectedLanguageSkills]);
+  }, [selectedSkills, selectedKnowledgeSkills, selectedLanguageSkills, selectedManeuvers]);
 
   let skillCosts = {
     baseSkill: {
@@ -729,6 +762,111 @@ function SR3SkillsPanel({
                 </ListItem>
               ))}
             </List>
+            {/* Martial Arts Maneuvers — Canon Companion p.88 */}
+            {selectedSkills.filter((sk) => sk.name.startsWith("MA:")).length > 0 && (
+              <>
+                <h3 style={{ marginTop: "40px" }}>
+                  Martial Arts Maneuvers{" "}
+                  <small style={{ fontWeight: "normal", fontSize: "0.75rem" }}>
+                    (Canon Companion p.88 — 2 pts each, max = style rating)
+                  </small>
+                </h3>
+                {selectedSkills
+                  .filter((sk) => sk.name.startsWith("MA:"))
+                  .map((style) => {
+                    const styleManeuvers = selectedManeuvers.filter(
+                      (m) => m.style === style.name
+                    );
+                    const allManeuvers =
+                      skillsData["Martial Arts(MA)"].find(
+                        (s) => s.name === style.name
+                      )?.specializations ?? [];
+                    const availableManeuvers = allManeuvers.filter(
+                      (m) => !styleManeuvers.find((sm) => sm.name === m.name)
+                    );
+                    const atMax = styleManeuvers.length >= style.rating;
+                    const selected =
+                      maneuverSelections[style.name] ??
+                      availableManeuvers[0]?.name ??
+                      "";
+
+                    return (
+                      <Box
+                        key={style.name}
+                        sx={{
+                          mb: 2,
+                          pl: 2,
+                          borderLeft: "3px solid #1976d2",
+                        }}
+                      >
+                        <strong>
+                          {style.name} (Rating {style.rating}) —{" "}
+                          {styleManeuvers.length}/{style.rating} maneuvers
+                        </strong>
+                        <List dense style={{ maxWidth: "500px" }}>
+                          {styleManeuvers.map((m) => (
+                            <ListItem key={m.name} dense>
+                              <ListItemText
+                                primary={`${m.name.replace("MN:", "")} [2 pts]`}
+                              />
+                              <Button
+                                size="small"
+                                color="secondary"
+                                onClick={() => handleRemoveManeuver(m)}
+                              >
+                                Remove
+                              </Button>
+                            </ListItem>
+                          ))}
+                        </List>
+                        {!atMax && availableManeuvers.length > 0 && (
+                          <Box
+                            sx={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: 2,
+                              mt: 1,
+                            }}
+                          >
+                            <FormControl>
+                              <NativeSelect
+                                value={selected}
+                                onChange={(e) =>
+                                  setManeuverSelections((prev) => ({
+                                    ...prev,
+                                    [style.name]: e.target.value,
+                                  }))
+                                }
+                              >
+                                {availableManeuvers.map((m) => (
+                                  <option key={m.name} value={m.name}>
+                                    {m.name.replace("MN:", "")}
+                                  </option>
+                                ))}
+                              </NativeSelect>
+                            </FormControl>
+                            <Button
+                              variant="contained"
+                              size="small"
+                              onClick={() =>
+                                handleAddManeuver(style.name, selected)
+                              }
+                            >
+                              Add Maneuver
+                            </Button>
+                          </Box>
+                        )}
+                        {atMax && (
+                          <small style={{ color: "#666" }}>
+                            Max maneuvers reached — raise style rating to learn more.
+                          </small>
+                        )}
+                      </Box>
+                    );
+                  })}
+              </>
+            )}
+
             <h3>Knowledge Skills</h3>
             <List style={{ maxWidth: "500px" }}>
               {characterSkills.filter(sk => sk.type === 'Knowledge').map((skill, index) => (

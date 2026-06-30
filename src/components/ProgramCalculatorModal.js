@@ -63,7 +63,6 @@ export default function ProgramCalculatorModal({ open, onClose, programs, deck }
         cost: calcCost(r, prog.Multiplyer),
       };
     }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [programs, ratings]
   );
 
