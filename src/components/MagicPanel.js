@@ -1142,6 +1142,35 @@ function MagicPanel(props) {
   const [editingGroup, setEditingGroup] = useState(false);
   const [groupDraft, setGroupDraft] = useState(props.magicalGroup ?? blankGroup);
 
+  // ── Spell Designer state ─────────────────────────────────────
+  const [designName, setDesignName] = useState('');
+  const [designCategory, setDesignCategory] = useState('C');
+  const [designType, setDesignType] = useState('M');
+  const [designRange, setDesignRange] = useState('LOS');
+  const [designDuration, setDesignDuration] = useState('I');
+  const [designForce, setDesignForce] = useState(3);
+  const [designNotes, setDesignNotes] = useState('');
+  const [designCombatDamage, setDesignCombatDamage] = useState('M');
+  const [designDetectionType, setDesignDetectionType] = useState('detect_living');
+  const [designHealthType, setDesignHealthType] = useState('heal');
+  const [designHealthDamageLevel, setDesignHealthDamageLevel] = useState('M');
+  const [designIllusionMode, setDesignIllusionMode] = useState('directed');
+  const [designIllusionType, setDesignIllusionType] = useState('obvious_single');
+  const [designIllusionSeverity, setDesignIllusionSeverity] = useState('minor');
+  const [designIllusionMultiSense, setDesignIllusionMultiSense] = useState(false);
+  const [designManipType, setDesignManipType] = useState('minor_env');
+  const [designArea, setDesignArea] = useState(false);
+  const [designExtendedArea, setDesignExtendedArea] = useState(false);
+  const [designElementalCount, setDesignElementalCount] = useState(0);
+  const [designRestrictedTarget, setDesignRestrictedTarget] = useState('none');
+  const [designVoluntaryTarget, setDesignVoluntaryTarget] = useState(false);
+  const [designStunDamage, setDesignStunDamage] = useState(false);
+  const [designAffectsInitiative, setDesignAffectsInitiative] = useState(false);
+  const [designAreaSense, setDesignAreaSense] = useState(false);
+  const [designExtendedSense, setDesignExtendedSense] = useState(false);
+  const [designSymptoms, setDesignSymptoms] = useState(false);
+  const [designHarmful, setDesignHarmful] = useState(false);
+
   // Magician's Way: total levels of "Magical Power" purchased → spell budget = levels × 6
   const magicalPowerLevel = selectedPowers
     .filter(p => p.Name && p.Name.includes('Magical Power'))
@@ -2013,6 +2042,444 @@ function MagicPanel(props) {
     );
   };
 
+  // ── Spell Designer helpers ────────────────────────────────────
+  const SD_LEVELS = ['L', 'M', 'S', 'D'];
+  const SD_BASE_TIMES = { L: '6 days', M: '18 days', S: '36 days', D: '60 days' };
+  const SD_PERM_TIMES = { L: '5 turns', M: '10 turns', S: '15 turns', D: '20 turns' };
+
+  const sdDetectionBaseLevel = () => {
+    const map = { detect_living: 0, analyze_living: 1, detect_nonliving: 1, analyze_nonliving: 2, improve_sense: 2, new_sense: 3, borrow_sense: 3 };
+    return map[designDetectionType] ?? 0;
+  };
+
+  const sdIllusionBaseLevel = () => {
+    if (designIllusionMode === 'indirect') {
+      const base = { minor: 0, major: 1, severe: 2 }[designIllusionSeverity] ?? 0;
+      return designIllusionMultiSense ? base + 1 : base;
+    }
+    return { obvious_single: 0, obvious_multi: 1, realistic_single: 1, realistic_multi: 2 }[designIllusionType] ?? 0;
+  };
+
+  const sdManipBaseLevel = () => {
+    return { minor_mental: 1, major_mental: 2, minor_physical: 1, major_physical: 2, minor_env: 0, major_env: 1, massive_env: 2 }[designManipType] ?? 1;
+  };
+
+  const calcSpellDrain = () => {
+    let baseLvl = 1;
+    let isVariable = false;
+    switch (designCategory) {
+      case 'C': baseLvl = SD_LEVELS.indexOf(designCombatDamage); break;
+      case 'D': baseLvl = sdDetectionBaseLevel(); break;
+      case 'H':
+        if (designHealthType === 'attribute') baseLvl = 1;
+        else { isVariable = true; baseLvl = SD_LEVELS.indexOf(designHealthDamageLevel); }
+        break;
+      case 'I': baseLvl = sdIllusionBaseLevel(); break;
+      case 'M': baseLvl = sdManipBaseLevel(); break;
+      default: baseLvl = 1;
+    }
+
+    let pMod = 0;
+    if (designCategory === 'D') pMod -= 1;
+    if (designCategory === 'I') pMod -= 1;
+    if (designType === 'P') pMod += 1;
+    if (designRestrictedTarget === 'restricted') pMod -= 1;
+    if (designStunDamage && ['C', 'M'].includes(designCategory)) pMod -= 1;
+    if (designDuration === 'S' && ['D', 'H', 'I', 'M'].includes(designCategory)) pMod += 1;
+    if (designSymptoms && designCategory === 'H') pMod -= 2;
+
+    let lMod = 0;
+    const casterOnly = designRestrictedTarget === 'caster_only' && ['D', 'H', 'M'].includes(designCategory);
+    if (casterOnly) {
+      lMod -= 3;
+    } else {
+      if (designRange === 'Touch' && ['C', 'D', 'I', 'M'].includes(designCategory)) lMod -= 1;
+      if (designRestrictedTarget === 'very_restricted') lMod -= 1;
+      if (designVoluntaryTarget && ['D', 'I', 'M'].includes(designCategory)) lMod -= 1;
+    }
+    if (designRange === 'LOS' && designCategory === 'H') lMod += 1;
+    if (designArea && ['C', 'D', 'I', 'M'].includes(designCategory)) lMod += 1;
+    if (designExtendedArea && ['I', 'M'].includes(designCategory) && designArea) lMod += 1;
+    if (designAreaSense && designCategory === 'D') lMod += 1;
+    if (designExtendedSense && designCategory === 'D' && designAreaSense) lMod += 1;
+    if (designElementalCount > 0 && designCategory === 'M') lMod += designElementalCount;
+    if (designHarmful && designCategory === 'H') lMod += 1;
+    if (designDuration === 'P' && ['H', 'M'].includes(designCategory)) lMod += 1;
+    if (designAffectsInitiative && ['H', 'M'].includes(designCategory)) lMod += 1;
+
+    let rawLvl = Math.max(0, baseLvl + lMod);
+    let extra = 0;
+    if (rawLvl > 3) { extra = (rawLvl - 3) * 2; rawLvl = 3; }
+
+    const finalPMod = pMod + extra;
+    const finalLevel = isVariable ? 'DL' : SD_LEVELS[rawLvl];
+    const modStr = finalPMod > 0 ? `+${finalPMod}` : finalPMod < 0 ? `${finalPMod}` : '';
+    return { drainCode: `${modStr}(${finalLevel})`, finalLevel, finalPMod, isVariable };
+  };
+
+  const getDesignTarget = () => {
+    switch (designCategory) {
+      case 'C': return designType === 'M' ? 'W(R)' : 'B(R)';
+      case 'D': return ['new_sense', 'borrow_sense'].includes(designDetectionType) ? '4' : 'W(R)';
+      case 'H': return '4';
+      case 'I': return designIllusionMode === 'indirect' ? '4' : (designType === 'M' ? 'W(R)' : 'I(R)');
+      case 'M': return ['minor_mental', 'major_mental'].includes(designManipType) ? 'W(R)' : '4';
+      default: return '4';
+    }
+  };
+
+  const getDesignClass = () => {
+    if (designCategory === 'I' && designIllusionMode === 'indirect') return 'N';
+    if (designCategory === 'M' && designElementalCount > 0) return 'E';
+    return designCategory;
+  };
+
+  const getDesignRangeCode = () => {
+    if (designArea) return 'LOS(A)';
+    return designRange === 'Touch' ? 'T' : 'LOS';
+  };
+
+  const getDesignBaseTime = () => {
+    const { finalLevel, isVariable } = calcSpellDrain();
+    if (designDuration === 'P') {
+      const lvl = isVariable ? designHealthDamageLevel : finalLevel;
+      return SD_PERM_TIMES[lvl] || '—';
+    }
+    const lvl = isVariable ? 'D' : finalLevel;
+    return (SD_BASE_TIMES[lvl] || '—') + (isVariable ? ' (variable — uses highest)' : '');
+  };
+
+  const handleAddCustomSpell = () => {
+    if (!designName.trim()) return;
+    const { drainCode } = calcSpellDrain();
+    const customSpell = {
+      Name: designName.trim(),
+      BookPage: 'custom',
+      Type: designType,
+      Target: getDesignTarget(),
+      Duration: designDuration,
+      Range: getDesignRangeCode(),
+      Drain: drainCode,
+      Class: getDesignClass(),
+      Notes: designNotes || '',
+      Rating: designForce,
+      Fetish: false,
+      Exclusive: false,
+      Custom: true,
+    };
+    const newSpells = [...selectedSpells, customSpell];
+    setSelectedSpells(newSpells);
+    setSpellPointsSpent(prev => prev + designForce);
+    props.onChangeSpells(newSpells);
+    setDesignName('');
+    setDesignNotes('');
+  };
+
+  const RenderSpellDesigner = () => {
+    if (props.Edition !== 'SR3') return null;
+    const { drainCode, finalPMod, finalLevel, isVariable } = calcSpellDrain();
+    const magicAttr = parseInt(props.magicRating) || 0;
+    const rawTN = 2 * designForce + finalPMod - magicAttr;
+    const designTN = Math.max(2, rawTN);
+    const baseTime = getDesignBaseTime();
+    const tnBreakdown = `2×${designForce}${finalPMod > 0 ? `+${finalPMod}` : finalPMod < 0 ? finalPMod : ''}${magicAttr > 0 ? `−${magicAttr}` : ''}`;
+
+    return (
+      <>
+        <h3>Spell Designer <span style={{ fontSize: '0.8rem', fontWeight: 'normal', color: '#666' }}>(Magic in the Shadows)</span></h3>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mb: 2, alignItems: 'flex-end' }}>
+          <TextField
+            label="Spell Name"
+            value={designName}
+            onChange={e => setDesignName(e.target.value)}
+            sx={{ width: 220 }}
+            size="small"
+          />
+          <FormControl size="small" sx={{ minWidth: 160 }}>
+            <InputLabel>Category</InputLabel>
+            <Select value={designCategory} label="Category"
+              onChange={e => {
+                const cat = e.target.value;
+                setDesignCategory(cat);
+                if (cat === 'C') setDesignDuration('I');
+                if (cat === 'H') setDesignRange('Touch');
+                else if (designRange === 'Touch' && cat !== 'H') setDesignRange('LOS');
+              }}>
+              <MenuItem value="C">Combat</MenuItem>
+              <MenuItem value="D">Detection</MenuItem>
+              <MenuItem value="H">Health</MenuItem>
+              <MenuItem value="I">Illusion</MenuItem>
+              <MenuItem value="M">Manipulation</MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl size="small" sx={{ minWidth: 130 }}>
+            <InputLabel>Type</InputLabel>
+            <Select value={designType} label="Type" onChange={e => setDesignType(e.target.value)}>
+              <MenuItem value="M">Mana</MenuItem>
+              <MenuItem value="P">Physical</MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl size="small" sx={{ minWidth: 160 }}>
+            <InputLabel>Range</InputLabel>
+            <Select value={designRange} label="Range" onChange={e => setDesignRange(e.target.value)}>
+              <MenuItem value="LOS">Line of Sight</MenuItem>
+              <MenuItem value="Touch">Touch{designCategory === 'H' ? ' (default)' : ' (−1 Level)'}</MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl size="small" sx={{ minWidth: 150 }}>
+            <InputLabel>Duration</InputLabel>
+            <Select value={designDuration} label="Duration" onChange={e => setDesignDuration(e.target.value)}>
+              <MenuItem value="I">Instant</MenuItem>
+              {designCategory !== 'C' && <MenuItem value="S">Sustained (+1 Power)</MenuItem>}
+              {designCategory !== 'C' && <MenuItem value="P">Permanent (+1 Level)</MenuItem>}
+            </Select>
+          </FormControl>
+          <TextField
+            label="Force"
+            type="number"
+            value={designForce}
+            onChange={e => setDesignForce(Math.max(1, Math.min(12, parseInt(e.target.value) || 1)))}
+            sx={{ width: 80 }}
+            size="small"
+            InputProps={{ inputProps: { min: 1, max: 12 } }}
+          />
+        </Box>
+
+        {/* Category-specific base effect */}
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mb: 2, alignItems: 'flex-end' }}>
+          {designCategory === 'C' && (
+            <FormControl size="small" sx={{ minWidth: 200 }}>
+              <InputLabel>Base Damage Level</InputLabel>
+              <Select value={designCombatDamage} label="Base Damage Level" onChange={e => setDesignCombatDamage(e.target.value)}>
+                <MenuItem value="L">Light → Base Drain L</MenuItem>
+                <MenuItem value="M">Moderate → Base Drain M</MenuItem>
+                <MenuItem value="S">Serious → Base Drain S</MenuItem>
+                <MenuItem value="D">Deadly → Base Drain D</MenuItem>
+              </Select>
+            </FormControl>
+          )}
+          {designCategory === 'D' && (
+            <FormControl size="small" sx={{ minWidth: 300 }}>
+              <InputLabel>Detection Type</InputLabel>
+              <Select value={designDetectionType} label="Detection Type" onChange={e => setDesignDetectionType(e.target.value)}>
+                <MenuItem value="detect_living">Detect living/magical target (L)</MenuItem>
+                <MenuItem value="analyze_living">Analyze living/magical target (M)</MenuItem>
+                <MenuItem value="detect_nonliving">Detect non-living target (M)</MenuItem>
+                <MenuItem value="analyze_nonliving">Analyze non-living target (S)</MenuItem>
+                <MenuItem value="improve_sense">Improve an existing sense (S)</MenuItem>
+                <MenuItem value="new_sense">Provide a new sense — sonar, telepathy (D)</MenuItem>
+                <MenuItem value="borrow_sense">Borrow a sense (D)</MenuItem>
+              </Select>
+            </FormControl>
+          )}
+          {designCategory === 'H' && (
+            <>
+              <FormControl size="small" sx={{ minWidth: 220 }}>
+                <InputLabel>Health Effect</InputLabel>
+                <Select value={designHealthType} label="Health Effect" onChange={e => setDesignHealthType(e.target.value)}>
+                  <MenuItem value="heal">Heal or cure malady (DL)</MenuItem>
+                  <MenuItem value="affliction">Cause affliction (DL)</MenuItem>
+                  <MenuItem value="attribute">Affects Attribute (M)</MenuItem>
+                </Select>
+              </FormControl>
+              {designHealthType !== 'attribute' && (
+                <FormControl size="small" sx={{ minWidth: 200 }}>
+                  <InputLabel>Malady Damage Level</InputLabel>
+                  <Select value={designHealthDamageLevel} label="Malady Damage Level" onChange={e => setDesignHealthDamageLevel(e.target.value)}>
+                    <MenuItem value="L">Light</MenuItem>
+                    <MenuItem value="M">Moderate</MenuItem>
+                    <MenuItem value="S">Serious</MenuItem>
+                    <MenuItem value="D">Deadly</MenuItem>
+                  </Select>
+                </FormControl>
+              )}
+            </>
+          )}
+          {designCategory === 'I' && (
+            <>
+              <FormControl size="small" sx={{ minWidth: 160 }}>
+                <InputLabel>Illusion Mode</InputLabel>
+                <Select value={designIllusionMode} label="Illusion Mode" onChange={e => setDesignIllusionMode(e.target.value)}>
+                  <MenuItem value="directed">Directed</MenuItem>
+                  <MenuItem value="indirect">Indirect</MenuItem>
+                </Select>
+              </FormControl>
+              {designIllusionMode === 'directed' ? (
+                <FormControl size="small" sx={{ minWidth: 260 }}>
+                  <InputLabel>Illusion Type</InputLabel>
+                  <Select value={designIllusionType} label="Illusion Type" onChange={e => setDesignIllusionType(e.target.value)}>
+                    <MenuItem value="obvious_single">Obvious single-sense (L)</MenuItem>
+                    <MenuItem value="obvious_multi">Obvious multi-sense (M)</MenuItem>
+                    <MenuItem value="realistic_single">Realistic single-sense (M)</MenuItem>
+                    <MenuItem value="realistic_multi">Realistic multi-sense (S)</MenuItem>
+                  </Select>
+                </FormControl>
+              ) : (
+                <>
+                  <FormControl size="small" sx={{ minWidth: 240 }}>
+                    <InputLabel>Change Severity</InputLabel>
+                    <Select value={designIllusionSeverity} label="Change Severity" onChange={e => setDesignIllusionSeverity(e.target.value)}>
+                      <MenuItem value="minor">Minor single-sense change (L)</MenuItem>
+                      <MenuItem value="major">Major single-sense change (M)</MenuItem>
+                      <MenuItem value="severe">Severe single-sense change (S)</MenuItem>
+                    </Select>
+                  </FormControl>
+                  <FormControlLabel
+                    control={<Checkbox size="small" checked={designIllusionMultiSense} onChange={e => setDesignIllusionMultiSense(e.target.checked)} />}
+                    label="Multi-sense (+1 Level)"
+                  />
+                </>
+              )}
+            </>
+          )}
+          {designCategory === 'M' && (
+            <FormControl size="small" sx={{ minWidth: 280 }}>
+              <InputLabel>Manipulation Type</InputLabel>
+              <Select value={designManipType} label="Manipulation Type" onChange={e => setDesignManipType(e.target.value)}>
+                <MenuItem value="minor_mental">Minor mental — emotion, suggestion (M)</MenuItem>
+                <MenuItem value="major_mental">Major mental — mind control, memories (S)</MenuItem>
+                <MenuItem value="minor_physical">Minor physical — appearance, motion (M)</MenuItem>
+                <MenuItem value="major_physical">Major physical — shape or form (S)</MenuItem>
+                <MenuItem value="minor_env">Minor environmental — light, humidity (L)</MenuItem>
+                <MenuItem value="major_env">Major environmental — create matter (M)</MenuItem>
+                <MenuItem value="massive_env">Massive environmental — weather, gravity (S)</MenuItem>
+              </Select>
+            </FormControl>
+          )}
+        </Box>
+
+        {/* Optional modifiers */}
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2, alignItems: 'center', background: '#fafafa', border: '1px solid #e0e0e0', borderRadius: 1, p: 1.5 }}>
+          <strong style={{ marginRight: 4, fontSize: '0.9rem' }}>Modifiers:</strong>
+          <FormControl size="small" sx={{ minWidth: 210 }}>
+            <InputLabel>Target Restriction</InputLabel>
+            <Select value={designRestrictedTarget} label="Target Restriction" onChange={e => setDesignRestrictedTarget(e.target.value)}>
+              <MenuItem value="none">None</MenuItem>
+              <MenuItem value="restricted">Restricted Target (−1 Power)</MenuItem>
+              <MenuItem value="very_restricted">Very Restricted Target (−1 Level)</MenuItem>
+              {['D', 'H', 'M'].includes(designCategory) && <MenuItem value="caster_only">Caster Only (−3 Levels)</MenuItem>}
+            </Select>
+          </FormControl>
+          {['C', 'D', 'I', 'M'].includes(designCategory) && (
+            <FormControlLabel
+              control={<Checkbox size="small" checked={designArea} onChange={e => setDesignArea(e.target.checked)} />}
+              label="Area Spell (+1 Level)"
+            />
+          )}
+          {designArea && ['I', 'M'].includes(designCategory) && (
+            <FormControlLabel
+              control={<Checkbox size="small" checked={designExtendedArea} onChange={e => setDesignExtendedArea(e.target.checked)} />}
+              label="Extended Area (+1 Level)"
+            />
+          )}
+          {designCategory === 'D' && (
+            <>
+              <FormControlLabel
+                control={<Checkbox size="small" checked={designAreaSense} onChange={e => setDesignAreaSense(e.target.checked)} />}
+                label="Area Sense (+1 Level)"
+              />
+              {designAreaSense && (
+                <FormControlLabel
+                  control={<Checkbox size="small" checked={designExtendedSense} onChange={e => setDesignExtendedSense(e.target.checked)} />}
+                  label="Extended Sense (+1 Level)"
+                />
+              )}
+            </>
+          )}
+          {['C', 'M'].includes(designCategory) && (
+            <FormControlLabel
+              control={<Checkbox size="small" checked={designStunDamage} onChange={e => setDesignStunDamage(e.target.checked)} />}
+              label="Stun Damage (−1 Power)"
+            />
+          )}
+          {['D', 'I', 'M'].includes(designCategory) && (
+            <FormControlLabel
+              control={<Checkbox size="small" checked={designVoluntaryTarget} onChange={e => setDesignVoluntaryTarget(e.target.checked)} />}
+              label="Voluntary Target (−1 Level)"
+            />
+          )}
+          {['H', 'M'].includes(designCategory) && (
+            <FormControlLabel
+              control={<Checkbox size="small" checked={designAffectsInitiative} onChange={e => setDesignAffectsInitiative(e.target.checked)} />}
+              label="Affects Initiative (+1 Level)"
+            />
+          )}
+          {designCategory === 'H' && (
+            <>
+              <FormControlLabel
+                control={<Checkbox size="small" checked={designHarmful} onChange={e => setDesignHarmful(e.target.checked)} />}
+                label="Harmful (+1 Level)"
+              />
+              <FormControlLabel
+                control={<Checkbox size="small" checked={designSymptoms} onChange={e => setDesignSymptoms(e.target.checked)} />}
+                label="Symptoms Only (−2 Power)"
+              />
+            </>
+          )}
+          {designCategory === 'M' && (
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <span style={{ fontSize: '0.9rem' }}>Elemental Effects:</span>
+              <TextField
+                type="number"
+                size="small"
+                value={designElementalCount}
+                onChange={e => setDesignElementalCount(Math.max(0, parseInt(e.target.value) || 0))}
+                sx={{ width: 60 }}
+                InputProps={{ inputProps: { min: 0, max: 5 } }}
+              />
+              <span style={{ fontSize: '0.8rem', color: '#666' }}>(+1 Level each)</span>
+            </Box>
+          )}
+        </Box>
+
+        <TextField
+          label="Notes (optional)"
+          value={designNotes}
+          onChange={e => setDesignNotes(e.target.value)}
+          fullWidth
+          size="small"
+          sx={{ mb: 2 }}
+        />
+
+        {/* Results panel */}
+        <Box sx={{ background: '#f0f4f8', border: '1px solid #b0c4d8', borderRadius: 1, p: 2, mb: 2 }}>
+          <Box sx={{ display: 'flex', gap: 4, flexWrap: 'wrap', mb: 1, alignItems: 'baseline' }}>
+            <Box>
+              <strong>Drain Code: </strong>
+              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#b00' }}>{drainCode}</span>
+              {isVariable && <span style={{ fontSize: '0.8rem', color: '#666', ml: 1 }}> (variable = malady level)</span>}
+            </Box>
+            <Box>
+              <strong>Design Test TN: </strong>
+              <span style={{ fontSize: '1.1rem', fontWeight: 'bold' }}>{designTN}</span>
+              <span style={{ fontSize: '0.8rem', color: '#666', marginLeft: 6 }}>({tnBreakdown})</span>
+            </Box>
+            <Box>
+              <strong>Base Design Time: </strong>{baseTime}
+            </Box>
+          </Box>
+          <Box sx={{ display: 'flex', gap: 3, fontSize: '0.85rem', color: '#444', flexWrap: 'wrap' }}>
+            <span>Type: {designType === 'M' ? 'Mana' : 'Physical'}</span>
+            <span>Range: {getDesignRangeCode()}</span>
+            <span>Duration: {{ I: 'Instant', S: 'Sustained', P: 'Permanent' }[designDuration]}</span>
+            <span>Target: {getDesignTarget()}</span>
+            <span>Class: {getDesignClass()}</span>
+          </Box>
+        </Box>
+
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleAddCustomSpell}
+          disabled={!designName.trim()}
+        >
+          Add Custom Spell to Character
+        </Button>
+        <hr />
+      </>
+    );
+  };
+
   const RenderWindow = () => {
     switch (props.magicalChoice) {
       case "Full Magician":
@@ -2309,6 +2776,7 @@ function MagicPanel(props) {
       <hr></hr>
       {RenderWindow()}
       {RenderFociList()}
+      {!isAdept && props.magicalChoice !== 'Not Magical' && RenderSpellDesigner()}
       {props.magicalChoice !== 'Not Magical' && RenderInitiationSection()}
       {props.magicalChoice !== 'Not Magical' &&
         !['Physical Adept','Human Physical Adept','Metahuman Physical Adept'].includes(props.magicalChoice) &&
