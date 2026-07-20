@@ -293,16 +293,23 @@ export default function PriorityPanel(props) {
 
   const handleChangePriorityRace = (newPriority) => {
     setPriorityRace(newPriority);
+    let firstRace;
     if(props.moreMetahumansOption === true){
-      setAvailableRaces(prorityChart[props.Edition]['MMrace'][newPriority]);
-      setRace(prorityChart[props.Edition]['MMrace'][newPriority][0]);
-      props.ChangeRaceChoices(prorityChart[props.Edition]['MMrace'][newPriority]);
+      const races = prorityChart[props.Edition]['MMrace'][newPriority];
+      firstRace = races[0];
+      setAvailableRaces(races);
+      setRace(firstRace);
+      props.ChangeRaceChoices(races);
     }else{
-      setAvailableRaces(prorityChart[props.Edition]['race'][newPriority]);
-      setRace(prorityChart[props.Edition]['race'][newPriority][0]);
-      props.ChangeRaceChoices(prorityChart[props.Edition]['race'][newPriority]);
+      const races = prorityChart[props.Edition]['race'][newPriority];
+      firstRace = races[0];
+      setAvailableRaces(races);
+      setRace(firstRace);
+      props.ChangeRaceChoices(races);
     }
-    
+    props.ChangeRace(firstRace);
+    const bonuses = prorityChart[props.Edition].raceBonuses[firstRace];
+    if (bonuses) props.ChangeRaceBonuses(bonuses);
   };
 
   const handleChangePriorityAttributes = (newPriority) => {
