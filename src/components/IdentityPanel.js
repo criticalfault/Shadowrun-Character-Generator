@@ -52,7 +52,6 @@ export default function IdentityPanel(props) {
     }
 
     React.useEffect(function(){
-       console.log(bookStates)
        props.ChangeAllowedBooks(bookStates);
     },[bookStates])
 
@@ -178,19 +177,30 @@ export default function IdentityPanel(props) {
             </AccordionDetails>
         </Accordion>
 
-        {/* ── Known Issues ── */}
+        {/* ── Report a Bug ── */}
         <Accordion defaultExpanded={true} disableGutters>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <strong>Known Issues&ensp;<span style={{ color: '#aaa', fontWeight: 'normal', fontSize: '0.85em' }}>(as of 06-15-26)</span></strong>
+                <strong>Report a Bug</strong>
             </AccordionSummary>
             <AccordionDetails>
-                <ul style={{ marginTop: 0 }}>
-                    <li>SR2 gear is still missing all books, so filtering doesnt work. Also temporarily removing "cars" from the gear section as I fix up the vehicles tab for SR2 specifically</li>
-                    <li>Some issues with Knowledge and Langauge skills being edited or removed</li>
-                    <li>Still need to add "improvements" and tracking Nuyen post finalization.</li>
-                    <li>All nesting of improvements (Weapon / Deck / Vehicle accessories and building). These will be handled in a completely different way, but I promise it will feel awesome to do!</li>
-                    <li>Decker programming calculator (design and program your own utilities) not yet implemented</li>
-                </ul>
+                <p style={{ marginTop: 0 }}>
+                    Found something broken? Please open a ticket on GitHub so it can be tracked and fixed!
+                </p>
+                <p>
+                    <a href="https://github.com/criticalfault/Shadowrun-Character-Generator/issues" target="_blank" rel="noreferrer">
+                        https://github.com/criticalfault/Shadowrun-Character-Generator/issues
+                    </a>
+                </p>
+            </AccordionDetails>
+        </Accordion>
+
+        {/* ── Known Issues ── */}
+        <Accordion defaultExpanded={false} disableGutters>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                <strong>Known Issues&ensp;<span style={{ color: '#aaa', fontWeight: 'normal', fontSize: '0.85em' }}>(as of 07-20-26)</span></strong>
+            </AccordionSummary>
+            <AccordionDetails>
+                <p style={{ marginTop: 0 }}>No known issues at this time. If you find a problem, please use the bug report link above!</p>
             </AccordionDetails>
         </Accordion>
 
@@ -201,6 +211,12 @@ export default function IdentityPanel(props) {
             </AccordionSummary>
             <AccordionDetails>
                 <ul style={{ marginTop: 0 }}>
+                    <li>Edition switch now correctly resets book checkboxes to the selected edition's saved state</li>
+                    <li>Priority tab race dropdown now saves immediately when dragging priorities and defaults to first available race</li>
+                    <li>Knowledge skill category change now correctly resets the selected skill to the first in the new category</li>
+                    <li>InputLabel no longer overlaps values in NativeSelect dropdowns across all panels</li>
+                    <li>SR3 Canon Companion martial arts — maneuver purchasing added (2 skill pts each, max = style rating)</li>
+                    <li>SR3 animal totems — all 17 core book entries (Bear through Wolf) now include source page references</li>
                     <li>Remote Control Deck sheet added to Sheet Display — Signal Condition Monitor (3 clickable damage tracks), all RCD stats, Flux Ranges table, Subscribed Drones table auto-populated from character drones, per-drone Autosofts/Standing Orders, and Drone Weapons table. Toggle on/off with a button.</li>
                     <li>Control Pool now displayed in Dice Pools (SR3 p.148: Reaction + VCR bonus dice). Only shown when a VCR is installed; label includes VCR level (e.g. "Control (VCR 1)")</li>
                     <li>SR3 Rigger 3 skills added — Vehicle Tactics (Technical, INT), Semiballistic/Suborbital/Tracks/Walkers/Mechanical Arm Operation B/R skills, and all matching Background knowledge skills (r3.24)</li>
