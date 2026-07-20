@@ -471,7 +471,7 @@ function SR3SkillsPanel({
           <Box sx={{ background: "#fafafa", padding: "20px" }}>
             <h3 style={{ paddingBottom: "20px" }}>Active Skills</h3>
             <FormControl>
-              <InputLabel id="skill-label">Skills Categories</InputLabel>
+              <InputLabel id="skill-label" shrink>Skills Categories</InputLabel>
               <NativeSelect
                 id="skill-dropdown"
                 value={selectedCategory}
@@ -490,7 +490,7 @@ function SR3SkillsPanel({
             <br></br>
             {selectedCategory && (
               <FormControl style={{ width: "400px" }}>
-                <InputLabel id="skill-label">{selectedCategory}</InputLabel>
+                <InputLabel id="skill-label" shrink>{selectedCategory}</InputLabel>
                 <NativeSelect
                   id="skill-dropdown"
                   value={newSkill}
@@ -507,7 +507,7 @@ function SR3SkillsPanel({
             )}
             <>
               <FormControl style={{ width: "400px", marginLeft: "20px" }}>
-                <InputLabel id="specialization-label">
+                <InputLabel id="specialization-label" shrink>
                   Specialization
                 </InputLabel>
                 <NativeSelect
@@ -567,7 +567,7 @@ function SR3SkillsPanel({
 
             <h3 style={{ marginTop: "40px" }}>Knowledge Skills</h3>
             <FormControl style={{ width: "200px" }}>
-              <InputLabel id="skill-label">Skills Categories</InputLabel>
+              <InputLabel id="skill-label" shrink>Skills Categories</InputLabel>
               <NativeSelect
                 id="skill-dropdown"
                 value={selectedKnowledgeCategory}
@@ -586,7 +586,7 @@ function SR3SkillsPanel({
             <br></br>
             {selectedKnowledgeCategory && (
               <FormControl style={{ width: "400px", marginBottom: "20px" }}>
-                <InputLabel id="skill-label">
+                <InputLabel id="skill-label" shrink>
                   {selectedKnowledgeCategory}
                 </InputLabel>
                 <NativeSelect
