@@ -19,9 +19,11 @@ export default function IdentityPanel(props) {
         setLocalEdition(event.target.checked);
         if(event.target.checked){
             props.ChangeEdition('SR3');
+            setBookStates(props.characterBooks3);
         }else{
             props.ChangePowerLevel(2);
             props.ChangeEdition('SR2');
+            setBookStates(props.characterBooks2);
         }
     }
     const [LocalMethod, setLocalMethod] = React.useState((props.CGMethod === 'pointbuy'?true:false));
