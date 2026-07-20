@@ -1528,7 +1528,7 @@ function MagicPanel(props) {
             </Box>
             <br />
             <FormControl style={{ width: "200px" }}>
-              <InputLabel id="adept-spell-label">{selectedCategory || "Select Spell"}</InputLabel>
+              <InputLabel id="adept-spell-label" shrink>{selectedCategory || "Select Spell"}</InputLabel>
               <Select
                 id="adept-spell-dropdown"
                 value={newSpellIndex}
@@ -2141,7 +2141,7 @@ function MagicPanel(props) {
             sx={{ mb: 1 }} />
           <Box sx={{ display: 'flex', gap: 2, mb: 1 }}>
             <FormControl size="small" style={{ minWidth: 140 }}>
-              <InputLabel>Type</InputLabel>
+              <InputLabel shrink>Type</InputLabel>
               <Select value={groupDraft.type} label="Type"
                 onChange={e => setGroupDraft({ ...groupDraft, type: e.target.value })}>
                 <MenuItem value="Initiatory">Initiatory</MenuItem>
@@ -2150,7 +2150,7 @@ function MagicPanel(props) {
               </Select>
             </FormControl>
             <FormControl size="small" style={{ minWidth: 140 }}>
-              <InputLabel>Resources</InputLabel>
+              <InputLabel shrink>Resources</InputLabel>
               <Select value={groupDraft.resources} label="Resources"
                 onChange={e => setGroupDraft({ ...groupDraft, resources: e.target.value })}>
                 {['Street','Squatter','Low','Middle','High','Luxury'].map(r => (
@@ -2267,7 +2267,7 @@ function MagicPanel(props) {
               {pendingBenefit === 'metamagic' && (
                 <Box sx={{ mt: 1 }}>
                   <FormControl size="small" style={{ minWidth: 220 }}>
-                    <InputLabel>Metamagic Technique</InputLabel>
+                    <InputLabel shrink>Metamagic Technique</InputLabel>
                     <Select value={pendingMetamagic} onChange={e => setPendingMetamagic(e.target.value)}
                       label="Metamagic Technique">
                       {availableMeta.map(m => (

@@ -327,7 +327,7 @@ export default function OtakuPanel(props) {
           <Box sx={{ mt: 1 }}>
             <strong>Echo to learn:</strong>{' '}
             <FormControl size="small" style={{ minWidth: 240, marginLeft: 8 }}>
-              <InputLabel>Echo</InputLabel>
+              <InputLabel shrink>Echo</InputLabel>
               <Select value={pendingEcho} onChange={e => setPendingEcho(e.target.value)} label="Echo">
                 {availableEchoes.map(e => (
                   <MenuItem key={e} value={e}>{e}</MenuItem>
@@ -379,7 +379,7 @@ export default function OtakuPanel(props) {
               onChange={e => setTribeDraft({ ...tribeDraft, name: e.target.value })}
               sx={{ mb: 1 }} />
             <FormControl size="small" fullWidth sx={{ mb: 1 }}>
-              <InputLabel>Resources</InputLabel>
+              <InputLabel shrink>Resources</InputLabel>
               <Select value={tribeDraft.resources} label="Resources"
                 onChange={e => setTribeDraft({ ...tribeDraft, resources: e.target.value })}>
                 {['Squatter', 'Low', 'Middle', 'High', 'Luxury'].map(r => (

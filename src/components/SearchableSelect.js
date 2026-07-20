@@ -68,7 +68,7 @@ export default function SearchableSelect({
         {filteredItems.length} / {safeItems.length} item{safeItems.length !== 1 ? 's' : ''}
       </Box>
       <FormControl style={style}>
-        <InputLabel>{label}</InputLabel>
+        <InputLabel shrink>{label}</InputLabel>
         <Select
           value={filteredIndex >= 0 ? filteredIndex : ''}
           onChange={handleSelectChange}

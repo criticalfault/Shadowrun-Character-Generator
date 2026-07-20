@@ -169,7 +169,7 @@ function FrameAgentCalculator({ skill, compDice: suiteComp }) {
           <Typography variant="subtitle2" gutterBottom>Frame / Agent Design</Typography>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mb: 2 }}>
             <FormControl size="small" sx={{ minWidth: 200 }}>
-              <InputLabel>Type</InputLabel>
+              <InputLabel shrink>Type</InputLabel>
               <Select value={f.frameType} label="Type" onChange={e => ff('frameType', e.target.value)}>
                 {FrameAgentTypes.map(t => <MenuItem key={t.id} value={t.id}>{t.label}</MenuItem>)}
               </Select>
@@ -299,7 +299,7 @@ function FrameAgentCalculator({ skill, compDice: suiteComp }) {
 
           <Box sx={{ mb: 2 }}>
             <FormControl size="small" sx={{ minWidth: 220 }}>
-              <InputLabel>Programming Language</InputLabel>
+              <InputLabel shrink>Programming Language</InputLabel>
               <Select value={f.language} label="Programming Language" onChange={e => ff('language', e.target.value)}>
                 {ProgrammingLanguages.map(l => <MenuItem key={l.id} value={l.id}>{l.label}</MenuItem>)}
               </Select>
@@ -420,7 +420,7 @@ function WormsCalculator({ skill, compDice: suiteComp }) {
           </Alert>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mb: 2 }}>
             <FormControl size="small" sx={{ minWidth: 200 }}>
-              <InputLabel>Worm Type</InputLabel>
+              <InputLabel shrink>Worm Type</InputLabel>
               <Select value={w.wormType} label="Worm Type" onChange={e => wf('wormType', e.target.value)}>
                 {WormTypes.map(t => <MenuItem key={t.id} value={t.id}>{t.label} (×{t.sizeMult})</MenuItem>)}
               </Select>
@@ -459,7 +459,7 @@ function WormsCalculator({ skill, compDice: suiteComp }) {
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mb: 2 }}>
             <Box>
               <FormControl size="small" sx={{ minWidth: 220 }}>
-                <InputLabel>Programming Language</InputLabel>
+                <InputLabel shrink>Programming Language</InputLabel>
                 <Select value={w.language} label="Programming Language" onChange={e => wf('language', e.target.value)}>
                   {ProgrammingLanguages.map(l => <MenuItem key={l.id} value={l.id}>{l.label}</MenuItem>)}
                 </Select>
@@ -467,7 +467,7 @@ function WormsCalculator({ skill, compDice: suiteComp }) {
               {(() => { const l = ProgrammingLanguages.find(x => x.id === w.language); return l?.description ? <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 0.5 }}>{l.description}</Typography> : null; })()}
             </Box>
             <FormControl size="small" sx={{ minWidth: 200 }}>
-              <InputLabel>Mainframe Host</InputLabel>
+              <InputLabel shrink>Mainframe Host</InputLabel>
               <Select value={w.hostColor} label="Mainframe Host" onChange={e => wf('hostColor', e.target.value)}>
                 {HOST_COLORS.map(h => <MenuItem key={h.id} value={h.id}>{h.label}{h.mod != null ? ` (${h.mod > 0 ? '+' : ''}${h.mod} TN)` : ''}</MenuItem>)}
               </Select>
@@ -813,7 +813,7 @@ export default function ProgrammingCalculator() {
               </Box>
               <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mb: 2 }}>
                 <FormControl size="small" sx={{ minWidth: 260 }}>
-                  <InputLabel>Program Type</InputLabel>
+                  <InputLabel shrink>Program Type</InputLabel>
                   <Select value={s.programType} label="Program Type" onChange={e => { set('programType', e.target.value); if (e.target.value !== 'ic') set('icProgram', ''); }}>
                     {PROGRAM_TYPES.map(t => <MenuItem key={t.id} value={t.id}>{t.label}</MenuItem>)}
                   </Select>
@@ -840,7 +840,7 @@ export default function ProgrammingCalculator() {
                 </Box>
                 {s.programType === 'ic' && (
                   <FormControl size="small" sx={{ minWidth: 220 }}>
-                    <InputLabel>IC Program Type</InputLabel>
+                    <InputLabel shrink>IC Program Type</InputLabel>
                     <Select
                       value={s.icProgram}
                       label="IC Program Type"
@@ -927,7 +927,7 @@ export default function ProgrammingCalculator() {
                   <Typography variant="caption" color="text.secondary" display="block">1 = solo; &gt;1 = team programming</Typography>
                 </Box>
                 <FormControl size="small" sx={{ minWidth: 220 }}>
-                  <InputLabel>Mainframe Host</InputLabel>
+                  <InputLabel shrink>Mainframe Host</InputLabel>
                   <Select value={s.hostColor} label="Mainframe Host" onChange={e => set('hostColor', e.target.value)}>
                     {HOST_COLORS.map(h => (
                       <MenuItem key={h.id} value={h.id}>
@@ -938,7 +938,7 @@ export default function ProgrammingCalculator() {
                 </FormControl>
                 <Box>
                   <FormControl size="small" sx={{ minWidth: 220 }}>
-                    <InputLabel>Programming Language</InputLabel>
+                    <InputLabel shrink>Programming Language</InputLabel>
                     <Select value={s.language} label="Programming Language" onChange={e => set('language', e.target.value)}>
                       {ProgrammingLanguages.map(l => (
                         <MenuItem key={l.id} value={l.id}>

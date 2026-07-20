@@ -254,7 +254,7 @@ export default function WeaponModsModal({ open, weapon, weaponIndex, onClose, on
         <Typography variant="subtitle1" gutterBottom>Add Modification</Typography>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, alignItems: "flex-end", mb: 1 }}>
           <FormControl size="small" sx={{ minWidth: 260 }}>
-            <InputLabel>Modification</InputLabel>
+            <InputLabel shrink>Modification</InputLabel>
             <Select
               value={pendingId}
               label="Modification"
@@ -290,7 +290,7 @@ export default function WeaponModsModal({ open, weapon, weaponIndex, onClose, on
 
           {pendingDef && hasOptions && (
             <FormControl size="small" sx={{ minWidth: 220 }}>
-              <InputLabel>Option</InputLabel>
+              <InputLabel shrink>Option</InputLabel>
               <Select
                 value={pendingOptionIndex ?? ""}
                 label="Option"

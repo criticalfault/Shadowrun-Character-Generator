@@ -561,7 +561,7 @@ const onDragEnd = ({ destination, source }) => {
       <Box sx={{ background: "#ffffff", padding: "20px", marginTop: "40px" }}>
         <h4>Character Sub Choices</h4>
         <FormControl fullWidth>
-          <InputLabel id="race-select-label">Race</InputLabel>
+          <InputLabel id="race-select-label" shrink>Race</InputLabel>
           <Select
             id="race-select"
             value={Race}
@@ -581,7 +581,7 @@ const onDragEnd = ({ destination, source }) => {
         <br></br>
         <br></br>
         <FormControl fullWidth>
-          <InputLabel id="race-select-label">Magic</InputLabel>
+          <InputLabel id="race-select-label" shrink>Magic</InputLabel>
           <Select
             id="magic-select"
             value={Magic}

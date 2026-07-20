@@ -167,7 +167,7 @@ function KarmaDisplay(props) {
             >
               <Box sx={style}>
                 <FormControl fullWidth>
-                  <InputLabel>What To Add</InputLabel>
+                  <InputLabel shrink>What To Add</InputLabel>
                   <Select id='WhatToAdd'
                     value={improvementChoice}
                     onChange={handleImprovementChange}>
@@ -179,10 +179,10 @@ function KarmaDisplay(props) {
                       </MenuItem>
                     </Select>
                   </FormControl>
-                  <InputLabel id="demo-simple-select-label">Amount</InputLabel>
+                  <InputLabel id="demo-simple-select-label" shrink>Amount</InputLabel>
                     <input type="number" placeholder="Amount To Add" value={Amount} onChange={handleAmountChange} ></input>
                   <br></br>
-                  <InputLabel>Notes:</InputLabel>
+                  <InputLabel shrink>Notes:</InputLabel>
                   <input type="text" placeholder="Notes" value={Notes} onChange={handleNoteChange}></input>
                   <br></br>
                   <Button variant="contained" color="primary" onClick={addImprovement}>Add</Button>

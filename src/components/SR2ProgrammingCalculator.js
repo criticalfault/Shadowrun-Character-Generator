@@ -133,7 +133,7 @@ function FrameCalculator({ skill }) {
           <Typography variant="subtitle2" gutterBottom>Frame Core</Typography>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mb: 2 }}>
             <FormControl size="small" sx={{ minWidth: 160 }}>
-              <InputLabel>Frame Type</InputLabel>
+              <InputLabel shrink>Frame Type</InputLabel>
               <Select value={f.frameType} label="Frame Type" onChange={e => ff('frameType', e.target.value)}>
                 {SR2FrameTypes.map(t => <MenuItem key={t.id} value={t.id}>{t.label} (×{t.coreMult})</MenuItem>)}
               </Select>
@@ -417,7 +417,7 @@ export default function SR2ProgrammingCalculator() {
 
               <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mb: 2 }}>
                 <FormControl size="small" sx={{ minWidth: 220 }}>
-                  <InputLabel>Utility</InputLabel>
+                  <InputLabel shrink>Utility</InputLabel>
                   <Select value={s.utilityId} label="Utility"
                     onChange={e => {
                       const newUtil = SR2Utilities.find(u => u.id === e.target.value);
@@ -550,7 +550,7 @@ export default function SR2ProgrammingCalculator() {
               <Typography variant="subtitle2" gutterBottom>Programming Setup</Typography>
               <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
                 <FormControl size="small" sx={{ minWidth: 280 }}>
-                  <InputLabel>Tools / Environment</InputLabel>
+                  <InputLabel shrink>Tools / Environment</InputLabel>
                   <Select value={s.toolId} label="Tools / Environment" onChange={e => set('toolId', e.target.value)}>
                     {SR2ProgrammingTools.map(t => (
                       <MenuItem key={t.id} value={t.id}>

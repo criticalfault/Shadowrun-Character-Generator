@@ -272,7 +272,7 @@ const handleCyberOrBioChange = (event) => {
         </Box>
         <br></br>
         <FormControl style={{'width':'200px', "display":"inline-block"}}>
-          <InputLabel  id="cyberware-label">Cyberware Categories</InputLabel>
+          <InputLabel  id="cyberware-label" shrink>Cyberware Categories</InputLabel>
           <NativeSelect
             id="cyberware-dropdown"
             value={SelectedCyberwareCategory}
@@ -375,7 +375,7 @@ const handleCyberOrBioChange = (event) => {
     }
     <br></br>
     <FormControl style={{'width':'200px'}}>
-    <InputLabel  id="skill-label">Bioware Categories</InputLabel>
+    <InputLabel  id="skill-label" shrink>Bioware Categories</InputLabel>
     <NativeSelect
         id="skill-dropdown"
         value={BiowareSelectedCategory}
