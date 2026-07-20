@@ -142,7 +142,10 @@ function SR3SkillsPanel({
   };
 
   const handleKnowledgeCategoryChange = (event) => {
-    setKnowledgeSelectedCategory(event.target.value);
+    const cat = event.target.value;
+    setKnowledgeSelectedCategory(cat);
+    setKnowledgeNewSkill(skillsData[cat][0].name);
+    setKnowledgeSelectedSpecialization("");
   };
 
   //Handle Skill Change events
