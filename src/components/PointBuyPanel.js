@@ -591,7 +591,7 @@ export default function PointBuyPanelSR3(props) {
 
       <Box mt={2}>
         <FormControl fullWidth>
-          <InputLabel id="race-select-label">Race</InputLabel>
+          <InputLabel id="race-select-label" shrink>Race</InputLabel>
           <Select
             id="race-select"
             value={Race}
@@ -613,7 +613,7 @@ export default function PointBuyPanelSR3(props) {
       {( (metavariant) ? 
         <Box mt={2}>
         <FormControl fullWidth>
-          <InputLabel id="race-select-label">Meta Variant Type</InputLabel>
+          <InputLabel id="race-select-label" shrink>Meta Variant Type</InputLabel>
           <Select
             id="race-select"
             value={metaVariantType}
@@ -636,7 +636,7 @@ export default function PointBuyPanelSR3(props) {
 
       <Box mt={2}>
         <FormControl fullWidth>
-          <InputLabel id="race-select-label">Magic</InputLabel>
+          <InputLabel id="race-select-label" shrink>Magic</InputLabel>
           <Select
             id="magic-select"
             value={Magic}
@@ -657,7 +657,7 @@ export default function PointBuyPanelSR3(props) {
 
       <Box mt={2}>
         <FormControl fullWidth>
-          <InputLabel id="resouce-select-label">Resources</InputLabel>
+          <InputLabel id="resouce-select-label" shrink>Resources</InputLabel>
           <Select
             id="resource-select"
             value={Resource}

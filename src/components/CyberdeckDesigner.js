@@ -571,7 +571,7 @@ function VR2CyberdeckDesigner({ edition, onSave }) {
 
             {/* Casing */}
             <FormControl size="small" sx={{ minWidth: 220, mb: 2 }}>
-              <InputLabel>Casing</InputLabel>
+              <InputLabel shrink>Casing</InputLabel>
               <Select
                 value={design.casing}
                 label="Casing"

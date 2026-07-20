@@ -612,7 +612,7 @@ export default function MatrixCyberdeckDesigner({ onSave }) {
             <Paper variant="outlined" sx={{ p: 2, mb: 2 }}>
               <Typography variant="subtitle2" gutterBottom>Hardware &amp; Peripherals</Typography>
               <FormControl size="small" sx={{ minWidth: 240, mb: 2 }}>
-                <InputLabel>Casing</InputLabel>
+                <InputLabel shrink>Casing</InputLabel>
                 <Select value={design.casing} label="Casing"
                   onChange={(e) => set('casing', e.target.value)}>
                   {Casings.map((c, i) => (

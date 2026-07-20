@@ -385,7 +385,7 @@ export default function VehicleModsModal({ open, vehicle, vehicleIndex, onClose,
         <Typography variant="subtitle1" gutterBottom>Add Modification</Typography>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, alignItems: "flex-end", mb: 1 }}>
           <FormControl size="small" sx={{ minWidth: 280 }}>
-            <InputLabel>Modification</InputLabel>
+            <InputLabel shrink>Modification</InputLabel>
             <Select
               value={pendingId}
               label="Modification"
@@ -427,7 +427,7 @@ export default function VehicleModsModal({ open, vehicle, vehicleIndex, onClose,
           {/* Rating selector for ECM/ECCM/ED and other rated mods */}
           {pendingIsRated && (
             <FormControl size="small" sx={{ minWidth: 120 }}>
-              <InputLabel>Rating</InputLabel>
+              <InputLabel shrink>Rating</InputLabel>
               <Select
                 value={pendingRating}
                 label="Rating"

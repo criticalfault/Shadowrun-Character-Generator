@@ -74,7 +74,7 @@ function ItemPicker({ type, selectedItems, onAdd, cgmethod }) {
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, alignItems: "flex-end" }}>
       <FormControl size="small" sx={{ minWidth: 220 }}>
-        <InputLabel>Add {label}</InputLabel>
+        <InputLabel shrink>Add {label}</InputLabel>
         <Select
           value={selectedId}
           label={`Add ${label}`}
@@ -96,7 +96,7 @@ function ItemPicker({ type, selectedItems, onAdd, cgmethod }) {
 
       {currentDef?.costOptions && (
         <FormControl size="small" sx={{ minWidth: 200 }}>
-          <InputLabel>Level</InputLabel>
+          <InputLabel shrink>Level</InputLabel>
           <Select
             value={chosenCost ?? ""}
             label="Level"

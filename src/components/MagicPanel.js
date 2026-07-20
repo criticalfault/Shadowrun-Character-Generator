@@ -1557,7 +1557,7 @@ function MagicPanel(props) {
             </Box>
             <br />
             <FormControl style={{ width: "200px" }}>
-              <InputLabel id="adept-spell-label">{selectedCategory || "Select Spell"}</InputLabel>
+              <InputLabel id="adept-spell-label" shrink>{selectedCategory || "Select Spell"}</InputLabel>
               <Select
                 id="adept-spell-dropdown"
                 value={newSpellIndex}
@@ -2196,7 +2196,7 @@ function MagicPanel(props) {
             size="small"
           />
           <FormControl size="small" sx={{ minWidth: 160 }}>
-            <InputLabel>Category</InputLabel>
+            <InputLabel shrink>Category</InputLabel>
             <Select value={designCategory} label="Category"
               onChange={e => {
                 const cat = e.target.value;
@@ -2213,21 +2213,21 @@ function MagicPanel(props) {
             </Select>
           </FormControl>
           <FormControl size="small" sx={{ minWidth: 130 }}>
-            <InputLabel>Type</InputLabel>
+            <InputLabel shrink>Type</InputLabel>
             <Select value={designType} label="Type" onChange={e => setDesignType(e.target.value)}>
               <MenuItem value="M">Mana</MenuItem>
               <MenuItem value="P">Physical</MenuItem>
             </Select>
           </FormControl>
           <FormControl size="small" sx={{ minWidth: 160 }}>
-            <InputLabel>Range</InputLabel>
+            <InputLabel shrink>Range</InputLabel>
             <Select value={designRange} label="Range" onChange={e => setDesignRange(e.target.value)}>
               <MenuItem value="LOS">Line of Sight</MenuItem>
               <MenuItem value="Touch">Touch{designCategory === 'H' ? ' (default)' : ' (−1 Level)'}</MenuItem>
             </Select>
           </FormControl>
           <FormControl size="small" sx={{ minWidth: 150 }}>
-            <InputLabel>Duration</InputLabel>
+            <InputLabel shrink>Duration</InputLabel>
             <Select value={designDuration} label="Duration" onChange={e => setDesignDuration(e.target.value)}>
               <MenuItem value="I">Instant</MenuItem>
               {designCategory !== 'C' && <MenuItem value="S">Sustained (+1 Power)</MenuItem>}
@@ -2249,7 +2249,7 @@ function MagicPanel(props) {
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mb: 2, alignItems: 'flex-end' }}>
           {designCategory === 'C' && (
             <FormControl size="small" sx={{ minWidth: 200 }}>
-              <InputLabel>Base Damage Level</InputLabel>
+              <InputLabel shrink>Base Damage Level</InputLabel>
               <Select value={designCombatDamage} label="Base Damage Level" onChange={e => setDesignCombatDamage(e.target.value)}>
                 <MenuItem value="L">Light → Base Drain L</MenuItem>
                 <MenuItem value="M">Moderate → Base Drain M</MenuItem>
@@ -2260,7 +2260,7 @@ function MagicPanel(props) {
           )}
           {designCategory === 'D' && (
             <FormControl size="small" sx={{ minWidth: 300 }}>
-              <InputLabel>Detection Type</InputLabel>
+              <InputLabel shrink>Detection Type</InputLabel>
               <Select value={designDetectionType} label="Detection Type" onChange={e => setDesignDetectionType(e.target.value)}>
                 <MenuItem value="detect_living">Detect living/magical target (L)</MenuItem>
                 <MenuItem value="analyze_living">Analyze living/magical target (M)</MenuItem>
@@ -2275,7 +2275,7 @@ function MagicPanel(props) {
           {designCategory === 'H' && (
             <>
               <FormControl size="small" sx={{ minWidth: 220 }}>
-                <InputLabel>Health Effect</InputLabel>
+                <InputLabel shrink>Health Effect</InputLabel>
                 <Select value={designHealthType} label="Health Effect" onChange={e => setDesignHealthType(e.target.value)}>
                   <MenuItem value="heal">Heal or cure malady (DL)</MenuItem>
                   <MenuItem value="affliction">Cause affliction (DL)</MenuItem>
@@ -2284,7 +2284,7 @@ function MagicPanel(props) {
               </FormControl>
               {designHealthType !== 'attribute' && (
                 <FormControl size="small" sx={{ minWidth: 200 }}>
-                  <InputLabel>Malady Damage Level</InputLabel>
+                  <InputLabel shrink>Malady Damage Level</InputLabel>
                   <Select value={designHealthDamageLevel} label="Malady Damage Level" onChange={e => setDesignHealthDamageLevel(e.target.value)}>
                     <MenuItem value="L">Light</MenuItem>
                     <MenuItem value="M">Moderate</MenuItem>
@@ -2298,7 +2298,7 @@ function MagicPanel(props) {
           {designCategory === 'I' && (
             <>
               <FormControl size="small" sx={{ minWidth: 160 }}>
-                <InputLabel>Illusion Mode</InputLabel>
+                <InputLabel shrink>Illusion Mode</InputLabel>
                 <Select value={designIllusionMode} label="Illusion Mode" onChange={e => setDesignIllusionMode(e.target.value)}>
                   <MenuItem value="directed">Directed</MenuItem>
                   <MenuItem value="indirect">Indirect</MenuItem>
@@ -2306,7 +2306,7 @@ function MagicPanel(props) {
               </FormControl>
               {designIllusionMode === 'directed' ? (
                 <FormControl size="small" sx={{ minWidth: 260 }}>
-                  <InputLabel>Illusion Type</InputLabel>
+                  <InputLabel shrink>Illusion Type</InputLabel>
                   <Select value={designIllusionType} label="Illusion Type" onChange={e => setDesignIllusionType(e.target.value)}>
                     <MenuItem value="obvious_single">Obvious single-sense (L)</MenuItem>
                     <MenuItem value="obvious_multi">Obvious multi-sense (M)</MenuItem>
@@ -2317,7 +2317,7 @@ function MagicPanel(props) {
               ) : (
                 <>
                   <FormControl size="small" sx={{ minWidth: 240 }}>
-                    <InputLabel>Change Severity</InputLabel>
+                    <InputLabel shrink>Change Severity</InputLabel>
                     <Select value={designIllusionSeverity} label="Change Severity" onChange={e => setDesignIllusionSeverity(e.target.value)}>
                       <MenuItem value="minor">Minor single-sense change (L)</MenuItem>
                       <MenuItem value="major">Major single-sense change (M)</MenuItem>
@@ -2334,7 +2334,7 @@ function MagicPanel(props) {
           )}
           {designCategory === 'M' && (
             <FormControl size="small" sx={{ minWidth: 280 }}>
-              <InputLabel>Manipulation Type</InputLabel>
+              <InputLabel shrink>Manipulation Type</InputLabel>
               <Select value={designManipType} label="Manipulation Type" onChange={e => setDesignManipType(e.target.value)}>
                 <MenuItem value="minor_mental">Minor mental — emotion, suggestion (M)</MenuItem>
                 <MenuItem value="major_mental">Major mental — mind control, memories (S)</MenuItem>
@@ -2352,7 +2352,7 @@ function MagicPanel(props) {
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2, alignItems: 'center', background: '#fafafa', border: '1px solid #e0e0e0', borderRadius: 1, p: 1.5 }}>
           <strong style={{ marginRight: 4, fontSize: '0.9rem' }}>Modifiers:</strong>
           <FormControl size="small" sx={{ minWidth: 210 }}>
-            <InputLabel>Target Restriction</InputLabel>
+            <InputLabel shrink>Target Restriction</InputLabel>
             <Select value={designRestrictedTarget} label="Target Restriction" onChange={e => setDesignRestrictedTarget(e.target.value)}>
               <MenuItem value="none">None</MenuItem>
               <MenuItem value="restricted">Restricted Target (−1 Power)</MenuItem>
@@ -2608,7 +2608,7 @@ function MagicPanel(props) {
             sx={{ mb: 1 }} />
           <Box sx={{ display: 'flex', gap: 2, mb: 1 }}>
             <FormControl size="small" style={{ minWidth: 140 }}>
-              <InputLabel>Type</InputLabel>
+              <InputLabel shrink>Type</InputLabel>
               <Select value={groupDraft.type} label="Type"
                 onChange={e => setGroupDraft({ ...groupDraft, type: e.target.value })}>
                 <MenuItem value="Initiatory">Initiatory</MenuItem>
@@ -2617,7 +2617,7 @@ function MagicPanel(props) {
               </Select>
             </FormControl>
             <FormControl size="small" style={{ minWidth: 140 }}>
-              <InputLabel>Resources</InputLabel>
+              <InputLabel shrink>Resources</InputLabel>
               <Select value={groupDraft.resources} label="Resources"
                 onChange={e => setGroupDraft({ ...groupDraft, resources: e.target.value })}>
                 {['Street','Squatter','Low','Middle','High','Luxury'].map(r => (
@@ -2734,7 +2734,7 @@ function MagicPanel(props) {
               {pendingBenefit === 'metamagic' && (
                 <Box sx={{ mt: 1 }}>
                   <FormControl size="small" style={{ minWidth: 220 }}>
-                    <InputLabel>Metamagic Technique</InputLabel>
+                    <InputLabel shrink>Metamagic Technique</InputLabel>
                     <Select value={pendingMetamagic} onChange={e => setPendingMetamagic(e.target.value)}
                       label="Metamagic Technique">
                       {availableMeta.map(m => (

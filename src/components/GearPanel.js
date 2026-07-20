@@ -165,7 +165,7 @@ export default function GearPanel(props) {
       <>
         <Box sx={{ width: '250px' }}>
           <FormControl style={{ width: '200px' }}>
-            <InputLabel id="gear-label">Gear Categories</InputLabel>
+            <InputLabel id="gear-label" shrink>Gear Categories</InputLabel>
             <NativeSelect
               id="gear-dropdown"
               value={SelectedGearCategory}

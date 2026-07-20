@@ -185,7 +185,7 @@ export default function WeaponDesigner({ edition = 'SR3', onSave }) {
             <Grid container spacing={2} alignItems="center">
               <Grid item xs={12} sm={6}>
                 <FormControl fullWidth size="small">
-                  <InputLabel>Weapon Frame</InputLabel>
+                  <InputLabel shrink>Weapon Frame</InputLabel>
                   <Select value={frameKey} onChange={onFrameChange} label="Weapon Frame">
                     {Object.keys(weaponFrames).map(k => (
                       <MenuItem key={k} value={k}>{k}</MenuItem>

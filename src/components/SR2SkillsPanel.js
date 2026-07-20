@@ -293,7 +293,7 @@ function SR2SkillsPanel({isOtaku, characterSkills, onUpdateSkills, maxSkillPoint
         <LinearProgress variant="determinate" value={skillPointsSpent/maxSkillPoints*100} />
       </Box>
       <FormControl style={{ width: '200px' }}>
-        <InputLabel id="skill-label">Skills</InputLabel>
+        <InputLabel id="skill-label" shrink>Skills</InputLabel>
         <Select id="skill-dropdown" value={selectedSkill} onChange={handleSkillChange}>
           {Object.values(skillsData).map(skill => (
             <MenuItem key={skill.name} value={skill.name}>

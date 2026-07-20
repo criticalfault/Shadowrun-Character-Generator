@@ -79,7 +79,7 @@ function ContactsPanel(props) {
               style={{ width: "100%" }}
             />
             <FormControl sx={{ marginRight: "20px" }}>
-              <InputLabel>Level</InputLabel>
+              <InputLabel shrink>Level</InputLabel>
               <Select
                 value={contact.Level}
                 onChange={(event) => handleContactChange(event, index, "Level")}
