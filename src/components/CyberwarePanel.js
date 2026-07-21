@@ -1,5 +1,12 @@
 ﻿import React, { useState, useEffect } from 'react';
 import FilteredMenuItem from './FilteredMenuItem';
+import AllBooks from '../data/Books.json';
+
+const wrongEdition = (bookCode, edition) => {
+  if (!bookCode) return false;
+  const b = AllBooks[bookCode];
+  return b?.edition && b.edition !== edition;
+};
 import SearchableSelect from './SearchableSelect';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
@@ -291,15 +298,19 @@ const handleCyberOrBioChange = (event) => {
           value={NewCyberwareIndex}
           onChange={handleCyberwareChange}
           label={SelectedCyberwareCategory}
-          renderItem={(cyber, i) => (
-            <FilteredMenuItem
-              allowed={props.BooksFilter.includes(cyber.BookPage.split('.')[0])}
-              bookCode={cyber.BookPage.split('.')[0]}
-              key={i} value={i}
-            >
-              {cyber.Name} - Essence Cost: {cyber.EssCost}
-            </FilteredMenuItem>
-          )}
+          renderItem={(cyber, i) => {
+            const bookCode = cyber.BookPage.split('.')[0];
+            if (wrongEdition(bookCode, props.Edition)) return null;
+            return (
+              <FilteredMenuItem
+                allowed={props.BooksFilter.includes(bookCode)}
+                bookCode={bookCode}
+                key={i} value={i}
+              >
+                {cyber.Name} - Essence Cost: {cyber.EssCost}
+              </FilteredMenuItem>
+            );
+          }}
           style={{ minWidth: 650 }}
         />
         <br/><br/>
@@ -393,15 +404,19 @@ const handleCyberOrBioChange = (event) => {
       value={NewBiowareIndex}
       onChange={handleBiowareChange}
       label={BiowareSelectedCategory}
-      renderItem={(bio, i) => (
-        <FilteredMenuItem
-          allowed={props.BooksFilter.includes(bio.BookPage.split('.')[0])}
-          bookCode={bio.BookPage.split('.')[0]}
-          key={i} value={i}
-        >
-          {bio.Name} - BioIndex Cost: {bio.BioIndex}
-        </FilteredMenuItem>
-      )}
+      renderItem={(bio, i) => {
+        const bookCode = bio.BookPage.split('.')[0];
+        if (wrongEdition(bookCode, props.Edition)) return null;
+        return (
+          <FilteredMenuItem
+            allowed={props.BooksFilter.includes(bookCode)}
+            bookCode={bookCode}
+            key={i} value={i}
+          >
+            {bio.Name} - BioIndex Cost: {bio.BioIndex}
+          </FilteredMenuItem>
+        );
+      }}
       style={{ minWidth: 650 }}
     />
     )}

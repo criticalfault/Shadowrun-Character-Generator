@@ -1,6 +1,13 @@
 ﻿import { MenuItem } from '@mui/material';
 import React, { useState } from 'react';
 import FilteredMenuItem from './FilteredMenuItem';
+import AllBooks from '../data/Books.json';
+
+const wrongEdition = (bookCode, edition) => {
+  if (!bookCode) return false;
+  const b = AllBooks[bookCode];
+  return b?.edition && b.edition !== edition;
+};
 import SearchableSelect from './SearchableSelect';
 import InputLabel from '@mui/material/InputLabel';
 import Button from '@mui/material/Button';
@@ -118,6 +125,7 @@ export default function GearPanel(props) {
 
     const renderGearItem = (gear, originalIndex) => {
       const bookCode = gear.BookPage?.split('.')[0];
+      if (wrongEdition(bookCode, props.Edition)) return null;
       const inDeckCategory = deckCategories.includes(SelectedGearCategory);
       const suppressedByVr2 = inDeckCategory && vr2Active && bookCode === 'sr2';
       const allowed = !suppressedByVr2 &&
@@ -151,6 +159,7 @@ export default function GearPanel(props) {
         getLabel={(item) => `${item.Name} (${item._category})`}
         renderItem={(item, originalIndex) => {
           const bookCode = item.BookPage?.split('.')[0];
+          if (wrongEdition(bookCode, props.Edition)) return null;
           const suppressedByVr2 = deckCategories.includes(item._category) && vr2Active && bookCode === 'sr2';
           const allowed = !suppressedByVr2 && (!item.BookPage || props.BooksFilter.includes(bookCode));
           return (
