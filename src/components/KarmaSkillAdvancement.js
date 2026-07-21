@@ -107,21 +107,12 @@ export default function KarmaSkillAdvancement({
   const [customAmount, setCustomAmount]   = useState(1);
   const [customConfirm, setCustomConfirm] = useState(false);
 
-  if (step !== 'finalized') return null;
-
-  const getAttrRating = (acronym) => {
-    if (!acronym || !characterAttributes) return null;
-    const name = ATTR_ACRONYM[acronym] ?? acronym;
-    return (parseInt(characterAttributes[name]) || 0) +
-           (parseInt(raceBonuses?.[name]) || 0);
-  };
-
   // ── Skill data for "add new skill" ──────────────────────────────────
   const rawSkills = Edition === 'SR3'
     ? allActiveSkills[`../data/SR3/ActiveSkills.json`]?.default
     : allSkillsData[`../data/SR2/Skills.json`]?.default;
 
-  // SR2 Skills.json is an object keyed by name; SR3 is an array of objects grouped by category
+  // useMemo must be called before any early return (Rules of Hooks)
   const flatSkillList = useMemo(() => {
     if (!rawSkills) return [];
     // SR3: object keyed by category, each value is an array of skill objects
@@ -132,6 +123,8 @@ export default function KarmaSkillAdvancement({
     }
     return values; // SR2
   }, [rawSkills, Edition]);
+
+  if (step !== 'finalized') return null;
 
   const existingSkillNames = new Set(skills.map((s) => s.name));
   const availableNewSkills = flatSkillList.filter(
