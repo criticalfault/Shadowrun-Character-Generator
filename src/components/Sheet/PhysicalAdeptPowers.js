@@ -21,7 +21,11 @@ const PhysicalAdeptPowers = ({ powers }) => {
             <TableBody>
               {powers.map((power, index) => (
                 <TableRow key={power.Name + index}>
-                  <TableCell component="th" scope="row">{power.Name}</TableCell>
+                  <TableCell component="th" scope="row">
+                    {power.LinkedSkill
+                      ? `${power.Name.replace('*->', '')} [${power.LinkedSkill}]`
+                      : power.Name}
+                  </TableCell>
                   <TableCell align="center">{power.HasLevels ? power.Rating : '—'}</TableCell>
                   <TableCell align="center">{power.PowerCost ?? '—'}</TableCell>
                 </TableRow>
