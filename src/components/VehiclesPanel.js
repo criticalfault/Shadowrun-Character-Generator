@@ -1,5 +1,12 @@
 ﻿import React, { useState } from 'react';
 import FilteredMenuItem from './FilteredMenuItem';
+import AllBooks from '../data/Books.json';
+
+const wrongEdition = (bookCode, edition) => {
+  if (!bookCode) return false;
+  const b = AllBooks[bookCode];
+  return b?.edition && b.edition !== edition;
+};
 import SearchableSelect from './SearchableSelect';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -310,15 +317,19 @@ export default function VehiclesPanel(props) {
       onChange={handleVehicleChange}
       label="Vehicles"
       getLabel={(v) => v.name}
-      renderItem={(vehicle, i) => (
-        <FilteredMenuItem
-          allowed={props.BooksFilter.includes(vehicle['Book.Page'].split('.')[0])}
-          bookCode={vehicle['Book.Page'].split('.')[0]}
-          key={i} value={i}
-        >
-          {vehicle.name}
-        </FilteredMenuItem>
-      )}
+      renderItem={(vehicle, i) => {
+        const bookCode = vehicle['Book.Page'].split('.')[0];
+        if (wrongEdition(bookCode, props.Edition)) return null;
+        return (
+          <FilteredMenuItem
+            allowed={props.BooksFilter.includes(bookCode)}
+            bookCode={bookCode}
+            key={i} value={i}
+          >
+            {vehicle.name}
+          </FilteredMenuItem>
+        );
+      }}
       style={{ minWidth: 650, marginTop: 20 }}
     />
 
@@ -349,15 +360,19 @@ export default function VehiclesPanel(props) {
         onChange={handleDroneChange}
         label="Drones"
         getLabel={(d) => d.name}
-        renderItem={(drone, i) => (
-          <FilteredMenuItem
-            allowed={props.BooksFilter.includes(drone['Book.Page'].split('.')[0])}
-            bookCode={drone['Book.Page'].split('.')[0]}
-            key={i} value={i}
-          >
-            {drone.name}
-          </FilteredMenuItem>
-        )}
+        renderItem={(drone, i) => {
+          const bookCode = drone['Book.Page'].split('.')[0];
+          if (wrongEdition(bookCode, props.Edition)) return null;
+          return (
+            <FilteredMenuItem
+              allowed={props.BooksFilter.includes(bookCode)}
+              bookCode={bookCode}
+              key={i} value={i}
+            >
+              {drone.name}
+            </FilteredMenuItem>
+          );
+        }}
         style={{ minWidth: 650 }}
       />
 
