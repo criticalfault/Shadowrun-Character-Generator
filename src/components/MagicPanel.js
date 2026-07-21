@@ -3,6 +3,7 @@ import { MenuItem } from "@mui/material";
 import SearchableSelect from "./SearchableSelect";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
+import NativeSelect from "@mui/material/NativeSelect";
 import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -1116,6 +1117,7 @@ function MagicPanel(props) {
   const [newPowerHasRating, setNewPowerHasRating] = useState(false);
   const [NewPowerIndex, setNewPowerIndex] = useState("");
   const [newPowerRating, setNewPowerRating] = useState(1);
+  const [newPowerLinkedSkill, setNewPowerLinkedSkill] = useState("");
   const [selectedPowers, setSelectedPowers] = useState(props.powers);
   const [spellFetish, setSpellFetish] = useState(false);
   const [spellExclusive, setSpellExclusive] = useState(false);
@@ -1287,6 +1289,8 @@ function MagicPanel(props) {
   };
 
   const handleAddPower = () => {
+    const isImpAbl = newPower && newPower.Name && newPower.Name.includes("Imp Abl");
+    if (isImpAbl && !newPowerLinkedSkill) return;
     if (newPower) {
       var powerToAdd;
       if (newPowerHasRating) {
@@ -1294,6 +1298,9 @@ function MagicPanel(props) {
         setNewPowerRating(1);
       } else {
         powerToAdd = { ...newPower };
+      }
+      if (isImpAbl && newPowerLinkedSkill) {
+        powerToAdd = { ...powerToAdd, LinkedSkill: newPowerLinkedSkill };
       }
 
       const costToAdd = powerToAdd.HasLevels
@@ -1304,6 +1311,7 @@ function MagicPanel(props) {
       setAdeptPointsSpent((prev) => parseFloat(prev) + costToAdd);
       setNewPower("");
       setNewPowerIndex("");
+      setNewPowerLinkedSkill("");
       props.onChangePowers([...selectedPowers, powerToAdd]);
       CalcPowerAttributeChanges();
     }
@@ -1328,6 +1336,8 @@ function MagicPanel(props) {
     setNewPowerIndex(event.target.value);
     setNewPowerCost(TempPower.Cost);
     setNewPowerDesc(TempPower.Notes);
+    setNewPowerLinkedSkill("");
+    setNewPowerRating(1);
     if (TempPower.HasLevels) {
       setNewPowerHasRating(true);
     } else {
@@ -1337,21 +1347,32 @@ function MagicPanel(props) {
 
   const handlePowerRatingChange = (event) => {
     const rating = parseInt(event.target.value);
-    setNewPowerRating(rating);
+    const isImpAbl = newPower && newPower.Name && newPower.Name.includes("Imp Abl");
+    if (isImpAbl && newPowerLinkedSkill) {
+      const linkedSkillObj = (props.characterSkills ?? []).find(s => s.name === newPowerLinkedSkill);
+      const skillRating = linkedSkillObj ? parseInt(linkedSkillObj.rating) : 0;
+      const cap = Math.min(skillRating, parseInt(props.magicRating) || 0);
+      setNewPowerRating(Math.min(rating, cap || rating));
+    } else {
+      setNewPowerRating(rating);
+    }
   };
 
   const renderPowerListItem = (power) => {
+    const displayName = power.LinkedSkill
+      ? `${power.Name.replace("*->", "")} [${power.LinkedSkill}]`
+      : power.Name;
     if (power.HasLevels) {
       return (
         <ListItemText
-          primary={`${power.Name}`}
+          primary={displayName}
           secondary={"Cost: " + power.Cost + " - Rating: " + power.Rating}
         />
       );
     } else {
       return (
         <ListItemText
-          primary={`${power.Name}`}
+          primary={displayName}
           secondary={"Cost: " + power.Cost}
         />
       );
@@ -1492,6 +1513,36 @@ function MagicPanel(props) {
         />
         {newPower && (
           <>
+            {newPower.Name && newPower.Name.includes("Imp Abl") && (() => {
+              const activeSkills = (props.characterSkills ?? []).filter(s => s.type !== "Maneuver" && s.type !== "Knowledge" && s.type !== "Language");
+              const linkedSkillObj = activeSkills.find(s => s.name === newPowerLinkedSkill);
+              const skillRating = linkedSkillObj ? parseInt(linkedSkillObj.rating) : 0;
+              const cap = Math.min(skillRating, parseInt(props.magicRating) || 0);
+              return (
+                <div style={{ marginBottom: 8 }}>
+                  <FormControl style={{ width: "220px", marginRight: "12px" }}>
+                    <InputLabel shrink>Linked Skill</InputLabel>
+                    <NativeSelect
+                      value={newPowerLinkedSkill}
+                      onChange={(e) => {
+                        setNewPowerLinkedSkill(e.target.value);
+                        setNewPowerRating(1);
+                      }}
+                    >
+                      <option value="">— select skill —</option>
+                      {activeSkills.map((s, i) => (
+                        <option key={i} value={s.name}>{s.name} (Rating {s.rating})</option>
+                      ))}
+                    </NativeSelect>
+                  </FormControl>
+                  {newPowerLinkedSkill && (
+                    <span style={{ fontSize: "0.85em", color: "#888" }}>
+                      Max dice: {cap} (min of skill {skillRating} / Magic {parseInt(props.magicRating) || 0})
+                    </span>
+                  )}
+                </div>
+              );
+            })()}
             <TextField
               style={{ width: "100px", marginRight: "20px" }}
               id="power-cost-input"
@@ -1510,7 +1561,12 @@ function MagicPanel(props) {
                 onChange={(event) => handlePowerRatingChange(event)}
                 inputProps={{
                   min: 1,
-                  max: 6,
+                  max: newPower.Name && newPower.Name.includes("Imp Abl") && newPowerLinkedSkill
+                    ? Math.min(
+                        parseInt((props.characterSkills ?? []).find(s => s.name === newPowerLinkedSkill)?.rating ?? 0),
+                        parseInt(props.magicRating) || 0
+                      )
+                    : 6,
                 }}
               />
             )}
@@ -1519,6 +1575,7 @@ function MagicPanel(props) {
               variant="contained"
               color="primary"
               onClick={handleAddPower}
+              disabled={newPower.Name && newPower.Name.includes("Imp Abl") && !newPowerLinkedSkill}
             >
               Add Power
             </Button>

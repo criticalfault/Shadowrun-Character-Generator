@@ -910,6 +910,7 @@ export default function BasicTabs() {
             onChangeAlly={(ally) => setCharacter({ ...Character, ally })}
             creatorIntelligence={Character.attributes.Intelligence}
             creatorWillpower={Character.attributes.Willpower}
+            characterSkills={Character.skills}
             creatorSorcery={Character.skills?.find(s => s.name === 'Sorcery')?.rating ?? 0}
             step={Character.step}
             purchasedPowerPoints={Character.purchasedPowerPoints ?? 0}
