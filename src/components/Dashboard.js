@@ -456,16 +456,17 @@ export default function BasicTabs() {
   };
 
   const handleChangeAllowedBooks = (books) => {
+    const checkedBooks = Object.keys(books).filter(k => books[k]);
     if (Edition === "SR3") {
       setCharacter((prevCharacter) => ({
         ...prevCharacter,
-        allowedBooks: Object.keys(books),
+        allowedBooks: checkedBooks,
         bookTogglesSR3: books,
       }));
     } else if (Edition === "SR2") {
       setCharacter((prevCharacter) => ({
         ...prevCharacter,
-        allowedBooks: Object.keys(books),
+        allowedBooks: checkedBooks,
         bookTogglesSR2: books,
       }));
     }
@@ -660,6 +661,7 @@ export default function BasicTabs() {
 
   const handleLoadCharacter = (characterData) => {
     setCharacter(characterData);
+    if (characterData.Edition) setEdition(characterData.Edition);
   };
 
   const displayBox = () => {
