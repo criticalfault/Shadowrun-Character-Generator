@@ -126,6 +126,13 @@ export default function KarmaSkillAdvancement({
 
   if (step !== 'finalized') return null;
 
+  const getAttrRating = (acronym) => {
+    if (!acronym || !characterAttributes) return null;
+    const name = ATTR_ACRONYM[acronym] ?? acronym;
+    return (parseInt(characterAttributes[name]) || 0) +
+           (parseInt(raceBonuses?.[name]) || 0);
+  };
+
   const existingSkillNames = new Set(skills.map((s) => s.name));
   const availableNewSkills = flatSkillList.filter(
     (s) => s && s.name && !existingSkillNames.has(s.name)
