@@ -1514,7 +1514,14 @@ function MagicPanel(props) {
         {newPower && (
           <>
             {newPower.Name && newPower.Name.includes("Imp Abl") && (() => {
-              const activeSkills = (props.characterSkills ?? []).filter(s => s.type !== "Maneuver" && s.type !== "Knowledge" && s.type !== "Language");
+              const IMP_ABL_SKILLS = new Set([
+                "Athletics","Diving","Stealth",
+                "Edged Weapons","Clubs","Pole Arms","Cyber-Implant Weapon","Unarmed Combat",
+                "Throwing Weapons","Projectile Weapons","Underwater Combat","Pistols","SMGs",
+                "Rifles","Assault Rifles","Shotguns","Heavy Weapons","Grenade Launchers",
+                "Whips","Gunnery","Launch Weapons",
+              ]);
+              const activeSkills = (props.characterSkills ?? []).filter(s => IMP_ABL_SKILLS.has(s.name));
               const linkedSkillObj = activeSkills.find(s => s.name === newPowerLinkedSkill);
               const skillRating = linkedSkillObj ? parseInt(linkedSkillObj.rating) : 0;
               const cap = Math.min(skillRating, parseInt(props.magicRating) || 0);
