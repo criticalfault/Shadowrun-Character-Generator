@@ -134,7 +134,7 @@ export default function CyberwarePanel(props) {
   const [NewBiowareIndex, setNewBiowareIndex]                 = useState(0);
   const [NewBiowareDesc, setNewBiowareDesc]                   = useState('');
   const [SelectedBioware, setSelectedBioware]                 = useState(props.Bioware);
-  const [BiowareSelectedCategory, setBiowareSelectedCategory] = useState();
+  const [BiowareSelectedCategory, setBiowareSelectedCategory] = useState('STANDARD');
   const [NewBiowareGrade, setNewBiowareGrade]                 = useState('standard');
   const BiowareCategories = ['STANDARD','CULTURED','COSMETIC','NANOWARE','GENETECH']
   const handleBiowareCategoryChange = (event) => {
