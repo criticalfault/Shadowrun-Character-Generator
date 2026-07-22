@@ -135,9 +135,13 @@ export default function CyberwarePanel(props) {
   const [NewBiowareDesc, setNewBiowareDesc]                   = useState('');
   const [SelectedBioware, setSelectedBioware]                 = useState(props.Bioware);
   const [BiowareSelectedCategory, setBiowareSelectedCategory] = useState();
+  const [NewBiowareGrade, setNewBiowareGrade]                 = useState('standard');
   const BiowareCategories = ['STANDARD','CULTURED','COSMETIC','NANOWARE','GENETECH']
   const handleBiowareCategoryChange = (event) => {
       setBiowareSelectedCategory(event.target.value);
+      setNewBioware(null);
+      setNewBiowareIndex(0);
+      setNewBiowareGrade('standard');
   }
   const convertModsToAttributes = (mods) => {
     const ModToAttributes ={ 
@@ -223,14 +227,36 @@ const handleCyberOrBioChange = (event) => {
       setNewBiowareIndex(event.target.value)
       setNewBiowareCost(TempCyber.Cost);
       setNewBiowareDesc(TempCyber.Notes)
+      setNewBiowareGrade('standard');
   }
+
+  const biowareCulturedEligible = BiowareSelectedCategory && BiowareSelectedCategory !== 'CULTURED';
+
+  const biowareDisplayCost = () => {
+    if (!NewBiowareCost) return 0;
+    const base = parseFloat(NewBiowareCost);
+    return NewBiowareGrade === 'cultured' ? base * 4 : base;
+  };
+
+  const biowareDisplayBioIndex = () => {
+    if (!NewBioware?.BioIndex) return '—';
+    const base = parseFloat(NewBioware.BioIndex);
+    const val = NewBiowareGrade === 'cultured' ? base * 0.75 : base;
+    return val.toFixed(2);
+  };
 
   const handleAddBioware = () => {
       if (NewBioware) {
         const bioToAdd = {...NewBioware};
+        if (biowareCulturedEligible && NewBiowareGrade === 'cultured') {
+          bioToAdd.Cost = (parseFloat(NewBioware.Cost) * 4).toFixed(0);
+          bioToAdd.BioIndex = (parseFloat(NewBioware.BioIndex) * 0.75).toFixed(2);
+          bioToAdd.Grade = 'cultured';
+        }
         setSelectedBioware(prevBioware => [...prevBioware, bioToAdd]);
-        setNewBioware('');
-        setNewBiowareIndex('');
+        setNewBioware(null);
+        setNewBiowareIndex(0);
+        setNewBiowareGrade('standard');
         props.onChangeBioware([...SelectedBioware, bioToAdd]);
       }
   }
@@ -422,12 +448,27 @@ const handleCyberOrBioChange = (event) => {
     )}
     {NewBioware && (
     <>
-        <TextField style={{'width':'100px', 'marginRight':'20px'}}
+        {biowareCulturedEligible && (
+          <div style={{ margin: '8px 0' }}>
+            <FormLabel component="legend" style={{ fontSize: '0.85em', marginBottom: 4 }}>Grade</FormLabel>
+            <RadioGroup row value={NewBiowareGrade} onChange={(e) => setNewBiowareGrade(e.target.value)}>
+              <FormControlLabel value="standard" control={<Radio />} label="Standard" />
+              <FormControlLabel value="cultured" control={<Radio />} label={`Cultured (BioIndex ×0.75, Cost ×4)`} />
+            </RadioGroup>
+          </div>
+        )}
+        <TextField style={{'width':'120px', 'marginRight':'20px'}}
+          id="bioware-bioindex-display"
+          disabled={true}
+          label="BioIndex"
+          value={biowareDisplayBioIndex()}
+        />
+        <TextField style={{'width':'140px', 'marginRight':'20px'}}
         id="power-cost-input"
         disabled={true}
         label="Cost"
         type="number"
-        value={NewBiowareCost}
+        value={biowareDisplayCost()}
         />
         <Button variant="contained" color="primary" onClick={handleAddBioware}>
         Add Bioware
@@ -442,6 +483,7 @@ const handleCyberOrBioChange = (event) => {
             <TableHead>
             <TableRow>
                 <TableCell>Name</TableCell>
+                <TableCell align="right">Grade</TableCell>
                 <TableCell align="right">BioIndex Cost</TableCell>
                 <TableCell align="right">Cost</TableCell>
                 <TableCell align="right">Book.Page</TableCell>
@@ -453,6 +495,7 @@ const handleCyberOrBioChange = (event) => {
             {props.Bioware.map((bioware, index) => (
                 <TableRow key={bioware.Name+index}>
                     <TableCell component="th" scope="row">{bioware.Name}</TableCell>
+                    <TableCell align="right">{bioware.Grade === 'cultured' ? 'Cultured' : '—'}</TableCell>
                     <TableCell align="right">{bioware.BioIndex}</TableCell>
                     <TableCell align="right">{new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(bioware.Cost)}</TableCell>
                     <TableCell align="right">{bioware.BookPage}</TableCell>
