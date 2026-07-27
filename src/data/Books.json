@@ -131,11 +131,6 @@
         "loadByDefault":false,
         "edition":"SR2"
     },
-    "ff":{
-        "name":"Firefight!",
-        "loadByDefault":false,
-        "edition":"SR2"
-    },
     "ls":{
         "name":"Lone Star",
         "loadByDefault":false,

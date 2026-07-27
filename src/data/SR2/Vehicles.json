@@ -1025,7 +1025,7 @@
         "Seating": "1 bucket",
         "$Cost": "41500",
         "Notes": "STOL (ultralight). Open cockpit. Fuel: Electric (100 PF), 0.75km/PF.",
-        "Book.Page": "ff.???"
+        "Book.Page": "fof.62"
     },
     {
         "name": "Aztech Nightrunner (Methane)",
@@ -1493,7 +1493,7 @@
         "Seating": "2 bucket + 1 bench",
         "$Cost": "58700",
         "Notes": "Armored pickup (multi-purpose utility). Fuel: Diesel (100L), 6km/L. Electronics port (with radio), pintle mount (weapon not included), spotlight (white light).",
-        "Book.Page": "ff.???"
+        "Book.Page": "fof.63"
     },
     {
         "name": "GMC Riverine",
@@ -1688,7 +1688,7 @@
         "Seating": "2 bucket + 2 bench + 2 bench",
         "$Cost": "698000",
         "Notes": "APC. Fuel: Diesel (800L), 2km/L. Amphibious Operation 1, electronics port (telecom system), enviroseal (gas), small remote turret (weapon not included), Thermal Baffles 1 (factored in).",
-        "Book.Page": "ff.???"
+        "Book.Page": "fof.64"
     },
     {
         "name": "LAV-103 Striker Light Tank",
@@ -1701,7 +1701,7 @@
         "Seating": "1 bucket + 2 bucket",
         "$Cost": "725000",
         "Notes": "APC. Fuel: Diesel (800L), 2km/L. Amphibious Operation 1, electronics port (telecom system), enviroseal (gas), medium remote turret (weapon not included), Thermal Baffles 1 (factored in).",
-        "Book.Page": "ff.???"
+        "Book.Page": "fof.65"
     },
     {
         "name": "Lear-Cessna Platinum I",
@@ -1844,7 +1844,7 @@
         "Seating": "2 bucket + 3 bucket",
         "$Cost": "14400000",
         "Notes": "Standard takeoff/landing (armored turbine airliner). Fuel: Jet (18,000L), 0.75km/L.",
-        "Book.Page": "ff.???"
+        "Book.Page": "fof.66"
     },
     {
         "name": "Lone Star Black Mariah USPTV",
@@ -2065,7 +2065,7 @@
         "Seating": "1 bucket",
         "$Cost": 222000,
         "Notes": "ECCM 1, micro-turret (weapon not included), Radar Absorbent Materials 2 (factored in); Template: Armed autogyro",
-        "Book.Page": "ff.???"
+        "Book.Page": "fof.70"
     },
     {
         "name": "Northrup Yellowjacket (PRC-44B)",
@@ -2091,7 +2091,7 @@
         "Seating": "1 bucket",
         "$Cost": 227000,
         "Notes": "ECCM 1, mini-turret (weapon not included), Radar Absorbent Materials 2 (factored in); Template: Armed autogyro",
-        "Book.Page": "ff.???"
+        "Book.Page": "fof.70"
     },
     {
         "name": "Pratt & Whitney Sundowner Aerial Sprayer",
