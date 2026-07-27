@@ -1678,16 +1678,16 @@
         "Book.Page": "rbb.???"
     },
     {
-        "name": "LAV-93 Devil Rat",
-        "Handling": "5/4",
-        "Speed/Accel": "75/5",
-        "Body/Armor": "7/12",
-        "Sig/Autonav": "3/2",
+        "name": "LAV-98 \"Devil Rat\" APC",
+        "Handling": "5/3",
+        "Speed/Accel": "25/75",
+        "Body/Armor": "3/12",
+        "Sig/Autonav": "6/2",
         "Pilot/Sensor": "-/0",
         "Cargo/Load": "12/2830",
-        "Seating": "2 bucket + 2 bench + 2 bench",
-        "$Cost": "698000",
-        "Notes": "APC. Fuel: Diesel (800L), 2km/L. Amphibious Operation 1, electronics port (telecom system), enviroseal (gas), small remote turret (weapon not included), Thermal Baffles 1 (factored in).",
+        "Seating": "3 crew + 3 benches",
+        "$Cost": "250000",
+        "Notes": "APC. Fuel: Multif/325L, 2km/L. Amphibious, telecom system (Rating 0), EnviroSeal, small remote turret (weapon not included). Off-road speed 15/45, 10/30 in water. ECM/ECCM not included.",
         "Book.Page": "fof.64"
     },
     {
