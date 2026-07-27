@@ -132,6 +132,16 @@
         "loadByDefault":false,
         "edition":"SR2"
     },
+    "ls":{
+        "name":"Lone Star",
+        "loadByDefault":false,
+        "edition":"SR2"
+    },
+    "nagrl":{
+        "name":"Neo-Anarchist's Guide to Real Life",
+        "loadByDefault":false,
+        "edition":"SR2"
+    },
     "vr2":{
         "name":"Virtual Realities 2.0",
         "loadByDefault":false,
@@ -161,7 +171,7 @@
     "azt":{
         "name":"Aztlan Sourcebook",
         "loadByDefault":false,
-        "edition":"SR3"
+        "edition":"SR2"
     },
     "fra":{
         "name":"France Sourcebook",
