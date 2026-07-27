@@ -136,11 +136,6 @@
         "loadByDefault":false,
         "edition":"SR2"
     },
-    "aztlan":{
-        "name":"Aztlan",
-        "loadByDefault":false,
-        "edition":"SR2"
-    },
     "nagrl":{
         "name":"Neo-Anarchist's Guide to Real Life",
         "loadByDefault":false,
@@ -175,7 +170,7 @@
     "azt":{
         "name":"Aztlan Sourcebook",
         "loadByDefault":false,
-        "edition":"SR3"
+        "edition":"SR2"
     },
     "fra":{
         "name":"France Sourcebook",

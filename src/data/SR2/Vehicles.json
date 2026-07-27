@@ -1077,7 +1077,7 @@
         "Seating": "1 ejection",
         "$Cost": "59800000",
         "Notes": "Standard takeoff/landing. Low speed 150km/h. Fuel: Jet (2,500L), 0.1km/L. ECM 9, ECCM 9, enviroseal (gas), 2 external fixed hardpoints (weapons not included), 7 external missile mounts (2,100kg ordnance).",
-        "Book.Page": "aztlan.???"
+        "Book.Page": "azt.178"
     },
     {
         "name": "Aztechnology Lobo Medium Scout LAV",
@@ -1090,7 +1090,7 @@
         "Seating": "1 ejection + 2 ejection",
         "$Cost": "8320000",
         "Notes": "VSTOL. Low speed 250km/h. Fuel: Jet (7,500L), 0.05km/L. ECM 6, ECCM 5, medium turret (weapons not included).",
-        "Book.Page": "aztlan.???"
+        "Book.Page": "azt.179"
     },
     {
         "name": "Aztechnology Tiburon Patrol Boat",
@@ -1103,7 +1103,7 @@
         "Seating": "2 bucket + 1 bench",
         "$Cost": "2400000",
         "Notes": "Fuel: Diesel (500L), 2km/L. ECM 5, ECCM 5, 2 mini-turrets (weapons not included).",
-        "Book.Page": "aztlan.???"
+        "Book.Page": "azt.179"
     },
     {
         "name": "Aztechnology Tiburon Patrol Boat (Interdiction)",
@@ -1116,7 +1116,7 @@
         "Seating": "2 bucket + 1 bench",
         "$Cost": "2450000",
         "Notes": "Fuel: Diesel (500L), 2km/L. ECM 5, ECCM 5, mini-turrets (weapon not included), 3 micro-turrets (weapons not included).",
-        "Book.Page": "aztlan.???"
+        "Book.Page": "azt.179"
     },
     {
         "name": "BAC-Dassault-MBB EFA Variants",
@@ -1922,7 +1922,7 @@
         "Seating": "2 bucket, 2 bench",
         "$Cost": "785000",
         "Notes": "VTOL (zeppelin). Fuel: Jet (4,000L), 1km/L. Improved aerodynamics.",
-        "Book.Page": "aztlan.???"
+        "Book.Page": "azt.179"
     },
     {
         "name": "Marine Technologies Dolphin II",
