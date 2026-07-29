@@ -86,7 +86,7 @@ export default function CyberwarePanel(props) {
   const [NewCyberware, setNewCyberware]           = useState();
   const [NewCyberwareCost, setNewCyberwareCost]   = useState();
   const [NewCyberwareGrade, setNewCyberwareGrade]   = useState('standard');
-  const [NewCyberwareIndex, setNewCyberwareIndex] = useState(0);
+  const [NewCyberwareIndex, setNewCyberwareIndex] = useState(-1);
   const [NewCyberwareDesc, setNewCyberwareDesc]   = useState('');
   const [selectedCyberware, setSelectedCyberware] = useState(props.Cyberware);
   const [TotalCyberwareCost, setTotalCyberwareCost] = useState(CalcTotalNuyenSpent());
@@ -117,7 +117,7 @@ export default function CyberwarePanel(props) {
         cyberToAdd.Type = SelectedCyberwareCategory;
         setSelectedCyberware(prevCyberware => [...prevCyberware, cyberToAdd]);
         setNewCyberware('');
-        setNewCyberwareIndex('');
+        setNewCyberwareIndex(-1);
         props.onChangeCyberware([...selectedCyberware, cyberToAdd]);
       }
   }
@@ -131,7 +131,7 @@ export default function CyberwarePanel(props) {
   
   const [NewBioware, setNewBioware]                           = useState();
   const [NewBiowareCost, setNewBiowareCost]                   = useState();
-  const [NewBiowareIndex, setNewBiowareIndex]                 = useState(0);
+  const [NewBiowareIndex, setNewBiowareIndex]                 = useState(-1);
   const [NewBiowareDesc, setNewBiowareDesc]                   = useState('');
   const [SelectedBioware, setSelectedBioware]                 = useState(props.Bioware);
   const [BiowareSelectedCategory, setBiowareSelectedCategory] = useState('STANDARD');
@@ -255,7 +255,7 @@ const handleCyberOrBioChange = (event) => {
         }
         setSelectedBioware(prevBioware => [...prevBioware, bioToAdd]);
         setNewBioware(null);
-        setNewBiowareIndex(0);
+        setNewBiowareIndex(-1);
         setNewBiowareGrade('standard');
         props.onChangeBioware([...SelectedBioware, bioToAdd]);
       }
