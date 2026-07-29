@@ -81,7 +81,7 @@ function SR3SkillsPanel({
     )
   );
   const [newSkill, setNewSkill] = useState("Assault Rifles");
-  const [newSkillAttribute, setNewSkillAttribute] = useState("INT");
+  const [newSkillAttribute, setNewSkillAttribute] = useState(skillsData["Combat skills"][0].attribute);
 
   //Knowledge Skills
   const [selectedKnowledgeSpecialization, setKnowledgeSelectedSpecialization] = useState("");
@@ -170,7 +170,7 @@ function SR3SkillsPanel({
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
     setNewSkill(skillsData[event.target.value][0].name);
-    setNewSkillAttribute(skillsData[event.target.value][0].name.attribute);
+    setNewSkillAttribute(skillsData[event.target.value][0].attribute);
     setSelectedSpecialization("");
   };
 
@@ -538,6 +538,11 @@ function SR3SkillsPanel({
                 </NativeSelect>
               </FormControl>
             )}
+            {newSkillAttribute && (
+              <span style={{ marginLeft: "12px", fontSize: "0.85rem", color: "#666", verticalAlign: "middle" }}>
+                Linked attribute: <strong>{AcronymToAttribute[newSkillAttribute] ?? newSkillAttribute}</strong>
+              </span>
+            )}
             <>
               <FormControl style={{ width: "400px", marginLeft: "20px" }}>
                 <InputLabel id="specialization-label" shrink>
@@ -744,11 +749,10 @@ function SR3SkillsPanel({
                   <ListItemText
                     primary={
                       skill.specialization
-                        ? `${skill.name} (${skill.rating - 1}) ->  ${
-                            skill.specialization
-                          } (${skill.rating + 1}) Cost:[${skill.cost}]`
+                        ? `${skill.name} (${skill.rating - 1}) ->  ${skill.specialization} (${skill.rating + 1}) Cost:[${skill.cost}]`
                         : `${skill.name} (${skill.rating}) Cost:[${skill.cost}]`
                     }
+                    secondary={AcronymToAttribute[skill.attribute] ?? skill.attribute}
                   />
                   <Button
                     color="primary"

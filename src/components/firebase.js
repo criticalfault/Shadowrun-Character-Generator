@@ -10,7 +10,7 @@ const firebaseConfig = {
     storageBucket: "charactergeneratordb.firebasestorage.app",
     messagingSenderId: "163713762253",
     appId: "1:163713762253:web:13c30aae130d1b69c1ba84",
-    measurementId: "G-6K5NKQLHBJ"
+    measurementId: "G-FC158GDTHC"
 };
 
 const app = initializeApp(firebaseConfig);
