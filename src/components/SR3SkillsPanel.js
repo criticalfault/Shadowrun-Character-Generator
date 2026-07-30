@@ -130,6 +130,22 @@ function SR3SkillsPanel({
     setSelectedManeuvers((prev) => prev.filter((m) => m !== maneuver));
   };
 
+  // Recalculate active skill costs whenever attributes or race bonuses change
+  useEffect(() => {
+    setSelectedSkills(prev => {
+      const recalculated = prev.map(skill => {
+        const attrName = AcronymToAttribute[skill.attribute] ?? skill.attribute;
+        const attrVal = (parseInt(currentCharacter.attributes?.[attrName]) || 0)
+                      + (parseInt(currentCharacter.raceBonuses?.[attrName]) || 0);
+        const rating = parseInt(skill.rating);
+        const costDiff = rating - attrVal;
+        const cost = costDiff > 0 ? rating + costDiff : rating;
+        return cost === skill.cost ? skill : { ...skill, cost };
+      });
+      return recalculated.some((s, i) => s !== prev[i]) ? recalculated : prev;
+    });
+  }, [currentCharacter.attributes, currentCharacter.raceBonuses]);
+
   useEffect(() => {
     //Actually remove the skills when they are deleted.
     onUpdateSkills([
