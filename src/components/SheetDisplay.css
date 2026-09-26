@@ -77,7 +77,21 @@
   padding: 4px 8px;
 }
 
-.shadowrun-table tr:last-child td {
+/* Row-header cells (MUI <TableCell component="th" scope="row">) should look
+   like data cells, not like the column header row. */
+.shadowrun-table tbody th {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #000;
+  background: none;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.shadowrun-table tr:last-child td,
+.shadowrun-table tr:last-child th {
   border-bottom: none;
 }
 
@@ -128,16 +142,74 @@ li {
   /* ── Hide everything except the sheet ─────────────── */
   .no-print,
   .mainHeader,
+  body > header,              /* NullSheen site banner from index.html */
+  .dice-rolling-panel,        /* floating dice button */
   .no-print-tabs > .MuiBox-root:first-child {
     display: none !important;
   }
 
-  .no-print-tabs [role="tabpanel"] {
+  /* Only the active tab panel prints. Inactive panels already carry the
+     `hidden` attribute, so we key off that instead of tab position. */
+  .no-print-tabs [role="tabpanel"][hidden] {
     display: none !important;
   }
 
-  .no-print-tabs [role="tabpanel"]:last-child {
-    display: block !important;
+
+  /* ── Strip the app chrome's padding so the sheet uses the full page ── */
+  html, body, #root, .App {
+    background: #fff !important;
+  }
+  .App .MuiContainer-root,
+  .dashboard,
+  .no-print-tabs,
+  .no-print-tabs [role="tabpanel"],
+  .no-print-tabs [role="tabpanel"] > .MuiBox-root {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  /* ── Compact print typography ───────────────────────── */
+  .sheetBody { font-size: 8.5pt; }
+  .sheet-two-col { gap: 0 10px; }
+
+  .shadowrun-header {
+    font-size: 8pt;
+    padding: 2px 8px;
+    margin-bottom: 4px;
+    break-after: avoid;          /* never strand a header at page bottom */
+    page-break-after: avoid;
+  }
+
+  .shadowrun-table th {
+    font-size: 6.5pt !important;
+    padding: 2px 4px !important;
+    line-height: 1.2;
+  }
+  .shadowrun-table td,
+  .shadowrun-table th[scope="row"] {
+    font-size: 7.5pt !important;
+    padding: 2px 4px !important;
+    line-height: 1.25;
+  }
+  .shadowrun-label, .shadowrun-value { font-size: 7.5pt !important; }
+
+  /* Long tables may split across pages; header row repeats, rows stay whole */
+  .shadowrun-table thead { display: table-header-group; }
+  .shadowrun-table tr { break-inside: avoid; page-break-inside: avoid; }
+  .shadowrun-table tr:hover td { background: none !important; }
+  .MuiTableContainer-root { overflow: visible !important; }
+
+  /* ── Runner Info: text fields → plain, wrapping text ─── */
+  .MuiInputBase-input { font-size: 9pt !important; padding-top: 7px !important; padding-bottom: 7px !important; }
+  .shadowrun-paper .MuiFormControl-root { margin-top: 8px; margin-bottom: 4px !important; }
+  .MuiInputBase-multiline { padding-top: 6px !important; padding-bottom: 6px !important; }
+
+  /* Small fixed-size blocks stay in one piece */
+  .shadowrun-paper.sr-keep-together {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   /* ── Base document reset ───────────────────────────── */
@@ -160,9 +232,8 @@ li {
   .shadowrun-paper {
     border: 1px solid #999 !important;
     box-shadow: none !important;
-    break-inside: avoid;        /* modern */
-    page-break-inside: avoid;   /* legacy fallback */
-    margin-bottom: 8px !important;
+    margin-bottom: 6px !important;
+    padding-bottom: 4px !important;
   }
 
   /* ── Section header — preserve black bar ──────────── */
@@ -174,7 +245,7 @@ li {
   }
 
   /* ── Table headers ─────────────────────────────────── */
-  .shadowrun-table th {
+  .shadowrun-table thead th {
     background: #f0f0f0 !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;

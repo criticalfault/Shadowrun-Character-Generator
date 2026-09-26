@@ -6,7 +6,7 @@ import ConditionMonitor from '../ConditionMonitor'; // adjust path as needed
 const ConditionMonitorBlock = ({ stunDamage, physicalDamage, onChangeStun, onChangePhysical }) => {
   return (
     <Grid size={12}>
-      <SRSection title="Condition Monitor">
+      <SRSection keepTogether title="Condition Monitor">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           <ConditionMonitor type="Stun" filled={stunDamage ?? 0} onChange={onChangeStun} />
           <ConditionMonitor type="Physical" filled={physicalDamage ?? 0} onChange={onChangePhysical} />

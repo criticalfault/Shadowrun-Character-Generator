@@ -79,7 +79,7 @@ const DicePools = ({ character, edition, magicalChoice }) => {
 
   return (
     <Grid size={12}>
-      <SRSection title="Dice Pools">
+      <SRSection keepTogether title="Dice Pools">
         <table className="shadowrun-table" style={{ width: '100%' }}>
           <tbody>
             {pools.map((pool) => (

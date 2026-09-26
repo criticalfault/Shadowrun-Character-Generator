@@ -10,7 +10,7 @@ const LifestylesTable = ({ gear }) => {
 
   return (
     <Grid size={12}>
-      <SRSection title="Lifestyles">
+      <SRSection keepTogether title="Lifestyles">
         <TableContainer component={Paper} sx={tablePaperSx}>
           <Table size="small" className="shadowrun-table">
             <TableHead>
