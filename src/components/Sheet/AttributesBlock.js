@@ -35,7 +35,7 @@ const AttributesBlock = ({ attributes, raceBonuses = {}, cyberBonuses = {}, magi
 
   return (
     <Grid size={{ xs: 12, md: 6 }}>
-      <SRSection title="Attributes">
+      <SRSection keepTogether title="Attributes">
         <table className="shadowrun-table" style={{ width: '100%' }}>
           <thead>
             <tr>

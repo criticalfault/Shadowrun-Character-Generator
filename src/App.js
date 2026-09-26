@@ -41,7 +41,7 @@ function App() {
           <div className="App">
             <Container maxWidth="2xl">
               <h1
-                className="mainHeader"
+                className="mainHeader no-print"
                 style={{
                   paddingLeft: "48px",
                   paddingTop: "20px",

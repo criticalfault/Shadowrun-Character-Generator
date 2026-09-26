@@ -6,10 +6,10 @@ import { inputSx } from './sheetTheme';
 const RunnerInfo = ({ character, onChange }) => {
   return (
     <Grid size={12}>
-      <SRSection title="Runner Info">
+      <SRSection keepTogether title="Runner Info">
         <div style={{ padding: '0 10px' }}>
           <Grid container spacing={2}>
-            <Grid size={{ xs: 12, md: 6 }}>
+            <Grid size={{ xs: 12, sm: 5 }}>
               <TextField
                 label="Runner Name"
                 fullWidth
@@ -19,7 +19,7 @@ const RunnerInfo = ({ character, onChange }) => {
                 sx={inputSx}
               />
             </Grid>
-            <Grid size={{ xs: 12, md: 6 }}>
+            <Grid size={{ xs: 8, sm: 5 }}>
               <TextField
                 label="Race"
                 fullWidth
@@ -28,7 +28,7 @@ const RunnerInfo = ({ character, onChange }) => {
                 sx={inputSx}
               />
             </Grid>
-            <Grid size={{ xs: 12, md: 4 }}>
+            <Grid size={{ xs: 4, sm: 2 }}>
               <TextField
                 label="Age"
                 fullWidth
@@ -42,6 +42,8 @@ const RunnerInfo = ({ character, onChange }) => {
               <TextField
                 label="Description"
                 fullWidth
+                multiline
+                minRows={1}
                 variant="outlined"
                 value={character.description}
                 onChange={(e) => onChange('description', e.target.value)}
@@ -53,7 +55,7 @@ const RunnerInfo = ({ character, onChange }) => {
                 label="Notes"
                 fullWidth
                 multiline
-                rows={3}
+                minRows={3}
                 variant="outlined"
                 value={character.notes}
                 onChange={(e) => onChange('notes', e.target.value)}
