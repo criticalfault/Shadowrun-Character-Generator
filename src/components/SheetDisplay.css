@@ -117,8 +117,17 @@ li {
 /* ===================================================
    PRINT STYLES
    =================================================== */
+
+/* ── Page setup: let content flow naturally across as many pages as needed ── */
+@page {
+  size: auto;
+  margin: 0.5in;
+}
+
 @media print {
+  /* ── Hide everything except the sheet ─────────────── */
   .no-print,
+  .mainHeader,
   .no-print-tabs > .MuiBox-root:first-child {
     display: none !important;
   }
@@ -131,6 +140,7 @@ li {
     display: block !important;
   }
 
+  /* ── Base document reset ───────────────────────────── */
   body {
     background: #fff !important;
     color: #000 !important;
@@ -138,20 +148,24 @@ li {
     font-family: Arial, Helvetica, sans-serif;
   }
 
+  /* ── Sheet wrapper ─────────────────────────────────── */
   .sheetBody {
     background: #fff !important;
     width: 100% !important;
     margin: 0 !important;
-    padding: 0.25in !important;
+    padding: 0 !important;
   }
 
+  /* ── Section cards — allow page breaks between them ── */
   .shadowrun-paper {
     border: 1px solid #999 !important;
     box-shadow: none !important;
-    page-break-inside: avoid;
+    break-inside: avoid;        /* modern */
+    page-break-inside: avoid;   /* legacy fallback */
     margin-bottom: 8px !important;
   }
 
+  /* ── Section header — preserve black bar ──────────── */
   .shadowrun-header {
     background: #000 !important;
     color: #fff !important;
@@ -159,12 +173,14 @@ li {
     print-color-adjust: exact;
   }
 
+  /* ── Table headers ─────────────────────────────────── */
   .shadowrun-table th {
     background: #f0f0f0 !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
+  /* ── MUI overrides ─────────────────────────────────── */
   .MuiPaper-root {
     background-color: #fff !important;
     color: #000 !important;
