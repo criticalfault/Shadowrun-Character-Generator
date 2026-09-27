@@ -25,6 +25,7 @@ import RCDSheet from './Sheet/RCDSheet';
 import CustomWeaponsTable from './Sheet/CustomWeaponsTable';
 import CustomVehiclesTable from './Sheet/CustomVehiclesTable';
 import CustomDecksTable from './Sheet/CustomDecksTable';
+import ContactsTable from './Sheet/ContactsTable';
 
 import rangesData from "../data/ranges.json";
 
@@ -91,7 +92,7 @@ function SheetDisplay(props) {
       {/* ── 2-column core ─────────────────────────────────────────────── */}
       <div className="sheet-two-col">
 
-        {/* Left: Attributes · Dice Pools */}
+        {/* Left: Attributes · Dice Pools · Gear · Lifestyles */}
         <div className="sheet-col">
           <AttributesBlock
             attributes={char.attributes}
@@ -105,9 +106,11 @@ function SheetDisplay(props) {
             edition={props.Edition}
             magicalChoice={props.magicalChoice}
           />
+          <GearTable gear={char.gear} />
+          <LifestylesTable gear={char.gear} />
         </div>
 
-        {/* Right: Condition Monitor · Skills · Armor · Gear */}
+        {/* Right: Condition Monitor · Skills · Armor */}
         <div className="sheet-col">
           <ConditionMonitorBlock
             stunDamage={char.stunDamage ?? 0}
@@ -117,11 +120,12 @@ function SheetDisplay(props) {
           />
           <SkillsBlock character={char} edition={props.Edition} />
           <ArmorTable gear={char.gear} />
-          <GearTable  gear={char.gear} />
-          <LifestylesTable gear={char.gear} />
         </div>
 
       </div>
+
+      {/* ── Contacts — full width ─────────────────────────────────────── */}
+      <ContactsTable contacts={char.contacts} />
 
       {/* ── Weapons — full width ──────────────────────────────────────── */}
       <WeaponsTable gear={char.gear} />
