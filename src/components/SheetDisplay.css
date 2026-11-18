@@ -99,6 +99,45 @@
   background: #f5f5f5;
 }
 
+/* ── Chipped-skill marker in the Skills block ─────── */
+.sr-chip-tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 0 4px;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  vertical-align: 1px;
+}
+
+/* ── Chip Slots block ──────────────────────────────── */
+.sr-chip-note {
+  font-size: 0.75rem;
+  color: #444;
+  margin-bottom: 6px;
+}
+.sr-chip-slot {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.sr-chip-slot-num {
+  width: 14px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #555;
+  text-align: right;
+}
+.sr-chip-warning {
+  font-size: 0.72rem;
+  color: #a00;
+  margin-top: 2px;
+}
+
 /* ── Attribute label / value ───────────────────────── */
 .shadowrun-label {
   font-weight: 700;
@@ -272,4 +311,9 @@ li {
   .MuiInputLabel-root {
     color: #555 !important;
   }
+
+  /* Chip slot dropdowns print as plain boxes */
+  .sr-chip-slot .MuiSelect-icon { display: none !important; }
+  .sr-chip-slot .MuiSelect-select { font-size: 7.5pt !important; padding: 2px 6px !important; }
+  .sr-chip-warning { color: #000 !important; }
 }

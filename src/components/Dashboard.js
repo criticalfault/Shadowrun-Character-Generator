@@ -224,6 +224,7 @@ export default function BasicTabs() {
     edges: [],
     flaws: [],
     ally: null,
+    chipSlots: {},
     rcd: { maxFlux: '', currentFlux: '', eccm: '', encryptionModule: '', decryptionModule: '', protocolEmulation: '', rating: '', flux: '', ivisMaster: false, fddmMaster: false, subscribedCurrent: '', maxActive: '', maxSubscribed: '', networkNotes: '', damage: {}, droneExtras: [] },
   };
   const [Edition, setEdition] = React.useState("SR2");
@@ -1075,6 +1076,7 @@ export default function BasicTabs() {
             }
             onChangeVehicles={(vehicles) => setCharacter({ ...Character, vehicles })}
             onChangeDrones={(drones) => setCharacter({ ...Character, drones })}
+            onChangeChipSlots={(chipSlots) => setCharacter({ ...Character, chipSlots })}
           />
         </CustomTabPanel>
         <CustomTabPanel value={value} index={13}>

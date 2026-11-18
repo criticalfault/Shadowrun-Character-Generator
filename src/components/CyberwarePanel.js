@@ -1,4 +1,5 @@
 ﻿import React, { useState, useEffect } from 'react';
+import { needsDescription, applyDescription, makeUid } from '../utils/chipware';
 import FilteredMenuItem from './FilteredMenuItem';
 import AllBooks from '../data/Books.json';
 
@@ -88,6 +89,7 @@ export default function CyberwarePanel(props) {
   const [NewCyberwareGrade, setNewCyberwareGrade]   = useState('standard');
   const [NewCyberwareIndex, setNewCyberwareIndex] = useState(-1);
   const [NewCyberwareDesc, setNewCyberwareDesc]   = useState('');
+  const [NewCyberwareCustomDesc, setNewCyberwareCustomDesc] = useState('');
   const [selectedCyberware, setSelectedCyberware] = useState(props.Cyberware);
   const [TotalCyberwareCost, setTotalCyberwareCost] = useState(CalcTotalNuyenSpent());
   const CyberwareCategories = ['BODYWARE','COMMUNICATIONS','CYBERWEAPONS','EARS','EYES','HEADWEAR','CYBERLIMBS','CYBERLIMB MODS','FEET','HANDS','MATRIXWARE','RIGGER','SENSEWARE','NANOWARE','VARIOUS'];
@@ -103,6 +105,7 @@ export default function CyberwarePanel(props) {
       TempCyber.Cost *= CyberwareGrades['standard'].CostMod;
       setNewCyberwareCost(TempCyber.Cost);
       setNewCyberwareDesc(TempCyber.Notes)
+      setNewCyberwareCustomDesc('');
     }else{
       // Hmm, its missing? what should we do?
     }
@@ -110,7 +113,9 @@ export default function CyberwarePanel(props) {
 
   const handleAddCyberware = () => {
       if (NewCyberware) {
-        const cyberToAdd = {...NewCyberware};
+        if (needsDescription(NewCyberware.Name) && !NewCyberwareCustomDesc.trim()) return;
+        const cyberToAdd = applyDescription(NewCyberware, NewCyberwareCustomDesc);
+        cyberToAdd.uid = makeUid();
         cyberToAdd.Cost *= CyberwareGrades[NewCyberwareGrade].CostMod;
         cyberToAdd.EssCost *= CyberwareGrades[NewCyberwareGrade].EssenceReduction;
         cyberToAdd.Grade = NewCyberwareGrade;
@@ -118,6 +123,7 @@ export default function CyberwarePanel(props) {
         setSelectedCyberware(prevCyberware => [...prevCyberware, cyberToAdd]);
         setNewCyberware('');
         setNewCyberwareIndex(-1);
+        setNewCyberwareCustomDesc('');
         props.onChangeCyberware([...selectedCyberware, cyberToAdd]);
       }
   }
@@ -365,7 +371,19 @@ const handleCyberOrBioChange = (event) => {
             type="number"
             value={NewCyberwareCost * CyberwareGrades[NewCyberwareGrade].CostMod}
             />
-            <Button variant="contained" color="primary" onClick={handleAddCyberware}>
+            {needsDescription(NewCyberware.Name) && (
+              <TextField style={{'width':'260px', 'marginRight':'20px'}}
+              id="cyber-custom-desc-input"
+              label="Description (required)"
+              helperText="Added after the name"
+              autoFocus
+              value={NewCyberwareCustomDesc}
+              onChange={(event) => setNewCyberwareCustomDesc(event.target.value)}
+              onKeyDown={(event) => { if (event.key === 'Enter') handleAddCyberware(); }}
+              />
+            )}
+            <Button variant="contained" color="primary" onClick={handleAddCyberware}
+              disabled={needsDescription(NewCyberware.Name) && !NewCyberwareCustomDesc.trim()}>
             Add Cyberware
             </Button>
             <div>Notes:{NewCyberwareDesc}</div>

@@ -26,6 +26,7 @@ import Chip from '@mui/material/Chip';
 import WeaponModsModal, { applyWeaponMods } from './WeaponModsModal';
 import LifestyleBuilderModal from './LifestyleBuilderModal';
 import BuyAmmoModal from './BuyAmmoModal';
+import { needsDescription, applyDescription, makeUid } from '../utils/chipware';
 
 // Pre-import all edition data so Vite can bundle them (no runtime require)
 const allGear = import.meta.glob('../data/*/Gear.json', { eager: true });
@@ -47,6 +48,7 @@ export default function GearPanel(props) {
   const [NewGearAmount, setNewGearAmount] = useState(1);
   const [NewGearIndex, setNewGearIndex] = useState(0);
   const [NewGearDesc, setNewGearDesc]   = useState('');
+  const [NewGearCustomDesc, setNewGearCustomDesc] = useState('');
   const [SelectedGear, setSelectedGear] = useState(props.Gear);
   const [SelectedGearCategory, setSelectedGearCategory] = useState(GearCategories[0]);
   const [globalSearch, setGlobalSearch] = useState('');
@@ -75,18 +77,25 @@ export default function GearPanel(props) {
       setNewGearCost(TempGear.Cost ?? TempGear['$Cost'] ?? '0');
       setNewGearAmount(1);
       setNewGearDesc(TempGear.Notes ?? '');
+      setNewGearCustomDesc('');
       if (TempGear._category) setSelectedGearCategory(TempGear._category);
     }
   
     const handleAddGear = () => {
       if (NewGear) {
-        const gearToAdd = {...NewGear};
+        if (needsDescription(NewGear.Name) && !NewGearCustomDesc.trim()) return;
+        const gearToAdd = applyDescription(NewGear, NewGearCustomDesc);
+        delete gearToAdd._category;
+        // Keep the chip's own type (Active/Know/Lingua…) before Type becomes the category.
+        if (NewGear.Type && NewGear.Type !== SelectedGearCategory) gearToAdd.ChipType = NewGear.Type;
+        gearToAdd.uid = makeUid();
         gearToAdd.Type = SelectedGearCategory;
         gearToAdd.Amount = NewGearAmount;
         setSelectedGear(prevGear => [...prevGear, gearToAdd]);
         setNewGear('');
         setNewGearIndex('');
         setNewGearAmount(1);
+        setNewGearCustomDesc('');
         props.onChangeGear([...SelectedGear, gearToAdd]);
       }
     }
@@ -213,7 +222,20 @@ export default function GearPanel(props) {
             value={NewGearAmount}
             onChange={(event) => setNewGearAmount(event.target.value)}
             />
-            <Button variant="contained" color="primary" onClick={handleAddGear}>
+            {needsDescription(NewGear.Name) && (
+              <TextField style={{'width':'260px', 'marginRight':'20px'}}
+              id="gear-custom-desc-input"
+              label="Description (required)"
+              placeholder="e.g. Shotguns"
+              helperText="Added after the name, e.g. the skill this soft covers"
+              autoFocus
+              value={NewGearCustomDesc}
+              onChange={(event) => setNewGearCustomDesc(event.target.value)}
+              onKeyDown={(event) => { if (event.key === 'Enter') handleAddGear(); }}
+              />
+            )}
+            <Button variant="contained" color="primary" onClick={handleAddGear}
+              disabled={needsDescription(NewGear.Name) && !NewGearCustomDesc.trim()}>
             Add Gear
             </Button>
             <div>Notes:{NewGearDesc}</div>
