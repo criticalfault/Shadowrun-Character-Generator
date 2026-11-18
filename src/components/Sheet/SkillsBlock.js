@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid } from '@mui/material';
 import SRSection from './SRSection';
 import { useDice } from '../../dice/DiceContext';
+import { getChippedSkills } from '../../utils/chipware';
 
 const rollableTr = {
   cursor: 'pointer',
@@ -78,6 +79,25 @@ const SkillsBlock = ({ character, edition }) => {
       );
     });
 
+  // Skills granted by slotted chips. ActiveSofts above the Skillwires rating
+  // (or with no Skillwires at all) don't work, so they're left off the sheet.
+  const renderChippedSkills = () =>
+    getChippedSkills(character)
+      .filter((s) => s.active)
+      .map((s, index) => (
+        <tr key={`chip-${index}`} style={rollableTr}
+          onMouseEnter={rollableTrHover} onMouseLeave={rollableTrLeave}
+          onClick={() => handleSkillClick(`${s.name} (chip)`, s.rating)}
+          title={`${s.holder} — click to roll ${s.rating}d6`}
+        >
+          <td className="shadowrun-label">
+            {s.name}
+            <span className="sr-chip-tag">chip</span>
+          </td>
+          <td style={{ textAlign: 'center', fontWeight: 700, width: 36 }}>{s.rating}</td>
+        </tr>
+      ));
+
   return (
     <Grid size={12}>
       <SRSection title="Skills">
@@ -90,6 +110,7 @@ const SkillsBlock = ({ character, edition }) => {
           </thead>
           <tbody>
             {edition === 'SR3' ? renderSR3Skills() : renderSR2Skills()}
+            {renderChippedSkills()}
           </tbody>
         </table>
       </SRSection>

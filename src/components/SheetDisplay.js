@@ -26,6 +26,7 @@ import CustomWeaponsTable from './Sheet/CustomWeaponsTable';
 import CustomVehiclesTable from './Sheet/CustomVehiclesTable';
 import CustomDecksTable from './Sheet/CustomDecksTable';
 import ContactsTable from './Sheet/ContactsTable';
+import ChipSlotsBlock from './Sheet/ChipSlotsBlock';
 
 import rangesData from "../data/ranges.json";
 
@@ -119,6 +120,7 @@ function SheetDisplay(props) {
             onChangePhysical={handleChangePhysical}
           />
           <SkillsBlock character={char} edition={props.Edition} />
+          <ChipSlotsBlock character={char} onChangeChipSlots={props.onChangeChipSlots} />
           <ArmorTable gear={char.gear} />
         </div>
 
